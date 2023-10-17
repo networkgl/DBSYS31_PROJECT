@@ -20,7 +20,7 @@ namespace HMS
             {
                 case 0:
                     deluxeKing = Properties.Resources.king;
-                    roomtype = "DELUXE  KING";
+                    roomtype = "DELUXE ROOM KING";
                     roomDetails_1 = "Luxurious room offering a king bed with city views";
                     //roomDetails_2 = "Enjoy a rejuvenating rest with our most \r\nflexible option. Best available room rate \r\nguaranteed.";
                     roomPrice = "₱10,000";
