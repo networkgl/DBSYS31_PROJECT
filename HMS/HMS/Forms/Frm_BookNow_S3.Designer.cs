@@ -117,7 +117,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(898, 438);
             this.panel1.TabIndex = 67;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtbox_Address
             // 
@@ -244,7 +243,6 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(938, 559);
             this.guna2ShadowPanel1.TabIndex = 62;
-            this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
             // errorProvider1
             // 

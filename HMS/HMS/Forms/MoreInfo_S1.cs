@@ -17,18 +17,10 @@ namespace HMS.Forms
             InitializeComponent();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            Frm_BookNow_S2 frm_BookNow_S2 = new Frm_BookNow_S2();
-            frm_BookNow_S2.Show();
-            this.Hide();
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Frm_BookNow_S2 frm_BookNow_S2 = new Frm_BookNow_S2();
-            frm_BookNow_S2.Show();
             this.Hide();
+            Frm_BookNow_S2.GetInstance().Show();
         }
     }
 }

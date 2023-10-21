@@ -7,16 +7,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace HMS.Forms
 {
     public partial class Frm_Login : Form
     {
+        private static Frm_Login login;
         private System.Drawing.Image showPassImage = Properties.Resources.view__1_;
         private System.Drawing.Image notShowPassImage = Properties.Resources.hidden__1_;
         private int toggleShow = 0;
         private bool? firstRun = null;
+
+        public bool HasLogin { get; set; }
         public Frm_Login()
         {
             InitializeComponent();
@@ -29,6 +33,12 @@ namespace HMS.Forms
                 handleParams.ExStyle |= 0x02000000;
                 return handleParams;
             }
+        }
+        public static Frm_Login GetInstance()
+        {
+            if(login == null)
+                login = new Frm_Login();
+            return login;
         }
         private void Frm_Login_Load(object sender, EventArgs e)
         {
@@ -88,8 +98,7 @@ namespace HMS.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-            var hp = new Frm_HomePage();
-            hp.Show();
+            Frm_HomePage.GetInstance().Show();
         }
 
         private void btnShowPassword_Click(object sender, EventArgs e)
@@ -104,9 +113,10 @@ namespace HMS.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            HasLogin = true;
+
             this.Hide();
-            var main = new Frm_Main();
-            main.Show();
+            Frm_Main.GetInstance().Show();
         }
 
         private void LoginTextBox()

@@ -12,9 +12,16 @@ namespace HMS.Forms
 {
     public partial class Frm_Dashboard : Form
     {
-        public Frm_Dashboard()
+        private static Frm_Dashboard dashboard;
+        private Frm_Dashboard()
         {
             InitializeComponent();
+        }
+        public static Frm_Dashboard GetInstance()
+        {
+            if (dashboard == null)
+                dashboard = new Frm_Dashboard();
+            return dashboard;
         }
         protected override CreateParams CreateParams
         {

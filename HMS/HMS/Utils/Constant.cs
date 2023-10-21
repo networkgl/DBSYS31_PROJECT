@@ -1,20 +1,33 @@
 ﻿using HMS.Forms;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HMS.Properties;
 
 namespace HMS
 {
     internal partial class Constant
     {
-        public String roomtype, roomDetails_1, roomDetails_2, roomPrice, priceDetails;
-        public System.Drawing.Image deluxeKing, preimeireDeluxe, filiSuite;
-        public int selectedIndex;
+        //public String roomtype, roomDetails_1, roomPrice, priceDetails;
+        //public System.Drawing.Image deluxeKing, preimeireDeluxe, filiSuite;
+        //public int selectedIndex;
 
         private static Constant ct;
+        public string RoomType { get; set; }
+        public string RoomDetails { get; set; }
+        public string RoomPrice { get; set; }
+        public string PriceDetails { get; set; }
+
+        public Image DeluxeKing { get; set; }
+        public Image FiliSuite { get; set; }
+        public Image PreimeireDeluxe { get; set; }
+        public int RoomType_selectedIndex { get; set; }
+
+
 
         private Constant()
         {
@@ -33,34 +46,6 @@ namespace HMS
             Admin = 3
 
         }
-
-        public void RoomType()
-        {
-            switch (selectedIndex)
-            {
-                case 0:
-                    deluxeKing = Properties.Resources.king;
-                    roomtype = "DELUXE ROOM KING";
-                    roomDetails_1 = "Luxurious room offering a king bed with city views";
-                    roomPrice = "₱10,000";
-                    priceDetails = "Per Night\r\n₱10,000 Total for 1 night\r\nExcluding Taxes & Fees";
-                    break;
-                case 1:
-                    preimeireDeluxe = Properties.Resources.premier_deluxe;
-                    roomtype = "PREMIERE DELUXE TWIN BED";
-                    roomDetails_1 = "Premiere Deluxe Twin Roon - 61 sqm\r\n";
-                    roomPrice = "₱14,000";
-                    priceDetails = "Per Night\r\n₱14,000 Total for 1 night\r\nExcluding Taxes & Fees";
-                    break;
-                case 2:
-                    filiSuite = Properties.Resources.fili_suite;
-                    roomtype = "FILI SUITE SEA VIEW";
-                    roomDetails_1 = "Fili Suite Sea View - 89 sqm\r\n";
-                    roomPrice = "₱20,000";
-                    priceDetails = "Per Night\r\n₱20,000 Total for 1 night\r\nExcluding Taxes & Fees";
-                    break;
-            }
-        }
         public static Constant GetInstance()
         {
             if (ct == null)
@@ -68,6 +53,33 @@ namespace HMS
                 ct = new Constant();
             }
             return ct;
+        }
+        public void GetRoomType()
+        {
+            switch (RoomType_selectedIndex)
+            {
+                case 0:
+                    DeluxeKing = Resources.king;
+                    RoomType = "DELUXE ROOM KING";
+                    RoomDetails = "Luxurious room offering a king bed with city views";
+                    RoomPrice = "₱10,000";
+                    PriceDetails = "Per Night\r\n₱10,000 Total for 1 night\r\nExcluding Taxes & Fees";
+                    break;
+                case 1:
+                    PreimeireDeluxe = Resources.premier_deluxe;
+                    RoomType = "PREMIERE DELUXE TWIN BED";
+                    RoomDetails = "Premiere Deluxe Twin Roon - 61 sqm\r\n";
+                    RoomPrice = "₱14,000";
+                    PriceDetails = "Per Night\r\n₱14,000 Total for 1 night\r\nExcluding Taxes & Fees";
+                    break;
+                case 2:
+                    FiliSuite = Resources.fili_suite;
+                    RoomType = "FILI SUITE SEA VIEW";
+                    RoomDetails = "Fili Suite Sea View - 89 sqm\r\n";
+                    RoomPrice = "₱20,000";
+                    PriceDetails = "Per Night\r\n₱20,000 Total for 1 night\r\nExcluding Taxes & Fees";
+                    break;
+            }
         }
     }
 }

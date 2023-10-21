@@ -16,34 +16,11 @@ namespace HMS
 {
     public partial class Frm_BookNow_S2 : Form
     {
-        private int getSelectedGuest, getSelectedTime_CheckIn, getSelectedTime_CheckOut, getSelected_CheckIn_AM_PM, getSelected_CheckOut_AM_PM;
-        private DateTime checkIn,checkOut;
-        private int roomType = 0;
-        private string fname, lname, email, address;
-        private long phone;
-        public Frm_BookNow_S2()
+        public int roomType { get; set; }
+        private static Frm_BookNow_S2 s2;
+        private Frm_BookNow_S2()
         {
             InitializeComponent();
-        }
-        public Frm_BookNow_S2(int getSelectedGuest, DateTime checkIn, DateTime checkOut, int getSelectedTime_CheckIn, int getSelectedTime_CheckOut, int getSelected_CheckIn_AM_PM, int getSelected_CheckOut_AM_PM, int roomType,
-                                string fname, string lname, string email, long phone, string address)
-        {
-            InitializeComponent();
-            this.getSelectedGuest = getSelectedGuest;
-            this.checkIn = checkIn;
-            this.checkOut = checkOut;
-            this.getSelectedTime_CheckIn = getSelectedTime_CheckIn;
-            this.getSelectedTime_CheckOut = getSelectedTime_CheckOut;
-            this.getSelected_CheckIn_AM_PM = getSelected_CheckIn_AM_PM;
-            this.getSelected_CheckOut_AM_PM = getSelected_CheckOut_AM_PM;
-
-            this.roomType = roomType;
-
-            this.fname = fname;
-            this.lname = lname;
-            this.email = email;
-            this.phone = phone;
-            this.address = address;
         }
 
         private void llb_moreInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -61,9 +38,15 @@ namespace HMS
                 return handleParams;
             }
         }
+        public static Frm_BookNow_S2 GetInstance()
+        {
+            if (s2 == null)
+                s2 = new Frm_BookNow_S2();
+            return s2;
+        }
         private void Frm_BookNow_S2_Load(object sender, EventArgs e)
         {
-            Constant.GetInstance().RoomType(); // Call the method to set initial values
+            Constant.GetInstance().GetRoomType();
 
             cbBox_roomType.SelectedIndex = roomType;
         }
@@ -90,55 +73,83 @@ namespace HMS
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var s1 = new Frm_BookNow_S1(getSelectedGuest, checkIn, checkOut, getSelectedTime_CheckIn, getSelectedTime_CheckOut, getSelected_CheckIn_AM_PM, getSelected_CheckOut_AM_PM, roomType, fname, lname, email, phone, address);
-            s1.Show();
+            Frm_BookNow_S1.GetInstance().Show();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var s3 = new Frm_BookNow_S3(getSelectedGuest, checkIn, checkOut, getSelectedTime_CheckIn, getSelectedTime_CheckOut, getSelected_CheckIn_AM_PM, getSelected_CheckOut_AM_PM, roomType, fname, lname, email, phone, address);
-            s3.Show();
+            Frm_BookNow_S3.GetInstance().Show();
         }
         private void DisplayRooms()
         {
+            Constant.GetInstance().RoomType_selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately.
+            Constant.GetInstance().GetRoomType(); //Call this function to re-initialize the new values.
+
             if (cbBox_roomType.SelectedIndex == 0)
             {
-                Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
-
-                Constant.GetInstance().RoomType(); // Call the method to set initial values
-
-                pnl_roompicture.BackgroundImage = Constant.GetInstance().deluxeKing;
-                lbl_roomType.Text = Constant.GetInstance().roomtype;
-                lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
-                lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
-                lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
+                pnl_roompicture.BackgroundImage = Constant.GetInstance().DeluxeKing;
+                lbl_roomType.Text = Constant.GetInstance().RoomType;
+                lbl_roomDetails1.Text = Constant.GetInstance().RoomDetails;
+                lbl_roomPrice.Text = Constant.GetInstance().RoomPrice;
+                lbl_priceDetails.Text = Constant.GetInstance().PriceDetails;
             }
             if (cbBox_roomType.SelectedIndex == 1)
             {
-                Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
-
-                Constant.GetInstance().RoomType(); // Call the method to set initial values
-
-                pnl_roompicture.BackgroundImage = Constant.GetInstance().preimeireDeluxe;
-                lbl_roomType.Text = Constant.GetInstance().roomtype;
-                lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
-                lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
-                lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
+                pnl_roompicture.BackgroundImage = Constant.GetInstance().PreimeireDeluxe;
+                lbl_roomType.Text = Constant.GetInstance().RoomType;
+                lbl_roomDetails1.Text = Constant.GetInstance().RoomDetails;
+                lbl_roomPrice.Text = Constant.GetInstance().RoomPrice;
+                lbl_priceDetails.Text = Constant.GetInstance().PriceDetails;
             }
             if (cbBox_roomType.SelectedIndex == 2)
             {
-                Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
-
-                Constant.GetInstance().RoomType(); // Call the method to set initial values
-
-                pnl_roompicture.BackgroundImage = Constant.GetInstance().filiSuite;
-                lbl_roomType.Text = Constant.GetInstance().roomtype;
-                lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
-                lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
-                lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
+                pnl_roompicture.BackgroundImage = Constant.GetInstance().FiliSuite;
+                lbl_roomType.Text = Constant.GetInstance().RoomType;
+                lbl_roomDetails1.Text = Constant.GetInstance().RoomDetails;
+                lbl_roomPrice.Text = Constant.GetInstance().RoomPrice;
+                lbl_priceDetails.Text = Constant.GetInstance().PriceDetails;
             }
         }
+        //private void DisplayRooms()
+        //{
+        //    if (cbBox_roomType.SelectedIndex == 0)
+        //    {
+        //        Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
+
+        //        Constant.GetInstance().RoomType(); // Call the method to set initial values
+
+        //        pnl_roompicture.BackgroundImage = Constant.GetInstance().deluxeKing;
+        //        lbl_roomType.Text = Constant.GetInstance().roomtype;
+        //        lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
+        //        lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
+        //        lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
+        //    }
+        //    if (cbBox_roomType.SelectedIndex == 1)
+        //    {
+        //        Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
+
+        //        Constant.GetInstance().RoomType(); // Call the method to set initial values
+
+        //        pnl_roompicture.BackgroundImage = Constant.GetInstance().preimeireDeluxe;
+        //        lbl_roomType.Text = Constant.GetInstance().roomtype;
+        //        lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
+        //        lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
+        //        lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
+        //    }
+        //    if (cbBox_roomType.SelectedIndex == 2)
+        //    {
+        //        Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
+
+        //        Constant.GetInstance().RoomType(); // Call the method to set initial values
+
+        //        pnl_roompicture.BackgroundImage = Constant.GetInstance().filiSuite;
+        //        lbl_roomType.Text = Constant.GetInstance().roomtype;
+        //        lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
+        //        lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
+        //        lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
+        //    }
+        //}
 
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
         {

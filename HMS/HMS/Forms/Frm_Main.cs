@@ -13,9 +13,16 @@ namespace HMS
 {
     public partial class Frm_Main : Form
     {
-        public Frm_Main()
+        private static Frm_Main main;
+        private Frm_Main()
         {
             InitializeComponent();
+        }
+        public static Frm_Main GetInstance()
+        {
+            if(main == null)
+                main = new Frm_Main();
+            return main;
         }
         protected override CreateParams CreateParams
         {
@@ -34,40 +41,37 @@ namespace HMS
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             pnl_main.Controls.Clear();
-            var db = new Frm_Dashboard();
-            db.TopLevel = false;
-            db.Dock = DockStyle.Fill;
-            pnl_main.Controls.Add(db);
-            db.Show();
+            Frm_Dashboard.GetInstance().TopLevel = false;
+            Frm_Dashboard.GetInstance().Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(Frm_Dashboard.GetInstance());
+            Frm_Dashboard.GetInstance().Show();
         }
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
             pnl_main.Controls.Clear();
-            var db = new Frm_Dashboard();
-            db.TopLevel = false;
-            db.Dock = DockStyle.Fill;
-            pnl_main.Controls.Add(db);
-            db.Show();
+            Frm_Dashboard.GetInstance().TopLevel = false;
+            Frm_Dashboard.GetInstance().Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(Frm_Dashboard.GetInstance());
+            Frm_Dashboard.GetInstance().Show();
         }
 
         private void btnClient_Click(object sender, EventArgs e)
         {
             pnl_main.Controls.Clear();
-            var clt = new Frm_Client();
-            clt.TopLevel = false;
-            clt.Dock = DockStyle.Fill;
-            pnl_main.Controls.Add(clt);
-            clt.Show();
+            Frm_Client.GetInstance().TopLevel = false;
+            Frm_Client.GetInstance().Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(Frm_Client.GetInstance());
+            Frm_Client.GetInstance().Show();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             var ask = MessageBox.Show("Are you sure you want to logout ?", "Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if(ask == DialogResult.Yes) {
-               Frm_HomePage frm_HomePage = new Frm_HomePage();
-                frm_HomePage.Show();
                 this.Hide();
+                Frm_HomePage.GetInstance().Show();
+                Frm_Login.GetInstance().HasLogin = false;
             }
         }
     }
