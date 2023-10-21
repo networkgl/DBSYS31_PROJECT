@@ -48,3 +48,4 @@ C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.c
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.csproj.CopyComplete
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.exe
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.pdb
+C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.MoreInfo_S1.resources

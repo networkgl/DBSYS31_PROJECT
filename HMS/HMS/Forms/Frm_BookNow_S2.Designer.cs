@@ -29,47 +29,37 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnNext = new System.Windows.Forms.Button();
-            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.metroProgressBar3 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_roomDetails2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lbl_priceDetails = new System.Windows.Forms.Label();
             this.lbl_roomPrice = new System.Windows.Forms.Label();
             this.lbl_roomType = new System.Windows.Forms.Label();
-            this.pnl_roompicture = new System.Windows.Forms.Panel();
             this.lbl_roomDetails1 = new System.Windows.Forms.Label();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.cbBox_roomType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.timer_pbar = new System.Windows.Forms.Timer(this.components);
+            this.llb_moreInfo = new System.Windows.Forms.LinkLabel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.pnl_roompicture = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
+            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
+            this.metroProgressBar3 = new MetroFramework.Controls.MetroProgressBar();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(17, 9);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(166, 25);
-            this.metroLabel7.TabIndex = 63;
-            this.metroLabel7.Text = "BOOKING SECTION";
             // 
             // guna2CustomGradientPanel1
             // 
@@ -98,154 +88,28 @@
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // guna2CircleButton2
-            // 
-            this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.Black;
-            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(340, 80);
-            this.guna2CircleButton2.Name = "guna2CircleButton2";
-            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton2.TabIndex = 44;
-            this.guna2CircleButton2.Text = "2";
-            // 
-            // guna2CircleButton4
-            // 
-            this.guna2CircleButton4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton4.FillColor = System.Drawing.Color.Black;
-            this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.Location = new System.Drawing.Point(739, 80);
-            this.guna2CircleButton4.Name = "guna2CircleButton4";
-            this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton4.Size = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton4.TabIndex = 48;
-            this.guna2CircleButton4.Text = "4";
-            // 
-            // metroProgressBar3
-            // 
-            this.metroProgressBar3.Location = new System.Drawing.Point(579, 98);
-            this.metroProgressBar3.Name = "metroProgressBar3";
-            this.metroProgressBar3.Size = new System.Drawing.Size(161, 5);
-            this.metroProgressBar3.TabIndex = 49;
-            // 
-            // metroProgressBar2
-            // 
-            this.metroProgressBar2.Location = new System.Drawing.Point(379, 98);
-            this.metroProgressBar2.Name = "metroProgressBar2";
-            this.metroProgressBar2.Size = new System.Drawing.Size(161, 5);
-            this.metroProgressBar2.TabIndex = 47;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(720, 123);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(86, 19);
-            this.metroLabel4.TabIndex = 57;
-            this.metroLabel4.Text = "Confirmation";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(123, 121);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(84, 19);
-            this.metroLabel3.TabIndex = 56;
-            this.metroLabel3.Text = "Choose Date";
-            // 
-            // metroProgressBar1
-            // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(180, 98);
-            this.metroProgressBar1.Name = "metroProgressBar1";
-            this.metroProgressBar1.Size = new System.Drawing.Size(161, 5);
-            this.metroProgressBar1.TabIndex = 46;
-            this.metroProgressBar1.Value = 100;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(519, 123);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(83, 19);
-            this.metroLabel2.TabIndex = 55;
-            this.metroLabel2.Text = "Guest Details";
-            // 
-            // guna2CircleButton3
-            // 
-            this.guna2CircleButton3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton3.FillColor = System.Drawing.Color.Black;
-            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton3.Location = new System.Drawing.Point(539, 80);
-            this.guna2CircleButton3.Name = "guna2CircleButton3";
-            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton3.Size = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton3.TabIndex = 45;
-            this.guna2CircleButton3.Text = "3";
-            // 
-            // guna2CircleButton1
-            // 
-            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.Black;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(141, 78);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton1.TabIndex = 43;
-            this.guna2CircleButton1.Text = "1";
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(334, 123);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(50, 19);
-            this.metroLabel1.TabIndex = 54;
-            this.metroLabel1.Text = "Rooms";
-            // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.label6);
+            this.guna2ShadowPanel1.Controls.Add(this.label5);
+            this.guna2ShadowPanel1.Controls.Add(this.label4);
+            this.guna2ShadowPanel1.Controls.Add(this.label3);
+            this.guna2ShadowPanel1.Controls.Add(this.label2);
+            this.guna2ShadowPanel1.Controls.Add(this.label1);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton2);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton1);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton3);
+            this.guna2ShadowPanel1.Controls.Add(this.metroProgressBar1);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton4);
+            this.guna2ShadowPanel1.Controls.Add(this.metroProgressBar2);
+            this.guna2ShadowPanel1.Controls.Add(this.metroProgressBar3);
             this.guna2ShadowPanel1.Controls.Add(this.btnBack);
             this.guna2ShadowPanel1.Controls.Add(this.panel1);
-            this.guna2ShadowPanel1.Controls.Add(this.metroLabel8);
             this.guna2ShadowPanel1.Controls.Add(this.cbBox_roomType);
-            this.guna2ShadowPanel1.Controls.Add(this.metroLabel7);
             this.guna2ShadowPanel1.Controls.Add(this.guna2CustomGradientPanel1);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton2);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton4);
-            this.guna2ShadowPanel1.Controls.Add(this.metroProgressBar3);
-            this.guna2ShadowPanel1.Controls.Add(this.metroProgressBar2);
-            this.guna2ShadowPanel1.Controls.Add(this.metroLabel4);
-            this.guna2ShadowPanel1.Controls.Add(this.metroLabel3);
-            this.guna2ShadowPanel1.Controls.Add(this.metroProgressBar1);
-            this.guna2ShadowPanel1.Controls.Add(this.metroLabel2);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton3);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2CircleButton1);
-            this.guna2ShadowPanel1.Controls.Add(this.metroLabel1);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
@@ -253,26 +117,11 @@
             this.guna2ShadowPanel1.TabIndex = 62;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(17, 37);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(42, 31);
-            this.btnBack.TabIndex = 72;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.llb_moreInfo);
             this.panel1.Controls.Add(this.lbl_roomDetails2);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.lbl_priceDetails);
@@ -341,15 +190,6 @@
             this.lbl_roomType.TabIndex = 71;
             this.lbl_roomType.Text = "DELUXE ROOM KING";
             // 
-            // pnl_roompicture
-            // 
-            this.pnl_roompicture.BackgroundImage = global::HMS.Properties.Resources.king;
-            this.pnl_roompicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnl_roompicture.Location = new System.Drawing.Point(6, 6);
-            this.pnl_roompicture.Name = "pnl_roompicture";
-            this.pnl_roompicture.Size = new System.Drawing.Size(247, 205);
-            this.pnl_roompicture.TabIndex = 67;
-            // 
             // lbl_roomDetails1
             // 
             this.lbl_roomDetails1.AutoSize = true;
@@ -359,16 +199,6 @@
             this.lbl_roomDetails1.Size = new System.Drawing.Size(371, 20);
             this.lbl_roomDetails1.TabIndex = 70;
             this.lbl_roomDetails1.Text = "Luxurious room offering a king bed with city views\r\n";
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel8.Location = new System.Drawing.Point(84, 192);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(96, 25);
-            this.metroLabel8.TabIndex = 69;
-            this.metroLabel8.Text = "Room Type";
             // 
             // cbBox_roomType
             // 
@@ -395,6 +225,194 @@
             // 
             this.timer_pbar.Tick += new System.EventHandler(this.timer_pbar_Tick);
             // 
+            // llb_moreInfo
+            // 
+            this.llb_moreInfo.AutoSize = true;
+            this.llb_moreInfo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llb_moreInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.llb_moreInfo.Location = new System.Drawing.Point(270, 182);
+            this.llb_moreInfo.Name = "llb_moreInfo";
+            this.llb_moreInfo.Size = new System.Drawing.Size(101, 21);
+            this.llb_moreInfo.TabIndex = 76;
+            this.llb_moreInfo.TabStop = true;
+            this.llb_moreInfo.Text = "MORE INFO";
+            this.llb_moreInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_moreInfo_LinkClicked);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(17, 37);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 72;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // pnl_roompicture
+            // 
+            this.pnl_roompicture.BackgroundImage = global::HMS.Properties.Resources.king;
+            this.pnl_roompicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_roompicture.Location = new System.Drawing.Point(6, 6);
+            this.pnl_roompicture.Name = "pnl_roompicture";
+            this.pnl_roompicture.Size = new System.Drawing.Size(247, 205);
+            this.pnl_roompicture.TabIndex = 67;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(115, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 21);
+            this.label4.TabIndex = 88;
+            this.label4.Text = "Choose Date";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(711, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 21);
+            this.label3.TabIndex = 87;
+            this.label3.Text = "Confirmation";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(516, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 21);
+            this.label2.TabIndex = 86;
+            this.label2.Text = "Guest Details";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(338, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 21);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "Rooms";
+            // 
+            // guna2CircleButton2
+            // 
+            this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.Black;
+            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton2.Location = new System.Drawing.Point(347, 84);
+            this.guna2CircleButton2.Name = "guna2CircleButton2";
+            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton2.Size = new System.Drawing.Size(40, 40);
+            this.guna2CircleButton2.TabIndex = 79;
+            this.guna2CircleButton2.Text = "2";
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.Black;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Location = new System.Drawing.Point(148, 82);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(40, 40);
+            this.guna2CircleButton1.TabIndex = 78;
+            this.guna2CircleButton1.Text = "1";
+            // 
+            // guna2CircleButton3
+            // 
+            this.guna2CircleButton3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton3.FillColor = System.Drawing.Color.Black;
+            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton3.Location = new System.Drawing.Point(546, 84);
+            this.guna2CircleButton3.Name = "guna2CircleButton3";
+            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton3.Size = new System.Drawing.Size(40, 40);
+            this.guna2CircleButton3.TabIndex = 80;
+            this.guna2CircleButton3.Text = "3";
+            // 
+            // metroProgressBar1
+            // 
+            this.metroProgressBar1.Location = new System.Drawing.Point(187, 102);
+            this.metroProgressBar1.Name = "metroProgressBar1";
+            this.metroProgressBar1.Size = new System.Drawing.Size(161, 5);
+            this.metroProgressBar1.TabIndex = 81;
+            this.metroProgressBar1.Value = 100;
+            // 
+            // guna2CircleButton4
+            // 
+            this.guna2CircleButton4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton4.FillColor = System.Drawing.Color.Black;
+            this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton4.Location = new System.Drawing.Point(746, 84);
+            this.guna2CircleButton4.Name = "guna2CircleButton4";
+            this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton4.Size = new System.Drawing.Size(40, 40);
+            this.guna2CircleButton4.TabIndex = 83;
+            this.guna2CircleButton4.Text = "4";
+            // 
+            // metroProgressBar2
+            // 
+            this.metroProgressBar2.Location = new System.Drawing.Point(386, 102);
+            this.metroProgressBar2.Name = "metroProgressBar2";
+            this.metroProgressBar2.Size = new System.Drawing.Size(161, 5);
+            this.metroProgressBar2.TabIndex = 82;
+            // 
+            // metroProgressBar3
+            // 
+            this.metroProgressBar3.Location = new System.Drawing.Point(586, 102);
+            this.metroProgressBar3.Name = "metroProgressBar3";
+            this.metroProgressBar3.Size = new System.Drawing.Size(161, 5);
+            this.metroProgressBar3.TabIndex = 84;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(17, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(185, 22);
+            this.label5.TabIndex = 89;
+            this.label5.Text = "BOOKING SECTION";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(87, 195);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 21);
+            this.label6.TabIndex = 90;
+            this.label6.Text = "Room Type";
+            // 
             // Frm_BookNow_S2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,23 +434,10 @@
         }
 
         #endregion
-        private MetroFramework.Controls.MetroLabel metroLabel7;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private System.Windows.Forms.Button btnNext;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar3;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar2;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.Panel pnl_roompicture;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_roomType;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label lbl_roomDetails1;
@@ -443,5 +448,19 @@
         public System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Timer timer_pbar;
+        public System.Windows.Forms.LinkLabel llb_moreInfo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
+        private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
+        private MetroFramework.Controls.MetroProgressBar metroProgressBar2;
+        private MetroFramework.Controls.MetroProgressBar metroProgressBar3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

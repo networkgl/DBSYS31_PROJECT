@@ -17,7 +17,7 @@ namespace HMS
     public partial class Frm_BookNow_S2 : Form
     {
         private int getSelectedGuest, getSelectedTime_CheckIn, getSelectedTime_CheckOut, getSelected_CheckIn_AM_PM, getSelected_CheckOut_AM_PM;
-        string checkIn,checkOut;
+        private DateTime checkIn,checkOut;
         private int roomType = 0;
         private string fname, lname, email, address;
         private long phone;
@@ -25,7 +25,7 @@ namespace HMS
         {
             InitializeComponent();
         }
-        public Frm_BookNow_S2(int getSelectedGuest, string checkIn, string checkOut, int getSelectedTime_CheckIn, int getSelectedTime_CheckOut, int getSelected_CheckIn_AM_PM, int getSelected_CheckOut_AM_PM, int roomType,
+        public Frm_BookNow_S2(int getSelectedGuest, DateTime checkIn, DateTime checkOut, int getSelectedTime_CheckIn, int getSelectedTime_CheckOut, int getSelected_CheckIn_AM_PM, int getSelected_CheckOut_AM_PM, int roomType,
                                 string fname, string lname, string email, long phone, string address)
         {
             InitializeComponent();
@@ -45,6 +45,13 @@ namespace HMS
             this.phone = phone;
             this.address = address;
         }
+
+        private void llb_moreInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MoreInfo_S1 s1 = new MoreInfo_S1();
+            s1.ShowDialog();
+        }
+
         protected override CreateParams CreateParams
         {
             get
@@ -56,7 +63,7 @@ namespace HMS
         }
         private void Frm_BookNow_S2_Load(object sender, EventArgs e)
         {
-            Constant.RoomType(); // Call the method to set initial values
+            Constant.GetInstance().RoomType(); // Call the method to set initial values
 
             cbBox_roomType.SelectedIndex = roomType;
         }
@@ -83,7 +90,7 @@ namespace HMS
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var s1 = new Frm_BookNow_S1(getSelectedGuest,checkIn,checkOut, getSelectedTime_CheckIn, getSelectedTime_CheckOut, getSelected_CheckIn_AM_PM, getSelected_CheckOut_AM_PM, roomType, fname, lname, email, phone, address);
+            var s1 = new Frm_BookNow_S1(getSelectedGuest, checkIn, checkOut, getSelectedTime_CheckIn, getSelectedTime_CheckOut, getSelected_CheckIn_AM_PM, getSelected_CheckOut_AM_PM, roomType, fname, lname, email, phone, address);
             s1.Show();
         }
 
@@ -97,39 +104,39 @@ namespace HMS
         {
             if (cbBox_roomType.SelectedIndex == 0)
             {
-                Constant.selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
+                Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
 
-                Constant.RoomType(); //Re initialize the Constant Class to Refresh Values
+                Constant.GetInstance().RoomType(); // Call the method to set initial values
 
-                pnl_roompicture.BackgroundImage = Constant.deluxeKing;
-                lbl_roomType.Text = Constant.roomtype;
-                lbl_roomDetails1.Text = Constant.roomDetails_1;
-                lbl_roomPrice.Text = Constant.roomPrice;
-                lbl_priceDetails.Text = Constant.priceDetails;
+                pnl_roompicture.BackgroundImage = Constant.GetInstance().deluxeKing;
+                lbl_roomType.Text = Constant.GetInstance().roomtype;
+                lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
+                lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
+                lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
             }
             if (cbBox_roomType.SelectedIndex == 1)
             {
-                Constant.selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
+                Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
 
-                Constant.RoomType(); //Re initialize the Constant Class to Refresh Values
+                Constant.GetInstance().RoomType(); // Call the method to set initial values
 
-                pnl_roompicture.BackgroundImage = Constant.preimeireDeluxe;
-                lbl_roomType.Text = Constant.roomtype;
-                lbl_roomDetails1.Text = Constant.roomDetails_1;
-                lbl_roomPrice.Text = Constant.roomPrice;
-                lbl_priceDetails.Text = Constant.priceDetails;
+                pnl_roompicture.BackgroundImage = Constant.GetInstance().preimeireDeluxe;
+                lbl_roomType.Text = Constant.GetInstance().roomtype;
+                lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
+                lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
+                lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
             }
             if (cbBox_roomType.SelectedIndex == 2)
             {
-                Constant.selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
+                Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
 
-                Constant.RoomType(); //Re initialize the Constant Class to Refresh Values
+                Constant.GetInstance().RoomType(); // Call the method to set initial values
 
-                pnl_roompicture.BackgroundImage = Constant.filiSuite;
-                lbl_roomType.Text = Constant.roomtype;
-                lbl_roomDetails1.Text = Constant.roomDetails_1;
-                lbl_roomPrice.Text = Constant.roomPrice;
-                lbl_priceDetails.Text = Constant.priceDetails;
+                pnl_roompicture.BackgroundImage = Constant.GetInstance().filiSuite;
+                lbl_roomType.Text = Constant.GetInstance().roomtype;
+                lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
+                lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
+                lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
             }
         }
 

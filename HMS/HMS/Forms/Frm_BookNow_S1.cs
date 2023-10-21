@@ -15,17 +15,20 @@ namespace HMS
     public partial class Frm_BookNow_S1 : Form
     {
         private int getSelectedGuest = 0, getSelectedTime_CheckIn = 0, getSelectedTime_CheckOut = 0, getSelected_CheckIn_AM_PM = 0, getSelected_CheckOut_AM_PM = 0;
-        private string checkIn = DateTime.Now.ToString();
-        private string checkOut = DateTime.Now.ToString();
+        //private string checkIn = DateTime.Now.ToString();
+        //private string checkOut = DateTime.Now.ToString();
         private string fname, lname, email, address;
         private long phone;
-
         private int roomType;
+        private DateTime checkIn = DateTime.Now;
+        private DateTime checkOut = DateTime.Now;
+
+
         public Frm_BookNow_S1()
         {
             InitializeComponent();
         }
-        public Frm_BookNow_S1(int getSelectedGuest, string checkIn, string checkOut, int getSelectedTime_CheckIn, int getSelectedTime_CheckOut, int getSelected_CheckIn_AM_PM, int getSelected_CheckOut_AM_PM, int roomType,
+        public Frm_BookNow_S1(int getSelectedGuest, DateTime checkIn, DateTime checkOut, int getSelectedTime_CheckIn, int getSelectedTime_CheckOut, int getSelected_CheckIn_AM_PM, int getSelected_CheckOut_AM_PM, int roomType,
                         string fname, string lname, string email, long phone, string address)
         {
             InitializeComponent();
@@ -58,8 +61,8 @@ namespace HMS
         private void Frm_BookNow_S1_Load(object sender, EventArgs e)
         {
             cbBox_Guest.SelectedIndex = getSelectedGuest;
-            DateTimePicker_CheckIn.Text = checkIn;
-            DateTimePicker_CheckOut.Text = checkOut;
+            DateTimePicker_CheckIn.Value = checkIn;
+            DateTimePicker_CheckOut.Value = checkOut;
             cbBox_CheckIn_Time.SelectedIndex = getSelectedTime_CheckIn;
             cbBox_CheckIn_AM_PM.SelectedIndex = getSelected_CheckIn_AM_PM;
             cbBox_CheckOut_Time.SelectedIndex = getSelectedTime_CheckOut;
@@ -79,8 +82,8 @@ namespace HMS
         {
             //DateTimePicker_CheckIn.Value = checkIn;
             //DateTimePicker_CheckOut.Value = checkOut;
-            checkIn = DateTimePicker_CheckIn.Value.Date.ToString();
-            checkOut = DateTimePicker_CheckOut.Value.Date.ToString();
+            checkIn = DateTimePicker_CheckIn.Value.Date;
+            checkOut = DateTimePicker_CheckOut.Value.Date;
 
 
             this.Hide();

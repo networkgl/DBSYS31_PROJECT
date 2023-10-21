@@ -55,7 +55,7 @@
             this.txtboxUsername.Multiline = true;
             this.txtboxUsername.Name = "txtboxUsername";
             this.txtboxUsername.Size = new System.Drawing.Size(214, 32);
-            this.txtboxUsername.TabIndex = 19;
+            this.txtboxUsername.TabIndex = 1;
             this.txtboxUsername.Enter += new System.EventHandler(this.txtboxUsername_Enter);
             this.txtboxUsername.Leave += new System.EventHandler(this.txtboxUsername_Leave);
             // 
@@ -85,7 +85,7 @@
             this.txtboxPassword.Name = "txtboxPassword";
             this.txtboxPassword.PasswordChar = '*';
             this.txtboxPassword.Size = new System.Drawing.Size(214, 32);
-            this.txtboxPassword.TabIndex = 22;
+            this.txtboxPassword.TabIndex = 2;
             this.txtboxPassword.Enter += new System.EventHandler(this.txtboxPassword_Enter);
             this.txtboxPassword.Leave += new System.EventHandler(this.txtboxPassword_Leave);
             // 
@@ -104,7 +104,7 @@
             this.btnLogin.Location = new System.Drawing.Point(50, 371);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(206, 38);
-            this.btnLogin.TabIndex = 24;
+            this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 

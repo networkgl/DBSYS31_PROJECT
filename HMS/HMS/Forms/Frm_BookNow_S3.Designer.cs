@@ -29,101 +29,39 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnNext = new System.Windows.Forms.Button();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.txtbox_Address = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbox_Phone = new Guna.UI2.WinForms.Guna2TextBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.txtbox_Email = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbox_lName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbox_fName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroProgressBar3 = new MetroFramework.Controls.MetroProgressBar();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.timer_pbar = new System.Windows.Forms.Timer(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
+            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
+            this.metroProgressBar3 = new MetroFramework.Controls.MetroProgressBar();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2CircleButton2
-            // 
-            this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.Black;
-            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(333, 45);
-            this.guna2CircleButton2.Name = "guna2CircleButton2";
-            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton2.TabIndex = 44;
-            this.guna2CircleButton2.Text = "2";
-            // 
-            // guna2CircleButton1
-            // 
-            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.Black;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(134, 43);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton1.TabIndex = 43;
-            this.guna2CircleButton1.Text = "1";
-            // 
-            // guna2CircleButton3
-            // 
-            this.guna2CircleButton3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton3.FillColor = System.Drawing.Color.Black;
-            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton3.Location = new System.Drawing.Point(532, 45);
-            this.guna2CircleButton3.Name = "guna2CircleButton3";
-            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton3.Size = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton3.TabIndex = 45;
-            this.guna2CircleButton3.Text = "3";
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(17, 9);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(166, 25);
-            this.metroLabel7.TabIndex = 63;
-            this.metroLabel7.Text = "BOOKING SECTION";
             // 
             // guna2CustomGradientPanel1
             // 
@@ -151,62 +89,35 @@
             this.btnNext.Text = "NEXT";
             this.btnNext.UseVisualStyleBackColor = false;
             // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(121, 196);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(73, 19);
-            this.metroLabel8.TabIndex = 65;
-            this.metroLabel8.Text = "First Name";
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.metroLabel10);
-            this.panel1.Controls.Add(this.metroLabel9);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.guna2CircleButton2);
+            this.panel1.Controls.Add(this.guna2CircleButton1);
+            this.panel1.Controls.Add(this.guna2CircleButton3);
+            this.panel1.Controls.Add(this.metroProgressBar1);
+            this.panel1.Controls.Add(this.guna2CircleButton4);
+            this.panel1.Controls.Add(this.metroProgressBar2);
+            this.panel1.Controls.Add(this.metroProgressBar3);
             this.panel1.Controls.Add(this.txtbox_Address);
             this.panel1.Controls.Add(this.txtbox_Phone);
-            this.panel1.Controls.Add(this.metroLabel6);
-            this.panel1.Controls.Add(this.metroLabel5);
             this.panel1.Controls.Add(this.txtbox_Email);
             this.panel1.Controls.Add(this.txtbox_lName);
             this.panel1.Controls.Add(this.txtbox_fName);
             this.panel1.Controls.Add(this.btnBack);
-            this.panel1.Controls.Add(this.guna2CircleButton2);
-            this.panel1.Controls.Add(this.metroLabel1);
-            this.panel1.Controls.Add(this.metroLabel8);
-            this.panel1.Controls.Add(this.guna2CircleButton1);
-            this.panel1.Controls.Add(this.guna2CircleButton3);
-            this.panel1.Controls.Add(this.metroLabel2);
-            this.panel1.Controls.Add(this.metroProgressBar1);
-            this.panel1.Controls.Add(this.metroLabel3);
-            this.panel1.Controls.Add(this.guna2CircleButton4);
-            this.panel1.Controls.Add(this.metroLabel4);
-            this.panel1.Controls.Add(this.metroProgressBar2);
-            this.panel1.Controls.Add(this.metroProgressBar3);
             this.panel1.Location = new System.Drawing.Point(17, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(898, 438);
             this.panel1.TabIndex = 67;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(121, 320);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(56, 19);
-            this.metroLabel10.TabIndex = 82;
-            this.metroLabel10.Text = "Address";
-            // 
-            // metroLabel9
-            // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(121, 289);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(46, 19);
-            this.metroLabel9.TabIndex = 81;
-            this.metroLabel9.Text = "Phone";
             // 
             // txtbox_Address
             // 
@@ -252,24 +163,6 @@
             this.txtbox_Phone.Size = new System.Drawing.Size(599, 25);
             this.txtbox_Phone.TabIndex = 79;
             this.txtbox_Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Phone_KeyPress);
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(121, 258);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(41, 19);
-            this.metroLabel6.TabIndex = 78;
-            this.metroLabel6.Text = "Email";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(121, 227);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(71, 19);
-            this.metroLabel5.TabIndex = 77;
-            this.metroLabel5.Text = "Last Name";
             // 
             // txtbox_Email
             // 
@@ -337,6 +230,26 @@
             this.txtbox_fName.Size = new System.Drawing.Size(599, 25);
             this.txtbox_fName.TabIndex = 74;
             // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.label5);
+            this.guna2ShadowPanel1.Controls.Add(this.panel1);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2CustomGradientPanel1);
+            this.guna2ShadowPanel1.Controls.Add(this.btnNext);
+            this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(938, 559);
+            this.guna2ShadowPanel1.TabIndex = 62;
+            this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.Transparent;
@@ -353,40 +266,104 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // metroLabel1
+            // label4
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(327, 88);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(50, 19);
-            this.metroLabel1.TabIndex = 54;
-            this.metroLabel1.Text = "Rooms";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(107, 84);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 21);
+            this.label4.TabIndex = 93;
+            this.label4.Text = "Choose Date";
             // 
-            // metroLabel2
+            // label3
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(512, 88);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(83, 19);
-            this.metroLabel2.TabIndex = 55;
-            this.metroLabel2.Text = "Guest Details";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(703, 86);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 21);
+            this.label3.TabIndex = 92;
+            this.label3.Text = "Confirmation";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(508, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 21);
+            this.label2.TabIndex = 91;
+            this.label2.Text = "Guest Details";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(330, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 21);
+            this.label1.TabIndex = 90;
+            this.label1.Text = "Rooms";
+            // 
+            // guna2CircleButton2
+            // 
+            this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.Black;
+            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton2.Location = new System.Drawing.Point(339, 43);
+            this.guna2CircleButton2.Name = "guna2CircleButton2";
+            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton2.Size = new System.Drawing.Size(40, 40);
+            this.guna2CircleButton2.TabIndex = 84;
+            this.guna2CircleButton2.Text = "2";
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.Black;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.Location = new System.Drawing.Point(140, 41);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(40, 40);
+            this.guna2CircleButton1.TabIndex = 83;
+            this.guna2CircleButton1.Text = "1";
+            // 
+            // guna2CircleButton3
+            // 
+            this.guna2CircleButton3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2CircleButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2CircleButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2CircleButton3.FillColor = System.Drawing.Color.Black;
+            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton3.Location = new System.Drawing.Point(538, 43);
+            this.guna2CircleButton3.Name = "guna2CircleButton3";
+            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton3.Size = new System.Drawing.Size(40, 40);
+            this.guna2CircleButton3.TabIndex = 85;
+            this.guna2CircleButton3.Text = "3";
             // 
             // metroProgressBar1
             // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(173, 63);
+            this.metroProgressBar1.Location = new System.Drawing.Point(179, 61);
             this.metroProgressBar1.Name = "metroProgressBar1";
             this.metroProgressBar1.Size = new System.Drawing.Size(161, 5);
-            this.metroProgressBar1.TabIndex = 46;
+            this.metroProgressBar1.TabIndex = 86;
             this.metroProgressBar1.Value = 100;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(116, 86);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(84, 19);
-            this.metroLabel3.TabIndex = 56;
-            this.metroLabel3.Text = "Choose Date";
             // 
             // guna2CircleButton4
             // 
@@ -398,56 +375,87 @@
             this.guna2CircleButton4.FillColor = System.Drawing.Color.Black;
             this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.Location = new System.Drawing.Point(732, 45);
+            this.guna2CircleButton4.Location = new System.Drawing.Point(738, 43);
             this.guna2CircleButton4.Name = "guna2CircleButton4";
             this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton4.Size = new System.Drawing.Size(40, 40);
-            this.guna2CircleButton4.TabIndex = 48;
+            this.guna2CircleButton4.TabIndex = 88;
             this.guna2CircleButton4.Text = "4";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(713, 88);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(86, 19);
-            this.metroLabel4.TabIndex = 57;
-            this.metroLabel4.Text = "Confirmation";
             // 
             // metroProgressBar2
             // 
-            this.metroProgressBar2.Location = new System.Drawing.Point(372, 63);
+            this.metroProgressBar2.Location = new System.Drawing.Point(378, 61);
             this.metroProgressBar2.Name = "metroProgressBar2";
             this.metroProgressBar2.Size = new System.Drawing.Size(161, 5);
-            this.metroProgressBar2.TabIndex = 47;
+            this.metroProgressBar2.TabIndex = 87;
             this.metroProgressBar2.Value = 100;
             // 
             // metroProgressBar3
             // 
-            this.metroProgressBar3.Location = new System.Drawing.Point(572, 63);
+            this.metroProgressBar3.Location = new System.Drawing.Point(578, 61);
             this.metroProgressBar3.Name = "metroProgressBar3";
             this.metroProgressBar3.Size = new System.Drawing.Size(161, 5);
-            this.metroProgressBar3.TabIndex = 49;
+            this.metroProgressBar3.TabIndex = 89;
             // 
-            // guna2ShadowPanel1
+            // label5
             // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.panel1);
-            this.guna2ShadowPanel1.Controls.Add(this.metroLabel7);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2CustomGradientPanel1);
-            this.guna2ShadowPanel1.Controls.Add(this.btnNext);
-            this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(938, 559);
-            this.guna2ShadowPanel1.TabIndex = 62;
-            this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(17, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(185, 22);
+            this.label5.TabIndex = 94;
+            this.label5.Text = "BOOKING SECTION";
             // 
-            // errorProvider1
+            // label6
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(116, 195);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 20);
+            this.label6.TabIndex = 94;
+            this.label6.Text = "First Name";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(114, 226);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 20);
+            this.label7.TabIndex = 95;
+            this.label7.Text = "Last Name";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(153, 257);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 20);
+            this.label8.TabIndex = 96;
+            this.label8.Text = "Email";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(81, 287);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 20);
+            this.label9.TabIndex = 97;
+            this.label9.Text = "Phone Number";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(126, 314);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 20);
+            this.label10.TabIndex = 98;
+            this.label10.Text = "Addresss";
             // 
             // Frm_BookNow_S3
             // 
@@ -471,34 +479,34 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private System.Windows.Forms.Button btnNext;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
         private System.Windows.Forms.Panel panel1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar2;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar3;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.Button btnBack;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_Email;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_lName;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_fName;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_Address;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_Phone;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
         private System.Windows.Forms.Timer timer_pbar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
+        private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
+        private MetroFramework.Controls.MetroProgressBar metroProgressBar2;
+        private MetroFramework.Controls.MetroProgressBar metroProgressBar3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

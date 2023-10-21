@@ -37,6 +37,8 @@ namespace HMS
             var bn = new Frm_BookNow_S1();
             bn.Show();
             this.Hide();
+
+            //Frm_BookNow_S1.GetInstance();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

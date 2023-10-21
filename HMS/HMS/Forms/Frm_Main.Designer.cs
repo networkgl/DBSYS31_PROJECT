@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.systemLog = new System.Windows.Forms.Label();
-            this.pnl_main = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnClient = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.systemLog = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnl_main = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,7 +47,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.button5);
@@ -62,16 +62,112 @@
             this.panel2.Size = new System.Drawing.Size(219, 636);
             this.panel2.TabIndex = 1;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Image = global::HMS.Properties.Resources.icons8_logout_18;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(0, 555);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnLogout.Size = new System.Drawing.Size(219, 42);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "          Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 348);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(219, 207);
             this.panel4.TabIndex = 3;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = global::HMS.Properties.Resources.icons8_reservation_18;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(0, 306);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(219, 42);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "          Reservation";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = global::HMS.Properties.Resources.icons8_room_18;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(0, 264);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(219, 42);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "          Room";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // btnClient
+            // 
+            this.btnClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnClient.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClient.FlatAppearance.BorderSize = 0;
+            this.btnClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClient.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClient.Image = global::HMS.Properties.Resources.icons8_client_18;
+            this.btnClient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClient.Location = new System.Drawing.Point(0, 222);
+            this.btnClient.Name = "btnClient";
+            this.btnClient.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnClient.Size = new System.Drawing.Size(219, 42);
+            this.btnClient.TabIndex = 4;
+            this.btnClient.Text = "          Client";
+            this.btnClient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClient.UseVisualStyleBackColor = false;
+            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Image = global::HMS.Properties.Resources.icons8_dashboard_15;
+            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.Location = new System.Drawing.Point(0, 180);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnDashboard.Size = new System.Drawing.Size(219, 42);
+            this.btnDashboard.TabIndex = 3;
+            this.btnDashboard.Text = "          Dashboard";
+            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 145);
             this.panel3.Name = "panel3";
@@ -80,6 +176,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.panel1.Controls.Add(this.systemLog);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -98,103 +195,6 @@
             this.systemLog.TabIndex = 7;
             this.systemLog.Text = "Administrator";
             // 
-            // pnl_main
-            // 
-            this.pnl_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_main.Location = new System.Drawing.Point(219, 0);
-            this.pnl_main.Name = "pnl_main";
-            this.pnl_main.Size = new System.Drawing.Size(880, 636);
-            this.pnl_main.TabIndex = 2;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Image = global::HMS.Properties.Resources.icons8_logout_18;
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 555);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnLogout.Size = new System.Drawing.Size(219, 42);
-            this.btnLogout.TabIndex = 7;
-            this.btnLogout.Text = "          Logout";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = global::HMS.Properties.Resources.icons8_reservation_18;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 306);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(219, 42);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "          Reservation";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::HMS.Properties.Resources.icons8_room_18;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 264);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(219, 42);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "          Room";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btnClient
-            // 
-            this.btnClient.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClient.FlatAppearance.BorderSize = 0;
-            this.btnClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClient.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClient.Image = global::HMS.Properties.Resources.icons8_client_18;
-            this.btnClient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClient.Location = new System.Drawing.Point(0, 222);
-            this.btnClient.Name = "btnClient";
-            this.btnClient.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnClient.Size = new System.Drawing.Size(219, 42);
-            this.btnClient.TabIndex = 4;
-            this.btnClient.Text = "          Client";
-            this.btnClient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClient.UseVisualStyleBackColor = true;
-            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
-            // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDashboard.Image = global::HMS.Properties.Resources.icons8_dashboard_15;
-            this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 180);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(219, 42);
-            this.btnDashboard.TabIndex = 3;
-            this.btnDashboard.Text = "          Dashboard";
-            this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashboard.UseVisualStyleBackColor = true;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::HMS.Properties.Resources.icons8_user_64;
@@ -204,6 +204,14 @@
             this.pictureBox1.Size = new System.Drawing.Size(92, 79);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // pnl_main
+            // 
+            this.pnl_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_main.Location = new System.Drawing.Point(219, 0);
+            this.pnl_main.Name = "pnl_main";
+            this.pnl_main.Size = new System.Drawing.Size(880, 636);
+            this.pnl_main.TabIndex = 2;
             // 
             // Frm_Main
             // 

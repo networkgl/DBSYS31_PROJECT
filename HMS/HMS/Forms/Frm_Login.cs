@@ -16,6 +16,7 @@ namespace HMS.Forms
         private System.Drawing.Image showPassImage = Properties.Resources.view__1_;
         private System.Drawing.Image notShowPassImage = Properties.Resources.hidden__1_;
         private int toggleShow = 0;
+        private bool firstRun = false;
         public Frm_Login()
         {
             InitializeComponent();
@@ -31,11 +32,13 @@ namespace HMS.Forms
         }
         private void Frm_Login_Load(object sender, EventArgs e)
         {
+            firstRun = true;
             txtboxUsername.Text = "Username";
             txtboxPassword.Text = "Password";
 
             txtboxUsername.ForeColor = System.Drawing.Color.Gray;
             txtboxPassword.ForeColor = System.Drawing.Color.Gray;
+            LoginTextBox();
         }
 
         private void txtboxUsername_Enter(object sender, EventArgs e)
@@ -45,10 +48,16 @@ namespace HMS.Forms
                 txtboxUsername.Text = "";
                 txtboxUsername.ForeColor = System.Drawing.Color.Black;
             }
+            Console.WriteLine(toggleShow);
         }
 
         private void txtboxPassword_Enter(object sender, EventArgs e)
         {
+            if (firstRun)
+            {
+                LoginTextBox();
+                firstRun = false;
+            }
             // Clear the textbox and change the text color when it's in focus
             if (txtboxPassword.Text == "Password")
             {
@@ -84,21 +93,7 @@ namespace HMS.Forms
 
         private void btnShowPassword_Click(object sender, EventArgs e)
         {
-            toggleShow++;
-            if (toggleShow % 2 == 0)
-            {
-                txtboxPassword.UseSystemPasswordChar = false;
-                btnShowPassword.BackgroundImage = notShowPassImage;
-                btnShowPassword.BackgroundImageLayout = ImageLayout.Center;
-            }
-            else
-            {
-                txtboxPassword.UseSystemPasswordChar = true;
-
-                // Set the background image of the panel
-                btnShowPassword.BackgroundImage = showPassImage;
-                btnShowPassword.BackgroundImageLayout = ImageLayout.Center;
-            }
+            LoginTextBox();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -111,6 +106,24 @@ namespace HMS.Forms
             this.Hide();
             var main = new Frm_Main();
             main.Show();
+        }
+
+        private void LoginTextBox()
+        {
+            toggleShow++;
+            if (toggleShow % 2 == 0)
+            {
+                txtboxPassword.UseSystemPasswordChar = false;
+                btnShowPassword.BackgroundImage = notShowPassImage;
+                btnShowPassword.BackgroundImageLayout = ImageLayout.Center;
+            }
+            else
+            {
+                txtboxPassword.UseSystemPasswordChar = true;
+                btnShowPassword.BackgroundImage = showPassImage;
+                btnShowPassword.BackgroundImageLayout = ImageLayout.Center;
+            }
+            Console.WriteLine(toggleShow);
         }
     }
 }

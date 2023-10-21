@@ -37,28 +37,28 @@
             this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.DateTimePicker_CheckIn = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DateTimePicker_CheckOut = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.cbBox_CheckOut_AM_PM = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.cbBox_CheckOut_Time = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.cbBox_CheckIn_AM_PM = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.cbBox_CheckIn_Time = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.cbBox_Guest = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -154,8 +154,9 @@
             // 
             // DateTimePicker_CheckIn
             // 
+            this.DateTimePicker_CheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckIn.Checked = true;
-            this.DateTimePicker_CheckIn.FillColor = System.Drawing.Color.White;
+            this.DateTimePicker_CheckIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimePicker_CheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.DateTimePicker_CheckIn.Location = new System.Drawing.Point(35, 280);
@@ -168,8 +169,9 @@
             // 
             // DateTimePicker_CheckOut
             // 
+            this.DateTimePicker_CheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckOut.Checked = true;
-            this.DateTimePicker_CheckOut.FillColor = System.Drawing.Color.White;
+            this.DateTimePicker_CheckOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimePicker_CheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.DateTimePicker_CheckOut.Location = new System.Drawing.Point(441, 280);
@@ -180,72 +182,16 @@
             this.DateTimePicker_CheckOut.TabIndex = 51;
             this.DateTimePicker_CheckOut.Value = new System.DateTime(2023, 10, 15, 17, 20, 48, 197);
             // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(291, 85);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(50, 19);
-            this.metroLabel1.TabIndex = 54;
-            this.metroLabel1.Text = "Rooms";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(476, 85);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(83, 19);
-            this.metroLabel2.TabIndex = 55;
-            this.metroLabel2.Text = "Guest Details";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(80, 83);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(84, 19);
-            this.metroLabel3.TabIndex = 56;
-            this.metroLabel3.Text = "Choose Date";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(677, 85);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(86, 19);
-            this.metroLabel4.TabIndex = 57;
-            this.metroLabel4.Text = "Confirmation";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel5.Location = new System.Drawing.Point(35, 247);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(77, 25);
-            this.metroLabel5.TabIndex = 59;
-            this.metroLabel5.Text = "Check-in";
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel6.Location = new System.Drawing.Point(441, 247);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(88, 25);
-            this.metroLabel6.TabIndex = 60;
-            this.metroLabel6.Text = "Check-out";
-            // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.label5);
             this.guna2ShadowPanel1.Controls.Add(this.btnBack);
             this.guna2ShadowPanel1.Controls.Add(this.panel1);
-            this.guna2ShadowPanel1.Controls.Add(this.metroLabel7);
             this.guna2ShadowPanel1.Controls.Add(this.guna2CustomGradientPanel1);
             this.guna2ShadowPanel1.Controls.Add(this.btnNext);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
@@ -254,45 +200,35 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.metroLabel11);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cbBox_CheckOut_AM_PM);
-            this.panel1.Controls.Add(this.metroLabel12);
             this.panel1.Controls.Add(this.cbBox_CheckOut_Time);
-            this.panel1.Controls.Add(this.metroLabel10);
             this.panel1.Controls.Add(this.cbBox_CheckIn_AM_PM);
-            this.panel1.Controls.Add(this.metroLabel9);
             this.panel1.Controls.Add(this.cbBox_CheckIn_Time);
             this.panel1.Controls.Add(this.guna2CircleButton2);
-            this.panel1.Controls.Add(this.metroLabel1);
-            this.panel1.Controls.Add(this.metroLabel8);
             this.panel1.Controls.Add(this.guna2CircleButton1);
             this.panel1.Controls.Add(this.cbBox_Guest);
             this.panel1.Controls.Add(this.guna2CircleButton3);
-            this.panel1.Controls.Add(this.metroLabel2);
             this.panel1.Controls.Add(this.DateTimePicker_CheckOut);
             this.panel1.Controls.Add(this.metroProgressBar1);
-            this.panel1.Controls.Add(this.metroLabel3);
-            this.panel1.Controls.Add(this.metroLabel6);
             this.panel1.Controls.Add(this.DateTimePicker_CheckIn);
             this.panel1.Controls.Add(this.guna2CircleButton4);
-            this.panel1.Controls.Add(this.metroLabel4);
-            this.panel1.Controls.Add(this.metroLabel5);
             this.panel1.Controls.Add(this.metroProgressBar2);
             this.panel1.Controls.Add(this.metroProgressBar3);
             this.panel1.Location = new System.Drawing.Point(50, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(838, 412);
             this.panel1.TabIndex = 67;
-            // 
-            // metroLabel11
-            // 
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel11.Location = new System.Drawing.Point(629, 342);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(78, 25);
-            this.metroLabel11.TabIndex = 73;
-            this.metroLabel11.Text = "am / pm";
             // 
             // cbBox_CheckOut_AM_PM
             // 
@@ -313,16 +249,6 @@
             this.cbBox_CheckOut_AM_PM.Size = new System.Drawing.Size(165, 36);
             this.cbBox_CheckOut_AM_PM.TabIndex = 72;
             this.cbBox_CheckOut_AM_PM.SelectedIndexChanged += new System.EventHandler(this.cbBox_CheckOut_AM_PM_SelectedIndexChanged);
-            // 
-            // metroLabel12
-            // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel12.Location = new System.Drawing.Point(441, 342);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(49, 25);
-            this.metroLabel12.TabIndex = 71;
-            this.metroLabel12.Text = "Time";
             // 
             // cbBox_CheckOut_Time
             // 
@@ -354,16 +280,6 @@
             this.cbBox_CheckOut_Time.TabIndex = 70;
             this.cbBox_CheckOut_Time.SelectedIndexChanged += new System.EventHandler(this.cbBox_CheckOut_Time_SelectedIndexChanged);
             // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel10.Location = new System.Drawing.Point(223, 342);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(78, 25);
-            this.metroLabel10.TabIndex = 69;
-            this.metroLabel10.Text = "am / pm";
-            // 
             // cbBox_CheckIn_AM_PM
             // 
             this.cbBox_CheckIn_AM_PM.BackColor = System.Drawing.Color.Transparent;
@@ -383,16 +299,6 @@
             this.cbBox_CheckIn_AM_PM.Size = new System.Drawing.Size(165, 36);
             this.cbBox_CheckIn_AM_PM.TabIndex = 68;
             this.cbBox_CheckIn_AM_PM.SelectedIndexChanged += new System.EventHandler(this.cbBox_CheckIn_AM_PM_SelectedIndexChanged);
-            // 
-            // metroLabel9
-            // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel9.Location = new System.Drawing.Point(35, 342);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(49, 25);
-            this.metroLabel9.TabIndex = 67;
-            this.metroLabel9.Text = "Time";
             // 
             // cbBox_CheckIn_Time
             // 
@@ -424,16 +330,6 @@
             this.cbBox_CheckIn_Time.TabIndex = 66;
             this.cbBox_CheckIn_Time.SelectedIndexChanged += new System.EventHandler(this.cbBox_CheckIn_Time_SelectedIndexChanged);
             // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel8.Location = new System.Drawing.Point(35, 161);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(55, 25);
-            this.metroLabel8.TabIndex = 65;
-            this.metroLabel8.Text = "Guest";
-            // 
             // cbBox_Guest
             // 
             this.cbBox_Guest.BackColor = System.Drawing.Color.Transparent;
@@ -453,17 +349,6 @@
             this.cbBox_Guest.Size = new System.Drawing.Size(759, 36);
             this.cbBox_Guest.TabIndex = 64;
             this.cbBox_Guest.SelectedIndexChanged += new System.EventHandler(this.cbBox_Guest_SelectedIndexChanged);
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(17, 9);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(166, 25);
-            this.metroLabel7.TabIndex = 63;
-            this.metroLabel7.Text = "BOOKING SECTION";
             // 
             // guna2CustomGradientPanel1
             // 
@@ -508,6 +393,126 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(288, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 21);
+            this.label1.TabIndex = 74;
+            this.label1.Text = "Rooms";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(466, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 21);
+            this.label2.TabIndex = 75;
+            this.label2.Text = "Guest Details";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(661, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 21);
+            this.label3.TabIndex = 76;
+            this.label3.Text = "Confirmation";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(65, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 21);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "Choose Date";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(185, 22);
+            this.label5.TabIndex = 78;
+            this.label5.Text = "BOOKING SECTION";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(31, 174);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 21);
+            this.label6.TabIndex = 78;
+            this.label6.Text = "Guest";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(31, 256);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 21);
+            this.label7.TabIndex = 79;
+            this.label7.Text = "Check - In";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(437, 256);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 21);
+            this.label8.TabIndex = 80;
+            this.label8.Text = "Check - Out";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(31, 349);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 21);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Time";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(437, 349);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 21);
+            this.label10.TabIndex = 82;
+            this.label10.Text = "Time";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(219, 349);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(81, 21);
+            this.label11.TabIndex = 83;
+            this.label11.Text = "am | pm";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(625, 346);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 21);
+            this.label12.TabIndex = 84;
+            this.label12.Text = "am | pm";
+            // 
             // Frm_BookNow_S1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -537,29 +542,29 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar2;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePicker_CheckOut;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePicker_CheckIn;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private System.Windows.Forms.Button btnNext;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_Guest;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_CheckIn_AM_PM;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_CheckIn_Time;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_CheckOut_AM_PM;
-        private MetroFramework.Controls.MetroLabel metroLabel12;
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_CheckOut_Time;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }

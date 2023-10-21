@@ -117,8 +117,15 @@
     <Compile Include="Forms\Frm_Dashboard.Designer.cs">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MoreInfo_S1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MoreInfo_S1.Designer.cs">
+      <DependentUpon>MoreInfo_S1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Utils\Constant.cs" />
     <EmbeddedResource Include="Forms\Frm_BookNow_S1.resx">
       <DependentUpon>Frm_BookNow_S1.cs</DependentUpon>
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MoreInfo_S1.resx">
+      <DependentUpon>MoreInfo_S1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -171,7 +181,6 @@
   <ItemGroup>
     <Folder Include="AppData\" />
     <Folder Include="Model\" />
-    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-sun-26-light.png" />
@@ -265,6 +274,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-back-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-next-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-next-left.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

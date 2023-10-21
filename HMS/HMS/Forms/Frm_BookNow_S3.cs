@@ -15,7 +15,7 @@ namespace HMS
         private string fname, lname, email, address;
         private long phone;
         private int getSelectedGuest, getSelectedTime_CheckIn, getSelectedTime_CheckOut, getSelected_CheckIn_AM_PM, getSelected_CheckOut_AM_PM;
-        string checkIn, checkOut;
+        private DateTime checkIn, checkOut;
 
         private void txtbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -32,7 +32,7 @@ namespace HMS
         {
             InitializeComponent();
         }
-        public Frm_BookNow_S3(int getSelectedGuest, string checkIn, string checkOut, int getSelectedTime_CheckIn, int getSelectedTime_CheckOut, int getSelected_CheckIn_AM_PM, int getSelected_CheckOut_AM_PM, int roomType,
+        public Frm_BookNow_S3(int getSelectedGuest, DateTime checkIn, DateTime checkOut, int getSelectedTime_CheckIn, int getSelectedTime_CheckOut, int getSelected_CheckIn_AM_PM, int getSelected_CheckOut_AM_PM, int roomType,
                                 string fname, string lname, string email, long phone, string address)
         {
             InitializeComponent();
@@ -83,7 +83,7 @@ namespace HMS
             fname = txtbox_fName.Text;
             lname = txtbox_lName.Text;
             email = txtbox_Email.Text;
-            if (txtbox_Phone.Text.Equals(string.Empty) )           
+            if (txtbox_Phone.Text.Equals(string.Empty))           
                 phone = 0;           
             else
                 phone = long.Parse(txtbox_Phone.Text);

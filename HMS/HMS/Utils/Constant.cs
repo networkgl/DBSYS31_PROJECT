@@ -10,10 +10,16 @@ namespace HMS
 {
     internal partial class Constant
     {
-        public static String roomtype, roomDetails_1, roomDetails_2, roomPrice, priceDetails;
-        public static System.Drawing.Image deluxeKing, preimeireDeluxe, filiSuite;
-        public static int selectedIndex;
+        public String roomtype, roomDetails_1, roomDetails_2, roomPrice, priceDetails;
+        public System.Drawing.Image deluxeKing, preimeireDeluxe, filiSuite;
+        public int selectedIndex;
 
+        private static Constant ct;
+
+        private Constant()
+        {
+
+        }
         public enum ErrorCode
         {
             Success = 0,
@@ -28,7 +34,7 @@ namespace HMS
 
         }
 
-        public static void RoomType()
+        public void RoomType()
         {
             switch (selectedIndex)
             {
@@ -54,6 +60,14 @@ namespace HMS
                     priceDetails = "Per Night\r\n₱20,000 Total for 1 night\r\nExcluding Taxes & Fees";
                     break;
             }
+        }
+        public static Constant GetInstance()
+        {
+            if (ct == null)
+            {
+                ct = new Constant();
+            }
+            return ct;
         }
     }
 }
