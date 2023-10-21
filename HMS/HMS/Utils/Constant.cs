@@ -12,20 +12,16 @@ namespace HMS
 {
     internal partial class Constant
     {
-        //public String roomtype, roomDetails_1, roomPrice, priceDetails;
-        //public System.Drawing.Image deluxeKing, preimeireDeluxe, filiSuite;
-        //public int selectedIndex;
-
         private static Constant ct;
-        public string RoomType { get; set; }
-        public string RoomDetails { get; set; }
-        public string RoomPrice { get; set; }
-        public string PriceDetails { get; set; }
+        public static string RoomType { get; set; }
+        public static string RoomDetails { get; set; }
+        public static string RoomPrice { get; set; }
+        public static string PriceDetails { get; set; }
 
-        public Image DeluxeKing { get; set; }
-        public Image FiliSuite { get; set; }
-        public Image PreimeireDeluxe { get; set; }
-        public int RoomType_selectedIndex { get; set; }
+        public static Image DeluxeKing { get; set; }
+        public static Image FiliSuite { get; set; }
+        public static Image PreimeireDeluxe { get; set; }
+        public static int RoomType_selectedIndex { get; set; }
 
 
 
@@ -46,15 +42,15 @@ namespace HMS
             Admin = 3
 
         }
-        public static Constant GetInstance()
-        {
-            if (ct == null)
-            {
-                ct = new Constant();
-            }
-            return ct;
-        }
-        public void GetRoomType()
+        //public static Constant GetInstance()
+        //{
+        //    if (ct == null)
+        //    {
+        //        ct = new Constant();
+        //    }
+        //    return ct;
+        //}
+        public static void GetRoomType()
         {
             switch (RoomType_selectedIndex)
             {

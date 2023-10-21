@@ -38,7 +38,20 @@
             this.DateTimePicker_CheckIn = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DateTimePicker_CheckOut = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbBox_CheckOut_AM_PM = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbBox_CheckOut_Time = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbBox_CheckIn_AM_PM = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -46,19 +59,6 @@
             this.cbBox_Guest = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnNext = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -198,6 +198,32 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(938, 559);
             this.guna2ShadowPanel1.TabIndex = 61;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(185, 22);
+            this.label5.TabIndex = 78;
+            this.label5.Text = "BOOKING SECTION";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(17, 37);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 73;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label12);
@@ -230,6 +256,116 @@
             this.panel1.Size = new System.Drawing.Size(838, 412);
             this.panel1.TabIndex = 67;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(625, 349);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 21);
+            this.label12.TabIndex = 84;
+            this.label12.Text = "am | pm";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(219, 348);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(81, 21);
+            this.label11.TabIndex = 83;
+            this.label11.Text = "am | pm";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(437, 348);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 21);
+            this.label10.TabIndex = 82;
+            this.label10.Text = "Time";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(31, 349);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 21);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Time";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(437, 256);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 21);
+            this.label8.TabIndex = 80;
+            this.label8.Text = "Check - Out";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(31, 256);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 21);
+            this.label7.TabIndex = 79;
+            this.label7.Text = "Check - In";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(31, 174);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 21);
+            this.label6.TabIndex = 78;
+            this.label6.Text = "Guest";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(65, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 21);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "Choose Date";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(661, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 21);
+            this.label3.TabIndex = 76;
+            this.label3.Text = "Confirmation";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(466, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 21);
+            this.label2.TabIndex = 75;
+            this.label2.Text = "Guest Details";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(288, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 21);
+            this.label1.TabIndex = 74;
+            this.label1.Text = "Rooms";
+            // 
             // cbBox_CheckOut_AM_PM
             // 
             this.cbBox_CheckOut_AM_PM.BackColor = System.Drawing.Color.Transparent;
@@ -244,7 +380,7 @@
             this.cbBox_CheckOut_AM_PM.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.cbBox_CheckOut_AM_PM.Location = new System.Drawing.Point(629, 370);
+            this.cbBox_CheckOut_AM_PM.Location = new System.Drawing.Point(629, 372);
             this.cbBox_CheckOut_AM_PM.Name = "cbBox_CheckOut_AM_PM";
             this.cbBox_CheckOut_AM_PM.Size = new System.Drawing.Size(165, 36);
             this.cbBox_CheckOut_AM_PM.TabIndex = 72;
@@ -376,142 +512,6 @@
             this.btnNext.Text = "NEXT";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(17, 37);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(42, 31);
-            this.btnBack.TabIndex = 73;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(288, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 21);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Rooms";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(466, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 21);
-            this.label2.TabIndex = 75;
-            this.label2.Text = "Guest Details";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(661, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 21);
-            this.label3.TabIndex = 76;
-            this.label3.Text = "Confirmation";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(65, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 21);
-            this.label4.TabIndex = 77;
-            this.label4.Text = "Choose Date";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(185, 22);
-            this.label5.TabIndex = 78;
-            this.label5.Text = "BOOKING SECTION";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(31, 174);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 21);
-            this.label6.TabIndex = 78;
-            this.label6.Text = "Guest";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(31, 256);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 21);
-            this.label7.TabIndex = 79;
-            this.label7.Text = "Check - In";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(437, 256);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 21);
-            this.label8.TabIndex = 80;
-            this.label8.Text = "Check - Out";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(31, 349);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 21);
-            this.label9.TabIndex = 81;
-            this.label9.Text = "Time";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(437, 349);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 21);
-            this.label10.TabIndex = 82;
-            this.label10.Text = "Time";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(219, 349);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(81, 21);
-            this.label11.TabIndex = 83;
-            this.label11.Text = "am | pm";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(625, 346);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 21);
-            this.label12.TabIndex = 84;
-            this.label12.Text = "am | pm";
             // 
             // Frm_BookNow_S1
             // 
