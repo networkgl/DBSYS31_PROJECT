@@ -23,7 +23,6 @@ namespace HMS
         private DateTime checkIn = DateTime.Now;
         private DateTime checkOut = DateTime.Now;
 
-
         public Frm_BookNow_S1()
         {
             InitializeComponent();

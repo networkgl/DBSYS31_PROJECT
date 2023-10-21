@@ -16,7 +16,7 @@ namespace HMS.Forms
         private System.Drawing.Image showPassImage = Properties.Resources.view__1_;
         private System.Drawing.Image notShowPassImage = Properties.Resources.hidden__1_;
         private int toggleShow = 0;
-        private bool firstRun = false;
+        private bool? firstRun = null;
         public Frm_Login()
         {
             InitializeComponent();
@@ -53,11 +53,12 @@ namespace HMS.Forms
 
         private void txtboxPassword_Enter(object sender, EventArgs e)
         {
-            if (firstRun)
+            if ((bool)firstRun)
             {
                 LoginTextBox();
                 firstRun = false;
             }
+
             // Clear the textbox and change the text color when it's in focus
             if (txtboxPassword.Text == "Password")
             {
