@@ -55,10 +55,10 @@
             this.cbBox_CheckIn_Time = new Guna.UI2.WinForms.Guna2ComboBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.cbBox_Guest = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnNext = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -239,8 +239,8 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.btnBack);
             this.guna2ShadowPanel1.Controls.Add(this.panel1);
-            this.guna2ShadowPanel1.Controls.Add(this.btnExit);
             this.guna2ShadowPanel1.Controls.Add(this.metroLabel7);
             this.guna2ShadowPanel1.Controls.Add(this.guna2CustomGradientPanel1);
             this.guna2ShadowPanel1.Controls.Add(this.btnNext);
@@ -454,23 +454,6 @@
             this.cbBox_Guest.TabIndex = 64;
             this.cbBox_Guest.SelectedIndexChanged += new System.EventHandler(this.cbBox_Guest_SelectedIndexChanged);
             // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.BackgroundImage = global::HMS.Properties.Resources.icons8_close_26;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExit.Location = new System.Drawing.Point(906, 9);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(20, 22);
-            this.btnExit.TabIndex = 66;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
@@ -508,6 +491,22 @@
             this.btnNext.Text = "NEXT";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(17, 37);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 73;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Frm_BookNow_S1
             // 
@@ -552,7 +551,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_Guest;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_CheckIn_AM_PM;
         private MetroFramework.Controls.MetroLabel metroLabel9;
@@ -562,5 +560,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_CheckOut_AM_PM;
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_CheckOut_Time;
+        private System.Windows.Forms.Button btnBack;
     }
 }

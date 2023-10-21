@@ -24,7 +24,6 @@ namespace HMS
         public Frm_BookNow_S2()
         {
             InitializeComponent();
-            //checkIn = new DateTime();
         }
         public Frm_BookNow_S2(int getSelectedGuest, string checkIn, string checkOut, int getSelectedTime_CheckIn, int getSelectedTime_CheckOut, int getSelected_CheckIn_AM_PM, int getSelected_CheckOut_AM_PM, int roomType,
                                 string fname, string lname, string email, long phone, string address)
@@ -57,7 +56,7 @@ namespace HMS
         }
         private void Frm_BookNow_S2_Load(object sender, EventArgs e)
         {
-            Constant.DeluxeKing(); // Call the method to set initial values
+            Constant.RoomType(); // Call the method to set initial values
 
             cbBox_roomType.SelectedIndex = roomType;
         }
@@ -100,7 +99,7 @@ namespace HMS
             {
                 Constant.selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
 
-                Constant.DeluxeKing(); //Re initialize the Constant Class to Refresh Values
+                Constant.RoomType(); //Re initialize the Constant Class to Refresh Values
 
                 pnl_roompicture.BackgroundImage = Constant.deluxeKing;
                 lbl_roomType.Text = Constant.roomtype;
@@ -112,7 +111,7 @@ namespace HMS
             {
                 Constant.selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
 
-                Constant.DeluxeKing(); //Re initialize the Constant Class to Refresh Values
+                Constant.RoomType(); //Re initialize the Constant Class to Refresh Values
 
                 pnl_roompicture.BackgroundImage = Constant.preimeireDeluxe;
                 lbl_roomType.Text = Constant.roomtype;
@@ -124,7 +123,7 @@ namespace HMS
             {
                 Constant.selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
 
-                Constant.DeluxeKing(); //Re initialize the Constant Class to Refresh Values
+                Constant.RoomType(); //Re initialize the Constant Class to Refresh Values
 
                 pnl_roompicture.BackgroundImage = Constant.filiSuite;
                 lbl_roomType.Text = Constant.roomtype;

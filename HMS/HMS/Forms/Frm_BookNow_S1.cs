@@ -67,6 +67,14 @@ namespace HMS
 
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var hp = new Frm_HomePage();
+            hp.Show();
+        }
+
         private void btnNext_Click(object sender, EventArgs e)
         {
             //DateTimePicker_CheckIn.Value = checkIn;
