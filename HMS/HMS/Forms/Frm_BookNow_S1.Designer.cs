@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -59,8 +60,12 @@
             this.cbBox_Guest = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnNext = new System.Windows.Forms.Button();
+            this.CurrentDate = new System.Windows.Forms.Timer(this.components);
+            this.lblSystemTime = new System.Windows.Forms.Label();
+            this.errorProvider_S1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2CircleButton1
@@ -185,6 +190,7 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.lblSystemTime);
             this.guna2ShadowPanel1.Controls.Add(this.label5);
             this.guna2ShadowPanel1.Controls.Add(this.btnBack);
             this.guna2ShadowPanel1.Controls.Add(this.panel1);
@@ -513,6 +519,25 @@
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // CurrentDate
+            // 
+            this.CurrentDate.Tick += new System.EventHandler(this.CurrentDate_Tick);
+            // 
+            // lblSystemTime
+            // 
+            this.lblSystemTime.AutoSize = true;
+            this.lblSystemTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.lblSystemTime.Location = new System.Drawing.Point(635, 9);
+            this.lblSystemTime.Name = "lblSystemTime";
+            this.lblSystemTime.Size = new System.Drawing.Size(151, 19);
+            this.lblSystemTime.TabIndex = 79;
+            this.lblSystemTime.Text = "BOOKING SECTION";
+            // 
+            // errorProvider_S1
+            // 
+            this.errorProvider_S1.ContainerControl = this;
+            // 
             // Frm_BookNow_S1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,6 +555,7 @@
             this.guna2ShadowPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -566,5 +592,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblSystemTime;
+        public System.Windows.Forms.Timer CurrentDate;
+        private System.Windows.Forms.ErrorProvider errorProvider_S1;
     }
 }

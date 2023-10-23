@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -16,7 +17,7 @@ namespace HMS
 {
     public partial class Frm_BookNow_S2 : Form
     {
-        public int roomType { get; set; }
+        public int RoomType { get; set; }
         private static Frm_BookNow_S2 s2;
         private Frm_BookNow_S2()
         {
@@ -46,11 +47,26 @@ namespace HMS
         }
         private void Frm_BookNow_S2_Load(object sender, EventArgs e)
         {
+            CurrentDate.Start();
+            UpdateDateTime();
+
             Constant.GetRoomType();
 
-            cbBox_roomType.SelectedIndex = roomType;
+            cbBox_roomType.SelectedIndex = RoomType;
         }
 
+        private void CurrentDate_Tick(object sender, EventArgs e)
+        {
+            UpdateDateTime();
+        }
+
+        public void UpdateDateTime()
+        {
+            var currentDateTime = DateTime.Now;
+            var culture = new CultureInfo("en-PH"); // Specify the desired culture
+            lblSystemTime.Text = currentDateTime.ToString("yyyy-MM-dd  hh:mm:ss tt", culture);
+
+        }
         private void cbBox_roomType_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayRooms();
@@ -58,17 +74,16 @@ namespace HMS
             switch (cbBox_roomType.SelectedIndex)
             {
                 case 0:
-                        roomType = cbBox_roomType.SelectedIndex;
+                        RoomType = cbBox_roomType.SelectedIndex;
                     break;
                 case 1:
-                        roomType = cbBox_roomType.SelectedIndex;
+                        RoomType = cbBox_roomType.SelectedIndex;
                     break;
                 case 2:
-                        roomType = cbBox_roomType.SelectedIndex;
+                        RoomType = cbBox_roomType.SelectedIndex;
                     break;
             }
         }
-
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -150,15 +165,5 @@ namespace HMS
         //        lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
         //    }
         //}
-
-        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void timer_pbar_Tick(object sender, EventArgs e)
-        {
-
-        }
     }
 }

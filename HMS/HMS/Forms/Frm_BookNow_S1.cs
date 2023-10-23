@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 
 
@@ -12,8 +13,8 @@ namespace HMS
         private int SelectedTime_CheckOut { get; set; }
         private int Selected_CheckIn_AM_PM { get; set; }
         private int Selected_CheckOut_AM_PM { get; set; }
-        private DateTime CheckIn { get; set; }
-        private DateTime CheckOut { get; set; }
+        private DateTime CheckIn { get; set; } = DateTime.Now;
+        private DateTime CheckOut { get; set; } = DateTime.Now;
 
         private Frm_BookNow_S1()
         {
@@ -36,11 +37,14 @@ namespace HMS
         }
         private void Frm_BookNow_S1_Load(object sender, EventArgs e)
         {
-            CheckIn = DateTime.Now;
-            CheckOut = DateTime.Now;
+            // Start the Timer control
+            CurrentDate.Start();
+
+            // Get and display the current date and time
+            UpdateDateTime();
 
             cbBox_Guest.SelectedIndex = Guest;
-            DateTimePicker_CheckIn.Value =CheckIn;
+            DateTimePicker_CheckIn.Value = CheckIn;
             DateTimePicker_CheckOut.Value = CheckOut;
             cbBox_CheckIn_Time.SelectedIndex = SelectedTime_CheckIn;
             cbBox_CheckIn_AM_PM.SelectedIndex = Selected_CheckIn_AM_PM;
@@ -64,7 +68,17 @@ namespace HMS
             this.Hide();
             Frm_HomePage.GetInstance().Show();
         }
+        private void CurrentDate_Tick(object sender, EventArgs e)
+        {
+            UpdateDateTime();
+        }
+        public void UpdateDateTime()
+        {
+            var currentDateTime = DateTime.Now;
+            var culture = new CultureInfo("en-PH"); // Specify the desired culture
+            lblSystemTime.Text = currentDateTime.ToString("yyyy-MM-dd  hh:mm:ss tt", culture);
 
+        }
         public void cbBox_Guest_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (cbBox_Guest.SelectedIndex)
@@ -185,5 +199,7 @@ namespace HMS
                     break;
             }
         }
+
+
     }
 }

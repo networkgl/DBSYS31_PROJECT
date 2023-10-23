@@ -58,7 +58,7 @@ namespace HMS.Forms
                 txtboxUsername.Text = "";
                 txtboxUsername.ForeColor = System.Drawing.Color.Black;
             }
-            Console.WriteLine(toggleShow);
+            //Console.WriteLine(toggleShow);
         }
 
         private void txtboxPassword_Enter(object sender, EventArgs e)
@@ -114,9 +114,11 @@ namespace HMS.Forms
         private void btnLogin_Click(object sender, EventArgs e)
         {
             HasLogin = true;
+            toggleShow = 0;
 
             this.Hide();
-            Frm_Main.GetInstance().Show();
+            //Frm_Main.GetInstance().Show();
+            Frm_MainPage.GetInstance().Show();
         }
 
         private void LoginTextBox()

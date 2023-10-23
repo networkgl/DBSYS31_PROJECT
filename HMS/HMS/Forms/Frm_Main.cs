@@ -14,6 +14,8 @@ namespace HMS
     public partial class Frm_Main : Form
     {
         private static Frm_Main main;
+        private int toggleNotif = 0;
+        private byte fontSize = 12;
         private Frm_Main()
         {
             InitializeComponent();
@@ -49,6 +51,19 @@ namespace HMS
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
+            var Size_x = 39;
+            var Size_y = 37;
+            var Loc_x = 785;
+            var Loc_y = 16;
+            if (toggleNotif == 0)
+            {
+                btn_Notificationss.Size = new Size(Size_x, Size_y);
+                btn_Notificationss.BackgroundImage = Properties.Resources.icons8_notification_50__1_;
+                btn_Notificationss.BackgroundImageLayout = ImageLayout.Stretch;
+                btn_Notificationss.Location = new Point(Loc_x, Loc_y);
+            }
+
+
             pnl_main.Controls.Clear();
             Frm_Dashboard.GetInstance().TopLevel = false;
             Frm_Dashboard.GetInstance().Dock = DockStyle.Fill;
@@ -73,6 +88,101 @@ namespace HMS
                 Frm_HomePage.GetInstance().Show();
                 Frm_Login.GetInstance().HasLogin = false;
             }
+        }
+
+        private void btn_Notificationss_Click(object sender, EventArgs e)
+        {
+            toggleNotif++;
+
+            //65, 77
+            //770, -5
+            var Size_x = 65;
+            var Size_y = 77;
+            var Loc_x = 770;
+            var Loc_y = -5;
+            if (toggleNotif >= 1)
+            {
+                lbl_NotifCounter.Visible = true;
+                btn_Notificationss.Size = new Size(Size_x, Size_y);
+                btn_Notificationss.BackgroundImage = Properties.Resources.notif1;
+                btn_Notificationss.BackgroundImageLayout = ImageLayout.Zoom;
+                btn_Notificationss.Location = new Point(Loc_x, Loc_y);
+            }
+
+            //810, 15
+            var x = 810;
+            var y = 15;
+            if (toggleNotif >= 10)
+            {
+                lbl_NotifCounter.Font = new Font("Century Gothic", 6, FontStyle.Bold);
+                lbl_NotifCounter.Location = new Point(x - 1, y);
+                //lbl_NotifCounter.Text = "9+";
+                lbl_NotifCounter.Text = toggleNotif.ToString();
+
+            }
+            else
+            {
+                lbl_NotifCounter.Text = toggleNotif.ToString();
+            }
+        }
+        private void btnDashboard_MouseEnter(object sender, EventArgs e)
+        {
+            btnDashboard.ForeColor = Color.White;
+            btnDashboard.Font = new Font("Century Gothic", fontSize, FontStyle.Bold);
+        }
+
+        private void btnDashboard_MouseLeave(object sender, EventArgs e)
+        {
+            btnDashboard.ForeColor = Color.Black;
+            btnDashboard.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
+        }
+
+        private void btnClient_MouseEnter(object sender, EventArgs e)
+        {
+            btnClient.ForeColor = Color.White;
+            btnClient.Font = new Font("Century Gothic", fontSize, FontStyle.Bold);
+        }
+
+        private void btnClient_MouseLeave(object sender, EventArgs e)
+        {
+            btnClient.ForeColor = Color.Black;
+            btnClient.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
+        }
+
+        private void btnRoom_MouseEnter(object sender, EventArgs e)
+        {
+            btnRoom.ForeColor = Color.White;
+            btnRoom.Font = new Font("Century Gothic", fontSize, FontStyle.Bold);
+        }
+
+        private void btnRoom_MouseLeave(object sender, EventArgs e)
+        {
+            btnRoom.ForeColor = Color.Black;
+            btnRoom.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
+        }
+
+        private void btnReservation_MouseEnter(object sender, EventArgs e)
+        {
+            btnReservation.ForeColor = Color.White;
+            btnReservation.Font = new Font("Century Gothic", fontSize, FontStyle.Bold);
+        }
+
+        private void btnReservation_MouseLeave(object sender, EventArgs e)
+        {
+            btnReservation.ForeColor = Color.Black;
+            btnReservation.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
+        }
+
+        private void btnLogout_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogout.ForeColor = Color.White;
+            btnLogout.Font = new Font("Century Gothic", fontSize, FontStyle.Bold);
+        }
+
+        private void btnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogout.ForeColor = Color.Black;
+            btnLogout.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
         }
     }
 }
