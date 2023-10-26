@@ -16,7 +16,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(Frm_Main.GetInstance());
+            Application.Run(Frm_HomePage.GetInstance());
         }
     }
 }

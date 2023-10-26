@@ -8,13 +8,13 @@ namespace HMS
     public partial class Frm_BookNow_S1 : Form
     {
         private static Frm_BookNow_S1 s1;
-        private int Guest { get; set; }
-        private int SelectedTime_CheckIn { get; set; }
-        private int SelectedTime_CheckOut { get; set; }
-        private int Selected_CheckIn_AM_PM { get; set; }
-        private int Selected_CheckOut_AM_PM { get; set; }
-        private DateTime CheckIn { get; set; } = DateTime.Now;
-        private DateTime CheckOut { get; set; } = DateTime.Now;
+        public static int Guest { get; set; }
+        public static int SelectedTime_CheckIn { get; set; }
+        public static int SelectedTime_CheckOut { get; set; }
+        public static int Selected_CheckIn_AM_PM { get; set; }
+        public static int Selected_CheckOut_AM_PM { get; set; }
+        public static DateTime CheckIn { get; set; } = DateTime.Now;
+        public static DateTime CheckOut { get; set; } = DateTime.Now;
 
         private Frm_BookNow_S1()
         {

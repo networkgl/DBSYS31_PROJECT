@@ -273,9 +273,29 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_feet_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-feet-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_group_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-group-26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_home_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-home-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,6 +433,16 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_reception_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reception-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_reservation_18 {
             get {
                 object obj = ResourceManager.GetObject("icons8-reservation-18", resourceCulture);
@@ -426,6 +456,16 @@ namespace HMS.Properties {
         internal static System.Drawing.Bitmap icons8_reservation_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-reservation-26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reserve_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reserve-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

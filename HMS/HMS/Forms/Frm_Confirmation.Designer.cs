@@ -37,10 +37,10 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lbl_totalPrice = new System.Windows.Forms.Label();
             this.lbl_CheckOut_Time = new System.Windows.Forms.Label();
             this.lbl_CheckIn_Time = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lbl_Guest = new System.Windows.Forms.Label();
             this.lbl_CheckOut_Date = new System.Windows.Forms.Label();
             this.lbl_CheckIn_Date = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -155,10 +155,10 @@
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel1.Controls.Add(this.panel3);
-            this.guna2ShadowPanel1.Controls.Add(this.label16);
+            this.guna2ShadowPanel1.Controls.Add(this.lbl_totalPrice);
             this.guna2ShadowPanel1.Controls.Add(this.lbl_CheckOut_Time);
             this.guna2ShadowPanel1.Controls.Add(this.lbl_CheckIn_Time);
-            this.guna2ShadowPanel1.Controls.Add(this.label13);
+            this.guna2ShadowPanel1.Controls.Add(this.lbl_Guest);
             this.guna2ShadowPanel1.Controls.Add(this.lbl_CheckOut_Date);
             this.guna2ShadowPanel1.Controls.Add(this.lbl_CheckIn_Date);
             this.guna2ShadowPanel1.Controls.Add(this.label8);
@@ -182,15 +182,15 @@
             this.panel3.Size = new System.Drawing.Size(20, 2);
             this.panel3.TabIndex = 121;
             // 
-            // label16
+            // lbl_totalPrice
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(695, 318);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(81, 28);
-            this.label16.TabIndex = 120;
-            this.label16.Text = "₱ 0.00";
+            this.lbl_totalPrice.AutoSize = true;
+            this.lbl_totalPrice.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalPrice.Location = new System.Drawing.Point(669, 318);
+            this.lbl_totalPrice.Name = "lbl_totalPrice";
+            this.lbl_totalPrice.Size = new System.Drawing.Size(81, 28);
+            this.lbl_totalPrice.TabIndex = 120;
+            this.lbl_totalPrice.Text = "₱ 0.00";
             // 
             // lbl_CheckOut_Time
             // 
@@ -212,15 +212,15 @@
             this.lbl_CheckIn_Time.TabIndex = 118;
             this.lbl_CheckIn_Time.Text = "After 3:00 PM";
             // 
-            // label13
+            // lbl_Guest
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(22, 166);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 21);
-            this.label13.TabIndex = 117;
-            this.label13.Text = "1 Adult";
+            this.lbl_Guest.AutoSize = true;
+            this.lbl_Guest.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Guest.Location = new System.Drawing.Point(22, 166);
+            this.lbl_Guest.Name = "lbl_Guest";
+            this.lbl_Guest.Size = new System.Drawing.Size(67, 21);
+            this.lbl_Guest.TabIndex = 117;
+            this.lbl_Guest.Text = "1 Adult";
             // 
             // lbl_CheckOut_Date
             // 
@@ -466,19 +466,19 @@
         private MetroFramework.Controls.MetroProgressBar metroProgressBar3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private System.Windows.Forms.Label lbl_CheckOut_Date;
-        private System.Windows.Forms.Label lbl_CheckIn_Date;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbl_CheckOut_Time;
-        private System.Windows.Forms.Label lbl_CheckIn_Time;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Timer CurrentDate;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblSystemTime;
+        public Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        public System.Windows.Forms.Label lbl_CheckOut_Date;
+        public System.Windows.Forms.Label lbl_CheckIn_Date;
+        public System.Windows.Forms.Label lbl_CheckOut_Time;
+        public System.Windows.Forms.Label lbl_CheckIn_Time;
+        public System.Windows.Forms.Label lbl_Guest;
+        public System.Windows.Forms.Label lbl_totalPrice;
     }
 }

@@ -16,6 +16,7 @@ namespace HMS
         private static Frm_Main main;
         private int toggleNotif = 0;
         private byte fontSize = 12;
+        private bool ToggleDash, ToggleClient, ToggleRoom, ToggleReserve,ToggleLogout;
         private Frm_Main()
         {
             InitializeComponent();
@@ -40,17 +41,13 @@ namespace HMS
             Application.Exit();
         }
 
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            pnl_main.Controls.Clear();
-            Frm_Dashboard.GetInstance().TopLevel = false;
-            Frm_Dashboard.GetInstance().Dock = DockStyle.Fill;
-            pnl_main.Controls.Add(Frm_Dashboard.GetInstance());
-            Frm_Dashboard.GetInstance().Show();
-        }
-
         private void Frm_Main_Load(object sender, EventArgs e)
         {
+            ToggleDash = true;
+
+            if (ToggleDash)
+                pnl_ToggleDash.Visible = ToggleDash;
+
             var Size_x = 39;
             var Size_y = 37;
             var Loc_x = 785;
@@ -70,9 +67,37 @@ namespace HMS
             pnl_main.Controls.Add(Frm_Dashboard.GetInstance());
             Frm_Dashboard.GetInstance().Show();
         }
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            pnl_ToggleClient.Visible = false;
+            pnl_ToggleRoom.Visible = false;
+            pnl_ToggleReserve.Visible = false;
+            pnl_ToggleLogout.Visible = false;
 
+            ToggleDash = true;
+
+            if (ToggleDash)
+                pnl_ToggleDash.Visible = ToggleDash;
+
+
+            pnl_main.Controls.Clear();
+            Frm_Dashboard.GetInstance().TopLevel = false;
+            Frm_Dashboard.GetInstance().Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(Frm_Dashboard.GetInstance());
+            Frm_Dashboard.GetInstance().Show();
+        }
         private void btnClient_Click(object sender, EventArgs e)
         {
+            pnl_ToggleDash.Visible = false;
+            pnl_ToggleRoom.Visible = false;
+            pnl_ToggleReserve.Visible = false;
+            pnl_ToggleLogout.Visible = false;
+
+            ToggleClient = true;
+
+            if (ToggleClient)
+                pnl_ToggleClient.Visible = ToggleClient;
+
             pnl_main.Controls.Clear();
             Frm_Client.GetInstance().TopLevel = false;
             Frm_Client.GetInstance().Dock = DockStyle.Fill;
@@ -80,8 +105,42 @@ namespace HMS
             Frm_Client.GetInstance().Show();
         }
 
+        private void btnRoom_Click(object sender, EventArgs e)
+        {
+            pnl_ToggleDash.Visible = false;
+            pnl_ToggleClient.Visible = false;
+            pnl_ToggleReserve.Visible = false;
+            pnl_ToggleLogout.Visible = false;
+
+            ToggleRoom = true;
+
+            if (ToggleRoom)
+                pnl_ToggleRoom.Visible = ToggleRoom;
+        }
+        private void btnReservation_Click(object sender, EventArgs e)
+        {
+            pnl_ToggleDash.Visible = false;
+            pnl_ToggleClient.Visible = false;
+            pnl_ToggleRoom.Visible = false;
+            pnl_ToggleLogout.Visible = false;
+
+            ToggleReserve = true;
+
+            if (ToggleReserve)
+                pnl_ToggleReserve.Visible = ToggleReserve;
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            pnl_ToggleDash.Visible = false;
+            pnl_ToggleClient.Visible = false;
+            pnl_ToggleRoom.Visible = false;
+            pnl_ToggleReserve.Visible = false;
+
+            ToggleLogout = true;
+            if (ToggleLogout)
+                pnl_ToggleLogout.Visible = ToggleLogout;
+
             var ask = MessageBox.Show("Are you sure you want to logout ?", "Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if(ask == DialogResult.Yes) {
                 this.Hide();

@@ -17,7 +17,8 @@ namespace HMS
 {
     public partial class Frm_BookNow_S2 : Form
     {
-        public int RoomType { get; set; }
+        public static int RoomType { get; set; }
+        public static int RoomPrice { get; set; }
         private static Frm_BookNow_S2 s2;
         private Frm_BookNow_S2()
         {
@@ -93,6 +94,10 @@ namespace HMS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            //Frm_Confirmation.GetInstance().price = RoomPrice.ToString();
+            //Frm_Confirmation fc = new Frm_Confirmation();
+            //fc.price = RoomPrice.ToString();
+
             this.Hide();
             Frm_BookNow_S3.GetInstance().Show();
         }

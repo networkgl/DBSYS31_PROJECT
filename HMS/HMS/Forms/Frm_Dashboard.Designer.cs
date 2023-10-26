@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -51,59 +54,16 @@
             this.guna2Panel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel1.Location = new System.Drawing.Point(14, 78);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(117, 29);
-            this.materialLabel1.TabIndex = 3;
-            this.materialLabel1.Text = "Dashboard";
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 10;
             this.guna2Panel1.Controls.Add(this.panel1);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(19, 124);
+            this.guna2Panel1.Location = new System.Drawing.Point(19, 66);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel1.TabIndex = 8;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BorderRadius = 10;
-            this.guna2Panel2.Controls.Add(this.label2);
-            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(273, 124);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(240, 140);
-            this.guna2Panel2.TabIndex = 9;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BorderRadius = 10;
-            this.guna2Panel3.Controls.Add(this.label3);
-            this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(531, 124);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(240, 140);
-            this.guna2Panel3.TabIndex = 9;
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BorderRadius = 10;
-            this.guna2Panel4.Controls.Add(this.label4);
-            this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(787, 124);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(240, 140);
-            this.guna2Panel4.TabIndex = 10;
             // 
             // label1
             // 
@@ -117,6 +77,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Room Occupied";
             // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BorderRadius = 10;
+            this.guna2Panel2.Controls.Add(this.panel2);
+            this.guna2Panel2.Controls.Add(this.label2);
+            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
+            this.guna2Panel2.Location = new System.Drawing.Point(276, 66);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(240, 140);
+            this.guna2Panel2.TabIndex = 9;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -129,6 +100,17 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Room Available";
             // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BorderRadius = 10;
+            this.guna2Panel3.Controls.Add(this.panel3);
+            this.guna2Panel3.Controls.Add(this.label3);
+            this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.guna2Panel3.Location = new System.Drawing.Point(531, 66);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(240, 140);
+            this.guna2Panel3.TabIndex = 9;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -140,6 +122,17 @@
             this.label3.Size = new System.Drawing.Size(120, 21);
             this.label3.TabIndex = 11;
             this.label3.Text = "Room Reserve";
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BorderRadius = 10;
+            this.guna2Panel4.Controls.Add(this.panel4);
+            this.guna2Panel4.Controls.Add(this.label4);
+            this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.guna2Panel4.Location = new System.Drawing.Point(787, 66);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(240, 140);
+            this.guna2Panel4.TabIndex = 10;
             // 
             // label4
             // 
@@ -159,9 +152,9 @@
             this.guna2Panel5.BorderRadius = 20;
             this.guna2Panel5.Controls.Add(this.label5);
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
-            this.guna2Panel5.Location = new System.Drawing.Point(19, 297);
+            this.guna2Panel5.Location = new System.Drawing.Point(19, 239);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(742, 356);
+            this.guna2Panel5.Size = new System.Drawing.Size(752, 356);
             this.guna2Panel5.TabIndex = 12;
             // 
             // label5
@@ -183,32 +176,10 @@
             this.guna2Panel6.Controls.Add(this.guna2CircleProgressBar1);
             this.guna2Panel6.Controls.Add(this.label6);
             this.guna2Panel6.FillColor = System.Drawing.Color.White;
-            this.guna2Panel6.Location = new System.Drawing.Point(787, 297);
+            this.guna2Panel6.Location = new System.Drawing.Point(787, 239);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(230, 356);
+            this.guna2Panel6.Size = new System.Drawing.Size(240, 356);
             this.guna2Panel6.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(17, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 21);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Progress";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.panel1.BackgroundImage = global::HMS.Properties.Resources.icons8_occupied_theatre_seat_30;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.Location = new System.Drawing.Point(172, 11);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(42, 37);
-            this.panel1.TabIndex = 11;
             // 
             // guna2CircleProgressBar1
             // 
@@ -226,20 +197,82 @@
             this.guna2CircleProgressBar1.Text = "guna2CircleProgressBar1";
             this.guna2CircleProgressBar1.Value = 75;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(17, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 21);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Progress";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.panel4.BackgroundImage = global::HMS.Properties.Resources.icons8_reception_30;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel4.Location = new System.Drawing.Point(171, 16);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(42, 37);
+            this.panel4.TabIndex = 12;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel3.BackgroundImage = global::HMS.Properties.Resources.icons8_reserve_30;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel3.Location = new System.Drawing.Point(172, 16);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(42, 37);
+            this.panel3.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
+            this.panel2.BackgroundImage = global::HMS.Properties.Resources.icons8_home_30;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Location = new System.Drawing.Point(174, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(42, 37);
+            this.panel2.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel1.BackgroundImage = global::HMS.Properties.Resources.icons8_feet_30;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Location = new System.Drawing.Point(172, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(42, 37);
+            this.panel1.TabIndex = 11;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(19, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(160, 33);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Dashboard";
+            // 
             // Frm_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1077, 678);
+            this.ClientSize = new System.Drawing.Size(1078, 619);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.guna2Panel6);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.materialLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -263,7 +296,6 @@
         }
 
         #endregion
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
@@ -278,5 +310,9 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -389,5 +389,17 @@
   <ItemGroup>
     <None Include="Resources\notif1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reserve-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reception-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-feet-30.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

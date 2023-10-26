@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -93,8 +94,72 @@ namespace HMS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+
+            InitializeConfirmation();
             this.Hide();
-            Frm_Confirmation.GetInstance().Show();
+            //Frm_Confirmation.GetInstance().Show();
+            Frm_Confirmation fc = new Frm_Confirmation(GetGuestByIndex(), Frm_BookNow_S1.SelectedTime_CheckIn.ToString(), 
+                                                        Frm_BookNow_S1.SelectedTime_CheckOut.ToString(), Frm_BookNow_S1.Selected_CheckIn_AM_PM.ToString(), 
+                                                        Frm_BookNow_S1.Selected_CheckOut_AM_PM.ToString(), Frm_BookNow_S1.CheckIn.ToString(), 
+                                                        Frm_BookNow_S1.CheckOut.ToString(), GetTotalPrice());
+            fc.Show();
+        }
+        public void InitializeConfirmation()
+        {
+
+            //lbl_CheckIn_Time.Text = timeCheckIn + " " + timeCheckIn_AM_PM;
+            //lbl_CheckOut_Time.Text = timeCheckOut + " " + timeCheckOut_AM_PM;
+            //lbl_CheckIn_Date.Text = checkInDate.ToString();
+            //lbl_CheckOut_Date.Text = checkOutDate.ToString();
+            //lbl_Guest.Text = guest.ToString();
+
+
+            Frm_Confirmation.GetInstance().lbl_CheckIn_Time.Text = Frm_BookNow_S1.SelectedTime_CheckIn + " " + Frm_BookNow_S1.Selected_CheckIn_AM_PM;
+            Frm_Confirmation.GetInstance().lbl_CheckOut_Time.Text = Frm_BookNow_S1.SelectedTime_CheckOut + " " + Frm_BookNow_S1.Selected_CheckOut_AM_PM;
+            Frm_Confirmation.GetInstance().lbl_CheckIn_Date.Text = Frm_BookNow_S1.CheckIn.ToString();
+            Frm_Confirmation.GetInstance().lbl_CheckOut_Date.Text = Frm_BookNow_S1.CheckOut.ToString();
+
+            Frm_Confirmation.GetInstance().lbl_totalPrice.Text = GetTotalPrice();
+            Frm_Confirmation.GetInstance().lbl_Guest.Text = GetGuestByIndex();
+        }
+        private String GetGuestByIndex()
+        {
+            string retVal = String.Empty;
+
+            switch (Frm_BookNow_S1.Guest)
+            {
+                case 0:
+                    retVal = "1 Adult";
+                    break;
+                case 1:
+                    retVal = "Adult and Children";
+                    break;
+            }
+
+            return retVal;
+        }
+        private String ParseVal(double retVal)
+        {
+            return retVal.ToString("#,##0");
+        }
+        private String GetTotalPrice()
+        {
+            string retVal = String.Empty;
+            var price = Frm_BookNow_S2.RoomType;
+            //Total Payment Based on RoomType
+            switch (price)
+            {
+                case 0:
+                    retVal = "₱ " + ParseVal(10000);
+                    break;
+                case 1:
+                    retVal = "₱ " + ParseVal(14000);
+                    break;
+                case 2:
+                    retVal = "₱ " + ParseVal(20000);
+                    break;
+            }
+            return retVal;
         }
     }
 }
