@@ -79,6 +79,15 @@ namespace HMS
             lblSystemTime.Text = currentDateTime.ToString("yyyy-MM-dd  hh:mm:ss tt", culture);
 
         }
+        private void DateTimePicker_CheckIn_ValueChanged(object sender, EventArgs e)
+        {
+            CheckIn = DateTimePicker_CheckIn.Value;
+        }
+
+        private void DateTimePicker_CheckOut_ValueChanged(object sender, EventArgs e)
+        {
+            CheckOut = DateTimePicker_CheckOut.Value;
+        }
         public void cbBox_Guest_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (cbBox_Guest.SelectedIndex)
@@ -199,7 +208,5 @@ namespace HMS
                     break;
             }
         }
-
-
     }
 }

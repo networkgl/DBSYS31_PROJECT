@@ -101,13 +101,14 @@ namespace HMS.Forms
             //lbl_CheckOut_Date.Text = Frm_BookNow_S1.CheckOut.ToString();
 
 
-            lbl_CheckIn_Time.Text = this.checkIn;
-            lbl_CheckOut_Time.Text = this.checkOut;
+            lbl_CheckIn_Time.Text = this.checkIn + " " + this.checkIn_am_pm;
+            lbl_CheckOut_Time.Text = this.checkOut + " " + this.checkOut_am_pm;
             lbl_CheckIn_Date.Text = this.checkIn_date;
-            lbl_CheckOut_Date.Text = this.checkOut;
-
+            lbl_CheckOut_Date.Text = this.checkOut_date;
             lbl_totalPrice.Text = this.totalPrice;
             lbl_Guest.Text = this.guest;
+
+            
         }
     }
 }

@@ -131,44 +131,5 @@ namespace HMS
                 lbl_priceDetails.Text = Constant.PriceDetails;
             }
         }
-        //private void DisplayRooms()
-        //{
-        //    if (cbBox_roomType.SelectedIndex == 0)
-        //    {
-        //        Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
-
-        //        Constant.GetInstance().RoomType(); // Call the method to set initial values
-
-        //        pnl_roompicture.BackgroundImage = Constant.GetInstance().deluxeKing;
-        //        lbl_roomType.Text = Constant.GetInstance().roomtype;
-        //        lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
-        //        lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
-        //        lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
-        //    }
-        //    if (cbBox_roomType.SelectedIndex == 1)
-        //    {
-        //        Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
-
-        //        Constant.GetInstance().RoomType(); // Call the method to set initial values
-
-        //        pnl_roompicture.BackgroundImage = Constant.GetInstance().preimeireDeluxe;
-        //        lbl_roomType.Text = Constant.GetInstance().roomtype;
-        //        lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
-        //        lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
-        //        lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
-        //    }
-        //    if (cbBox_roomType.SelectedIndex == 2)
-        //    {
-        //        Constant.GetInstance().selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately
-
-        //        Constant.GetInstance().RoomType(); // Call the method to set initial values
-
-        //        pnl_roompicture.BackgroundImage = Constant.GetInstance().filiSuite;
-        //        lbl_roomType.Text = Constant.GetInstance().roomtype;
-        //        lbl_roomDetails1.Text = Constant.GetInstance().roomDetails_1;
-        //        lbl_roomPrice.Text = Constant.GetInstance().roomPrice;
-        //        lbl_priceDetails.Text = Constant.GetInstance().priceDetails;
-        //    }
-        //}
     }
 }

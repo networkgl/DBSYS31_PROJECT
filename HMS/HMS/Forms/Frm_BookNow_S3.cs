@@ -94,16 +94,17 @@ namespace HMS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
-            InitializeConfirmation();
             this.Hide();
-            //Frm_Confirmation.GetInstance().Show();
-            Frm_Confirmation fc = new Frm_Confirmation(GetGuestByIndex(), Frm_BookNow_S1.SelectedTime_CheckIn.ToString(), 
-                                                        Frm_BookNow_S1.SelectedTime_CheckOut.ToString(), Frm_BookNow_S1.Selected_CheckIn_AM_PM.ToString(), 
-                                                        Frm_BookNow_S1.Selected_CheckOut_AM_PM.ToString(), Frm_BookNow_S1.CheckIn.ToString(), 
-                                                        Frm_BookNow_S1.CheckOut.ToString(), GetTotalPrice());
+            //Frm_Confirmation fc = new Frm_Confirmation(GetGuestByIndex(), Frm_BookNow_S1.SelectedTime_CheckIn.ToString(),
+            //                                            Frm_BookNow_S1.SelectedTime_CheckOut.ToString(), Frm_BookNow_S1.Selected_CheckIn_AM_PM.ToString(),
+            //                                            Frm_BookNow_S1.Selected_CheckOut_AM_PM.ToString(), Frm_BookNow_S1.CheckIn.ToString("MM-dd-yyyy"),
+            //                                            Frm_BookNow_S1.CheckOut.ToString("MM-dd-yyyy"), GetTotalPrice());
+            Frm_Confirmation fc = new Frm_Confirmation(GetGuestByIndex(), GetTimeByIndex(Frm_BookNow_S1.SelectedTime_CheckIn), GetTimeByIndex(Frm_BookNow_S1.SelectedTime_CheckOut),
+                                                        GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckIn_AM_PM), GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckOut_AM_PM),
+                                                        Frm_BookNow_S1.CheckIn.ToString("MM-dd-yyyy"), Frm_BookNow_S1.CheckOut.ToString("MM-dd-yyyy"), GetTotalPrice());
             fc.Show();
         }
+        /*
         public void InitializeConfirmation()
         {
 
@@ -121,6 +122,65 @@ namespace HMS
 
             Frm_Confirmation.GetInstance().lbl_totalPrice.Text = GetTotalPrice();
             Frm_Confirmation.GetInstance().lbl_Guest.Text = GetGuestByIndex();
+        }
+        */
+        private String GetTimeByIndex(int indexTime)
+        {
+            string retVal = String.Empty;
+            switch (indexTime)
+            {
+                case 0:
+                        retVal = "1:00" as String;
+                    break;
+                case 1:
+                        retVal = "2:00" as String;
+                    break;
+                case 2:
+                        retVal = "3:00" as String;
+                    break;
+                case 3:
+                        retVal = "4:00" as String;
+                    break;
+                case 4:
+                        retVal = "5:00" as String;
+                    break;
+                case 5:
+                        retVal = "6:00" as String;
+                    break;
+                case 6:
+                        retVal = "7:00" as String;
+                    break;
+                case 7:
+                        retVal = "8:00" as String;
+                    break;
+                case 8:
+                        retVal = "9:00" as String;
+                    break;
+                case 9:
+                        retVal = "10:00" as String;
+                    break;
+                case 10:
+                        retVal = "11:00" as String;
+                    break;
+                case 11:
+                        retVal = "12:00" as String;
+                    break;
+            }
+            return retVal;
+        }
+        private String GetAM_PM_ByIndex(int index_AM_PM)
+        {
+            string retVal = String.Empty;
+            switch (index_AM_PM)
+            {
+                case 0:
+                        retVal = "AM" as String;
+                    break;
+                case 1:
+                        retVal = "PM" as String;
+                    break;
+            }
+            return retVal;
         }
         private String GetGuestByIndex()
         {

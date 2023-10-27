@@ -39,6 +39,7 @@
             this.DateTimePicker_CheckIn = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DateTimePicker_CheckOut = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblSystemTime = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -61,7 +62,6 @@
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnNext = new System.Windows.Forms.Button();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
-            this.lblSystemTime = new System.Windows.Forms.Label();
             this.errorProvider_S1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -171,6 +171,7 @@
             this.DateTimePicker_CheckIn.Size = new System.Drawing.Size(353, 36);
             this.DateTimePicker_CheckIn.TabIndex = 50;
             this.DateTimePicker_CheckIn.Value = new System.DateTime(2023, 10, 15, 17, 20, 48, 197);
+            this.DateTimePicker_CheckIn.ValueChanged += new System.EventHandler(this.DateTimePicker_CheckIn_ValueChanged);
             // 
             // DateTimePicker_CheckOut
             // 
@@ -186,6 +187,7 @@
             this.DateTimePicker_CheckOut.Size = new System.Drawing.Size(353, 36);
             this.DateTimePicker_CheckOut.TabIndex = 51;
             this.DateTimePicker_CheckOut.Value = new System.DateTime(2023, 10, 15, 17, 20, 48, 197);
+            this.DateTimePicker_CheckOut.ValueChanged += new System.EventHandler(this.DateTimePicker_CheckOut_ValueChanged);
             // 
             // guna2ShadowPanel1
             // 
@@ -203,6 +205,17 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(938, 559);
             this.guna2ShadowPanel1.TabIndex = 61;
+            // 
+            // lblSystemTime
+            // 
+            this.lblSystemTime.AutoSize = true;
+            this.lblSystemTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.lblSystemTime.Location = new System.Drawing.Point(635, 9);
+            this.lblSystemTime.Name = "lblSystemTime";
+            this.lblSystemTime.Size = new System.Drawing.Size(151, 19);
+            this.lblSystemTime.TabIndex = 79;
+            this.lblSystemTime.Text = "BOOKING SECTION";
             // 
             // label5
             // 
@@ -523,17 +536,6 @@
             // 
             this.CurrentDate.Tick += new System.EventHandler(this.CurrentDate_Tick);
             // 
-            // lblSystemTime
-            // 
-            this.lblSystemTime.AutoSize = true;
-            this.lblSystemTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
-            this.lblSystemTime.Location = new System.Drawing.Point(635, 9);
-            this.lblSystemTime.Name = "lblSystemTime";
-            this.lblSystemTime.Size = new System.Drawing.Size(151, 19);
-            this.lblSystemTime.TabIndex = 79;
-            this.lblSystemTime.Text = "BOOKING SECTION";
-            // 
             // errorProvider_S1
             // 
             this.errorProvider_S1.ContainerControl = this;
@@ -568,8 +570,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar2;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePicker_CheckOut;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateTimePicker_CheckIn;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private System.Windows.Forms.Button btnNext;
@@ -595,5 +595,7 @@
         private System.Windows.Forms.Label lblSystemTime;
         public System.Windows.Forms.Timer CurrentDate;
         private System.Windows.Forms.ErrorProvider errorProvider_S1;
+        public Guna.UI2.WinForms.Guna2DateTimePicker DateTimePicker_CheckOut;
+        public Guna.UI2.WinForms.Guna2DateTimePicker DateTimePicker_CheckIn;
     }
 }
