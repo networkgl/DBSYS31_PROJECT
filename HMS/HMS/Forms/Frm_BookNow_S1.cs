@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Pabo.Calendar;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -51,7 +54,29 @@ namespace HMS
             cbBox_CheckOut_Time.SelectedIndex = SelectedTime_CheckOut;
             cbBox_CheckOut_AM_PM.SelectedIndex = Selected_CheckOut_AM_PM;
         }
+        private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
+        {
 
+            List<DateTime> dateArray = new List<DateTime>();
+            dateArray.Add(new DateTime(2023, 11, 10));
+            dateArray.Add(new DateTime(2023, 11, 15));
+            dateArray.Add(new DateTime(2023, 11, 20));
+
+            var size = dateArray.Count;
+
+            for (int i = 0; i < size; i++)
+            {
+
+                // Check date and mark it with color to specify occupied or not available to select for booking.
+                if (e.Date == dateArray[i])
+                {
+                    // Add custom formatting
+                    e.Info.DateColor = Color.White;
+                    e.Info.BackColor1 = Color.Red;
+                    e.OwnerDraw = true;
+                }
+            }
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -96,6 +121,9 @@ namespace HMS
                     Guest = cbBox_Guest.SelectedIndex;
                     break;
                 case 1:
+                    Guest = cbBox_Guest.SelectedIndex;
+                    break;
+                case 2:
                     Guest = cbBox_Guest.SelectedIndex;
                     break;
             }

@@ -117,8 +117,8 @@ namespace HMS.Forms
             toggleShow = 0;
 
             this.Hide();
-            //Frm_Main.GetInstance().Show();
-            Frm_MainPage.GetInstance().Show();
+            Frm_Main.GetInstance().Show();
+            //Frm_MainPage.GetInstance().Show();
         }
 
         private void LoginTextBox()

@@ -95,36 +95,12 @@ namespace HMS
         private void btnNext_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //Frm_Confirmation fc = new Frm_Confirmation(GetGuestByIndex(), Frm_BookNow_S1.SelectedTime_CheckIn.ToString(),
-            //                                            Frm_BookNow_S1.SelectedTime_CheckOut.ToString(), Frm_BookNow_S1.Selected_CheckIn_AM_PM.ToString(),
-            //                                            Frm_BookNow_S1.Selected_CheckOut_AM_PM.ToString(), Frm_BookNow_S1.CheckIn.ToString("MM-dd-yyyy"),
-            //                                            Frm_BookNow_S1.CheckOut.ToString("MM-dd-yyyy"), GetTotalPrice());
-            Frm_Confirmation fc = new Frm_Confirmation(GetGuestByIndex(), GetTimeByIndex(Frm_BookNow_S1.SelectedTime_CheckIn), GetTimeByIndex(Frm_BookNow_S1.SelectedTime_CheckOut),
+            Frm_Confirmation fc = new Frm_Confirmation(GetGuestByIndex(), GetTimeByIndex("After ",Frm_BookNow_S1.SelectedTime_CheckIn), GetTimeByIndex("Before ",Frm_BookNow_S1.SelectedTime_CheckOut),
                                                         GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckIn_AM_PM), GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckOut_AM_PM),
-                                                        Frm_BookNow_S1.CheckIn.ToString("MM-dd-yyyy"), Frm_BookNow_S1.CheckOut.ToString("MM-dd-yyyy"), GetTotalPrice());
+                                                        Frm_BookNow_S1.CheckIn.ToString("ddd, MMM dd, yyyy"), Frm_BookNow_S1.CheckOut.ToString("ddd, MMM dd, yyyy"), GetTotalPrice());
             fc.Show();
         }
-        /*
-        public void InitializeConfirmation()
-        {
-
-            //lbl_CheckIn_Time.Text = timeCheckIn + " " + timeCheckIn_AM_PM;
-            //lbl_CheckOut_Time.Text = timeCheckOut + " " + timeCheckOut_AM_PM;
-            //lbl_CheckIn_Date.Text = checkInDate.ToString();
-            //lbl_CheckOut_Date.Text = checkOutDate.ToString();
-            //lbl_Guest.Text = guest.ToString();
-
-
-            Frm_Confirmation.GetInstance().lbl_CheckIn_Time.Text = Frm_BookNow_S1.SelectedTime_CheckIn + " " + Frm_BookNow_S1.Selected_CheckIn_AM_PM;
-            Frm_Confirmation.GetInstance().lbl_CheckOut_Time.Text = Frm_BookNow_S1.SelectedTime_CheckOut + " " + Frm_BookNow_S1.Selected_CheckOut_AM_PM;
-            Frm_Confirmation.GetInstance().lbl_CheckIn_Date.Text = Frm_BookNow_S1.CheckIn.ToString();
-            Frm_Confirmation.GetInstance().lbl_CheckOut_Date.Text = Frm_BookNow_S1.CheckOut.ToString();
-
-            Frm_Confirmation.GetInstance().lbl_totalPrice.Text = GetTotalPrice();
-            Frm_Confirmation.GetInstance().lbl_Guest.Text = GetGuestByIndex();
-        }
-        */
-        private String GetTimeByIndex(int indexTime)
+        private String GetTimeByIndex(string happen,int indexTime)
         {
             string retVal = String.Empty;
             switch (indexTime)
@@ -166,7 +142,7 @@ namespace HMS
                         retVal = "12:00" as String;
                     break;
             }
-            return retVal;
+            return happen + retVal;
         }
         private String GetAM_PM_ByIndex(int index_AM_PM)
         {
@@ -185,14 +161,17 @@ namespace HMS
         private String GetGuestByIndex()
         {
             string retVal = String.Empty;
-
-            switch (Frm_BookNow_S1.Guest)
+            var GuestIndex = Frm_BookNow_S1.Guest;
+            switch (GuestIndex)
             {
                 case 0:
-                    retVal = "1 Adult";
+                    retVal = "Adult";
                     break;
                 case 1:
                     retVal = "Adult and Children";
+                    break;
+                case 2:
+                    retVal = "Senior Citizen";
                     break;
             }
 

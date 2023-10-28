@@ -73,7 +73,7 @@
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.Violet;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(11, 559);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(11, 701);
             this.guna2CustomGradientPanel1.TabIndex = 62;
             // 
             // btnNext
@@ -83,7 +83,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(638, 184);
+            this.btnNext.Location = new System.Drawing.Point(738, 272);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(117, 42);
             this.btnNext.TabIndex = 61;
@@ -117,7 +117,7 @@
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(938, 559);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(957, 701);
             this.guna2ShadowPanel1.TabIndex = 62;
             // 
             // lblSystemTime
@@ -125,7 +125,7 @@
             this.lblSystemTime.AutoSize = true;
             this.lblSystemTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
-            this.lblSystemTime.Location = new System.Drawing.Point(635, 9);
+            this.lblSystemTime.Location = new System.Drawing.Point(730, 12);
             this.lblSystemTime.Name = "lblSystemTime";
             this.lblSystemTime.Size = new System.Drawing.Size(151, 19);
             this.lblSystemTime.TabIndex = 91;
@@ -135,7 +135,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(87, 195);
+            this.label6.Location = new System.Drawing.Point(41, 204);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 21);
             this.label6.TabIndex = 90;
@@ -310,9 +310,9 @@
             this.panel1.Controls.Add(this.lbl_roomType);
             this.panel1.Controls.Add(this.pnl_roompicture);
             this.panel1.Controls.Add(this.lbl_roomDetails1);
-            this.panel1.Location = new System.Drawing.Point(84, 286);
+            this.panel1.Location = new System.Drawing.Point(45, 289);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 244);
+            this.panel1.Size = new System.Drawing.Size(881, 328);
             this.panel1.TabIndex = 71;
             // 
             // llb_moreInfo
@@ -320,19 +320,19 @@
             this.llb_moreInfo.AutoSize = true;
             this.llb_moreInfo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llb_moreInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
-            this.llb_moreInfo.Location = new System.Drawing.Point(270, 195);
+            this.llb_moreInfo.Location = new System.Drawing.Point(348, 283);
             this.llb_moreInfo.Name = "llb_moreInfo";
-            this.llb_moreInfo.Size = new System.Drawing.Size(102, 21);
+            this.llb_moreInfo.Size = new System.Drawing.Size(258, 21);
             this.llb_moreInfo.TabIndex = 76;
             this.llb_moreInfo.TabStop = true;
-            this.llb_moreInfo.Text = "VIEW MORE";
+            this.llb_moreInfo.Text = "<< CLICK PICTURE TO SEE MORE";
             this.llb_moreInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_moreInfo_LinkClicked);
             // 
             // lbl_roomDetails2
             // 
             this.lbl_roomDetails2.AutoSize = true;
             this.lbl_roomDetails2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomDetails2.Location = new System.Drawing.Point(270, 125);
+            this.lbl_roomDetails2.Location = new System.Drawing.Point(348, 164);
             this.lbl_roomDetails2.Name = "lbl_roomDetails2";
             this.lbl_roomDetails2.Size = new System.Drawing.Size(302, 60);
             this.lbl_roomDetails2.TabIndex = 75;
@@ -344,7 +344,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
-            this.linkLabel1.Location = new System.Drawing.Point(272, 99);
+            this.linkLabel1.Location = new System.Drawing.Point(348, 125);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(240, 21);
             this.linkLabel1.TabIndex = 74;
@@ -356,7 +356,7 @@
             this.lbl_priceDetails.AutoSize = true;
             this.lbl_priceDetails.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_priceDetails.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_priceDetails.Location = new System.Drawing.Point(595, 122);
+            this.lbl_priceDetails.Location = new System.Drawing.Point(695, 202);
             this.lbl_priceDetails.Name = "lbl_priceDetails";
             this.lbl_priceDetails.Size = new System.Drawing.Size(160, 51);
             this.lbl_priceDetails.TabIndex = 73;
@@ -367,7 +367,7 @@
             // 
             this.lbl_roomPrice.AutoSize = true;
             this.lbl_roomPrice.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomPrice.Location = new System.Drawing.Point(673, 99);
+            this.lbl_roomPrice.Location = new System.Drawing.Point(773, 179);
             this.lbl_roomPrice.Name = "lbl_roomPrice";
             this.lbl_roomPrice.Size = new System.Drawing.Size(82, 23);
             this.lbl_roomPrice.TabIndex = 72;
@@ -377,7 +377,7 @@
             // 
             this.lbl_roomType.AutoSize = true;
             this.lbl_roomType.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomType.Location = new System.Drawing.Point(271, 28);
+            this.lbl_roomType.Location = new System.Drawing.Point(349, 19);
             this.lbl_roomType.Name = "lbl_roomType";
             this.lbl_roomType.Size = new System.Drawing.Size(194, 23);
             this.lbl_roomType.TabIndex = 71;
@@ -389,14 +389,14 @@
             this.pnl_roompicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnl_roompicture.Location = new System.Drawing.Point(6, 19);
             this.pnl_roompicture.Name = "pnl_roompicture";
-            this.pnl_roompicture.Size = new System.Drawing.Size(247, 205);
+            this.pnl_roompicture.Size = new System.Drawing.Size(336, 295);
             this.pnl_roompicture.TabIndex = 67;
             // 
             // lbl_roomDetails1
             // 
             this.lbl_roomDetails1.AutoSize = true;
             this.lbl_roomDetails1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomDetails1.Location = new System.Drawing.Point(270, 62);
+            this.lbl_roomDetails1.Location = new System.Drawing.Point(348, 53);
             this.lbl_roomDetails1.Name = "lbl_roomDetails1";
             this.lbl_roomDetails1.Size = new System.Drawing.Size(371, 20);
             this.lbl_roomDetails1.TabIndex = 70;
@@ -417,9 +417,9 @@
             "DELUXE",
             "PREMIERE DELUXE",
             "SUITE"});
-            this.cbBox_roomType.Location = new System.Drawing.Point(84, 229);
+            this.cbBox_roomType.Location = new System.Drawing.Point(45, 232);
             this.cbBox_roomType.Name = "cbBox_roomType";
-            this.cbBox_roomType.Size = new System.Drawing.Size(759, 36);
+            this.cbBox_roomType.Size = new System.Drawing.Size(881, 36);
             this.cbBox_roomType.TabIndex = 68;
             this.cbBox_roomType.SelectedIndexChanged += new System.EventHandler(this.cbBox_roomType_SelectedIndexChanged);
             // 
@@ -435,7 +435,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 559);
+            this.ClientSize = new System.Drawing.Size(957, 701);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

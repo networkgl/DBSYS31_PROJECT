@@ -27,8 +27,8 @@ namespace HMS
 
         private void llb_moreInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MoreInfo_S1 s1 = new MoreInfo_S1();
-            s1.ShowDialog();
+            //MoreInfo_S1 s1 = new MoreInfo_S1();
+            //s1.ShowDialog();
         }
 
         protected override CreateParams CreateParams

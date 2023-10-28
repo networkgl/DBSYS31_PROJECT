@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -64,6 +64,16 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel1.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel1.BackgroundImage = global::HMS.Properties.Resources.icons8_feet_30;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Location = new System.Drawing.Point(172, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(42, 37);
+            this.panel1.TabIndex = 11;
             // 
             // label1
             // 
@@ -88,6 +98,16 @@
             this.guna2Panel2.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel2.TabIndex = 9;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
+            this.panel2.BackgroundImage = global::HMS.Properties.Resources.icons8_home_30;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Location = new System.Drawing.Point(174, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(42, 37);
+            this.panel2.TabIndex = 12;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -111,6 +131,16 @@
             this.guna2Panel3.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel3.TabIndex = 9;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel3.BackgroundImage = global::HMS.Properties.Resources.icons8_reserve_30;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel3.Location = new System.Drawing.Point(172, 16);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(42, 37);
+            this.panel3.TabIndex = 12;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -133,6 +163,16 @@
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel4.TabIndex = 10;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.panel4.BackgroundImage = global::HMS.Properties.Resources.icons8_reception_30;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel4.Location = new System.Drawing.Point(171, 16);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(42, 37);
+            this.panel4.TabIndex = 12;
             // 
             // label4
             // 
@@ -208,46 +248,6 @@
             this.label6.Size = new System.Drawing.Size(72, 21);
             this.label6.TabIndex = 11;
             this.label6.Text = "Progress";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
-            this.panel4.BackgroundImage = global::HMS.Properties.Resources.icons8_reception_30;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel4.Location = new System.Drawing.Point(171, 16);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(42, 37);
-            this.panel4.TabIndex = 12;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.panel3.BackgroundImage = global::HMS.Properties.Resources.icons8_reserve_30;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel3.Location = new System.Drawing.Point(172, 16);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(42, 37);
-            this.panel3.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
-            this.panel2.BackgroundImage = global::HMS.Properties.Resources.icons8_home_30;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(174, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(42, 37);
-            this.panel2.TabIndex = 12;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.panel1.BackgroundImage = global::HMS.Properties.Resources.icons8_feet_30;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.Location = new System.Drawing.Point(172, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(42, 37);
-            this.panel1.TabIndex = 11;
             // 
             // label7
             // 
