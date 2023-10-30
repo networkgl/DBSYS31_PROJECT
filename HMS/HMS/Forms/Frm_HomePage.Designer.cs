@@ -127,6 +127,7 @@
             this.Name = "Frm_HomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Login";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Frm_HomePage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

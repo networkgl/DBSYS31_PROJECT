@@ -1,4 +1,5 @@
-﻿using Pabo.Calendar;
+﻿using HMS.Forms;
+using Pabo.Calendar;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,12 +13,22 @@ namespace HMS
     {
         private static Frm_BookNow_S1 s1;
         public static int Guest { get; set; }
+        public static int NoOfGuest { get; set; }
         public static int SelectedTime_CheckIn { get; set; }
         public static int SelectedTime_CheckOut { get; set; }
         public static int Selected_CheckIn_AM_PM { get; set; }
         public static int Selected_CheckOut_AM_PM { get; set; }
         public static DateTime CheckIn { get; set; } = DateTime.Now;
         public static DateTime CheckOut { get; set; } = DateTime.Now;
+
+        //public  int Guest { get; set; }
+        //public  int NoOfGuest { get; set; }
+        //public  int SelectedTime_CheckIn { get; set; }
+        //public  int SelectedTime_CheckOut { get; set; }
+        //public  int Selected_CheckIn_AM_PM { get; set; }
+        //public  int Selected_CheckOut_AM_PM { get; set; }
+        //public  DateTime CheckIn { get; set; } = DateTime.Now;
+        //public  DateTime CheckOut { get; set; } = DateTime.Now;
 
         private Frm_BookNow_S1()
         {
@@ -47,6 +58,7 @@ namespace HMS
             UpdateDateTime();
 
             cbBox_Guest.SelectedIndex = Guest;
+            nud_NumberOfGuest.Value = NoOfGuest;
             DateTimePicker_CheckIn.Value = CheckIn;
             DateTimePicker_CheckOut.Value = CheckOut;
             cbBox_CheckIn_Time.SelectedIndex = SelectedTime_CheckIn;
@@ -87,10 +99,14 @@ namespace HMS
         {
             this.Hide();
             Frm_BookNow_S2.GetInstance().Show();
+            //Frm_BookNow_S2 s2 = new Frm_BookNow_S2();
+            //s2.Show();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
+            //Frm_BookNow_S1 s1 = new Frm_BookNow_S1();
+            //s1.Show();
             Frm_HomePage.GetInstance().Show();
         }
         private void CurrentDate_Tick(object sender, EventArgs e)
@@ -133,40 +149,40 @@ namespace HMS
             switch (cbBox_CheckIn_Time.SelectedIndex)
             {
                 case 0:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
                 case 1:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break; 
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    break;
                 case 2:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
                 case 3:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
                 case 4:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
                 case 5:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
                 case 6:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
                 case 7:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
                 case 8:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
                 case 9:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
                 case 10:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
                 case 11:
-                        SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
+                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
                     break;
             }
         }
@@ -175,10 +191,10 @@ namespace HMS
             switch (cbBox_CheckIn_AM_PM.SelectedIndex)
             {
                 case 0:
-                        Selected_CheckIn_AM_PM = cbBox_CheckIn_AM_PM.SelectedIndex;
+                    Selected_CheckIn_AM_PM = cbBox_CheckIn_AM_PM.SelectedIndex;
                     break;
                 case 1:
-                        Selected_CheckIn_AM_PM = cbBox_CheckIn_AM_PM.SelectedIndex;
+                    Selected_CheckIn_AM_PM = cbBox_CheckIn_AM_PM.SelectedIndex;
                     break;
             }
         }
@@ -235,6 +251,17 @@ namespace HMS
                     Selected_CheckOut_AM_PM = cbBox_CheckOut_AM_PM.SelectedIndex;
                     break;
             }
+        }
+
+        private void nud_NumberOfGuest_ValueChanged(object sender, EventArgs e)
+        {
+            NoOfGuest = (Int32)nud_NumberOfGuest.Value;
+            //Console.WriteLine(NoOfGuest);
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

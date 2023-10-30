@@ -17,10 +17,11 @@ namespace HMS
 {
     public partial class Frm_BookNow_S2 : Form
     {
-        public static int RoomType { get; set; }
-        public static int RoomPrice { get; set; }
         private static Frm_BookNow_S2 s2;
-        private Frm_BookNow_S2()
+
+        public int RoomType { get; set; }
+        public static int RoomPrice { get; set; }
+        public Frm_BookNow_S2()
         {
             InitializeComponent();
         }
@@ -51,7 +52,7 @@ namespace HMS
             CurrentDate.Start();
             UpdateDateTime();
 
-            Constant.GetRoomType();
+            Room.GetRoomType();
 
             cbBox_roomType.SelectedIndex = RoomType;
         }
@@ -90,6 +91,8 @@ namespace HMS
         {
             this.Hide();
             Frm_BookNow_S1.GetInstance().Show();
+            //Frm_BookNow_S1 s1 = new Frm_BookNow_S1();
+            //s1.Show();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -103,33 +106,26 @@ namespace HMS
         }
         private void DisplayRooms()
         {
-            Constant.RoomType_selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately.
-            Constant.GetRoomType(); //Call this function to re-initialize the new values.
+            Room.RoomType_selectedIndex = cbBox_roomType.SelectedIndex; // Set the selectedIndex immediately.
+            Room.GetRoomType(); //Call this function to re-initialize the new values.
 
-            if (cbBox_roomType.SelectedIndex == 0)
+            switch (cbBox_roomType.SelectedIndex)
             {
-                pnl_roompicture.BackgroundImage = Constant.DeluxeKing;
-                lbl_roomType.Text = Constant.RoomType;
-                lbl_roomDetails1.Text = Constant.RoomDetails;
-                lbl_roomPrice.Text = Constant.RoomPrice;
-                lbl_priceDetails.Text = Constant.PriceDetails;
+                case 0:
+                    pnl_roompicture.BackgroundImage = Room.DeluxeKing;
+                    break;
+                case 1:
+                    pnl_roompicture.BackgroundImage = Room.PreimeireDeluxe;
+                    break;
+                case 2:
+                    pnl_roompicture.BackgroundImage = Room.FiliSuite;
+                    break;
             }
-            if (cbBox_roomType.SelectedIndex == 1)
-            {
-                pnl_roompicture.BackgroundImage = Constant.PreimeireDeluxe;
-                lbl_roomType.Text = Constant.RoomType;
-                lbl_roomDetails1.Text = Constant.RoomDetails;
-                lbl_roomPrice.Text = Constant.RoomPrice;
-                lbl_priceDetails.Text = Constant.PriceDetails;
-            }
-            if (cbBox_roomType.SelectedIndex == 2)
-            {   
-                pnl_roompicture.BackgroundImage = Constant.FiliSuite;
-                lbl_roomType.Text = Constant.RoomType;
-                lbl_roomDetails1.Text = Constant.RoomDetails;
-                lbl_roomPrice.Text = Constant.RoomPrice;
-                lbl_priceDetails.Text = Constant.PriceDetails;
-            }
+            lbl_roomType.Text = Room.RoomType;
+            lbl_roomDetails1.Text = Room.RoomDetails;
+            lbl_roomPrice.Text = Room.RoomPrice;
+            lbl_priceDetails.Text = Room.PriceDetails;
+
         }
     }
 }

@@ -21,8 +21,7 @@ namespace HMS
         public string Email { get; set; }
         public long Phone { get; set; }
         public string Address { get; set; }
-
-
+        public int NumberOfDays { get; set; }
         private void txtbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -67,14 +66,14 @@ namespace HMS
             CurrentDate.Start();
             UpdateDateTime();
 
-            txtbox_fName.Text = Fname;
-            txtbox_lName.Text = Lname;
-            txtbox_Email.Text = Email;
+            //txtbox_fName.Text = Fname;
+            //txtbox_lName.Text = Lname;
+            //txtbox_Email.Text = Email;
             if (Phone == 0)
                 txtbox_Phone.Text = string.Empty;
             else
                 txtbox_Phone.Text = Phone.ToString();
-            txtbox_Address.Text = Address;
+            //txtbox_Address.Text = Address;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -90,15 +89,29 @@ namespace HMS
 
             this.Hide();
             Frm_BookNow_S2.GetInstance().Show();
+            //Frm_BookNow_S2 s2 = new Frm_BookNow_S2();
+            //s2.Show();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_Confirmation fc = new Frm_Confirmation(GetGuestByIndex(), GetTimeByIndex("After ",Frm_BookNow_S1.SelectedTime_CheckIn), GetTimeByIndex("Before ",Frm_BookNow_S1.SelectedTime_CheckOut),
+            //Frm_Confirmation.GetInstance(GetGuestByIndex(), GetTimeByIndex("After ", Frm_BookNow_S1.SelectedTime_CheckIn), GetTimeByIndex("Before ", Frm_BookNow_S1.SelectedTime_CheckOut),
+            //                                            GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckIn_AM_PM), GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckOut_AM_PM),
+            //                                            Frm_BookNow_S1.CheckIn.ToString("ddd, MMM dd, yyyy"), Frm_BookNow_S1.CheckOut.ToString("ddd, MMM dd, yyyy"), GetTotalPrice());
+
+            //if (Frm_Confirmation.GetInstance() != null)
+            //{
+            //    Frm_Confirmation.GetInstance().Show();
+            //}
+            Frm_BookNow_S4 fc = new Frm_BookNow_S4(GetNoOfGuestByValue(Frm_BookNow_S1.NoOfGuest), GetGuestByIndex(), GetTimeByIndex("After ", Frm_BookNow_S1.SelectedTime_CheckIn), GetTimeByIndex("Before ", Frm_BookNow_S1.SelectedTime_CheckOut),
                                                         GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckIn_AM_PM), GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckOut_AM_PM),
-                                                        Frm_BookNow_S1.CheckIn.ToString("ddd, MMM dd, yyyy"), Frm_BookNow_S1.CheckOut.ToString("ddd, MMM dd, yyyy"), GetTotalPrice());
+                                                        Frm_BookNow_S1.CheckIn.ToString("ddd, MMM dd, yyyy"), Frm_BookNow_S1.CheckOut.ToString("ddd, MMM dd, yyyy"), GetTotalAmount(Frm_BookNow_S1.CheckIn.Day, Frm_BookNow_S1.CheckOut.Day));
             fc.Show();
+        }
+        private String GetNoOfGuestByValue(int recVal)
+        {       
+            return ParseVal(recVal);
         }
         private String GetTimeByIndex(string happen,int indexTime)
         {
@@ -161,6 +174,7 @@ namespace HMS
         private String GetGuestByIndex()
         {
             string retVal = String.Empty;
+            //var GuestIndex = Frm_BookNow_S1.GetInstance().Guest;
             var GuestIndex = Frm_BookNow_S1.Guest;
             switch (GuestIndex)
             {
@@ -181,21 +195,90 @@ namespace HMS
         {
             return retVal.ToString("#,##0");
         }
-        private String GetTotalPrice()
+        private String GetTotalAmount(int CheckInDay, int CheckOutDay)
         {
+
+            //DateTime birthDate = metroDateTime_Birthdate.Value;
+            //DateTime currentDate = DateTime.Now;
+            //age = currentDate.Year - birthDate.Year;
+
+            //// Check if the birthdate has not yet occurred this year
+            //if (currentDate.Month < birthDate.Month || (currentDate.Month == birthDate.Month && currentDate.Day < birthDate.Day))
+            //{
+            //    age--;
+            //}
+            //txtboxAge.Text = age.ToString();
+
+
+            var totalDays = 0;
+            var numOfDays  = 0;
+
+            if (CheckOutDay > CheckInDay)
+            {
+                numOfDays = CheckOutDay - CheckInDay;
+                totalDays = numOfDays;
+            }
+            else
+            {
+                var getMonth = Frm_BookNow_S1.CheckIn.Month;
+
+                //var inDay = Frm_BookNow_S1.CheckIn.Day;
+                //var outDay = Frm_BookNow_S1.CheckOut.Day;
+
+                var monthDays = 0;
+
+                if (getMonth == 1 || getMonth == 3 || getMonth == 5 || getMonth == 7 || getMonth == 8 || getMonth == 10 || getMonth == 12)
+                {
+                    monthDays = 31;
+                }
+                else
+                {
+                    if (getMonth == 2)
+                    {
+                        monthDays = 28;
+                    }
+                    monthDays = 30;
+                }
+
+                var prevMonthVal = 0;                   
+                if (CheckInDay > CheckOutDay)
+                {
+                    for (int i = CheckInDay; i <= monthDays; i++) //Addan og one para mag start og count ig ugma OR skip ang first index para di ma apil og count.
+                    {
+                        if (i == CheckInDay)
+                        {
+                            continue;
+                        }
+                        prevMonthVal++;
+                        //Console.WriteLine(prevMonthVal);
+                    }
+
+                    for (int j = 1; j <= CheckOutDay; j++)
+                    {
+                        numOfDays++;
+                        //Console.WriteLine(numOfDays);
+                    }
+                }
+                totalDays = prevMonthVal + numOfDays;
+                NumberOfDays = totalDays;
+            }
+            //Console.WriteLine(totalDays);
+
+
             string retVal = String.Empty;
-            var price = Frm_BookNow_S2.RoomType;
-            //Total Payment Based on RoomType
-            switch (price)
+            var roomPrice = Frm_BookNow_S2.GetInstance().RoomType;
+
+            //Total Payment Based on RoomType multiply by the totalDays of Stay
+            switch (roomPrice)
             {
                 case 0:
-                    retVal = "₱ " + ParseVal(10000);
+                    retVal = "₱ " + ParseVal(10000 * totalDays);
                     break;
                 case 1:
-                    retVal = "₱ " + ParseVal(14000);
+                    retVal = "₱ " + ParseVal(14000 * totalDays);
                     break;
                 case 2:
-                    retVal = "₱ " + ParseVal(20000);
+                    retVal = "₱ " + ParseVal(20000 * totalDays);
                     break;
             }
             return retVal;
