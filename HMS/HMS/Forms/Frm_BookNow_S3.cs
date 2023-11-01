@@ -21,7 +21,15 @@ namespace HMS
         public string Email { get; set; }
         public long Phone { get; set; }
         public string Address { get; set; }
-        public int NumberOfDays { get; set; }
+        private static int totalDays;
+
+        //public int NumberOfDays { get; set; } = totalDays;
+
+        public int NumberOfDays
+        {
+            get { return totalDays; }
+            set { totalDays = value; } // Setter to update the value of totalDays
+        }
         private void txtbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -104,10 +112,12 @@ namespace HMS
             //{
             //    Frm_Confirmation.GetInstance().Show();
             //}
+
             Frm_BookNow_S4 fc = new Frm_BookNow_S4(GetNoOfGuestByValue(Frm_BookNow_S1.NoOfGuest), GetGuestByIndex(), GetTimeByIndex("After ", Frm_BookNow_S1.SelectedTime_CheckIn), GetTimeByIndex("Before ", Frm_BookNow_S1.SelectedTime_CheckOut),
                                                         GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckIn_AM_PM), GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckOut_AM_PM),
-                                                        Frm_BookNow_S1.CheckIn.ToString("ddd, MMM dd, yyyy"), Frm_BookNow_S1.CheckOut.ToString("ddd, MMM dd, yyyy"), GetTotalAmount(Frm_BookNow_S1.CheckIn.Day, Frm_BookNow_S1.CheckOut.Day));
+                                                        Frm_BookNow_S1.CheckIn.ToString("ddd, MMM dd, yyyy"), Frm_BookNow_S1.CheckOut.ToString("ddd, MMM dd, yyyy"), GetTotalAmount());
             fc.Show();
+
         }
         private String GetNoOfGuestByValue(int recVal)
         {       
@@ -195,28 +205,36 @@ namespace HMS
         {
             return retVal.ToString("#,##0");
         }
-        private String GetTotalAmount(int CheckInDay, int CheckOutDay)
+        private String GetTotalAmount()
         {
+            var retValDays = GetTotalDayStayed(Frm_BookNow_S1.CheckIn.Day, Frm_BookNow_S1.CheckOut.Day);//Call this function to calculate the date gap between checkin and checkout
 
-            //DateTime birthDate = metroDateTime_Birthdate.Value;
-            //DateTime currentDate = DateTime.Now;
-            //age = currentDate.Year - birthDate.Year;
+            string retVal = String.Empty;
+            var roomPrice = Frm_BookNow_S2.GetInstance().RoomType;
 
-            //// Check if the birthdate has not yet occurred this year
-            //if (currentDate.Month < birthDate.Month || (currentDate.Month == birthDate.Month && currentDate.Day < birthDate.Day))
-            //{
-            //    age--;
-            //}
-            //txtboxAge.Text = age.ToString();
-
-
-            var totalDays = 0;
-            var numOfDays  = 0;
+            //Total Payment Based on RoomType multiply by the totalDays of Stay
+            switch (roomPrice)
+            {
+                case 0:
+                    retVal = "₱ " + ParseVal(10000 * retValDays);
+                    break;
+                case 1:
+                    retVal = "₱ " + ParseVal(14000 * retValDays);
+                    break;
+                case 2:
+                    retVal = "₱ " + ParseVal(20000 * retValDays);
+                    break;
+            }
+            return retVal;
+        }
+        private int GetTotalDayStayed(int CheckInDay, int CheckOutDay)
+        {
+            var numOfDays = 0;
 
             if (CheckOutDay > CheckInDay)
-            {
+            { 
                 numOfDays = CheckOutDay - CheckInDay;
-                totalDays = numOfDays;
+                return totalDays = numOfDays;
             }
             else
             {
@@ -240,7 +258,7 @@ namespace HMS
                     monthDays = 30;
                 }
 
-                var prevMonthVal = 0;                   
+                var prevMonthVal = 0;
                 if (CheckInDay > CheckOutDay)
                 {
                     for (int i = CheckInDay; i <= monthDays; i++) //Addan og one para mag start og count ig ugma OR skip ang first index para di ma apil og count.
@@ -260,28 +278,12 @@ namespace HMS
                     }
                 }
                 totalDays = prevMonthVal + numOfDays;
-                NumberOfDays = totalDays;
+                //NumberOfDays = totalDays;
             }
-            //Console.WriteLine(totalDays);
+            Console.WriteLine(totalDays);
+            Console.WriteLine(NumberOfDays);
 
-
-            string retVal = String.Empty;
-            var roomPrice = Frm_BookNow_S2.GetInstance().RoomType;
-
-            //Total Payment Based on RoomType multiply by the totalDays of Stay
-            switch (roomPrice)
-            {
-                case 0:
-                    retVal = "₱ " + ParseVal(10000 * totalDays);
-                    break;
-                case 1:
-                    retVal = "₱ " + ParseVal(14000 * totalDays);
-                    break;
-                case 2:
-                    retVal = "₱ " + ParseVal(20000 * totalDays);
-                    break;
-            }
-            return retVal;
+            return totalDays;
         }
     }
 }

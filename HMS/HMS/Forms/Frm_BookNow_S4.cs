@@ -470,6 +470,7 @@ namespace HMS
         private void InitializeConfirmation()
         {
             var NoOfDays = Frm_BookNow_S3.GetInstance().NumberOfDays;
+            Console.WriteLine(Frm_BookNow_S3.GetInstance().NumberOfDays);
             var formatString = String.Empty;
 
             if (NoOfDays > 1)

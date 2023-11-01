@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.nud_NumberOfGuest = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.mc_GuideBooking = new Pabo.Calendar.MonthCalendar();
             this.label12 = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
             this.errorProvider_S1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label13 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_NumberOfGuest)).BeginInit();
@@ -281,6 +281,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(871, 760);
             this.panel1.TabIndex = 67;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(-3, 473);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(143, 21);
+            this.label13.TabIndex = 88;
+            this.label13.Text = "Number of Guest";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // nud_NumberOfGuest
             // 
@@ -591,17 +602,6 @@
             // errorProvider_S1
             // 
             this.errorProvider_S1.ContainerControl = this;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(-3, 473);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(143, 21);
-            this.label13.TabIndex = 88;
-            this.label13.Text = "Number of Guest";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // Frm_BookNow_S1
             // 

@@ -56,6 +56,7 @@ namespace HMS
 
             // Get and display the current date and time
             UpdateDateTime();
+            //mc_GuideBooking.SelectionStart = DateTime.Today;
 
             cbBox_Guest.SelectedIndex = Guest;
             nud_NumberOfGuest.Value = NoOfGuest;
