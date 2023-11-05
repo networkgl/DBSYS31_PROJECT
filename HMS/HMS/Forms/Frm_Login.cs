@@ -98,7 +98,8 @@ namespace HMS.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-            Frm_HomePage.GetInstance().Show();
+            Frm_HomePage hp = new Frm_HomePage();
+            hp.Show();
         }
 
         private void btnShowPassword_Click(object sender, EventArgs e)

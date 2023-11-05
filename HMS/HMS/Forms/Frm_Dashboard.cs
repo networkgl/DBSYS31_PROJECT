@@ -12,9 +12,8 @@ namespace HMS.Forms
 {
     public partial class Frm_Dashboard : Form
     {
-        private int toggleNotif = 0;
         private static Frm_Dashboard dashboard;
-        private Frm_Dashboard()
+        public Frm_Dashboard()
         {
             InitializeComponent();
         }

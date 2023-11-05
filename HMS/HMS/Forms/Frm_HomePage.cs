@@ -13,17 +13,16 @@ namespace HMS
 {
     public partial class Frm_HomePage : Form
     {
-        private static Frm_HomePage hp;
-        private Frm_HomePage()
+        public Frm_HomePage()
         {
             InitializeComponent();
         }
-        public static Frm_HomePage GetInstance()
-        {
-            if (hp == null)
-                hp = new Frm_HomePage();
-            return hp;
-        }
+        //public static Frm_HomePage GetInstance()
+        //{
+        //    if (hp == null)
+        //        hp = new Frm_HomePage();
+        //    return hp;
+        //}
         protected override CreateParams CreateParams
         {
             get
@@ -41,7 +40,9 @@ namespace HMS
         private void btnBookNow_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_BookNow_S1.GetInstance().Show();
+            //Frm_BookNow_S1.GetInstance().Show();
+            Frm_BookNow_S1 s1 = new Frm_BookNow_S1();
+            s1.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

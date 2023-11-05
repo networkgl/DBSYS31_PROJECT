@@ -12,17 +12,16 @@ namespace HMS.Forms
 {
     public partial class Frm_Client : Form
     {
-        private static Frm_Client client;
-        private Frm_Client()
+        public Frm_Client()
         {
             InitializeComponent();
         }
-        public static Frm_Client GetInstance()
-        {
-            if (client == null)
-                client = new Frm_Client();
-            return client;
-        }
+        //public static Frm_Client GetInstance()
+        //{
+        //    if (client == null)
+        //        client = new Frm_Client();
+        //    return client;
+        //}
         protected override CreateParams CreateParams
         {
             get

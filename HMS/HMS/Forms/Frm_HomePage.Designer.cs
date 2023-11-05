@@ -49,7 +49,7 @@
             this.btnLogin.FillColor = System.Drawing.Color.Transparent;
             this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnLogin.Location = new System.Drawing.Point(344, 574);
+            this.btnLogin.Location = new System.Drawing.Point(389, 694);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(144, 43);
             this.btnLogin.TabIndex = 0;
@@ -68,7 +68,7 @@
             this.btnBookNow.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnBookNow.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBookNow.ForeColor = System.Drawing.Color.White;
-            this.btnBookNow.Location = new System.Drawing.Point(172, 574);
+            this.btnBookNow.Location = new System.Drawing.Point(204, 694);
             this.btnBookNow.Name = "btnBookNow";
             this.btnBookNow.Size = new System.Drawing.Size(144, 43);
             this.btnBookNow.TabIndex = 1;
@@ -79,11 +79,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(290, 402);
+            this.label1.Location = new System.Drawing.Point(259, 419);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(510, 60);
+            this.label1.Size = new System.Drawing.Size(790, 96);
             this.label1.TabIndex = 2;
             this.label1.Text = resources.GetString("label1.Text");
             // 
@@ -93,7 +93,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(446, 192);
+            this.label2.Location = new System.Drawing.Point(588, 164);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(206, 21);
             this.label2.TabIndex = 3;
@@ -103,11 +103,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Book Antiqua", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Book Antiqua", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(334, 234);
+            this.label3.Location = new System.Drawing.Point(401, 185);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(439, 114);
+            this.label3.Size = new System.Drawing.Size(585, 156);
             this.label3.TabIndex = 4;
             this.label3.Text = "ISLAND OF NEW \r\nPOSSIBILITIES";
             // 
@@ -117,7 +117,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::HMS.Properties.Resources.resort_hero_night;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1112, 672);
+            this.ClientSize = new System.Drawing.Size(1300, 800);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

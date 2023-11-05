@@ -17,7 +17,7 @@ namespace HMS
 {
     public partial class Frm_BookNow_S2 : Form
     {
-        private static Frm_BookNow_S2 s2;
+        private Frm_BookNow_S1 s1;
 
         public int RoomType { get; set; }
         public static int RoomPrice { get; set; }
@@ -25,7 +25,12 @@ namespace HMS
         {
             InitializeComponent();
         }
-
+        public Frm_BookNow_S2(Frm_BookNow_S1 s1)
+        {
+            InitializeComponent();
+            this.s1 = s1;
+            //this.s2 = s2;
+        }
         private void llb_moreInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             //MoreInfo_S1 s1 = new MoreInfo_S1();
@@ -41,12 +46,12 @@ namespace HMS
                 return handleParams;
             }
         }
-        public static Frm_BookNow_S2 GetInstance()
-        {
-            if (s2 == null)
-                s2 = new Frm_BookNow_S2();
-            return s2;
-        }
+        //public static Frm_BookNow_S2 GetInstance()
+        //{
+        //    if (s2 == null)
+        //        s2 = new Frm_BookNow_S2();
+        //    return s2;
+        //}
         private void Frm_BookNow_S2_Load(object sender, EventArgs e)
         {
             CurrentDate.Start();
@@ -55,6 +60,14 @@ namespace HMS
             Room.GetRoomType();
 
             cbBox_roomType.SelectedIndex = RoomType;
+
+            //frmS1 = Frm_BookNow_S1.GetInstance();
+            //Console.WriteLine(frmS1.Guest);
+            //Console.WriteLine(frmS1.CheckIn);
+            //Console.WriteLine(frmS1.CheckOut);   
+            //Console.WriteLine();
+            //Console.WriteLine("S2: " + Frm_BookNow_S1.GetInstance().CheckIn);
+            //Console.WriteLine("S2: " +Frm_BookNow_S1.GetInstance().CheckOut);
         }
 
         private void CurrentDate_Tick(object sender, EventArgs e)
@@ -90,19 +103,14 @@ namespace HMS
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_BookNow_S1.GetInstance().Show();
-            //Frm_BookNow_S1 s1 = new Frm_BookNow_S1();
-            //s1.Show();
+            s1.Show();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //Frm_Confirmation.GetInstance().price = RoomPrice.ToString();
-            //Frm_Confirmation fc = new Frm_Confirmation();
-            //fc.price = RoomPrice.ToString();
-
             this.Hide();
-            Frm_BookNow_S3.GetInstance().Show();
+            Frm_BookNow_S3 s3 = new Frm_BookNow_S3(s1, this);
+            s3.Show();
         }
         private void DisplayRooms()
         {

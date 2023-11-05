@@ -156,17 +156,11 @@
     <Compile Include="Forms\Frm_Dashboard.Designer.cs">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Frm_MainPage.cs">
+    <Compile Include="Forms\Frm_Room.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Frm_MainPage.Designer.cs">
-      <DependentUpon>Frm_MainPage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Frm_WaitEffect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Frm_WaitEffect.Designer.cs">
-      <DependentUpon>Frm_WaitEffect.cs</DependentUpon>
+    <Compile Include="Forms\Frm_Room.Designer.cs">
+      <DependentUpon>Frm_Room.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MoreInfo_S1.cs">
       <SubType>Form</SubType>
@@ -217,8 +211,8 @@
     <EmbeddedResource Include="Forms\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Frm_MainPage.resx">
-      <DependentUpon>Frm_MainPage.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Frm_Room.resx">
+      <DependentUpon>Frm_Room.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MoreInfo_S1.resx">
       <DependentUpon>MoreInfo_S1.cs</DependentUpon>
@@ -444,6 +438,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-download-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-door-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

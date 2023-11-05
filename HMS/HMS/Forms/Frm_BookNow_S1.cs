@@ -11,29 +11,37 @@ namespace HMS
 {
     public partial class Frm_BookNow_S1 : Form
     {
-        private static Frm_BookNow_S1 s1;
-        public static int Guest { get; set; }
-        public static int NoOfGuest { get; set; }
-        public static int SelectedTime_CheckIn { get; set; }
-        public static int SelectedTime_CheckOut { get; set; }
-        public static int Selected_CheckIn_AM_PM { get; set; }
-        public static int Selected_CheckOut_AM_PM { get; set; }
-        public static DateTime CheckIn { get; set; } = DateTime.Now;
-        public static DateTime CheckOut { get; set; } = DateTime.Now;
+        private Frm_BookNow_S1 s1;
+        private Frm_BookNow_S2 s2;
+        private Frm_BookNow_S3 s3;
+        private Frm_BookNow_S4 s4;
 
-        //public  int Guest { get; set; }
-        //public  int NoOfGuest { get; set; }
-        //public  int SelectedTime_CheckIn { get; set; }
-        //public  int SelectedTime_CheckOut { get; set; }
-        //public  int Selected_CheckIn_AM_PM { get; set; }
-        //public  int Selected_CheckOut_AM_PM { get; set; }
-        //public  DateTime CheckIn { get; set; } = DateTime.Now;
-        //public  DateTime CheckOut { get; set; } = DateTime.Now;
+        private int guest;
+        private int noOfGuest;
+        private String selectedTime_CheckIn = "After 2:00 PM";
+        private String selectedTime_CheckOut = "Before 12:00 PM";
+        public DateTime checkIn = DateTime.Now;
+        public DateTime checkOut = DateTime.Now;
 
-        private Frm_BookNow_S1()
+        //public static int Guest { get; set; }
+        //public static int NoOfGuest { get; set; }
+        //public static int SelectedTime_CheckIn { get; set; }
+        //public static int SelectedTime_CheckOut { get; set; }
+        //public static int Selected_CheckIn_AM_PM { get; set; }
+        //public static int Selected_CheckOut_AM_PM { get; set; }
+        //public static DateTime CheckIn { get; set; } = DateTime.Now;
+        //public static DateTime CheckOut { get; set; } = DateTime.Now;
+        public Frm_BookNow_S1()
         {
             InitializeComponent();
         }
+        //public Frm_BookNow_S1(Frm_BookNow_S2 s2, Frm_BookNow_S3 s3, Frm_BookNow_S4 s4)
+        //{
+        //    InitializeComponent();
+        //    this.s2 = s2;
+        //    this.s3 = s3;
+        //    this.s4 = s4;
+        //}
         protected override CreateParams CreateParams
         {
             get
@@ -43,12 +51,12 @@ namespace HMS
                 return handleParams;
             }
         }
-        public static Frm_BookNow_S1 GetInstance()
-        {
-            if (s1 == null)
-                s1 = new Frm_BookNow_S1();
-            return s1;
-        }
+        //public static Frm_BookNow_S1 GetInstance()
+        //{
+        //    //if (s1 == null)
+        //    s1 = new Frm_BookNow_S1();
+        //    return s1;
+        //}
         private void Frm_BookNow_S1_Load(object sender, EventArgs e)
         {
             // Start the Timer control
@@ -56,16 +64,17 @@ namespace HMS
 
             // Get and display the current date and time
             UpdateDateTime();
-            //mc_GuideBooking.SelectionStart = DateTime.Today;
 
+            mc_GuideBooking.ActiveMonth.Month = DateTime.Now.Month;//Set active month to current month
+
+
+            //Assign Values For Users to see their reservation info
             cbBox_Guest.SelectedIndex = Guest;
             nud_NumberOfGuest.Value = NoOfGuest;
             DateTimePicker_CheckIn.Value = CheckIn;
             DateTimePicker_CheckOut.Value = CheckOut;
-            cbBox_CheckIn_Time.SelectedIndex = SelectedTime_CheckIn;
-            cbBox_CheckIn_AM_PM.SelectedIndex = Selected_CheckIn_AM_PM;
-            cbBox_CheckOut_Time.SelectedIndex = SelectedTime_CheckOut;
-            cbBox_CheckOut_AM_PM.SelectedIndex = Selected_CheckOut_AM_PM;
+            txtbox_CheckInTime.Text = SelectedTime_CheckIn.ToString();
+            txtbox_CheckOutTime.Text = SelectedTime_CheckOut.ToString();
         }
         private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
         {
@@ -93,22 +102,22 @@ namespace HMS
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_HomePage.GetInstance().Show();
+            Frm_HomePage hp = new Frm_HomePage();
+            hp.Show();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_BookNow_S2.GetInstance().Show();
-            //Frm_BookNow_S2 s2 = new Frm_BookNow_S2();
-            //s2.Show();
+            Frm_BookNow_S2 s2 = new Frm_BookNow_S2(this);
+            s2.Show();
+
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //Frm_BookNow_S1 s1 = new Frm_BookNow_S1();
-            //s1.Show();
-            Frm_HomePage.GetInstance().Show();
+            Frm_HomePage hp = new Frm_HomePage();
+            hp.Show();
         }
         private void CurrentDate_Tick(object sender, EventArgs e)
         {
@@ -123,28 +132,32 @@ namespace HMS
         }
         private void DateTimePicker_CheckIn_ValueChanged(object sender, EventArgs e)
         {
-            CheckIn = DateTimePicker_CheckIn.Value;
+            checkIn = DateTimePicker_CheckIn.Value.Date;
+            Console.WriteLine("S1: "+checkIn);
         }
 
         private void DateTimePicker_CheckOut_ValueChanged(object sender, EventArgs e)
         {
-            CheckOut = DateTimePicker_CheckOut.Value;
+            checkOut = DateTimePicker_CheckOut.Value.Date;
+            Console.WriteLine("S1: "+checkOut);
         }
         public void cbBox_Guest_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (cbBox_Guest.SelectedIndex)
             {
                 case 0:
-                    Guest = cbBox_Guest.SelectedIndex;
+                    guest = cbBox_Guest.SelectedIndex;
                     break;
                 case 1:
-                    Guest = cbBox_Guest.SelectedIndex;
+                    guest = cbBox_Guest.SelectedIndex;
                     break;
                 case 2:
-                    Guest = cbBox_Guest.SelectedIndex;
+                    guest = cbBox_Guest.SelectedIndex;
                     break;
             }
         }
+
+        /*
         private void cbBox_CheckIn_Time_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (cbBox_CheckIn_Time.SelectedIndex)
@@ -253,16 +266,47 @@ namespace HMS
                     break;
             }
         }
+        */
 
         private void nud_NumberOfGuest_ValueChanged(object sender, EventArgs e)
         {
-            NoOfGuest = (Int32)nud_NumberOfGuest.Value;
-            //Console.WriteLine(NoOfGuest);
+            noOfGuest = (Int32)nud_NumberOfGuest.Value;
         }
 
-        private void label13_Click(object sender, EventArgs e)
+        public int Guest
         {
+            get { return guest; }
+            set { guest = value; }
+        }
 
+        public int NoOfGuest
+        {
+            get { return noOfGuest; }
+            set { noOfGuest = value; }
+        }
+
+        public String SelectedTime_CheckIn//No need to have setters because it is a const var
+        {
+            get { return selectedTime_CheckIn; }
+            set { selectedTime_CheckIn = value; }
+        }
+
+        public String SelectedTime_CheckOut//No need to have setters because it is a const var
+        {
+            get { return selectedTime_CheckOut; }
+            set { selectedTime_CheckOut = value; }
+        }
+
+        public DateTime CheckIn
+        {
+            get { return checkIn; }
+            set { checkIn = value; }
+        }
+
+        public DateTime CheckOut
+        {
+            get { return checkOut; }
+            set { checkOut = value; }
         }
     }
 }

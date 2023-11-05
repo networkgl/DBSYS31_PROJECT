@@ -20,7 +20,7 @@ namespace HMS.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_BookNow_S2.GetInstance().Show();
+            //Frm_BookNow_S2.GetInstance().Show();
         }
     }
 }

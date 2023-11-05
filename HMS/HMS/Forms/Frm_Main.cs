@@ -17,7 +17,7 @@ namespace HMS
         private int toggleNotif = 0;
         private byte fontSize = 12;
         private bool ToggleDash, ToggleClient, ToggleRoom, ToggleReserve,ToggleLogout;
-        private Frm_Main()
+        public Frm_Main()
         {
             InitializeComponent();
         }
@@ -98,11 +98,13 @@ namespace HMS
             if (ToggleClient)
                 pnl_ToggleClient.Visible = ToggleClient;
 
+
+            Frm_Client client = new Frm_Client();
             pnl_main.Controls.Clear();
-            Frm_Client.GetInstance().TopLevel = false;
-            Frm_Client.GetInstance().Dock = DockStyle.Fill;
-            pnl_main.Controls.Add(Frm_Client.GetInstance());
-            Frm_Client.GetInstance().Show();
+            client.TopLevel = false;
+            client.Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(client);
+            client.Show();
         }
 
         private void btnRoom_Click(object sender, EventArgs e)
@@ -116,6 +118,13 @@ namespace HMS
 
             if (ToggleRoom)
                 pnl_ToggleRoom.Visible = ToggleRoom;
+
+            pnl_main.Controls.Clear();
+            Frm_Room room = new Frm_Room();
+            room.TopLevel = false;
+            room.Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(room);
+            room.Show();
         }
         private void btnReservation_Click(object sender, EventArgs e)
         {
@@ -144,7 +153,8 @@ namespace HMS
             var ask = MessageBox.Show("Are you sure you want to logout ?", "Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if(ask == DialogResult.Yes) {
                 this.Hide();
-                Frm_HomePage.GetInstance().Show();
+                Frm_HomePage home = new Frm_HomePage();
+                home.Show();
                 Frm_Login.GetInstance().HasLogin = false;
             }
         }
