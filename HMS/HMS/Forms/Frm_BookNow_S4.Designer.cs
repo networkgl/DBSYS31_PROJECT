@@ -69,6 +69,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
+            this.btnBookAgain = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -291,6 +293,8 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.btnLogin);
+            this.guna2ShadowPanel1.Controls.Add(this.btnBookAgain);
             this.guna2ShadowPanel1.Controls.Add(this.lbl_ContactNumber);
             this.guna2ShadowPanel1.Controls.Add(this.lbl_FullName);
             this.guna2ShadowPanel1.Controls.Add(this.label9);
@@ -418,7 +422,7 @@
             // 
             this.lbl_totalPrice.AutoSize = true;
             this.lbl_totalPrice.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalPrice.Location = new System.Drawing.Point(913, 440);
+            this.lbl_totalPrice.Location = new System.Drawing.Point(926, 440);
             this.lbl_totalPrice.Name = "lbl_totalPrice";
             this.lbl_totalPrice.Size = new System.Drawing.Size(140, 28);
             this.lbl_totalPrice.TabIndex = 120;
@@ -543,6 +547,36 @@
             // 
             this.CurrentDate.Tick += new System.EventHandler(this.CurrentDate_Tick);
             // 
+            // btnBookAgain
+            // 
+            this.btnBookAgain.BackColor = System.Drawing.Color.Coral;
+            this.btnBookAgain.FlatAppearance.BorderSize = 0;
+            this.btnBookAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBookAgain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBookAgain.ForeColor = System.Drawing.Color.White;
+            this.btnBookAgain.Location = new System.Drawing.Point(954, 179);
+            this.btnBookAgain.Name = "btnBookAgain";
+            this.btnBookAgain.Size = new System.Drawing.Size(112, 31);
+            this.btnBookAgain.TabIndex = 115;
+            this.btnBookAgain.Text = "Book Again ?";
+            this.btnBookAgain.UseVisualStyleBackColor = false;
+            this.btnBookAgain.Visible = false;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(954, 228);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(112, 44);
+            this.btnLogin.TabIndex = 130;
+            this.btnLogin.Text = "Click me to login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Visible = false;
+            // 
             // Frm_BookNow_S4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,7 +602,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
@@ -578,7 +611,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Timer CurrentDate;
-        private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label lblSystemTime;
         public Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         public System.Windows.Forms.Label lbl_CheckOut_Date;
@@ -589,7 +621,6 @@
         public System.Windows.Forms.Label lbl_totalPrice;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.Label lbl_NoOfGuest;
-        private System.Windows.Forms.Button btn_DownloadOffline;
         public System.Windows.Forms.Label lbl_DownloadNow;
         public System.Windows.Forms.Label lbl_NumberOfDays;
         private System.Windows.Forms.Panel panel4;
@@ -607,5 +638,10 @@
         public System.Windows.Forms.Label lbl_ContactNumber;
         public System.Windows.Forms.Label lbl_FullName;
         private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Button btnLogin;
+        public System.Windows.Forms.Button btnBookAgain;
+        public System.Windows.Forms.Button btn_DownloadOffline;
+        public System.Windows.Forms.Button btnConfirm;
+        public System.Windows.Forms.Button btnBack;
     }
 }

@@ -48,7 +48,6 @@ C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.c
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.csproj.CopyComplete
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.exe
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.pdb
-C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.MoreInfo_S1.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\bin\Debug\LiveCharts.dll
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\bin\Debug\LiveCharts.WinForms.dll
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\bin\Debug\LiveCharts.Wpf.dll
@@ -68,3 +67,7 @@ C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\bin\Debug\Aspos
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\bin\Debug\Aspose.Words.xml
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_WaitForm.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_Room.resources
+C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_RType_Deluxe.resources
+C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_RType_FiliSuite.resources
+C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_RType_PriemereDeluxe.resources
+C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_ProcessPayment.resources

@@ -47,7 +47,6 @@
             this.lblSystemTime = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.llb_moreInfo = new System.Windows.Forms.LinkLabel();
             this.lbl_roomDetails2 = new System.Windows.Forms.Label();
@@ -55,11 +54,12 @@
             this.lbl_priceDetails = new System.Windows.Forms.Label();
             this.lbl_roomPrice = new System.Windows.Forms.Label();
             this.lbl_roomType = new System.Windows.Forms.Label();
-            this.pnl_roompicture = new System.Windows.Forms.Panel();
             this.lbl_roomDetails1 = new System.Windows.Forms.Label();
             this.cbBox_roomType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
             this.errorProvider_S2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
+            this.pnl_roompicture = new System.Windows.Forms.Panel();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -291,22 +291,6 @@
             this.label5.TabIndex = 89;
             this.label5.Text = "BOOKING SECTION";
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(17, 37);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(42, 31);
-            this.btnBack.TabIndex = 72;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
@@ -393,15 +377,6 @@
             this.lbl_roomType.TabIndex = 71;
             this.lbl_roomType.Text = "DELUXE ROOM KING";
             // 
-            // pnl_roompicture
-            // 
-            this.pnl_roompicture.BackgroundImage = global::HMS.Properties.Resources.king;
-            this.pnl_roompicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnl_roompicture.Location = new System.Drawing.Point(6, 19);
-            this.pnl_roompicture.Name = "pnl_roompicture";
-            this.pnl_roompicture.Size = new System.Drawing.Size(607, 365);
-            this.pnl_roompicture.TabIndex = 67;
-            // 
             // lbl_roomDetails1
             // 
             this.lbl_roomDetails1.AutoSize = true;
@@ -440,6 +415,31 @@
             // errorProvider_S2
             // 
             this.errorProvider_S2.ContainerControl = this;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(17, 37);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 72;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // pnl_roompicture
+            // 
+            this.pnl_roompicture.BackgroundImage = global::HMS.Properties.Resources.king;
+            this.pnl_roompicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_roompicture.Location = new System.Drawing.Point(6, 19);
+            this.pnl_roompicture.Name = "pnl_roompicture";
+            this.pnl_roompicture.Size = new System.Drawing.Size(607, 365);
+            this.pnl_roompicture.TabIndex = 67;
             // 
             // Frm_BookNow_S2
             // 

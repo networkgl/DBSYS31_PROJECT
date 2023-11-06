@@ -44,6 +44,12 @@ namespace HMS
         private Frm_BookNow_S2 s2;
         private Frm_BookNow_S3 s3;
 
+        public string CardHolderName { get; set; }
+        public string CardNumber { get; set; }
+        public string CardExpiryDate { get; set; }
+        public string CardCVC { get; set; }
+
+
         public Frm_BookNow_S4()
         {
             InitializeComponent();
@@ -111,38 +117,21 @@ namespace HMS
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            s3.Show();
+            if (Frm_ProcessPayment.HasPaid)
+            {
+                Frm_BookNow_S3 s3 = new Frm_BookNow_S3();
+                s3.Show();
+            }
+            else
+            {
+                s3.Show();
+            }
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            var waitForm = new WaitFormFunc();
 
-            var msg = "Are you sure all information is correct ? If yes,\nthen you can proceed to payment section";
-            bool Proceed = MessageDialog.Show(msg, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light) == DialogResult.Yes;
-            if (Proceed)
-            {
-
-                msg = "Please input the amount to be paid";
-                MessageDialog.Show(msg,"Message", MessageDialogButtons.OK, MessageDialogIcon.Information,MessageDialogStyle.Light);
-
-                
-                //Do something
-                try
-                {
-                    //this.Hide();
-                    waitForm.Show(this);
-                    Thread.Sleep(1000);
-                    waitForm.Close();
-
-                    msg = "Payment Complete";
-                    MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
-
-                    btn_DownloadOffline.Visible = true;
-                    lbl_DownloadNow.Visible = true;
-                    btnConfirm.Visible = false;
-                }
-                catch { }    
-            }
+            Frm_ProcessPayment payment = new Frm_ProcessPayment(this);
+            payment.ShowDialog();
         }
         private void btn_DownloadOffline_Click(object sender, EventArgs e)
         {
@@ -504,7 +493,7 @@ namespace HMS
             lbl_CheckOut_Time.Text = s1.SelectedTime_CheckOut;
             lbl_CheckIn_Date.Text = s1.CheckIn.ToString("ddd, MMM dd, yyyy");
             lbl_CheckOut_Date.Text = s1.CheckOut.ToString("ddd, MMM dd, yyyy");
-            lbl_totalPrice.Text = GetTotalAmount();
+            lbl_totalPrice.Text = GetTotalAmount()+".00";
             lbl_Guest.Text = GetGuestByIndex();
             lbl_NumberOfDays.Text = isDays();
             lbl_NoOfGuest.Text = GetNoOfGuestByValue(s1.NoOfGuest).ToString();
@@ -550,7 +539,7 @@ namespace HMS
         {
             return retVal.ToString("#,##0");
         }
-        private String GetTotalAmount()
+        public String GetTotalAmount()
         {
             var totalDys = GetTotalDayStayed(this.s1.CheckIn, this.s1.CheckOut); // Call this function to calculate the date gap between check-in and checkout
             //var totalDys = GetTotalDayStayed(Frm_BookNow_S1.checkIn, Frm_BookNow_S1.checkOut); // Call this function to calculate the date gap between check-in and checkout

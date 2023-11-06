@@ -173,6 +173,16 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_american_express_squared_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-american-express-squared-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_back_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-back-26", resourceCulture);
@@ -293,6 +303,26 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_door_100__2_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-door-100 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_door_100__3_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-door-100 (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_download_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-download-50", resourceCulture);
@@ -306,6 +336,16 @@ namespace HMS.Properties {
         internal static System.Drawing.Bitmap icons8_feet_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-feet-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_filter_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-filter-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,6 +373,16 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_information_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-information-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_logout_18 {
             get {
                 object obj = ResourceManager.GetObject("icons8-logout-18", resourceCulture);
@@ -346,6 +396,16 @@ namespace HMS.Properties {
         internal static System.Drawing.Bitmap icons8_logout_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-logout-26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_mastercard_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-mastercard-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -583,6 +643,16 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_visa_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-visa-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap king {
             get {
                 object obj = ResourceManager.GetObject("king", resourceCulture);
@@ -686,6 +756,26 @@ namespace HMS.Properties {
         internal static System.Drawing.Bitmap view__1_ {
             get {
                 object obj = ResourceManager.GetObject("view (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visa_logo_800x450 {
+            get {
+                object obj = ResourceManager.GetObject("visa-logo-800x450", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visa_logo_800x4501 {
+            get {
+                object obj = ResourceManager.GetObject("visa-logo-800x4501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

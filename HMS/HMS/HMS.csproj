@@ -156,17 +156,35 @@
     <Compile Include="Forms\Frm_Dashboard.Designer.cs">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_ProcessPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_ProcessPayment.Designer.cs">
+      <DependentUpon>Frm_ProcessPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Room.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Frm_Room.Designer.cs">
       <DependentUpon>Frm_Room.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MoreInfo_S1.cs">
+    <Compile Include="Forms\Frm_RType_Deluxe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MoreInfo_S1.Designer.cs">
-      <DependentUpon>MoreInfo_S1.cs</DependentUpon>
+    <Compile Include="Forms\Frm_RType_Deluxe.Designer.cs">
+      <DependentUpon>Frm_RType_Deluxe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_RType_FiliSuite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_RType_FiliSuite.Designer.cs">
+      <DependentUpon>Frm_RType_FiliSuite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_RType_PriemereDeluxe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_RType_PriemereDeluxe.Designer.cs">
+      <DependentUpon>Frm_RType_PriemereDeluxe.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_WaitForm.cs">
       <SubType>Form</SubType>
@@ -211,11 +229,20 @@
     <EmbeddedResource Include="Forms\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_ProcessPayment.resx">
+      <DependentUpon>Frm_ProcessPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Room.resx">
       <DependentUpon>Frm_Room.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MoreInfo_S1.resx">
-      <DependentUpon>MoreInfo_S1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Frm_RType_Deluxe.resx">
+      <DependentUpon>Frm_RType_Deluxe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_RType_FiliSuite.resx">
+      <DependentUpon>Frm_RType_FiliSuite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_RType_PriemereDeluxe.resx">
+      <DependentUpon>Frm_RType_PriemereDeluxe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_WaitForm.resx">
       <DependentUpon>Frm_WaitForm.cs</DependentUpon>
@@ -441,6 +468,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-door-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-door-100 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-door-100 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visa-logo-800x450.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visa-logo-800x4501.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-visa-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mastercard-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-american-express-squared-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-information-20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -103,7 +103,15 @@ namespace HMS
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            s1.Show();
+            if (Frm_ProcessPayment.HasPaid)
+            {
+                Frm_BookNow_S1 s1 = new Frm_BookNow_S1();
+                s1.Show();
+            }
+            else
+            {
+                s1.Show();
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)

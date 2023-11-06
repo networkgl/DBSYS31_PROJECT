@@ -68,13 +68,31 @@ namespace HMS
             mc_GuideBooking.ActiveMonth.Month = DateTime.Now.Month;//Set active month to current month
 
 
-            //Assign Values For Users to see their reservation info
+            ////Frm_ProcessPayment p = new Frm_ProcessPayment();
+            //Console.WriteLine(Frm_ProcessPayment.HasPaid);
+            //if (Frm_ProcessPayment.HasPaid)
+            //{
+            //    cbBox_Guest.SelectedIndex = 0;
+            //    nud_NumberOfGuest.Value = 0;
+            //    DateTimePicker_CheckIn.Value = DateTime.Now;
+            //    DateTimePicker_CheckOut.Value = DateTime.Now;
+
+            //}
+            //else
+            //{
+            //    //Assign Values For Users to see their reservation info
+            //    cbBox_Guest.SelectedIndex = Guest;
+            //    nud_NumberOfGuest.Value = NoOfGuest;
+            //    DateTimePicker_CheckIn.Value = CheckIn;
+            //    DateTimePicker_CheckOut.Value = CheckOut;
+            //}
             cbBox_Guest.SelectedIndex = Guest;
             nud_NumberOfGuest.Value = NoOfGuest;
             DateTimePicker_CheckIn.Value = CheckIn;
             DateTimePicker_CheckOut.Value = CheckOut;
             txtbox_CheckInTime.Text = SelectedTime_CheckIn.ToString();
             txtbox_CheckOutTime.Text = SelectedTime_CheckOut.ToString();
+
         }
         private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
         {
@@ -104,6 +122,7 @@ namespace HMS
             this.Hide();
             Frm_HomePage hp = new Frm_HomePage();
             hp.Show();
+            Frm_ProcessPayment.HasPaid = false;
         }
 
         private void btnNext_Click(object sender, EventArgs e)

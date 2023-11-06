@@ -24,7 +24,7 @@ namespace HMS
         private string fname;
         private string lname;
         private string email;
-        private long phone;
+        private string phone;
         private string address;
 
 
@@ -73,10 +73,10 @@ namespace HMS
             //txtbox_fName.Text = Fname;
             //txtbox_lName.Text = Lname;
             //txtbox_Email.Text = Email;
-            if (Phone == 0)
-                txtbox_Phone.Text = string.Empty;
-            else
-                txtbox_Phone.Text = Phone.ToString();
+            //if (Phone.Equals(String.Empty))
+            //    txtbox_Phone.Text = string.Empty;
+            //else
+            //    txtbox_Phone.Text = Phone.ToString();
             //txtbox_Address.Text = Address;
         }
 
@@ -86,13 +86,22 @@ namespace HMS
             Lname = txtbox_lName.Text;
             Email = txtbox_Email.Text;
             if (txtbox_Phone.Text.Equals(string.Empty))           
-                Phone = 0;           
+                Phone = String.Empty;           
             else
-                Phone = long.Parse(txtbox_Phone.Text);
+                Phone = txtbox_Phone.Text;
             Address = txtbox_Address.Text;
 
+
             this.Hide();
-            s2.Show();
+            if (Frm_ProcessPayment.HasPaid)
+            {
+                Frm_BookNow_S2 s2 = new Frm_BookNow_S2();
+                s2.Show();
+            }
+            else
+            {
+                s2.Show();
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -114,7 +123,7 @@ namespace HMS
             fname = txtbox_fName.Text;
             lname = txtbox_lName.Text;
             email = txtbox_Email.Text;
-            phone = long.Parse(txtbox_Phone.Text);
+            phone = txtbox_Phone.Text;           
             address = txtbox_Address.Text;
 
             this.Hide();
@@ -171,7 +180,7 @@ namespace HMS
             set { email = value; }
         }
 
-        public long Phone
+        public string Phone
         {
             get { return phone; }
             set { phone = value; }
