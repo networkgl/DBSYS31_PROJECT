@@ -43,6 +43,7 @@ namespace HMS
         private Frm_BookNow_S1 s1;
         private Frm_BookNow_S2 s2;
         private Frm_BookNow_S3 s3;
+        private Frm_BookNow_S4 s4;
 
         public string CardHolderName { get; set; }
         public string CardNumber { get; set; }
@@ -54,12 +55,13 @@ namespace HMS
         {
             InitializeComponent();
         }
-        public Frm_BookNow_S4(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3)
+        public Frm_BookNow_S4(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3, Frm_BookNow_S4 s4)
         {
             InitializeComponent();
             this.s1 = s1;
             this.s2 = s2;
             this.s3 = s3;
+            this.s4 = s4;
         }
         /*
         public Frm_BookNow_S4 (string _noOfGuest, string guest, string checkIn, string checkOut, string checkIn_am_pm, string checkOut_am_pm, string checkIn_date, string checkOut_date, string totalPrice)
@@ -119,11 +121,13 @@ namespace HMS
             this.Hide();
             if (Frm_ProcessPayment.HasPaid)
             {
+                //Frm_BookNow_S3 s3 = new Frm_BookNow_S3(s1,s2,this.s3,this);
                 Frm_BookNow_S3 s3 = new Frm_BookNow_S3();
                 s3.Show();
             }
             else
             {
+                s3 = new Frm_BookNow_S3(Frm_BookNow_S1.GetInstance, Frm_BookNow_S2.GetInstance, Frm_BookNow_S3.GetInstance);
                 s3.Show();
             }
         }
@@ -465,35 +469,11 @@ namespace HMS
 
         private void InitializeConfirmation()
         {
-            /*
-            var NoOfDays = Frm_BookNow_S3.GetInstance().NumberOfDays;
-            Console.WriteLine("S4 :" + Frm_BookNow_S3.GetInstance().NumberOfDays);
-            var formatString = String.Empty;
-
-            if (NoOfDays > 1)
-            {
-                formatString = NoOfDays + " Days";
-            }
-            else
-            {
-                formatString = NoOfDays + " Day";
-            }
-
-            lbl_CheckIn_Time.Text = CheckIn + " " + CheckIn_am_pm;
-            lbl_CheckOut_Time.Text = CheckOut + " " + CheckOut_am_pm;
-            lbl_CheckIn_Date.Text = CheckIn_date;
-            lbl_CheckOut_Date.Text = CheckOut_date;
-            lbl_totalPrice.Text = TotalPrice;
-            lbl_Guest.Text = Guest;
-            lbl_NumberOfDays.Text = formatString;
-            lbl_NoOfGuest.Text = NoOfGuest;
-             
-             */
             lbl_CheckIn_Time.Text = s1.SelectedTime_CheckIn;
             lbl_CheckOut_Time.Text = s1.SelectedTime_CheckOut;
             lbl_CheckIn_Date.Text = s1.CheckIn.ToString("ddd, MMM dd, yyyy");
             lbl_CheckOut_Date.Text = s1.CheckOut.ToString("ddd, MMM dd, yyyy");
-            lbl_totalPrice.Text = GetTotalAmount()+".00";
+            lbl_totalPrice.Text = GetTotalAmount() + ".00";
             lbl_Guest.Text = GetGuestByIndex();
             lbl_NumberOfDays.Text = isDays();
             lbl_NoOfGuest.Text = GetNoOfGuestByValue(s1.NoOfGuest).ToString();
@@ -501,15 +481,34 @@ namespace HMS
             lbl_FullName.Text = s3.Lname + ", " + s3.Fname;
             lbl_ContactNumber.Text = s3.Phone.ToString();
 
+            //if (s4 == null)
+            //{
+            //    lbl_CheckIn_Time.Text = s1.SelectedTime_CheckIn;
+            //    lbl_CheckOut_Time.Text = s1.SelectedTime_CheckOut;
+            //    lbl_CheckIn_Date.Text = s1.CheckIn.ToString("ddd, MMM dd, yyyy");
+            //    lbl_CheckOut_Date.Text = s1.CheckOut.ToString("ddd, MMM dd, yyyy");
+            //    lbl_totalPrice.Text = GetTotalAmount() + ".00";
+            //    lbl_Guest.Text = GetGuestByIndex();
+            //    lbl_NumberOfDays.Text = isDays();
+            //    lbl_NoOfGuest.Text = GetNoOfGuestByValue(s1.NoOfGuest).ToString();
 
+            //    lbl_FullName.Text = s3.Lname + ", " + s3.Fname;
+            //    lbl_ContactNumber.Text = s3.Phone.ToString();
+            //}
+            //else
+            //{
+            //    lbl_CheckIn_Time.Text = s4.s1.SelectedTime_CheckIn;
+            //    lbl_CheckOut_Time.Text = s4.s1.SelectedTime_CheckOut;
+            //    lbl_CheckIn_Date.Text = s4.s1.CheckIn.ToString("ddd, MMM dd, yyyy");
+            //    lbl_CheckOut_Date.Text = s4.s1.CheckOut.ToString("ddd, MMM dd, yyyy");
+            //    lbl_totalPrice.Text = s4.GetTotalAmount() + ".00";
+            //    lbl_Guest.Text = s4.GetGuestByIndex();
+            //    lbl_NumberOfDays.Text = s4.isDays();
+            //    lbl_NoOfGuest.Text = s4.GetNoOfGuestByValue(s1.NoOfGuest).ToString();
 
-
-            //lbl_CheckIn_Time.Text = CheckIn; // Update this based on the actual label names
-            //lbl_CheckOut_Time.Text = CheckOut; // Update this based on the actual label names
-            //lbl_NoOfGuest.Text = NoOfGuest; // Update this based on the actual label names
-            //lbl_Guest.Text = Guest; // Update this based on the actual label names
-            //lbl_NumberOfDays.Text = isDays(); // You can keep this logic
-            //lbl_totalPrice.Text = GetTotalAmount(); // You can keep this logic
+            //    lbl_FullName.Text = s4.s3.Lname + ", " + s3.Fname;
+            //    lbl_ContactNumber.Text = s4.s3.Phone.ToString();
+            //}
         }
         private String GetNoOfGuestByValue(int recVal)
         {
@@ -659,153 +658,170 @@ namespace HMS
             }
             return retVal;
         }
+
+        private void btnBookAgain_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            if (Frm_ProcessPayment.HasPaid)
+            {
+                Frm_ProcessPayment.HasPaid = false;
+                Frm_BookNow_S1 s1 = new Frm_BookNow_S1();
+                s1.Show();
+            }
+            else 
+            {
+                s1.Show();
+            }
+
+        }
         /*
-    private int GetTotalDayStayed(int CheckInDay, int CheckOutDay)
-    {
-        var currMonthVal_Counter = 0;
-        var prevMonthVal_Counter = 0;
+private int GetTotalDayStayed(int CheckInDay, int CheckOutDay)
+{
+var currMonthVal_Counter = 0;
+var prevMonthVal_Counter = 0;
 
-        var checkInMonth = Frm_BookNow_S1.CheckIn.Month;
-        var checkOutMonth = Frm_BookNow_S1.CheckOut.Month;
+var checkInMonth = Frm_BookNow_S1.CheckIn.Month;
+var checkOutMonth = Frm_BookNow_S1.CheckOut.Month;
 
-        int monthDifference = GetMonthDiff() * 30;//Call this function to get the total diff in months from checkin to checkout
-
-
-        //Execte this loop to determine gaps of numnber in months and use that value to determine num of days with a gap of months
-        if (checkInMonth == checkOutMonth && CheckInDay == CheckOutDay)
-        {
-            return totalDays = 0;//return zero directly if user attempts to book same month and days.
-            //Addiditon blocking if statement is also need to be added in the datetimepicker of Frm_BookNow_S1 to block this kind of booking.
-        }
-        if (CheckInDay == CheckOutDay)
-        {
-            totalDays = monthDifference;
-           return totalDays;
-        }
-        if (checkInMonth == checkOutMonth)
-        {
-            //Minus directly the gap days
-            return totalDays = CheckOutDay - CheckInDay;
-        }
-
-        var getMonth = Frm_BookNow_S1.CheckIn.Month;
-        var monthDays = 0;
-
-        if (getMonth == 1 || getMonth == 3 || getMonth == 5 || getMonth == 7 || getMonth == 8 || getMonth == 10 || getMonth == 12)              
-            monthDays = 31;               
-        else
-        {
-            if (getMonth == 2)                    
-                monthDays = 28;                    
-            else
-                monthDays = 30;
-        }
+int monthDifference = GetMonthDiff() * 30;//Call this function to get the total diff in months from checkin to checkout
 
 
-        if (checkInMonth == checkOutMonth)
-        {
-            for (int j = 1; j <= CheckOutDay; j++)
-            {
-                if (j == CheckInDay)
-                    continue;
-                else
-                    currMonthVal_Counter++;
-            }
-        }
-        else
-        {
-            for (int i = CheckInDay; i <= monthDays; i++)
-            {
-                if (i == CheckInDay)
-                    continue;
-                else
-                    prevMonthVal_Counter++;
-            }
-            for (int j = 1; j <= CheckOutDay; j++)
-            {
-                //if (j == CheckInDay)
-                //    continue;
-                //else
-                    currMonthVal_Counter++;
-            }
-        }
+//Execte this loop to determine gaps of numnber in months and use that value to determine num of days with a gap of months
+if (checkInMonth == checkOutMonth && CheckInDay == CheckOutDay)
+{
+   return totalDays = 0;//return zero directly if user attempts to book same month and days.
+   //Addiditon blocking if statement is also need to be added in the datetimepicker of Frm_BookNow_S1 to block this kind of booking.
+}
+if (CheckInDay == CheckOutDay)
+{
+   totalDays = monthDifference;
+  return totalDays;
+}
+if (checkInMonth == checkOutMonth)
+{
+   //Minus directly the gap days
+   return totalDays = CheckOutDay - CheckInDay;
+}
 
-        Console.WriteLine("Prev Month: " + prevMonthVal_Counter);
-        Console.WriteLine("Curr Month: " + currMonthVal_Counter);
+var getMonth = Frm_BookNow_S1.CheckIn.Month;
+var monthDays = 0;
 
-        Console.WriteLine(monthDifference);
-
-        totalDays = monthDifference + prevMonthVal_Counter + currMonthVal_Counter; //Add the possible MonthDiff, the prev month counter and curr month counter to return total days of stay.
-        return totalDays;
-    }
-
-    private int GetMonthDiff()
-    {
-        var retVal = 0;
-
-        var monthGap1 = 0;
-        var monthGap2 = 0;
-        var monthDiffTotal = 0;
-
-        var checkInMonth = Frm_BookNow_S1.CheckIn.Month;
-        var checkOutMonth = Frm_BookNow_S1.CheckOut.Month;
-
-        var checkInDay = Frm_BookNow_S1.CheckIn.Day;
-        var checkOutDay = Frm_BookNow_S1.CheckOut.Day;
+if (getMonth == 1 || getMonth == 3 || getMonth == 5 || getMonth == 7 || getMonth == 8 || getMonth == 10 || getMonth == 12)              
+   monthDays = 31;               
+else
+{
+   if (getMonth == 2)                    
+       monthDays = 28;                    
+   else
+       monthDays = 30;
+}
 
 
+if (checkInMonth == checkOutMonth)
+{
+   for (int j = 1; j <= CheckOutDay; j++)
+   {
+       if (j == CheckInDay)
+           continue;
+       else
+           currMonthVal_Counter++;
+   }
+}
+else
+{
+   for (int i = CheckInDay; i <= monthDays; i++)
+   {
+       if (i == CheckInDay)
+           continue;
+       else
+           prevMonthVal_Counter++;
+   }
+   for (int j = 1; j <= CheckOutDay; j++)
+   {
+       //if (j == CheckInDay)
+       //    continue;
+       //else
+           currMonthVal_Counter++;
+   }
+}
 
-        if (checkInMonth == checkOutMonth)
-        {
-            return retVal = 0;
-        }
-        else
-        {
-            if (checkOutMonth > checkInMonth && checkOutDay > checkInDay)
-            {
-                for (int i = checkInMonth; i <= 12; i++)
-                {
-                    if (i == checkInMonth)//Skip first index to start count at next month.
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        monthGap1++;
-                    }
-                }
-            }
+Console.WriteLine("Prev Month: " + prevMonthVal_Counter);
+Console.WriteLine("Curr Month: " + currMonthVal_Counter);
+
+Console.WriteLine(monthDifference);
+
+totalDays = monthDifference + prevMonthVal_Counter + currMonthVal_Counter; //Add the possible MonthDiff, the prev month counter and curr month counter to return total days of stay.
+return totalDays;
+}
+
+private int GetMonthDiff()
+{
+var retVal = 0;
+
+var monthGap1 = 0;
+var monthGap2 = 0;
+var monthDiffTotal = 0;
+
+var checkInMonth = Frm_BookNow_S1.CheckIn.Month;
+var checkOutMonth = Frm_BookNow_S1.CheckOut.Month;
+
+var checkInDay = Frm_BookNow_S1.CheckIn.Day;
+var checkOutDay = Frm_BookNow_S1.CheckOut.Day;
 
 
-            if (monthDiffTotal + checkInMonth > 12)
-            {
-                //reset to one
-                for (int j = 1; j < checkOutMonth; j++)
-                {
-                    monthGap2++;
-                }
-            }
-            else
-            {
-                for (int j = (monthDiffTotal + checkInMonth); j < checkOutMonth; j++)
-                {
-                    monthGap2++;
-                }
-            }
+
+if (checkInMonth == checkOutMonth)
+{
+   return retVal = 0;
+}
+else
+{
+   if (checkOutMonth > checkInMonth && checkOutDay > checkInDay)
+   {
+       for (int i = checkInMonth; i <= 12; i++)
+       {
+           if (i == checkInMonth)//Skip first index to start count at next month.
+           {
+               continue;
+           }
+           else
+           {
+               monthGap1++;
+           }
+       }
+   }
 
 
-            monthDiffTotal += monthGap1;
+   if (monthDiffTotal + checkInMonth > 12)
+   {
+       //reset to one
+       for (int j = 1; j < checkOutMonth; j++)
+       {
+           monthGap2++;
+       }
+   }
+   else
+   {
+       for (int j = (monthDiffTotal + checkInMonth); j < checkOutMonth; j++)
+       {
+           monthGap2++;
+       }
+   }
 
-            monthDiffTotal += monthGap2;
 
-        }
+   monthDiffTotal += monthGap1;
 
-        Console.WriteLine("Lst Yr: " + monthGap1);
-        Console.WriteLine("Crnt Yr: " + monthGap2);
-        Console.WriteLine("Total Months Gap: " + monthDiffTotal);
+   monthDiffTotal += monthGap2;
 
-        return retVal = monthDiffTotal;
-    }
-    */
+}
+
+Console.WriteLine("Lst Yr: " + monthGap1);
+Console.WriteLine("Crnt Yr: " + monthGap2);
+Console.WriteLine("Total Months Gap: " + monthDiffTotal);
+
+return retVal = monthDiffTotal;
+}
+*/
     }
 }

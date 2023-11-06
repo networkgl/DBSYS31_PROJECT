@@ -14,8 +14,12 @@ namespace HMS
 {
     public partial class Frm_ProcessPayment : Form
     {
+        private Frm_BookNow_S1 s1;
+        private Frm_BookNow_S2 s2;
+        private Frm_BookNow_S3 s3;
+        private Frm_BookNow_S4 s4;
+
         private string creditCardNumber = String.Empty;
-        Frm_BookNow_S4 s4;
         private static bool hasPaid = false;
         private int toggle = 1;
 
@@ -34,7 +38,14 @@ namespace HMS
             InitializeComponent();
             this.s4 = s4;
         }
-
+        public Frm_ProcessPayment(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3, Frm_BookNow_S4 s4)
+        {
+            InitializeComponent();
+            this.s1 = s1;
+            this.s2 = s2;
+            this.s3 = s3;
+            this.s4 = s4;
+        }
         private void Frm_ProcessPayment_Load(object sender, EventArgs e)
         {
             Initialize();
@@ -97,7 +108,7 @@ namespace HMS
 
             var waitForm = new WaitFormFunc();
 
-            var msg = "Are you sure all information is correct ? If yes,\nthen you can click pay now.";
+            var msg = "Are you sure all information is correct ?";
             bool Proceed = MessageDialog.Show(msg, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light) == DialogResult.Yes;
             if (Proceed)
             {

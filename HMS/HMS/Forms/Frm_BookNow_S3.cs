@@ -19,7 +19,9 @@ namespace HMS
     {
         private Frm_BookNow_S1 s1;
         private Frm_BookNow_S2 s2;
-        
+        private Frm_BookNow_S3 s3;
+        private Frm_BookNow_S4 s4;
+
         private int totalDays;
         private string fname;
         private string lname;
@@ -32,11 +34,13 @@ namespace HMS
         {
             InitializeComponent();
         }
-        public Frm_BookNow_S3(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2)
+        public Frm_BookNow_S3(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3)
         {
             InitializeComponent();
             this.s1 = s1;
             this.s2 = s2;
+            this.s3 = s3;
+            //this.s4 = s4;
         }
         //public static Frm_BookNow_S3 GetInstance()
         //{
@@ -70,36 +74,58 @@ namespace HMS
             CurrentDate.Start();
             UpdateDateTime();
 
-            //txtbox_fName.Text = Fname;
-            //txtbox_lName.Text = Lname;
-            //txtbox_Email.Text = Email;
-            //if (Phone.Equals(String.Empty))
-            //    txtbox_Phone.Text = string.Empty;
-            //else
-            //    txtbox_Phone.Text = Phone.ToString();
-            //txtbox_Address.Text = Address;
-        }
+            //Console.WriteLine(s1.Guest);
+            //Console.WriteLine(s1.NoOfGuest);
+            //Console.WriteLine(s1.CheckIn);
+            //Console.WriteLine(s1.CheckOut);
 
+            //Console.WriteLine(s2);
+            //Console.WriteLine(s3);
+
+
+
+            if (s3 == null)
+            {
+                txtbox_fName.Text = Fname;
+                txtbox_lName.Text = Lname;
+                txtbox_Email.Text = Email;
+                txtbox_Phone.Text = Phone;
+                txtbox_Address.Text = Address;
+            }
+            else
+            {
+                txtbox_fName.Text = s3.Fname;
+                txtbox_lName.Text = s3.Lname;
+                txtbox_Email.Text = s3.Email;
+                txtbox_Phone.Text = s3.Phone;
+                txtbox_Address.Text = s3.Address;
+            }
+        }
+        private static Frm_BookNow_S3 s33;
+        public static Frm_BookNow_S3 GetInstance
+        {
+            get { return s33; }
+            set { s33 = value; }
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             Fname = txtbox_fName.Text;
             Lname = txtbox_lName.Text;
-            Email = txtbox_Email.Text;
-            if (txtbox_Phone.Text.Equals(string.Empty))           
-                Phone = String.Empty;           
-            else
-                Phone = txtbox_Phone.Text;
+            Email = txtbox_Email.Text;                
+            Phone = txtbox_Phone.Text;
             Address = txtbox_Address.Text;
 
 
             this.Hide();
             if (Frm_ProcessPayment.HasPaid)
             {
+                //Frm_BookNow_S2 s2 = new Frm_BookNow_S2(s1,this.s2,this,s4);
                 Frm_BookNow_S2 s2 = new Frm_BookNow_S2();
                 s2.Show();
             }
             else
             {
+                s2 = new Frm_BookNow_S2(Frm_BookNow_S1.GetInstance, Frm_BookNow_S2.GetInstance, this);
                 s2.Show();
             }
         }
@@ -126,9 +152,22 @@ namespace HMS
             phone = txtbox_Phone.Text;           
             address = txtbox_Address.Text;
 
+
+            s33 = this;
+
             this.Hide();
-            Frm_BookNow_S4 s4 = new Frm_BookNow_S4(s1,s2,this);
+            Frm_BookNow_S4 s4 = new Frm_BookNow_S4(Frm_BookNow_S1.GetInstance, this.s2, this, this.s4);
             s4.Show();
+
+            //if (s4 == null)
+            //{
+            //    Frm_BookNow_S4 s4 = new Frm_BookNow_S4(s1, s2, this, this.s4);
+            //    s4.Show();
+            //}
+            //else
+            //{
+            //    s4.Show();
+            //}
         }
         private void txtbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
         {

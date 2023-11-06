@@ -1,4 +1,5 @@
-﻿using HMS.Forms;
+﻿using Aspose.Words.Settings;
+using HMS.Forms;
 using Pabo.Calendar;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,14 @@ namespace HMS
         {
             InitializeComponent();
         }
+        public Frm_BookNow_S1(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3)
+        {
+            InitializeComponent();
+            this.s1 = s1;
+            this.s2 = s2;
+            this.s3 = s3;
+            //this.s4 = s4;
+        }
         //public Frm_BookNow_S1(Frm_BookNow_S2 s2, Frm_BookNow_S3 s3, Frm_BookNow_S4 s4)
         //{
         //    InitializeComponent();
@@ -65,7 +74,14 @@ namespace HMS
             // Get and display the current date and time
             UpdateDateTime();
 
+
             mc_GuideBooking.ActiveMonth.Month = DateTime.Now.Month;//Set active month to current month
+            if(s2 == null)
+            {
+                Console.WriteLine("S2 IS NULL");
+            }
+            else
+                Console.WriteLine("S2 NOT NULL");
 
 
             ////Frm_ProcessPayment p = new Frm_ProcessPayment();
@@ -86,12 +102,26 @@ namespace HMS
             //    DateTimePicker_CheckIn.Value = CheckIn;
             //    DateTimePicker_CheckOut.Value = CheckOut;
             //}
-            cbBox_Guest.SelectedIndex = Guest;
-            nud_NumberOfGuest.Value = NoOfGuest;
-            DateTimePicker_CheckIn.Value = CheckIn;
-            DateTimePicker_CheckOut.Value = CheckOut;
-            txtbox_CheckInTime.Text = SelectedTime_CheckIn.ToString();
-            txtbox_CheckOutTime.Text = SelectedTime_CheckOut.ToString();
+
+            if (s1 == null)
+            {
+                cbBox_Guest.SelectedIndex = Guest;
+                nud_NumberOfGuest.Value = NoOfGuest;
+                DateTimePicker_CheckIn.Value = CheckIn;
+                DateTimePicker_CheckOut.Value = CheckOut;
+                txtbox_CheckInTime.Text = SelectedTime_CheckIn.ToString();
+                txtbox_CheckOutTime.Text = SelectedTime_CheckOut.ToString();
+            }
+            else
+            {
+                cbBox_Guest.SelectedIndex = s1.Guest;
+                nud_NumberOfGuest.Value = s1.NoOfGuest;
+                DateTimePicker_CheckIn.Value = s1.CheckIn;
+                DateTimePicker_CheckOut.Value = s1.CheckOut;
+                txtbox_CheckInTime.Text = s1.SelectedTime_CheckIn.ToString();
+                txtbox_CheckOutTime.Text = s1.SelectedTime_CheckOut.ToString();
+            }
+
 
         }
         private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
@@ -117,6 +147,12 @@ namespace HMS
                 }
             }
         }
+        private static Frm_BookNow_S1 s11;
+        public static Frm_BookNow_S1 GetInstance
+        {
+            get { return s11; }
+            set { s11 = value; }
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -127,10 +163,19 @@ namespace HMS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            s11 = this;
             this.Hide();
-            Frm_BookNow_S2 s2 = new Frm_BookNow_S2(this);
-            s2.Show();
-
+            if (this.s2 == null)
+            {
+                Frm_BookNow_S2 s2 = new Frm_BookNow_S2(this, this.s2, this.s3);
+                s2.Show();
+            }
+            else
+            {
+                //this.s2 = new Frm_BookNow_S2(this, this.s2, s3, s4);
+                //s2.GetInstance.Show();
+                s2.Show();
+            }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -152,13 +197,13 @@ namespace HMS
         private void DateTimePicker_CheckIn_ValueChanged(object sender, EventArgs e)
         {
             checkIn = DateTimePicker_CheckIn.Value.Date;
-            Console.WriteLine("S1: "+checkIn);
+            //Console.WriteLine("S1: "+checkIn);
         }
 
         private void DateTimePicker_CheckOut_ValueChanged(object sender, EventArgs e)
         {
             checkOut = DateTimePicker_CheckOut.Value.Date;
-            Console.WriteLine("S1: "+checkOut);
+            //Console.WriteLine("S1: "+checkOut);
         }
         public void cbBox_Guest_SelectedIndexChanged(object sender, EventArgs e)
         {

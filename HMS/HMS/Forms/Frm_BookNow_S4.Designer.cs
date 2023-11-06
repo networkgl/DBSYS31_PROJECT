@@ -47,6 +47,8 @@
             this.lblSystemTime = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnBookAgain = new System.Windows.Forms.Button();
             this.lbl_ContactNumber = new System.Windows.Forms.Label();
             this.lbl_FullName = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
-            this.btnBookAgain = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -322,6 +322,37 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1089, 502);
             this.guna2ShadowPanel1.TabIndex = 111;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(954, 242);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(112, 44);
+            this.btnLogin.TabIndex = 130;
+            this.btnLogin.Text = "Click me to login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Visible = false;
+            // 
+            // btnBookAgain
+            // 
+            this.btnBookAgain.BackColor = System.Drawing.Color.Coral;
+            this.btnBookAgain.FlatAppearance.BorderSize = 0;
+            this.btnBookAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBookAgain.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBookAgain.ForeColor = System.Drawing.Color.White;
+            this.btnBookAgain.Location = new System.Drawing.Point(954, 179);
+            this.btnBookAgain.Name = "btnBookAgain";
+            this.btnBookAgain.Size = new System.Drawing.Size(112, 43);
+            this.btnBookAgain.TabIndex = 115;
+            this.btnBookAgain.Text = "Book Again ?";
+            this.btnBookAgain.UseVisualStyleBackColor = false;
+            this.btnBookAgain.Visible = false;
+            this.btnBookAgain.Click += new System.EventHandler(this.btnBookAgain_Click);
+            // 
             // lbl_ContactNumber
             // 
             this.lbl_ContactNumber.AutoSize = true;
@@ -546,36 +577,6 @@
             // CurrentDate
             // 
             this.CurrentDate.Tick += new System.EventHandler(this.CurrentDate_Tick);
-            // 
-            // btnBookAgain
-            // 
-            this.btnBookAgain.BackColor = System.Drawing.Color.Coral;
-            this.btnBookAgain.FlatAppearance.BorderSize = 0;
-            this.btnBookAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBookAgain.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBookAgain.ForeColor = System.Drawing.Color.White;
-            this.btnBookAgain.Location = new System.Drawing.Point(954, 179);
-            this.btnBookAgain.Name = "btnBookAgain";
-            this.btnBookAgain.Size = new System.Drawing.Size(112, 31);
-            this.btnBookAgain.TabIndex = 115;
-            this.btnBookAgain.Text = "Book Again ?";
-            this.btnBookAgain.UseVisualStyleBackColor = false;
-            this.btnBookAgain.Visible = false;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(954, 228);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(112, 44);
-            this.btnLogin.TabIndex = 130;
-            this.btnLogin.Text = "Click me to login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Visible = false;
             // 
             // Frm_BookNow_S4
             // 

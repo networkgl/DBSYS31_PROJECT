@@ -18,18 +18,30 @@ namespace HMS
     public partial class Frm_BookNow_S2 : Form
     {
         private Frm_BookNow_S1 s1;
+        private Frm_BookNow_S2 s2;
+        private Frm_BookNow_S3 s3;
+        private Frm_BookNow_S4 s4;
 
-        public int RoomType { get; set; }
+        private int roomType = 0;
+
         public static int RoomPrice { get; set; }
+        public int RoomType 
+        {
+            get { return roomType; } 
+            set { roomType = value; }
+        }
+
         public Frm_BookNow_S2()
         {
             InitializeComponent();
         }
-        public Frm_BookNow_S2(Frm_BookNow_S1 s1)
+        public Frm_BookNow_S2(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3)
         {
             InitializeComponent();
             this.s1 = s1;
-            //this.s2 = s2;
+            this.s2 = s2;
+            this.s3 = s3;
+            //this.s4 = s4;
         }
         private void llb_moreInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -59,15 +71,14 @@ namespace HMS
 
             Room.GetRoomType();
 
-            cbBox_roomType.SelectedIndex = RoomType;
-
-            //frmS1 = Frm_BookNow_S1.GetInstance();
-            //Console.WriteLine(frmS1.Guest);
-            //Console.WriteLine(frmS1.CheckIn);
-            //Console.WriteLine(frmS1.CheckOut);   
-            //Console.WriteLine();
-            //Console.WriteLine("S2: " + Frm_BookNow_S1.GetInstance().CheckIn);
-            //Console.WriteLine("S2: " +Frm_BookNow_S1.GetInstance().CheckOut);
+            if (s2 == null)
+            {
+                cbBox_roomType.SelectedIndex = RoomType;
+            }
+            else
+            {
+                cbBox_roomType.SelectedIndex = s2.RoomType;
+            }
         }
 
         private void CurrentDate_Tick(object sender, EventArgs e)
@@ -89,20 +100,27 @@ namespace HMS
             switch (cbBox_roomType.SelectedIndex)
             {
                 case 0:
-                        RoomType = cbBox_roomType.SelectedIndex;
+                    roomType = cbBox_roomType.SelectedIndex;
                     break;
                 case 1:
-                        RoomType = cbBox_roomType.SelectedIndex;
+                    roomType = cbBox_roomType.SelectedIndex;
                     break;
                 case 2:
-                        RoomType = cbBox_roomType.SelectedIndex;
+                    roomType = cbBox_roomType.SelectedIndex;
                     break;
             }
         }
 
+        private static Frm_BookNow_S2 s22;
+        public static Frm_BookNow_S2 GetInstance
+        {
+            get { return s22; }
+            set { s22 = value; }
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
+
             if (Frm_ProcessPayment.HasPaid)
             {
                 Frm_BookNow_S1 s1 = new Frm_BookNow_S1();
@@ -110,6 +128,7 @@ namespace HMS
             }
             else
             {
+                s1 = new Frm_BookNow_S1(this.s1,this, this.s3);
                 s1.Show();
             }
         }
@@ -117,8 +136,15 @@ namespace HMS
         private void btnNext_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_BookNow_S3 s3 = new Frm_BookNow_S3(s1, this);
-            s3.Show();
+            if (s3 == null)
+            {
+                Frm_BookNow_S3 s3 = new Frm_BookNow_S3(this.s1, this, this.s3);
+                s3.Show();
+            }
+            else
+            {
+                s3.Show();
+            }
         }
         private void DisplayRooms()
         {
