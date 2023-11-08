@@ -558,6 +558,7 @@
       <DependentUpon>DBSysModel.edmx</DependentUpon>
       <LastGenOutput>DBSysModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-manage-20.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

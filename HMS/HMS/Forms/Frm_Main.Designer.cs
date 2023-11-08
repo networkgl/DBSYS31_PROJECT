@@ -116,7 +116,7 @@
             this.btnManageRoomType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageRoomType.ForeColor = System.Drawing.Color.Black;
             this.btnManageRoomType.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnManageRoomType.Image = global::HMS.Properties.Resources.icons8_reservation_18;
+            this.btnManageRoomType.Image = global::HMS.Properties.Resources.icons8_manage_20;
             this.btnManageRoomType.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManageRoomType.ImageOffset = new System.Drawing.Point(15, 0);
             this.btnManageRoomType.Location = new System.Drawing.Point(0, 400);
@@ -124,7 +124,7 @@
             this.btnManageRoomType.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
             this.btnManageRoomType.Size = new System.Drawing.Size(219, 46);
             this.btnManageRoomType.TabIndex = 5;
-            this.btnManageRoomType.Text = "Manage Room";
+            this.btnManageRoomType.Text = "Manage RType";
             // 
             // pnl_ToggleRoom
             // 
