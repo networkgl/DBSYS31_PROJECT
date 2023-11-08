@@ -135,6 +135,7 @@ namespace HMS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            s22 = this;
             this.Hide();
             if (s3 == null)
             {

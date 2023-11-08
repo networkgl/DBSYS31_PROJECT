@@ -71,3 +71,5 @@ C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.F
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_RType_FiliSuite.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_RType_PriemereDeluxe.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_ProcessPayment.resources
+C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\bin\Debug\EntityFramework.dll
+C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\bin\Debug\EntityFramework.xml

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HMS.AppData;
 
 namespace HMS
 {
     internal class UserRepository
     {
-        public UserRepository() { }
+
     }
 }

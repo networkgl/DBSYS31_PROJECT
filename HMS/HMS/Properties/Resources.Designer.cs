@@ -403,6 +403,16 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_manage_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-manage-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_mastercard_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-mastercard-50", resourceCulture);

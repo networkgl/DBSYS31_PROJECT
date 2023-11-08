@@ -56,5 +56,34 @@ namespace HMS
                     break;
             }
         }
+        public void HasDiscount(int discount)
+        {
+            var discountAmount = 0;//use this var to calculate the amount of discount and return the discounted amount.
+
+            switch (RoomType_selectedIndex)
+            {
+                case 0:
+                    DeluxeKing = Resources.king;
+                    RoomType = "DELUXE ROOM KING";
+                    RoomDetails = "Luxurious room offering a king bed with city views";
+                    RoomPrice = "₱10,000";
+                    PriceDetails = "Per Night\r\n₱10,000 Total for 1 night\r\nExcluding Taxes & Fees";
+                    break;
+                case 1:
+                    PreimeireDeluxe = Resources.premier_deluxe;
+                    RoomType = "PREMIERE DELUXE TWIN BED";
+                    RoomDetails = "Premiere Deluxe Twin Roon - 61 sqm\r\n";
+                    RoomPrice = "₱14,000";
+                    PriceDetails = "Per Night\r\n₱14,000 Total for 1 night\r\nExcluding Taxes & Fees";
+                    break;
+                case 2:
+                    FiliSuite = Resources.fili_suite;
+                    RoomType = "FILI SUITE SEA VIEW";
+                    RoomDetails = "Fili Suite Sea View - 89 sqm\r\n";
+                    RoomPrice = "₱20,000";
+                    PriceDetails = "Per Night\r\n₱20,000 Total for 1 night\r\nExcluding Taxes & Fees";
+                    break;
+            }
+        }
     }
 }

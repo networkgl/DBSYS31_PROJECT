@@ -230,6 +230,7 @@ namespace HMS
             btnRoom.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
         }
 
+
         private void btnReservation_MouseEnter(object sender, EventArgs e)
         {
             btnReservation.ForeColor = Color.White;

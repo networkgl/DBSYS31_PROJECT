@@ -121,8 +121,6 @@ namespace HMS
                 txtbox_CheckInTime.Text = s1.SelectedTime_CheckIn.ToString();
                 txtbox_CheckOutTime.Text = s1.SelectedTime_CheckOut.ToString();
             }
-
-
         }
         private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
         {

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HMSModelStoreContainer" CdmEntityContainer="HMSEntities">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HMSModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HMSModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HMSModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HMSModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HMSModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HMSModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HMSModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HMSModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HMSModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="CLIENT_INFORMATION">
+      <EntityTypeMapping TypeName="HMSModel.CLIENT_INFORMATION">
+        <MappingFragment StoreEntitySet="CLIENT_INFORMATION">
+          <ScalarProperty Name="clientAddress" ColumnName="clientAddress" />
+          <ScalarProperty Name="clientPhone" ColumnName="clientPhone" />
+          <ScalarProperty Name="clientEmail" ColumnName="clientEmail" />
+          <ScalarProperty Name="clientLname" ColumnName="clientLname" />
+          <ScalarProperty Name="clientfName" ColumnName="clientfName" />
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAYMENT_INFORMATION">
+      <EntityTypeMapping TypeName="HMSModel.PAYMENT_INFORMATION">
+        <MappingFragment StoreEntitySet="PAYMENT_INFORMATION">
+          <ScalarProperty Name="userloggedID" ColumnName="userloggedID" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+          <ScalarProperty Name="paymentTotal" ColumnName="paymentTotal" />
+          <ScalarProperty Name="paymentMethod" ColumnName="paymentMethod" />
+          <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
+          <ScalarProperty Name="paymentID" ColumnName="paymentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESERVATION_INFORMATION">
+      <EntityTypeMapping TypeName="HMSModel.RESERVATION_INFORMATION">
+        <MappingFragment StoreEntitySet="RESERVATION_INFORMATION">
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="reservationStatus" ColumnName="reservationStatus" />
+          <ScalarProperty Name="reservationDateOut" ColumnName="reservationDateOut" />
+          <ScalarProperty Name="reservationDateIn" ColumnName="reservationDateIn" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROOM_INFORMATION">
+      <EntityTypeMapping TypeName="HMSModel.ROOM_INFORMATION">
+        <MappingFragment StoreEntitySet="ROOM_INFORMATION">
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="roomType" ColumnName="roomType" />
+          <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HMSModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROOM_DETAILS">
+      <EntityTypeMapping TypeName="HMSModel.ROOM_DETAILS">
+        <MappingFragment StoreEntitySet="ROOM_DETAILS">
+          <ScalarProperty Name="roomDiscount" ColumnName="roomDiscount" />
+          <ScalarProperty Name="roomDetails" ColumnName="roomDetails" />
+          <ScalarProperty Name="roomPrice" ColumnName="roomPrice" />
+          <ScalarProperty Name="roomPhoto" ColumnName="roomPhoto" />
+          <ScalarProperty Name="roomType" ColumnName="roomType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_insert_room_details" FunctionName="HMSModel.Store.sp_insert_room_details" />
+  </EntityContainerMapping>
+</Mapping>

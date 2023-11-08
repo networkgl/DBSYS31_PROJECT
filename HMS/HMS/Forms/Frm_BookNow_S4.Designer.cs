@@ -47,7 +47,6 @@
             this.lblSystemTime = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.btnBookAgain = new System.Windows.Forms.Button();
             this.lbl_ContactNumber = new System.Windows.Forms.Label();
             this.lbl_FullName = new System.Windows.Forms.Label();
@@ -293,7 +292,6 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.btnLogin);
             this.guna2ShadowPanel1.Controls.Add(this.btnBookAgain);
             this.guna2ShadowPanel1.Controls.Add(this.lbl_ContactNumber);
             this.guna2ShadowPanel1.Controls.Add(this.lbl_FullName);
@@ -322,24 +320,9 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1089, 502);
             this.guna2ShadowPanel1.TabIndex = 111;
             // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(954, 242);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(112, 44);
-            this.btnLogin.TabIndex = 130;
-            this.btnLogin.Text = "Click me to login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Visible = false;
-            // 
             // btnBookAgain
             // 
-            this.btnBookAgain.BackColor = System.Drawing.Color.Coral;
+            this.btnBookAgain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnBookAgain.FlatAppearance.BorderSize = 0;
             this.btnBookAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookAgain.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -639,7 +622,6 @@
         public System.Windows.Forms.Label lbl_ContactNumber;
         public System.Windows.Forms.Label lbl_FullName;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.Button btnLogin;
         public System.Windows.Forms.Button btnBookAgain;
         public System.Windows.Forms.Button btn_DownloadOffline;
         public System.Windows.Forms.Button btnConfirm;

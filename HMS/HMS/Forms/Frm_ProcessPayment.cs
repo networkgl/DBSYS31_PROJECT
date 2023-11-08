@@ -135,7 +135,6 @@ namespace HMS
                         s4.btn_DownloadOffline.Visible = true;
                         s4.lbl_DownloadNow.Visible = true;
                         s4.btnBookAgain.Visible = true;
-                        s4.btnLogin.Visible = true;
                         s4.btnConfirm.Visible = false;
                         s4.btnBack.Visible = false;
                     }

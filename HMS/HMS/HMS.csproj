@@ -42,6 +42,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net40\Guna.UI2.dll</HintPath>
@@ -76,10 +79,13 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
@@ -96,6 +102,45 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppData\CLIENT_INFORMATION.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\DBSysModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSysModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\DBSysModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\DBSysModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSysModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\PAYMENT_INFORMATION.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\RESERVATION_INFORMATION.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\ROOM_DETAILS.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\ROOM_INFORMATION.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\sp_helpdiagrams_Result.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\sysdiagrams.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_BookNow_S1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +237,7 @@
     <Compile Include="Forms\Frm_WaitForm.designer.cs">
       <DependentUpon>Frm_WaitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repository\AdminRepository.cs" />
     <Compile Include="Utils\Room.cs" />
     <Compile Include="Utils\WaitFormFunc.cs" />
     <Compile Include="Model\UserLogged.cs" />
@@ -252,6 +298,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="AppData\DBSysModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBSysModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AppData\DBSysModel.edmx.diagram">
+      <DependentUpon>DBSysModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -271,9 +324,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AppData\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\icons8-sun-26-light.png" />
   </ItemGroup>
@@ -495,6 +546,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-information-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppData\DBSysModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBSysModel.Context.cs</LastGenOutput>
+      <DependentUpon>DBSysModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="AppData\DBSysModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBSysModel.edmx</DependentUpon>
+      <LastGenOutput>DBSysModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

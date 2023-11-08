@@ -10,23 +10,16 @@ using HMS.Properties;
 
 namespace HMS
 {
-    internal partial class Constant
+    public enum ErrorCode
     {
-        private Constant()
-        {
+        Success = 0,
+        Error = 1
+    }
 
-        }
-        public enum ErrorCode
-        {
-            Success = 0,
-            Error = 1
-        }
-
-        public enum Role
-        {
-            Manager = 1,
-            Staff = 2,
-            Client = 3
-        }
+    public enum Role
+    {
+        Manager = 1,
+        Staff = 2,
+        //Client = 3
     }
 }

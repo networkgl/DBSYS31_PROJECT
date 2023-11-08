@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CLIENT_INFORMATION">
+    <Key>
+      <PropertyRef Name="clientID" />
+    </Key>
+    <Property Name="clientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="clientfName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="clientLname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="clientEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="clientPhone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="clientAddress" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PAYMENT_INFORMATION">
+    <Key>
+      <PropertyRef Name="paymentID" />
+    </Key>
+    <Property Name="paymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="paymentDate" Type="date" Nullable="false" />
+    <Property Name="paymentMethod" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="paymentTotal" Type="money" Nullable="false" />
+    <Property Name="reservationID" Type="int" />
+    <Property Name="userloggedID" Type="int" />
+  </EntityType>
+  <EntityType Name="RESERVATION_INFORMATION">
+    <Key>
+      <PropertyRef Name="reservationID" />
+    </Key>
+    <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reservationDateIn" Type="date" Nullable="false" />
+    <Property Name="reservationDateOut" Type="date" Nullable="false" />
+    <Property Name="reservationStatus" Type="varchar" MaxLength="20" />
+    <Property Name="clientID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HMS.dbo.ROLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ROLE">
+          <Property Name="roleID" Type="int" />
+          <Property Name="roleName" Type="varchar" MaxLength="50" />
+          <Property Name="roleDescription" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.ROOM_DETAILS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ROOM_DETAILS">
+    <Key>
+      <PropertyRef Name="roomType" />
+      <PropertyRef Name="roomPhoto" />
+    </Key>
+    <Property Name="roomType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="roomPhoto" Type="image" Nullable="false" />
+    <Property Name="roomPrice" Type="float" />
+    <Property Name="roomDetails" Type="varchar" MaxLength="100" />
+    <Property Name="roomDiscount" Type="int" />
+  </EntityType>
+  <EntityType Name="ROOM_INFORMATION">
+    <Key>
+      <PropertyRef Name="roomNumber" />
+    </Key>
+    <Property Name="roomNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roomType" Type="varchar" MaxLength="50" />
+    <Property Name="clientID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="USERLOGGED_HISTORY">
+          <Property Name="typeofAccount" Type="varchar" MaxLength="50" />
+          <Property Name="datetimeLogin" Type="varchar" MaxLength="50" />
+          <Property Name="lastActivity" Type="varchar" MaxLength="100" />
+        </EntityType>-->
+  <Association Name="FK_PAYMENT_RESERVATION">
+    <End Role="RESERVATION_INFORMATION" Type="Self.RESERVATION_INFORMATION" Multiplicity="0..1" />
+    <End Role="PAYMENT_INFORMATION" Type="Self.PAYMENT_INFORMATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RESERVATION_INFORMATION">
+        <PropertyRef Name="reservationID" />
+      </Principal>
+      <Dependent Role="PAYMENT_INFORMATION">
+        <PropertyRef Name="reservationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RESERVATION_CLIENT">
+    <End Role="CLIENT_INFORMATION" Type="Self.CLIENT_INFORMATION" Multiplicity="0..1" />
+    <End Role="RESERVATION_INFORMATION" Type="Self.RESERVATION_INFORMATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT_INFORMATION">
+        <PropertyRef Name="clientID" />
+      </Principal>
+      <Dependent Role="RESERVATION_INFORMATION">
+        <PropertyRef Name="clientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROOM_CLIENT">
+    <End Role="CLIENT_INFORMATION" Type="Self.CLIENT_INFORMATION" Multiplicity="0..1" />
+    <End Role="ROOM_INFORMATION" Type="Self.ROOM_INFORMATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CLIENT_INFORMATION">
+        <PropertyRef Name="clientID" />
+      </Principal>
+      <Dependent Role="ROOM_INFORMATION">
+        <PropertyRef Name="clientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_insert_room_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="roomType" Type="nvarchar" Mode="In" />
+    <Parameter Name="roomPhoto" Type="image" Mode="In" />
+    <Parameter Name="roomDetails" Type="nvarchar" Mode="In" />
+    <Parameter Name="roomPrice" Type="float" Mode="In" />
+    <Parameter Name="roomDiscount" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="HMSModelStoreContainer">
+    <EntitySet Name="CLIENT_INFORMATION" EntityType="Self.CLIENT_INFORMATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAYMENT_INFORMATION" EntityType="Self.PAYMENT_INFORMATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESERVATION_INFORMATION" EntityType="Self.RESERVATION_INFORMATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROOM_INFORMATION" EntityType="Self.ROOM_INFORMATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROOM_DETAILS" EntityType="Self.ROOM_DETAILS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ROOM_DETAILS].[roomType] AS [roomType], 
+[ROOM_DETAILS].[roomPhoto] AS [roomPhoto], 
+[ROOM_DETAILS].[roomPrice] AS [roomPrice], 
+[ROOM_DETAILS].[roomDetails] AS [roomDetails], 
+[ROOM_DETAILS].[roomDiscount] AS [roomDiscount]
+FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_PAYMENT_RESERVATION" Association="Self.FK_PAYMENT_RESERVATION">
+      <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
+      <End Role="PAYMENT_INFORMATION" EntitySet="PAYMENT_INFORMATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RESERVATION_CLIENT" Association="Self.FK_RESERVATION_CLIENT">
+      <End Role="CLIENT_INFORMATION" EntitySet="CLIENT_INFORMATION" />
+      <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROOM_CLIENT" Association="Self.FK_ROOM_CLIENT">
+      <End Role="CLIENT_INFORMATION" EntitySet="CLIENT_INFORMATION" />
+      <End Role="ROOM_INFORMATION" EntitySet="ROOM_INFORMATION" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
