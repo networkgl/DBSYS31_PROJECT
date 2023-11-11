@@ -14,9 +14,10 @@ namespace HMS.AppData
     
     public partial class ROOM_DETAILS
     {
+        public int roomID { get; set; }
         public string roomType { get; set; }
         public byte[] roomPhoto { get; set; }
-        public Nullable<double> roomPrice { get; set; }
+        public double roomPrice { get; set; }
         public string roomDetails { get; set; }
         public Nullable<int> roomDiscount { get; set; }
     }

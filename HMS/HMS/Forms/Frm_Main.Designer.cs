@@ -31,35 +31,35 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pnl_ToggleReserve = new System.Windows.Forms.Panel();
-            this.btnManageRoomType = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_ToggleRoom = new System.Windows.Forms.Panel();
             this.pnl_ToggleClient = new System.Windows.Forms.Panel();
             this.pnl_ToggleDash = new System.Windows.Forms.Panel();
-            this.btnReservation = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRoom = new Guna.UI2.WinForms.Guna2Button();
-            this.btnClient = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pnl_ToggleLogout = new System.Windows.Forms.Panel();
-            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.systemLog = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txtbox_SearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbl_NotifCounter = new System.Windows.Forms.Label();
+            this.txtbox_SearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Notificationss = new System.Windows.Forms.Button();
             this.btn_Notifications = new System.Windows.Forms.Button();
             this.btn_Minimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnManageRoomType = new Guna.UI2.WinForms.Guna2Button();
+            this.btnReservation = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRoom = new Guna.UI2.WinForms.Guna2Button();
+            this.btnClient = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -102,30 +102,6 @@
             this.pnl_ToggleReserve.TabIndex = 3;
             this.pnl_ToggleReserve.Visible = false;
             // 
-            // btnManageRoomType
-            // 
-            this.btnManageRoomType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btnManageRoomType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnManageRoomType.BorderRadius = 20;
-            this.btnManageRoomType.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageRoomType.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageRoomType.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnManageRoomType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnManageRoomType.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnManageRoomType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btnManageRoomType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageRoomType.ForeColor = System.Drawing.Color.Black;
-            this.btnManageRoomType.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnManageRoomType.Image = global::HMS.Properties.Resources.icons8_manage_20;
-            this.btnManageRoomType.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageRoomType.ImageOffset = new System.Drawing.Point(15, 0);
-            this.btnManageRoomType.Location = new System.Drawing.Point(0, 400);
-            this.btnManageRoomType.Name = "btnManageRoomType";
-            this.btnManageRoomType.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
-            this.btnManageRoomType.Size = new System.Drawing.Size(219, 46);
-            this.btnManageRoomType.TabIndex = 5;
-            this.btnManageRoomType.Text = "Manage RType";
-            // 
             // pnl_ToggleRoom
             // 
             this.pnl_ToggleRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
@@ -152,6 +128,221 @@
             this.pnl_ToggleDash.Size = new System.Drawing.Size(5, 27);
             this.pnl_ToggleDash.TabIndex = 0;
             this.pnl_ToggleDash.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel4.Controls.Add(this.pnl_ToggleLogout);
+            this.panel4.Controls.Add(this.btnLogout);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 446);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(219, 232);
+            this.panel4.TabIndex = 3;
+            // 
+            // pnl_ToggleLogout
+            // 
+            this.pnl_ToggleLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
+            this.pnl_ToggleLogout.Location = new System.Drawing.Point(8, 240);
+            this.pnl_ToggleLogout.Name = "pnl_ToggleLogout";
+            this.pnl_ToggleLogout.Size = new System.Drawing.Size(5, 27);
+            this.pnl_ToggleLogout.TabIndex = 9;
+            this.pnl_ToggleLogout.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 175);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(219, 41);
+            this.panel3.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel1.Controls.Add(this.systemLog);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(219, 175);
+            this.panel1.TabIndex = 3;
+            // 
+            // systemLog
+            // 
+            this.systemLog.AutoSize = true;
+            this.systemLog.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.systemLog.Location = new System.Drawing.Point(56, 150);
+            this.systemLog.Name = "systemLog";
+            this.systemLog.Size = new System.Drawing.Size(116, 21);
+            this.systemLog.TabIndex = 7;
+            this.systemLog.Text = "Administrator";
+            // 
+            // pnl_main
+            // 
+            this.pnl_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnl_main.Location = new System.Drawing.Point(219, 57);
+            this.pnl_main.Name = "pnl_main";
+            this.pnl_main.Size = new System.Drawing.Size(1078, 621);
+            this.pnl_main.TabIndex = 2;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel5.Controls.Add(this.txtbox_SearchBar);
+            this.panel5.Controls.Add(this.lbl_NotifCounter);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.btn_Notificationss);
+            this.panel5.Controls.Add(this.btn_Notifications);
+            this.panel5.Controls.Add(this.btn_Minimize);
+            this.panel5.Controls.Add(this.btnExit);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(219, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1078, 57);
+            this.panel5.TabIndex = 0;
+            // 
+            // lbl_NotifCounter
+            // 
+            this.lbl_NotifCounter.AutoSize = true;
+            this.lbl_NotifCounter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(91)))), ((int)(((byte)(91)))));
+            this.lbl_NotifCounter.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NotifCounter.ForeColor = System.Drawing.Color.White;
+            this.lbl_NotifCounter.Location = new System.Drawing.Point(810, 15);
+            this.lbl_NotifCounter.Name = "lbl_NotifCounter";
+            this.lbl_NotifCounter.Size = new System.Drawing.Size(13, 15);
+            this.lbl_NotifCounter.TabIndex = 19;
+            this.lbl_NotifCounter.Text = "0";
+            this.lbl_NotifCounter.Visible = false;
+            // 
+            // txtbox_SearchBar
+            // 
+            this.txtbox_SearchBar.BorderRadius = 15;
+            this.txtbox_SearchBar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbox_SearchBar.DefaultText = "";
+            this.txtbox_SearchBar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbox_SearchBar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbox_SearchBar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbox_SearchBar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbox_SearchBar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbox_SearchBar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_SearchBar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbox_SearchBar.IconRight = global::HMS.Properties.Resources.icons8_search_26;
+            this.txtbox_SearchBar.IconRightOffset = new System.Drawing.Point(10, 0);
+            this.txtbox_SearchBar.Location = new System.Drawing.Point(19, 15);
+            this.txtbox_SearchBar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtbox_SearchBar.Name = "txtbox_SearchBar";
+            this.txtbox_SearchBar.PasswordChar = '\0';
+            this.txtbox_SearchBar.PlaceholderText = "Search Here";
+            this.txtbox_SearchBar.SelectedText = "";
+            this.txtbox_SearchBar.Size = new System.Drawing.Size(300, 38);
+            this.txtbox_SearchBar.TabIndex = 24;
+            this.txtbox_SearchBar.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.button1.BackgroundImage = global::HMS.Properties.Resources.icons8_send_50;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(841, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 37);
+            this.button1.TabIndex = 22;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btn_Notificationss
+            // 
+            this.btn_Notificationss.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btn_Notificationss.BackgroundImage = global::HMS.Properties.Resources.notif1;
+            this.btn_Notificationss.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_Notificationss.FlatAppearance.BorderSize = 0;
+            this.btn_Notificationss.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btn_Notificationss.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btn_Notificationss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Notificationss.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Notificationss.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Notificationss.Location = new System.Drawing.Point(770, -5);
+            this.btn_Notificationss.Name = "btn_Notificationss";
+            this.btn_Notificationss.Size = new System.Drawing.Size(65, 77);
+            this.btn_Notificationss.TabIndex = 23;
+            this.btn_Notificationss.UseVisualStyleBackColor = false;
+            this.btn_Notificationss.Click += new System.EventHandler(this.btn_Notificationss_Click);
+            // 
+            // btn_Notifications
+            // 
+            this.btn_Notifications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btn_Notifications.BackgroundImage = global::HMS.Properties.Resources.icons8_notification_50__1_;
+            this.btn_Notifications.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Notifications.FlatAppearance.BorderSize = 0;
+            this.btn_Notifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Notifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Notifications.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Notifications.Location = new System.Drawing.Point(714, 15);
+            this.btn_Notifications.Name = "btn_Notifications";
+            this.btn_Notifications.Size = new System.Drawing.Size(39, 37);
+            this.btn_Notifications.TabIndex = 21;
+            this.btn_Notifications.UseVisualStyleBackColor = false;
+            this.btn_Notifications.Visible = false;
+            // 
+            // btn_Minimize
+            // 
+            this.btn_Minimize.BackgroundImage = global::HMS.Properties.Resources.icons8_minimize_15;
+            this.btn_Minimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Minimize.FlatAppearance.BorderSize = 0;
+            this.btn_Minimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Minimize.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Minimize.Location = new System.Drawing.Point(994, 9);
+            this.btn_Minimize.Name = "btn_Minimize";
+            this.btn_Minimize.Size = new System.Drawing.Size(33, 32);
+            this.btn_Minimize.TabIndex = 20;
+            this.btn_Minimize.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = global::HMS.Properties.Resources.icons8_close_15;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(1033, 9);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(33, 32);
+            this.btnExit.TabIndex = 18;
+            this.btnExit.UseVisualStyleBackColor = true;
+            // 
+            // btnManageRoomType
+            // 
+            this.btnManageRoomType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btnManageRoomType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnManageRoomType.BorderRadius = 20;
+            this.btnManageRoomType.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageRoomType.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageRoomType.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManageRoomType.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManageRoomType.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnManageRoomType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btnManageRoomType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageRoomType.ForeColor = System.Drawing.Color.Black;
+            this.btnManageRoomType.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnManageRoomType.Image = global::HMS.Properties.Resources.icons8_manage_20;
+            this.btnManageRoomType.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManageRoomType.ImageOffset = new System.Drawing.Point(15, 0);
+            this.btnManageRoomType.Location = new System.Drawing.Point(0, 400);
+            this.btnManageRoomType.Name = "btnManageRoomType";
+            this.btnManageRoomType.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
+            this.btnManageRoomType.Size = new System.Drawing.Size(219, 46);
+            this.btnManageRoomType.TabIndex = 5;
+            this.btnManageRoomType.Text = "Manage System";
+            this.btnManageRoomType.Click += new System.EventHandler(this.btnManageRoomType_Click);
             // 
             // btnReservation
             // 
@@ -263,26 +454,6 @@
             this.btnDashboard.MouseEnter += new System.EventHandler(this.btnDashboard_MouseEnter);
             this.btnDashboard.MouseLeave += new System.EventHandler(this.btnDashboard_MouseLeave);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panel4.Controls.Add(this.pnl_ToggleLogout);
-            this.panel4.Controls.Add(this.btnLogout);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 446);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(219, 232);
-            this.panel4.TabIndex = 3;
-            // 
-            // pnl_ToggleLogout
-            // 
-            this.pnl_ToggleLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
-            this.pnl_ToggleLogout.Location = new System.Drawing.Point(8, 240);
-            this.pnl_ToggleLogout.Name = "pnl_ToggleLogout";
-            this.pnl_ToggleLogout.Size = new System.Drawing.Size(5, 27);
-            this.pnl_ToggleLogout.TabIndex = 9;
-            this.pnl_ToggleLogout.Visible = false;
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
@@ -309,36 +480,6 @@
             this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
             this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 175);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(219, 41);
-            this.panel3.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panel1.Controls.Add(this.systemLog);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 175);
-            this.panel1.TabIndex = 3;
-            // 
-            // systemLog
-            // 
-            this.systemLog.AutoSize = true;
-            this.systemLog.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.systemLog.Location = new System.Drawing.Point(56, 150);
-            this.systemLog.Name = "systemLog";
-            this.systemLog.Size = new System.Drawing.Size(116, 21);
-            this.systemLog.TabIndex = 7;
-            this.systemLog.Text = "Administrator";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::HMS.Properties.Resources.icons8_admin_1001;
@@ -348,146 +489,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(146, 101);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // pnl_main
-            // 
-            this.pnl_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_main.Location = new System.Drawing.Point(219, 57);
-            this.pnl_main.Name = "pnl_main";
-            this.pnl_main.Size = new System.Drawing.Size(1078, 621);
-            this.pnl_main.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panel5.Controls.Add(this.txtbox_SearchBar);
-            this.panel5.Controls.Add(this.lbl_NotifCounter);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Controls.Add(this.btn_Notificationss);
-            this.panel5.Controls.Add(this.btn_Notifications);
-            this.panel5.Controls.Add(this.btn_Minimize);
-            this.panel5.Controls.Add(this.btnExit);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(219, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1078, 57);
-            this.panel5.TabIndex = 0;
-            // 
-            // txtbox_SearchBar
-            // 
-            this.txtbox_SearchBar.BorderRadius = 15;
-            this.txtbox_SearchBar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_SearchBar.DefaultText = "";
-            this.txtbox_SearchBar.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbox_SearchBar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbox_SearchBar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbox_SearchBar.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbox_SearchBar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_SearchBar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_SearchBar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_SearchBar.IconRight = global::HMS.Properties.Resources.icons8_search_26;
-            this.txtbox_SearchBar.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtbox_SearchBar.Location = new System.Drawing.Point(19, 15);
-            this.txtbox_SearchBar.Margin = new System.Windows.Forms.Padding(4);
-            this.txtbox_SearchBar.Name = "txtbox_SearchBar";
-            this.txtbox_SearchBar.PasswordChar = '\0';
-            this.txtbox_SearchBar.PlaceholderText = "Search Here";
-            this.txtbox_SearchBar.SelectedText = "";
-            this.txtbox_SearchBar.Size = new System.Drawing.Size(300, 38);
-            this.txtbox_SearchBar.TabIndex = 24;
-            this.txtbox_SearchBar.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // lbl_NotifCounter
-            // 
-            this.lbl_NotifCounter.AutoSize = true;
-            this.lbl_NotifCounter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(91)))), ((int)(((byte)(91)))));
-            this.lbl_NotifCounter.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NotifCounter.ForeColor = System.Drawing.Color.White;
-            this.lbl_NotifCounter.Location = new System.Drawing.Point(810, 15);
-            this.lbl_NotifCounter.Name = "lbl_NotifCounter";
-            this.lbl_NotifCounter.Size = new System.Drawing.Size(13, 15);
-            this.lbl_NotifCounter.TabIndex = 19;
-            this.lbl_NotifCounter.Text = "0";
-            this.lbl_NotifCounter.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.button1.BackgroundImage = global::HMS.Properties.Resources.icons8_send_50;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(841, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 37);
-            this.button1.TabIndex = 22;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btn_Notificationss
-            // 
-            this.btn_Notificationss.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btn_Notificationss.BackgroundImage = global::HMS.Properties.Resources.notif1;
-            this.btn_Notificationss.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_Notificationss.FlatAppearance.BorderSize = 0;
-            this.btn_Notificationss.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btn_Notificationss.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btn_Notificationss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Notificationss.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Notificationss.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Notificationss.Location = new System.Drawing.Point(770, -5);
-            this.btn_Notificationss.Name = "btn_Notificationss";
-            this.btn_Notificationss.Size = new System.Drawing.Size(65, 77);
-            this.btn_Notificationss.TabIndex = 23;
-            this.btn_Notificationss.UseVisualStyleBackColor = false;
-            this.btn_Notificationss.Click += new System.EventHandler(this.btn_Notificationss_Click);
-            // 
-            // btn_Notifications
-            // 
-            this.btn_Notifications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btn_Notifications.BackgroundImage = global::HMS.Properties.Resources.icons8_notification_50__1_;
-            this.btn_Notifications.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_Notifications.FlatAppearance.BorderSize = 0;
-            this.btn_Notifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Notifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Notifications.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_Notifications.Location = new System.Drawing.Point(714, 15);
-            this.btn_Notifications.Name = "btn_Notifications";
-            this.btn_Notifications.Size = new System.Drawing.Size(39, 37);
-            this.btn_Notifications.TabIndex = 21;
-            this.btn_Notifications.UseVisualStyleBackColor = false;
-            this.btn_Notifications.Visible = false;
-            // 
-            // btn_Minimize
-            // 
-            this.btn_Minimize.BackgroundImage = global::HMS.Properties.Resources.icons8_minimize_15;
-            this.btn_Minimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_Minimize.FlatAppearance.BorderSize = 0;
-            this.btn_Minimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Minimize.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Minimize.Location = new System.Drawing.Point(994, 9);
-            this.btn_Minimize.Name = "btn_Minimize";
-            this.btn_Minimize.Size = new System.Drawing.Size(33, 32);
-            this.btn_Minimize.TabIndex = 20;
-            this.btn_Minimize.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackgroundImage = global::HMS.Properties.Resources.icons8_close_15;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(1033, 9);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(33, 32);
-            this.btnExit.TabIndex = 18;
-            this.btnExit.UseVisualStyleBackColor = true;
             // 
             // Frm_Main
             // 
@@ -508,9 +509,9 @@
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

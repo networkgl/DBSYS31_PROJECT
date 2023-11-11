@@ -201,6 +201,12 @@
     <Compile Include="Forms\Frm_Dashboard.Designer.cs">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_ManageRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_ManageRoomType.Designer.cs">
+      <DependentUpon>Frm_ManageRoomType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_ProcessPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,12 @@
     </Compile>
     <Compile Include="Forms\Frm_RType_PriemereDeluxe.Designer.cs">
       <DependentUpon>Frm_RType_PriemereDeluxe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_ViewCurrentRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_ViewCurrentRooms.Designer.cs">
+      <DependentUpon>Frm_ViewCurrentRooms.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_WaitForm.cs">
       <SubType>Form</SubType>
@@ -275,6 +287,9 @@
     <EmbeddedResource Include="Forms\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_ManageRoomType.resx">
+      <DependentUpon>Frm_ManageRoomType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_ProcessPayment.resx">
       <DependentUpon>Frm_ProcessPayment.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_RType_PriemereDeluxe.resx">
       <DependentUpon>Frm_RType_PriemereDeluxe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_ViewCurrentRooms.resx">
+      <DependentUpon>Frm_ViewCurrentRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_WaitForm.resx">
       <DependentUpon>Frm_WaitForm.cs</DependentUpon>

@@ -138,7 +138,15 @@ namespace HMS
             if (ToggleReserve)
                 pnl_ToggleReserve.Visible = ToggleReserve;
         }
-
+        private void btnManageRoomType_Click(object sender, EventArgs e)
+        {
+            pnl_main.Controls.Clear();
+            Frm_ManageRoomType mgt = new Frm_ManageRoomType();
+            mgt.TopLevel = false;
+            mgt.Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(mgt);
+            mgt.Show();
+        }
         private void btnLogout_Click(object sender, EventArgs e)
         {
             pnl_ToggleDash.Visible = false;
@@ -229,7 +237,6 @@ namespace HMS
             btnRoom.ForeColor = Color.Black;
             btnRoom.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
         }
-
 
         private void btnReservation_MouseEnter(object sender, EventArgs e)
         {

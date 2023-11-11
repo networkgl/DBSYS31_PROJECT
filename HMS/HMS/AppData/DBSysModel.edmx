@@ -44,17 +44,15 @@ warning 6013: The table/view 'HMS.dbo.ROLE' does not have a primary key defined 
           <Property Name="roleName" Type="varchar" MaxLength="50" />
           <Property Name="roleDescription" Type="varchar" MaxLength="50" />
         </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'HMS.dbo.ROOM_DETAILS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ROOM_DETAILS">
           <Key>
-            <PropertyRef Name="roomType" />
-            <PropertyRef Name="roomPhoto" />
+            <PropertyRef Name="roomID" />
           </Key>
+          <Property Name="roomID" Type="int" Nullable="false" />
           <Property Name="roomType" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="roomPhoto" Type="image" Nullable="false" />
-          <Property Name="roomPrice" Type="float" />
-          <Property Name="roomDetails" Type="varchar" MaxLength="100" />
+          <Property Name="roomPrice" Type="float" Nullable="false" />
+          <Property Name="roomDetails" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="roomDiscount" Type="int" />
         </EntityType>
         <EntityType Name="ROOM_INFORMATION">
@@ -135,6 +133,9 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_getRoomPhoto_byIndex" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="index" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -144,6 +145,7 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_insert_room_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="roomID" Type="int" Mode="In" />
           <Parameter Name="roomType" Type="nvarchar" Mode="In" />
           <Parameter Name="roomPhoto" Type="image" Mode="In" />
           <Parameter Name="roomDetails" Type="nvarchar" Mode="In" />
@@ -160,17 +162,9 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
           <EntitySet Name="CLIENT_INFORMATION" EntityType="Self.CLIENT_INFORMATION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PAYMENT_INFORMATION" EntityType="Self.PAYMENT_INFORMATION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RESERVATION_INFORMATION" EntityType="Self.RESERVATION_INFORMATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROOM_DETAILS" EntityType="Self.ROOM_DETAILS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ROOM_INFORMATION" EntityType="Self.ROOM_INFORMATION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ROOM_DETAILS" EntityType="Self.ROOM_DETAILS" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-[ROOM_DETAILS].[roomType] AS [roomType], 
-[ROOM_DETAILS].[roomPhoto] AS [roomPhoto], 
-[ROOM_DETAILS].[roomPrice] AS [roomPrice], 
-[ROOM_DETAILS].[roomDetails] AS [roomDetails], 
-[ROOM_DETAILS].[roomDiscount] AS [roomDiscount]
-FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_PAYMENT_RESERVATION" Association="Self.FK_PAYMENT_RESERVATION">
             <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
             <End Role="PAYMENT_INFORMATION" EntitySet="PAYMENT_INFORMATION" />
@@ -226,12 +220,26 @@ FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="sp_insert_room_details">
+            <Parameter Name="roomID" Mode="In" Type="Int32" />
+            <Parameter Name="roomType" Mode="In" Type="String" />
+            <Parameter Name="roomPhoto" Mode="In" Type="Binary" />
+            <Parameter Name="roomDetails" Mode="In" Type="String" />
+            <Parameter Name="roomPrice" Mode="In" Type="Double" />
+            <Parameter Name="roomDiscount" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_display_roomdetails_byindex" ReturnType="Collection(Binary)">
+          <Parameter Name="index" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_display_roomPhoto_byIndex" ReturnType="Collection(Binary)">
+            <Parameter Name="index" Mode="In" Type="Int32" />
+          </FunctionImport>
           <EntitySet Name="CLIENT_INFORMATION" EntityType="HMSModel.CLIENT_INFORMATION" />
           <EntitySet Name="PAYMENT_INFORMATION" EntityType="HMSModel.PAYMENT_INFORMATION" />
           <EntitySet Name="RESERVATION_INFORMATION" EntityType="HMSModel.RESERVATION_INFORMATION" />
+          <EntitySet Name="ROOM_DETAILS" EntityType="HMSModel.ROOM_DETAILS" />
           <EntitySet Name="ROOM_INFORMATION" EntityType="HMSModel.ROOM_INFORMATION" />
           <EntitySet Name="sysdiagrams" EntityType="HMSModel.sysdiagrams" />
-          <EntitySet Name="ROOM_DETAILS" EntityType="HMSModel.ROOM_DETAILS" />
           <AssociationSet Name="FK_RESERVATION_CLIENT" Association="HMSModel.FK_RESERVATION_CLIENT">
             <End Role="CLIENT_INFORMATION" EntitySet="CLIENT_INFORMATION" />
             <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
@@ -244,14 +252,10 @@ FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
             <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
             <End Role="PAYMENT_INFORMATION" EntitySet="PAYMENT_INFORMATION" />
           </AssociationSet>
-          <FunctionImport Name="sp_insert_room_details">
-            <Parameter Name="roomType" Mode="In" Type="String" />
-            <Parameter Name="roomPhoto" Mode="In" Type="Binary" />
-            <Parameter Name="roomDetails" Mode="In" Type="String" />
-            <Parameter Name="roomPrice" Mode="In" Type="Double" />
-            <Parameter Name="roomDiscount" Mode="In" Type="Int32" />
+          <FunctionImport Name="sp_getRoomPhoto_byIndex" ReturnType="Collection(Binary)">
+            <Parameter Name="index" Mode="In" Type="Int32" />
           </FunctionImport>
-        </EntityContainer>
+          </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -300,6 +304,17 @@ FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
           <NavigationProperty Name="CLIENT_INFORMATION" Relationship="HMSModel.FK_RESERVATION_CLIENT" FromRole="RESERVATION_INFORMATION" ToRole="CLIENT_INFORMATION" />
           <NavigationProperty Name="PAYMENT_INFORMATION" Relationship="HMSModel.FK_PAYMENT_RESERVATION" FromRole="RESERVATION_INFORMATION" ToRole="PAYMENT_INFORMATION" />
         </EntityType>
+        <EntityType Name="ROOM_DETAILS">
+          <Key>
+            <PropertyRef Name="roomID" />
+          </Key>
+          <Property Name="roomID" Type="Int32" Nullable="false" />
+          <Property Name="roomType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="roomPhoto" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="roomPrice" Type="Double" Nullable="false" />
+          <Property Name="roomDetails" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="roomDiscount" Type="Int32" />
+        </EntityType>
         <EntityType Name="ROOM_INFORMATION">
           <Key>
             <PropertyRef Name="roomNumber" />
@@ -318,17 +333,6 @@ FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="ROOM_DETAILS">
-          <Key>
-            <PropertyRef Name="roomType" />
-            <PropertyRef Name="roomPhoto" />
-          </Key>
-          <Property Name="roomType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="roomPhoto" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <Property Name="roomPrice" Type="Double" />
-          <Property Name="roomDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="roomDiscount" Type="Int32" />
         </EntityType>
         <Association Name="FK_RESERVATION_CLIENT">
           <End Type="HMSModel.CLIENT_INFORMATION" Role="CLIENT_INFORMATION" Multiplicity="0..1" />
@@ -366,7 +370,7 @@ FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -396,6 +400,7 @@ FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HMSModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HMSModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_insert_room_details" FunctionName="HMSModel.Store.sp_insert_room_details" />
           <EntitySetMapping Name="CLIENT_INFORMATION">
             <EntityTypeMapping TypeName="HMSModel.CLIENT_INFORMATION">
               <MappingFragment StoreEntitySet="CLIENT_INFORMATION">
@@ -431,6 +436,18 @@ FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ROOM_DETAILS">
+            <EntityTypeMapping TypeName="HMSModel.ROOM_DETAILS">
+              <MappingFragment StoreEntitySet="ROOM_DETAILS">
+                <ScalarProperty Name="roomDiscount" ColumnName="roomDiscount" />
+                <ScalarProperty Name="roomDetails" ColumnName="roomDetails" />
+                <ScalarProperty Name="roomPrice" ColumnName="roomPrice" />
+                <ScalarProperty Name="roomPhoto" ColumnName="roomPhoto" />
+                <ScalarProperty Name="roomType" ColumnName="roomType" />
+                <ScalarProperty Name="roomID" ColumnName="roomID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ROOM_INFORMATION">
             <EntityTypeMapping TypeName="HMSModel.ROOM_INFORMATION">
               <MappingFragment StoreEntitySet="ROOM_INFORMATION">
@@ -451,19 +468,8 @@ FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ROOM_DETAILS">
-            <EntityTypeMapping TypeName="HMSModel.ROOM_DETAILS">
-              <MappingFragment StoreEntitySet="ROOM_DETAILS">
-                <ScalarProperty Name="roomDiscount" ColumnName="roomDiscount" />
-                <ScalarProperty Name="roomDetails" ColumnName="roomDetails" />
-                <ScalarProperty Name="roomPrice" ColumnName="roomPrice" />
-                <ScalarProperty Name="roomPhoto" ColumnName="roomPhoto" />
-                <ScalarProperty Name="roomType" ColumnName="roomType" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_insert_room_details" FunctionName="HMSModel.Store.sp_insert_room_details" />
-        </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="sp_getRoomPhoto_byIndex" FunctionName="HMSModel.Store.sp_getRoomPhoto_byIndex" />
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

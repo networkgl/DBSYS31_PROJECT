@@ -39,17 +39,15 @@ warning 6013: The table/view 'HMS.dbo.ROLE' does not have a primary key defined 
           <Property Name="roleName" Type="varchar" MaxLength="50" />
           <Property Name="roleDescription" Type="varchar" MaxLength="50" />
         </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'HMS.dbo.ROOM_DETAILS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="ROOM_DETAILS">
     <Key>
-      <PropertyRef Name="roomType" />
-      <PropertyRef Name="roomPhoto" />
+      <PropertyRef Name="roomID" />
     </Key>
+    <Property Name="roomID" Type="int" Nullable="false" />
     <Property Name="roomType" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="roomPhoto" Type="image" Nullable="false" />
-    <Property Name="roomPrice" Type="float" />
-    <Property Name="roomDetails" Type="varchar" MaxLength="100" />
+    <Property Name="roomPrice" Type="float" Nullable="false" />
+    <Property Name="roomDetails" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="roomDiscount" Type="int" />
   </EntityType>
   <EntityType Name="ROOM_INFORMATION">
@@ -130,6 +128,9 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_getRoomPhoto_byIndex" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="index" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -139,6 +140,7 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
     <Parameter Name="owner_id" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_insert_room_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="roomID" Type="int" Mode="In" />
     <Parameter Name="roomType" Type="nvarchar" Mode="In" />
     <Parameter Name="roomPhoto" Type="image" Mode="In" />
     <Parameter Name="roomDetails" Type="nvarchar" Mode="In" />
@@ -155,17 +157,9 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
     <EntitySet Name="CLIENT_INFORMATION" EntityType="Self.CLIENT_INFORMATION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PAYMENT_INFORMATION" EntityType="Self.PAYMENT_INFORMATION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RESERVATION_INFORMATION" EntityType="Self.RESERVATION_INFORMATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROOM_DETAILS" EntityType="Self.ROOM_DETAILS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ROOM_INFORMATION" EntityType="Self.ROOM_INFORMATION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ROOM_DETAILS" EntityType="Self.ROOM_DETAILS" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[ROOM_DETAILS].[roomType] AS [roomType], 
-[ROOM_DETAILS].[roomPhoto] AS [roomPhoto], 
-[ROOM_DETAILS].[roomPrice] AS [roomPrice], 
-[ROOM_DETAILS].[roomDetails] AS [roomDetails], 
-[ROOM_DETAILS].[roomDiscount] AS [roomDiscount]
-FROM [dbo].[ROOM_DETAILS] AS [ROOM_DETAILS]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_PAYMENT_RESERVATION" Association="Self.FK_PAYMENT_RESERVATION">
       <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
       <End Role="PAYMENT_INFORMATION" EntitySet="PAYMENT_INFORMATION" />

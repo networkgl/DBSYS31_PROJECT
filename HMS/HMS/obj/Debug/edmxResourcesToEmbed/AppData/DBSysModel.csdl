@@ -38,12 +38,26 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="sp_insert_room_details">
+      <Parameter Name="roomID" Mode="In" Type="Int32" />
+      <Parameter Name="roomType" Mode="In" Type="String" />
+      <Parameter Name="roomPhoto" Mode="In" Type="Binary" />
+      <Parameter Name="roomDetails" Mode="In" Type="String" />
+      <Parameter Name="roomPrice" Mode="In" Type="Double" />
+      <Parameter Name="roomDiscount" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_display_roomdetails_byindex" ReturnType="Collection(Binary)">
+      <Parameter Name="index" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_display_roomPhoto_byIndex" ReturnType="Collection(Binary)">
+      <Parameter Name="index" Mode="In" Type="Int32" />
+    </FunctionImport>
     <EntitySet Name="CLIENT_INFORMATION" EntityType="HMSModel.CLIENT_INFORMATION" />
     <EntitySet Name="PAYMENT_INFORMATION" EntityType="HMSModel.PAYMENT_INFORMATION" />
     <EntitySet Name="RESERVATION_INFORMATION" EntityType="HMSModel.RESERVATION_INFORMATION" />
+    <EntitySet Name="ROOM_DETAILS" EntityType="HMSModel.ROOM_DETAILS" />
     <EntitySet Name="ROOM_INFORMATION" EntityType="HMSModel.ROOM_INFORMATION" />
     <EntitySet Name="sysdiagrams" EntityType="HMSModel.sysdiagrams" />
-    <EntitySet Name="ROOM_DETAILS" EntityType="HMSModel.ROOM_DETAILS" />
     <AssociationSet Name="FK_RESERVATION_CLIENT" Association="HMSModel.FK_RESERVATION_CLIENT">
       <End Role="CLIENT_INFORMATION" EntitySet="CLIENT_INFORMATION" />
       <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
@@ -56,12 +70,8 @@
       <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
       <End Role="PAYMENT_INFORMATION" EntitySet="PAYMENT_INFORMATION" />
     </AssociationSet>
-    <FunctionImport Name="sp_insert_room_details">
-      <Parameter Name="roomType" Mode="In" Type="String" />
-      <Parameter Name="roomPhoto" Mode="In" Type="Binary" />
-      <Parameter Name="roomDetails" Mode="In" Type="String" />
-      <Parameter Name="roomPrice" Mode="In" Type="Double" />
-      <Parameter Name="roomDiscount" Mode="In" Type="Int32" />
+    <FunctionImport Name="sp_getRoomPhoto_byIndex" ReturnType="Collection(Binary)">
+      <Parameter Name="index" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -112,6 +122,17 @@
     <NavigationProperty Name="CLIENT_INFORMATION" Relationship="HMSModel.FK_RESERVATION_CLIENT" FromRole="RESERVATION_INFORMATION" ToRole="CLIENT_INFORMATION" />
     <NavigationProperty Name="PAYMENT_INFORMATION" Relationship="HMSModel.FK_PAYMENT_RESERVATION" FromRole="RESERVATION_INFORMATION" ToRole="PAYMENT_INFORMATION" />
   </EntityType>
+  <EntityType Name="ROOM_DETAILS">
+    <Key>
+      <PropertyRef Name="roomID" />
+    </Key>
+    <Property Name="roomID" Type="Int32" Nullable="false" />
+    <Property Name="roomType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="roomPhoto" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="roomPrice" Type="Double" Nullable="false" />
+    <Property Name="roomDetails" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="roomDiscount" Type="Int32" />
+  </EntityType>
   <EntityType Name="ROOM_INFORMATION">
     <Key>
       <PropertyRef Name="roomNumber" />
@@ -130,17 +151,6 @@
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="ROOM_DETAILS">
-    <Key>
-      <PropertyRef Name="roomType" />
-      <PropertyRef Name="roomPhoto" />
-    </Key>
-    <Property Name="roomType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="roomPhoto" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-    <Property Name="roomPrice" Type="Double" />
-    <Property Name="roomDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="roomDiscount" Type="Int32" />
   </EntityType>
   <Association Name="FK_RESERVATION_CLIENT">
     <End Type="HMSModel.CLIENT_INFORMATION" Role="CLIENT_INFORMATION" Multiplicity="0..1" />

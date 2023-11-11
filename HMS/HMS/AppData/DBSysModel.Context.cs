@@ -31,9 +31,9 @@ namespace HMS.AppData
         public DbSet<CLIENT_INFORMATION> CLIENT_INFORMATION { get; set; }
         public DbSet<PAYMENT_INFORMATION> PAYMENT_INFORMATION { get; set; }
         public DbSet<RESERVATION_INFORMATION> RESERVATION_INFORMATION { get; set; }
+        public DbSet<ROOM_DETAILS> ROOM_DETAILS { get; set; }
         public DbSet<ROOM_INFORMATION> ROOM_INFORMATION { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public DbSet<ROOM_DETAILS> ROOM_DETAILS { get; set; }
     
         public virtual int InsertRoomDetails(string roomType, byte[] roomPhoto, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
         {
@@ -163,8 +163,12 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual int sp_insert_room_details(string roomType, byte[] roomPhoto, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
+        public virtual int sp_insert_room_details(Nullable<int> roomID, string roomType, byte[] roomPhoto, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
         {
+            var roomIDParameter = roomID.HasValue ?
+                new ObjectParameter("roomID", roomID) :
+                new ObjectParameter("roomID", typeof(int));
+    
             var roomTypeParameter = roomType != null ?
                 new ObjectParameter("roomType", roomType) :
                 new ObjectParameter("roomType", typeof(string));
@@ -185,7 +189,34 @@ namespace HMS.AppData
                 new ObjectParameter("roomDiscount", roomDiscount) :
                 new ObjectParameter("roomDiscount", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_room_details", roomTypeParameter, roomPhotoParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_room_details", roomIDParameter, roomTypeParameter, roomPhotoParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
+        }
+    
+        public virtual ObjectResult<byte[]> sp_display_roomdetails_byindex(Nullable<int> index)
+        {
+            var indexParameter = index.HasValue ?
+                new ObjectParameter("index", index) :
+                new ObjectParameter("index", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("sp_display_roomdetails_byindex", indexParameter);
+        }
+    
+        public virtual ObjectResult<byte[]> sp_display_roomPhoto_byIndex(Nullable<int> index)
+        {
+            var indexParameter = index.HasValue ?
+                new ObjectParameter("index", index) :
+                new ObjectParameter("index", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("sp_display_roomPhoto_byIndex", indexParameter);
+        }
+    
+        public virtual ObjectResult<byte[]> sp_getRoomPhoto_byIndex(Nullable<int> index)
+        {
+            var indexParameter = index.HasValue ?
+                new ObjectParameter("index", index) :
+                new ObjectParameter("index", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("sp_getRoomPhoto_byIndex", indexParameter);
         }
     }
 }
