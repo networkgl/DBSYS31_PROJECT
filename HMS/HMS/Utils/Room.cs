@@ -58,8 +58,6 @@ namespace HMS
         }
         public void HasDiscount(int discount)
         {
-            var discountAmount = 0;//use this var to calculate the amount of discount and return the discounted amount.
-
             switch (RoomType_selectedIndex)
             {
                 case 0:

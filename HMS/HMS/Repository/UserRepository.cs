@@ -7,7 +7,7 @@ using HMS.AppData;
 
 namespace HMS
 {
-    internal class UserRepository
+    class UserRepository
     {
 
     }

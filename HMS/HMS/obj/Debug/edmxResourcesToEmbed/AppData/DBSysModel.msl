@@ -26,6 +26,18 @@
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HMSModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HMSModel.Store.sp_upgraddiagrams" />
     <FunctionImportMapping FunctionImportName="sp_insert_room_details" FunctionName="HMSModel.Store.sp_insert_room_details" />
+    <FunctionImportMapping FunctionImportName="sp_get_room_details__by_index" FunctionName="HMSModel.Store.sp_get_room_details__by_index">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HMSModel.sp_get_room_details__by_index_Result">
+          <ScalarProperty Name="roomPhoto" ColumnName="roomPhoto" />
+          <ScalarProperty Name="roomPrice" ColumnName="roomPrice" />
+          <ScalarProperty Name="roomDetails" ColumnName="roomDetails" />
+          <ScalarProperty Name="roomDiscount" ColumnName="roomDiscount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_get_room_photo_by_index" FunctionName="HMSModel.Store.sp_get_room_photo_by_index" />
+    <FunctionImportMapping FunctionImportName="sp_delete_room_details" FunctionName="HMSModel.Store.sp_delete_room_details" />
     <EntitySetMapping Name="CLIENT_INFORMATION">
       <EntityTypeMapping TypeName="HMSModel.CLIENT_INFORMATION">
         <MappingFragment StoreEntitySet="CLIENT_INFORMATION">
@@ -93,6 +105,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_getRoomPhoto_byIndex" FunctionName="HMSModel.Store.sp_getRoomPhoto_byIndex" />
+    <EntitySetMapping Name="vw_display_room_details">
+      <EntityTypeMapping TypeName="HMSModel.vw_display_room_details">
+        <MappingFragment StoreEntitySet="vw_display_room_details">
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Room_Type" ColumnName="Room Type" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_update_room_details_nophoto" FunctionName="HMSModel.Store.sp_update_room_details_nophoto" />
+    <FunctionImportMapping FunctionImportName="sp_update_room_details_withphoto" FunctionName="HMSModel.Store.sp_update_room_details_withphoto" />
   </EntityContainerMapping>
 </Mapping>

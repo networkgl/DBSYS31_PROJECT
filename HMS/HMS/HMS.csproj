@@ -33,12 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Words, Version=23.10.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.Words.23.10.0\lib\net461\Aspose.Words.dll</HintPath>
-    </Reference>
-    <Reference Include="Aspose.Words.Pdf2Word, Version=23.10.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aspose.Words.23.10.0\lib\net461\Aspose.Words.Pdf2Word.dll</HintPath>
-    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
@@ -51,18 +45,6 @@
     </Reference>
     <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
-    </Reference>
-    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
-    </Reference>
-    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -105,6 +87,7 @@
     <Compile Include="AppData\CLIENT_INFORMATION.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\Custom Class\ROOM_DETAILS_CUSTOM.cs" />
     <Compile Include="AppData\DBSysModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +103,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBSysModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="AppData\DBSysModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\PAYMENT_INFORMATION.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
@@ -132,6 +120,9 @@
     <Compile Include="AppData\ROOM_INFORMATION.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\sp_get_room_details__by_index_Result.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
@@ -140,6 +131,15 @@
     </Compile>
     <Compile Include="AppData\sysdiagrams.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\vw_display_room_details.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_AddRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_AddRooms.Designer.cs">
+      <DependentUpon>Frm_AddRooms.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_BookNow_S1.cs">
       <SubType>Form</SubType>
@@ -165,6 +165,12 @@
     <Compile Include="Forms\Frm_Calendar.Designer.cs">
       <DependentUpon>Frm_Calendar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_ChangeRoomDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_ChangeRoomDetails.Designer.cs">
+      <DependentUpon>Frm_ChangeRoomDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Client.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +182,12 @@
     </Compile>
     <Compile Include="Forms\Frm_BookNow_S4.Designer.cs">
       <DependentUpon>Frm_BookNow_S4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_ConfirmDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_ConfirmDelete.Designer.cs">
+      <DependentUpon>Frm_ConfirmDelete.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_HomePage.cs">
       <SubType>Form</SubType>
@@ -219,6 +231,12 @@
     <Compile Include="Forms\Frm_Room.Designer.cs">
       <DependentUpon>Frm_Room.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_RoomHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_RoomHeader.Designer.cs">
+      <DependentUpon>Frm_RoomHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_RType_Deluxe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +255,12 @@
     <Compile Include="Forms\Frm_RType_PriemereDeluxe.Designer.cs">
       <DependentUpon>Frm_RType_PriemereDeluxe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_ViewRoomAvailable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_ViewRoomAvailable.Designer.cs">
+      <DependentUpon>Frm_ViewRoomAvailable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_ViewCurrentRooms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +273,11 @@
     <Compile Include="Forms\Frm_WaitForm.designer.cs">
       <DependentUpon>Frm_WaitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Repository\AdminRepository.cs" />
     <Compile Include="Utils\Room.cs" />
     <Compile Include="Utils\WaitFormFunc.cs" />
@@ -257,6 +286,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Utils\Constant.cs" />
+    <EmbeddedResource Include="Forms\Frm_AddRooms.resx">
+      <DependentUpon>Frm_AddRooms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_BookNow_S1.resx">
       <DependentUpon>Frm_BookNow_S1.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,11 +301,17 @@
     <EmbeddedResource Include="Forms\Frm_Calendar.resx">
       <DependentUpon>Frm_Calendar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_ChangeRoomDetails.resx">
+      <DependentUpon>Frm_ChangeRoomDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Client.resx">
       <DependentUpon>Frm_Client.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_BookNow_S4.resx">
       <DependentUpon>Frm_BookNow_S4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_ConfirmDelete.resx">
+      <DependentUpon>Frm_ConfirmDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_HomePage.resx">
       <DependentUpon>Frm_HomePage.cs</DependentUpon>
@@ -296,6 +334,9 @@
     <EmbeddedResource Include="Forms\Frm_Room.resx">
       <DependentUpon>Frm_Room.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_RoomHeader.resx">
+      <DependentUpon>Frm_RoomHeader.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_RType_Deluxe.resx">
       <DependentUpon>Frm_RType_Deluxe.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_RType_PriemereDeluxe.resx">
       <DependentUpon>Frm_RType_PriemereDeluxe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_ViewRoomAvailable.resx">
+      <DependentUpon>Frm_ViewRoomAvailable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_ViewCurrentRooms.resx">
       <DependentUpon>Frm_ViewCurrentRooms.cs</DependentUpon>
@@ -328,11 +372,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -342,7 +381,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-sun-26-light.png" />
   </ItemGroup>
@@ -574,8 +615,12 @@
     <Content Include="AppData\DBSysModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBSysModel.edmx</DependentUpon>
-      <LastGenOutput>DBSysModel.cs</LastGenOutput>
+      <LastGenOutput>DBSysModel1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-no-camera-100.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\update.png" />
     <None Include="Resources\icons8-manage-20.png" />
   </ItemGroup>
   <ItemGroup>

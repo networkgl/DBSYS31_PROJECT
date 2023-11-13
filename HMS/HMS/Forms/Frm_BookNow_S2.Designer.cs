@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnNext = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,9 +46,8 @@
             this.lblSystemTime = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.llb_moreInfo = new System.Windows.Forms.LinkLabel();
+            this.label7 = new System.Windows.Forms.Label();
             this.lbl_roomDetails2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lbl_priceDetails = new System.Windows.Forms.Label();
@@ -60,33 +58,21 @@
             this.cbBox_roomType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
             this.errorProvider_S2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S2)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2CustomGradientPanel1
-            // 
-            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
-            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.WhiteSmoke;
-            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.Red;
-            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.Violet;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(11, 800);
-            this.guna2CustomGradientPanel1.TabIndex = 62;
-            // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(963, 342);
+            this.btnNext.Location = new System.Drawing.Point(954, 342);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(142, 42);
             this.btnNext.TabIndex = 61;
@@ -104,9 +90,8 @@
             this.guna2ShadowPanel1.Controls.Add(this.btnBack);
             this.guna2ShadowPanel1.Controls.Add(this.panel1);
             this.guna2ShadowPanel1.Controls.Add(this.cbBox_roomType);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2CustomGradientPanel1);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
@@ -138,11 +123,12 @@
             this.btnPaymentConfirmation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPaymentConfirmation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPaymentConfirmation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPaymentConfirmation.FillColor = System.Drawing.Color.Black;
+            this.btnPaymentConfirmation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnPaymentConfirmation.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPaymentConfirmation.ForeColor = System.Drawing.Color.White;
             this.btnPaymentConfirmation.Location = new System.Drawing.Point(629, 3);
             this.btnPaymentConfirmation.Name = "btnPaymentConfirmation";
+            this.btnPaymentConfirmation.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnPaymentConfirmation.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPaymentConfirmation.Size = new System.Drawing.Size(40, 40);
             this.btnPaymentConfirmation.TabIndex = 48;
@@ -177,11 +163,12 @@
             this.btnGuestDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnGuestDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGuestDetails.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGuestDetails.FillColor = System.Drawing.Color.Black;
+            this.btnGuestDetails.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnGuestDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuestDetails.ForeColor = System.Drawing.Color.White;
             this.btnGuestDetails.Location = new System.Drawing.Point(429, 3);
             this.btnGuestDetails.Name = "btnGuestDetails";
+            this.btnGuestDetails.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnGuestDetails.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnGuestDetails.Size = new System.Drawing.Size(40, 40);
             this.btnGuestDetails.TabIndex = 45;
@@ -194,11 +181,12 @@
             this.btnChooseDate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChooseDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChooseDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChooseDate.FillColor = System.Drawing.Color.Black;
+            this.btnChooseDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseDate.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseDate.ForeColor = System.Drawing.Color.White;
             this.btnChooseDate.Location = new System.Drawing.Point(31, 1);
             this.btnChooseDate.Name = "btnChooseDate";
+            this.btnChooseDate.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseDate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnChooseDate.Size = new System.Drawing.Size(40, 40);
             this.btnChooseDate.TabIndex = 43;
@@ -211,11 +199,12 @@
             this.btnChooseRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChooseRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChooseRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChooseRoom.FillColor = System.Drawing.Color.Black;
+            this.btnChooseRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseRoom.ForeColor = System.Drawing.Color.White;
             this.btnChooseRoom.Location = new System.Drawing.Point(230, 3);
             this.btnChooseRoom.Name = "btnChooseRoom";
+            this.btnChooseRoom.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseRoom.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnChooseRoom.Size = new System.Drawing.Size(40, 40);
             this.btnChooseRoom.TabIndex = 44;
@@ -265,7 +254,7 @@
             // 
             this.lblSystemTime.AutoSize = true;
             this.lblSystemTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
+            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.lblSystemTime.Location = new System.Drawing.Point(1086, 11);
             this.lblSystemTime.Name = "lblSystemTime";
             this.lblSystemTime.Size = new System.Drawing.Size(151, 19);
@@ -292,28 +281,11 @@
             this.label5.TabIndex = 89;
             this.label5.Text = "BOOKING SECTION";
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(17, 37);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(42, 31);
-            this.btnBack.TabIndex = 72;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.llb_moreInfo);
             this.panel1.Controls.Add(this.lbl_roomDetails2);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.lbl_priceDetails);
@@ -327,18 +299,18 @@
             this.panel1.Size = new System.Drawing.Size(1110, 401);
             this.panel1.TabIndex = 71;
             // 
-            // llb_moreInfo
+            // label7
             // 
-            this.llb_moreInfo.AutoSize = true;
-            this.llb_moreInfo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llb_moreInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
-            this.llb_moreInfo.Location = new System.Drawing.Point(619, 363);
-            this.llb_moreInfo.Name = "llb_moreInfo";
-            this.llb_moreInfo.Size = new System.Drawing.Size(258, 21);
-            this.llb_moreInfo.TabIndex = 76;
-            this.llb_moreInfo.TabStop = true;
-            this.llb_moreInfo.Text = "<< CLICK PICTURE TO SEE MORE";
-            this.llb_moreInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_moreInfo_LinkClicked);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(927, 129);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(160, 51);
+            this.label7.TabIndex = 77;
+            this.label7.Text = "Per Night\r\n₱10,000 Total for 1 night\r\nExcluding Taxes & Fees";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label7.Visible = false;
             // 
             // lbl_roomDetails2
             // 
@@ -368,22 +340,22 @@
             this.lbl_priceDetails.AutoSize = true;
             this.lbl_priceDetails.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_priceDetails.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_priceDetails.Location = new System.Drawing.Point(947, 271);
+            this.lbl_priceDetails.Location = new System.Drawing.Point(936, 271);
             this.lbl_priceDetails.Name = "lbl_priceDetails";
-            this.lbl_priceDetails.Size = new System.Drawing.Size(95, 17);
+            this.lbl_priceDetails.Size = new System.Drawing.Size(160, 68);
             this.lbl_priceDetails.TabIndex = 73;
-            this.lbl_priceDetails.Text = "PRICE DETAILS";
+            this.lbl_priceDetails.Text = "Per Night\r\n₱10,000 Total for 1 night\r\nExcluding Taxes & Fees\r\n\r\n";
             this.lbl_priceDetails.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_roomPrice
             // 
             this.lbl_roomPrice.AutoSize = true;
             this.lbl_roomPrice.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomPrice.Location = new System.Drawing.Point(1025, 248);
+            this.lbl_roomPrice.Location = new System.Drawing.Point(1014, 248);
             this.lbl_roomPrice.Name = "lbl_roomPrice";
-            this.lbl_roomPrice.Size = new System.Drawing.Size(62, 23);
+            this.lbl_roomPrice.Size = new System.Drawing.Size(82, 23);
             this.lbl_roomPrice.TabIndex = 72;
-            this.lbl_roomPrice.Text = "PRICE";
+            this.lbl_roomPrice.Text = "₱10,000";
             // 
             // lbl_roomType
             // 
@@ -438,18 +410,21 @@
             // 
             this.errorProvider_S2.ContainerControl = this;
             // 
-            // label7
+            // btnBack
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(927, 129);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 51);
-            this.label7.TabIndex = 77;
-            this.label7.Text = "Per Night\r\n₱10,000 Total for 1 night\r\nExcluding Taxes & Fees";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Visible = false;
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(17, 37);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 72;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Frm_BookNow_S2
             // 
@@ -475,7 +450,6 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private System.Windows.Forms.Button btnNext;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.Panel pnl_roompicture;
@@ -488,7 +462,6 @@
         public System.Windows.Forms.Label lbl_roomDetails2;
         public System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnBack;
-        public System.Windows.Forms.LinkLabel llb_moreInfo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Timer CurrentDate;

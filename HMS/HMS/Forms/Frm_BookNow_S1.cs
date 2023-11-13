@@ -1,5 +1,4 @@
-﻿using Aspose.Words.Settings;
-using HMS.Forms;
+﻿using HMS.Forms;
 using Pabo.Calendar;
 using System;
 using System.Collections.Generic;
@@ -15,7 +14,6 @@ namespace HMS
         private Frm_BookNow_S1 s1;
         private Frm_BookNow_S2 s2;
         private Frm_BookNow_S3 s3;
-        private Frm_BookNow_S4 s4;
 
         private int guest;
         private int noOfGuest;

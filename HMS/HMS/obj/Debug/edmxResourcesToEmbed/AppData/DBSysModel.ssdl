@@ -75,6 +75,21 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
           <Property Name="datetimeLogin" Type="varchar" MaxLength="50" />
           <Property Name="lastActivity" Type="varchar" MaxLength="100" />
         </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_display_room_details">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Room Type" />
+      <PropertyRef Name="Details" />
+      <PropertyRef Name="Price" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Room Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Details" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Discount" Type="int" />
+  </EntityType>
   <Association Name="FK_PAYMENT_RESERVATION">
     <End Role="RESERVATION_INFORMATION" Type="Self.RESERVATION_INFORMATION" Multiplicity="0..1" />
     <End Role="PAYMENT_INFORMATION" Type="Self.PAYMENT_INFORMATION" Multiplicity="*" />
@@ -124,11 +139,17 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
     <Parameter Name="version" Type="int" Mode="In" />
     <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
   </Function>
+  <Function Name="sp_delete_room_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="roomID" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
   </Function>
-  <Function Name="sp_getRoomPhoto_byIndex" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+  <Function Name="sp_get_room_details__by_index" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="index" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_get_room_photo_by_index" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="index" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -152,6 +173,21 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
     <Parameter Name="owner_id" Type="int" Mode="In" />
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_update_room_details_nophoto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="roomID" Type="int" Mode="In" />
+    <Parameter Name="roomType" Type="nvarchar" Mode="In" />
+    <Parameter Name="roomDetails" Type="nvarchar" Mode="In" />
+    <Parameter Name="roomPrice" Type="float" Mode="In" />
+    <Parameter Name="roomDiscount" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_update_room_details_withphoto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="roomID" Type="int" Mode="In" />
+    <Parameter Name="roomPhoto" Type="image" Mode="In" />
+    <Parameter Name="roomType" Type="nvarchar" Mode="In" />
+    <Parameter Name="roomDetails" Type="nvarchar" Mode="In" />
+    <Parameter Name="roomPrice" Type="float" Mode="In" />
+    <Parameter Name="roomDiscount" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="HMSModelStoreContainer">
     <EntitySet Name="CLIENT_INFORMATION" EntityType="Self.CLIENT_INFORMATION" Schema="dbo" store:Type="Tables" />
@@ -160,6 +196,15 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
     <EntitySet Name="ROOM_DETAILS" EntityType="Self.ROOM_DETAILS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ROOM_INFORMATION" EntityType="Self.ROOM_INFORMATION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vw_display_room_details" EntityType="Self.vw_display_room_details" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vw_display_room_details].[ID] AS [ID], 
+[vw_display_room_details].[Room Type] AS [Room Type], 
+[vw_display_room_details].[Details] AS [Details], 
+[vw_display_room_details].[Price] AS [Price], 
+[vw_display_room_details].[Discount] AS [Discount]
+FROM [dbo].[vw_display_room_details] AS [vw_display_room_details]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_PAYMENT_RESERVATION" Association="Self.FK_PAYMENT_RESERVATION">
       <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
       <End Role="PAYMENT_INFORMATION" EntitySet="PAYMENT_INFORMATION" />

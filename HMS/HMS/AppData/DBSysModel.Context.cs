@@ -34,6 +34,7 @@ namespace HMS.AppData
         public DbSet<ROOM_DETAILS> ROOM_DETAILS { get; set; }
         public DbSet<ROOM_INFORMATION> ROOM_INFORMATION { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<vw_display_room_details> vw_display_room_details { get; set; }
     
         public virtual int InsertRoomDetails(string roomType, byte[] roomPhoto, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
         {
@@ -217,6 +218,116 @@ namespace HMS.AppData
                 new ObjectParameter("index", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("sp_getRoomPhoto_byIndex", indexParameter);
+        }
+    
+        public virtual ObjectResult<sp_get_room_details__by_index_Result> sp_get_room_details__by_index(Nullable<int> index)
+        {
+            var indexParameter = index.HasValue ?
+                new ObjectParameter("index", index) :
+                new ObjectParameter("index", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_room_details__by_index_Result>("sp_get_room_details__by_index", indexParameter);
+        }
+    
+        public virtual ObjectResult<byte[]> sp_get_room_photo_by_index(Nullable<int> index)
+        {
+            var indexParameter = index.HasValue ?
+                new ObjectParameter("index", index) :
+                new ObjectParameter("index", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("sp_get_room_photo_by_index", indexParameter);
+        }
+    
+        public virtual int sp_delete_room_details(Nullable<int> roomID)
+        {
+            var roomIDParameter = roomID.HasValue ?
+                new ObjectParameter("roomID", roomID) :
+                new ObjectParameter("roomID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_delete_room_details", roomIDParameter);
+        }
+    
+        public virtual int sp_update_room_details(Nullable<int> roomID, byte[] roomPhoto, string roomType, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
+        {
+            var roomIDParameter = roomID.HasValue ?
+                new ObjectParameter("roomID", roomID) :
+                new ObjectParameter("roomID", typeof(int));
+    
+            var roomPhotoParameter = roomPhoto != null ?
+                new ObjectParameter("roomPhoto", roomPhoto) :
+                new ObjectParameter("roomPhoto", typeof(byte[]));
+    
+            var roomTypeParameter = roomType != null ?
+                new ObjectParameter("roomType", roomType) :
+                new ObjectParameter("roomType", typeof(string));
+    
+            var roomDetailsParameter = roomDetails != null ?
+                new ObjectParameter("roomDetails", roomDetails) :
+                new ObjectParameter("roomDetails", typeof(string));
+    
+            var roomPriceParameter = roomPrice.HasValue ?
+                new ObjectParameter("roomPrice", roomPrice) :
+                new ObjectParameter("roomPrice", typeof(double));
+    
+            var roomDiscountParameter = roomDiscount.HasValue ?
+                new ObjectParameter("roomDiscount", roomDiscount) :
+                new ObjectParameter("roomDiscount", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_room_details", roomIDParameter, roomPhotoParameter, roomTypeParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
+        }
+    
+        public virtual int sp_update_room_details_nophoto(Nullable<int> roomID, string roomType, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
+        {
+            var roomIDParameter = roomID.HasValue ?
+                new ObjectParameter("roomID", roomID) :
+                new ObjectParameter("roomID", typeof(int));
+    
+            var roomTypeParameter = roomType != null ?
+                new ObjectParameter("roomType", roomType) :
+                new ObjectParameter("roomType", typeof(string));
+    
+            var roomDetailsParameter = roomDetails != null ?
+                new ObjectParameter("roomDetails", roomDetails) :
+                new ObjectParameter("roomDetails", typeof(string));
+    
+            var roomPriceParameter = roomPrice.HasValue ?
+                new ObjectParameter("roomPrice", roomPrice) :
+                new ObjectParameter("roomPrice", typeof(double));
+    
+            var roomDiscountParameter = roomDiscount.HasValue ?
+                new ObjectParameter("roomDiscount", roomDiscount) :
+                new ObjectParameter("roomDiscount", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_room_details_nophoto", roomIDParameter, roomTypeParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
+        }
+    
+        public virtual int sp_update_room_details_withphoto(Nullable<int> roomID, byte[] roomPhoto, string roomType, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
+        {
+            var roomIDParameter = roomID.HasValue ?
+                new ObjectParameter("roomID", roomID) :
+                new ObjectParameter("roomID", typeof(int));
+    
+            var roomPhotoParameter = roomPhoto != null ?
+                new ObjectParameter("roomPhoto", roomPhoto) :
+                new ObjectParameter("roomPhoto", typeof(byte[]));
+    
+            var roomTypeParameter = roomType != null ?
+                new ObjectParameter("roomType", roomType) :
+                new ObjectParameter("roomType", typeof(string));
+    
+            var roomDetailsParameter = roomDetails != null ?
+                new ObjectParameter("roomDetails", roomDetails) :
+                new ObjectParameter("roomDetails", typeof(string));
+    
+            var roomPriceParameter = roomPrice.HasValue ?
+                new ObjectParameter("roomPrice", roomPrice) :
+                new ObjectParameter("roomPrice", typeof(double));
+    
+            var roomDiscountParameter = roomDiscount.HasValue ?
+                new ObjectParameter("roomDiscount", roomDiscount) :
+                new ObjectParameter("roomDiscount", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_room_details_withphoto", roomIDParameter, roomPhotoParameter, roomTypeParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
         }
     }
 }

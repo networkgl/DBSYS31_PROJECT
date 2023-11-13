@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Media3D;
 
 namespace HMS.Forms
 {
@@ -18,7 +19,10 @@ namespace HMS.Forms
     {
         private HMSEntities db;
         private AdminRepository adminRepo;
-        private int currentIndex;
+        private static int currentIndex;
+
+        public static int CurrentIndex { get => currentIndex; set => currentIndex = value; }
+
         //private int lastPrimaryKeyValue = 0;
 
 
@@ -27,7 +31,7 @@ namespace HMS.Forms
             InitializeComponent();
             db = new HMSEntities();
             adminRepo = new AdminRepository();
-            currentIndex = adminRepo.LastPrimaryKeyValue;
+            CurrentIndex = adminRepo.LastPrimaryKeyValue;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -37,11 +41,7 @@ namespace HMS.Forms
 
         private void Frm_ViewCurrentRooms_Load(object sender, EventArgs e)
         {
-            String response = String.Empty;
-            adminRepo.GetPhotoByIndex(currentIndex);
-            pnl_roompicture.BackgroundImage = adminRepo.Image;
-
-            InitialLoad();
+           InitialLoad();
         }
         //private Image GetImageFromDatabase(byte[] img)
         //{
@@ -51,8 +51,14 @@ namespace HMS.Forms
         //}
         private void InitialLoad()
         {
+            btnRoomDisplay.Enabled = false;
+
+            //lbl_roomType.Text = adminRepo._RoomType;
+            //lbl_roomDetails1.Text = adminRepo._RoomDetails;
+            //lbl_roomPrice.Text += adminRepo._RoomPrice.ToString();
+
             String response = String.Empty;
-            var retValRows = adminRepo.GetRoomTypeByID(response);
+            var retValRows = adminRepo.GetRoomTypeByID(ref response);
             
             if (retValRows == ErrorCode.Success)
             {
@@ -61,28 +67,18 @@ namespace HMS.Forms
                 {
                     cbBox_roomType.Items.Add(i);
                 }
-
-
-                Console.WriteLine(currentIndex);
-
-                cbBox_roomType.SelectedIndex = currentIndex;
-
-
-                //var retValIndex = adminRepo.GetPhotoByIndex(currentIndex, ref response);
-                //Thread.Sleep(500);
-                //if (retValIndex == ErrorCode.Success)
-                //{
-                //    MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Question, MessageDialogStyle.Light);
-                //}
-                //else
-                //{
-                //    MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light);
-                //}
+                cbBox_roomType.SelectedIndex = 0;
+                Console.WriteLine(CurrentIndex);
             }
             else
             {
                 MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Question, MessageDialogStyle.Light);
             }
+
+            pnl_roompicture.BackgroundImage = adminRepo.Image;
+            lbl_roomType.Text = adminRepo._RoomType;
+            lbl_roomDetails1.Text = adminRepo._RoomDetails;
+            lbl_roomPrice.Text = "₱" + adminRepo._RoomPrice.ToString("#,##0");
         }
 
         private void cbBox_roomType_SelectedIndexChanged(object sender, EventArgs e)
@@ -91,23 +87,60 @@ namespace HMS.Forms
             {
                 if (cbBox_roomType.SelectedIndex == i)
                 {
-                    currentIndex = cbBox_roomType.SelectedIndex;
+                    currentIndex = i;
                     break;
                 }
             }
 
-            //String response = String.Empty;
-            //var retVal = adminRepo.CountAllRows(response);
-            //Thread.Sleep(500);
-            //if (retVal == ErrorCode.Success)
-            //{
-            //    MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Question, MessageDialogStyle.Light);
-            //}
-            //else
-            //{
-            //    MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light);
-            //}
+
+            String response = String.Empty;
+            var retVal = adminRepo.GetRoomDetails(currentIndex, ref response);
+
+            Thread.Sleep(500);
+            if (retVal == ErrorCode.Success)
+            {
+                pnl_roompicture.BackgroundImage = adminRepo.Image;
+            }
+            else
+            {
+                MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Error, MessageDialogStyle.Light);
+            }
+
+            //This should place below to prevent delay.
+            lbl_roomType.Text = adminRepo._RoomType;
+            lbl_roomDetails1.Text = adminRepo._RoomDetails;
+            lbl_roomPrice.Text = "₱"+adminRepo._RoomPrice.ToString("#,##0");
+            var price = adminRepo._RoomPrice.ToString("#,##0");
+
+            lbl_priceDetails.Text = $"Per Night\r\n ₱{price} Total for 1 night\r\nExcluding Taxes & Fees";
         }
+
+        private void btnAddRooms_Click(object sender, EventArgs e)
+        {
+            Frm_Main.GetInstanceClass.pnl_main.Controls.Clear();
+            Frm_AddRooms vcr = new Frm_AddRooms();
+            vcr.TopLevel = false;
+            vcr.Dock = DockStyle.Fill;
+            Frm_Main.GetInstanceClass.pnl_main.Controls.Add(vcr);
+            vcr.Show();
+        }
+
+        private void btnUpdateDeleteRooms_Click(object sender, EventArgs e)
+        {
+            Frm_Main.GetInstanceClass.pnl_main.Controls.Clear();
+            Frm_ViewRoomAvailable vcr = new Frm_ViewRoomAvailable();
+            vcr.TopLevel = false;
+            vcr.Dock = DockStyle.Fill;
+            Frm_Main.GetInstanceClass.pnl_main.Controls.Add(vcr);
+            vcr.Show();
+        }
+
+        private void pnl_Main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
         /*
         public byte[] GetPhotoByIndex(int selectedIndex)
         {

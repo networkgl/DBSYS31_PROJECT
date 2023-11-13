@@ -1,4 +1,5 @@
-﻿using HMS.Forms;
+﻿using Guna.UI2.WinForms;
+using HMS.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace HMS
         private int toggleNotif = 0;
         private byte fontSize = 12;
         private bool ToggleDash, ToggleClient, ToggleRoom, ToggleReserve,ToggleLogout;
+        private static Frm_Main _instance;
         public Frm_Main()
         {
             InitializeComponent();
@@ -26,6 +28,10 @@ namespace HMS
             if(main == null)
                 main = new Frm_Main();
             return main;
+        }
+        public static Frm_Main GetInstanceClass
+        {
+            get { return _instance; }
         }
         protected override CreateParams CreateParams
         {
@@ -140,12 +146,21 @@ namespace HMS
         }
         private void btnManageRoomType_Click(object sender, EventArgs e)
         {
+            //pnl_main.Controls.Clear();
+            //Frm_ManageRoomType mgt = new Frm_ManageRoomType();
+            //mgt.TopLevel = false;
+            //mgt.Dock = DockStyle.Fill;
+            //pnl_main.Controls.Add(mgt);
+            //mgt.Show();
+
+            Frm_ViewRoomAvailable ar = new Frm_ViewRoomAvailable();
             pnl_main.Controls.Clear();
-            Frm_ManageRoomType mgt = new Frm_ManageRoomType();
-            mgt.TopLevel = false;
-            mgt.Dock = DockStyle.Fill;
-            pnl_main.Controls.Add(mgt);
-            mgt.Show();
+            ar.TopLevel = false;
+            ar.Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(ar);
+            ar.Show();
+
+            _instance = this;
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -158,8 +173,9 @@ namespace HMS
             if (ToggleLogout)
                 pnl_ToggleLogout.Visible = ToggleLogout;
 
-            var ask = MessageBox.Show("Are you sure you want to logout ?", "Message",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            if(ask == DialogResult.Yes) {
+            var msg = "Are you sure you want to logout ?";
+            bool logout = MessageDialog.Show(msg, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Dark) == DialogResult.Yes;
+            if(logout) {
                 this.Hide();
                 Frm_HomePage home = new Frm_HomePage();
                 home.Show();

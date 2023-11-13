@@ -29,6 +29,7 @@ namespace HMS
             waitForm = new WaitFormFunc();
             db = new HMSEntities();
         }
+        /*
         private void btnAddPhotos_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -47,7 +48,8 @@ namespace HMS
                 }
             }
         }
-
+        */
+        /*
         private void btnSaveDetails_Click(object sender, EventArgs e)
         {
             int lastVal = GetLastPrimaryKeyValue(); //Adding one to manually increment
@@ -69,18 +71,43 @@ namespace HMS
                 }
             }
         }
+        
         private byte[] InsertPhoto()
         {
             MemoryStream stream = new MemoryStream();
             pcBox_Room.Image.Save(stream, pcBox_Room.Image.RawFormat);
             return stream.GetBuffer();
-        }     
-
+        }
+        private void btnAddRooms_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Frm_ManageRoomType mrt = new Frm_ManageRoomType();
+            mrt.TopLevel = false;
+            mrt.Dock = DockStyle.Fill;
+            panel1.Controls.Add(mrt);
+            mrt.Show();
+        }
+        private void btnAddRooms_Click_1(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Frm_AddRooms ar = new Frm_AddRooms();
+            ar.TopLevel = false;
+            ar.Dock = DockStyle.Fill;
+            ar.Controls.Add(ar);
+            ar.Show();
+        }
         private void btnRoomDisplay_Click(object sender, EventArgs e)
         {
+            //Frm_ViewCurrentRooms vcr = new Frm_ViewCurrentRooms();
+            //vcr.ShowDialog();
+
+            panel1.Controls.Clear();
             Frm_ViewCurrentRooms vcr = new Frm_ViewCurrentRooms();
-            vcr.ShowDialog();
-        }
+            vcr.TopLevel = false;
+            vcr.Dock = DockStyle.Fill;
+            panel1.Controls.Add(vcr);
+            vcr.Show();
+        }*/
         private int GetLastPrimaryKeyValue()
         {
             using (HMSEntities db = new HMSEntities())

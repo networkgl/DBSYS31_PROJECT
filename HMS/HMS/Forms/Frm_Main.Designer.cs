@@ -341,7 +341,7 @@
             this.btnManageRoomType.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
             this.btnManageRoomType.Size = new System.Drawing.Size(219, 46);
             this.btnManageRoomType.TabIndex = 5;
-            this.btnManageRoomType.Text = "Manage System";
+            this.btnManageRoomType.Text = "Manage Rooms";
             this.btnManageRoomType.Click += new System.EventHandler(this.btnManageRoomType_Click);
             // 
             // btnReservation
@@ -522,7 +522,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel pnl_main;
         private System.Windows.Forms.Label systemLog;
         private Guna.UI2.WinForms.Guna2Button btnClient;
         private Guna.UI2.WinForms.Guna2Button btnReservation;
@@ -544,5 +543,6 @@
         private System.Windows.Forms.Panel pnl_ToggleLogout;
         private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2Button btnManageRoomType;
+        public System.Windows.Forms.Panel pnl_main;
     }
 }

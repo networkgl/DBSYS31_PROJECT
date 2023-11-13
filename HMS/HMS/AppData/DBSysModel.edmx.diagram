@@ -6,11 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f2f31dfb012d455e9d7791328333a3f1" Name="Diagram1">
         <EntityTypeShape EntityType="HMSModel.CLIENT_INFORMATION" Width="1.5" PointX="0.75" PointY="2.25" />
-        <EntityTypeShape EntityType="HMSModel.PAYMENT_INFORMATION" Width="1.5" PointX="5.25" PointY="3.625" />
-        <EntityTypeShape EntityType="HMSModel.RESERVATION_INFORMATION" Width="1.5" PointX="3" PointY="3.625" />
-        <EntityTypeShape EntityType="HMSModel.ROOM_DETAILS" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="HMSModel.ROOM_INFORMATION" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="HMSModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HMSModel.PAYMENT_INFORMATION" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="HMSModel.RESERVATION_INFORMATION" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="HMSModel.ROOM_DETAILS" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HMSModel.ROOM_INFORMATION" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="HMSModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HMSModel.vw_display_room_details" Width="1.5" PointX="2.75" PointY="6.75" />
         <AssociationConnector Association="HMSModel.FK_RESERVATION_CLIENT" />
         <AssociationConnector Association="HMSModel.FK_ROOM_CLIENT" />
         <AssociationConnector Association="HMSModel.FK_PAYMENT_RESERVATION" />

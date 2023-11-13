@@ -20,8 +20,8 @@ namespace HMS
         private Frm_BookNow_S1 s1;
         private Frm_BookNow_S2 s2;
         private Frm_BookNow_S3 s3;
-        private Frm_BookNow_S4 s4;
-
+        private AdminRepository adminRepo;
+        private int currentIndex;
         private int roomType = 0;
 
         public static int RoomPrice { get; set; }
@@ -34,6 +34,7 @@ namespace HMS
         public Frm_BookNow_S2()
         {
             InitializeComponent();
+            adminRepo = new AdminRepository();
         }
         public Frm_BookNow_S2(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3)
         {
@@ -42,6 +43,8 @@ namespace HMS
             this.s2 = s2;
             this.s3 = s3;
             //this.s4 = s4;
+            adminRepo = new AdminRepository();
+
         }
         private void llb_moreInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -69,7 +72,9 @@ namespace HMS
             CurrentDate.Start();
             UpdateDateTime();
 
-            Room.GetRoomType();
+            InitialLoad();
+
+            //Room.GetRoomType();
 
             if (s2 == null)
             {
@@ -93,8 +98,33 @@ namespace HMS
             lblSystemTime.Text = currentDateTime.ToString("yyyy-MM-dd  hh:mm:ss tt", culture);
 
         }
+        private void InitialLoad()
+        {
+            String response = String.Empty;
+            var retValRows = adminRepo.GetRoomTypeByID(ref response);
+
+            if (retValRows == ErrorCode.Success)
+            {
+                cbBox_roomType.Items.Clear();
+                foreach (var i in adminRepo.RoomType)
+                {
+                    cbBox_roomType.Items.Add(i);
+                }
+                cbBox_roomType.SelectedIndex = 0;
+            }
+            else
+            {
+                MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Question, MessageDialogStyle.Light);
+            }
+
+            pnl_roompicture.BackgroundImage = adminRepo.Image;
+            lbl_roomType.Text = adminRepo._RoomType;
+            lbl_roomDetails1.Text = adminRepo._RoomDetails;
+            lbl_roomPrice.Text = "₱" + adminRepo._RoomPrice.ToString("#,##0");
+        }
         private void cbBox_roomType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*
             DisplayRooms();
 
             switch (cbBox_roomType.SelectedIndex)
@@ -109,6 +139,39 @@ namespace HMS
                     roomType = cbBox_roomType.SelectedIndex;
                     break;
             }
+            */
+            for (int i = 0; i < adminRepo.LastPrimaryKeyValue; i++)
+            {
+                if (cbBox_roomType.SelectedIndex == i)
+                {
+                    currentIndex = i;
+                    break;
+                }
+            }
+
+
+            String response = String.Empty;
+            var retVal = adminRepo.GetRoomDetails(currentIndex, ref response);
+
+            Thread.Sleep(500);
+            if (retVal == ErrorCode.Success)
+            {
+                //MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Question, MessageDialogStyle.Light);
+                pnl_roompicture.BackgroundImage = adminRepo.Image;
+            }
+            else
+            {
+                MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Error, MessageDialogStyle.Light);
+            }
+
+            //This should place below to prevent delay.
+            lbl_roomType.Text = adminRepo._RoomType;
+            lbl_roomDetails1.Text = adminRepo._RoomDetails;
+            lbl_roomPrice.Text = "₱" + adminRepo._RoomPrice.ToString("#,##0");
+            var price = adminRepo._RoomPrice.ToString("#,##0");
+
+            lbl_priceDetails.Text = $"Per Night\r\n ₱{price} Total for 1 night\r\nExcluding Taxes & Fees";
+
         }
 
         private static Frm_BookNow_S2 s22;

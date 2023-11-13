@@ -205,9 +205,9 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(17, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 21);
+            this.label5.Size = new System.Drawing.Size(141, 21);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Graph";
+            this.label5.Text = "Announcements";
             // 
             // guna2Panel6
             // 
