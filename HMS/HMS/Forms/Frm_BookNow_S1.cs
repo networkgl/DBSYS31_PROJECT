@@ -22,14 +22,7 @@ namespace HMS
         public DateTime checkIn = DateTime.Now;
         public DateTime checkOut = DateTime.Now;
 
-        //public static int Guest { get; set; }
-        //public static int NoOfGuest { get; set; }
-        //public static int SelectedTime_CheckIn { get; set; }
-        //public static int SelectedTime_CheckOut { get; set; }
-        //public static int Selected_CheckIn_AM_PM { get; set; }
-        //public static int Selected_CheckOut_AM_PM { get; set; }
-        //public static DateTime CheckIn { get; set; } = DateTime.Now;
-        //public static DateTime CheckOut { get; set; } = DateTime.Now;
+
         public Frm_BookNow_S1()
         {
             InitializeComponent();
@@ -119,6 +112,8 @@ namespace HMS
                 txtbox_CheckInTime.Text = s1.SelectedTime_CheckIn.ToString();
                 txtbox_CheckOutTime.Text = s1.SelectedTime_CheckOut.ToString();
             }
+
+            //FormDisplay();
         }
         private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
         {
@@ -143,11 +138,11 @@ namespace HMS
                 }
             }
         }
-        private static Frm_BookNow_S1 s11;
+        private static Frm_BookNow_S1 _instace;
         public static Frm_BookNow_S1 GetInstance
         {
-            get { return s11; }
-            set { s11 = value; }
+            get { return _instace; }
+            set { _instace = value; }
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -155,16 +150,27 @@ namespace HMS
             Frm_HomePage hp = new Frm_HomePage();
             hp.Show();
             Frm_ProcessPayment.HasPaid = false;
+
+
+            //if (S1)
+            //{
+            //    pnl_main.Controls.Clear();
+            //    s1.Show();
+            //}
+
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            s11 = this;
+            //pnl_Main.Controls.Clear();
+            _instace = this;
             this.Hide();
             if (this.s2 == null)
             {
                 Frm_BookNow_S2 s2 = new Frm_BookNow_S2(this, this.s2, this.s3);
                 s2.Show();
+              //Frm_BookNow_S2 s2 = new Frm_BookNow_S2(this, this.s2, this.s3);
+
             }
             else
             {
@@ -172,13 +178,13 @@ namespace HMS
                 //s2.GetInstance.Show();
                 s2.Show();
             }
+
+            //s2.TopLevel = false;
+            //s2.Dock = DockStyle.Fill;
+            //pnl_Main.Controls.Add(s2);
+            //s2.Show();
         }
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Frm_HomePage hp = new Frm_HomePage();
-            hp.Show();
-        }
+
         private void CurrentDate_Tick(object sender, EventArgs e)
         {
             UpdateDateTime();
@@ -216,117 +222,6 @@ namespace HMS
                     break;
             }
         }
-
-        /*
-        private void cbBox_CheckIn_Time_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (cbBox_CheckIn_Time.SelectedIndex)
-            {
-                case 0:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 1:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 2:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 3:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 4:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 5:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 6:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 7:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 8:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 9:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 10:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-                case 11:
-                    SelectedTime_CheckIn = cbBox_CheckIn_Time.SelectedIndex;
-                    break;
-            }
-        }
-        private void cbBox_CheckIn_AM_PM_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (cbBox_CheckIn_AM_PM.SelectedIndex)
-            {
-                case 0:
-                    Selected_CheckIn_AM_PM = cbBox_CheckIn_AM_PM.SelectedIndex;
-                    break;
-                case 1:
-                    Selected_CheckIn_AM_PM = cbBox_CheckIn_AM_PM.SelectedIndex;
-                    break;
-            }
-        }
-        private void cbBox_CheckOut_Time_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (cbBox_CheckOut_Time.SelectedIndex)
-            {
-                case 0:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 1:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 2:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 3:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 4:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 5:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 6:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 7:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 8:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 9:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 10:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-                case 11:
-                    SelectedTime_CheckOut = cbBox_CheckOut_Time.SelectedIndex;
-                    break;
-            }
-        }
-        private void cbBox_CheckOut_AM_PM_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (cbBox_CheckOut_AM_PM.SelectedIndex)
-            {
-                case 0:
-                    Selected_CheckOut_AM_PM = cbBox_CheckOut_AM_PM.SelectedIndex;
-                    break;
-                case 1:
-                    Selected_CheckOut_AM_PM = cbBox_CheckOut_AM_PM.SelectedIndex;
-                    break;
-            }
-        }
-        */
 
         private void nud_NumberOfGuest_ValueChanged(object sender, EventArgs e)
         {

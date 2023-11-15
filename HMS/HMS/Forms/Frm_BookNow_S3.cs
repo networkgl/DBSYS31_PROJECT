@@ -81,6 +81,12 @@ namespace HMS
 
             //Console.WriteLine(s2);
             //Console.WriteLine(s3);
+            //if (Frm_BookNow_S2.GetInstance == null)
+            //{
+            //    Console.WriteLine("S2 NULL !!!");
+            //}
+            //else
+            //    Console.WriteLine("S2 IS NOT NULL !!!");
 
 
 
@@ -119,7 +125,6 @@ namespace HMS
             this.Hide();
             if (Frm_ProcessPayment.HasPaid)
             {
-                //Frm_BookNow_S2 s2 = new Frm_BookNow_S2(s1,this.s2,this,s4);
                 Frm_BookNow_S2 s2 = new Frm_BookNow_S2();
                 s2.Show();
             }
@@ -132,20 +137,6 @@ namespace HMS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //Frm_Confirmation.GetInstance(GetGuestByIndex(), GetTimeByIndex("After ", Frm_BookNow_S1.SelectedTime_CheckIn), GetTimeByIndex("Before ", Frm_BookNow_S1.SelectedTime_CheckOut),
-            //                                            GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckIn_AM_PM), GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckOut_AM_PM),
-            //                                            Frm_BookNow_S1.CheckIn.ToString("ddd, MMM dd, yyyy"), Frm_BookNow_S1.CheckOut.ToString("ddd, MMM dd, yyyy"), GetTotalPrice());
-
-            //if (Frm_Confirmation.GetInstance() != null)
-            //{
-            //    Frm_Confirmation.GetInstance().Show();
-            //}
-
-            //Frm_BookNow_S4 fc = new Frm_BookNow_S4(GetNoOfGuestByValue(Frm_BookNow_S1.NoOfGuest), GetGuestByIndex(), GetTimeByIndex("After ", Frm_BookNow_S1.SelectedTime_CheckIn), GetTimeByIndex("Before ", Frm_BookNow_S1.SelectedTime_CheckOut),
-            //                                            GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckIn_AM_PM), GetAM_PM_ByIndex(Frm_BookNow_S1.Selected_CheckOut_AM_PM),
-            //                                            Frm_BookNow_S1.CheckIn.ToString("ddd, MMM dd, yyyy"), Frm_BookNow_S1.CheckOut.ToString("ddd, MMM dd, yyyy"), GetTotalAmount());
-            //fc.Show();
-
             fname = txtbox_fName.Text;
             lname = txtbox_lName.Text;
             email = txtbox_Email.Text;
@@ -158,16 +149,6 @@ namespace HMS
             this.Hide();
             Frm_BookNow_S4 s4 = new Frm_BookNow_S4(Frm_BookNow_S1.GetInstance, this.s2, this, this.s4);
             s4.Show();
-
-            //if (s4 == null)
-            //{
-            //    Frm_BookNow_S4 s4 = new Frm_BookNow_S4(s1, s2, this, this.s4);
-            //    s4.Show();
-            //}
-            //else
-            //{
-            //    s4.Show();
-            //}
         }
         private void txtbox_Phone_KeyPress(object sender, KeyPressEventArgs e)
         {

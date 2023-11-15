@@ -43,30 +43,29 @@
             this.txtbox_fName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.panelNote = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.errorProvider_S3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CurrentDate = new System.Windows.Forms.Timer(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnPaymentConfirmation = new Guna.UI2.WinForms.Guna2CircleButton();
             this.metroProgressBar3 = new MetroFramework.Controls.MetroProgressBar();
+            this.lblSystemTime = new System.Windows.Forms.Label();
             this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
             this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
             this.btnGuestDetails = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnChooseDate = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnChooseRoom = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblSystemTime = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.errorProvider_S3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.CurrentDate = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panelNote.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S3)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNext
@@ -76,9 +75,9 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(971, 313);
+            this.btnNext.Location = new System.Drawing.Point(782, 297);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(178, 42);
+            this.btnNext.Size = new System.Drawing.Size(133, 42);
             this.btnNext.TabIndex = 61;
             this.btnNext.Text = "NEXT";
             this.btnNext.UseVisualStyleBackColor = false;
@@ -97,9 +96,9 @@
             this.panel1.Controls.Add(this.txtbox_Email);
             this.panel1.Controls.Add(this.txtbox_lName);
             this.panel1.Controls.Add(this.txtbox_fName);
-            this.panel1.Location = new System.Drawing.Point(52, 368);
+            this.panel1.Location = new System.Drawing.Point(55, 288);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1153, 369);
+            this.panel1.Size = new System.Drawing.Size(941, 345);
             this.panel1.TabIndex = 67;
             // 
             // label10
@@ -173,7 +172,7 @@
             this.txtbox_Address.PasswordChar = '\0';
             this.txtbox_Address.PlaceholderText = "Cebu City, Philippines";
             this.txtbox_Address.SelectedText = "";
-            this.txtbox_Address.Size = new System.Drawing.Size(1015, 97);
+            this.txtbox_Address.Size = new System.Drawing.Size(781, 97);
             this.txtbox_Address.TabIndex = 80;
             this.txtbox_Address.TextOffset = new System.Drawing.Point(0, -30);
             // 
@@ -198,7 +197,7 @@
             this.txtbox_Phone.PasswordChar = '\0';
             this.txtbox_Phone.PlaceholderText = "09xxxxxxxxx";
             this.txtbox_Phone.SelectedText = "";
-            this.txtbox_Phone.Size = new System.Drawing.Size(1015, 35);
+            this.txtbox_Phone.Size = new System.Drawing.Size(781, 35);
             this.txtbox_Phone.TabIndex = 79;
             this.txtbox_Phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_Phone_KeyPress);
             // 
@@ -222,7 +221,7 @@
             this.txtbox_Email.PasswordChar = '\0';
             this.txtbox_Email.PlaceholderText = "xxxxxxx@gmail.com";
             this.txtbox_Email.SelectedText = "";
-            this.txtbox_Email.Size = new System.Drawing.Size(1015, 35);
+            this.txtbox_Email.Size = new System.Drawing.Size(781, 35);
             this.txtbox_Email.TabIndex = 76;
             // 
             // txtbox_lName
@@ -246,7 +245,7 @@
             this.txtbox_lName.PasswordChar = '\0';
             this.txtbox_lName.PlaceholderText = "Dela Cruz";
             this.txtbox_lName.SelectedText = "";
-            this.txtbox_lName.Size = new System.Drawing.Size(1015, 35);
+            this.txtbox_lName.Size = new System.Drawing.Size(781, 35);
             this.txtbox_lName.TabIndex = 75;
             // 
             // txtbox_fName
@@ -270,24 +269,21 @@
             this.txtbox_fName.PasswordChar = '\0';
             this.txtbox_fName.PlaceholderText = "Juan";
             this.txtbox_fName.SelectedText = "";
-            this.txtbox_fName.Size = new System.Drawing.Size(1015, 35);
+            this.txtbox_fName.Size = new System.Drawing.Size(781, 35);
             this.txtbox_fName.TabIndex = 74;
             // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.panel3);
             this.guna2ShadowPanel1.Controls.Add(this.panelNote);
-            this.guna2ShadowPanel1.Controls.Add(this.panel2);
-            this.guna2ShadowPanel1.Controls.Add(this.lblSystemTime);
-            this.guna2ShadowPanel1.Controls.Add(this.label5);
             this.guna2ShadowPanel1.Controls.Add(this.panel1);
-            this.guna2ShadowPanel1.Controls.Add(this.btnBack);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1300, 800);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1049, 639);
             this.guna2ShadowPanel1.TabIndex = 62;
             // 
             // panelNote
@@ -296,10 +292,28 @@
             this.panelNote.Controls.Add(this.button1);
             this.panelNote.Controls.Add(this.label12);
             this.panelNote.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelNote.Location = new System.Drawing.Point(186, 246);
+            this.panelNote.Location = new System.Drawing.Point(189, 183);
             this.panelNote.Name = "panelNote";
-            this.panelNote.Size = new System.Drawing.Size(1019, 76);
+            this.panelNote.Size = new System.Drawing.Size(781, 76);
             this.panelNote.TabIndex = 120;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.button1.BackgroundImage = global::HMS.Properties.Resources.icons8_close_15;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(758, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 118;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label12
             // 
@@ -313,23 +327,50 @@
             this.label12.Text = "Please Enter Your Information and Click on Next Button to proceed for confirmatio" +
     "n...";
             // 
-            // panel2
+            // btnBack
             // 
-            this.panel2.Controls.Add(this.btnPaymentConfirmation);
-            this.panel2.Controls.Add(this.metroProgressBar3);
-            this.panel2.Controls.Add(this.metroProgressBar2);
-            this.panel2.Controls.Add(this.metroProgressBar1);
-            this.panel2.Controls.Add(this.btnGuestDetails);
-            this.panel2.Controls.Add(this.btnChooseDate);
-            this.panel2.Controls.Add(this.btnChooseRoom);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(288, 64);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(715, 71);
-            this.panel2.TabIndex = 96;
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 73;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // errorProvider_S3
+            // 
+            this.errorProvider_S3.ContainerControl = this;
+            // 
+            // CurrentDate
+            // 
+            this.CurrentDate.Tick += new System.EventHandler(this.CurrentDate_Tick);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnPaymentConfirmation);
+            this.panel3.Controls.Add(this.metroProgressBar3);
+            this.panel3.Controls.Add(this.lblSystemTime);
+            this.panel3.Controls.Add(this.btnBack);
+            this.panel3.Controls.Add(this.metroProgressBar2);
+            this.panel3.Controls.Add(this.metroProgressBar1);
+            this.panel3.Controls.Add(this.btnGuestDetails);
+            this.panel3.Controls.Add(this.btnChooseDate);
+            this.panel3.Controls.Add(this.btnChooseRoom);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1049, 150);
+            this.panel3.TabIndex = 121;
             // 
             // btnPaymentConfirmation
             // 
@@ -341,7 +382,7 @@
             this.btnPaymentConfirmation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnPaymentConfirmation.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPaymentConfirmation.ForeColor = System.Drawing.Color.White;
-            this.btnPaymentConfirmation.Location = new System.Drawing.Point(629, 3);
+            this.btnPaymentConfirmation.Location = new System.Drawing.Point(807, 62);
             this.btnPaymentConfirmation.Name = "btnPaymentConfirmation";
             this.btnPaymentConfirmation.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnPaymentConfirmation.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -351,14 +392,25 @@
             // 
             // metroProgressBar3
             // 
-            this.metroProgressBar3.Location = new System.Drawing.Point(469, 21);
+            this.metroProgressBar3.Location = new System.Drawing.Point(647, 80);
             this.metroProgressBar3.Name = "metroProgressBar3";
             this.metroProgressBar3.Size = new System.Drawing.Size(161, 5);
             this.metroProgressBar3.TabIndex = 49;
             // 
+            // lblSystemTime
+            // 
+            this.lblSystemTime.AutoSize = true;
+            this.lblSystemTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.lblSystemTime.Location = new System.Drawing.Point(833, 9);
+            this.lblSystemTime.Name = "lblSystemTime";
+            this.lblSystemTime.Size = new System.Drawing.Size(204, 19);
+            this.lblSystemTime.TabIndex = 79;
+            this.lblSystemTime.Text = "2023 - 11 - 15 00:00:00 PM";
+            // 
             // metroProgressBar2
             // 
-            this.metroProgressBar2.Location = new System.Drawing.Point(269, 21);
+            this.metroProgressBar2.Location = new System.Drawing.Point(447, 80);
             this.metroProgressBar2.Name = "metroProgressBar2";
             this.metroProgressBar2.Size = new System.Drawing.Size(161, 5);
             this.metroProgressBar2.TabIndex = 47;
@@ -366,7 +418,7 @@
             // 
             // metroProgressBar1
             // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(70, 21);
+            this.metroProgressBar1.Location = new System.Drawing.Point(248, 80);
             this.metroProgressBar1.Name = "metroProgressBar1";
             this.metroProgressBar1.Size = new System.Drawing.Size(161, 5);
             this.metroProgressBar1.TabIndex = 46;
@@ -382,7 +434,7 @@
             this.btnGuestDetails.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnGuestDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuestDetails.ForeColor = System.Drawing.Color.White;
-            this.btnGuestDetails.Location = new System.Drawing.Point(429, 3);
+            this.btnGuestDetails.Location = new System.Drawing.Point(607, 62);
             this.btnGuestDetails.Name = "btnGuestDetails";
             this.btnGuestDetails.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnGuestDetails.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -400,7 +452,7 @@
             this.btnChooseDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseDate.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseDate.ForeColor = System.Drawing.Color.White;
-            this.btnChooseDate.Location = new System.Drawing.Point(31, 1);
+            this.btnChooseDate.Location = new System.Drawing.Point(209, 60);
             this.btnChooseDate.Name = "btnChooseDate";
             this.btnChooseDate.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseDate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -418,7 +470,7 @@
             this.btnChooseRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseRoom.ForeColor = System.Drawing.Color.White;
-            this.btnChooseRoom.Location = new System.Drawing.Point(230, 3);
+            this.btnChooseRoom.Location = new System.Drawing.Point(408, 62);
             this.btnChooseRoom.Name = "btnChooseRoom";
             this.btnChooseRoom.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseRoom.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -426,114 +478,51 @@
             this.btnChooseRoom.TabIndex = 44;
             this.btnChooseRoom.Text = "2";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(221, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 21);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Rooms";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(399, 46);
+            this.label2.Location = new System.Drawing.Point(399, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 21);
-            this.label2.TabIndex = 75;
-            this.label2.Text = "Guest Details";
+            this.label2.Size = new System.Drawing.Size(61, 21);
+            this.label2.TabIndex = 74;
+            this.label2.Text = "Rooms";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(594, 46);
+            this.label3.Location = new System.Drawing.Point(577, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 21);
-            this.label3.TabIndex = 76;
-            this.label3.Text = "Confirmation";
+            this.label3.Size = new System.Drawing.Size(113, 21);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "Guest Details";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(-2, 44);
+            this.label4.Location = new System.Drawing.Point(772, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 21);
-            this.label4.TabIndex = 77;
-            this.label4.Text = "Choose Date";
-            // 
-            // lblSystemTime
-            // 
-            this.lblSystemTime.AutoSize = true;
-            this.lblSystemTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.lblSystemTime.Location = new System.Drawing.Point(1086, 11);
-            this.lblSystemTime.Name = "lblSystemTime";
-            this.lblSystemTime.Size = new System.Drawing.Size(151, 19);
-            this.lblSystemTime.TabIndex = 95;
-            this.lblSystemTime.Text = "BOOKING SECTION";
+            this.label4.Size = new System.Drawing.Size(112, 21);
+            this.label4.TabIndex = 76;
+            this.label4.Text = "Confirmation";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 12);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(176, 103);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(185, 22);
-            this.label5.TabIndex = 94;
-            this.label5.Text = "BOOKING SECTION";
-            // 
-            // errorProvider_S3
-            // 
-            this.errorProvider_S3.ContainerControl = this;
-            // 
-            // CurrentDate
-            // 
-            this.CurrentDate.Tick += new System.EventHandler(this.CurrentDate_Tick);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.button1.BackgroundImage = global::HMS.Properties.Resources.icons8_close_15;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(995, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 118;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(21, 37);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(42, 31);
-            this.btnBack.TabIndex = 73;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.label5.Size = new System.Drawing.Size(113, 21);
+            this.label5.TabIndex = 77;
+            this.label5.Text = "Choose Date";
             // 
             // Frm_BookNow_S3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 800);
+            this.ClientSize = new System.Drawing.Size(1049, 639);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -544,12 +533,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.guna2ShadowPanel1.ResumeLayout(false);
-            this.guna2ShadowPanel1.PerformLayout();
             this.panelNote.ResumeLayout(false);
             this.panelNote.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S3)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -570,23 +558,22 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer CurrentDate;
-        private System.Windows.Forms.Label lblSystemTime;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelNote;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2CircleButton btnPaymentConfirmation;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar3;
+        private System.Windows.Forms.Label lblSystemTime;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar2;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
         private Guna.UI2.WinForms.Guna2CircleButton btnGuestDetails;
         private Guna.UI2.WinForms.Guna2CircleButton btnChooseDate;
         private Guna.UI2.WinForms.Guna2CircleButton btnChooseRoom;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panelNote;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
     }
 }

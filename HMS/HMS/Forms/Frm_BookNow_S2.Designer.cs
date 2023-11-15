@@ -31,21 +31,22 @@
             this.components = new System.ComponentModel.Container();
             this.btnNext = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnPaymentConfirmation = new Guna.UI2.WinForms.Guna2CircleButton();
             this.metroProgressBar3 = new MetroFramework.Controls.MetroProgressBar();
+            this.lbl_SystemTime = new System.Windows.Forms.Label();
             this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
+            this.btnBack = new System.Windows.Forms.Button();
             this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
             this.btnGuestDetails = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnChooseDate = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnChooseRoom = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblSystemTime = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_roomDetails2 = new System.Windows.Forms.Label();
@@ -58,9 +59,8 @@
             this.cbBox_roomType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
             this.errorProvider_S2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnBack = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S2)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +72,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(954, 342);
+            this.btnNext.Location = new System.Drawing.Point(841, 297);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(142, 42);
             this.btnNext.TabIndex = 61;
@@ -83,11 +83,9 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.panel2);
+            this.guna2ShadowPanel1.Controls.Add(this.panel3);
             this.guna2ShadowPanel1.Controls.Add(this.lblSystemTime);
             this.guna2ShadowPanel1.Controls.Add(this.label6);
-            this.guna2ShadowPanel1.Controls.Add(this.label5);
-            this.guna2ShadowPanel1.Controls.Add(this.btnBack);
             this.guna2ShadowPanel1.Controls.Add(this.panel1);
             this.guna2ShadowPanel1.Controls.Add(this.cbBox_roomType);
             this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -95,26 +93,29 @@
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1300, 800);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1049, 664);
             this.guna2ShadowPanel1.TabIndex = 62;
             // 
-            // panel2
+            // panel3
             // 
-            this.panel2.Controls.Add(this.btnPaymentConfirmation);
-            this.panel2.Controls.Add(this.metroProgressBar3);
-            this.panel2.Controls.Add(this.metroProgressBar2);
-            this.panel2.Controls.Add(this.metroProgressBar1);
-            this.panel2.Controls.Add(this.btnGuestDetails);
-            this.panel2.Controls.Add(this.btnChooseDate);
-            this.panel2.Controls.Add(this.btnChooseRoom);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(288, 64);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(715, 71);
-            this.panel2.TabIndex = 92;
+            this.panel3.Controls.Add(this.btnPaymentConfirmation);
+            this.panel3.Controls.Add(this.metroProgressBar3);
+            this.panel3.Controls.Add(this.lbl_SystemTime);
+            this.panel3.Controls.Add(this.metroProgressBar2);
+            this.panel3.Controls.Add(this.btnBack);
+            this.panel3.Controls.Add(this.metroProgressBar1);
+            this.panel3.Controls.Add(this.btnGuestDetails);
+            this.panel3.Controls.Add(this.btnChooseDate);
+            this.panel3.Controls.Add(this.btnChooseRoom);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1049, 150);
+            this.panel3.TabIndex = 92;
             // 
             // btnPaymentConfirmation
             // 
@@ -126,7 +127,7 @@
             this.btnPaymentConfirmation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnPaymentConfirmation.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPaymentConfirmation.ForeColor = System.Drawing.Color.White;
-            this.btnPaymentConfirmation.Location = new System.Drawing.Point(629, 3);
+            this.btnPaymentConfirmation.Location = new System.Drawing.Point(807, 62);
             this.btnPaymentConfirmation.Name = "btnPaymentConfirmation";
             this.btnPaymentConfirmation.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnPaymentConfirmation.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -136,21 +137,48 @@
             // 
             // metroProgressBar3
             // 
-            this.metroProgressBar3.Location = new System.Drawing.Point(469, 21);
+            this.metroProgressBar3.Location = new System.Drawing.Point(647, 80);
             this.metroProgressBar3.Name = "metroProgressBar3";
             this.metroProgressBar3.Size = new System.Drawing.Size(161, 5);
             this.metroProgressBar3.TabIndex = 49;
             // 
+            // lbl_SystemTime
+            // 
+            this.lbl_SystemTime.AutoSize = true;
+            this.lbl_SystemTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.lbl_SystemTime.Location = new System.Drawing.Point(835, 6);
+            this.lbl_SystemTime.Name = "lbl_SystemTime";
+            this.lbl_SystemTime.Size = new System.Drawing.Size(204, 19);
+            this.lbl_SystemTime.TabIndex = 79;
+            this.lbl_SystemTime.Text = "2023 - 11 - 15 00:00:00 PM";
+            // 
             // metroProgressBar2
             // 
-            this.metroProgressBar2.Location = new System.Drawing.Point(269, 21);
+            this.metroProgressBar2.Location = new System.Drawing.Point(447, 80);
             this.metroProgressBar2.Name = "metroProgressBar2";
             this.metroProgressBar2.Size = new System.Drawing.Size(161, 5);
             this.metroProgressBar2.TabIndex = 47;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(0, 6);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 73;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // metroProgressBar1
             // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(70, 21);
+            this.metroProgressBar1.Location = new System.Drawing.Point(248, 80);
             this.metroProgressBar1.Name = "metroProgressBar1";
             this.metroProgressBar1.Size = new System.Drawing.Size(161, 5);
             this.metroProgressBar1.TabIndex = 46;
@@ -166,7 +194,7 @@
             this.btnGuestDetails.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnGuestDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuestDetails.ForeColor = System.Drawing.Color.White;
-            this.btnGuestDetails.Location = new System.Drawing.Point(429, 3);
+            this.btnGuestDetails.Location = new System.Drawing.Point(607, 62);
             this.btnGuestDetails.Name = "btnGuestDetails";
             this.btnGuestDetails.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnGuestDetails.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -184,7 +212,7 @@
             this.btnChooseDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseDate.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseDate.ForeColor = System.Drawing.Color.White;
-            this.btnChooseDate.Location = new System.Drawing.Point(31, 1);
+            this.btnChooseDate.Location = new System.Drawing.Point(209, 60);
             this.btnChooseDate.Name = "btnChooseDate";
             this.btnChooseDate.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseDate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -202,7 +230,7 @@
             this.btnChooseRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseRoom.ForeColor = System.Drawing.Color.White;
-            this.btnChooseRoom.Location = new System.Drawing.Point(230, 3);
+            this.btnChooseRoom.Location = new System.Drawing.Point(408, 62);
             this.btnChooseRoom.Name = "btnChooseRoom";
             this.btnChooseRoom.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.btnChooseRoom.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -210,45 +238,45 @@
             this.btnChooseRoom.TabIndex = 44;
             this.btnChooseRoom.Text = "2";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(221, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 21);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Rooms";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(399, 46);
+            this.label2.Location = new System.Drawing.Point(399, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 21);
-            this.label2.TabIndex = 75;
-            this.label2.Text = "Guest Details";
+            this.label2.Size = new System.Drawing.Size(61, 21);
+            this.label2.TabIndex = 74;
+            this.label2.Text = "Rooms";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(594, 46);
+            this.label3.Location = new System.Drawing.Point(577, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 21);
-            this.label3.TabIndex = 76;
-            this.label3.Text = "Confirmation";
+            this.label3.Size = new System.Drawing.Size(113, 21);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "Guest Details";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(-2, 44);
+            this.label4.Location = new System.Drawing.Point(772, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 21);
-            this.label4.TabIndex = 77;
-            this.label4.Text = "Choose Date";
+            this.label4.Size = new System.Drawing.Size(112, 21);
+            this.label4.TabIndex = 76;
+            this.label4.Text = "Confirmation";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(176, 103);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 21);
+            this.label5.TabIndex = 77;
+            this.label5.Text = "Choose Date";
             // 
             // lblSystemTime
             // 
@@ -265,21 +293,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(88, 214);
+            this.label6.Location = new System.Drawing.Point(17, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 21);
             this.label6.TabIndex = 90;
             this.label6.Text = "Room Type";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(185, 22);
-            this.label5.TabIndex = 89;
-            this.label5.Text = "BOOKING SECTION";
             // 
             // panel1
             // 
@@ -294,9 +312,9 @@
             this.panel1.Controls.Add(this.lbl_roomType);
             this.panel1.Controls.Add(this.pnl_roompicture);
             this.panel1.Controls.Add(this.lbl_roomDetails1);
-            this.panel1.Location = new System.Drawing.Point(92, 299);
+            this.panel1.Location = new System.Drawing.Point(21, 284);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1110, 401);
+            this.panel1.Size = new System.Drawing.Size(999, 354);
             this.panel1.TabIndex = 71;
             // 
             // label7
@@ -304,7 +322,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(927, 129);
+            this.label7.Location = new System.Drawing.Point(814, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(160, 51);
             this.label7.TabIndex = 77;
@@ -316,7 +334,7 @@
             // 
             this.lbl_roomDetails2.AutoSize = true;
             this.lbl_roomDetails2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomDetails2.Location = new System.Drawing.Point(619, 181);
+            this.lbl_roomDetails2.Location = new System.Drawing.Point(484, 181);
             this.lbl_roomDetails2.Name = "lbl_roomDetails2";
             this.lbl_roomDetails2.Size = new System.Drawing.Size(302, 60);
             this.lbl_roomDetails2.TabIndex = 75;
@@ -328,7 +346,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
-            this.linkLabel1.Location = new System.Drawing.Point(619, 142);
+            this.linkLabel1.Location = new System.Drawing.Point(484, 142);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(240, 21);
             this.linkLabel1.TabIndex = 74;
@@ -340,7 +358,7 @@
             this.lbl_priceDetails.AutoSize = true;
             this.lbl_priceDetails.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_priceDetails.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_priceDetails.Location = new System.Drawing.Point(936, 271);
+            this.lbl_priceDetails.Location = new System.Drawing.Point(823, 226);
             this.lbl_priceDetails.Name = "lbl_priceDetails";
             this.lbl_priceDetails.Size = new System.Drawing.Size(160, 68);
             this.lbl_priceDetails.TabIndex = 73;
@@ -351,7 +369,7 @@
             // 
             this.lbl_roomPrice.AutoSize = true;
             this.lbl_roomPrice.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomPrice.Location = new System.Drawing.Point(1014, 248);
+            this.lbl_roomPrice.Location = new System.Drawing.Point(901, 203);
             this.lbl_roomPrice.Name = "lbl_roomPrice";
             this.lbl_roomPrice.Size = new System.Drawing.Size(82, 23);
             this.lbl_roomPrice.TabIndex = 72;
@@ -361,7 +379,7 @@
             // 
             this.lbl_roomType.AutoSize = true;
             this.lbl_roomType.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomType.Location = new System.Drawing.Point(620, 19);
+            this.lbl_roomType.Location = new System.Drawing.Point(485, 19);
             this.lbl_roomType.Name = "lbl_roomType";
             this.lbl_roomType.Size = new System.Drawing.Size(116, 23);
             this.lbl_roomType.TabIndex = 71;
@@ -372,14 +390,14 @@
             this.pnl_roompicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnl_roompicture.Location = new System.Drawing.Point(6, 19);
             this.pnl_roompicture.Name = "pnl_roompicture";
-            this.pnl_roompicture.Size = new System.Drawing.Size(607, 365);
+            this.pnl_roompicture.Size = new System.Drawing.Size(470, 320);
             this.pnl_roompicture.TabIndex = 67;
             // 
             // lbl_roomDetails1
             // 
             this.lbl_roomDetails1.AutoSize = true;
             this.lbl_roomDetails1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomDetails1.Location = new System.Drawing.Point(619, 53);
+            this.lbl_roomDetails1.Location = new System.Drawing.Point(484, 53);
             this.lbl_roomDetails1.Name = "lbl_roomDetails1";
             this.lbl_roomDetails1.Size = new System.Drawing.Size(117, 20);
             this.lbl_roomDetails1.TabIndex = 70;
@@ -396,9 +414,9 @@
             this.cbBox_roomType.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbBox_roomType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbBox_roomType.ItemHeight = 30;
-            this.cbBox_roomType.Location = new System.Drawing.Point(92, 242);
+            this.cbBox_roomType.Location = new System.Drawing.Point(21, 216);
             this.cbBox_roomType.Name = "cbBox_roomType";
-            this.cbBox_roomType.Size = new System.Drawing.Size(1108, 36);
+            this.cbBox_roomType.Size = new System.Drawing.Size(999, 36);
             this.cbBox_roomType.TabIndex = 68;
             this.cbBox_roomType.SelectedIndexChanged += new System.EventHandler(this.cbBox_roomType_SelectedIndexChanged);
             // 
@@ -410,27 +428,11 @@
             // 
             this.errorProvider_S2.ContainerControl = this;
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(17, 37);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(42, 31);
-            this.btnBack.TabIndex = 72;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // Frm_BookNow_S2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 800);
+            this.ClientSize = new System.Drawing.Size(1049, 664);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -440,8 +442,8 @@
             this.Load += new System.EventHandler(this.Frm_BookNow_S2_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S2)).EndInit();
@@ -461,24 +463,24 @@
         public System.Windows.Forms.Label lbl_roomPrice;
         public System.Windows.Forms.Label lbl_roomDetails2;
         public System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Timer CurrentDate;
         private System.Windows.Forms.Label lblSystemTime;
         private System.Windows.Forms.ErrorProvider errorProvider_S2;
-        private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2CircleButton btnPaymentConfirmation;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar3;
+        private System.Windows.Forms.Label lbl_SystemTime;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar2;
+        private System.Windows.Forms.Button btnBack;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
         private Guna.UI2.WinForms.Guna2CircleButton btnGuestDetails;
         private Guna.UI2.WinForms.Guna2CircleButton btnChooseDate;
         private Guna.UI2.WinForms.Guna2CircleButton btnChooseRoom;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
     }
 }

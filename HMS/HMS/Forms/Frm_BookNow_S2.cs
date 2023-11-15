@@ -73,7 +73,7 @@ namespace HMS
             UpdateDateTime();
 
             InitialLoad();
-
+            
             //Room.GetRoomType();
 
             if (s2 == null)
@@ -95,7 +95,7 @@ namespace HMS
         {
             var currentDateTime = DateTime.Now;
             var culture = new CultureInfo("en-PH"); // Specify the desired culture
-            lblSystemTime.Text = currentDateTime.ToString("yyyy-MM-dd  hh:mm:ss tt", culture);
+            lbl_SystemTime.Text = currentDateTime.ToString("yyyy-MM-dd  hh:mm:ss tt", culture);
 
         }
         private void InitialLoad()
@@ -110,7 +110,7 @@ namespace HMS
                 {
                     cbBox_roomType.Items.Add(i);
                 }
-                cbBox_roomType.SelectedIndex = 0;
+                cbBox_roomType.SelectedIndex = RoomType;
             }
             else
             {
@@ -124,22 +124,6 @@ namespace HMS
         }
         private void cbBox_roomType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
-            DisplayRooms();
-
-            switch (cbBox_roomType.SelectedIndex)
-            {
-                case 0:
-                    roomType = cbBox_roomType.SelectedIndex;
-                    break;
-                case 1:
-                    roomType = cbBox_roomType.SelectedIndex;
-                    break;
-                case 2:
-                    roomType = cbBox_roomType.SelectedIndex;
-                    break;
-            }
-            */
             for (int i = 0; i < adminRepo.LastPrimaryKeyValue; i++)
             {
                 if (cbBox_roomType.SelectedIndex == i)
@@ -148,7 +132,7 @@ namespace HMS
                     break;
                 }
             }
-
+            roomType = currentIndex;
 
             String response = String.Empty;
             var retVal = adminRepo.GetRoomDetails(currentIndex, ref response);
