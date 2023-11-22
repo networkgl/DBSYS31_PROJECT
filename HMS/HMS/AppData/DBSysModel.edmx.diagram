@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f2f31dfb012d455e9d7791328333a3f1" Name="Diagram1">
-        <EntityTypeShape EntityType="HMSModel.CLIENT_INFORMATION" Width="1.5" PointX="0.75" PointY="2.25" />
-        <EntityTypeShape EntityType="HMSModel.PAYMENT_INFORMATION" Width="1.5" PointX="5.25" PointY="1.125" />
-        <EntityTypeShape EntityType="HMSModel.RESERVATION_INFORMATION" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="HMSModel.ROOM_DETAILS" Width="1.5" PointX="5.75" PointY="4.75" />
-        <EntityTypeShape EntityType="HMSModel.ROOM_INFORMATION" Width="1.5" PointX="3" PointY="4.125" />
-        <EntityTypeShape EntityType="HMSModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="HMSModel.vw_display_room_details" Width="1.5" PointX="2.75" PointY="6.75" />
-        <AssociationConnector Association="HMSModel.FK_RESERVATION_CLIENT" />
-        <AssociationConnector Association="HMSModel.FK_ROOM_CLIENT" />
-        <AssociationConnector Association="HMSModel.FK_PAYMENT_RESERVATION" />
+      <Diagram DiagramId="f2f31dfb012d455e9d7791328333a3f1" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="HMSModel.CLIENT_INFORMATION" Width="1.875" PointX="8.5" PointY="1" />
+        <EntityTypeShape EntityType="HMSModel.PAYMENT_INFORMATION" Width="2.125" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMSModel.RESERVATION_INFORMATION" Width="2.25" PointX="5.875" PointY="1" />
+        <EntityTypeShape EntityType="HMSModel.ROOM_DETAILS" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HMSModel.ROOM_INFORMATION" Width="2" PointX="3.5" PointY="1.25" />
+        <EntityTypeShape EntityType="HMSModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HMSModel.vw_display_room_details" Width="1.5" PointX="4.75" PointY="4.75" />
+        <AssociationConnector Association="HMSModel.FK_ClientInfo_ReservationInfo" />
+        <AssociationConnector Association="HMSModel.FK_RoomInfo_PaymentInfo" />
+        <AssociationConnector Association="HMSModel.FK_ReservInfo_RoomInfo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

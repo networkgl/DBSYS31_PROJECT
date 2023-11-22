@@ -16,16 +16,16 @@ namespace HMS.AppData
     {
         public RESERVATION_INFORMATION()
         {
-            this.PAYMENT_INFORMATION = new HashSet<PAYMENT_INFORMATION>();
+            this.CLIENT_INFORMATION = new HashSet<CLIENT_INFORMATION>();
         }
     
         public int reservationID { get; set; }
         public System.DateTime reservationDateIn { get; set; }
         public System.DateTime reservationDateOut { get; set; }
         public string reservationStatus { get; set; }
-        public Nullable<int> clientID { get; set; }
+        public Nullable<int> roomNumber { get; set; }
     
-        public virtual CLIENT_INFORMATION CLIENT_INFORMATION { get; set; }
-        public virtual ICollection<PAYMENT_INFORMATION> PAYMENT_INFORMATION { get; set; }
+        public virtual ICollection<CLIENT_INFORMATION> CLIENT_INFORMATION { get; set; }
+        public virtual ROOM_INFORMATION ROOM_INFORMATION { get; set; }
     }
 }

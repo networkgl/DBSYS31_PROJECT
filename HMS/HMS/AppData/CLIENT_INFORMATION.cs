@@ -14,20 +14,14 @@ namespace HMS.AppData
     
     public partial class CLIENT_INFORMATION
     {
-        public CLIENT_INFORMATION()
-        {
-            this.RESERVATION_INFORMATION = new HashSet<RESERVATION_INFORMATION>();
-            this.ROOM_INFORMATION = new HashSet<ROOM_INFORMATION>();
-        }
-    
         public int clientID { get; set; }
         public string clientfName { get; set; }
         public string clientLname { get; set; }
         public string clientEmail { get; set; }
         public string clientPhone { get; set; }
         public string clientAddress { get; set; }
+        public Nullable<int> reservationID { get; set; }
     
-        public virtual ICollection<RESERVATION_INFORMATION> RESERVATION_INFORMATION { get; set; }
-        public virtual ICollection<ROOM_INFORMATION> ROOM_INFORMATION { get; set; }
+        public virtual RESERVATION_INFORMATION RESERVATION_INFORMATION { get; set; }
     }
 }

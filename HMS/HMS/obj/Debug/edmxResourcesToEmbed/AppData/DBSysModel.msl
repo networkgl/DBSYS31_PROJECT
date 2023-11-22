@@ -38,9 +38,14 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_get_room_photo_by_index" FunctionName="HMSModel.Store.sp_get_room_photo_by_index" />
     <FunctionImportMapping FunctionImportName="sp_delete_room_details" FunctionName="HMSModel.Store.sp_delete_room_details" />
+    <FunctionImportMapping FunctionImportName="sp_update_room_details_nophoto" FunctionName="HMSModel.Store.sp_update_room_details_nophoto" />
+    <FunctionImportMapping FunctionImportName="sp_update_room_details_withphoto" FunctionName="HMSModel.Store.sp_update_room_details_withphoto" />
     <EntitySetMapping Name="CLIENT_INFORMATION">
       <EntityTypeMapping TypeName="HMSModel.CLIENT_INFORMATION">
         <MappingFragment StoreEntitySet="CLIENT_INFORMATION">
+          <ScalarProperty Name="paymentID" ColumnName="paymentID" />
+          <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
           <ScalarProperty Name="clientAddress" ColumnName="clientAddress" />
           <ScalarProperty Name="clientPhone" ColumnName="clientPhone" />
           <ScalarProperty Name="clientEmail" ColumnName="clientEmail" />
@@ -53,8 +58,6 @@
     <EntitySetMapping Name="PAYMENT_INFORMATION">
       <EntityTypeMapping TypeName="HMSModel.PAYMENT_INFORMATION">
         <MappingFragment StoreEntitySet="PAYMENT_INFORMATION">
-          <ScalarProperty Name="userloggedID" ColumnName="userloggedID" />
-          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
           <ScalarProperty Name="paymentTotal" ColumnName="paymentTotal" />
           <ScalarProperty Name="paymentMethod" ColumnName="paymentMethod" />
           <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
@@ -65,6 +68,7 @@
     <EntitySetMapping Name="RESERVATION_INFORMATION">
       <EntityTypeMapping TypeName="HMSModel.RESERVATION_INFORMATION">
         <MappingFragment StoreEntitySet="RESERVATION_INFORMATION">
+          <ScalarProperty Name="paymentID" ColumnName="paymentID" />
           <ScalarProperty Name="clientID" ColumnName="clientID" />
           <ScalarProperty Name="reservationStatus" ColumnName="reservationStatus" />
           <ScalarProperty Name="reservationDateOut" ColumnName="reservationDateOut" />
@@ -88,7 +92,6 @@
     <EntitySetMapping Name="ROOM_INFORMATION">
       <EntityTypeMapping TypeName="HMSModel.ROOM_INFORMATION">
         <MappingFragment StoreEntitySet="ROOM_INFORMATION">
-          <ScalarProperty Name="clientID" ColumnName="clientID" />
           <ScalarProperty Name="roomType" ColumnName="roomType" />
           <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
         </MappingFragment>
@@ -116,7 +119,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_update_room_details_nophoto" FunctionName="HMSModel.Store.sp_update_room_details_nophoto" />
-    <FunctionImportMapping FunctionImportName="sp_update_room_details_withphoto" FunctionName="HMSModel.Store.sp_update_room_details_withphoto" />
   </EntityContainerMapping>
 </Mapping>

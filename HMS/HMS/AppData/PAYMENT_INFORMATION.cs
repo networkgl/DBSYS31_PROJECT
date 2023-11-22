@@ -14,13 +14,16 @@ namespace HMS.AppData
     
     public partial class PAYMENT_INFORMATION
     {
+        public PAYMENT_INFORMATION()
+        {
+            this.ROOM_INFORMATION = new HashSet<ROOM_INFORMATION>();
+        }
+    
         public int paymentID { get; set; }
         public System.DateTime paymentDate { get; set; }
         public string paymentMethod { get; set; }
         public decimal paymentTotal { get; set; }
-        public Nullable<int> reservationID { get; set; }
-        public Nullable<int> userloggedID { get; set; }
     
-        public virtual RESERVATION_INFORMATION RESERVATION_INFORMATION { get; set; }
+        public virtual ICollection<ROOM_INFORMATION> ROOM_INFORMATION { get; set; }
     }
 }
