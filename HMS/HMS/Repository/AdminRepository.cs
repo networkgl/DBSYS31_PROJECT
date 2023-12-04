@@ -115,7 +115,7 @@ namespace HMS
                                 _roomPrice = roomDetail.roomPrice;
                                 _roomDiscount = roomDetail.roomDiscount;
 
-                                //Console.WriteLine($"Room Type: {_roomType}, Room Details: {_roomDetails}, Room Price: {_roomPrice}, Room Discount: {_roomDiscount}");
+                                Console.WriteLine($"Room Type: {_roomType}, Room Details: {_roomDetails}, Room Price: {_roomPrice}, Room Discount: {_roomDiscount}");
                             }
                         }
                         catch (Exception ex)

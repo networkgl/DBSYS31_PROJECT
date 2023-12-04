@@ -23,6 +23,8 @@ namespace HMS
         private static bool hasPaid = false;
         private int toggle = 1;
 
+        private UserRepository userRepo;
+
         public static bool HasPaid
         {
             get { return hasPaid; }
@@ -35,11 +37,13 @@ namespace HMS
         }
         public Frm_ProcessPayment(Frm_BookNow_S4 s4)
         {
+            userRepo = new UserRepository();
             InitializeComponent();
             this.s4 = s4;
         }
         public Frm_ProcessPayment(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3, Frm_BookNow_S4 s4)
         {
+            userRepo = new UserRepository();
             InitializeComponent();
             this.s1 = s1;
             this.s2 = s2;
@@ -137,8 +141,26 @@ namespace HMS
                         s4.btnBookAgain.Visible = true;
                         s4.btnConfirm.Visible = false;
                         s4.btnBack.Visible = false;
-                    }
 
+
+
+                        var reserve_status = "PENDING";
+                        var response = String.Empty;
+                        msg = "Successfully Reserve Your Booking !\nThank You.";
+
+                        //Call the insertion function for the booking from userRepo
+                        var retVal = userRepo.InsertClientReservation(s3.Fname, s3.Lname, s3.Email, s3.Phone, s3.Address, DateTime.Now.Date, DateTime.Now.Date, reserve_status, s2.FinalRoomType, DateTime.Now.Date, (int)s4.FinalTotalPrice, ref response);
+                        //var retVal = userRepo.InsertClientReservation(s3.Fname, s3.Lname, s3.Email, s3.Phone, s3.Address, s1.CheckIn, s1.CheckOut, reserve_status, s2.FinalRoomType, DateTime.Now.Date, (int)s4.FinalTotalPrice, ref response);
+
+                        if (retVal == ErrorCode.Success)
+                        {
+                            MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+                        }
+                        else
+                        {
+                            MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Light);
+                        }
+                    }
                 }
                 catch(Exception error) 
                 {

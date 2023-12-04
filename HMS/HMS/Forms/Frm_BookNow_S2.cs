@@ -23,14 +23,24 @@ namespace HMS
         private AdminRepository adminRepo;
         private int currentIndex;
         private int roomType = 0;
+        private double roomPrice;
+        private string finalRoomType;
 
-        public static int RoomPrice { get; set; }
+        public double RoomPrice
+        {
+            get { return roomPrice; }
+            set { roomPrice = value; }
+        }
         public int RoomType 
         {
             get { return roomType; } 
             set { roomType = value; }
         }
-
+        public string FinalRoomType
+        {
+            get { return finalRoomType; }
+            set { finalRoomType = value; }
+        }
         public Frm_BookNow_S2()
         {
             InitializeComponent();
@@ -110,7 +120,7 @@ namespace HMS
                 {
                     cbBox_roomType.Items.Add(i);
                 }
-                cbBox_roomType.SelectedIndex = RoomType;
+                cbBox_roomType.SelectedIndex = roomType;
             }
             else
             {
@@ -121,6 +131,11 @@ namespace HMS
             lbl_roomType.Text = adminRepo._RoomType;
             lbl_roomDetails1.Text = adminRepo._RoomDetails;
             lbl_roomPrice.Text = "₱" + adminRepo._RoomPrice.ToString("#,##0");
+
+
+            //Store this values and use it later for storing into the database.
+            roomPrice = adminRepo._RoomPrice;
+            finalRoomType = adminRepo._RoomType;
         }
         private void cbBox_roomType_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -156,6 +171,9 @@ namespace HMS
 
             lbl_priceDetails.Text = $"Per Night\r\n ₱{price} Total for 1 night\r\nExcluding Taxes & Fees";
 
+            //Store this values and use it later for storing into the database.
+            roomPrice = adminRepo._RoomPrice;
+            finalRoomType = adminRepo._RoomType;
         }
 
         private static Frm_BookNow_S2 s22;

@@ -225,6 +225,12 @@
     <Compile Include="Forms\Frm_ProcessPayment.Designer.cs">
       <DependentUpon>Frm_ProcessPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_Reservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Reservation.Designer.cs">
+      <DependentUpon>Frm_Reservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Room.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_ProcessPayment.resx">
       <DependentUpon>Frm_ProcessPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Reservation.resx">
+      <DependentUpon>Frm_Reservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Room.resx">
       <DependentUpon>Frm_Room.cs</DependentUpon>

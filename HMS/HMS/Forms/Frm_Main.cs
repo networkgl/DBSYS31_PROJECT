@@ -143,6 +143,15 @@ namespace HMS
 
             if (ToggleReserve)
                 pnl_ToggleReserve.Visible = ToggleReserve;
+
+
+            Frm_Reservation rsrv = new Frm_Reservation();
+            pnl_main.Controls.Clear();
+            rsrv.TopLevel = false;
+            rsrv.Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(rsrv);
+            rsrv.Show();
+
         }
         private void btnManageRoomType_Click(object sender, EventArgs e)
         {

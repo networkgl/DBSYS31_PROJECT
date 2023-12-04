@@ -44,19 +44,29 @@ namespace HMS
         private Frm_BookNow_S2 s2;
         private Frm_BookNow_S3 s3;
         private Frm_BookNow_S4 s4;
+        private double _finalPrice;
 
         public string CardHolderName { get; set; }
         public string CardNumber { get; set; }
         public string CardExpiryDate { get; set; }
         public string CardCVC { get; set; }
 
+        public double FinalTotalPrice
+        {
+            get {  return _finalPrice; }
+            set {  _finalPrice = value; }
+        }
 
+        private AdminRepository adminRepo;
         public Frm_BookNow_S4()
         {
+            adminRepo = new AdminRepository();
             InitializeComponent();
         }
         public Frm_BookNow_S4(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3, Frm_BookNow_S4 s4)
         {
+            adminRepo = new AdminRepository();
+
             InitializeComponent();
             this.s1 = s1;
             this.s2 = s2;
@@ -134,7 +144,7 @@ namespace HMS
         private void btnConfirm_Click(object sender, EventArgs e)
         {
 
-            Frm_ProcessPayment payment = new Frm_ProcessPayment(this);
+            Frm_ProcessPayment payment = new Frm_ProcessPayment(s1,s2,s3,this);
             payment.ShowDialog();
         }
         private void btn_DownloadOffline_Click(object sender, EventArgs e)
@@ -544,23 +554,12 @@ namespace HMS
             var totalDys = GetTotalDayStayed(this.s1.CheckIn, this.s1.CheckOut); // Call this function to calculate the date gap between check-in and checkout
             //var totalDys = GetTotalDayStayed(Frm_BookNow_S1.checkIn, Frm_BookNow_S1.checkOut); // Call this function to calculate the date gap between check-in and checkout
 
-            Console.WriteLine(totalDys);
-            string retVal = String.Empty;
-            var roomPrice = this.s2.RoomType;
+            //Console.WriteLine(totalDys);
+            var retVal = String.Empty;
 
-            // Total Payment Based on RoomType multiplied by the totalDays of Stay
-            switch (roomPrice)
-            {
-                case 0:
-                    retVal = "₱ " + ParseVal(10000 * totalDys);
-                    break;
-                case 1:
-                    retVal = "₱ " + ParseVal(14000 * totalDys);
-                    break;
-                case 2:
-                    retVal = "₱ " + ParseVal(20000 * totalDys);
-                    break;
-            }
+            _finalPrice = s2.RoomPrice * totalDys;
+            retVal = "₱ " + ParseVal(_finalPrice);
+
             return retVal;
         }
         private int GetTotalDayStayed(DateTime checkIn, DateTime checkOut)
@@ -601,64 +600,6 @@ namespace HMS
             Console.WriteLine(TotalDays);
             return TotalDays;
         }
-        private String GetTimeByIndex(string happen, int indexTime)
-        {
-            string retVal = String.Empty;
-            switch (indexTime)
-            {
-                case 0:
-                    retVal = "1:00" as String;
-                    break;
-                case 1:
-                    retVal = "2:00" as String;
-                    break;
-                case 2:
-                    retVal = "3:00" as String;
-                    break;
-                case 3:
-                    retVal = "4:00" as String;
-                    break;
-                case 4:
-                    retVal = "5:00" as String;
-                    break;
-                case 5:
-                    retVal = "6:00" as String;
-                    break;
-                case 6:
-                    retVal = "7:00" as String;
-                    break;
-                case 7:
-                    retVal = "8:00" as String;
-                    break;
-                case 8:
-                    retVal = "9:00" as String;
-                    break;
-                case 9:
-                    retVal = "10:00" as String;
-                    break;
-                case 10:
-                    retVal = "11:00" as String;
-                    break;
-                case 11:
-                    retVal = "12:00" as String;
-                    break;
-            }
-            return happen + retVal;
-        }
-        private String GetAM_PM_ByIndex(int index_AM_PM)
-        {
-            string retVal = String.Empty;
-            switch (index_AM_PM)
-            {
-                case 0:
-                    retVal = "AM" as String;
-                    break;
-                case 1:
-                    retVal = "PM" as String;
-                    break;
-            }
-            return retVal;
-        }
 
         private void btnBookAgain_Click(object sender, EventArgs e)
         {
@@ -676,178 +617,5 @@ namespace HMS
             }
 
         }
-
-        private void lbl_NumberOfDays_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_CheckIn_Date_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Guest_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_CheckOut_Date_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        /*
-private int GetTotalDayStayed(int CheckInDay, int CheckOutDay)
-{
-var currMonthVal_Counter = 0;
-var prevMonthVal_Counter = 0;
-
-var checkInMonth = Frm_BookNow_S1.CheckIn.Month;
-var checkOutMonth = Frm_BookNow_S1.CheckOut.Month;
-
-int monthDifference = GetMonthDiff() * 30;//Call this function to get the total diff in months from checkin to checkout
-
-
-//Execte this loop to determine gaps of numnber in months and use that value to determine num of days with a gap of months
-if (checkInMonth == checkOutMonth && CheckInDay == CheckOutDay)
-{
-return totalDays = 0;//return zero directly if user attempts to book same month and days.
-//Addiditon blocking if statement is also need to be added in the datetimepicker of Frm_BookNow_S1 to block this kind of booking.
-}
-if (CheckInDay == CheckOutDay)
-{
-totalDays = monthDifference;
-return totalDays;
-}
-if (checkInMonth == checkOutMonth)
-{
-//Minus directly the gap days
-return totalDays = CheckOutDay - CheckInDay;
-}
-
-var getMonth = Frm_BookNow_S1.CheckIn.Month;
-var monthDays = 0;
-
-if (getMonth == 1 || getMonth == 3 || getMonth == 5 || getMonth == 7 || getMonth == 8 || getMonth == 10 || getMonth == 12)              
-monthDays = 31;               
-else
-{
-if (getMonth == 2)                    
-monthDays = 28;                    
-else
-monthDays = 30;
-}
-
-
-if (checkInMonth == checkOutMonth)
-{
-for (int j = 1; j <= CheckOutDay; j++)
-{
-if (j == CheckInDay)
-continue;
-else
-currMonthVal_Counter++;
-}
-}
-else
-{
-for (int i = CheckInDay; i <= monthDays; i++)
-{
-if (i == CheckInDay)
-continue;
-else
-prevMonthVal_Counter++;
-}
-for (int j = 1; j <= CheckOutDay; j++)
-{
-//if (j == CheckInDay)
-//    continue;
-//else
-currMonthVal_Counter++;
-}
-}
-
-Console.WriteLine("Prev Month: " + prevMonthVal_Counter);
-Console.WriteLine("Curr Month: " + currMonthVal_Counter);
-
-Console.WriteLine(monthDifference);
-
-totalDays = monthDifference + prevMonthVal_Counter + currMonthVal_Counter; //Add the possible MonthDiff, the prev month counter and curr month counter to return total days of stay.
-return totalDays;
-}
-
-private int GetMonthDiff()
-{
-var retVal = 0;
-
-var monthGap1 = 0;
-var monthGap2 = 0;
-var monthDiffTotal = 0;
-
-var checkInMonth = Frm_BookNow_S1.CheckIn.Month;
-var checkOutMonth = Frm_BookNow_S1.CheckOut.Month;
-
-var checkInDay = Frm_BookNow_S1.CheckIn.Day;
-var checkOutDay = Frm_BookNow_S1.CheckOut.Day;
-
-
-
-if (checkInMonth == checkOutMonth)
-{
-return retVal = 0;
-}
-else
-{
-if (checkOutMonth > checkInMonth && checkOutDay > checkInDay)
-{
-for (int i = checkInMonth; i <= 12; i++)
-{
-if (i == checkInMonth)//Skip first index to start count at next month.
-{
-continue;
-}
-else
-{
-monthGap1++;
-}
-}
-}
-
-
-if (monthDiffTotal + checkInMonth > 12)
-{
-//reset to one
-for (int j = 1; j < checkOutMonth; j++)
-{
-monthGap2++;
-}
-}
-else
-{
-for (int j = (monthDiffTotal + checkInMonth); j < checkOutMonth; j++)
-{
-monthGap2++;
-}
-}
-
-
-monthDiffTotal += monthGap1;
-
-monthDiffTotal += monthGap2;
-
-}
-
-Console.WriteLine("Lst Yr: " + monthGap1);
-Console.WriteLine("Crnt Yr: " + monthGap2);
-Console.WriteLine("Total Months Gap: " + monthDiffTotal);
-
-return retVal = monthDiffTotal;
-}
-*/
     }
 }

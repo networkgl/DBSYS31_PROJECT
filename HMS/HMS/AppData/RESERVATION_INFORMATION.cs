@@ -22,8 +22,8 @@ namespace HMS.AppData
         public int reservationID { get; set; }
         public System.DateTime reservationDateIn { get; set; }
         public System.DateTime reservationDateOut { get; set; }
-        public string reservationStatus { get; set; }
         public Nullable<int> roomNumber { get; set; }
+        public string reservationStatus { get; set; }
     
         public virtual ICollection<CLIENT_INFORMATION> CLIENT_INFORMATION { get; set; }
         public virtual ROOM_INFORMATION ROOM_INFORMATION { get; set; }

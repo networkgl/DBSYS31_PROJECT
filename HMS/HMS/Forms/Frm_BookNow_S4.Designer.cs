@@ -123,7 +123,6 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(897, 442);
             this.guna2ShadowPanel1.TabIndex = 111;
-            this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
             // btnBookAgain
             // 
@@ -180,7 +179,6 @@
             this.lbl_NumberOfDays.Size = new System.Drawing.Size(129, 17);
             this.lbl_NumberOfDays.TabIndex = 126;
             this.lbl_NumberOfDays.Text = "2 Days and 1 Night";
-            this.lbl_NumberOfDays.Click += new System.EventHandler(this.lbl_NumberOfDays_Click);
             // 
             // lbl_DownloadNow
             // 
@@ -277,7 +275,6 @@
             this.lbl_Guest.Size = new System.Drawing.Size(42, 17);
             this.lbl_Guest.TabIndex = 117;
             this.lbl_Guest.Text = "Adult";
-            this.lbl_Guest.Click += new System.EventHandler(this.lbl_Guest_Click);
             // 
             // lbl_CheckOut_Date
             // 
@@ -288,7 +285,6 @@
             this.lbl_CheckOut_Date.Size = new System.Drawing.Size(116, 17);
             this.lbl_CheckOut_Date.TabIndex = 115;
             this.lbl_CheckOut_Date.Text = "Sun, Oct 22, 2023";
-            this.lbl_CheckOut_Date.Click += new System.EventHandler(this.lbl_CheckOut_Date_Click);
             // 
             // lbl_CheckIn_Date
             // 
@@ -299,7 +295,6 @@
             this.lbl_CheckIn_Date.Size = new System.Drawing.Size(114, 17);
             this.lbl_CheckIn_Date.TabIndex = 114;
             this.lbl_CheckIn_Date.Text = "Sat, Oct 21, 2023";
-            this.lbl_CheckIn_Date.Click += new System.EventHandler(this.lbl_CheckIn_Date_Click);
             // 
             // label8
             // 

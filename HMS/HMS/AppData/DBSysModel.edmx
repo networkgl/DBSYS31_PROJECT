@@ -26,6 +26,16 @@
           <Property Name="paymentMethod" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="paymentTotal" Type="money" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'HMS.dbo.RESERVATION_HISTORY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="RESERVATION_HISTORY">
+          <Property Name="clientFname" Type="varchar" MaxLength="255" />
+          <Property Name="clientPnumber" Type="varchar" MaxLength="20" />
+          <Property Name="clientAddress" Type="varchar" MaxLength="255" />
+          <Property Name="clientDin" Type="date" />
+          <Property Name="clientDout" Type="date" />
+          <Property Name="clientRtype" Type="varchar" MaxLength="255" />
+        </EntityType>-->
         <EntityType Name="RESERVATION_INFORMATION">
           <Key>
             <PropertyRef Name="reservationID" />
@@ -33,8 +43,8 @@
           <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="reservationDateIn" Type="date" Nullable="false" />
           <Property Name="reservationDateOut" Type="date" Nullable="false" />
-          <Property Name="reservationStatus" Type="varchar" MaxLength="20" />
           <Property Name="roomNumber" Type="int" />
+          <Property Name="reservationStatus" Type="varchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6013: The table/view 'HMS.dbo.ROLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
@@ -164,6 +174,30 @@ warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a p
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_insert_client_history" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fname" Type="varchar" Mode="In" />
+          <Parameter Name="pnumber" Type="varchar" Mode="In" />
+          <Parameter Name="address" Type="varchar" Mode="In" />
+          <Parameter Name="dateIn" Type="date" Mode="In" />
+          <Parameter Name="dateOut" Type="date" Mode="In" />
+          <Parameter Name="rType" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_insert_client_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="clientfName" Type="nvarchar" Mode="In" />
+          <Parameter Name="clientLname" Type="nvarchar" Mode="In" />
+          <Parameter Name="clientEmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="clientPhone" Type="nvarchar" Mode="In" />
+          <Parameter Name="clientAddress" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_insert_payment_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paymentDate" Type="date" Mode="In" />
+          <Parameter Name="paymentTotal" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_insert_reservation_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dateIn" Type="date" Mode="In" />
+          <Parameter Name="dateOut" Type="date" Mode="In" />
+          <Parameter Name="reservationStatus" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="sp_insert_room_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="roomID" Type="int" Mode="In" />
           <Parameter Name="roomType" Type="nvarchar" Mode="In" />
@@ -171,6 +205,9 @@ warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a p
           <Parameter Name="roomDetails" Type="nvarchar" Mode="In" />
           <Parameter Name="roomPrice" Type="float" Mode="In" />
           <Parameter Name="roomDiscount" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_insert_room_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="roomType" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -313,6 +350,33 @@ FROM [dbo].[vw_display_room_details] AS [vw_display_room_details]</DefiningQuery
             <Parameter Name="roomPrice" Mode="In" Type="Double" />
             <Parameter Name="roomDiscount" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="sp_insert_client_history">
+            <Parameter Name="fname" Mode="In" Type="String" />
+            <Parameter Name="pnumber" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="dateIn" Mode="In" Type="DateTime" />
+            <Parameter Name="dateOut" Mode="In" Type="DateTime" />
+            <Parameter Name="rType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_insert_client_info">
+            <Parameter Name="clientfName" Mode="In" Type="String" />
+            <Parameter Name="clientLname" Mode="In" Type="String" />
+            <Parameter Name="clientEmail" Mode="In" Type="String" />
+            <Parameter Name="clientPhone" Mode="In" Type="String" />
+            <Parameter Name="clientAddress" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_insert_payment_info">
+            <Parameter Name="paymentDate" Mode="In" Type="DateTime" />
+            <Parameter Name="paymentTotal" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_insert_reservation_info">
+            <Parameter Name="dateIn" Mode="In" Type="DateTime" />
+            <Parameter Name="dateOut" Mode="In" Type="DateTime" />
+            <Parameter Name="reservationStatus" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_insert_room_info">
+          <Parameter Name="roomType" Mode="In" Type="String" />
+          </FunctionImport>
           <EntitySet Name="CLIENT_INFORMATION" EntityType="HMSModel.CLIENT_INFORMATION" />
           <EntitySet Name="PAYMENT_INFORMATION" EntityType="HMSModel.PAYMENT_INFORMATION" />
           <EntitySet Name="RESERVATION_INFORMATION" EntityType="HMSModel.RESERVATION_INFORMATION" />
@@ -380,8 +444,8 @@ FROM [dbo].[vw_display_room_details] AS [vw_display_room_details]</DefiningQuery
           <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="reservationDateIn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="reservationDateOut" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="reservationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="roomNumber" Type="Int32" />
+          <Property Name="reservationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CLIENT_INFORMATION" Relationship="HMSModel.FK_ClientInfo_ReservationInfo" FromRole="RESERVATION_INFORMATION" ToRole="CLIENT_INFORMATION" />
           <NavigationProperty Name="ROOM_INFORMATION" Relationship="HMSModel.FK_ReservInfo_RoomInfo" FromRole="RESERVATION_INFORMATION" ToRole="ROOM_INFORMATION" />
         </EntityType>
@@ -510,6 +574,11 @@ FROM [dbo].[vw_display_room_details] AS [vw_display_room_details]</DefiningQuery
           <FunctionImportMapping FunctionImportName="sp_delete_room_details" FunctionName="HMSModel.Store.sp_delete_room_details" />
           <FunctionImportMapping FunctionImportName="sp_update_room_details_nophoto" FunctionName="HMSModel.Store.sp_update_room_details_nophoto" />
           <FunctionImportMapping FunctionImportName="sp_update_room_details_withphoto" FunctionName="HMSModel.Store.sp_update_room_details_withphoto" />
+          <FunctionImportMapping FunctionImportName="sp_insert_client_history" FunctionName="HMSModel.Store.sp_insert_client_history" />
+          <FunctionImportMapping FunctionImportName="sp_insert_client_info" FunctionName="HMSModel.Store.sp_insert_client_info" />
+          <FunctionImportMapping FunctionImportName="sp_insert_payment_info" FunctionName="HMSModel.Store.sp_insert_payment_info" />
+          <FunctionImportMapping FunctionImportName="sp_insert_reservation_info" FunctionName="HMSModel.Store.sp_insert_reservation_info" />
+          <FunctionImportMapping FunctionImportName="sp_insert_room_info" FunctionName="HMSModel.Store.sp_insert_room_info" />
           <EntitySetMapping Name="CLIENT_INFORMATION">
             <EntityTypeMapping TypeName="HMSModel.CLIENT_INFORMATION">
               <MappingFragment StoreEntitySet="CLIENT_INFORMATION">
@@ -536,8 +605,8 @@ FROM [dbo].[vw_display_room_details] AS [vw_display_room_details]</DefiningQuery
           <EntitySetMapping Name="RESERVATION_INFORMATION">
             <EntityTypeMapping TypeName="HMSModel.RESERVATION_INFORMATION">
               <MappingFragment StoreEntitySet="RESERVATION_INFORMATION">
-                <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
                 <ScalarProperty Name="reservationStatus" ColumnName="reservationStatus" />
+                <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
                 <ScalarProperty Name="reservationDateOut" ColumnName="reservationDateOut" />
                 <ScalarProperty Name="reservationDateIn" ColumnName="reservationDateIn" />
                 <ScalarProperty Name="reservationID" ColumnName="reservationID" />
