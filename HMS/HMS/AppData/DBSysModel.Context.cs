@@ -458,5 +458,10 @@ namespace HMS.AppData
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_approve_reservation", idParameter);
         }
+    
+        public virtual ObjectResult<sp_display_reservation_details_Result> sp_display_reservation_details()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_display_reservation_details_Result>("sp_display_reservation_details");
+        }
     }
 }

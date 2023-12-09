@@ -120,6 +120,9 @@
     <Compile Include="AppData\ROOM_DETAILS.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\sp_display_reservation_details_Result.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\sp_get_room_details__by_index_Result.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>

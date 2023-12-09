@@ -122,6 +122,10 @@
     <FunctionImport Name="sp_insert_client_info_fnameOnly">
       <Parameter Name="clientfullName" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_approve_reservation">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_display_reservation_details" ReturnType="Collection(HMSModel.sp_display_reservation_details_Result)" />
     <EntitySet Name="CLIENT" EntityType="HMSModel.CLIENT" />
     <EntitySet Name="PAYMENT" EntityType="HMSModel.PAYMENT" />
     <EntitySet Name="RESERVATION" EntityType="HMSModel.RESERVATION" />
@@ -142,9 +146,6 @@
       <End Role="RESERVATION" EntitySet="RESERVATION" />
       <End Role="ROOM" EntitySet="ROOM" />
     </AssociationSet>
-    <FunctionImport Name="sp_approve_reservation">
-      <Parameter Name="id" Mode="In" Type="Int32" />
-    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -162,6 +163,17 @@
     <Property Type="Double" Name="roomPrice" Nullable="false" />
     <Property Type="String" Name="roomDetails" Nullable="false" MaxLength="100" />
     <Property Type="Int32" Name="roomDiscount" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_display_reservation_details_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Room_Type" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Date_In" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Out" Nullable="false" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Total" Nullable="false" />
+    <Property Type="String" Name="Status" Nullable="true" MaxLength="20" />
   </ComplexType>
   <EntityType Name="CLIENT">
     <Key>

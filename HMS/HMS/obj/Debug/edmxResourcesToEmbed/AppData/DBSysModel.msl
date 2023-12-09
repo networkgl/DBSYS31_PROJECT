@@ -47,6 +47,7 @@
     <FunctionImportMapping FunctionImportName="sp_insert_room_info" FunctionName="HMSModel.Store.sp_insert_room_info" />
     <FunctionImportMapping FunctionImportName="sp_denied_reservation" FunctionName="HMSModel.Store.sp_denied_reservation" />
     <FunctionImportMapping FunctionImportName="sp_insert_client_info_fnameOnly" FunctionName="HMSModel.Store.sp_insert_client_info_fnameOnly" />
+    <FunctionImportMapping FunctionImportName="sp_approve_reservation" FunctionName="HMSModel.Store.sp_approve_reservation" />
     <EntitySetMapping Name="CLIENT">
       <EntityTypeMapping TypeName="HMSModel.CLIENT">
         <MappingFragment StoreEntitySet="CLIENT">
@@ -138,6 +139,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="sp_approve_reservation" FunctionName="HMSModel.Store.sp_approve_reservation" />
   </EntityContainerMapping>
 </Mapping>
