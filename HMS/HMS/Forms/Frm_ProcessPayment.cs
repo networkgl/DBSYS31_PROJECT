@@ -143,13 +143,11 @@ namespace HMS
                         s4.btnBack.Visible = false;
 
 
-
-                        var reserve_status = "PENDING";
                         var response = String.Empty;
                         msg = "Successfully Reserve Your Booking !\nThank You.";
 
                         //Call the insertion function for the booking from userRepo
-                        var retVal = userRepo.InsertClientReservation(s3.Fname, s3.Lname, s3.Email, s3.Phone, s3.Address, DateTime.Now.Date, DateTime.Now.Date, reserve_status, s2.FinalRoomType, DateTime.Now.Date, (int)s4.FinalTotalPrice, ref response);
+                        var retVal = userRepo.InsertClientReservation(s3.Lname+", "+s3.Fname, s3.Email, s3.Phone, s3.Address, s1.NoOfGuest, s1.CheckIn, s1.CheckOut, s2.FinalRoomType, DateTime.Now.Date, (int)s4.FinalTotalPrice, ref response);
                         //var retVal = userRepo.InsertClientReservation(s3.Fname, s3.Lname, s3.Email, s3.Phone, s3.Address, s1.CheckIn, s1.CheckOut, reserve_status, s2.FinalRoomType, DateTime.Now.Date, (int)s4.FinalTotalPrice, ref response);
 
                         if (retVal == ErrorCode.Success)

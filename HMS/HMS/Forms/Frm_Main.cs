@@ -23,12 +23,12 @@ namespace HMS
         {
             InitializeComponent();
         }
-        public static Frm_Main GetInstance()
-        {
-            if(main == null)
-                main = new Frm_Main();
-            return main;
-        }
+        //public static Frm_Main GetInstance()
+        //{
+        //    if(main == null)
+        //        main = new Frm_Main();
+        //    return main;
+        //}
         public static Frm_Main GetInstanceClass
         {
             get { return _instance; }
@@ -188,7 +188,9 @@ namespace HMS
                 this.Hide();
                 Frm_HomePage home = new Frm_HomePage();
                 home.Show();
-                Frm_Login.GetInstance().HasLogin = false;
+                //Frm_Login.GetInstance().HasLogin = false;
+                Frm_Login login = new Frm_Login();
+                login.HasLogin = false;
             }
         }
 
@@ -261,6 +263,11 @@ namespace HMS
         {
             btnRoom.ForeColor = Color.Black;
             btnRoom.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void btnReservation_MouseEnter(object sender, EventArgs e)

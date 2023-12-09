@@ -84,7 +84,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppData\CLIENT_INFORMATION.cs">
+    <Compile Include="AppData\CLIENT.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Custom Class\ROOM_DETAILS_CUSTOM.cs" />
@@ -108,16 +108,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\PAYMENT_INFORMATION.cs">
+    <Compile Include="AppData\PAYMENT.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\RESERVATION_INFORMATION.cs">
+    <Compile Include="AppData\RESERVATION.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\ROOM.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\ROOM_DETAILS.cs">
-      <DependentUpon>DBSysModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AppData\ROOM_INFORMATION.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\sp_get_room_details__by_index_Result.cs">
@@ -130,6 +130,9 @@
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\sysdiagrams.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\vw_display_reservation_details.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\vw_display_room_details.cs">
@@ -626,6 +629,7 @@
       <DependentUpon>DBSysModel.edmx</DependentUpon>
       <LastGenOutput>DBSysModel1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\decline.png" />
     <None Include="Resources\icons8-no-camera-100.png" />
     <None Include="Resources\delete1.png" />
     <None Include="Resources\delete.png" />

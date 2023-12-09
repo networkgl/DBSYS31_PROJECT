@@ -34,12 +34,12 @@ namespace HMS.Forms
                 return handleParams;
             }
         }
-        public static Frm_Login GetInstance()
-        {
-            if(login == null)
-                login = new Frm_Login();
-            return login;
-        }
+        //public static Frm_Login GetInstance()
+        //{
+        //    if(login == null)
+        //        login = new Frm_Login();
+        //    return login;
+        //}
         private void Frm_Login_Load(object sender, EventArgs e)
         {
             firstRun = true;
@@ -118,7 +118,9 @@ namespace HMS.Forms
             toggleShow = 0;
 
             this.Hide();
-            Frm_Main.GetInstance().Show();
+            //Frm_Main.GetInstance().Show();
+            Frm_Main main = new Frm_Main();
+            main.Show();
             //Frm_MainPage.GetInstance().Show();
         }
 

@@ -96,8 +96,7 @@
       <Parameter Name="rType" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_insert_client_info">
-      <Parameter Name="clientfName" Mode="In" Type="String" />
-      <Parameter Name="clientLname" Mode="In" Type="String" />
+      <Parameter Name="clientfullName" Mode="In" Type="String" />
       <Parameter Name="clientEmail" Mode="In" Type="String" />
       <Parameter Name="clientPhone" Mode="In" Type="String" />
       <Parameter Name="clientAddress" Mode="In" Type="String" />
@@ -107,32 +106,45 @@
       <Parameter Name="paymentTotal" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_insert_reservation_info">
+      <Parameter Name="noOfGuest" Mode="In" Type="Int32" />
       <Parameter Name="dateIn" Mode="In" Type="DateTime" />
       <Parameter Name="dateOut" Mode="In" Type="DateTime" />
-      <Parameter Name="reservationStatus" Mode="In" Type="String" />
+      <Parameter Name="paymentID" Mode="In" Type="Int32" />
+      <Parameter Name="clientID" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_insert_room_info">
       <Parameter Name="roomType" Mode="In" Type="String" />
+      <Parameter Name="reservationID" Mode="In" Type="Int32" />
     </FunctionImport>
-    <EntitySet Name="CLIENT_INFORMATION" EntityType="HMSModel.CLIENT_INFORMATION" />
-    <EntitySet Name="PAYMENT_INFORMATION" EntityType="HMSModel.PAYMENT_INFORMATION" />
-    <EntitySet Name="RESERVATION_INFORMATION" EntityType="HMSModel.RESERVATION_INFORMATION" />
+    <FunctionImport Name="sp_denied_reservation">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_insert_client_info_fnameOnly">
+      <Parameter Name="clientfullName" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="CLIENT" EntityType="HMSModel.CLIENT" />
+    <EntitySet Name="PAYMENT" EntityType="HMSModel.PAYMENT" />
+    <EntitySet Name="RESERVATION" EntityType="HMSModel.RESERVATION" />
+    <EntitySet Name="ROOM" EntityType="HMSModel.ROOM" />
     <EntitySet Name="ROOM_DETAILS" EntityType="HMSModel.ROOM_DETAILS" />
-    <EntitySet Name="ROOM_INFORMATION" EntityType="HMSModel.ROOM_INFORMATION" />
     <EntitySet Name="sysdiagrams" EntityType="HMSModel.sysdiagrams" />
+    <EntitySet Name="vw_display_reservation_details" EntityType="HMSModel.vw_display_reservation_details" />
     <EntitySet Name="vw_display_room_details" EntityType="HMSModel.vw_display_room_details" />
-    <AssociationSet Name="FK_ClientInfo_ReservationInfo" Association="HMSModel.FK_ClientInfo_ReservationInfo">
-      <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
-      <End Role="CLIENT_INFORMATION" EntitySet="CLIENT_INFORMATION" />
+    <AssociationSet Name="FK_RESERVATION_CLIENT" Association="HMSModel.FK_RESERVATION_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENT" />
+      <End Role="RESERVATION" EntitySet="RESERVATION" />
     </AssociationSet>
-    <AssociationSet Name="FK_RoomInfo_PaymentInfo" Association="HMSModel.FK_RoomInfo_PaymentInfo">
-      <End Role="PAYMENT_INFORMATION" EntitySet="PAYMENT_INFORMATION" />
-      <End Role="ROOM_INFORMATION" EntitySet="ROOM_INFORMATION" />
+    <AssociationSet Name="FK_RESERVATION_PAYMENT" Association="HMSModel.FK_RESERVATION_PAYMENT">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="RESERVATION" EntitySet="RESERVATION" />
     </AssociationSet>
-    <AssociationSet Name="FK_ReservInfo_RoomInfo" Association="HMSModel.FK_ReservInfo_RoomInfo">
-      <End Role="ROOM_INFORMATION" EntitySet="ROOM_INFORMATION" />
-      <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
+    <AssociationSet Name="FK_ROOM_RESERVATION" Association="HMSModel.FK_ROOM_RESERVATION">
+      <End Role="RESERVATION" EntitySet="RESERVATION" />
+      <End Role="ROOM" EntitySet="ROOM" />
     </AssociationSet>
+    <FunctionImport Name="sp_approve_reservation">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -151,40 +163,49 @@
     <Property Type="String" Name="roomDetails" Nullable="false" MaxLength="100" />
     <Property Type="Int32" Name="roomDiscount" Nullable="true" />
   </ComplexType>
-  <EntityType Name="CLIENT_INFORMATION">
+  <EntityType Name="CLIENT">
     <Key>
       <PropertyRef Name="clientID" />
     </Key>
     <Property Name="clientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="clientfName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="clientLname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="clientEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="clientPhone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="clientAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="reservationID" Type="Int32" />
-    <NavigationProperty Name="RESERVATION_INFORMATION" Relationship="HMSModel.FK_ClientInfo_ReservationInfo" FromRole="CLIENT_INFORMATION" ToRole="RESERVATION_INFORMATION" />
+    <Property Name="clientFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="clientEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="clientPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="clientAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RESERVATION" Relationship="HMSModel.FK_RESERVATION_CLIENT" FromRole="CLIENT" ToRole="RESERVATION" />
   </EntityType>
-  <EntityType Name="PAYMENT_INFORMATION">
+  <EntityType Name="PAYMENT">
     <Key>
       <PropertyRef Name="paymentID" />
     </Key>
     <Property Name="paymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="paymentDate" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="paymentMethod" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="paymentTotal" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-    <NavigationProperty Name="ROOM_INFORMATION" Relationship="HMSModel.FK_RoomInfo_PaymentInfo" FromRole="PAYMENT_INFORMATION" ToRole="ROOM_INFORMATION" />
+    <Property Name="paymentTotal" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RESERVATION" Relationship="HMSModel.FK_RESERVATION_PAYMENT" FromRole="PAYMENT" ToRole="RESERVATION" />
   </EntityType>
-  <EntityType Name="RESERVATION_INFORMATION">
+  <EntityType Name="RESERVATION">
     <Key>
       <PropertyRef Name="reservationID" />
     </Key>
     <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="noOfGuest" Type="Int32" />
     <Property Name="reservationDateIn" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="reservationDateOut" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="roomNumber" Type="Int32" />
-    <Property Name="reservationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="CLIENT_INFORMATION" Relationship="HMSModel.FK_ClientInfo_ReservationInfo" FromRole="RESERVATION_INFORMATION" ToRole="CLIENT_INFORMATION" />
-    <NavigationProperty Name="ROOM_INFORMATION" Relationship="HMSModel.FK_ReservInfo_RoomInfo" FromRole="RESERVATION_INFORMATION" ToRole="ROOM_INFORMATION" />
+    <Property Name="reservationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="paymentID" Type="Int32" Nullable="false" />
+    <Property Name="clientID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CLIENT" Relationship="HMSModel.FK_RESERVATION_CLIENT" FromRole="RESERVATION" ToRole="CLIENT" />
+    <NavigationProperty Name="PAYMENT" Relationship="HMSModel.FK_RESERVATION_PAYMENT" FromRole="RESERVATION" ToRole="PAYMENT" />
+    <NavigationProperty Name="ROOM" Relationship="HMSModel.FK_ROOM_RESERVATION" FromRole="RESERVATION" ToRole="ROOM" />
+  </EntityType>
+  <EntityType Name="ROOM">
+    <Key>
+      <PropertyRef Name="roomID" />
+    </Key>
+    <Property Name="roomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roomType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reservationID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RESERVATION" Relationship="HMSModel.FK_ROOM_RESERVATION" FromRole="ROOM" ToRole="RESERVATION" />
   </EntityType>
   <EntityType Name="ROOM_DETAILS">
     <Key>
@@ -197,16 +218,6 @@
     <Property Name="roomDetails" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="roomDiscount" Type="Int32" />
   </EntityType>
-  <EntityType Name="ROOM_INFORMATION">
-    <Key>
-      <PropertyRef Name="roomNumber" />
-    </Key>
-    <Property Name="roomNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="roomType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="paymentID" Type="Int32" />
-    <NavigationProperty Name="PAYMENT_INFORMATION" Relationship="HMSModel.FK_RoomInfo_PaymentInfo" FromRole="ROOM_INFORMATION" ToRole="PAYMENT_INFORMATION" />
-    <NavigationProperty Name="RESERVATION_INFORMATION" Relationship="HMSModel.FK_ReservInfo_RoomInfo" FromRole="ROOM_INFORMATION" ToRole="RESERVATION_INFORMATION" />
-  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -216,6 +227,24 @@
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vw_display_reservation_details">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Room_Type" />
+      <PropertyRef Name="Date_In" />
+      <PropertyRef Name="Date_Out" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Room_Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_In" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Date_Out" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="vw_display_room_details">
     <Key>
@@ -230,39 +259,39 @@
     <Property Name="Price" Type="Double" Nullable="false" />
     <Property Name="Discount" Type="Int32" />
   </EntityType>
-  <Association Name="FK_ClientInfo_ReservationInfo">
-    <End Type="HMSModel.RESERVATION_INFORMATION" Role="RESERVATION_INFORMATION" Multiplicity="0..1" />
-    <End Type="HMSModel.CLIENT_INFORMATION" Role="CLIENT_INFORMATION" Multiplicity="*" />
+  <Association Name="FK_RESERVATION_CLIENT">
+    <End Type="HMSModel.CLIENT" Role="CLIENT" Multiplicity="1" />
+    <End Type="HMSModel.RESERVATION" Role="RESERVATION" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="RESERVATION_INFORMATION">
-        <PropertyRef Name="reservationID" />
+      <Principal Role="CLIENT">
+        <PropertyRef Name="clientID" />
       </Principal>
-      <Dependent Role="CLIENT_INFORMATION">
-        <PropertyRef Name="reservationID" />
+      <Dependent Role="RESERVATION">
+        <PropertyRef Name="clientID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RoomInfo_PaymentInfo">
-    <End Type="HMSModel.PAYMENT_INFORMATION" Role="PAYMENT_INFORMATION" Multiplicity="0..1" />
-    <End Type="HMSModel.ROOM_INFORMATION" Role="ROOM_INFORMATION" Multiplicity="*" />
+  <Association Name="FK_RESERVATION_PAYMENT">
+    <End Type="HMSModel.PAYMENT" Role="PAYMENT" Multiplicity="1" />
+    <End Type="HMSModel.RESERVATION" Role="RESERVATION" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="PAYMENT_INFORMATION">
+      <Principal Role="PAYMENT">
         <PropertyRef Name="paymentID" />
       </Principal>
-      <Dependent Role="ROOM_INFORMATION">
+      <Dependent Role="RESERVATION">
         <PropertyRef Name="paymentID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ReservInfo_RoomInfo">
-    <End Type="HMSModel.ROOM_INFORMATION" Role="ROOM_INFORMATION" Multiplicity="0..1" />
-    <End Type="HMSModel.RESERVATION_INFORMATION" Role="RESERVATION_INFORMATION" Multiplicity="*" />
+  <Association Name="FK_ROOM_RESERVATION">
+    <End Type="HMSModel.RESERVATION" Role="RESERVATION" Multiplicity="1" />
+    <End Type="HMSModel.ROOM" Role="ROOM" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ROOM_INFORMATION">
-        <PropertyRef Name="roomNumber" />
+      <Principal Role="RESERVATION">
+        <PropertyRef Name="reservationID" />
       </Principal>
-      <Dependent Role="RESERVATION_INFORMATION">
-        <PropertyRef Name="roomNumber" />
+      <Dependent Role="ROOM">
+        <PropertyRef Name="reservationID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

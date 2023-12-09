@@ -45,37 +45,47 @@
     <FunctionImportMapping FunctionImportName="sp_insert_payment_info" FunctionName="HMSModel.Store.sp_insert_payment_info" />
     <FunctionImportMapping FunctionImportName="sp_insert_reservation_info" FunctionName="HMSModel.Store.sp_insert_reservation_info" />
     <FunctionImportMapping FunctionImportName="sp_insert_room_info" FunctionName="HMSModel.Store.sp_insert_room_info" />
-    <EntitySetMapping Name="CLIENT_INFORMATION">
-      <EntityTypeMapping TypeName="HMSModel.CLIENT_INFORMATION">
-        <MappingFragment StoreEntitySet="CLIENT_INFORMATION">
-          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+    <FunctionImportMapping FunctionImportName="sp_denied_reservation" FunctionName="HMSModel.Store.sp_denied_reservation" />
+    <FunctionImportMapping FunctionImportName="sp_insert_client_info_fnameOnly" FunctionName="HMSModel.Store.sp_insert_client_info_fnameOnly" />
+    <EntitySetMapping Name="CLIENT">
+      <EntityTypeMapping TypeName="HMSModel.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
           <ScalarProperty Name="clientAddress" ColumnName="clientAddress" />
           <ScalarProperty Name="clientPhone" ColumnName="clientPhone" />
           <ScalarProperty Name="clientEmail" ColumnName="clientEmail" />
-          <ScalarProperty Name="clientLname" ColumnName="clientLname" />
-          <ScalarProperty Name="clientfName" ColumnName="clientfName" />
+          <ScalarProperty Name="clientFullName" ColumnName="clientFullName" />
           <ScalarProperty Name="clientID" ColumnName="clientID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PAYMENT_INFORMATION">
-      <EntityTypeMapping TypeName="HMSModel.PAYMENT_INFORMATION">
-        <MappingFragment StoreEntitySet="PAYMENT_INFORMATION">
+    <EntitySetMapping Name="PAYMENT">
+      <EntityTypeMapping TypeName="HMSModel.PAYMENT">
+        <MappingFragment StoreEntitySet="PAYMENT">
           <ScalarProperty Name="paymentTotal" ColumnName="paymentTotal" />
-          <ScalarProperty Name="paymentMethod" ColumnName="paymentMethod" />
           <ScalarProperty Name="paymentDate" ColumnName="paymentDate" />
           <ScalarProperty Name="paymentID" ColumnName="paymentID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="RESERVATION_INFORMATION">
-      <EntityTypeMapping TypeName="HMSModel.RESERVATION_INFORMATION">
-        <MappingFragment StoreEntitySet="RESERVATION_INFORMATION">
+    <EntitySetMapping Name="RESERVATION">
+      <EntityTypeMapping TypeName="HMSModel.RESERVATION">
+        <MappingFragment StoreEntitySet="RESERVATION">
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="paymentID" ColumnName="paymentID" />
           <ScalarProperty Name="reservationStatus" ColumnName="reservationStatus" />
-          <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
           <ScalarProperty Name="reservationDateOut" ColumnName="reservationDateOut" />
           <ScalarProperty Name="reservationDateIn" ColumnName="reservationDateIn" />
+          <ScalarProperty Name="noOfGuest" ColumnName="noOfGuest" />
           <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROOM">
+      <EntityTypeMapping TypeName="HMSModel.ROOM">
+        <MappingFragment StoreEntitySet="ROOM">
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+          <ScalarProperty Name="roomType" ColumnName="roomType" />
+          <ScalarProperty Name="roomID" ColumnName="roomID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -91,15 +101,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ROOM_INFORMATION">
-      <EntityTypeMapping TypeName="HMSModel.ROOM_INFORMATION">
-        <MappingFragment StoreEntitySet="ROOM_INFORMATION">
-          <ScalarProperty Name="paymentID" ColumnName="paymentID" />
-          <ScalarProperty Name="roomType" ColumnName="roomType" />
-          <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="HMSModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -108,6 +109,21 @@
           <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
           <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_display_reservation_details">
+      <EntityTypeMapping TypeName="HMSModel.vw_display_reservation_details">
+        <MappingFragment StoreEntitySet="vw_display_reservation_details">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Date_Out" ColumnName="Date Out" />
+          <ScalarProperty Name="Date_In" ColumnName="Date In" />
+          <ScalarProperty Name="Room_Type" ColumnName="Room Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -122,5 +138,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_approve_reservation" FunctionName="HMSModel.Store.sp_approve_reservation" />
   </EntityContainerMapping>
 </Mapping>

@@ -1,45 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="HMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="CLIENT_INFORMATION">
+  <EntityType Name="CLIENT">
     <Key>
       <PropertyRef Name="clientID" />
     </Key>
     <Property Name="clientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="clientfName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="clientLname" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="clientEmail" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="clientPhone" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="clientAddress" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="reservationID" Type="int" />
+    <Property Name="clientFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="clientEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="clientPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="clientAddress" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="PAYMENT_INFORMATION">
+  <EntityType Name="PAYMENT">
     <Key>
       <PropertyRef Name="paymentID" />
     </Key>
     <Property Name="paymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="paymentDate" Type="date" Nullable="false" />
-    <Property Name="paymentMethod" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="paymentTotal" Type="money" Nullable="false" />
+    <Property Name="paymentTotal" Type="int" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'HMS.dbo.RESERVATION_HISTORY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="RESERVATION_HISTORY">
-          <Property Name="clientFname" Type="varchar" MaxLength="255" />
-          <Property Name="clientPnumber" Type="varchar" MaxLength="20" />
-          <Property Name="clientAddress" Type="varchar" MaxLength="255" />
-          <Property Name="clientDin" Type="date" />
-          <Property Name="clientDout" Type="date" />
-          <Property Name="clientRtype" Type="varchar" MaxLength="255" />
-        </EntityType>-->
-  <EntityType Name="RESERVATION_INFORMATION">
+  <EntityType Name="RESERVATION">
     <Key>
       <PropertyRef Name="reservationID" />
     </Key>
     <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="noOfGuest" Type="int" />
     <Property Name="reservationDateIn" Type="date" Nullable="false" />
     <Property Name="reservationDateOut" Type="date" Nullable="false" />
-    <Property Name="roomNumber" Type="int" />
-    <Property Name="reservationStatus" Type="varchar" MaxLength="20" />
+    <Property Name="reservationStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="paymentID" Type="int" Nullable="false" />
+    <Property Name="clientID" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6013: The table/view 'HMS.dbo.ROLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
@@ -48,6 +37,14 @@ warning 6013: The table/view 'HMS.dbo.ROLE' does not have a primary key defined 
           <Property Name="roleName" Type="varchar" MaxLength="50" />
           <Property Name="roleDescription" Type="varchar" MaxLength="50" />
         </EntityType>-->
+  <EntityType Name="ROOM">
+    <Key>
+      <PropertyRef Name="roomID" />
+    </Key>
+    <Property Name="roomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roomType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="reservationID" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="ROOM_DETAILS">
     <Key>
       <PropertyRef Name="roomID" />
@@ -58,14 +55,6 @@ warning 6013: The table/view 'HMS.dbo.ROLE' does not have a primary key defined 
     <Property Name="roomPrice" Type="float" Nullable="false" />
     <Property Name="roomDetails" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="roomDiscount" Type="int" />
-  </EntityType>
-  <EntityType Name="ROOM_INFORMATION">
-    <Key>
-      <PropertyRef Name="roomNumber" />
-    </Key>
-    <Property Name="roomNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="roomType" Type="varchar" MaxLength="50" />
-    <Property Name="paymentID" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -85,6 +74,26 @@ warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primar
           <Property Name="lastActivity" Type="varchar" MaxLength="100" />
         </EntityType>-->
   <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.vw_display_reservation_details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_display_reservation_details">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Room Type" />
+      <PropertyRef Name="Date In" />
+      <PropertyRef Name="Date Out" />
+      <PropertyRef Name="Total" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Room Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date In" Type="date" Nullable="false" />
+    <Property Name="Date Out" Type="date" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total" Type="int" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="vw_display_room_details">
     <Key>
@@ -99,39 +108,39 @@ warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a p
     <Property Name="Price" Type="float" Nullable="false" />
     <Property Name="Discount" Type="int" />
   </EntityType>
-  <Association Name="FK_ClientInfo_ReservationInfo">
-    <End Role="RESERVATION_INFORMATION" Type="Self.RESERVATION_INFORMATION" Multiplicity="0..1" />
-    <End Role="CLIENT_INFORMATION" Type="Self.CLIENT_INFORMATION" Multiplicity="*" />
+  <Association Name="FK_RESERVATION_CLIENT">
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
+    <End Role="RESERVATION" Type="Self.RESERVATION" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="RESERVATION_INFORMATION">
-        <PropertyRef Name="reservationID" />
+      <Principal Role="CLIENT">
+        <PropertyRef Name="clientID" />
       </Principal>
-      <Dependent Role="CLIENT_INFORMATION">
-        <PropertyRef Name="reservationID" />
+      <Dependent Role="RESERVATION">
+        <PropertyRef Name="clientID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ReservInfo_RoomInfo">
-    <End Role="ROOM_INFORMATION" Type="Self.ROOM_INFORMATION" Multiplicity="0..1" />
-    <End Role="RESERVATION_INFORMATION" Type="Self.RESERVATION_INFORMATION" Multiplicity="*" />
+  <Association Name="FK_RESERVATION_PAYMENT">
+    <End Role="PAYMENT" Type="Self.PAYMENT" Multiplicity="1" />
+    <End Role="RESERVATION" Type="Self.RESERVATION" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ROOM_INFORMATION">
-        <PropertyRef Name="roomNumber" />
+      <Principal Role="PAYMENT">
+        <PropertyRef Name="paymentID" />
       </Principal>
-      <Dependent Role="RESERVATION_INFORMATION">
-        <PropertyRef Name="roomNumber" />
+      <Dependent Role="RESERVATION">
+        <PropertyRef Name="paymentID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RoomInfo_PaymentInfo">
-    <End Role="PAYMENT_INFORMATION" Type="Self.PAYMENT_INFORMATION" Multiplicity="0..1" />
-    <End Role="ROOM_INFORMATION" Type="Self.ROOM_INFORMATION" Multiplicity="*" />
+  <Association Name="FK_ROOM_RESERVATION">
+    <End Role="RESERVATION" Type="Self.RESERVATION" Multiplicity="1" />
+    <End Role="ROOM" Type="Self.ROOM" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="PAYMENT_INFORMATION">
-        <PropertyRef Name="paymentID" />
+      <Principal Role="RESERVATION">
+        <PropertyRef Name="reservationID" />
       </Principal>
-      <Dependent Role="ROOM_INFORMATION">
-        <PropertyRef Name="paymentID" />
+      <Dependent Role="ROOM">
+        <PropertyRef Name="reservationID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -142,6 +151,9 @@ warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a p
     <Parameter Name="version" Type="int" Mode="In" />
     <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
   </Function>
+  <Function Name="sp_approve_reservation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
   <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -150,6 +162,9 @@ warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a p
   </Function>
   <Function Name="sp_delete_room_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="roomID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_denied_reservation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -178,20 +193,24 @@ warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a p
     <Parameter Name="rType" Type="varchar" Mode="In" />
   </Function>
   <Function Name="sp_insert_client_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="clientfName" Type="nvarchar" Mode="In" />
-    <Parameter Name="clientLname" Type="nvarchar" Mode="In" />
+    <Parameter Name="clientfullName" Type="nvarchar" Mode="In" />
     <Parameter Name="clientEmail" Type="nvarchar" Mode="In" />
     <Parameter Name="clientPhone" Type="nvarchar" Mode="In" />
     <Parameter Name="clientAddress" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_insert_client_info_fnameOnly" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="clientfullName" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_insert_payment_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="paymentDate" Type="date" Mode="In" />
     <Parameter Name="paymentTotal" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_insert_reservation_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="noOfGuest" Type="int" Mode="In" />
     <Parameter Name="dateIn" Type="date" Mode="In" />
     <Parameter Name="dateOut" Type="date" Mode="In" />
-    <Parameter Name="reservationStatus" Type="nvarchar" Mode="In" />
+    <Parameter Name="paymentID" Type="int" Mode="In" />
+    <Parameter Name="clientID" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_insert_room_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="roomID" Type="int" Mode="In" />
@@ -203,6 +222,7 @@ warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a p
   </Function>
   <Function Name="sp_insert_room_info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="roomType" Type="nvarchar" Mode="In" />
+    <Parameter Name="reservationID" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -226,12 +246,25 @@ warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a p
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="HMSModelStoreContainer">
-    <EntitySet Name="CLIENT_INFORMATION" EntityType="Self.CLIENT_INFORMATION" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PAYMENT_INFORMATION" EntityType="Self.PAYMENT_INFORMATION" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="RESERVATION_INFORMATION" EntityType="Self.RESERVATION_INFORMATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESERVATION" EntityType="Self.RESERVATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROOM" EntityType="Self.ROOM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ROOM_DETAILS" EntityType="Self.ROOM_DETAILS" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ROOM_INFORMATION" EntityType="Self.ROOM_INFORMATION" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vw_display_reservation_details" EntityType="Self.vw_display_reservation_details" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vw_display_reservation_details].[ID] AS [ID], 
+[vw_display_reservation_details].[Name] AS [Name], 
+[vw_display_reservation_details].[Room Type] AS [Room Type], 
+[vw_display_reservation_details].[Date In] AS [Date In], 
+[vw_display_reservation_details].[Date Out] AS [Date Out], 
+[vw_display_reservation_details].[Address] AS [Address], 
+[vw_display_reservation_details].[Phone] AS [Phone], 
+[vw_display_reservation_details].[Total] AS [Total], 
+[vw_display_reservation_details].[Status] AS [Status]
+FROM [dbo].[vw_display_reservation_details] AS [vw_display_reservation_details]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="vw_display_room_details" EntityType="Self.vw_display_room_details" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
 [vw_display_room_details].[ID] AS [ID], 
@@ -241,17 +274,17 @@ warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a p
 [vw_display_room_details].[Discount] AS [Discount]
 FROM [dbo].[vw_display_room_details] AS [vw_display_room_details]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK_ClientInfo_ReservationInfo" Association="Self.FK_ClientInfo_ReservationInfo">
-      <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
-      <End Role="CLIENT_INFORMATION" EntitySet="CLIENT_INFORMATION" />
+    <AssociationSet Name="FK_RESERVATION_CLIENT" Association="Self.FK_RESERVATION_CLIENT">
+      <End Role="CLIENT" EntitySet="CLIENT" />
+      <End Role="RESERVATION" EntitySet="RESERVATION" />
     </AssociationSet>
-    <AssociationSet Name="FK_ReservInfo_RoomInfo" Association="Self.FK_ReservInfo_RoomInfo">
-      <End Role="ROOM_INFORMATION" EntitySet="ROOM_INFORMATION" />
-      <End Role="RESERVATION_INFORMATION" EntitySet="RESERVATION_INFORMATION" />
+    <AssociationSet Name="FK_RESERVATION_PAYMENT" Association="Self.FK_RESERVATION_PAYMENT">
+      <End Role="PAYMENT" EntitySet="PAYMENT" />
+      <End Role="RESERVATION" EntitySet="RESERVATION" />
     </AssociationSet>
-    <AssociationSet Name="FK_RoomInfo_PaymentInfo" Association="Self.FK_RoomInfo_PaymentInfo">
-      <End Role="PAYMENT_INFORMATION" EntitySet="PAYMENT_INFORMATION" />
-      <End Role="ROOM_INFORMATION" EntitySet="ROOM_INFORMATION" />
+    <AssociationSet Name="FK_ROOM_RESERVATION" Association="Self.FK_ROOM_RESERVATION">
+      <End Role="RESERVATION" EntitySet="RESERVATION" />
+      <End Role="ROOM" EntitySet="ROOM" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

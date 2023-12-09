@@ -47,9 +47,11 @@ namespace HMS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Frm_Login.GetInstance().ShowDialog();
+            //Frm_Login.GetInstance().ShowDialog();
+            var login = new Frm_Login();
+            login.ShowDialog();
 
-            if (Frm_Login.GetInstance().HasLogin)
+            if (login.HasLogin)
             {
                 this.Hide();
             }

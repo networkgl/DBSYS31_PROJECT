@@ -5,16 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f2f31dfb012d455e9d7791328333a3f1" Name="Diagram1" ZoomLevel="97">
-        <EntityTypeShape EntityType="HMSModel.CLIENT_INFORMATION" Width="1.5" PointX="7.5" PointY="1" />
-        <EntityTypeShape EntityType="HMSModel.PAYMENT_INFORMATION" Width="1.5" PointX="0.75" PointY="1.25" />
-        <EntityTypeShape EntityType="HMSModel.RESERVATION_INFORMATION" Width="1.5" PointX="5.25" PointY="1" />
-        <EntityTypeShape EntityType="HMSModel.ROOM_DETAILS" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="HMSModel.ROOM_INFORMATION" Width="1.5" PointX="3" PointY="1.25" />
-        <EntityTypeShape EntityType="HMSModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" />
-        <EntityTypeShape EntityType="HMSModel.vw_display_room_details" Width="1.5" PointX="4.75" PointY="4.75" />
-        <AssociationConnector Association="HMSModel.FK_ClientInfo_ReservationInfo" />
-        <AssociationConnector Association="HMSModel.FK_RoomInfo_PaymentInfo" />
-        <AssociationConnector Association="HMSModel.FK_ReservInfo_RoomInfo" />
+        <EntityTypeShape EntityType="HMSModel.CLIENT" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="HMSModel.PAYMENT" Width="1.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="HMSModel.RESERVATION" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="HMSModel.ROOM" Width="1.5" PointX="5.25" PointY="1.5" />
+        <EntityTypeShape EntityType="HMSModel.ROOM_DETAILS" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HMSModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HMSModel.vw_display_reservation_details" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HMSModel.vw_display_room_details" Width="1.5" PointX="7.75" PointY="0.75" />
+        <AssociationConnector Association="HMSModel.FK_RESERVATION_CLIENT" />
+        <AssociationConnector Association="HMSModel.FK_RESERVATION_PAYMENT" />
+        <AssociationConnector Association="HMSModel.FK_ROOM_RESERVATION" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

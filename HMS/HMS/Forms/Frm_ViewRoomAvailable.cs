@@ -52,8 +52,8 @@ namespace HMS.Forms
         public void LoadDataGrid()
         {
             btnUpdateDeleteRooms.Enabled = false;
-
-            if (!Frm_ConfirmDelete.ConfirmDelete && !Frm_ChangeRoomDetails.ConfirmUpdate)
+            Frm_ConfirmDelete.Toggle_rooomAvail_confirmDelete = true;
+            if (!Frm_ConfirmDelete.RoomAvailable_ConfirmDelete && !Frm_ChangeRoomDetails.ConfirmUpdate)
             {
                 dgv_roomdetails.DataSource = adminRepo.LoadRoomDetails();
 
@@ -147,7 +147,7 @@ namespace HMS.Forms
             DataGridViewRow clickedRow = dgv_roomdetails.Rows[e.RowIndex];
 
             roomID = Convert.ToInt32(clickedRow.Cells["ID"].Value); //Get ID first then pass to the stored procedure.
-            Console.WriteLine(roomID);
+            //Console.WriteLine(roomID);
 
             if (e.RowIndex >= 0 && e.RowIndex < dgv_roomdetails.Rows.Count)
             {
