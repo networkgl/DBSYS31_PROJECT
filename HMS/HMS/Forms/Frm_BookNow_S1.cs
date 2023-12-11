@@ -1,4 +1,5 @@
-﻿using HMS.Forms;
+﻿using Guna.UI2.WinForms;
+using HMS.Forms;
 using Pabo.Calendar;
 using System;
 using System.Collections.Generic;
@@ -162,6 +163,14 @@ namespace HMS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            var countedRows = new AdminRepository();
+            if (countedRows.CheckRoomsAvailability() == 0)
+            {
+                var msg = "System is under Maintenance\nSorry for inconvenience";
+                MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                return;
+            }
+
             //pnl_Main.Controls.Clear();
             _instace = this;
             this.Hide();

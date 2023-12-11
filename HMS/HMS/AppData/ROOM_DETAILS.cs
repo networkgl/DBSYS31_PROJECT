@@ -19,6 +19,7 @@ namespace HMS.AppData
         public byte[] roomPhoto { get; set; }
         public double roomPrice { get; set; }
         public string roomDetails { get; set; }
-        public Nullable<int> roomDiscount { get; set; }
+        public double roomDiscount { get; set; }
+        public double discountedPrice { get; set; }
     }
 }

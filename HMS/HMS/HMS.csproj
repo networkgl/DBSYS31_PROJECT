@@ -135,11 +135,20 @@
     <Compile Include="AppData\sysdiagrams.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\vw_display_client_details.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\vw_display_reservation_details.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\vw_display_room_details.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_AddRooms.cs">
       <SubType>Form</SubType>
@@ -291,6 +300,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Repository\AdminRepository.cs" />
+    <Compile Include="Utils\MarkUp.cs" />
     <Compile Include="Utils\Room.cs" />
     <Compile Include="Utils\WaitFormFunc.cs" />
     <Compile Include="Model\UserLogged.cs" />
@@ -298,6 +308,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Utils\Constant.cs" />
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_AddRooms.resx">
       <DependentUpon>Frm_AddRooms.cs</DependentUpon>
     </EmbeddedResource>
@@ -632,6 +645,7 @@
       <DependentUpon>DBSysModel.edmx</DependentUpon>
       <LastGenOutput>DBSysModel1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\sale.png" />
     <None Include="Resources\decline.png" />
     <None Include="Resources\icons8-no-camera-100.png" />
     <None Include="Resources\delete1.png" />

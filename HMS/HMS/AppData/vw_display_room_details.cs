@@ -18,6 +18,7 @@ namespace HMS.AppData
         public string Room_Type { get; set; }
         public string Details { get; set; }
         public double Price { get; set; }
-        public Nullable<int> Discount { get; set; }
+        public string Promo { get; set; }
+        public Nullable<double> Discounted { get; set; }
     }
 }

@@ -51,8 +51,8 @@ namespace HMS
         {
             ToggleDash = true;
 
-            if (ToggleDash)
-                pnl_ToggleDash.Visible = ToggleDash;
+            //if (ToggleDash)
+            //    pnl_ToggleDash.Visible = ToggleDash;
 
             var Size_x = 39;
             var Size_y = 37;
@@ -75,15 +75,15 @@ namespace HMS
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            pnl_ToggleClient.Visible = false;
-            pnl_ToggleRoom.Visible = false;
-            pnl_ToggleReserve.Visible = false;
-            pnl_ToggleLogout.Visible = false;
+            //pnl_ToggleClient.Visible = false;
+            //pnl_ToggleRoom.Visible = false;
+            //pnl_ToggleReserve.Visible = false;
+            //pnl_ToggleLogout.Visible = false;
 
-            ToggleDash = true;
+            //ToggleDash = true;
 
-            if (ToggleDash)
-                pnl_ToggleDash.Visible = ToggleDash;
+            //if (ToggleDash)
+            //    pnl_ToggleDash.Visible = ToggleDash;
 
 
             pnl_main.Controls.Clear();
@@ -94,15 +94,15 @@ namespace HMS
         }
         private void btnClient_Click(object sender, EventArgs e)
         {
-            pnl_ToggleDash.Visible = false;
-            pnl_ToggleRoom.Visible = false;
-            pnl_ToggleReserve.Visible = false;
-            pnl_ToggleLogout.Visible = false;
+            //pnl_ToggleDash.Visible = false;
+            //pnl_ToggleRoom.Visible = false;
+            //pnl_ToggleReserve.Visible = false;
+            //pnl_ToggleLogout.Visible = false;
 
-            ToggleClient = true;
+            //ToggleClient = true;
 
-            if (ToggleClient)
-                pnl_ToggleClient.Visible = ToggleClient;
+            //if (ToggleClient)
+            //    pnl_ToggleClient.Visible = ToggleClient;
 
 
             Frm_Client client = new Frm_Client();
@@ -115,15 +115,15 @@ namespace HMS
 
         private void btnRoom_Click(object sender, EventArgs e)
         {
-            pnl_ToggleDash.Visible = false;
-            pnl_ToggleClient.Visible = false;
-            pnl_ToggleReserve.Visible = false;
-            pnl_ToggleLogout.Visible = false;
+            //pnl_ToggleDash.Visible = false;
+            //pnl_ToggleClient.Visible = false;
+            //pnl_ToggleReserve.Visible = false;
+            //pnl_ToggleLogout.Visible = false;
 
-            ToggleRoom = true;
+            //ToggleRoom = true;
 
-            if (ToggleRoom)
-                pnl_ToggleRoom.Visible = ToggleRoom;
+            //if (ToggleRoom)
+            //    pnl_ToggleRoom.Visible = ToggleRoom;
 
             pnl_main.Controls.Clear();
             Frm_Room room = new Frm_Room();
@@ -134,15 +134,15 @@ namespace HMS
         }
         private void btnReservation_Click(object sender, EventArgs e)
         {
-            pnl_ToggleDash.Visible = false;
-            pnl_ToggleClient.Visible = false;
-            pnl_ToggleRoom.Visible = false;
-            pnl_ToggleLogout.Visible = false;
+            //pnl_ToggleDash.Visible = false;
+            //pnl_ToggleClient.Visible = false;
+            //pnl_ToggleRoom.Visible = false;
+            //pnl_ToggleLogout.Visible = false;
 
-            ToggleReserve = true;
+            //ToggleReserve = true;
 
-            if (ToggleReserve)
-                pnl_ToggleReserve.Visible = ToggleReserve;
+            //if (ToggleReserve)
+            //    pnl_ToggleReserve.Visible = ToggleReserve;
 
 
             Frm_Reservation rsrv = new Frm_Reservation();
@@ -173,14 +173,14 @@ namespace HMS
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            pnl_ToggleDash.Visible = false;
-            pnl_ToggleClient.Visible = false;
-            pnl_ToggleRoom.Visible = false;
-            pnl_ToggleReserve.Visible = false;
+            //pnl_ToggleDash.Visible = false;
+            //pnl_ToggleClient.Visible = false;
+            //pnl_ToggleRoom.Visible = false;
+            //pnl_ToggleReserve.Visible = false;
 
-            ToggleLogout = true;
-            if (ToggleLogout)
-                pnl_ToggleLogout.Visible = ToggleLogout;
+            //ToggleLogout = true;
+            //if (ToggleLogout)
+            //    pnl_ToggleLogout.Visible = ToggleLogout;
 
             var msg = "Are you sure you want to logout ?";
             bool logout = MessageDialog.Show(msg, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Dark) == DialogResult.Yes;

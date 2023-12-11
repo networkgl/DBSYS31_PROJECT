@@ -24,6 +24,7 @@ namespace HMS.Forms
         public int RoomDiscount { get; set; }
         public Image RoomPhoto { get; set; }
 
+        private double _discount,_roomPrice;
         public Frm_AddRooms()
         {
             InitializeComponent();
@@ -59,7 +60,16 @@ namespace HMS.Forms
             int lastVal = GetLastPrimaryKeyValue(); //Adding one to manually increment
             var response = String.Empty;
 
-           ErrorCode retVal = adminRepo.InsertRoomDetails(lastVal + 1, txtboxRoomType.Text, InsertPhoto(), txtboxRoomDetails.Text, int.Parse(txtboxRoomPrice.Text), int.Parse(txtboxRoomDiscount.Text), ref response);
+
+            //Get those values
+            _discount = double.Parse(txtboxRoomDiscount.Text);
+            _roomPrice = double.Parse(txtboxRoomPrice.Text);
+
+            Console.WriteLine(_roomPrice);
+            Console.WriteLine(_discount);
+
+            var retVal = adminRepo.InsertRoomDetails(lastVal + 1, txtboxRoomType.Text, InsertPhoto(), txtboxRoomDetails.Text, _roomPrice, _discount, ref response);
+            
 
 
             msg = "Are you sure all information to be added is correct ?";
@@ -73,10 +83,22 @@ namespace HMS.Forms
                 }
                 else
                 {
-                    MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light);
+                    MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
                 }
             }
         }
+        //public float DiscountedPrice => float.Parse(txtboxRoomPrice.Text) * float.Parse(txtboxRoomDiscount.Text);
+        //public double DiscountedPrice
+        //{
+        //    get
+        //    {
+        //       var convertToDecimal = _discount / 100;
+        //       var discountedAmount = _roomPrice * convertToDecimal;
+        //        Console.WriteLine(_roomPrice - discountedAmount);
+        //        return _roomPrice - discountedAmount;
+        //    }
+        //}
+
         private byte[] InsertPhoto()
         {
             MemoryStream stream = new MemoryStream();
@@ -116,6 +138,14 @@ namespace HMS.Forms
 
         private void btnRoomDisplay_Click(object sender, EventArgs e)
         {
+            var countedRows = new AdminRepository();
+            if (countedRows.CheckRoomsAvailability() == 0)
+            {
+                var msg = "NO ROOMS AVAILABLE FOR NOW\nPLEASE ADD FIRST!";
+                MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                return;
+            }
+
             Frm_Main.GetInstanceClass.pnl_main.Controls.Clear();
             Frm_ViewCurrentRooms vcr = new Frm_ViewCurrentRooms();
             vcr.TopLevel = false;
@@ -136,28 +166,28 @@ namespace HMS.Forms
 
         private void txtboxRoomPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var msg = String.Empty;
+            //var msg = String.Empty;
 
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Cancel the input if it's not a digit or control character.
-                                  //MessageBox.Show("Please enter only a number","Message",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                msg = "Please enter only a number.";
-                MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Warning, MessageDialogStyle.Light);
-            }
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            //{
+            //    e.Handled = true; // Cancel the input if it's not a digit or control character.
+            //                      //MessageBox.Show("Please enter only a number","Message",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    msg = "Please enter only a number.";
+            //    MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Warning, MessageDialogStyle.Light);
+            //}
         }
 
         private void txtboxRoomDiscount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var msg = String.Empty;
+            //var msg = String.Empty;
 
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Cancel the input if it's not a digit or control character.
-                                  //MessageBox.Show("Please enter only a number","Message",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                msg = "Please enter only a number.";
-                MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Warning, MessageDialogStyle.Light);
-            }
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            //{
+            //    e.Handled = true; // Cancel the input if it's not a digit or control character.
+            //                      //MessageBox.Show("Please enter only a number","Message",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    msg = "Please enter only a number.";
+            //    MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Warning, MessageDialogStyle.Light);
+            //}
         }
     }
 }

@@ -92,7 +92,7 @@
             this.pnl_Main1.BorderRadius = 10;
             this.pnl_Main1.Controls.Add(this.dgv_roomdetails);
             this.pnl_Main1.FillColor = System.Drawing.Color.White;
-            this.pnl_Main1.Location = new System.Drawing.Point(12, 93);
+            this.pnl_Main1.Location = new System.Drawing.Point(12, 70);
             this.pnl_Main1.Name = "pnl_Main1";
             this.pnl_Main1.Size = new System.Drawing.Size(1054, 503);
             this.pnl_Main1.TabIndex = 159;

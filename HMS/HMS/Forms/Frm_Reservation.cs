@@ -20,6 +20,7 @@ namespace HMS.Forms
         private static Frm_Reservation frm;
         public static int ID; //use for deleting reservation, will be accessible to confirmDelete Frm
         private bool acceptReservation = false;
+        private bool deleteAllReservation = false;
         public static Frm_Reservation Frm { get => frm; set => frm = value; }
 
         public Frm_Reservation()
@@ -34,19 +35,21 @@ namespace HMS.Forms
         }
         public void LoadDataGrid()
         {
-            if (!Frm_ConfirmDelete.Reservation_ConfirmDelete && !acceptReservation)
+            if (!Frm_ConfirmDelete.Reservation_ConfirmDelete && !acceptReservation && !deleteAllReservation)
             {
                 dgv_roomreservation.DataSource = userRepo.LoadReservation();
 
                 dgv_roomreservation.Columns["ID"].Width = 20;
-                dgv_roomreservation.Columns["Name"].Width = 100;
+                dgv_roomreservation.Columns["Full_Name"].Width = 100;
                 dgv_roomreservation.Columns["Phone"].Width = 40;
                 dgv_roomreservation.Columns["Address"].Width = 50;
                 dgv_roomreservation.Columns["Room_Type"].Width = 90;
                 dgv_roomreservation.Columns["Date_In"].Width = 60;
                 dgv_roomreservation.Columns["Date_Out"].Width = 70;
-                dgv_roomreservation.Columns["Total"].Width = 50;
+                dgv_roomreservation.Columns["Total"].Width = 60;
                 dgv_roomreservation.Columns["Status"].Width = 80;
+
+                this.dgv_roomreservation.Columns["Total"].DefaultCellStyle.Format = "C";
 
                 DataGridViewImageColumn acceptReservation = new DataGridViewImageColumn();
 
@@ -114,7 +117,7 @@ namespace HMS.Forms
                     var message = string.Empty;
                     var retVal = userRepo.ApproveReservation(ID,ref message);
                     msg = "Do you want to accept this booking reservation ?";
-                    var isConfirm = MessageDialog.Show(msg, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Warning, MessageDialogStyle.Dark) == DialogResult.Yes;
+                    var isConfirm = MessageDialog.Show(msg, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Light) == DialogResult.Yes;
                     
                     if (isConfirm)
                     {
@@ -139,7 +142,7 @@ namespace HMS.Forms
 
                     if (isConfirm)
                     {
-                        Thread.Sleep(2000);
+                        Thread.Sleep(1000);
                         Frm_ConfirmDelete.Toggle_reservation_confirmDelete = true;
                         var del = new Frm_ConfirmDelete();
                         del.ShowDialog();
@@ -150,6 +153,31 @@ namespace HMS.Forms
                             Frm_ConfirmDelete.Reservation_ConfirmDelete = false;
                         }
                     }
+                }
+            }
+        }
+
+        private void btnDeleteAllReservation_Click(object sender, EventArgs e)
+        {
+            string message = string.Empty;
+            var msg = "Are you sure you want to delete all reservation ?";
+            var isConfirm = MessageDialog.Show(msg, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Dark) == DialogResult.Yes;
+
+            if (isConfirm)
+            {
+                var retVal = userRepo.DeleteAllReservation(ref message);
+
+                if (retVal == ErrorCode.Success)
+                {
+                    Thread.Sleep(100);
+                    deleteAllReservation = true;
+                    LoadDataGrid();
+                    msg = "Successfully Delete All Reservations";
+                    MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+                }
+                else
+                {
+                    MessageDialog.Show(message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
                 }
             }
         }

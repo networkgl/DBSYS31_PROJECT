@@ -88,7 +88,7 @@ namespace HMS
 
             if (s2 == null)
             {
-                cbBox_roomType.SelectedIndex = RoomType;
+                cbBox_roomType.SelectedIndex = roomType;
             }
             else
             {
@@ -120,7 +120,16 @@ namespace HMS
                 {
                     cbBox_roomType.Items.Add(i);
                 }
+                //if (cbBox_roomType.Items.Count == 0)
+                //{
+                //    var msg = "System is under Maintenance\nSorry for inconvenience";
+                //    MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                //}
+                //else
+                //{
+                //}
                 cbBox_roomType.SelectedIndex = roomType;
+
             }
             else
             {
@@ -130,11 +139,11 @@ namespace HMS
             pnl_roompicture.BackgroundImage = adminRepo.Image;
             lbl_roomType.Text = adminRepo._RoomType;
             lbl_roomDetails1.Text = adminRepo._RoomDetails;
-            lbl_roomPrice.Text = "₱" + adminRepo._RoomPrice.ToString("#,##0");
+            lbl_roomPrice.Text = adminRepo._DiscountedPrice.ToString("C2");
 
 
             //Store this values and use it later for storing into the database.
-            roomPrice = adminRepo._RoomPrice;
+            roomPrice = adminRepo._DiscountedPrice;
             finalRoomType = adminRepo._RoomType;
         }
         private void cbBox_roomType_SelectedIndexChanged(object sender, EventArgs e)
@@ -166,13 +175,13 @@ namespace HMS
             //This should place below to prevent delay.
             lbl_roomType.Text = adminRepo._RoomType;
             lbl_roomDetails1.Text = adminRepo._RoomDetails;
-            lbl_roomPrice.Text = "₱" + adminRepo._RoomPrice.ToString("#,##0");
-            var price = adminRepo._RoomPrice.ToString("#,##0");
+            lbl_roomPrice.Text = adminRepo._DiscountedPrice.ToString("C2");
+            var price = adminRepo._DiscountedPrice.ToString("C2");
 
-            lbl_priceDetails.Text = $"Per Night\r\n ₱{price} Total for 1 night\r\nExcluding Taxes & Fees";
+            lbl_priceDetails.Text = $"Per Night\r\n {price} Total for 1 night\r\nExcluding Taxes & Fees";
 
             //Store this values and use it later for storing into the database.
-            roomPrice = adminRepo._RoomPrice;
+            roomPrice = adminRepo._DiscountedPrice;
             finalRoomType = adminRepo._RoomType;
         }
 

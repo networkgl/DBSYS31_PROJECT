@@ -48,7 +48,6 @@
             this.lblSystemTime = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.lbl_roomDetails2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lbl_priceDetails = new System.Windows.Forms.Label();
@@ -72,7 +71,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(841, 297);
+            this.btnNext.Location = new System.Drawing.Point(846, 297);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(142, 42);
             this.btnNext.TabIndex = 61;
@@ -303,7 +302,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.lbl_roomDetails2);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.lbl_priceDetails);
@@ -316,19 +314,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(999, 354);
             this.panel1.TabIndex = 71;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(814, 84);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 51);
-            this.label7.TabIndex = 77;
-            this.label7.Text = "Per Night\r\n₱10,000 Total for 1 night\r\nExcluding Taxes & Fees";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Visible = false;
             // 
             // lbl_roomDetails2
             // 
@@ -358,22 +343,22 @@
             this.lbl_priceDetails.AutoSize = true;
             this.lbl_priceDetails.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_priceDetails.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_priceDetails.Location = new System.Drawing.Point(823, 226);
+            this.lbl_priceDetails.Location = new System.Drawing.Point(810, 226);
             this.lbl_priceDetails.Name = "lbl_priceDetails";
-            this.lbl_priceDetails.Size = new System.Drawing.Size(160, 68);
+            this.lbl_priceDetails.Size = new System.Drawing.Size(178, 68);
             this.lbl_priceDetails.TabIndex = 73;
-            this.lbl_priceDetails.Text = "Per Night\r\n₱10,000 Total for 1 night\r\nExcluding Taxes & Fees\r\n\r\n";
+            this.lbl_priceDetails.Text = "Per Night\r\n₱00,000.00 Total for 1 night\r\nExcluding Taxes & Fees\r\n\r\n";
             this.lbl_priceDetails.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_roomPrice
             // 
             this.lbl_roomPrice.AutoSize = true;
-            this.lbl_roomPrice.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomPrice.Location = new System.Drawing.Point(901, 203);
+            this.lbl_roomPrice.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_roomPrice.Location = new System.Drawing.Point(860, 199);
             this.lbl_roomPrice.Name = "lbl_roomPrice";
-            this.lbl_roomPrice.Size = new System.Drawing.Size(82, 23);
+            this.lbl_roomPrice.Size = new System.Drawing.Size(133, 28);
             this.lbl_roomPrice.TabIndex = 72;
-            this.lbl_roomPrice.Text = "₱10,000";
+            this.lbl_roomPrice.Text = "₱00,000.00";
             // 
             // lbl_roomType
             // 
@@ -467,7 +452,6 @@
         private System.Windows.Forms.Timer CurrentDate;
         private System.Windows.Forms.Label lblSystemTime;
         private System.Windows.Forms.ErrorProvider errorProvider_S2;
-        public System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2CircleButton btnPaymentConfirmation;
         private MetroFramework.Controls.MetroProgressBar metroProgressBar3;

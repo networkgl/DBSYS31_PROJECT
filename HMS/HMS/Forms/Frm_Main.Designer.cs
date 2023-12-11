@@ -29,12 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pnl_ToggleReserve = new System.Windows.Forms.Panel();
             this.btnManageRoomType = new Guna.UI2.WinForms.Guna2Button();
-            this.pnl_ToggleRoom = new System.Windows.Forms.Panel();
-            this.pnl_ToggleClient = new System.Windows.Forms.Panel();
-            this.pnl_ToggleDash = new System.Windows.Forms.Panel();
             this.btnReservation = new Guna.UI2.WinForms.Guna2Button();
             this.btnRoom = new Guna.UI2.WinForms.Guna2Button();
             this.btnClient = new Guna.UI2.WinForms.Guna2Button();
@@ -65,12 +60,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.pnl_ToggleReserve);
             this.panel2.Controls.Add(this.btnManageRoomType);
-            this.panel2.Controls.Add(this.pnl_ToggleRoom);
-            this.panel2.Controls.Add(this.pnl_ToggleClient);
-            this.panel2.Controls.Add(this.pnl_ToggleDash);
             this.panel2.Controls.Add(this.btnReservation);
             this.panel2.Controls.Add(this.btnRoom);
             this.panel2.Controls.Add(this.btnClient);
@@ -83,24 +73,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(219, 678);
             this.panel2.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
-            this.panel6.Location = new System.Drawing.Point(8, 271);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(5, 27);
-            this.panel6.TabIndex = 4;
-            this.panel6.Visible = false;
-            // 
-            // pnl_ToggleReserve
-            // 
-            this.pnl_ToggleReserve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
-            this.pnl_ToggleReserve.Location = new System.Drawing.Point(8, 415);
-            this.pnl_ToggleReserve.Name = "pnl_ToggleReserve";
-            this.pnl_ToggleReserve.Size = new System.Drawing.Size(5, 27);
-            this.pnl_ToggleReserve.TabIndex = 3;
-            this.pnl_ToggleReserve.Visible = false;
             // 
             // btnManageRoomType
             // 
@@ -118,41 +90,15 @@
             this.btnManageRoomType.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnManageRoomType.Image = global::HMS.Properties.Resources.icons8_manage_20;
             this.btnManageRoomType.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageRoomType.ImageOffset = new System.Drawing.Point(15, 0);
+            this.btnManageRoomType.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnManageRoomType.Location = new System.Drawing.Point(0, 400);
             this.btnManageRoomType.Name = "btnManageRoomType";
             this.btnManageRoomType.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
             this.btnManageRoomType.Size = new System.Drawing.Size(219, 46);
             this.btnManageRoomType.TabIndex = 5;
             this.btnManageRoomType.Text = "Manage Rooms";
+            this.btnManageRoomType.TextOffset = new System.Drawing.Point(-5, 0);
             this.btnManageRoomType.Click += new System.EventHandler(this.btnManageRoomType_Click);
-            // 
-            // pnl_ToggleRoom
-            // 
-            this.pnl_ToggleRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
-            this.pnl_ToggleRoom.Location = new System.Drawing.Point(8, 369);
-            this.pnl_ToggleRoom.Name = "pnl_ToggleRoom";
-            this.pnl_ToggleRoom.Size = new System.Drawing.Size(5, 27);
-            this.pnl_ToggleRoom.TabIndex = 2;
-            this.pnl_ToggleRoom.Visible = false;
-            // 
-            // pnl_ToggleClient
-            // 
-            this.pnl_ToggleClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
-            this.pnl_ToggleClient.Location = new System.Drawing.Point(8, 323);
-            this.pnl_ToggleClient.Name = "pnl_ToggleClient";
-            this.pnl_ToggleClient.Size = new System.Drawing.Size(5, 27);
-            this.pnl_ToggleClient.TabIndex = 1;
-            this.pnl_ToggleClient.Visible = false;
-            // 
-            // pnl_ToggleDash
-            // 
-            this.pnl_ToggleDash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
-            this.pnl_ToggleDash.Location = new System.Drawing.Point(8, 225);
-            this.pnl_ToggleDash.Name = "pnl_ToggleDash";
-            this.pnl_ToggleDash.Size = new System.Drawing.Size(5, 27);
-            this.pnl_ToggleDash.TabIndex = 0;
-            this.pnl_ToggleDash.Visible = false;
             // 
             // btnReservation
             // 
@@ -170,12 +116,14 @@
             this.btnReservation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnReservation.Image = global::HMS.Properties.Resources.icons8_reservation_18;
             this.btnReservation.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnReservation.ImageOffset = new System.Drawing.Point(15, 0);
+            this.btnReservation.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnReservation.Location = new System.Drawing.Point(0, 354);
             this.btnReservation.Name = "btnReservation";
             this.btnReservation.Size = new System.Drawing.Size(219, 46);
             this.btnReservation.TabIndex = 3;
-            this.btnReservation.Text = "Reservation";
+            this.btnReservation.Text = "Pending Reservation";
+            this.btnReservation.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReservation.TextOffset = new System.Drawing.Point(12, 0);
             this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
             this.btnReservation.MouseEnter += new System.EventHandler(this.btnReservation_MouseEnter);
             this.btnReservation.MouseLeave += new System.EventHandler(this.btnReservation_MouseLeave);
@@ -196,14 +144,15 @@
             this.btnRoom.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnRoom.Image = global::HMS.Properties.Resources.icons8_room_18;
             this.btnRoom.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnRoom.ImageOffset = new System.Drawing.Point(15, 0);
+            this.btnRoom.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnRoom.Location = new System.Drawing.Point(0, 308);
             this.btnRoom.Name = "btnRoom";
             this.btnRoom.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
             this.btnRoom.Size = new System.Drawing.Size(219, 46);
             this.btnRoom.TabIndex = 2;
-            this.btnRoom.Text = "Room";
+            this.btnRoom.Text = "Room Available";
             this.btnRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnRoom.TextOffset = new System.Drawing.Point(-10, 0);
             this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             this.btnRoom.MouseEnter += new System.EventHandler(this.btnRoom_MouseEnter);
             this.btnRoom.MouseLeave += new System.EventHandler(this.btnRoom_MouseLeave);
@@ -224,14 +173,15 @@
             this.btnClient.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnClient.Image = global::HMS.Properties.Resources.icons8_client_18;
             this.btnClient.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnClient.ImageOffset = new System.Drawing.Point(15, 0);
+            this.btnClient.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnClient.Location = new System.Drawing.Point(0, 262);
             this.btnClient.Name = "btnClient";
             this.btnClient.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
             this.btnClient.Size = new System.Drawing.Size(219, 46);
             this.btnClient.TabIndex = 0;
-            this.btnClient.Text = "Client";
+            this.btnClient.Text = "Client Reservation";
             this.btnClient.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnClient.TextOffset = new System.Drawing.Point(-18, 0);
             this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             this.btnClient.MouseEnter += new System.EventHandler(this.btnClient_MouseEnter);
             this.btnClient.MouseLeave += new System.EventHandler(this.btnClient_MouseLeave);
@@ -252,7 +202,7 @@
             this.btnDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnDashboard.Image = global::HMS.Properties.Resources.icons8_dashboard_18;
             this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDashboard.ImageOffset = new System.Drawing.Point(15, 0);
+            this.btnDashboard.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnDashboard.Location = new System.Drawing.Point(0, 216);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
@@ -260,6 +210,7 @@
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDashboard.TextOffset = new System.Drawing.Point(5, 0);
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             this.btnDashboard.MouseEnter += new System.EventHandler(this.btnDashboard_MouseEnter);
             this.btnDashboard.MouseLeave += new System.EventHandler(this.btnDashboard_MouseLeave);
@@ -537,12 +488,7 @@
         private System.Windows.Forms.Button btn_Minimize;
         private System.Windows.Forms.Button btnExit;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_SearchBar;
-        private System.Windows.Forms.Panel pnl_ToggleDash;
-        private System.Windows.Forms.Panel pnl_ToggleClient;
-        private System.Windows.Forms.Panel pnl_ToggleReserve;
-        private System.Windows.Forms.Panel pnl_ToggleRoom;
         private System.Windows.Forms.Panel pnl_ToggleLogout;
-        private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2Button btnManageRoomType;
         public System.Windows.Forms.Panel pnl_main;
     }

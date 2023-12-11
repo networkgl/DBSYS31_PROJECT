@@ -20,7 +20,9 @@ namespace HMS.Forms
         private AdminRepository adminRepo;
         private string roomDetails, roomType;
         private static int? roomID = null;
-        private int roomPrice, roomDiscount;
+        private int roomPrice;
+        private string roomDiscount;
+        private double roomDiscountedPrice;
         private static Image image = null;
         private HMSEntities db;
         private static Frm_ViewRoomAvailable frm;
@@ -59,9 +61,12 @@ namespace HMS.Forms
 
                 dgv_roomdetails.Columns["ID"].Width = 20;
                 dgv_roomdetails.Columns["Room_Type"].Width = 100;
-                dgv_roomdetails.Columns["Price"].Width = 30;
-                dgv_roomdetails.Columns["Discount"].Width = 90;
+                dgv_roomdetails.Columns["Price"].Width = 50;
+                dgv_roomdetails.Columns["Promo"].Width = 30;
+                dgv_roomdetails.Columns["Discounted"].Width = 120;
 
+                this.dgv_roomdetails.Columns["Discounted"].DefaultCellStyle.Format = "C";
+                this.dgv_roomdetails.Columns["Price"].DefaultCellStyle.Format = "C";
 
                 DataGridViewImageColumn imageColumnUpdate = new DataGridViewImageColumn();
                 DataGridViewImageColumn imageColumnDelete = new DataGridViewImageColumn();
@@ -181,7 +186,9 @@ namespace HMS.Forms
                         roomType = Convert.ToString(clickedRow.Cells["Room_Type"].Value);
                         roomDetails = Convert.ToString(clickedRow.Cells["Details"].Value);
                         roomPrice = Convert.ToInt32(clickedRow.Cells["Price"].Value);
-                        roomDiscount = Convert.ToInt32(clickedRow.Cells["Discount"].Value);
+                        //roomDiscount = Convert.ToInt32(clickedRow.Cells["Discount"].Value);
+                        roomDiscount = clickedRow.Cells["Promo"].Value.ToString();
+                        //roomDiscountedPrice = Convert.ToDouble(clickedRow.Cells["Discounted"].Value);
 
                         Frm_ChangeRoomDetails crd = new Frm_ChangeRoomDetails(RoomID, roomType, roomDetails, roomPrice, roomDiscount, image);
                         crd.ShowDialog();
@@ -206,6 +213,15 @@ namespace HMS.Forms
         }
         private void btnRoomDisplay_Click(object sender, EventArgs e)
         {
+
+            var countedRows = new AdminRepository();
+            if (countedRows.CheckRoomsAvailability() == 0)
+            {
+                var msg = "NO ROOMS AVAILABLE FOR NOW\nPLEASE ADD FIRST!";
+                MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                return;
+            }
+
             Frm_Main.GetInstanceClass.pnl_main.Controls.Clear();
             Frm_ViewCurrentRooms vcr = new Frm_ViewCurrentRooms();
             vcr.TopLevel = false;

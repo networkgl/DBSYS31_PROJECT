@@ -44,7 +44,8 @@
       <Parameter Name="roomPhoto" Mode="In" Type="Binary" />
       <Parameter Name="roomDetails" Mode="In" Type="String" />
       <Parameter Name="roomPrice" Mode="In" Type="Double" />
-      <Parameter Name="roomDiscount" Mode="In" Type="Int32" />
+      <Parameter Name="roomDiscount" Mode="In" Type="Double" />
+      <Parameter Name="discountedPrice" Mode="In" Type="Double" />
     </FunctionImport>
     <FunctionImport Name="sp_display_roomdetails_byindex" ReturnType="Collection(Binary)">
       <Parameter Name="index" Mode="In" Type="Int32" />
@@ -77,7 +78,8 @@
       <Parameter Name="roomType" Mode="In" Type="String" />
       <Parameter Name="roomDetails" Mode="In" Type="String" />
       <Parameter Name="roomPrice" Mode="In" Type="Double" />
-      <Parameter Name="roomDiscount" Mode="In" Type="Int32" />
+      <Parameter Name="roomDiscount" Mode="In" Type="Double" />
+      <Parameter Name="discountedPrice" Mode="In" Type="Double" />
     </FunctionImport>
     <FunctionImport Name="sp_update_room_details_withphoto">
       <Parameter Name="roomID" Mode="In" Type="Int32" />
@@ -85,7 +87,8 @@
       <Parameter Name="roomType" Mode="In" Type="String" />
       <Parameter Name="roomDetails" Mode="In" Type="String" />
       <Parameter Name="roomPrice" Mode="In" Type="Double" />
-      <Parameter Name="roomDiscount" Mode="In" Type="Int32" />
+      <Parameter Name="roomDiscount" Mode="In" Type="Double" />
+      <Parameter Name="discountedPrice" Mode="In" Type="Double" />
     </FunctionImport>
     <FunctionImport Name="sp_insert_client_history">
       <Parameter Name="fname" Mode="In" Type="String" />
@@ -96,7 +99,8 @@
       <Parameter Name="rType" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_insert_client_info">
-      <Parameter Name="clientfullName" Mode="In" Type="String" />
+      <Parameter Name="fName" Mode="In" Type="String" />
+      <Parameter Name="lName" Mode="In" Type="String" />
       <Parameter Name="clientEmail" Mode="In" Type="String" />
       <Parameter Name="clientPhone" Mode="In" Type="String" />
       <Parameter Name="clientAddress" Mode="In" Type="String" />
@@ -106,9 +110,11 @@
       <Parameter Name="paymentTotal" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_insert_reservation_info">
+      <Parameter Name="typeOfGuest" Mode="In" Type="String" />
       <Parameter Name="noOfGuest" Mode="In" Type="Int32" />
       <Parameter Name="dateIn" Mode="In" Type="DateTime" />
       <Parameter Name="dateOut" Mode="In" Type="DateTime" />
+      <Parameter Name="noOfDays" Mode="In" Type="Int32" />
       <Parameter Name="paymentID" Mode="In" Type="Int32" />
       <Parameter Name="clientID" Mode="In" Type="Int32" />
     </FunctionImport>
@@ -120,18 +126,21 @@
       <Parameter Name="id" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_insert_client_info_fnameOnly">
-      <Parameter Name="clientfullName" Mode="In" Type="String" />
+      <Parameter Name="fName" Mode="In" Type="String" />
+      <Parameter Name="lName" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_approve_reservation">
       <Parameter Name="id" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_display_reservation_details" ReturnType="Collection(HMSModel.sp_display_reservation_details_Result)" />
+    <FunctionImport Name="sp_delete_all_reservation" />
     <EntitySet Name="CLIENT" EntityType="HMSModel.CLIENT" />
     <EntitySet Name="PAYMENT" EntityType="HMSModel.PAYMENT" />
     <EntitySet Name="RESERVATION" EntityType="HMSModel.RESERVATION" />
     <EntitySet Name="ROOM" EntityType="HMSModel.ROOM" />
     <EntitySet Name="ROOM_DETAILS" EntityType="HMSModel.ROOM_DETAILS" />
     <EntitySet Name="sysdiagrams" EntityType="HMSModel.sysdiagrams" />
+    <EntitySet Name="vw_display_client_details" EntityType="HMSModel.vw_display_client_details" />
     <EntitySet Name="vw_display_reservation_details" EntityType="HMSModel.vw_display_reservation_details" />
     <EntitySet Name="vw_display_room_details" EntityType="HMSModel.vw_display_room_details" />
     <AssociationSet Name="FK_RESERVATION_CLIENT" Association="HMSModel.FK_RESERVATION_CLIENT">
@@ -180,7 +189,8 @@
       <PropertyRef Name="clientID" />
     </Key>
     <Property Name="clientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="clientFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="clientFName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="clientLName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="clientEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="clientPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="clientAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -201,9 +211,11 @@
     </Key>
     <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="noOfGuest" Type="Int32" />
+    <Property Name="typeOfGuest" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="reservationDateIn" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="reservationDateOut" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="reservationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="noOfDays" Type="Int32" />
     <Property Name="paymentID" Type="Int32" Nullable="false" />
     <Property Name="clientID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CLIENT" Relationship="HMSModel.FK_RESERVATION_CLIENT" FromRole="RESERVATION" ToRole="CLIENT" />
@@ -228,7 +240,8 @@
     <Property Name="roomPhoto" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
     <Property Name="roomPrice" Type="Double" Nullable="false" />
     <Property Name="roomDetails" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="roomDiscount" Type="Int32" />
+    <Property Name="roomDiscount" Type="Double" Nullable="false" />
+    <Property Name="discountedPrice" Type="Double" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -240,6 +253,26 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
+  <EntityType Name="vw_display_client_details">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Date_In" />
+      <PropertyRef Name="Date_Out" />
+      <PropertyRef Name="Payment" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Type_of_Guest" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="No_of_Guest" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Room_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date_In" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Date_Out" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Days" Type="Int32" />
+    <Property Name="Payment" Type="Int32" Nullable="false" />
+  </EntityType>
   <EntityType Name="vw_display_reservation_details">
     <Key>
       <PropertyRef Name="ID" />
@@ -249,7 +282,7 @@
       <PropertyRef Name="Total" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Full_Name" Type="String" MaxLength="102" FixedLength="false" Unicode="true" />
     <Property Name="Room_Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Date_In" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Date_Out" Type="DateTime" Nullable="false" Precision="0" />
@@ -264,12 +297,14 @@
       <PropertyRef Name="Room_Type" />
       <PropertyRef Name="Details" />
       <PropertyRef Name="Price" />
+      <PropertyRef Name="Promo" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Room_Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Details" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Price" Type="Double" Nullable="false" />
-    <Property Name="Discount" Type="Int32" />
+    <Property Name="Promo" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+    <Property Name="Discounted" Type="Double" />
   </EntityType>
   <Association Name="FK_RESERVATION_CLIENT">
     <End Type="HMSModel.CLIENT" Role="CLIENT" Multiplicity="1" />

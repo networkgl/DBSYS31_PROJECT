@@ -33,6 +33,7 @@
             this.txtboxRoomDetails = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtboxRoomDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtboxRoomPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pcBox_Room = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbl_Note = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,10 +47,9 @@
             this.btnRoomDisplay = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pcBox_Room = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnl_Main1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBox_Room)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Main1
@@ -69,7 +69,7 @@
             this.pnl_Main1.Controls.Add(this.btnSaveDetails);
             this.pnl_Main1.Controls.Add(this.btnAddPhotos);
             this.pnl_Main1.FillColor = System.Drawing.Color.White;
-            this.pnl_Main1.Location = new System.Drawing.Point(12, 93);
+            this.pnl_Main1.Location = new System.Drawing.Point(12, 70);
             this.pnl_Main1.Name = "pnl_Main1";
             this.pnl_Main1.Size = new System.Drawing.Size(1054, 503);
             this.pnl_Main1.TabIndex = 139;
@@ -145,6 +145,19 @@
             this.txtboxRoomPrice.Size = new System.Drawing.Size(520, 40);
             this.txtboxRoomPrice.TabIndex = 147;
             this.txtboxRoomPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtboxRoomPrice_KeyPress);
+            // 
+            // pcBox_Room
+            // 
+            this.pcBox_Room.BackColor = System.Drawing.Color.White;
+            this.pcBox_Room.BorderRadius = 20;
+            this.pcBox_Room.FillColor = System.Drawing.SystemColors.Control;
+            this.pcBox_Room.ImageRotate = 0F;
+            this.pcBox_Room.Location = new System.Drawing.Point(17, 21);
+            this.pcBox_Room.Name = "pcBox_Room";
+            this.pcBox_Room.Size = new System.Drawing.Size(472, 379);
+            this.pcBox_Room.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcBox_Room.TabIndex = 141;
+            this.pcBox_Room.TabStop = false;
             // 
             // lbl_Note
             // 
@@ -323,19 +336,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // pcBox_Room
-            // 
-            this.pcBox_Room.BackColor = System.Drawing.Color.White;
-            this.pcBox_Room.BorderRadius = 20;
-            this.pcBox_Room.FillColor = System.Drawing.SystemColors.Control;
-            this.pcBox_Room.ImageRotate = 0F;
-            this.pcBox_Room.Location = new System.Drawing.Point(17, 21);
-            this.pcBox_Room.Name = "pcBox_Room";
-            this.pcBox_Room.Size = new System.Drawing.Size(472, 379);
-            this.pcBox_Room.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pcBox_Room.TabIndex = 141;
-            this.pcBox_Room.TabStop = false;
-            // 
             // Frm_AddRooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,8 +353,8 @@
             this.Load += new System.EventHandler(this.Frm_AddRooms_Load);
             this.pnl_Main1.ResumeLayout(false);
             this.pnl_Main1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcBox_Room)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

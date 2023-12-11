@@ -23,9 +23,9 @@ namespace HMS
 
         private string _roomType;
         private string _roomDetails;
-        private double _roomPrice;
-        private int? _roomDiscount;
-
+        private static double _roomPrice;
+        private static double? _roomDiscount;
+        private double _discountedPrice;
 
 
         public int LastPrimaryKeyValue 
@@ -48,8 +48,9 @@ namespace HMS
 
         public string _RoomType { get => _roomType; set => _roomType = value; }
         public string _RoomDetails { get => _roomDetails; set => _roomDetails = value; }
-        public double _RoomPrice { get => _roomPrice; set => _roomPrice = value; }
-        public int? _RoomDiscount { get => _roomDiscount; set => _roomDiscount = value; }
+        public static double _RoomPrice { get => _roomPrice; set => _roomPrice = value; }
+        public static double? _RoomDiscount { get => _roomDiscount; set => _roomDiscount = value; }
+        public double _DiscountedPrice { get => _discountedPrice; set => _discountedPrice = value; }
 
         public AdminRepository()
         {
@@ -57,15 +58,27 @@ namespace HMS
         }
 
         //Use this SP to allow dynamically inserting new advertisement 
-        public ErrorCode InsertRoomDetails(int roomID, String roomType, byte[] roomPhoto, string roomDetails,double roomPrice, int roomDiscount, ref String response)
+        public ErrorCode InsertRoomDetails(int roomID, String roomType, byte[] roomPhoto, string roomDetails, double roomPrice, double roomDiscount , ref String response)
         {
             //Return Succcess Or Error.
             try
             {
                 using (db = new HMSEntities())
                 {
-                    //Insert all details to the table ROOM_DETAILS.
-                    db.sp_insert_room_details(roomID, roomType, roomPhoto, roomDetails, roomPrice, roomDiscount);
+                    Frm_AddRooms addR = new Frm_AddRooms();
+
+                //Insert all details to the table ROOM_DETAILS.
+
+                var convertToDecimal = roomDiscount / 100;
+                var discountedAmount = roomPrice * convertToDecimal;
+                Console.WriteLine(roomPrice - discountedAmount);
+
+                //return roomPrice - discountedAmount;
+                if (discountedAmount == roomPrice)//Meaning no discount
+                {
+
+                }
+                db.sp_insert_room_details(roomID, roomType, roomPhoto, roomDetails, roomPrice, roomDiscount, roomPrice - discountedAmount);
                     response = "Details Successfully Saved";
                     return ErrorCode.Success;
                 }
@@ -114,13 +127,15 @@ namespace HMS
                                 _roomDetails = roomDetail.roomDetails;
                                 _roomPrice = roomDetail.roomPrice;
                                 _roomDiscount = roomDetail.roomDiscount;
+                                _discountedPrice = roomDetail.discountedPrice;
 
-                                Console.WriteLine($"Room Type: {_roomType}, Room Details: {_roomDetails}, Room Price: {_roomPrice}, Room Discount: {_roomDiscount}");
+                                Console.WriteLine($"Room Type: {_roomType}, Room Details: {_roomDetails}, Room Price: {_roomPrice}, Room Discount: {_roomDiscount}+%, Discounted Price{_discountedPrice}");
                             }
                         }
                         catch (Exception ex)
                         {
                             response = ex.Message;
+                            Console.WriteLine(response);
                             return ErrorCode.Error;
                         }
                         //This Approach is working also. 
@@ -213,14 +228,14 @@ namespace HMS
 
                             roomType.Add(temp.ToString());
 
-                            Console.WriteLine(temp.ToString());
+                            //Console.WriteLine(temp.ToString());
                         }
                         return ErrorCode.Success;
                     }
                     else
                     {
                         response = "Unsuccessfully Query";
-                        MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+                        MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
                         return ErrorCode.Error;
                     }
                 }
@@ -254,13 +269,13 @@ namespace HMS
                 return ErrorCode.Error;
             }
         }
-        public ErrorCode UpdateRoomDetails_WithPhoto(int? roomID,byte[] roomPhoto, string roomType, string roomDetails, double roomPrice, int roomDiscount, ref string response)
+        public ErrorCode UpdateRoomDetails_WithPhoto(int? roomID, byte[] roomPhoto, string roomType, string roomDetails, double roomPrice, double roomDiscount, double discountedPrice, ref string response)
         {
             try
             {
                 using (db = new HMSEntities())
                 {
-                    db.sp_update_room_details_withphoto(roomID, roomPhoto, roomType, roomDetails, roomPrice, roomDiscount);
+                    db.sp_update_room_details_withphoto(roomID, roomPhoto, roomType, roomDetails, roomPrice, roomDiscount, discountedPrice);
                     response = "Successfully Updated";
                     return ErrorCode.Success;
                 }
@@ -271,13 +286,14 @@ namespace HMS
                 return ErrorCode.Error;
             }
         }
-        public ErrorCode UpdateRoomDetails_NoPhoto(int? roomID, string roomType, string roomDetails, double roomPrice, int roomDiscount, ref string response)
+        public ErrorCode UpdateRoomDetails_NoPhoto(int? roomID, string roomType, string roomDetails, double roomPrice, double roomDiscount, double discountePrice, ref string response)
         {
             try
             {
                 using (db = new HMSEntities())
                 {
-                    db.sp_update_room_details_nophoto(roomID, roomType, roomDetails, roomPrice, roomDiscount);
+                    //Console.WriteLine("here "+discountePrice);
+                    db.sp_update_room_details_nophoto(roomID, roomType, roomDetails, roomPrice, roomDiscount, discountePrice);
                     response = "Successfully Updated";
                     return ErrorCode.Success;
                 }
@@ -288,5 +304,24 @@ namespace HMS
                 return ErrorCode.Error;
             }
         }
+        public int CheckRoomsAvailability()
+        {
+            var retVal = 0;
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    // Use the Max function directly without a Where clause
+                    retVal = db.ROOM_DETAILS.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageDialog.Show(ex.Message);
+            }
+
+            return retVal;
+        }
+        
     }
 }

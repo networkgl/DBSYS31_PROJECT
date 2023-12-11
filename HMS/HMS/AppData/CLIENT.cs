@@ -20,7 +20,8 @@ namespace HMS.AppData
         }
     
         public int clientID { get; set; }
-        public string clientFullName { get; set; }
+        public string clientFName { get; set; }
+        public string clientLName { get; set; }
         public string clientEmail { get; set; }
         public string clientPhone { get; set; }
         public string clientAddress { get; set; }

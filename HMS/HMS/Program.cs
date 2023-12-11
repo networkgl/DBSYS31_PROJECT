@@ -20,6 +20,8 @@ namespace HMS
             //Application.Run(new Frm_HomePage());
             //Application.Run(new Frm_BookNow_S4());
             Application.Run(new Frm_Main());
+            //Application.Run(new Form1());
+
         }
     }
 }

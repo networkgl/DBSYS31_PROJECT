@@ -17,17 +17,18 @@ namespace HMS.Forms
     {
         private string roomType, roomDetails;
         private double roomPrice;
-        private int roomDiscount;
+        private string roomDiscount;
         private Frm_ViewRoomAvailable frm;
         private int? roomID;
         private Image image;
+        private double discountedPrice;
         private static bool confirmUpdate;
         private bool hasEditted;
         private AdminRepository adminRepo;
 
         public static bool ConfirmUpdate { get => confirmUpdate; set => confirmUpdate = value; }
 
-        public Frm_ChangeRoomDetails(int? roomID, string roomType, string roomDetails, int roomPrice, int roomDiscount, Image image)
+        public Frm_ChangeRoomDetails(int? roomID, string roomType, string roomDetails, double roomPrice, string roomDiscount, Image image)//double discountedPrice
         {
 
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace HMS.Forms
             this.roomDetails = roomDetails;
             this.roomPrice = roomPrice;
             this.roomDiscount = roomDiscount;
+            //this.discountedPrice = discountedPrice;
             this.image = image;
         }
 
@@ -49,18 +51,39 @@ namespace HMS.Forms
             txtboxRoomType.Text = roomType;
             txtboxRoomDetails.Text = roomDetails;
             txtboxRoomPrice.Text = roomPrice.ToString();
-            txtboxRoomDiscount.Text = roomDiscount.ToString();
+            txtboxRoomDiscount.Text = GetDiscountByNumber(roomDiscount);
 
         }
+        private string GetDiscountByNumber(string input)
+        {
+            var temp = string.Empty;
 
+            foreach (char a in input)
+            {
+                if (a != '%')
+                {
+                    temp += a;
+                }
+            }
+            return temp;
+        }
         private void btnSaveDetails_Click(object sender, EventArgs e)
         {
             String response = String.Empty;
-            var retVal = adminRepo.UpdateRoomDetails_NoPhoto(roomID, txtboxRoomType.Text, txtboxRoomDetails.Text, double.Parse(txtboxRoomPrice.Text), int.Parse(txtboxRoomDiscount.Text), ref response);
+            //Console.WriteLine(double.Parse(GetDiscountByNumber(txtboxRoomDiscount.Text)));
+            var getDiscountedPrice = double.Parse(txtboxRoomPrice.Text) - ((roomPrice / 100) * double.Parse(GetDiscountByNumber(txtboxRoomDiscount.Text)));
+           
+            Console.WriteLine(getDiscountedPrice);
+            
+            var retVal = new ErrorCode();
 
-            if (hasEditted)
-            {               
-                retVal = adminRepo.UpdateRoomDetails_WithPhoto(roomID, InsertPhoto(), txtboxRoomType.Text, txtboxRoomDetails.Text, double.Parse(txtboxRoomPrice.Text), int.Parse(txtboxRoomDiscount.Text), ref response);
+            if (!hasEditted)
+            {
+                retVal = adminRepo.UpdateRoomDetails_NoPhoto(roomID, txtboxRoomType.Text, txtboxRoomDetails.Text, double.Parse(txtboxRoomPrice.Text), double.Parse(txtboxRoomDiscount.Text), getDiscountedPrice, ref response);
+            }
+            else
+            {
+                retVal = adminRepo.UpdateRoomDetails_WithPhoto(roomID, InsertPhoto(), txtboxRoomType.Text, txtboxRoomDetails.Text, double.Parse(txtboxRoomPrice.Text), double.Parse(txtboxRoomDiscount.Text), getDiscountedPrice, ref response);
             }
 
 
@@ -88,6 +111,10 @@ namespace HMS.Forms
 
         private void btnEditPhoto_Click(object sender, EventArgs e)
         {
+            SelectPhoto();
+        }
+        private void SelectPhoto()
+        {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.gif)|*.jpg; *.jpeg; *.png; *.gif|All files (*.*)|*.*";
@@ -110,12 +137,10 @@ namespace HMS.Forms
                 }
             }
         }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
 
         protected override void OnPaint(PaintEventArgs e)
         {

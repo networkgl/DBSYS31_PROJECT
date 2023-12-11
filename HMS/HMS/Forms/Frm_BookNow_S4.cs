@@ -484,12 +484,12 @@ namespace HMS
             lbl_CheckOut_Time.Text = s1.SelectedTime_CheckOut;
             lbl_CheckIn_Date.Text = s1.CheckIn.ToString("ddd, MMM dd, yyyy");
             lbl_CheckOut_Date.Text = s1.CheckOut.ToString("ddd, MMM dd, yyyy");
-            lbl_totalPrice.Text = GetTotalAmount() + ".00";
+            lbl_totalPrice.Text = GetTotalAmount();
             lbl_Guest.Text = GetGuestByIndex();
             lbl_NumberOfDays.Text = isDays();
             lbl_NoOfGuest.Text = GetNoOfGuestByValue(s1.NoOfGuest).ToString();
 
-            lbl_FullName.Text = s3.Lname + ", " + s3.Fname;
+            lbl_FullName.Text = s3.Lname + " " + s3.Fname;
             lbl_ContactNumber.Text = s3.Phone.ToString();
 
             //if (s4 == null)
@@ -525,7 +525,7 @@ namespace HMS
         {
             return ParseVal(recVal);
         }        
-        private String GetGuestByIndex()
+        public String GetGuestByIndex()
         {
             string retVal = String.Empty;
             var GuestIndex = s1.Guest;
@@ -547,7 +547,8 @@ namespace HMS
         }
         private String ParseVal(double retVal)
         {
-            return retVal.ToString("#,##0");
+            return retVal.ToString("C2");
+            //return retVal.ToString("#,##0");
         }
         public String GetTotalAmount()
         {
@@ -558,7 +559,7 @@ namespace HMS
             var retVal = String.Empty;
 
             _finalPrice = s2.RoomPrice * totalDys;
-            retVal = "₱ " + ParseVal(_finalPrice);
+            retVal = ParseVal(_finalPrice);
 
             return retVal;
         }

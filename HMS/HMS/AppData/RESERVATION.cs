@@ -21,9 +21,11 @@ namespace HMS.AppData
     
         public int reservationID { get; set; }
         public Nullable<int> noOfGuest { get; set; }
+        public string typeOfGuest { get; set; }
         public System.DateTime reservationDateIn { get; set; }
         public System.DateTime reservationDateOut { get; set; }
         public string reservationStatus { get; set; }
+        public Nullable<int> noOfDays { get; set; }
         public int paymentID { get; set; }
         public int clientID { get; set; }
     

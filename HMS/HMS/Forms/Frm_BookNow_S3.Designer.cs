@@ -42,16 +42,11 @@
             this.txtbox_lName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbox_fName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.panelNote = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.errorProvider_S3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.CurrentDate = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnPaymentConfirmation = new Guna.UI2.WinForms.Guna2CircleButton();
             this.metroProgressBar3 = new MetroFramework.Controls.MetroProgressBar();
             this.lblSystemTime = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
             this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
             this.btnGuestDetails = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -61,11 +56,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panelNote = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.errorProvider_S3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CurrentDate = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panelNote.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S3)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNext
@@ -155,7 +155,6 @@
             // 
             this.txtbox_Address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.txtbox_Address.BorderColor = System.Drawing.Color.Silver;
-            this.txtbox_Address.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtbox_Address.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbox_Address.DefaultText = "";
             this.txtbox_Address.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -228,7 +227,6 @@
             // 
             this.txtbox_lName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.txtbox_lName.BorderColor = System.Drawing.Color.Silver;
-            this.txtbox_lName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtbox_lName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbox_lName.DefaultText = "";
             this.txtbox_lName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -252,7 +250,6 @@
             // 
             this.txtbox_fName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.txtbox_fName.BorderColor = System.Drawing.Color.Silver;
-            this.txtbox_fName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtbox_fName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbox_fName.DefaultText = "";
             this.txtbox_fName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -285,71 +282,6 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1049, 639);
             this.guna2ShadowPanel1.TabIndex = 62;
-            // 
-            // panelNote
-            // 
-            this.panelNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.panelNote.Controls.Add(this.button1);
-            this.panelNote.Controls.Add(this.label12);
-            this.panelNote.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelNote.Location = new System.Drawing.Point(189, 183);
-            this.panelNote.Name = "panelNote";
-            this.panelNote.Size = new System.Drawing.Size(781, 76);
-            this.panelNote.TabIndex = 120;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.button1.BackgroundImage = global::HMS.Properties.Resources.icons8_close_15;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(758, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 118;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(21, 28);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(650, 19);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Please Enter Your Information and Click on Next Button to proceed for confirmatio" +
-    "n...";
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(42, 31);
-            this.btnBack.TabIndex = 73;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // errorProvider_S3
-            // 
-            this.errorProvider_S3.ContainerControl = this;
-            // 
-            // CurrentDate
-            // 
-            this.CurrentDate.Tick += new System.EventHandler(this.CurrentDate_Tick);
             // 
             // panel3
             // 
@@ -407,6 +339,22 @@
             this.lblSystemTime.Size = new System.Drawing.Size(204, 19);
             this.lblSystemTime.TabIndex = 79;
             this.lblSystemTime.Text = "2023 - 11 - 15 00:00:00 PM";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 73;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // metroProgressBar2
             // 
@@ -518,6 +466,55 @@
             this.label5.TabIndex = 77;
             this.label5.Text = "Choose Date";
             // 
+            // panelNote
+            // 
+            this.panelNote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.panelNote.Controls.Add(this.button1);
+            this.panelNote.Controls.Add(this.label12);
+            this.panelNote.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelNote.Location = new System.Drawing.Point(189, 183);
+            this.panelNote.Name = "panelNote";
+            this.panelNote.Size = new System.Drawing.Size(781, 76);
+            this.panelNote.TabIndex = 120;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.button1.BackgroundImage = global::HMS.Properties.Resources.icons8_close_15;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(758, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 118;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(21, 28);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(650, 19);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Please Enter Your Information and Click on Next Button to proceed for confirmatio" +
+    "n...";
+            // 
+            // errorProvider_S3
+            // 
+            this.errorProvider_S3.ContainerControl = this;
+            // 
+            // CurrentDate
+            // 
+            this.CurrentDate.Tick += new System.EventHandler(this.CurrentDate_Tick);
+            // 
             // Frm_BookNow_S3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,11 +530,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.guna2ShadowPanel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panelNote.ResumeLayout(false);
             this.panelNote.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S3)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

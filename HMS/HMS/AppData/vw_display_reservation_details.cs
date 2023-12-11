@@ -15,7 +15,7 @@ namespace HMS.AppData
     public partial class vw_display_reservation_details
     {
         public int ID { get; set; }
-        public string Name { get; set; }
+        public string Full_Name { get; set; }
         public string Room_Type { get; set; }
         public System.DateTime Date_In { get; set; }
         public System.DateTime Date_Out { get; set; }

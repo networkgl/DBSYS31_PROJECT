@@ -61,30 +61,32 @@ namespace HMS
         }
         private void SubTotalLocation()
         {
-            //228, 328
-            var x = 242;
+            //238, 328
+            var x = 238;
             var y = 328;
-
             var subTotal = s4.GetTotalAmount();
             var valueWithoutPesoSign = subTotal.Replace("₱", "").Trim();
 
-            if (float.Parse(valueWithoutPesoSign) >= 100000f)
+            
+            if (float.Parse(valueWithoutPesoSign) >= 100000f)//if 6digits
             {
-                x = 228;
+                x = 238;
                 lbl_SubTotal.Location = new Point(x, y);
-                lbl_SubTotal.Text = subTotal + ".00";
+                lbl_SubTotal.Text = subTotal;
             }
-            else
+            else if(float.Parse(valueWithoutPesoSign) >= 10000f) //if 5digits
             {
+                x = 250;
+
                 lbl_SubTotal.Location = new Point(x, y);
-                lbl_SubTotal.Text = subTotal + ".00";
+                lbl_SubTotal.Text = subTotal;
             }
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
             s4.CardNumber = txtboxCardNumber.Text;
-            Console.WriteLine("Variable: "+hasPaid);
-            Console.WriteLine("Getters: "+HasPaid);
+            //Console.WriteLine("Variable: "+hasPaid);
+            //Console.WriteLine("Getters: "+HasPaid);
 
             this.Close();           
         }
@@ -147,9 +149,9 @@ namespace HMS
                         msg = "Successfully Reserve Your Booking !\nThank You.";
 
                         //Call the insertion function for the booking from userRepo
-                        var retVal = userRepo.InsertClientReservation(s3.Lname+", "+s3.Fname, s3.Email, s3.Phone, s3.Address, s1.NoOfGuest, s1.CheckIn, s1.CheckOut, s2.FinalRoomType, DateTime.Now.Date, (int)s4.FinalTotalPrice, ref response);
+                        var retVal = userRepo.InsertClientReservation(s4.GetGuestByIndex(), s1.NoOfGuest, s3.Fname,s3.Lname, s3.Email, s3.Phone, s3.Address, s1.CheckIn, s1.CheckOut,s4.NumberOfDayss, s2.FinalRoomType, DateTime.Now.Date, (int)s4.FinalTotalPrice, ref response);
                         //var retVal = userRepo.InsertClientReservation(s3.Fname, s3.Lname, s3.Email, s3.Phone, s3.Address, s1.CheckIn, s1.CheckOut, reserve_status, s2.FinalRoomType, DateTime.Now.Date, (int)s4.FinalTotalPrice, ref response);
-
+                        Console.WriteLine(s3.Fname + " " + s3.Lname);
                         if (retVal == ErrorCode.Success)
                         {
                             MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);

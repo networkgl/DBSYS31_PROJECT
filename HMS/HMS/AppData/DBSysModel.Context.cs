@@ -34,6 +34,7 @@ namespace HMS.AppData
         public DbSet<ROOM> ROOM { get; set; }
         public DbSet<ROOM_DETAILS> ROOM_DETAILS { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<vw_display_client_details> vw_display_client_details { get; set; }
         public DbSet<vw_display_reservation_details> vw_display_reservation_details { get; set; }
         public DbSet<vw_display_room_details> vw_display_room_details { get; set; }
     
@@ -165,7 +166,7 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual int sp_insert_room_details(Nullable<int> roomID, string roomType, byte[] roomPhoto, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
+        public virtual int sp_insert_room_details(Nullable<int> roomID, string roomType, byte[] roomPhoto, string roomDetails, Nullable<double> roomPrice, Nullable<double> roomDiscount, Nullable<double> discountedPrice)
         {
             var roomIDParameter = roomID.HasValue ?
                 new ObjectParameter("roomID", roomID) :
@@ -189,9 +190,13 @@ namespace HMS.AppData
     
             var roomDiscountParameter = roomDiscount.HasValue ?
                 new ObjectParameter("roomDiscount", roomDiscount) :
-                new ObjectParameter("roomDiscount", typeof(int));
+                new ObjectParameter("roomDiscount", typeof(double));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_room_details", roomIDParameter, roomTypeParameter, roomPhotoParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
+            var discountedPriceParameter = discountedPrice.HasValue ?
+                new ObjectParameter("discountedPrice", discountedPrice) :
+                new ObjectParameter("discountedPrice", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_room_details", roomIDParameter, roomTypeParameter, roomPhotoParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter, discountedPriceParameter);
         }
     
         public virtual ObjectResult<byte[]> sp_display_roomdetails_byindex(Nullable<int> index)
@@ -277,7 +282,7 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_room_details", roomIDParameter, roomPhotoParameter, roomTypeParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
         }
     
-        public virtual int sp_update_room_details_nophoto(Nullable<int> roomID, string roomType, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
+        public virtual int sp_update_room_details_nophoto(Nullable<int> roomID, string roomType, string roomDetails, Nullable<double> roomPrice, Nullable<double> roomDiscount, Nullable<double> discountedPrice)
         {
             var roomIDParameter = roomID.HasValue ?
                 new ObjectParameter("roomID", roomID) :
@@ -297,12 +302,16 @@ namespace HMS.AppData
     
             var roomDiscountParameter = roomDiscount.HasValue ?
                 new ObjectParameter("roomDiscount", roomDiscount) :
-                new ObjectParameter("roomDiscount", typeof(int));
+                new ObjectParameter("roomDiscount", typeof(double));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_room_details_nophoto", roomIDParameter, roomTypeParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
+            var discountedPriceParameter = discountedPrice.HasValue ?
+                new ObjectParameter("discountedPrice", discountedPrice) :
+                new ObjectParameter("discountedPrice", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_room_details_nophoto", roomIDParameter, roomTypeParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter, discountedPriceParameter);
         }
     
-        public virtual int sp_update_room_details_withphoto(Nullable<int> roomID, byte[] roomPhoto, string roomType, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
+        public virtual int sp_update_room_details_withphoto(Nullable<int> roomID, byte[] roomPhoto, string roomType, string roomDetails, Nullable<double> roomPrice, Nullable<double> roomDiscount, Nullable<double> discountedPrice)
         {
             var roomIDParameter = roomID.HasValue ?
                 new ObjectParameter("roomID", roomID) :
@@ -326,9 +335,13 @@ namespace HMS.AppData
     
             var roomDiscountParameter = roomDiscount.HasValue ?
                 new ObjectParameter("roomDiscount", roomDiscount) :
-                new ObjectParameter("roomDiscount", typeof(int));
+                new ObjectParameter("roomDiscount", typeof(double));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_room_details_withphoto", roomIDParameter, roomPhotoParameter, roomTypeParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
+            var discountedPriceParameter = discountedPrice.HasValue ?
+                new ObjectParameter("discountedPrice", discountedPrice) :
+                new ObjectParameter("discountedPrice", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_room_details_withphoto", roomIDParameter, roomPhotoParameter, roomTypeParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter, discountedPriceParameter);
         }
     
         public virtual int sp_insert_client_history(string fname, string pnumber, string address, Nullable<System.DateTime> dateIn, Nullable<System.DateTime> dateOut, string rType)
@@ -360,11 +373,15 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_client_history", fnameParameter, pnumberParameter, addressParameter, dateInParameter, dateOutParameter, rTypeParameter);
         }
     
-        public virtual int sp_insert_client_info(string clientfullName, string clientEmail, string clientPhone, string clientAddress)
+        public virtual int sp_insert_client_info(string fName, string lName, string clientEmail, string clientPhone, string clientAddress)
         {
-            var clientfullNameParameter = clientfullName != null ?
-                new ObjectParameter("clientfullName", clientfullName) :
-                new ObjectParameter("clientfullName", typeof(string));
+            var fNameParameter = fName != null ?
+                new ObjectParameter("fName", fName) :
+                new ObjectParameter("fName", typeof(string));
+    
+            var lNameParameter = lName != null ?
+                new ObjectParameter("lName", lName) :
+                new ObjectParameter("lName", typeof(string));
     
             var clientEmailParameter = clientEmail != null ?
                 new ObjectParameter("clientEmail", clientEmail) :
@@ -378,7 +395,7 @@ namespace HMS.AppData
                 new ObjectParameter("clientAddress", clientAddress) :
                 new ObjectParameter("clientAddress", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_client_info", clientfullNameParameter, clientEmailParameter, clientPhoneParameter, clientAddressParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_client_info", fNameParameter, lNameParameter, clientEmailParameter, clientPhoneParameter, clientAddressParameter);
         }
     
         public virtual int sp_insert_payment_info(Nullable<System.DateTime> paymentDate, Nullable<int> paymentTotal)
@@ -394,8 +411,12 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_payment_info", paymentDateParameter, paymentTotalParameter);
         }
     
-        public virtual int sp_insert_reservation_info(Nullable<int> noOfGuest, Nullable<System.DateTime> dateIn, Nullable<System.DateTime> dateOut, Nullable<int> paymentID, Nullable<int> clientID)
+        public virtual int sp_insert_reservation_info(string typeOfGuest, Nullable<int> noOfGuest, Nullable<System.DateTime> dateIn, Nullable<System.DateTime> dateOut, Nullable<int> noOfDays, Nullable<int> paymentID, Nullable<int> clientID)
         {
+            var typeOfGuestParameter = typeOfGuest != null ?
+                new ObjectParameter("typeOfGuest", typeOfGuest) :
+                new ObjectParameter("typeOfGuest", typeof(string));
+    
             var noOfGuestParameter = noOfGuest.HasValue ?
                 new ObjectParameter("noOfGuest", noOfGuest) :
                 new ObjectParameter("noOfGuest", typeof(int));
@@ -408,6 +429,10 @@ namespace HMS.AppData
                 new ObjectParameter("dateOut", dateOut) :
                 new ObjectParameter("dateOut", typeof(System.DateTime));
     
+            var noOfDaysParameter = noOfDays.HasValue ?
+                new ObjectParameter("noOfDays", noOfDays) :
+                new ObjectParameter("noOfDays", typeof(int));
+    
             var paymentIDParameter = paymentID.HasValue ?
                 new ObjectParameter("paymentID", paymentID) :
                 new ObjectParameter("paymentID", typeof(int));
@@ -416,7 +441,7 @@ namespace HMS.AppData
                 new ObjectParameter("clientID", clientID) :
                 new ObjectParameter("clientID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_reservation_info", noOfGuestParameter, dateInParameter, dateOutParameter, paymentIDParameter, clientIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_reservation_info", typeOfGuestParameter, noOfGuestParameter, dateInParameter, dateOutParameter, noOfDaysParameter, paymentIDParameter, clientIDParameter);
         }
     
         public virtual int sp_insert_room_info(string roomType, Nullable<int> reservationID)
@@ -441,13 +466,17 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_denied_reservation", idParameter);
         }
     
-        public virtual int sp_insert_client_info_fnameOnly(string clientfullName)
+        public virtual int sp_insert_client_info_fnameOnly(string fName, string lName)
         {
-            var clientfullNameParameter = clientfullName != null ?
-                new ObjectParameter("clientfullName", clientfullName) :
-                new ObjectParameter("clientfullName", typeof(string));
+            var fNameParameter = fName != null ?
+                new ObjectParameter("fName", fName) :
+                new ObjectParameter("fName", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_client_info_fnameOnly", clientfullNameParameter);
+            var lNameParameter = lName != null ?
+                new ObjectParameter("lName", lName) :
+                new ObjectParameter("lName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_client_info_fnameOnly", fNameParameter, lNameParameter);
         }
     
         public virtual int sp_approve_reservation(Nullable<int> id)
@@ -462,6 +491,11 @@ namespace HMS.AppData
         public virtual ObjectResult<sp_display_reservation_details_Result> sp_display_reservation_details()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_display_reservation_details_Result>("sp_display_reservation_details");
+        }
+    
+        public virtual int sp_delete_all_reservation()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_delete_all_reservation");
         }
     }
 }

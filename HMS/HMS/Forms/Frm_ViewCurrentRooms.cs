@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Media.Media3D;
 
@@ -20,8 +21,9 @@ namespace HMS.Forms
         private HMSEntities db;
         private AdminRepository adminRepo;
         private static int currentIndex;
-
+        //private static bool noRooms;
         public static int CurrentIndex { get => currentIndex; set => currentIndex = value; }
+        //public static bool NoRooms { get => noRooms; set => noRooms = value; }
 
         //private int lastPrimaryKeyValue = 0;
 
@@ -41,6 +43,7 @@ namespace HMS.Forms
 
         private void Frm_ViewCurrentRooms_Load(object sender, EventArgs e)
         {
+
            InitialLoad();
         }
         //private Image GetImageFromDatabase(byte[] img)
@@ -57,6 +60,7 @@ namespace HMS.Forms
             //lbl_roomDetails1.Text = adminRepo._RoomDetails;
             //lbl_roomPrice.Text += adminRepo._RoomPrice.ToString();
 
+
             String response = String.Empty;
             var retValRows = adminRepo.GetRoomTypeByID(ref response);
             
@@ -68,17 +72,32 @@ namespace HMS.Forms
                     cbBox_roomType.Items.Add(i);
                 }
                 cbBox_roomType.SelectedIndex = 0;
-                Console.WriteLine(CurrentIndex);
+
+                if (AdminRepository._RoomDiscount > 0)
+                {
+                    //Meaning there is a possible disount percentage.
+                    lbl_percentSale.Text = AdminRepository._RoomDiscount.ToString() +"% OFF";
+                    lbl_OrigPrice.Text = AdminRepository._RoomPrice.ToString("C2");
+                    //Set to visible
+                    pnl_saleDetails.Visible = true;
+                    pnl_saleLogo.Visible = true;
+                }
+                else
+                {
+                    pnl_saleDetails.Visible = false;
+                    pnl_saleLogo.Visible = false;
+                }
+                
             }
             else
             {
-                MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Question, MessageDialogStyle.Light);
+                MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
             }
 
             pnl_roompicture.BackgroundImage = adminRepo.Image;
             lbl_roomType.Text = adminRepo._RoomType;
             lbl_roomDetails1.Text = adminRepo._RoomDetails;
-            lbl_roomPrice.Text = "₱" + adminRepo._RoomPrice.ToString("#,##0");
+            lbl_roomPrice.Text = adminRepo._DiscountedPrice.ToString("C2");
         }
 
         private void cbBox_roomType_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,19 +119,37 @@ namespace HMS.Forms
             if (retVal == ErrorCode.Success)
             {
                 pnl_roompicture.BackgroundImage = adminRepo.Image;
+
+                if (AdminRepository._RoomDiscount > 0)
+                {
+                    //Meaning there is a possible disount percentage.
+                    lbl_percentSale.Text = AdminRepository._RoomDiscount.ToString() + "% OFF";
+                    lbl_OrigPrice.Text = AdminRepository._RoomPrice.ToString("C2");
+                    //Set to visible
+                    pnl_saleDetails.Visible = true;
+                    pnl_saleLogo.Visible = true;
+                }
+                else
+                {
+                    pnl_saleDetails.Visible = false;
+                    pnl_saleLogo.Visible = false;
+                }
             }
             else
             {
-                MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Error, MessageDialogStyle.Light);
+                MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Error, MessageDialogStyle.Dark);
             }
 
             //This should place below to prevent delay.
             lbl_roomType.Text = adminRepo._RoomType;
             lbl_roomDetails1.Text = adminRepo._RoomDetails;
-            lbl_roomPrice.Text = "₱"+adminRepo._RoomPrice.ToString("#,##0");
-            var price = adminRepo._RoomPrice.ToString("#,##0");
+            lbl_roomPrice.Text = adminRepo._DiscountedPrice.ToString("C2");
+            var price = adminRepo._DiscountedPrice.ToString("C2");
 
-            lbl_priceDetails.Text = $"Per Night\r\n ₱{price} Total for 1 night\r\nExcluding Taxes & Fees";
+            lbl_priceDetails.Text = $"Per Night\r\n {price} Total for 1 night\r\nExcluding Taxes & Fees";
+
+
+
         }
 
         private void btnAddRooms_Click(object sender, EventArgs e)
@@ -136,6 +173,16 @@ namespace HMS.Forms
         }
 
         private void pnl_Main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -241,11 +241,11 @@
             this.lbl_SubTotal.AutoSize = true;
             this.lbl_SubTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_SubTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(54)))));
-            this.lbl_SubTotal.Location = new System.Drawing.Point(228, 328);
+            this.lbl_SubTotal.Location = new System.Drawing.Point(238, 328);
             this.lbl_SubTotal.Name = "lbl_SubTotal";
-            this.lbl_SubTotal.Size = new System.Drawing.Size(153, 28);
+            this.lbl_SubTotal.Size = new System.Drawing.Size(146, 28);
             this.lbl_SubTotal.TabIndex = 76;
-            this.lbl_SubTotal.Text = "₱ 120,000.00";
+            this.lbl_SubTotal.Text = "₱000,000.00";
             // 
             // label7
             // 
