@@ -30,7 +30,6 @@ C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.F
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_BookNow_S2.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_BookNow_S3.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_Calendar.resources
-C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_Client.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_BookNow_S4.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_HomePage.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_Login.resources
@@ -39,10 +38,6 @@ C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.F
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_ManageRoomType.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_ProcessPayment.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_Room.resources
-C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_RoomHeader.resources
-C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_RType_Deluxe.resources
-C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_RType_FiliSuite.resources
-C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_RType_PriemereDeluxe.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_ViewCurrentRooms.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_WaitForm.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.csproj.GenerateResource.cache
@@ -68,4 +63,4 @@ C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.F
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_ChangeRoomDetails.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_ConfirmDelete.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_Reservation.resources
-C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Form1.resources
+C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_BookingDetails.resources

@@ -15,16 +15,17 @@ namespace HMS.AppData
     public partial class vw_display_client_details
     {
         public int ID { get; set; }
-        public string Type_of_Guest { get; set; }
-        public Nullable<int> No_of_Guest { get; set; }
+        public int Adult { get; set; }
+        public int Children { get; set; }
+        public int Senior { get; set; }
         public string Name { get; set; }
-        public string Room_Type { get; set; }
-        public System.DateTime Date_In { get; set; }
-        public System.DateTime Date_Out { get; set; }
+        public string RoomType { get; set; }
+        public System.DateTime DateIn { get; set; }
+        public System.DateTime DateOut { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public Nullable<int> Days { get; set; }
-        public int Payment { get; set; }
+        public decimal Payment { get; set; }
     }
 }

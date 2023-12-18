@@ -264,7 +264,7 @@
             this.lbl_CheckIn_Time.Name = "lbl_CheckIn_Time";
             this.lbl_CheckIn_Time.Size = new System.Drawing.Size(90, 17);
             this.lbl_CheckIn_Time.TabIndex = 118;
-            this.lbl_CheckIn_Time.Text = "After 3:00 PM";
+            this.lbl_CheckIn_Time.Text = "After 2:00 PM";
             // 
             // lbl_Guest
             // 

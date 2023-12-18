@@ -24,7 +24,7 @@ namespace HMS.Forms
         public int RoomDiscount { get; set; }
         public Image RoomPhoto { get; set; }
 
-        private double _discount,_roomPrice;
+        private decimal _discount,_roomPrice;
         public Frm_AddRooms()
         {
             InitializeComponent();
@@ -62,8 +62,8 @@ namespace HMS.Forms
 
 
             //Get those values
-            _discount = double.Parse(txtboxRoomDiscount.Text);
-            _roomPrice = double.Parse(txtboxRoomPrice.Text);
+            _discount = decimal.Parse(txtboxRoomDiscount.Text);
+            _roomPrice = decimal.Parse(txtboxRoomPrice.Text);
 
             Console.WriteLine(_roomPrice);
             Console.WriteLine(_discount);

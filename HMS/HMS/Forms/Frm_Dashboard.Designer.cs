@@ -29,15 +29,25 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbl_totalRoomOccupied = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbl_totalRoomAvailable = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbl_totalRoomReserve = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbl_totalSenior = new System.Windows.Forms.Label();
+            this.lbl_totalChildren = new System.Windows.Forms.Label();
+            this.lbl_totalAdult = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_TotalGuest = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -57,17 +67,30 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.Controls.Add(this.lbl_totalRoomOccupied);
             this.guna2Panel1.Controls.Add(this.panel1);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(19, 66);
+            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
+            this.guna2Panel1.Location = new System.Drawing.Point(274, 63);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel1.TabIndex = 8;
             // 
+            // lbl_totalRoomOccupied
+            // 
+            this.lbl_totalRoomOccupied.AutoSize = true;
+            this.lbl_totalRoomOccupied.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
+            this.lbl_totalRoomOccupied.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 36F, System.Drawing.FontStyle.Bold);
+            this.lbl_totalRoomOccupied.ForeColor = System.Drawing.Color.White;
+            this.lbl_totalRoomOccupied.Location = new System.Drawing.Point(77, 63);
+            this.lbl_totalRoomOccupied.Name = "lbl_totalRoomOccupied";
+            this.lbl_totalRoomOccupied.Size = new System.Drawing.Size(55, 62);
+            this.lbl_totalRoomOccupied.TabIndex = 16;
+            this.lbl_totalRoomOccupied.Text = "0";
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
             this.panel1.BackgroundImage = global::HMS.Properties.Resources.icons8_feet_30;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.Location = new System.Drawing.Point(172, 16);
@@ -78,29 +101,42 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 16);
+            this.label1.Location = new System.Drawing.Point(6, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 21);
+            this.label1.Size = new System.Drawing.Size(162, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Room Occupied";
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.BorderRadius = 10;
+            this.guna2Panel2.Controls.Add(this.lbl_totalRoomAvailable);
             this.guna2Panel2.Controls.Add(this.panel2);
             this.guna2Panel2.Controls.Add(this.label2);
-            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(276, 66);
+            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.guna2Panel2.Location = new System.Drawing.Point(531, 63);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel2.TabIndex = 9;
             // 
+            // lbl_totalRoomAvailable
+            // 
+            this.lbl_totalRoomAvailable.AutoSize = true;
+            this.lbl_totalRoomAvailable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.lbl_totalRoomAvailable.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 36F, System.Drawing.FontStyle.Bold);
+            this.lbl_totalRoomAvailable.ForeColor = System.Drawing.Color.White;
+            this.lbl_totalRoomAvailable.Location = new System.Drawing.Point(84, 60);
+            this.lbl_totalRoomAvailable.Name = "lbl_totalRoomAvailable";
+            this.lbl_totalRoomAvailable.Size = new System.Drawing.Size(55, 62);
+            this.lbl_totalRoomAvailable.TabIndex = 15;
+            this.lbl_totalRoomAvailable.Text = "0";
+            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.panel2.BackgroundImage = global::HMS.Properties.Resources.icons8_home_30;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.Location = new System.Drawing.Point(174, 16);
@@ -111,29 +147,42 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 16);
+            this.label2.Location = new System.Drawing.Point(9, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 21);
+            this.label2.Size = new System.Drawing.Size(156, 22);
             this.label2.TabIndex = 11;
             this.label2.Text = "Room Available";
             // 
             // guna2Panel3
             // 
             this.guna2Panel3.BorderRadius = 10;
+            this.guna2Panel3.Controls.Add(this.lbl_totalRoomReserve);
             this.guna2Panel3.Controls.Add(this.panel3);
             this.guna2Panel3.Controls.Add(this.label3);
-            this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(531, 66);
+            this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.guna2Panel3.Location = new System.Drawing.Point(787, 63);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel3.TabIndex = 9;
             // 
+            // lbl_totalRoomReserve
+            // 
+            this.lbl_totalRoomReserve.AutoSize = true;
+            this.lbl_totalRoomReserve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.lbl_totalRoomReserve.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 36F, System.Drawing.FontStyle.Bold);
+            this.lbl_totalRoomReserve.ForeColor = System.Drawing.Color.White;
+            this.lbl_totalRoomReserve.Location = new System.Drawing.Point(78, 63);
+            this.lbl_totalRoomReserve.Name = "lbl_totalRoomReserve";
+            this.lbl_totalRoomReserve.Size = new System.Drawing.Size(55, 62);
+            this.lbl_totalRoomReserve.TabIndex = 14;
+            this.lbl_totalRoomReserve.Text = "0";
+            // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
             this.panel3.BackgroundImage = global::HMS.Properties.Resources.icons8_reserve_30;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel3.Location = new System.Drawing.Point(172, 16);
@@ -144,29 +193,120 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(17, 16);
+            this.label3.Location = new System.Drawing.Point(10, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 21);
+            this.label3.Size = new System.Drawing.Size(142, 22);
             this.label3.TabIndex = 11;
             this.label3.Text = "Room Reserve";
             // 
             // guna2Panel4
             // 
             this.guna2Panel4.BorderRadius = 10;
+            this.guna2Panel4.Controls.Add(this.lbl_totalSenior);
+            this.guna2Panel4.Controls.Add(this.lbl_totalChildren);
+            this.guna2Panel4.Controls.Add(this.lbl_totalAdult);
+            this.guna2Panel4.Controls.Add(this.label10);
+            this.guna2Panel4.Controls.Add(this.label9);
+            this.guna2Panel4.Controls.Add(this.label8);
+            this.guna2Panel4.Controls.Add(this.lbl_TotalGuest);
             this.guna2Panel4.Controls.Add(this.panel4);
             this.guna2Panel4.Controls.Add(this.label4);
-            this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(787, 66);
+            this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.guna2Panel4.Location = new System.Drawing.Point(19, 63);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel4.TabIndex = 10;
             // 
+            // lbl_totalSenior
+            // 
+            this.lbl_totalSenior.AutoSize = true;
+            this.lbl_totalSenior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.lbl_totalSenior.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalSenior.ForeColor = System.Drawing.Color.White;
+            this.lbl_totalSenior.Location = new System.Drawing.Point(91, 105);
+            this.lbl_totalSenior.Name = "lbl_totalSenior";
+            this.lbl_totalSenior.Size = new System.Drawing.Size(17, 20);
+            this.lbl_totalSenior.TabIndex = 19;
+            this.lbl_totalSenior.Text = "0";
+            // 
+            // lbl_totalChildren
+            // 
+            this.lbl_totalChildren.AutoSize = true;
+            this.lbl_totalChildren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.lbl_totalChildren.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalChildren.ForeColor = System.Drawing.Color.White;
+            this.lbl_totalChildren.Location = new System.Drawing.Point(91, 83);
+            this.lbl_totalChildren.Name = "lbl_totalChildren";
+            this.lbl_totalChildren.Size = new System.Drawing.Size(17, 20);
+            this.lbl_totalChildren.TabIndex = 18;
+            this.lbl_totalChildren.Text = "0";
+            // 
+            // lbl_totalAdult
+            // 
+            this.lbl_totalAdult.AutoSize = true;
+            this.lbl_totalAdult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.lbl_totalAdult.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalAdult.ForeColor = System.Drawing.Color.White;
+            this.lbl_totalAdult.Location = new System.Drawing.Point(91, 60);
+            this.lbl_totalAdult.Name = "lbl_totalAdult";
+            this.lbl_totalAdult.Size = new System.Drawing.Size(17, 20);
+            this.lbl_totalAdult.TabIndex = 17;
+            this.lbl_totalAdult.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(8, 83);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 20);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Children  :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(13, 105);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 20);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Senior     :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(11, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 20);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Adult       :";
+            // 
+            // lbl_TotalGuest
+            // 
+            this.lbl_TotalGuest.AutoSize = true;
+            this.lbl_TotalGuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.lbl_TotalGuest.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TotalGuest.ForeColor = System.Drawing.Color.White;
+            this.lbl_TotalGuest.Location = new System.Drawing.Point(156, 63);
+            this.lbl_TotalGuest.Name = "lbl_TotalGuest";
+            this.lbl_TotalGuest.Size = new System.Drawing.Size(55, 62);
+            this.lbl_TotalGuest.TabIndex = 13;
+            this.lbl_TotalGuest.Text = "0";
+            // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.panel4.BackgroundImage = global::HMS.Properties.Resources.icons8_reception_30;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel4.Location = new System.Drawing.Point(171, 16);
@@ -177,12 +317,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(20, 16);
+            this.label4.Location = new System.Drawing.Point(13, 17);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 21);
+            this.label4.Size = new System.Drawing.Size(65, 22);
             this.label4.TabIndex = 11;
             this.label4.Text = "Guest";
             // 
@@ -267,9 +407,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1078, 619);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel6);
             this.Controls.Add(this.guna2Panel5);
-            this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
@@ -314,5 +454,15 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_totalSenior;
+        private System.Windows.Forms.Label lbl_totalChildren;
+        private System.Windows.Forms.Label lbl_totalAdult;
+        private System.Windows.Forms.Label lbl_totalRoomReserve;
+        private System.Windows.Forms.Label lbl_TotalGuest;
+        private System.Windows.Forms.Label lbl_totalRoomOccupied;
+        private System.Windows.Forms.Label lbl_totalRoomAvailable;
     }
 }

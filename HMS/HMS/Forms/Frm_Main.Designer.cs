@@ -97,7 +97,7 @@
             this.btnManageRoomType.Size = new System.Drawing.Size(219, 46);
             this.btnManageRoomType.TabIndex = 5;
             this.btnManageRoomType.Text = "Manage Rooms";
-            this.btnManageRoomType.TextOffset = new System.Drawing.Point(-5, 0);
+            this.btnManageRoomType.TextOffset = new System.Drawing.Point(-1, 0);
             this.btnManageRoomType.Click += new System.EventHandler(this.btnManageRoomType_Click);
             // 
             // btnReservation
@@ -121,9 +121,9 @@
             this.btnReservation.Name = "btnReservation";
             this.btnReservation.Size = new System.Drawing.Size(219, 46);
             this.btnReservation.TabIndex = 3;
-            this.btnReservation.Text = "Pending Reservation";
+            this.btnReservation.Text = "Reservation";
             this.btnReservation.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnReservation.TextOffset = new System.Drawing.Point(12, 0);
+            this.btnReservation.TextOffset = new System.Drawing.Point(32, 0);
             this.btnReservation.Click += new System.EventHandler(this.btnReservation_Click);
             this.btnReservation.MouseEnter += new System.EventHandler(this.btnReservation_MouseEnter);
             this.btnReservation.MouseLeave += new System.EventHandler(this.btnReservation_MouseLeave);
@@ -150,9 +150,8 @@
             this.btnRoom.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
             this.btnRoom.Size = new System.Drawing.Size(219, 46);
             this.btnRoom.TabIndex = 2;
-            this.btnRoom.Text = "Room Available";
+            this.btnRoom.Text = "Room Details";
             this.btnRoom.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnRoom.TextOffset = new System.Drawing.Point(-10, 0);
             this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
             this.btnRoom.MouseEnter += new System.EventHandler(this.btnRoom_MouseEnter);
             this.btnRoom.MouseLeave += new System.EventHandler(this.btnRoom_MouseLeave);
@@ -179,9 +178,9 @@
             this.btnClient.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
             this.btnClient.Size = new System.Drawing.Size(219, 46);
             this.btnClient.TabIndex = 0;
-            this.btnClient.Text = "Client Reservation";
+            this.btnClient.Text = "Booking Details";
             this.btnClient.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnClient.TextOffset = new System.Drawing.Point(-18, 0);
+            this.btnClient.TextOffset = new System.Drawing.Point(-6, 0);
             this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             this.btnClient.MouseEnter += new System.EventHandler(this.btnClient_MouseEnter);
             this.btnClient.MouseLeave += new System.EventHandler(this.btnClient_MouseLeave);
@@ -348,6 +347,8 @@
             this.txtbox_SearchBar.Size = new System.Drawing.Size(300, 38);
             this.txtbox_SearchBar.TabIndex = 24;
             this.txtbox_SearchBar.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtbox_SearchBar.TextChanged += new System.EventHandler(this.txtbox_SearchBar_TextChanged);
+            this.txtbox_SearchBar.Leave += new System.EventHandler(this.txtbox_SearchBar_Leave);
             // 
             // lbl_NotifCounter
             // 

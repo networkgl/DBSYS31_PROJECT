@@ -26,15 +26,17 @@ namespace HMS.Forms
         private static Image image = null;
         private HMSEntities db;
         private static Frm_ViewRoomAvailable frm;
-
+        private static Frm_ViewRoomAvailable instance;
         public static Image Image { get => image; set => image = value; }
         public static int? RoomID { get => roomID; set => roomID = value; }
         public static Frm_ViewRoomAvailable Frm { get => frm; set => frm = value; }
+        public static Frm_ViewRoomAvailable Instance { get => instance; set => instance = value; }
 
         public Frm_ViewRoomAvailable()
         {
             InitializeComponent();
             adminRepo = new AdminRepository();
+            instance = this;
         }
 
         private void btnAddRooms_Click(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace HMS.Forms
                 dgv_roomdetails.DataSource = adminRepo.LoadRoomDetails();
 
                 dgv_roomdetails.Columns["ID"].Width = 20;
-                dgv_roomdetails.Columns["Room_Type"].Width = 100;
+                dgv_roomdetails.Columns["RoomType"].Width = 100;
                 dgv_roomdetails.Columns["Price"].Width = 50;
                 dgv_roomdetails.Columns["Promo"].Width = 30;
                 dgv_roomdetails.Columns["Discounted"].Width = 120;
@@ -84,6 +86,8 @@ namespace HMS.Forms
                 imageColumnDelete.ImageLayout = DataGridViewImageCellLayout.Normal; // Adjust as needed
                 dgv_roomdetails.Columns.Add(imageColumnDelete);
                 dgv_roomdetails.Columns["ImageColumnDelete"].Width = 60;
+
+   
             }
             else
             {
@@ -183,7 +187,7 @@ namespace HMS.Forms
 
 
                         // Access cell values using column names if possible
-                        roomType = Convert.ToString(clickedRow.Cells["Room_Type"].Value);
+                        roomType = Convert.ToString(clickedRow.Cells["RoomType"].Value);
                         roomDetails = Convert.ToString(clickedRow.Cells["Details"].Value);
                         roomPrice = Convert.ToInt32(clickedRow.Cells["Price"].Value);
                         //roomDiscount = Convert.ToInt32(clickedRow.Cells["Discount"].Value);

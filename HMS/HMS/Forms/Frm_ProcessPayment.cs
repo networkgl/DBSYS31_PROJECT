@@ -148,10 +148,13 @@ namespace HMS
                         var response = String.Empty;
                         msg = "Successfully Reserve Your Booking !\nThank You.";
 
+
+
                         //Call the insertion function for the booking from userRepo
-                        var retVal = userRepo.InsertClientReservation(s4.GetGuestByIndex(), s1.NoOfGuest, s3.Fname,s3.Lname, s3.Email, s3.Phone, s3.Address, s1.CheckIn, s1.CheckOut,s4.NumberOfDayss, s2.FinalRoomType, DateTime.Now.Date, (int)s4.FinalTotalPrice, ref response);
+                        var retVal = userRepo.InsertClientReservation(s1.NoOfGuest_Adult,s1.NoOfGuest_Children,s1.NoOfGuest_Senior,s3.Fname,s3.Lname, s3.Email, s3.Phone, s3.Address, s1.CheckIn, s1.CheckOut,s4.NumberOfDayss, s2.FinalRoomType, DateTime.Now.Date, s4.FinalTotalPrice, ref response);
                         //var retVal = userRepo.InsertClientReservation(s3.Fname, s3.Lname, s3.Email, s3.Phone, s3.Address, s1.CheckIn, s1.CheckOut, reserve_status, s2.FinalRoomType, DateTime.Now.Date, (int)s4.FinalTotalPrice, ref response);
-                        Console.WriteLine(s3.Fname + " " + s3.Lname);
+                        Console.WriteLine(s3.Fname + " " + s3.Lname+"\nTOTOAL: "+ s4.FinalTotalPrice);
+                        
                         if (retVal == ErrorCode.Success)
                         {
                             MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);

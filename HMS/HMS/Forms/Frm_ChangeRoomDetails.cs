@@ -16,19 +16,19 @@ namespace HMS.Forms
     public partial class Frm_ChangeRoomDetails : Form
     {
         private string roomType, roomDetails;
-        private double roomPrice;
+        private decimal roomPrice;
         private string roomDiscount;
         private Frm_ViewRoomAvailable frm;
         private int? roomID;
         private Image image;
-        private double discountedPrice;
+        private decimal discountedPrice;
         private static bool confirmUpdate;
         private bool hasEditted;
         private AdminRepository adminRepo;
 
         public static bool ConfirmUpdate { get => confirmUpdate; set => confirmUpdate = value; }
 
-        public Frm_ChangeRoomDetails(int? roomID, string roomType, string roomDetails, double roomPrice, string roomDiscount, Image image)//double discountedPrice
+        public Frm_ChangeRoomDetails(int? roomID, string roomType, string roomDetails, decimal roomPrice, string roomDiscount, Image image)//decimal discountedPrice
         {
 
             InitializeComponent();
@@ -70,8 +70,8 @@ namespace HMS.Forms
         private void btnSaveDetails_Click(object sender, EventArgs e)
         {
             String response = String.Empty;
-            //Console.WriteLine(double.Parse(GetDiscountByNumber(txtboxRoomDiscount.Text)));
-            var getDiscountedPrice = double.Parse(txtboxRoomPrice.Text) - ((roomPrice / 100) * double.Parse(GetDiscountByNumber(txtboxRoomDiscount.Text)));
+            //Console.WriteLine(decimal.Parse(GetDiscountByNumber(txtboxRoomDiscount.Text)));
+            var getDiscountedPrice = decimal.Parse(txtboxRoomPrice.Text) - ((roomPrice / 100) * decimal.Parse(GetDiscountByNumber(txtboxRoomDiscount.Text)));
            
             Console.WriteLine(getDiscountedPrice);
             
@@ -79,11 +79,11 @@ namespace HMS.Forms
 
             if (!hasEditted)
             {
-                retVal = adminRepo.UpdateRoomDetails_NoPhoto(roomID, txtboxRoomType.Text, txtboxRoomDetails.Text, double.Parse(txtboxRoomPrice.Text), double.Parse(txtboxRoomDiscount.Text), getDiscountedPrice, ref response);
+                retVal = adminRepo.UpdateRoomDetails_NoPhoto(roomID, txtboxRoomType.Text, txtboxRoomDetails.Text, decimal.Parse(txtboxRoomPrice.Text), decimal.Parse(txtboxRoomDiscount.Text), getDiscountedPrice, ref response);
             }
             else
             {
-                retVal = adminRepo.UpdateRoomDetails_WithPhoto(roomID, InsertPhoto(), txtboxRoomType.Text, txtboxRoomDetails.Text, double.Parse(txtboxRoomPrice.Text), double.Parse(txtboxRoomDiscount.Text), getDiscountedPrice, ref response);
+                retVal = adminRepo.UpdateRoomDetails_WithPhoto(roomID, InsertPhoto(), txtboxRoomType.Text, txtboxRoomDetails.Text, decimal.Parse(txtboxRoomPrice.Text), decimal.Parse(txtboxRoomDiscount.Text), getDiscountedPrice, ref response);
             }
 
 

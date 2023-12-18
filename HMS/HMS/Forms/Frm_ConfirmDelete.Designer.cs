@@ -30,10 +30,10 @@
         {
             this.btnExit = new System.Windows.Forms.Button();
             this.txtboxPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_Note = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // btnExit
@@ -75,35 +75,16 @@
             this.txtboxPassword.Size = new System.Drawing.Size(279, 34);
             this.txtboxPassword.TabIndex = 20;
             // 
-            // btnConfirm
+            // lb_Note
             // 
-            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(21)))), ((int)(((byte)(37)))));
-            this.btnConfirm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(21)))), ((int)(((byte)(37)))));
-            this.btnConfirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(78)))));
-            this.btnConfirm.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(110, 144);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(78)))));
-            this.btnConfirm.Size = new System.Drawing.Size(105, 37);
-            this.btnConfirm.TabIndex = 21;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 21);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "* Please enter your password";
+            this.lb_Note.AutoSize = true;
+            this.lb_Note.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Note.ForeColor = System.Drawing.Color.White;
+            this.lb_Note.Location = new System.Drawing.Point(10, 65);
+            this.lb_Note.Name = "lb_Note";
+            this.lb_Note.Size = new System.Drawing.Size(266, 21);
+            this.lb_Note.TabIndex = 22;
+            this.lb_Note.Text = "* Please enter ADMIN  password !";
             // 
             // label2
             // 
@@ -124,6 +105,25 @@
             this.panel1.Size = new System.Drawing.Size(335, 1);
             this.panel1.TabIndex = 24;
             // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(21)))), ((int)(((byte)(37)))));
+            this.btnConfirm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(21)))), ((int)(((byte)(37)))));
+            this.btnConfirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(78)))));
+            this.btnConfirm.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.Location = new System.Drawing.Point(110, 144);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(78)))));
+            this.btnConfirm.Size = new System.Drawing.Size(105, 37);
+            this.btnConfirm.TabIndex = 21;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
             // Frm_ConfirmDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,7 +132,7 @@
             this.ClientSize = new System.Drawing.Size(328, 196);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lb_Note);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.txtboxPassword);
             this.Controls.Add(this.btnExit);
@@ -151,8 +151,8 @@
         private System.Windows.Forms.Button btnExit;
         private Guna.UI2.WinForms.Guna2TextBox txtboxPassword;
         private Guna.UI2.WinForms.Guna2Button btnConfirm;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label lb_Note;
     }
 }

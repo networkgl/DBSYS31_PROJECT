@@ -26,6 +26,7 @@ namespace HMS.Forms
         //public static bool NoRooms { get => noRooms; set => noRooms = value; }
 
         //private int lastPrimaryKeyValue = 0;
+        private UserRepository userRepo;
 
 
         public Frm_ViewCurrentRooms()
@@ -34,6 +35,7 @@ namespace HMS.Forms
             db = new HMSEntities();
             adminRepo = new AdminRepository();
             CurrentIndex = adminRepo.LastPrimaryKeyValue;
+            userRepo = new UserRepository();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -52,14 +54,9 @@ namespace HMS.Forms
             
         //    return Image.FromStream(stream);
         //}
-        private void InitialLoad()
+        public void InitialLoad()
         {
             btnRoomDisplay.Enabled = false;
-
-            //lbl_roomType.Text = adminRepo._RoomType;
-            //lbl_roomDetails1.Text = adminRepo._RoomDetails;
-            //lbl_roomPrice.Text += adminRepo._RoomPrice.ToString();
-
 
             String response = String.Empty;
             var retValRows = adminRepo.GetRoomTypeByID(ref response);
@@ -98,6 +95,25 @@ namespace HMS.Forms
             lbl_roomType.Text = adminRepo._RoomType;
             lbl_roomDetails1.Text = adminRepo._RoomDetails;
             lbl_roomPrice.Text = adminRepo._DiscountedPrice.ToString("C2");
+
+
+            var message = String.Empty;
+            RoomAvailable currentTotalRoom = RoomAvailable.MIN;//this is equivalent assigning zero to this variable
+            var retVal = userRepo.GetRoomStatus(adminRepo._RoomType, ref currentTotalRoom, ref message);
+            if (currentTotalRoom == RoomAvailable.MAX)
+            {
+                lbl_roomLeft.Text = "FULLY BOOKED";
+                lbl_roomLeft.ForeColor = Color.Red;
+                //btnNext.BackColor = Color.Gray;
+                //btnNext.Enabled = false;
+            }
+            else
+            {
+                lbl_roomLeft.Text = "Vacant Room: " + ((int)(RoomAvailable.MAX - currentTotalRoom)).ToString();
+                //btnNext.Enabled = true;
+                //btnNext.BackColor = Color.FromArgb(100, 88, 255);
+                lbl_roomLeft.ForeColor = Color.RoyalBlue;
+            }
         }
 
         private void cbBox_roomType_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,9 +127,42 @@ namespace HMS.Forms
                 }
             }
 
+            //Call this function to display the discounted price if there is.
+            DisplayRoomDiscount(currentIndex);
 
+
+            //This should place below to prevent delay.
+            lbl_roomType.Text = adminRepo._RoomType;
+            lbl_roomDetails1.Text = adminRepo._RoomDetails;
+            lbl_roomPrice.Text = adminRepo._DiscountedPrice.ToString("C2");
+            var price = adminRepo._DiscountedPrice.ToString("C2");
+
+            lbl_priceDetails.Text = $"Per Night\r\n {price} Total for 1 night\r\nExcluding Taxes & Fees";
+
+
+
+            var message = String.Empty;
+            RoomAvailable currentTotalRoom = RoomAvailable.MIN;//this is equivalent assigning zero to this variable
+            var retVal = userRepo.GetRoomStatus(adminRepo._RoomType, ref currentTotalRoom, ref message);
+            if (currentTotalRoom == RoomAvailable.MAX)
+            {
+                lbl_roomLeft.Text = "FULLY BOOKED";
+                lbl_roomLeft.ForeColor = Color.Red;
+                //btnNext.BackColor = Color.Gray;
+                //btnNext.Enabled = false;
+            }
+            else
+            {
+                lbl_roomLeft.Text = "Vacant Room: " + ((int)(RoomAvailable.MAX - currentTotalRoom)).ToString();
+                //btnNext.Enabled = true;
+                //btnNext.BackColor = Color.FromArgb(100, 88, 255);
+                lbl_roomLeft.ForeColor = Color.RoyalBlue;
+            }
+        }
+        public void DisplayRoomDiscount(int index)
+        {
             String response = String.Empty;
-            var retVal = adminRepo.GetRoomDetails(currentIndex, ref response);
+            var retVal = adminRepo.GetRoomDetails(index, ref response);
 
             Thread.Sleep(500);
             if (retVal == ErrorCode.Success)
@@ -139,19 +188,7 @@ namespace HMS.Forms
             {
                 MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Error, MessageDialogStyle.Dark);
             }
-
-            //This should place below to prevent delay.
-            lbl_roomType.Text = adminRepo._RoomType;
-            lbl_roomDetails1.Text = adminRepo._RoomDetails;
-            lbl_roomPrice.Text = adminRepo._DiscountedPrice.ToString("C2");
-            var price = adminRepo._DiscountedPrice.ToString("C2");
-
-            lbl_priceDetails.Text = $"Per Night\r\n {price} Total for 1 night\r\nExcluding Taxes & Fees";
-
-
-
         }
-
         private void btnAddRooms_Click(object sender, EventArgs e)
         {
             Frm_Main.GetInstanceClass.pnl_main.Controls.Clear();
@@ -172,17 +209,7 @@ namespace HMS.Forms
             vcr.Show();
         }
 
-        private void pnl_Main_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void lbl_OrigPrice_Click(object sender, EventArgs e)
         {
 
         }

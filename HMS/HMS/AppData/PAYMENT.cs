@@ -21,7 +21,7 @@ namespace HMS.AppData
     
         public int paymentID { get; set; }
         public System.DateTime paymentDate { get; set; }
-        public int paymentTotal { get; set; }
+        public decimal paymentTotal { get; set; }
     
         public virtual ICollection<RESERVATION> RESERVATION { get; set; }
     }

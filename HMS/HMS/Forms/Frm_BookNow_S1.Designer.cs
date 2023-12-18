@@ -33,18 +33,16 @@
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.pnl_p1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtbox_CheckOutTime = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtbox_CheckInTime = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.nud_NumberOfGuest = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.mc_GuideBooking = new Pabo.Calendar.MonthCalendar();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
+            this.nud_NumberOfGuest_SeniorCitizen = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.nud_NumberOfGuest_Adult = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.nud_NumberOfGuest_Children = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.mc_GuideBooking = new Pabo.Calendar.MonthCalendar();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbBox_Guest = new Guna.UI2.WinForms.Guna2ComboBox();
             this.DateTimePicker_CheckOut = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.DateTimePicker_CheckIn = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -67,7 +65,9 @@
             this.pnl_Main.SuspendLayout();
             this.pnl_p1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_NumberOfGuest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_NumberOfGuest_SeniorCitizen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_NumberOfGuest_Adult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_NumberOfGuest_Children)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S1)).BeginInit();
             this.SuspendLayout();
@@ -105,18 +105,16 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtbox_CheckOutTime);
-            this.panel2.Controls.Add(this.txtbox_CheckInTime);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.nud_NumberOfGuest);
-            this.panel2.Controls.Add(this.mc_GuideBooking);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnNext);
+            this.panel2.Controls.Add(this.nud_NumberOfGuest_SeniorCitizen);
+            this.panel2.Controls.Add(this.nud_NumberOfGuest_Adult);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.nud_NumberOfGuest_Children);
+            this.panel2.Controls.Add(this.mc_GuideBooking);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.cbBox_Guest);
             this.panel2.Controls.Add(this.DateTimePicker_CheckOut);
             this.panel2.Controls.Add(this.DateTimePicker_CheckIn);
             this.panel2.Location = new System.Drawing.Point(131, 0);
@@ -124,72 +122,79 @@
             this.panel2.Size = new System.Drawing.Size(791, 595);
             this.panel2.TabIndex = 68;
             // 
-            // txtbox_CheckOutTime
+            // label5
             // 
-            this.txtbox_CheckOutTime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_CheckOutTime.DefaultText = "";
-            this.txtbox_CheckOutTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbox_CheckOutTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbox_CheckOutTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbox_CheckOutTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbox_CheckOutTime.Enabled = false;
-            this.txtbox_CheckOutTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_CheckOutTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_CheckOutTime.ForeColor = System.Drawing.Color.Black;
-            this.txtbox_CheckOutTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_CheckOutTime.Location = new System.Drawing.Point(449, 500);
-            this.txtbox_CheckOutTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtbox_CheckOutTime.Name = "txtbox_CheckOutTime";
-            this.txtbox_CheckOutTime.PasswordChar = '\0';
-            this.txtbox_CheckOutTime.PlaceholderText = "";
-            this.txtbox_CheckOutTime.SelectedText = "";
-            this.txtbox_CheckOutTime.Size = new System.Drawing.Size(338, 36);
-            this.txtbox_CheckOutTime.TabIndex = 90;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(-2, 396);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 21);
+            this.label5.TabIndex = 93;
+            this.label5.Text = "Senior Citizen";
             // 
-            // txtbox_CheckInTime
+            // btnNext
             // 
-            this.txtbox_CheckInTime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_CheckInTime.DefaultText = "";
-            this.txtbox_CheckInTime.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtbox_CheckInTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtbox_CheckInTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbox_CheckInTime.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbox_CheckInTime.Enabled = false;
-            this.txtbox_CheckInTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_CheckInTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_CheckInTime.ForeColor = System.Drawing.Color.Black;
-            this.txtbox_CheckInTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_CheckInTime.Location = new System.Drawing.Point(3, 500);
-            this.txtbox_CheckInTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtbox_CheckInTime.Name = "txtbox_CheckInTime";
-            this.txtbox_CheckInTime.PasswordChar = '\0';
-            this.txtbox_CheckInTime.PlaceholderText = "";
-            this.txtbox_CheckInTime.SelectedText = "";
-            this.txtbox_CheckInTime.Size = new System.Drawing.Size(338, 36);
-            this.txtbox_CheckInTime.TabIndex = 89;
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(673, 542);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(114, 39);
+            this.btnNext.TabIndex = 61;
+            this.btnNext.Text = "NEXT";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // nud_NumberOfGuest_SeniorCitizen
+            // 
+            this.nud_NumberOfGuest_SeniorCitizen.BackColor = System.Drawing.Color.Transparent;
+            this.nud_NumberOfGuest_SeniorCitizen.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nud_NumberOfGuest_SeniorCitizen.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nud_NumberOfGuest_SeniorCitizen.Location = new System.Drawing.Point(2, 420);
+            this.nud_NumberOfGuest_SeniorCitizen.Name = "nud_NumberOfGuest_SeniorCitizen";
+            this.nud_NumberOfGuest_SeniorCitizen.Size = new System.Drawing.Size(786, 36);
+            this.nud_NumberOfGuest_SeniorCitizen.TabIndex = 92;
+            this.nud_NumberOfGuest_SeniorCitizen.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.nud_NumberOfGuest_SeniorCitizen.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.nud_NumberOfGuest_SeniorCitizen.ValueChanged += new System.EventHandler(this.nud_NumberOfGuest_SeniorCitizen_ValueChanged);
+            // 
+            // nud_NumberOfGuest_Adult
+            // 
+            this.nud_NumberOfGuest_Adult.BackColor = System.Drawing.Color.Transparent;
+            this.nud_NumberOfGuest_Adult.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nud_NumberOfGuest_Adult.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nud_NumberOfGuest_Adult.Location = new System.Drawing.Point(0, 294);
+            this.nud_NumberOfGuest_Adult.Name = "nud_NumberOfGuest_Adult";
+            this.nud_NumberOfGuest_Adult.Size = new System.Drawing.Size(786, 36);
+            this.nud_NumberOfGuest_Adult.TabIndex = 91;
+            this.nud_NumberOfGuest_Adult.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.nud_NumberOfGuest_Adult.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.nud_NumberOfGuest_Adult.ValueChanged += new System.EventHandler(this.nud_NumberOfGuest_Adult_ValueChanged);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(6, 351);
+            this.label13.Location = new System.Drawing.Point(-4, 333);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(143, 21);
+            this.label13.Size = new System.Drawing.Size(75, 21);
             this.label13.TabIndex = 88;
-            this.label13.Text = "Number of Guest";
+            this.label13.Text = "Children";
             // 
-            // nud_NumberOfGuest
+            // nud_NumberOfGuest_Children
             // 
-            this.nud_NumberOfGuest.BackColor = System.Drawing.Color.Transparent;
-            this.nud_NumberOfGuest.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nud_NumberOfGuest.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nud_NumberOfGuest.Location = new System.Drawing.Point(2, 375);
-            this.nud_NumberOfGuest.Name = "nud_NumberOfGuest";
-            this.nud_NumberOfGuest.Size = new System.Drawing.Size(786, 36);
-            this.nud_NumberOfGuest.TabIndex = 87;
-            this.nud_NumberOfGuest.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.nud_NumberOfGuest.UpDownButtonForeColor = System.Drawing.Color.White;
-            this.nud_NumberOfGuest.ValueChanged += new System.EventHandler(this.nud_NumberOfGuest_ValueChanged);
+            this.nud_NumberOfGuest_Children.BackColor = System.Drawing.Color.Transparent;
+            this.nud_NumberOfGuest_Children.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nud_NumberOfGuest_Children.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nud_NumberOfGuest_Children.Location = new System.Drawing.Point(2, 357);
+            this.nud_NumberOfGuest_Children.Name = "nud_NumberOfGuest_Children";
+            this.nud_NumberOfGuest_Children.Size = new System.Drawing.Size(786, 36);
+            this.nud_NumberOfGuest_Children.TabIndex = 87;
+            this.nud_NumberOfGuest_Children.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.nud_NumberOfGuest_Children.UpDownButtonForeColor = System.Drawing.Color.White;
+            this.nud_NumberOfGuest_Children.ValueChanged += new System.EventHandler(this.nud_NumberOfGuest_Children_ValueChanged);
             // 
             // mc_GuideBooking
             // 
@@ -203,7 +208,7 @@
             this.mc_GuideBooking.Header.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mc_GuideBooking.Header.TextColor = System.Drawing.Color.White;
             this.mc_GuideBooking.ImageList = null;
-            this.mc_GuideBooking.Location = new System.Drawing.Point(57, 4);
+            this.mc_GuideBooking.Location = new System.Drawing.Point(78, 6);
             this.mc_GuideBooking.MaxDate = new System.DateTime(2033, 10, 27, 18, 23, 19, 468);
             this.mc_GuideBooking.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.mc_GuideBooking.Month.BackgroundImage = null;
@@ -215,7 +220,7 @@
             this.mc_GuideBooking.Month.TextFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mc_GuideBooking.Name = "mc_GuideBooking";
             this.mc_GuideBooking.ShowFooter = false;
-            this.mc_GuideBooking.Size = new System.Drawing.Size(676, 277);
+            this.mc_GuideBooking.Size = new System.Drawing.Size(634, 259);
             this.mc_GuideBooking.TabIndex = 85;
             this.mc_GuideBooking.TodayColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.mc_GuideBooking.Weekdays.BorderColor = System.Drawing.Color.Gray;
@@ -226,56 +231,21 @@
             this.mc_GuideBooking.Weeknumbers.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(200)))));
             this.mc_GuideBooking.DayQueryInfo += new Pabo.Calendar.DayQueryInfoEventHandler(this.mc_GuideBooking_DayQueryInfo);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(454, 476);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 21);
-            this.label10.TabIndex = 82;
-            this.label10.Text = "Time";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(8, 476);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 21);
-            this.label9.TabIndex = 81;
-            this.label9.Text = "Time";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(454, 412);
+            this.label8.Location = new System.Drawing.Point(413, 462);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 21);
             this.label8.TabIndex = 80;
             this.label8.Text = "Check - Out";
             // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(670, 545);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(115, 42);
-            this.btnNext.TabIndex = 61;
-            this.btnNext.Text = "NEXT";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 412);
+            this.label7.Location = new System.Drawing.Point(-2, 462);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 21);
             this.label7.TabIndex = 79;
@@ -285,32 +255,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 288);
+            this.label6.Location = new System.Drawing.Point(-4, 270);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 21);
+            this.label6.Size = new System.Drawing.Size(54, 21);
             this.label6.TabIndex = 78;
-            this.label6.Text = "Guest";
-            // 
-            // cbBox_Guest
-            // 
-            this.cbBox_Guest.BackColor = System.Drawing.Color.Transparent;
-            this.cbBox_Guest.BorderColor = System.Drawing.Color.Silver;
-            this.cbBox_Guest.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbBox_Guest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBox_Guest.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbBox_Guest.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbBox_Guest.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbBox_Guest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbBox_Guest.ItemHeight = 30;
-            this.cbBox_Guest.Items.AddRange(new object[] {
-            "Adult Only",
-            "Adult and Children",
-            "Senior Citizen"});
-            this.cbBox_Guest.Location = new System.Drawing.Point(3, 312);
-            this.cbBox_Guest.Name = "cbBox_Guest";
-            this.cbBox_Guest.Size = new System.Drawing.Size(785, 36);
-            this.cbBox_Guest.TabIndex = 64;
-            this.cbBox_Guest.SelectedIndexChanged += new System.EventHandler(this.cbBox_Guest_SelectedIndexChanged);
+            this.label6.Text = "Adult";
             // 
             // DateTimePicker_CheckOut
             // 
@@ -319,11 +268,11 @@
             this.DateTimePicker_CheckOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimePicker_CheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimePicker_CheckOut.Location = new System.Drawing.Point(449, 436);
+            this.DateTimePicker_CheckOut.Location = new System.Drawing.Point(417, 486);
             this.DateTimePicker_CheckOut.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateTimePicker_CheckOut.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimePicker_CheckOut.Name = "DateTimePicker_CheckOut";
-            this.DateTimePicker_CheckOut.Size = new System.Drawing.Size(338, 36);
+            this.DateTimePicker_CheckOut.Size = new System.Drawing.Size(370, 36);
             this.DateTimePicker_CheckOut.TabIndex = 51;
             this.DateTimePicker_CheckOut.Value = new System.DateTime(2023, 10, 15, 17, 20, 48, 197);
             this.DateTimePicker_CheckOut.ValueChanged += new System.EventHandler(this.DateTimePicker_CheckOut_ValueChanged);
@@ -335,11 +284,11 @@
             this.DateTimePicker_CheckIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimePicker_CheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimePicker_CheckIn.Location = new System.Drawing.Point(3, 436);
+            this.DateTimePicker_CheckIn.Location = new System.Drawing.Point(4, 486);
             this.DateTimePicker_CheckIn.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateTimePicker_CheckIn.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimePicker_CheckIn.Name = "DateTimePicker_CheckIn";
-            this.DateTimePicker_CheckIn.Size = new System.Drawing.Size(338, 36);
+            this.DateTimePicker_CheckIn.Size = new System.Drawing.Size(370, 36);
             this.DateTimePicker_CheckIn.TabIndex = 50;
             this.DateTimePicker_CheckIn.Value = new System.DateTime(2023, 10, 15, 17, 20, 48, 197);
             this.DateTimePicker_CheckIn.ValueChanged += new System.EventHandler(this.DateTimePicker_CheckIn_ValueChanged);
@@ -550,7 +499,9 @@
             this.pnl_p1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_NumberOfGuest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_NumberOfGuest_SeniorCitizen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_NumberOfGuest_Adult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_NumberOfGuest_Children)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_S1)).EndInit();
@@ -564,18 +515,13 @@
         private System.Windows.Forms.ErrorProvider errorProvider_S1;
         private System.Windows.Forms.Panel pnl_p1;
         private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2TextBox txtbox_CheckOutTime;
-        private Guna.UI2.WinForms.Guna2TextBox txtbox_CheckInTime;
         private System.Windows.Forms.Label label13;
-        private Guna.UI2.WinForms.Guna2NumericUpDown nud_NumberOfGuest;
+        private Guna.UI2.WinForms.Guna2NumericUpDown nud_NumberOfGuest_Children;
         private Pabo.Calendar.MonthCalendar mc_GuideBooking;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2ComboBox cbBox_Guest;
         public Guna.UI2.WinForms.Guna2DateTimePicker DateTimePicker_CheckOut;
         public Guna.UI2.WinForms.Guna2DateTimePicker DateTimePicker_CheckIn;
         private System.Windows.Forms.Panel panel3;
@@ -593,5 +539,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Panel pnl_Main;
+        private Guna.UI2.WinForms.Guna2NumericUpDown nud_NumberOfGuest_Adult;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2NumericUpDown nud_NumberOfGuest_SeniorCitizen;
     }
 }

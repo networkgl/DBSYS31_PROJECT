@@ -40,7 +40,6 @@
     <FunctionImportMapping FunctionImportName="sp_delete_room_details" FunctionName="HMSModel.Store.sp_delete_room_details" />
     <FunctionImportMapping FunctionImportName="sp_update_room_details_nophoto" FunctionName="HMSModel.Store.sp_update_room_details_nophoto" />
     <FunctionImportMapping FunctionImportName="sp_update_room_details_withphoto" FunctionName="HMSModel.Store.sp_update_room_details_withphoto" />
-    <FunctionImportMapping FunctionImportName="sp_insert_client_history" FunctionName="HMSModel.Store.sp_insert_client_history" />
     <FunctionImportMapping FunctionImportName="sp_insert_client_info" FunctionName="HMSModel.Store.sp_insert_client_info" />
     <FunctionImportMapping FunctionImportName="sp_insert_payment_info" FunctionName="HMSModel.Store.sp_insert_payment_info" />
     <FunctionImportMapping FunctionImportName="sp_insert_reservation_info" FunctionName="HMSModel.Store.sp_insert_reservation_info" />
@@ -49,6 +48,64 @@
     <FunctionImportMapping FunctionImportName="sp_insert_client_info_fnameOnly" FunctionName="HMSModel.Store.sp_insert_client_info_fnameOnly" />
     <FunctionImportMapping FunctionImportName="sp_approve_reservation" FunctionName="HMSModel.Store.sp_approve_reservation" />
     <FunctionImportMapping FunctionImportName="sp_delete_all_reservation" FunctionName="HMSModel.Store.sp_delete_all_reservation" />
+    <FunctionImportMapping FunctionImportName="sp_insert_number_of_guest" FunctionName="HMSModel.Store.sp_insert_number_of_guest" />
+    <FunctionImportMapping FunctionImportName="sp_get_client_room_details" FunctionName="HMSModel.Store.sp_get_client_room_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HMSModel.sp_get_client_room_details_Result">
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="TotalGuest" ColumnName="TotalGuest" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_get_room_status" FunctionName="HMSModel.Store.sp_get_room_status" />
+    <FunctionImportMapping FunctionImportName="sp_search_client_details" FunctionName="HMSModel.Store.sp_search_client_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HMSModel.sp_search_client_details_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adult" ColumnName="Adult" />
+          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="Senior" ColumnName="Senior" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_search_reservation_details" FunctionName="HMSModel.Store.sp_search_reservation_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HMSModel.sp_search_reservation_details_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Guest" ColumnName="Guest" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_search_room_details" FunctionName="HMSModel.Store.sp_search_room_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HMSModel.sp_search_room_details_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Room_Type" ColumnName="Room Type" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Promo" ColumnName="Promo" />
+          <ScalarProperty Name="Discounted" ColumnName="Discounted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="CLIENT">
       <EntityTypeMapping TypeName="HMSModel.CLIENT">
         <MappingFragment StoreEntitySet="CLIENT">
@@ -58,6 +115,16 @@
           <ScalarProperty Name="clientLName" ColumnName="clientLName" />
           <ScalarProperty Name="clientFName" ColumnName="clientFName" />
           <ScalarProperty Name="clientID" ColumnName="clientID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GUEST">
+      <EntityTypeMapping TypeName="HMSModel.GUEST">
+        <MappingFragment StoreEntitySet="GUEST">
+          <ScalarProperty Name="guestSeniorCitizen" ColumnName="guestSeniorCitizen" />
+          <ScalarProperty Name="guestChildren" ColumnName="guestChildren" />
+          <ScalarProperty Name="guestAdult" ColumnName="guestAdult" />
+          <ScalarProperty Name="guestID" ColumnName="guestID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -75,12 +142,11 @@
         <MappingFragment StoreEntitySet="RESERVATION">
           <ScalarProperty Name="clientID" ColumnName="clientID" />
           <ScalarProperty Name="paymentID" ColumnName="paymentID" />
+          <ScalarProperty Name="guestID" ColumnName="guestID" />
           <ScalarProperty Name="noOfDays" ColumnName="noOfDays" />
           <ScalarProperty Name="reservationStatus" ColumnName="reservationStatus" />
           <ScalarProperty Name="reservationDateOut" ColumnName="reservationDateOut" />
           <ScalarProperty Name="reservationDateIn" ColumnName="reservationDateIn" />
-          <ScalarProperty Name="typeOfGuest" ColumnName="typeOfGuest" />
-          <ScalarProperty Name="noOfGuest" ColumnName="noOfGuest" />
           <ScalarProperty Name="reservationID" ColumnName="reservationID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -88,6 +154,7 @@
     <EntitySetMapping Name="ROOM">
       <EntityTypeMapping TypeName="HMSModel.ROOM">
         <MappingFragment StoreEntitySet="ROOM">
+          <ScalarProperty Name="roomCounter" ColumnName="roomCounter" />
           <ScalarProperty Name="reservationID" ColumnName="reservationID" />
           <ScalarProperty Name="roomType" ColumnName="roomType" />
           <ScalarProperty Name="roomID" ColumnName="roomID" />
@@ -118,6 +185,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="vw_display_approve_reservation">
+      <EntityTypeMapping TypeName="HMSModel.vw_display_approve_reservation">
+        <MappingFragment StoreEntitySet="vw_display_approve_reservation">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Guest" ColumnName="Guest" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="vw_display_client_details">
       <EntityTypeMapping TypeName="HMSModel.vw_display_client_details">
         <MappingFragment StoreEntitySet="vw_display_client_details">
@@ -126,12 +209,29 @@
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Date_Out" ColumnName="Date Out" />
-          <ScalarProperty Name="Date_In" ColumnName="Date In" />
-          <ScalarProperty Name="Room_Type" ColumnName="Room Type" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="No_of_Guest" ColumnName="No of Guest" />
-          <ScalarProperty Name="Type_of_Guest" ColumnName="Type of Guest" />
+          <ScalarProperty Name="Senior" ColumnName="Senior" />
+          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="Adult" ColumnName="Adult" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_display_pending_reservation">
+      <EntityTypeMapping TypeName="HMSModel.vw_display_pending_reservation">
+        <MappingFragment StoreEntitySet="vw_display_pending_reservation">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Guest" ColumnName="Guest" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -143,10 +243,11 @@
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Date_Out" ColumnName="Date Out" />
-          <ScalarProperty Name="Date_In" ColumnName="Date In" />
-          <ScalarProperty Name="Room_Type" ColumnName="Room Type" />
-          <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Guest" ColumnName="Guest" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -158,8 +259,77 @@
           <ScalarProperty Name="Promo" ColumnName="Promo" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Details" ColumnName="Details" />
-          <ScalarProperty Name="Room_Type" ColumnName="Room Type" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_display_total_approve_guest">
+      <EntityTypeMapping TypeName="HMSModel.vw_display_total_approve_guest">
+        <MappingFragment StoreEntitySet="vw_display_total_approve_guest">
+          <ScalarProperty Name="TotalGuest" ColumnName="TotalGuest" />
+          <ScalarProperty Name="TotalSeniorCitizen" ColumnName="TotalSeniorCitizen" />
+          <ScalarProperty Name="TotalChildren" ColumnName="TotalChildren" />
+          <ScalarProperty Name="TotalAdult" ColumnName="TotalAdult" />
+          <ScalarProperty Name="guestID" ColumnName="guestID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_get_current_booking_bydate">
+      <EntityTypeMapping TypeName="HMSModel.vw_get_current_booking_bydate">
+        <MappingFragment StoreEntitySet="vw_get_current_booking_bydate">
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Senior" ColumnName="Senior" />
+          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="Adult" ColumnName="Adult" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_get_reservation_history">
+      <EntityTypeMapping TypeName="HMSModel.vw_get_reservation_history">
+        <MappingFragment StoreEntitySet="vw_get_reservation_history">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Guest" ColumnName="Guest" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_get_total_reservation_by_date">
+      <EntityTypeMapping TypeName="HMSModel.vw_get_total_reservation_by_date">
+        <MappingFragment StoreEntitySet="vw_get_total_reservation_by_date">
+          <ScalarProperty Name="reservationDateIn" ColumnName="reservationDateIn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_get_total_room_occupied">
+      <EntityTypeMapping TypeName="HMSModel.vw_get_total_room_occupied">
+        <MappingFragment StoreEntitySet="vw_get_total_room_occupied">
+          <ScalarProperty Name="RoomOccupied" ColumnName="RoomOccupied" />
+          <ScalarProperty Name="roomID" ColumnName="roomID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_get_total_room_reserve">
+      <EntityTypeMapping TypeName="HMSModel.vw_get_total_room_reserve">
+        <MappingFragment StoreEntitySet="vw_get_total_room_reserve">
+          <ScalarProperty Name="RoomReserved" ColumnName="RoomReserved" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

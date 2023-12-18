@@ -22,4 +22,9 @@ namespace HMS
         Staff = 2,
         //Client = 3
     }
+    public enum RoomAvailable
+    {
+        MAX = 9,
+        MIN = 0
+    }
 }

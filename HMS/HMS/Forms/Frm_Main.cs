@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Interop;
 
 namespace HMS
 {
@@ -17,18 +18,21 @@ namespace HMS
         private static Frm_Main main;
         private int toggleNotif = 0;
         private byte fontSize = 12;
-        private bool ToggleDash, ToggleClient, ToggleRoom, ToggleReserve,ToggleLogout;
         private static Frm_Main _instance;
+        private UserRepository userRepo;
+
+
+        private bool activeBookingDetails, activeReservation, activeManageRoom;
+
+
+        private Frm_Dashboard dashboard;
         public Frm_Main()
         {
             InitializeComponent();
+            dashboard = new Frm_Dashboard();
+            userRepo = new UserRepository();
+            //activeBookingDetails = true;
         }
-        //public static Frm_Main GetInstance()
-        //{
-        //    if(main == null)
-        //        main = new Frm_Main();
-        //    return main;
-        //}
         public static Frm_Main GetInstanceClass
         {
             get { return _instance; }
@@ -42,6 +46,11 @@ namespace HMS
                 return handleParams;
             }
         }
+
+        public bool ActiveBookingDetails { get => activeBookingDetails; set => activeBookingDetails = value; }
+        public bool ActiveReservation { get => activeReservation; set => activeReservation = value; }
+        public bool ActiveManageRoom { get => activeManageRoom; set => activeManageRoom = value; }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -49,10 +58,6 @@ namespace HMS
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-            ToggleDash = true;
-
-            //if (ToggleDash)
-            //    pnl_ToggleDash.Visible = ToggleDash;
 
             var Size_x = 39;
             var Size_y = 37;
@@ -65,47 +70,31 @@ namespace HMS
                 btn_Notificationss.BackgroundImageLayout = ImageLayout.Stretch;
                 btn_Notificationss.Location = new Point(Loc_x, Loc_y);
             }
-
+            dashboard = new Frm_Dashboard();
 
             pnl_main.Controls.Clear();
-            Frm_Dashboard.GetInstance().TopLevel = false;
-            Frm_Dashboard.GetInstance().Dock = DockStyle.Fill;
-            pnl_main.Controls.Add(Frm_Dashboard.GetInstance());
-            Frm_Dashboard.GetInstance().Show();
+            dashboard.TopLevel = false;
+            dashboard.Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(dashboard);
+            dashboard.Show();
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            //pnl_ToggleClient.Visible = false;
-            //pnl_ToggleRoom.Visible = false;
-            //pnl_ToggleReserve.Visible = false;
-            //pnl_ToggleLogout.Visible = false;
-
-            //ToggleDash = true;
-
-            //if (ToggleDash)
-            //    pnl_ToggleDash.Visible = ToggleDash;
-
+            dashboard = new Frm_Dashboard();
 
             pnl_main.Controls.Clear();
-            Frm_Dashboard.GetInstance().TopLevel = false;
-            Frm_Dashboard.GetInstance().Dock = DockStyle.Fill;
-            pnl_main.Controls.Add(Frm_Dashboard.GetInstance());
-            Frm_Dashboard.GetInstance().Show();
+            dashboard.TopLevel = false;
+            dashboard.Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(dashboard);
+            dashboard.Show();
         }
         private void btnClient_Click(object sender, EventArgs e)
         {
-            //pnl_ToggleDash.Visible = false;
-            //pnl_ToggleRoom.Visible = false;
-            //pnl_ToggleReserve.Visible = false;
-            //pnl_ToggleLogout.Visible = false;
+            activeReservation = false;
+            activeManageRoom = false;
+            activeBookingDetails = true;
 
-            //ToggleClient = true;
-
-            //if (ToggleClient)
-            //    pnl_ToggleClient.Visible = ToggleClient;
-
-
-            Frm_Client client = new Frm_Client();
+            Frm_BookingDetails client = new Frm_BookingDetails();
             pnl_main.Controls.Clear();
             client.TopLevel = false;
             client.Dock = DockStyle.Fill;
@@ -115,15 +104,7 @@ namespace HMS
 
         private void btnRoom_Click(object sender, EventArgs e)
         {
-            //pnl_ToggleDash.Visible = false;
-            //pnl_ToggleClient.Visible = false;
-            //pnl_ToggleReserve.Visible = false;
-            //pnl_ToggleLogout.Visible = false;
 
-            //ToggleRoom = true;
-
-            //if (ToggleRoom)
-            //    pnl_ToggleRoom.Visible = ToggleRoom;
 
             pnl_main.Controls.Clear();
             Frm_Room room = new Frm_Room();
@@ -134,15 +115,9 @@ namespace HMS
         }
         private void btnReservation_Click(object sender, EventArgs e)
         {
-            //pnl_ToggleDash.Visible = false;
-            //pnl_ToggleClient.Visible = false;
-            //pnl_ToggleRoom.Visible = false;
-            //pnl_ToggleLogout.Visible = false;
-
-            //ToggleReserve = true;
-
-            //if (ToggleReserve)
-            //    pnl_ToggleReserve.Visible = ToggleReserve;
+            activeManageRoom = false;
+            activeBookingDetails = false;
+            activeReservation = true;
 
 
             Frm_Reservation rsrv = new Frm_Reservation();
@@ -155,12 +130,8 @@ namespace HMS
         }
         private void btnManageRoomType_Click(object sender, EventArgs e)
         {
-            //pnl_main.Controls.Clear();
-            //Frm_ManageRoomType mgt = new Frm_ManageRoomType();
-            //mgt.TopLevel = false;
-            //mgt.Dock = DockStyle.Fill;
-            //pnl_main.Controls.Add(mgt);
-            //mgt.Show();
+
+            activeManageRoom = true;
 
             Frm_ViewRoomAvailable ar = new Frm_ViewRoomAvailable();
             pnl_main.Controls.Clear();
@@ -173,15 +144,6 @@ namespace HMS
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            //pnl_ToggleDash.Visible = false;
-            //pnl_ToggleClient.Visible = false;
-            //pnl_ToggleRoom.Visible = false;
-            //pnl_ToggleReserve.Visible = false;
-
-            //ToggleLogout = true;
-            //if (ToggleLogout)
-            //    pnl_ToggleLogout.Visible = ToggleLogout;
-
             var msg = "Are you sure you want to logout ?";
             bool logout = MessageDialog.Show(msg, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Dark) == DialogResult.Yes;
             if(logout) {
@@ -270,6 +232,70 @@ namespace HMS
             Application.Exit();
         }
 
+        private void txtbox_SearchBar_Leave(object sender, EventArgs e)
+        {
+            txtbox_SearchBar.Text = string.Empty;
+        }
+
+        //private void txtbox_SearchBar_TextChanged(object sender, EventArgs e)
+        //{
+        //    string message = string.Empty;
+        //    var retVal = userRepo.SearchReservationByName(txtbox_SearchBar.Text, ref message);
+        //    if (ErrorCode.Error == retVal)
+        //    {
+        //       MessageDialog.Show(message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+        //    }
+        //    else
+        //    {
+        //        Frm_BookingDetails frm = new Frm_BookingDetails();
+        //        frm.dgv_bookingdetails.Rows.Clear();
+        //        frm.dgv_bookingdetails.DataSource = retVal;
+
+        //    }
+        //}
+        private void txtbox_SearchBar_TextChanged(object sender, EventArgs e)
+        {
+            string searchName = txtbox_SearchBar.Text;
+
+            try
+            {
+                if (ActiveBookingDetails)
+                {
+                    var result = userRepo.SearchBookingDetailsByName(searchName);
+                    Frm_BookingDetails.Instance.dgv_bookingdetails.DataSource = result;
+                }
+                else if(ActiveBookingDetails && searchName.Equals(string.Empty))
+                {
+                    Frm_BookingDetails.Instance.LoadDataGrid();
+                }
+
+                if (ActiveReservation)
+                {
+                    var result = userRepo.SearchReservationDetails(searchName);
+                    Frm_Reservation.Instance.dgv_roomreservation.DataSource = result;
+                }
+                else if(ActiveReservation && searchName.Equals(string.Empty))
+                {
+                    Frm_Reservation.Instance.LoadDataGrid();
+                }
+
+                if (ActiveManageRoom)
+                {
+                    var result = userRepo.SearchRoomDetails(searchName);
+                    Frm_ViewRoomAvailable.Instance.dgv_roomdetails.DataSource = result;
+                }
+                else if (ActiveManageRoom && searchName.Equals(string.Empty))
+                {
+                    Frm_ViewRoomAvailable.Instance.LoadDataGrid();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions as needed
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }         
+        }
         private void btnReservation_MouseEnter(object sender, EventArgs e)
         {
             btnReservation.ForeColor = Color.White;

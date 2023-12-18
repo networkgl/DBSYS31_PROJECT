@@ -17,6 +17,7 @@ namespace HMS.AppData
         public int roomID { get; set; }
         public string roomType { get; set; }
         public int reservationID { get; set; }
+        public Nullable<int> roomCounter { get; set; }
     
         public virtual RESERVATION RESERVATION { get; set; }
     }

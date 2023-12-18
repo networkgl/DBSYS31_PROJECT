@@ -1,10 +1,12 @@
 ﻿using Guna.UI2.WinForms;
+using HMS.AppData;
 using HMS.Forms;
 using Pabo.Calendar;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -16,17 +18,21 @@ namespace HMS
         private Frm_BookNow_S2 s2;
         private Frm_BookNow_S3 s3;
 
-        private int guest;
-        private int noOfGuest;
+        private int noOfGuest_children;
+        private int noOfGuest_adult;
+        private int noOfGuest_senior;
+
         private String selectedTime_CheckIn = "After 2:00 PM";
         private String selectedTime_CheckOut = "Before 12:00 PM";
         public DateTime checkIn = DateTime.Now;
         public DateTime checkOut = DateTime.Now;
 
+        private HMSEntities db;
 
         public Frm_BookNow_S1()
         {
             InitializeComponent();
+            //userRepo = new UserRepository();
         }
         public Frm_BookNow_S1(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3)
         {
@@ -97,48 +103,142 @@ namespace HMS
 
             if (s1 == null)
             {
-                cbBox_Guest.SelectedIndex = Guest;
-                nud_NumberOfGuest.Value = NoOfGuest;
+                nud_NumberOfGuest_Adult.Value = NoOfGuest_Adult;
+                nud_NumberOfGuest_Children.Value = NoOfGuest_Children;
+                nud_NumberOfGuest_SeniorCitizen.Value = NoOfGuest_Senior;
+
                 DateTimePicker_CheckIn.Value = CheckIn;
                 DateTimePicker_CheckOut.Value = CheckOut;
-                txtbox_CheckInTime.Text = SelectedTime_CheckIn.ToString();
-                txtbox_CheckOutTime.Text = SelectedTime_CheckOut.ToString();
             }
             else
             {
-                cbBox_Guest.SelectedIndex = s1.Guest;
-                nud_NumberOfGuest.Value = s1.NoOfGuest;
+                nud_NumberOfGuest_Adult.Value = s1.NoOfGuest_Adult;
+                nud_NumberOfGuest_Children.Value = s1.NoOfGuest_Children;
+                nud_NumberOfGuest_SeniorCitizen.Value = s1.NoOfGuest_Senior;
+
                 DateTimePicker_CheckIn.Value = s1.CheckIn;
                 DateTimePicker_CheckOut.Value = s1.CheckOut;
-                txtbox_CheckInTime.Text = s1.SelectedTime_CheckIn.ToString();
-                txtbox_CheckOutTime.Text = s1.SelectedTime_CheckOut.ToString();
             }
-
+            //dateArray.Add(new DateTime(2023, 11, 10));
+            //dateArray.Add(new DateTime(2023, 11, 15));
+            //dateArray.Add(new DateTime(2023, 11, 20));
             //FormDisplay();
+        }
+        private List<vw_get_total_reservation_by_date> GetTotalReservationByDate(ref string message)
+        {
+            var retVal = new List<AppData.vw_get_total_reservation_by_date>();
+
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    retVal = db.vw_get_total_reservation_by_date.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+            }
+            return retVal;
+
         }
         private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
         {
-
             List<DateTime> dateArray = new List<DateTime>();
-            dateArray.Add(new DateTime(2023, 11, 10));
-            dateArray.Add(new DateTime(2023, 11, 15));
-            dateArray.Add(new DateTime(2023, 11, 20));
+
+            var message = string.Empty;
+            var Dates = new List<AppData.vw_get_total_reservation_by_date>();
+            if (s1 == null)
+            {
+                Dates = GetTotalReservationByDate(ref message);
+            }
+            else
+            {
+                Dates = s1.GetTotalReservationByDate(ref message);
+            }
+
+            foreach (var date in Dates)
+            {
+                dateArray.Add(date.reservationDateIn.Date); // Use Date property to get only the date part
+                //Console.WriteLine(date.reservationDateIn);
+            }
 
             var size = dateArray.Count;
 
+            // Count occurrences of each date
+            var dateCounts = dateArray.GroupBy(date => date).ToDictionary(group => group.Key, group => group.Count());
+
             for (int i = 0; i < size; i++)
             {
-
                 // Check date and mark it with color to specify occupied or not available to select for booking.
-                if (e.Date == dateArray[i])
+                if (e.Date.Date == dateArray[i])
                 {
-                    // Add custom formatting
-                    e.Info.DateColor = Color.White;
-                    e.Info.BackColor1 = Color.Red;
-                    e.OwnerDraw = true;
+                    // Check the count of reservations for the current date
+                    if (dateCounts.ContainsKey(e.Date.Date))
+                    {
+                        int count = dateCounts[e.Date.Date];
+
+                        // Set different colors based on the count threshold
+                        if (count <= 27 && count >= 21)
+                        {
+                            // Fully booked
+                            e.Info.DateColor = Color.White;
+                            e.Info.BackColor1 = Color.Blue; // You can choose a different color for fully booked dates
+                            e.OwnerDraw = true;
+                        }
+                        else if (count <= 20 && count >= 11)
+                        {
+                            // Almost fully booked
+                            e.Info.DateColor = Color.White;
+                            e.Info.BackColor1 = Color.OrangeRed; // You can choose a different color for almost fully booked dates
+                            e.OwnerDraw = true;
+                        }
+                        else if (count <= 10 && count >= 1)
+                        {
+                            // Minimally booked
+                            e.Info.DateColor = Color.White;
+                            e.Info.BackColor1 = Color.Green; // You can choose a different color for minimally booked dates
+                            e.OwnerDraw = true;
+                        }
+                        else
+                        {
+                            //// Not booked
+                            //e.Info.ResetBackColor();
+                        }
+                    }
                 }
             }
         }
+
+
+        //private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
+        //{
+
+        //    List<DateTime> dateArray = new List<DateTime>();
+
+        //    var message = string.Empty;
+        //    var Dates = userRepo.GetTotalReservationByDate(ref message);
+
+        //    foreach (var date in Dates)
+        //    {
+        //        dateArray.Add(date.reservationDateIn.Date);
+        //        //Console.WriteLine(date.reservationDateIn.Date);
+        //    }
+
+
+        //    var size = dateArray.Count;
+        //    for (int i = 0; i < size; i++)
+        //    {
+        //        // Check date and mark it with color to specify occupied or not available to select for booking.
+        //        if (e.Date == dateArray[i])
+        //        {
+        //            // Add custom formatting
+        //            e.Info.DateColor = Color.White;
+        //            e.Info.BackColor1 = Color.Red;
+        //            e.OwnerDraw = true;
+        //        }
+        //    }
+        //}
         private static Frm_BookNow_S1 _instace;
         public static Frm_BookNow_S1 GetInstance
         {
@@ -192,6 +292,7 @@ namespace HMS
             //s2.Dock = DockStyle.Fill;
             //pnl_Main.Controls.Add(s2);
             //s2.Show();
+            Console.WriteLine("Guest: "+(NoOfGuest_Adult+NoOfGuest_Children+NoOfGuest_Senior));
         }
 
         private void CurrentDate_Tick(object sender, EventArgs e)
@@ -208,45 +309,29 @@ namespace HMS
         private void DateTimePicker_CheckIn_ValueChanged(object sender, EventArgs e)
         {
             checkIn = DateTimePicker_CheckIn.Value.Date;
-            //Console.WriteLine("S1: "+checkIn);
         }
 
         private void DateTimePicker_CheckOut_ValueChanged(object sender, EventArgs e)
         {
             checkOut = DateTimePicker_CheckOut.Value.Date;
-            //Console.WriteLine("S1: "+checkOut);
         }
-        public void cbBox_Guest_SelectedIndexChanged(object sender, EventArgs e)
+        private void nud_NumberOfGuest_Adult_ValueChanged(object sender, EventArgs e)
         {
-            switch (cbBox_Guest.SelectedIndex)
-            {
-                case 0:
-                    guest = cbBox_Guest.SelectedIndex;
-                    break;
-                case 1:
-                    guest = cbBox_Guest.SelectedIndex;
-                    break;
-                case 2:
-                    guest = cbBox_Guest.SelectedIndex;
-                    break;
-            }
+            noOfGuest_adult = (Int32)nud_NumberOfGuest_Adult.Value;
+        }
+        private void nud_NumberOfGuest_Children_ValueChanged(object sender, EventArgs e)
+        {
+            noOfGuest_children = (Int32)nud_NumberOfGuest_Children.Value;
+        }
+        private void nud_NumberOfGuest_SeniorCitizen_ValueChanged(object sender, EventArgs e)
+        {
+            noOfGuest_senior = (Int32)nud_NumberOfGuest_SeniorCitizen.Value;
         }
 
-        private void nud_NumberOfGuest_ValueChanged(object sender, EventArgs e)
+        public int NoOfGuest_Children
         {
-            noOfGuest = (Int32)nud_NumberOfGuest.Value;
-        }
-
-        public int Guest
-        {
-            get { return guest; }
-            set { guest = value; }
-        }
-
-        public int NoOfGuest
-        {
-            get { return noOfGuest; }
-            set { noOfGuest = value; }
+            get { return noOfGuest_children; }
+            set { noOfGuest_children = value; }
         }
 
         public String SelectedTime_CheckIn//No need to have setters because it is a const var
@@ -272,5 +357,8 @@ namespace HMS
             get { return checkOut; }
             set { checkOut = value; }
         }
+
+        public int NoOfGuest_Adult { get => noOfGuest_adult; set => noOfGuest_adult = value; }
+        public int NoOfGuest_Senior { get => noOfGuest_senior; set => noOfGuest_senior = value; }
     }
 }

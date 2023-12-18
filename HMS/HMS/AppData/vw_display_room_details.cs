@@ -15,10 +15,10 @@ namespace HMS.AppData
     public partial class vw_display_room_details
     {
         public int ID { get; set; }
-        public string Room_Type { get; set; }
+        public string RoomType { get; set; }
         public string Details { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public string Promo { get; set; }
-        public Nullable<double> Discounted { get; set; }
+        public decimal Discounted { get; set; }
     }
 }

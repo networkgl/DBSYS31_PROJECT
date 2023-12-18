@@ -7,12 +7,13 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
-
+using System.Windows.Interop;
 namespace HMS
 {
     public partial class Frm_BookNow_S2 : Form
@@ -23,10 +24,11 @@ namespace HMS
         private AdminRepository adminRepo;
         private int currentIndex;
         private int roomType = 0;
-        private double roomPrice;
+        private decimal roomPrice;
         private string finalRoomType;
 
-        public double RoomPrice
+        private UserRepository userRepo;
+        public decimal RoomPrice
         {
             get { return roomPrice; }
             set { roomPrice = value; }
@@ -45,6 +47,7 @@ namespace HMS
         {
             InitializeComponent();
             adminRepo = new AdminRepository();
+            userRepo = new UserRepository();
         }
         public Frm_BookNow_S2(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3)
         {
@@ -53,7 +56,9 @@ namespace HMS
             this.s2 = s2;
             this.s3 = s3;
             //this.s4 = s4;
+
             adminRepo = new AdminRepository();
+            userRepo = new UserRepository();
 
         }
         private void llb_moreInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -120,20 +125,29 @@ namespace HMS
                 {
                     cbBox_roomType.Items.Add(i);
                 }
-                //if (cbBox_roomType.Items.Count == 0)
-                //{
-                //    var msg = "System is under Maintenance\nSorry for inconvenience";
-                //    MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
-                //}
-                //else
-                //{
-                //}
+
+                cbBox_roomType.SelectedIndex = 0;
+
+                if (AdminRepository._RoomDiscount > 0)
+                {
+                    //Meaning there is a possible disount percentage.
+                    lbl_percentSale.Text = AdminRepository._RoomDiscount.ToString() + "% OFF";
+                    lbl_OrigPrice.Text = AdminRepository._RoomPrice.ToString("C2");
+                    //Set to visible
+                    pnl_saleDetails.Visible = true;
+                    pnl_saleLogo.Visible = true;
+                }
+                else
+                {
+                    pnl_saleDetails.Visible = false;
+                    pnl_saleLogo.Visible = false;
+                }
                 cbBox_roomType.SelectedIndex = roomType;
 
             }
             else
             {
-                MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Question, MessageDialogStyle.Light);
+                //MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Question, MessageDialogStyle.Light);
             }
 
             pnl_roompicture.BackgroundImage = adminRepo.Image;
@@ -145,6 +159,25 @@ namespace HMS
             //Store this values and use it later for storing into the database.
             roomPrice = adminRepo._DiscountedPrice;
             finalRoomType = adminRepo._RoomType;
+
+
+            var message = String.Empty;
+            RoomAvailable currentTotalRoom = RoomAvailable.MIN;//this is equivalent assigning zero to this variable
+            var retVal = userRepo.GetRoomStatus(FinalRoomType, ref currentTotalRoom, ref message);
+
+            if (currentTotalRoom == RoomAvailable.MAX)
+            {
+                lbl_roomLeft.Text = "FULLY BOOKED";
+                btnNext.BackColor = Color.Gray;
+                btnNext.Enabled = false;
+            }
+            else
+            {
+                lbl_roomLeft.Text = "Vacant Room: " + ((int)(RoomAvailable.MAX - currentTotalRoom)).ToString();
+                btnNext.Enabled = true;
+                btnNext.BackColor = Color.FromArgb(100, 88, 255);
+                lbl_roomLeft.ForeColor = Color.RoyalBlue;
+            }
         }
         private void cbBox_roomType_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -164,13 +197,41 @@ namespace HMS
             Thread.Sleep(500);
             if (retVal == ErrorCode.Success)
             {
-                //MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Question, MessageDialogStyle.Light);
                 pnl_roompicture.BackgroundImage = adminRepo.Image;
+
+                if (AdminRepository._RoomDiscount > 0)
+                {
+                    //Meaning there is a possible disount percentage.
+                    lbl_percentSale.Text = AdminRepository._RoomDiscount.ToString() + "% OFF";
+                    lbl_OrigPrice.Text = AdminRepository._RoomPrice.ToString("C2");
+                    //Set to visible
+                    pnl_saleDetails.Visible = true;
+                    pnl_saleLogo.Visible = true;
+                }
+                else
+                {
+                    pnl_saleDetails.Visible = false;
+                    pnl_saleLogo.Visible = false;
+                }
             }
             else
             {
-                MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Error, MessageDialogStyle.Light);
+                MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Error, MessageDialogStyle.Dark);
             }
+
+            //String response = String.Empty;
+            //var retVal = adminRepo.GetRoomDetails(currentIndex, ref response);
+
+            //Thread.Sleep(500);
+            //if (retVal == ErrorCode.Success)
+            //{
+            //    //MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Question, MessageDialogStyle.Light);
+            //    pnl_roompicture.BackgroundImage = adminRepo.Image;
+            //}
+            //else
+            //{
+            //    MessageDialog.Show(response, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Error, MessageDialogStyle.Light);
+            //}
 
             //This should place below to prevent delay.
             lbl_roomType.Text = adminRepo._RoomType;
@@ -180,9 +241,31 @@ namespace HMS
 
             lbl_priceDetails.Text = $"Per Night\r\n {price} Total for 1 night\r\nExcluding Taxes & Fees";
 
+
             //Store this values and use it later for storing into the database.
             roomPrice = adminRepo._DiscountedPrice;
             finalRoomType = adminRepo._RoomType;
+
+
+
+            var message = String.Empty;
+            RoomAvailable currentTotalRoom = RoomAvailable.MIN;//this is equivalent assigning zero to this variable
+            retVal = userRepo.GetRoomStatus(FinalRoomType, ref currentTotalRoom, ref message);
+            if (currentTotalRoom == RoomAvailable.MAX)
+            {
+                lbl_roomLeft.Text = "FULLY BOOKED";
+                lbl_roomLeft.ForeColor = Color.Red;
+                btnNext.BackColor = Color.Gray;
+                btnNext.Enabled = false;
+            }
+            else
+            {
+                lbl_roomLeft.Text = "Vacant Room: " + ((int)(RoomAvailable.MAX - currentTotalRoom)).ToString();
+                btnNext.Enabled = true;
+                btnNext.BackColor = Color.FromArgb(100, 88, 255);
+                lbl_roomLeft.ForeColor = Color.RoyalBlue;
+            }
+            //lbl_roomLeft.Text = "Room Vacant: " + ((int)(RoomAvailable.MAX - currentTotalRoom)).ToString();
         }
 
         private static Frm_BookNow_S2 s22;
@@ -209,6 +292,23 @@ namespace HMS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            var msg = "Sorry, the selected room type is fully book\n" +
+                "Please select another one.";
+            //Check first if roomtype is fullybook or not.
+            var message = String.Empty;
+            RoomAvailable currentTotalRoom = RoomAvailable.MIN;//this is equivalent to zero variable
+            var retVal = userRepo.GetRoomStatus(FinalRoomType, ref currentTotalRoom, ref message);
+
+            if (retVal == ErrorCode.Success)//if successfully query
+            {
+                if (currentTotalRoom == RoomAvailable.MAX)//if fullybook then prompt user that specific roomtype is fullybook
+                {
+                    MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                    return;// Simply return it directly to stop executing the other statement.
+                }
+            }
+
+
             s22 = this;
             this.Hide();
             if (s3 == null)

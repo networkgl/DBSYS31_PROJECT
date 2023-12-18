@@ -17,9 +17,9 @@ namespace HMS.AppData
         public int roomID { get; set; }
         public string roomType { get; set; }
         public byte[] roomPhoto { get; set; }
-        public double roomPrice { get; set; }
+        public decimal roomPrice { get; set; }
         public string roomDetails { get; set; }
-        public double roomDiscount { get; set; }
-        public double discountedPrice { get; set; }
+        public decimal roomDiscount { get; set; }
+        public decimal discountedPrice { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,11 +24,11 @@ namespace HMS
 
         private string _roomType;
         private string _roomDetails;
-        private static double _roomPrice;
-        private static double? _roomDiscount;
-        private double _discountedPrice;
+        private static decimal _roomPrice;
+        private static decimal? _roomDiscount;
+        private decimal _discountedPrice;
 
-
+      
         public int LastPrimaryKeyValue 
         {
             get { return lastVal; }
@@ -48,9 +49,10 @@ namespace HMS
 
         public string _RoomType { get => _roomType; set => _roomType = value; }
         public string _RoomDetails { get => _roomDetails; set => _roomDetails = value; }
-        public static double _RoomPrice { get => _roomPrice; set => _roomPrice = value; }
-        public static double? _RoomDiscount { get => _roomDiscount; set => _roomDiscount = value; }
-        public double _DiscountedPrice { get => _discountedPrice; set => _discountedPrice = value; }
+        public static decimal _RoomPrice { get => _roomPrice; set => _roomPrice = value; }
+        public static decimal? _RoomDiscount { get => _roomDiscount; set => _roomDiscount = value; }
+        public decimal _DiscountedPrice { get => _discountedPrice; set => _discountedPrice = value; }
+
 
         public AdminRepository()
         {
@@ -58,7 +60,7 @@ namespace HMS
         }
 
         //Use this SP to allow dynamically inserting new advertisement 
-        public ErrorCode InsertRoomDetails(int roomID, String roomType, byte[] roomPhoto, string roomDetails, double roomPrice, double roomDiscount , ref String response)
+        public ErrorCode InsertRoomDetails(int roomID, String roomType, byte[] roomPhoto, string roomDetails, decimal roomPrice, decimal roomDiscount , ref String response)
         {
             //Return Succcess Or Error.
             try
@@ -269,7 +271,7 @@ namespace HMS
                 return ErrorCode.Error;
             }
         }
-        public ErrorCode UpdateRoomDetails_WithPhoto(int? roomID, byte[] roomPhoto, string roomType, string roomDetails, double roomPrice, double roomDiscount, double discountedPrice, ref string response)
+        public ErrorCode UpdateRoomDetails_WithPhoto(int? roomID, byte[] roomPhoto, string roomType, string roomDetails, decimal roomPrice, decimal roomDiscount, decimal discountedPrice, ref string response)
         {
             try
             {
@@ -286,7 +288,7 @@ namespace HMS
                 return ErrorCode.Error;
             }
         }
-        public ErrorCode UpdateRoomDetails_NoPhoto(int? roomID, string roomType, string roomDetails, double roomPrice, double roomDiscount, double discountePrice, ref string response)
+        public ErrorCode UpdateRoomDetails_NoPhoto(int? roomID, string roomType, string roomDetails, decimal roomPrice, decimal roomDiscount, decimal discountePrice, ref string response)
         {
             try
             {
@@ -322,6 +324,7 @@ namespace HMS
 
             return retVal;
         }
-        
+
+   
     }
 }

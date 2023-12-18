@@ -44,14 +44,14 @@ namespace HMS
         private Frm_BookNow_S2 s2;
         private Frm_BookNow_S3 s3;
         private Frm_BookNow_S4 s4;
-        private double _finalPrice;
+        private decimal _finalPrice;
 
         public string CardHolderName { get; set; }
         public string CardNumber { get; set; }
         public string CardExpiryDate { get; set; }
         public string CardCVC { get; set; }
 
-        public double FinalTotalPrice
+        public decimal FinalTotalPrice
         {
             get {  return _finalPrice; }
             set {  _finalPrice = value; }
@@ -485,67 +485,85 @@ namespace HMS
             lbl_CheckIn_Date.Text = s1.CheckIn.ToString("ddd, MMM dd, yyyy");
             lbl_CheckOut_Date.Text = s1.CheckOut.ToString("ddd, MMM dd, yyyy");
             lbl_totalPrice.Text = GetTotalAmount();
-            lbl_Guest.Text = GetGuestByIndex();
+            lbl_Guest.Text = GetGuestDescription();
             lbl_NumberOfDays.Text = isDays();
-            lbl_NoOfGuest.Text = GetNoOfGuestByValue(s1.NoOfGuest).ToString();
+            lbl_NoOfGuest.Text = (s1.NoOfGuest_Children+s1.NoOfGuest_Adult+s1.NoOfGuest_Senior).ToString();
 
-            lbl_FullName.Text = s3.Lname + " " + s3.Fname;
+            lbl_FullName.Text = s3.Lname + ", " + s3.Fname;
             lbl_ContactNumber.Text = s3.Phone.ToString();
 
-            //if (s4 == null)
-            //{
-            //    lbl_CheckIn_Time.Text = s1.SelectedTime_CheckIn;
-            //    lbl_CheckOut_Time.Text = s1.SelectedTime_CheckOut;
-            //    lbl_CheckIn_Date.Text = s1.CheckIn.ToString("ddd, MMM dd, yyyy");
-            //    lbl_CheckOut_Date.Text = s1.CheckOut.ToString("ddd, MMM dd, yyyy");
-            //    lbl_totalPrice.Text = GetTotalAmount() + ".00";
-            //    lbl_Guest.Text = GetGuestByIndex();
-            //    lbl_NumberOfDays.Text = isDays();
-            //    lbl_NoOfGuest.Text = GetNoOfGuestByValue(s1.NoOfGuest).ToString();
+            /*
+            if (s4 == null)
+            {
+                lbl_CheckIn_Time.Text = s1.SelectedTime_CheckIn;
+                lbl_CheckOut_Time.Text = s1.SelectedTime_CheckOut;
+                lbl_CheckIn_Date.Text = s1.CheckIn.ToString("ddd, MMM dd, yyyy");
+                lbl_CheckOut_Date.Text = s1.CheckOut.ToString("ddd, MMM dd, yyyy");
+                lbl_totalPrice.Text = GetTotalAmount() + ".00";
+                lbl_Guest.Text = GetGuestByIndex();
+                lbl_NumberOfDays.Text = isDays();
+                lbl_NoOfGuest.Text = GetNoOfGuestByValue(s1.NoOfGuest).ToString();
 
-            //    lbl_FullName.Text = s3.Lname + ", " + s3.Fname;
-            //    lbl_ContactNumber.Text = s3.Phone.ToString();
-            //}
-            //else
-            //{
-            //    lbl_CheckIn_Time.Text = s4.s1.SelectedTime_CheckIn;
-            //    lbl_CheckOut_Time.Text = s4.s1.SelectedTime_CheckOut;
-            //    lbl_CheckIn_Date.Text = s4.s1.CheckIn.ToString("ddd, MMM dd, yyyy");
-            //    lbl_CheckOut_Date.Text = s4.s1.CheckOut.ToString("ddd, MMM dd, yyyy");
-            //    lbl_totalPrice.Text = s4.GetTotalAmount() + ".00";
-            //    lbl_Guest.Text = s4.GetGuestByIndex();
-            //    lbl_NumberOfDays.Text = s4.isDays();
-            //    lbl_NoOfGuest.Text = s4.GetNoOfGuestByValue(s1.NoOfGuest).ToString();
+                lbl_FullName.Text = s3.Lname + ", " + s3.Fname;
+                lbl_ContactNumber.Text = s3.Phone.ToString();
+            }
+            else
+            {
+                lbl_CheckIn_Time.Text = s4.s1.SelectedTime_CheckIn;
+                lbl_CheckOut_Time.Text = s4.s1.SelectedTime_CheckOut;
+                lbl_CheckIn_Date.Text = s4.s1.CheckIn.ToString("ddd, MMM dd, yyyy");
+                lbl_CheckOut_Date.Text = s4.s1.CheckOut.ToString("ddd, MMM dd, yyyy");
+                lbl_totalPrice.Text = s4.GetTotalAmount() + ".00";
+                lbl_Guest.Text = s4.GetGuestByIndex();
+                lbl_NumberOfDays.Text = s4.isDays();
+                lbl_NoOfGuest.Text = s4.GetNoOfGuestByValue(s1.NoOfGuest).ToString();
 
-            //    lbl_FullName.Text = s4.s3.Lname + ", " + s3.Fname;
-            //    lbl_ContactNumber.Text = s4.s3.Phone.ToString();
-            //}
+                lbl_FullName.Text = s4.s3.Lname + ", " + s3.Fname;
+                lbl_ContactNumber.Text = s4.s3.Phone.ToString();
+            }
+            */
         }
-        private String GetNoOfGuestByValue(int recVal)
-        {
-            return ParseVal(recVal);
-        }        
-        public String GetGuestByIndex()
+        
+        public String GetGuestDescription()
         {
             string retVal = String.Empty;
-            var GuestIndex = s1.Guest;
-            //var GuestIndex = Frm_BookNow_S1.Guest;
-            switch (GuestIndex)
-            {
-                case 0:
-                    retVal = "Adult";
-                    break;
-                case 1:
-                    retVal = "Adult and Children";
-                    break;
-                case 2:
-                    retVal = "Senior Citizen";
-                    break;
-            }
+            var adult = s1.NoOfGuest_Adult;
+            var children = s1.NoOfGuest_Children;
+            var senior = s1.NoOfGuest_Senior;
 
+            if (adult >= 1)
+            {
+                retVal += "Adult";
+            }
+            if (children >= 1)
+            {
+                if (retVal.Equals("Adult"))
+                {
+                    retVal += " and Children";
+                }
+                else
+                {
+                    retVal += "Children";
+                }
+            }
+            if (senior >= 1)
+            {
+                if (retVal.Equals("Adult and Children"))
+                {
+                    retVal = "Adult, Children and Senior Citizen";
+                }
+                else if (retVal.Equals("Children") || retVal.Equals("Adult"))
+                {
+                    retVal += " and Senior Citizen";
+                }
+                else
+                {
+                    retVal += "Senior Citizen";
+                }
+            }
             return retVal;
         }
-        private String ParseVal(double retVal)
+        private String ParseVal(decimal retVal)
         {
             return retVal.ToString("C2");
             //return retVal.ToString("#,##0");
@@ -558,7 +576,7 @@ namespace HMS
             //Console.WriteLine(totalDys);
             var retVal = String.Empty;
 
-            _finalPrice = s2.RoomPrice * totalDys;
+            _finalPrice = ((decimal)(s2.RoomPrice * totalDys));
             retVal = ParseVal(_finalPrice);
 
             return retVal;
