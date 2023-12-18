@@ -25,6 +25,8 @@ namespace HMS.Forms
             InitializeComponent();
             userRepo = new UserRepository();
             Instance = this;
+
+
         }
         protected override CreateParams CreateParams
         {
@@ -42,23 +44,23 @@ namespace HMS.Forms
         public void LoadDataGrid()
         {
             string message = string.Empty;
-            dgv_bookingdetails.DataSource = userRepo.LoadClientsInformation(ref message);
+            dgv_roomdetails.DataSource = userRepo.LoadClientsInformation(ref message);
 
-            dgv_bookingdetails.Columns["ID"].Width = 20;
-            dgv_bookingdetails.Columns["Adult"].Width = 30;
-            dgv_bookingdetails.Columns["Children"].Width = 40;
-            dgv_bookingdetails.Columns["Senior"].Width = 35;
-            dgv_bookingdetails.Columns["Name"].Width = 30;
-            dgv_bookingdetails.Columns["RoomType"].Width = 70;
-            dgv_bookingdetails.Columns["DateIn"].Width = 45;
-            dgv_bookingdetails.Columns["DateOut"].Width = 55;
-            dgv_bookingdetails.Columns["Address"].Width = 50;
-            dgv_bookingdetails.Columns["Email"].Width = 60;
-            dgv_bookingdetails.Columns["Phone"].Width = 45;
-            dgv_bookingdetails.Columns["Days"].Width = 30;
-            dgv_bookingdetails.Columns["Payment"].Width = 100;
+            dgv_roomdetails.Columns["ID"].Width = 20;
+            dgv_roomdetails.Columns["Adult"].Width = 30;
+            dgv_roomdetails.Columns["Children"].Width = 40;
+            dgv_roomdetails.Columns["Senior"].Width = 35;
+            dgv_roomdetails.Columns["Name"].Width = 30;
+            dgv_roomdetails.Columns["RoomType"].Width = 70;
+            dgv_roomdetails.Columns["DateIn"].Width = 45;
+            dgv_roomdetails.Columns["DateOut"].Width = 55;
+            dgv_roomdetails.Columns["Address"].Width = 50;
+            dgv_roomdetails.Columns["Email"].Width = 60;
+            dgv_roomdetails.Columns["Phone"].Width = 45;
+            dgv_roomdetails.Columns["Days"].Width = 30;
+            dgv_roomdetails.Columns["Payment"].Width = 100;
 
-            this.dgv_bookingdetails.Columns["Payment"].DefaultCellStyle.Format = "C";
+            this.dgv_roomdetails.Columns["Payment"].DefaultCellStyle.Format = "C";
             //this.dgv_roomdetails.Columns["Payment"].DefaultCellStyle.FormatProvider = new CultureInfo("en-PH");
         }
 
@@ -80,7 +82,7 @@ namespace HMS.Forms
 
             if (chkBox_showCurrentlyCheck_In.Checked)
             {
-                dgv_bookingdetails.DataSource = userRepo.GetCurrentReservation_CheckIn_ByDate(ref msg);
+                dgv_roomdetails.DataSource = userRepo.GetCurrentReservation_CheckIn_ByDate(ref msg);
             }
 
 
@@ -99,6 +101,14 @@ namespace HMS.Forms
             {
                 LoadDataGrid();
             }
+
+            Frm_Main.LastActivity = "Filtering Current Check In";
+
+        }
+
+        private void chkBox_showCurrentlyCheck_In_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

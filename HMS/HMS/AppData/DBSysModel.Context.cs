@@ -28,6 +28,7 @@ namespace HMS.AppData
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<ACCOUNTS> ACCOUNTS { get; set; }
         public DbSet<CLIENT> CLIENT { get; set; }
         public DbSet<GUEST> GUEST { get; set; }
         public DbSet<PAYMENT> PAYMENT { get; set; }
@@ -35,11 +36,14 @@ namespace HMS.AppData
         public DbSet<ROOM> ROOM { get; set; }
         public DbSet<ROOM_DETAILS> ROOM_DETAILS { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<USERLOGGED_HISTORY> USERLOGGED_HISTORY { get; set; }
         public DbSet<vw_display_approve_reservation> vw_display_approve_reservation { get; set; }
         public DbSet<vw_display_client_details> vw_display_client_details { get; set; }
         public DbSet<vw_display_pending_reservation> vw_display_pending_reservation { get; set; }
         public DbSet<vw_display_reservation_details> vw_display_reservation_details { get; set; }
         public DbSet<vw_display_room_details> vw_display_room_details { get; set; }
+        public DbSet<vw_display_system_log> vw_display_system_log { get; set; }
+        public DbSet<vw_display_sytem_accounts> vw_display_sytem_accounts { get; set; }
         public DbSet<vw_display_total_approve_guest> vw_display_total_approve_guest { get; set; }
         public DbSet<vw_get_current_booking_bydate> vw_get_current_booking_bydate { get; set; }
         public DbSet<vw_get_reservation_history> vw_get_reservation_history { get; set; }
@@ -567,6 +571,74 @@ namespace HMS.AppData
                 new ObjectParameter("SearchTerm", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_search_room_details_Result>("sp_search_room_details", searchTermParameter);
+        }
+    
+        public virtual int sp_insert_system_accounts(string username, string password, Nullable<int> roleID)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            var roleIDParameter = roleID.HasValue ?
+                new ObjectParameter("roleID", roleID) :
+                new ObjectParameter("roleID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_system_accounts", usernameParameter, passwordParameter, roleIDParameter);
+        }
+    
+        public virtual int sp_update_system_accounts(Nullable<int> userID, string username, string newPassword, Nullable<int> newRoleID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("userID", userID) :
+                new ObjectParameter("userID", typeof(int));
+    
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var newPasswordParameter = newPassword != null ?
+                new ObjectParameter("newPassword", newPassword) :
+                new ObjectParameter("newPassword", typeof(string));
+    
+            var newRoleIDParameter = newRoleID.HasValue ?
+                new ObjectParameter("newRoleID", newRoleID) :
+                new ObjectParameter("newRoleID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_system_accounts", userIDParameter, usernameParameter, newPasswordParameter, newRoleIDParameter);
+        }
+    
+        public virtual int sp_delete_system_accounts(Nullable<int> userID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("userID", userID) :
+                new ObjectParameter("userID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_delete_system_accounts", userIDParameter);
+        }
+    
+        public virtual int sp_insert_system_log(string typeofaccount, Nullable<System.DateTime> dateLogin, Nullable<System.TimeSpan> timeLogin, string lastActivity)
+        {
+            var typeofaccountParameter = typeofaccount != null ?
+                new ObjectParameter("typeofaccount", typeofaccount) :
+                new ObjectParameter("typeofaccount", typeof(string));
+    
+            var dateLoginParameter = dateLogin.HasValue ?
+                new ObjectParameter("dateLogin", dateLogin) :
+                new ObjectParameter("dateLogin", typeof(System.DateTime));
+    
+            var timeLoginParameter = timeLogin.HasValue ?
+                new ObjectParameter("timeLogin", timeLogin) :
+                new ObjectParameter("timeLogin", typeof(System.TimeSpan));
+    
+            var lastActivityParameter = lastActivity != null ?
+                new ObjectParameter("lastActivity", lastActivity) :
+                new ObjectParameter("lastActivity", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_system_log", typeofaccountParameter, dateLoginParameter, timeLoginParameter, lastActivityParameter);
         }
     }
 }

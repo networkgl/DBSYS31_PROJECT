@@ -125,6 +125,7 @@ namespace HMS.Forms
 
             String response = String.Empty;
             userRepo.GetClientRoomDetails(cbBox_RoomType.SelectedItem.ToString(), ref response);
+            Frm_Main.LastActivity = "Viewing " + cbBox_RoomType.SelectedItem.ToString() + " Room Type";
 
             var details = userRepo.ClientDetails;
             var labelAssignVal = roomDetails;

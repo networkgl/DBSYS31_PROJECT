@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +21,13 @@ namespace HMS.Forms
         private int toggleShow = 0;
         private bool? firstRun = null;
 
+        private UserRepository userRepo;
         public bool HasLogin { get; set; }
+        public static string UserType { get; set; }
         public Frm_Login()
         {
             InitializeComponent();
+            userRepo = new UserRepository();
         }
         protected override CreateParams CreateParams
         {
@@ -117,11 +121,12 @@ namespace HMS.Forms
             HasLogin = true;
             toggleShow = 0;
 
-            this.Hide();
-            //Frm_Main.GetInstance().Show();
-            Frm_Main main = new Frm_Main();
-            main.Show();
-            //Frm_MainPage.GetInstance().Show();
+            //this.Hide();
+            //Frm_Main main = new Frm_Main();
+            //main.Show();
+
+
+            ValidateUserLogin();
         }
 
         private void LoginTextBox()
@@ -140,6 +145,51 @@ namespace HMS.Forms
                 btnShowPassword.BackgroundImageLayout = ImageLayout.Center;
             }
             Console.WriteLine(toggleShow);
+        }
+
+        public void ValidateUserLogin()
+        {
+            var userLogged = userRepo.GetUserByUsername(txtboxUsername.Text);
+            var message = "Successfully Login";
+
+            if (userLogged != null)
+            {
+                if (userLogged.userPassword.Equals(txtboxPassword.Text))
+                {
+                    // Assigned to a singleton
+                    UserLogged.GetInstance().UserAccount = userLogged;
+                    Frm_Main main = new Frm_Main();
+                    switch ((Role)userLogged.roleID)
+                    {
+                        case Role.Admin:
+                            UserType = "Admin";
+                            MessageDialog.Show("Admin " + message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+                            this.Hide();
+                            main.Show();
+                            break;
+                        case Role.Staff:
+                            UserType = "Staff";
+                            MessageDialog.Show("Staff " + message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+                            this.Hide();
+                            main.Show();
+                            break;
+                        default:
+                            message = "User has no ROLE!";
+                            MessageDialog.Show(message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                            break;
+                    }
+                }
+                else
+                {
+                    message = "Invalid Password";
+                    MessageDialog.Show(message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                }
+            }
+            else
+            {
+                message = "Username NOT FOUND";
+                MessageDialog.Show(message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+            }
         }
     }
 }

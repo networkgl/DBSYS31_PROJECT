@@ -496,5 +496,117 @@ namespace HMS
                 throw ex;
             }
         }
+        public ErrorCode InsertSystemAccounts(string username, string password, int roleID, ref string message)
+        {
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    db.sp_insert_system_accounts(username, password, roleID);
+                    message = "Account Successfully Created";
+                    return ErrorCode.Success;
+                }
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+                return ErrorCode.Error;
+            }
+        }
+        public List<vw_display_sytem_accounts> GetSystemAccounts(ref string message)
+        {
+            var retVal = new List<vw_display_sytem_accounts>();
+
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    retVal = db.vw_display_sytem_accounts.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+            }
+            return retVal;
+        }
+        public ErrorCode UpdateSystemAccounts(int userID, string username, string password, int roleID, ref string message)
+        {
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    db.sp_update_system_accounts(userID, username, password, roleID);
+                    message = "Account Successfully Updated";
+                    return ErrorCode.Success;
+                }
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+                return ErrorCode.Error;
+            }
+        }
+        public ErrorCode DeleteSystemAccounts(int userID, ref string message)
+        {
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    db.sp_delete_system_accounts(userID);
+                    message = "Account Successfully Deleted";
+                    return ErrorCode.Success;
+                }
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+                return ErrorCode.Error;
+            }
+        }
+        public ACCOUNTS GetUserByUsername(String username)
+        {
+            // re-initialize db object because sometimes data in the list not updated
+            using (db = new HMSEntities())
+            {
+                // SELECT TOP 1 * FROM USERACCOUNT WHERE userName == username
+                Console.WriteLine("Out: " + db.ACCOUNTS.Where(s => s.userName == username).FirstOrDefault());
+                return db.ACCOUNTS.Where(s => s.userName == username).FirstOrDefault();
+
+            }
+        }
+        public ErrorCode InsertSystemLogs(string typeOfAccount,DateTime date, TimeSpan time, string lastActivity, ref string message)
+        {
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    db.sp_insert_system_log(typeOfAccount, date, time, lastActivity);
+                    return ErrorCode.Success;
+                }
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+                return ErrorCode.Error;
+            }
+        }
+        public List<vw_display_system_log> LoadSystemLog(ref string message)
+        {
+            var retVal = new List<vw_display_system_log>();
+
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    retVal = db.vw_display_system_log.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+            }
+            return retVal;
+        }
     }
 }

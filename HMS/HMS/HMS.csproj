@@ -84,6 +84,9 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppData\ACCOUNTS.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\CLIENT.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
@@ -150,6 +153,9 @@
     <Compile Include="AppData\sysdiagrams.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\USERLOGGED_HISTORY.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\vw_display_approve_reservation.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
@@ -163,6 +169,12 @@
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\vw_display_room_details.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\vw_display_system_log.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\vw_display_sytem_accounts.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\vw_display_total_approve_guest.cs">
@@ -267,6 +279,12 @@
     <Compile Include="Forms\Frm_ManageRoomType.Designer.cs">
       <DependentUpon>Frm_ManageRoomType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_ManageSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_ManageSystem.Designer.cs">
+      <DependentUpon>Frm_ManageSystem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_ProcessPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +302,12 @@
     </Compile>
     <Compile Include="Forms\Frm_Room.Designer.cs">
       <DependentUpon>Frm_Room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_SystemLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_SystemLogs.Designer.cs">
+      <DependentUpon>Frm_SystemLogs.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Frm_ViewRoomAvailable.cs">
       <SubType>Form</SubType>
@@ -359,6 +383,9 @@
     <EmbeddedResource Include="Forms\Frm_ManageRoomType.resx">
       <DependentUpon>Frm_ManageRoomType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_ManageSystem.resx">
+      <DependentUpon>Frm_ManageSystem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_ProcessPayment.resx">
       <DependentUpon>Frm_ProcessPayment.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Room.resx">
       <DependentUpon>Frm_Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_SystemLogs.resx">
+      <DependentUpon>Frm_SystemLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_ViewRoomAvailable.resx">
       <DependentUpon>Frm_ViewRoomAvailable.cs</DependentUpon>

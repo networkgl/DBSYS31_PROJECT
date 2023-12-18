@@ -154,6 +154,27 @@
     <FunctionImport Name="sp_search_room_details" ReturnType="Collection(HMSModel.sp_search_room_details_Result)">
       <Parameter Name="SearchTerm" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_insert_system_accounts">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="roleID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_update_system_accounts">
+      <Parameter Name="userID" Mode="In" Type="Int32" />
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="newPassword" Mode="In" Type="String" />
+      <Parameter Name="newRoleID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_delete_system_accounts">
+      <Parameter Name="userID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_insert_system_log">
+      <Parameter Name="typeofaccount" Mode="In" Type="String" />
+      <Parameter Name="dateLogin" Mode="In" Type="DateTime" />
+      <Parameter Name="timeLogin" Mode="In" Type="Time" />
+      <Parameter Name="lastActivity" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="ACCOUNTS" EntityType="HMSModel.ACCOUNTS" />
     <EntitySet Name="CLIENT" EntityType="HMSModel.CLIENT" />
     <EntitySet Name="GUEST" EntityType="HMSModel.GUEST" />
     <EntitySet Name="PAYMENT" EntityType="HMSModel.PAYMENT" />
@@ -161,11 +182,14 @@
     <EntitySet Name="ROOM" EntityType="HMSModel.ROOM" />
     <EntitySet Name="ROOM_DETAILS" EntityType="HMSModel.ROOM_DETAILS" />
     <EntitySet Name="sysdiagrams" EntityType="HMSModel.sysdiagrams" />
+    <EntitySet Name="USERLOGGED_HISTORY" EntityType="HMSModel.USERLOGGED_HISTORY" />
     <EntitySet Name="vw_display_approve_reservation" EntityType="HMSModel.vw_display_approve_reservation" />
     <EntitySet Name="vw_display_client_details" EntityType="HMSModel.vw_display_client_details" />
     <EntitySet Name="vw_display_pending_reservation" EntityType="HMSModel.vw_display_pending_reservation" />
     <EntitySet Name="vw_display_reservation_details" EntityType="HMSModel.vw_display_reservation_details" />
     <EntitySet Name="vw_display_room_details" EntityType="HMSModel.vw_display_room_details" />
+    <EntitySet Name="vw_display_system_log" EntityType="HMSModel.vw_display_system_log" />
+    <EntitySet Name="vw_display_sytem_accounts" EntityType="HMSModel.vw_display_sytem_accounts" />
     <EntitySet Name="vw_display_total_approve_guest" EntityType="HMSModel.vw_display_total_approve_guest" />
     <EntitySet Name="vw_get_current_booking_bydate" EntityType="HMSModel.vw_get_current_booking_bydate" />
     <EntitySet Name="vw_get_reservation_history" EntityType="HMSModel.vw_get_reservation_history" />
@@ -257,6 +281,15 @@
     <Property Type="String" Name="Promo" Nullable="false" MaxLength="42" />
     <Property Type="Decimal" Name="Discounted" Nullable="false" Precision="18" Scale="2" />
   </ComplexType>
+  <EntityType Name="ACCOUNTS">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="roleID" Type="Int32" />
+  </EntityType>
   <EntityType Name="CLIENT">
     <Key>
       <PropertyRef Name="clientID" />
@@ -336,6 +369,16 @@
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="USERLOGGED_HISTORY">
+    <Key>
+      <PropertyRef Name="userlogID" />
+    </Key>
+    <Property Name="userlogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typeofAccount" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dateLogin" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="timeLogin" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="lastActivity" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="vw_display_approve_reservation">
     <Key>
@@ -433,6 +476,31 @@
     <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Promo" Type="String" Nullable="false" MaxLength="42" FixedLength="false" Unicode="false" />
     <Property Name="Discounted" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="vw_display_system_log">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Account" />
+      <PropertyRef Name="DateIn" />
+      <PropertyRef Name="TimeIn" />
+      <PropertyRef Name="Activity" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TimeIn" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="Activity" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vw_display_sytem_accounts">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="UserPass" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserPass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleID" Type="Int32" />
   </EntityType>
   <EntityType Name="vw_display_total_approve_guest">
     <Key>

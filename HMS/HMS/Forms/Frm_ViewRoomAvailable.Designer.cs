@@ -38,14 +38,14 @@
             this.btnRoomDisplay = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_Main1 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgv_roomdetails = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnUpdateDeleteRooms = new Guna.UI2.WinForms.Guna2Button();
+            this.btnViewRoomAvailable = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_Main1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_roomdetails)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddRooms
             // 
-            this.btnAddRooms.BorderRadius = 10;
+            this.btnAddRooms.BorderRadius = 5;
             this.btnAddRooms.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAddRooms.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAddRooms.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -72,7 +72,7 @@
             // 
             // btnRoomDisplay
             // 
-            this.btnRoomDisplay.BorderRadius = 10;
+            this.btnRoomDisplay.BorderRadius = 5;
             this.btnRoomDisplay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRoomDisplay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRoomDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -170,22 +170,23 @@
             this.dgv_roomdetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_roomdetails_CellContentClick);
             this.dgv_roomdetails.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_roomdetails_CellFormatting);
             // 
-            // btnUpdateDeleteRooms
+            // btnViewRoomAvailable
             // 
-            this.btnUpdateDeleteRooms.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnUpdateDeleteRooms.BorderRadius = 10;
-            this.btnUpdateDeleteRooms.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdateDeleteRooms.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdateDeleteRooms.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdateDeleteRooms.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdateDeleteRooms.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.btnUpdateDeleteRooms.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateDeleteRooms.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateDeleteRooms.Location = new System.Drawing.Point(493, 15);
-            this.btnUpdateDeleteRooms.Name = "btnUpdateDeleteRooms";
-            this.btnUpdateDeleteRooms.Size = new System.Drawing.Size(175, 42);
-            this.btnUpdateDeleteRooms.TabIndex = 157;
-            this.btnUpdateDeleteRooms.Text = "View Room Availables";
+            this.btnViewRoomAvailable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnViewRoomAvailable.BorderRadius = 5;
+            this.btnViewRoomAvailable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewRoomAvailable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewRoomAvailable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewRoomAvailable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewRoomAvailable.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnViewRoomAvailable.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewRoomAvailable.ForeColor = System.Drawing.Color.White;
+            this.btnViewRoomAvailable.Location = new System.Drawing.Point(493, 15);
+            this.btnViewRoomAvailable.Name = "btnViewRoomAvailable";
+            this.btnViewRoomAvailable.Size = new System.Drawing.Size(175, 42);
+            this.btnViewRoomAvailable.TabIndex = 157;
+            this.btnViewRoomAvailable.Text = "View Room Availables";
+            this.btnViewRoomAvailable.Click += new System.EventHandler(this.btnViewRoomAvailable_Click);
             // 
             // Frm_ViewRoomAvailable
             // 
@@ -193,7 +194,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 619);
             this.Controls.Add(this.pnl_Main1);
-            this.Controls.Add(this.btnUpdateDeleteRooms);
+            this.Controls.Add(this.btnViewRoomAvailable);
             this.Controls.Add(this.btnAddRooms);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnRoomDisplay);
@@ -210,7 +211,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button btnUpdateDeleteRooms;
+        private Guna.UI2.WinForms.Guna2Button btnViewRoomAvailable;
         private Guna.UI2.WinForms.Guna2Button btnAddRooms;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2Button btnRoomDisplay;

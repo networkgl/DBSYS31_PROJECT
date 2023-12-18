@@ -40,7 +40,6 @@
             this.underline = new System.Windows.Forms.Panel();
             this.lbl_OrigPrice = new System.Windows.Forms.Label();
             this.lbl_percentSale = new System.Windows.Forms.Label();
-            this.pnl_saleLogo = new System.Windows.Forms.Panel();
             this.lbl_roomDetails2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lbl_priceDetails = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.pnl_roompicture = new System.Windows.Forms.Panel();
             this.lbl_roomDetails1 = new System.Windows.Forms.Label();
             this.lbl_roomLeft = new System.Windows.Forms.Label();
+            this.pnl_saleLogo = new System.Windows.Forms.Panel();
             this.pnl_Main.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_saleDetails.SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             // btnUpdateDeleteRooms
             // 
-            this.btnUpdateDeleteRooms.BorderRadius = 10;
+            this.btnUpdateDeleteRooms.BorderRadius = 5;
             this.btnUpdateDeleteRooms.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdateDeleteRooms.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdateDeleteRooms.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -73,7 +73,7 @@
             // 
             // btnAddRooms
             // 
-            this.btnAddRooms.BorderRadius = 10;
+            this.btnAddRooms.BorderRadius = 5;
             this.btnAddRooms.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAddRooms.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAddRooms.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -100,7 +100,7 @@
             // 
             // btnRoomDisplay
             // 
-            this.btnRoomDisplay.BorderRadius = 10;
+            this.btnRoomDisplay.BorderRadius = 5;
             this.btnRoomDisplay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRoomDisplay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRoomDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -216,16 +216,6 @@
             this.lbl_percentSale.TabIndex = 79;
             this.lbl_percentSale.Text = "10.00% OFF";
             // 
-            // pnl_saleLogo
-            // 
-            this.pnl_saleLogo.BackgroundImage = global::HMS.Properties.Resources.sale;
-            this.pnl_saleLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnl_saleLogo.Location = new System.Drawing.Point(750, 172);
-            this.pnl_saleLogo.Name = "pnl_saleLogo";
-            this.pnl_saleLogo.Size = new System.Drawing.Size(94, 88);
-            this.pnl_saleLogo.TabIndex = 77;
-            this.pnl_saleLogo.Visible = false;
-            // 
             // lbl_roomDetails2
             // 
             this.lbl_roomDetails2.AutoSize = true;
@@ -310,6 +300,16 @@
             this.lbl_roomLeft.Size = new System.Drawing.Size(156, 23);
             this.lbl_roomLeft.TabIndex = 82;
             this.lbl_roomLeft.Text = "Room Vacant :";
+            // 
+            // pnl_saleLogo
+            // 
+            this.pnl_saleLogo.BackgroundImage = global::HMS.Properties.Resources.sale;
+            this.pnl_saleLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_saleLogo.Location = new System.Drawing.Point(750, 172);
+            this.pnl_saleLogo.Name = "pnl_saleLogo";
+            this.pnl_saleLogo.Size = new System.Drawing.Size(94, 88);
+            this.pnl_saleLogo.TabIndex = 77;
+            this.pnl_saleLogo.Visible = false;
             // 
             // Frm_ViewCurrentRooms
             // 

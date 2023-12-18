@@ -106,6 +106,20 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_insert_system_accounts" FunctionName="HMSModel.Store.sp_insert_system_accounts" />
+    <FunctionImportMapping FunctionImportName="sp_update_system_accounts" FunctionName="HMSModel.Store.sp_update_system_accounts" />
+    <FunctionImportMapping FunctionImportName="sp_delete_system_accounts" FunctionName="HMSModel.Store.sp_delete_system_accounts" />
+    <FunctionImportMapping FunctionImportName="sp_insert_system_log" FunctionName="HMSModel.Store.sp_insert_system_log" />
+    <EntitySetMapping Name="ACCOUNTS">
+      <EntityTypeMapping TypeName="HMSModel.ACCOUNTS">
+        <MappingFragment StoreEntitySet="ACCOUNTS">
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CLIENT">
       <EntityTypeMapping TypeName="HMSModel.CLIENT">
         <MappingFragment StoreEntitySet="CLIENT">
@@ -185,6 +199,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="USERLOGGED_HISTORY">
+      <EntityTypeMapping TypeName="HMSModel.USERLOGGED_HISTORY">
+        <MappingFragment StoreEntitySet="USERLOGGED_HISTORY">
+          <ScalarProperty Name="lastActivity" ColumnName="lastActivity" />
+          <ScalarProperty Name="timeLogin" ColumnName="timeLogin" />
+          <ScalarProperty Name="dateLogin" ColumnName="dateLogin" />
+          <ScalarProperty Name="typeofAccount" ColumnName="typeofAccount" />
+          <ScalarProperty Name="userlogID" ColumnName="userlogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="vw_display_approve_reservation">
       <EntityTypeMapping TypeName="HMSModel.vw_display_approve_reservation">
         <MappingFragment StoreEntitySet="vw_display_approve_reservation">
@@ -260,6 +285,27 @@
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Details" ColumnName="Details" />
           <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_display_system_log">
+      <EntityTypeMapping TypeName="HMSModel.vw_display_system_log">
+        <MappingFragment StoreEntitySet="vw_display_system_log">
+          <ScalarProperty Name="Activity" ColumnName="Activity" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_display_sytem_accounts">
+      <EntityTypeMapping TypeName="HMSModel.vw_display_sytem_accounts">
+        <MappingFragment StoreEntitySet="vw_display_sytem_accounts">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

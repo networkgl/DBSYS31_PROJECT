@@ -55,7 +55,7 @@ namespace HMS.Forms
         }
         public void LoadDataGrid()
         {
-            btnUpdateDeleteRooms.Enabled = false;
+            btnViewRoomAvailable.Enabled = false;
             Frm_ConfirmDelete.Toggle_rooomAvail_confirmDelete = true;
             if (!Frm_ConfirmDelete.RoomAvailable_ConfirmDelete && !Frm_ChangeRoomDetails.ConfirmUpdate)
             {
@@ -96,7 +96,7 @@ namespace HMS.Forms
         }
         private void LoadDataGrids()
         {
-            btnUpdateDeleteRooms.Enabled = false;
+            btnViewRoomAvailable.Enabled = false;
             dgv_roomdetails.DataSource = adminRepo.LoadRoomDetails();
 
             //dgv_roomdetails.Columns["ID"].Width = 35;
@@ -215,6 +215,12 @@ namespace HMS.Forms
                 }
             }
         }
+
+        private void btnViewRoomAvailable_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnRoomDisplay_Click(object sender, EventArgs e)
         {
 

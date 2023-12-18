@@ -17,10 +17,13 @@ namespace HMS.Forms
     {
         private static Frm_Dashboard dashboard;
         private UserRepository userRepo;
+
+
         public Frm_Dashboard()
         {
             InitializeComponent();
             userRepo = new UserRepository();
+            Frm_Main.LastActivity = "Viewing Dashboard";
         }
         //public static Frm_Dashboard GetInstance()
         //{

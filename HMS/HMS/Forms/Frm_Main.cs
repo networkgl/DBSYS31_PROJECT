@@ -20,7 +20,13 @@ namespace HMS
         private byte fontSize = 12;
         private static Frm_Main _instance;
         private UserRepository userRepo;
+        public static string LastActivity { get; set; }
 
+        static DateTime timeLogin = DateTime.Now;
+        // Extract the time component
+        TimeSpan timeOfDay = timeLogin.TimeOfDay;
+
+        private DateTime dateLogin = DateTime.Now.Date;
 
         private bool activeBookingDetails, activeReservation, activeManageRoom;
 
@@ -100,6 +106,9 @@ namespace HMS
             client.Dock = DockStyle.Fill;
             pnl_main.Controls.Add(client);
             client.Show();
+
+            LastActivity = "Viewing Booking Details";
+
         }
 
         private void btnRoom_Click(object sender, EventArgs e)
@@ -112,6 +121,9 @@ namespace HMS
             room.Dock = DockStyle.Fill;
             pnl_main.Controls.Add(room);
             room.Show();
+
+            LastActivity = "Viewing Room Details";
+
         }
         private void btnReservation_Click(object sender, EventArgs e)
         {
@@ -142,11 +154,29 @@ namespace HMS
 
             _instance = this;
         }
+        private void btnManageSystem_Click(object sender, EventArgs e)
+        {
+            Frm_ManageSystem ar = new Frm_ManageSystem();
+            pnl_main.Controls.Clear();
+            ar.TopLevel = false;
+            ar.Dock = DockStyle.Fill;
+            pnl_main.Controls.Add(ar);
+            ar.Show();
+
+            _instance = this;
+
+
+        }
         private void btnLogout_Click(object sender, EventArgs e)
         {
             var msg = "Are you sure you want to logout ?";
             bool logout = MessageDialog.Show(msg, "Message", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Dark) == DialogResult.Yes;
-            if(logout) {
+            if(logout)
+            {
+                string message = string.Empty;
+                userRepo.InsertSystemLogs(Frm_Login.UserType, dateLogin, timeOfDay, LastActivity, ref message);
+
+
                 this.Hide();
                 Frm_HomePage home = new Frm_HomePage();
                 home.Show();
@@ -235,6 +265,7 @@ namespace HMS
         private void txtbox_SearchBar_Leave(object sender, EventArgs e)
         {
             txtbox_SearchBar.Text = string.Empty;
+            LastActivity = "Searching Booking Details";
         }
 
         //private void txtbox_SearchBar_TextChanged(object sender, EventArgs e)
@@ -262,7 +293,7 @@ namespace HMS
                 if (ActiveBookingDetails)
                 {
                     var result = userRepo.SearchBookingDetailsByName(searchName);
-                    Frm_BookingDetails.Instance.dgv_bookingdetails.DataSource = result;
+                    Frm_BookingDetails.Instance.dgv_roomdetails.DataSource = result;
                 }
                 else if(ActiveBookingDetails && searchName.Equals(string.Empty))
                 {
@@ -307,6 +338,8 @@ namespace HMS
             btnReservation.ForeColor = Color.Black;
             btnReservation.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
         }
+
+
 
         private void btnLogout_MouseEnter(object sender, EventArgs e)
         {

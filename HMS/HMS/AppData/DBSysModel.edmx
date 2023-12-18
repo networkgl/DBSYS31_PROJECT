@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="HMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACCOUNTS">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="userPassword" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="roleID" Type="int" />
+        </EntityType>
         <EntityType Name="CLIENT">
           <Key>
             <PropertyRef Name="clientID" />
@@ -84,13 +93,16 @@ warning 6013: The table/view 'HMS.dbo.ROLE' does not have a primary key defined 
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'HMS.dbo.USERLOGGED_HISTORY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="USERLOGGED_HISTORY">
-          <Property Name="typeofAccount" Type="varchar" MaxLength="50" />
-          <Property Name="datetimeLogin" Type="varchar" MaxLength="50" />
-          <Property Name="lastActivity" Type="varchar" MaxLength="100" />
-        </EntityType>-->
+          <Key>
+            <PropertyRef Name="userlogID" />
+          </Key>
+          <Property Name="userlogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="typeofAccount" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dateLogin" Type="date" Nullable="false" />
+          <Property Name="timeLogin" Type="time" Precision="0" Nullable="false" />
+          <Property Name="lastActivity" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'HMS.dbo.vw_display_approve_reservation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw_display_approve_reservation">
@@ -197,6 +209,35 @@ warning 6002: The table/view 'HMS.dbo.vw_display_room_details' does not have a p
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Promo" Type="varchar" MaxLength="42" Nullable="false" />
           <Property Name="Discounted" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.vw_display_system_log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_display_system_log">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Account" />
+            <PropertyRef Name="DateIn" />
+            <PropertyRef Name="TimeIn" />
+            <PropertyRef Name="Activity" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Account" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateIn" Type="date" Nullable="false" />
+          <Property Name="TimeIn" Type="time" Precision="0" Nullable="false" />
+          <Property Name="Activity" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.vw_display_sytem_accounts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_display_sytem_accounts">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="UserPass" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPass" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleID" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'HMS.dbo.vw_display_total_approve_guest' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -351,6 +392,9 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_reserve' does not have a
         <Function Name="sp_delete_room_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="roomID" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_delete_system_accounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userID" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_denied_reservation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
@@ -420,6 +464,17 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_reserve' does not have a
           <Parameter Name="reservationID" Type="int" Mode="In" />
           <Parameter Name="roomCounter" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_insert_system_accounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="username" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+          <Parameter Name="roleID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_insert_system_log" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="typeofaccount" Type="varchar" Mode="In" />
+          <Parameter Name="dateLogin" Type="date" Mode="In" />
+          <Parameter Name="timeLogin" Type="time" Mode="In" />
+          <Parameter Name="lastActivity" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -451,8 +506,15 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_reserve' does not have a
           <Parameter Name="roomDiscount" Type="decimal" Mode="In" />
           <Parameter Name="discountedPrice" Type="decimal" Mode="In" />
         </Function>
+        <Function Name="sp_update_system_accounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userID" Type="int" Mode="In" />
+          <Parameter Name="username" Type="varchar" Mode="In" />
+          <Parameter Name="newPassword" Type="varchar" Mode="In" />
+          <Parameter Name="newRoleID" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="HMSModelStoreContainer">
+          <EntitySet Name="ACCOUNTS" EntityType="Self.ACCOUNTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GUEST" EntityType="Self.GUEST" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" Schema="dbo" store:Type="Tables" />
@@ -460,6 +522,7 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_reserve' does not have a
           <EntitySet Name="ROOM" EntityType="Self.ROOM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ROOM_DETAILS" EntityType="Self.ROOM_DETAILS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERLOGGED_HISTORY" EntityType="Self.USERLOGGED_HISTORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vw_display_approve_reservation" EntityType="Self.vw_display_approve_reservation" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [vw_display_approve_reservation].[ID] AS [ID], 
@@ -528,6 +591,23 @@ FROM [dbo].[vw_display_reservation_details] AS [vw_display_reservation_details]<
 [vw_display_room_details].[Promo] AS [Promo], 
 [vw_display_room_details].[Discounted] AS [Discounted]
 FROM [dbo].[vw_display_room_details] AS [vw_display_room_details]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_display_system_log" EntityType="Self.vw_display_system_log" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_display_system_log].[ID] AS [ID], 
+[vw_display_system_log].[Account] AS [Account], 
+[vw_display_system_log].[DateIn] AS [DateIn], 
+[vw_display_system_log].[TimeIn] AS [TimeIn], 
+[vw_display_system_log].[Activity] AS [Activity]
+FROM [dbo].[vw_display_system_log] AS [vw_display_system_log]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_display_sytem_accounts" EntityType="Self.vw_display_sytem_accounts" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_display_sytem_accounts].[ID] AS [ID], 
+[vw_display_sytem_accounts].[UserName] AS [UserName], 
+[vw_display_sytem_accounts].[UserPass] AS [UserPass], 
+[vw_display_sytem_accounts].[RoleID] AS [RoleID]
+FROM [dbo].[vw_display_sytem_accounts] AS [vw_display_sytem_accounts]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vw_display_total_approve_guest" EntityType="Self.vw_display_total_approve_guest" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -761,6 +841,27 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
           <FunctionImport Name="sp_search_room_details" ReturnType="Collection(HMSModel.sp_search_room_details_Result)">
           <Parameter Name="SearchTerm" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_insert_system_accounts">
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="roleID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_update_system_accounts">
+            <Parameter Name="userID" Mode="In" Type="Int32" />
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="newPassword" Mode="In" Type="String" />
+            <Parameter Name="newRoleID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_delete_system_accounts">
+          <Parameter Name="userID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_insert_system_log">
+            <Parameter Name="typeofaccount" Mode="In" Type="String" />
+            <Parameter Name="dateLogin" Mode="In" Type="DateTime" />
+            <Parameter Name="timeLogin" Mode="In" Type="Time" />
+            <Parameter Name="lastActivity" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="ACCOUNTS" EntityType="HMSModel.ACCOUNTS" />
           <EntitySet Name="CLIENT" EntityType="HMSModel.CLIENT" />
           <EntitySet Name="GUEST" EntityType="HMSModel.GUEST" />
           <EntitySet Name="PAYMENT" EntityType="HMSModel.PAYMENT" />
@@ -768,11 +869,14 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
           <EntitySet Name="ROOM" EntityType="HMSModel.ROOM" />
           <EntitySet Name="ROOM_DETAILS" EntityType="HMSModel.ROOM_DETAILS" />
           <EntitySet Name="sysdiagrams" EntityType="HMSModel.sysdiagrams" />
+          <EntitySet Name="USERLOGGED_HISTORY" EntityType="HMSModel.USERLOGGED_HISTORY" />
           <EntitySet Name="vw_display_approve_reservation" EntityType="HMSModel.vw_display_approve_reservation" />
           <EntitySet Name="vw_display_client_details" EntityType="HMSModel.vw_display_client_details" />
           <EntitySet Name="vw_display_pending_reservation" EntityType="HMSModel.vw_display_pending_reservation" />
           <EntitySet Name="vw_display_reservation_details" EntityType="HMSModel.vw_display_reservation_details" />
           <EntitySet Name="vw_display_room_details" EntityType="HMSModel.vw_display_room_details" />
+          <EntitySet Name="vw_display_system_log" EntityType="HMSModel.vw_display_system_log" />
+          <EntitySet Name="vw_display_sytem_accounts" EntityType="HMSModel.vw_display_sytem_accounts" />
           <EntitySet Name="vw_display_total_approve_guest" EntityType="HMSModel.vw_display_total_approve_guest" />
           <EntitySet Name="vw_get_current_booking_bydate" EntityType="HMSModel.vw_get_current_booking_bydate" />
           <EntitySet Name="vw_get_reservation_history" EntityType="HMSModel.vw_get_reservation_history" />
@@ -864,6 +968,15 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
           <Property Type="String" Name="Promo" Nullable="false" MaxLength="42" />
           <Property Type="Decimal" Name="Discounted" Nullable="false" Precision="18" Scale="2" />
         </ComplexType>
+        <EntityType Name="ACCOUNTS">
+          <Key>
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="roleID" Type="Int32" />
+        </EntityType>
         <EntityType Name="CLIENT">
           <Key>
             <PropertyRef Name="clientID" />
@@ -943,6 +1056,16 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="USERLOGGED_HISTORY">
+          <Key>
+            <PropertyRef Name="userlogID" />
+          </Key>
+          <Property Name="userlogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="typeofAccount" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dateLogin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="timeLogin" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="lastActivity" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vw_display_approve_reservation">
           <Key>
@@ -1040,6 +1163,31 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
           <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Promo" Type="String" Nullable="false" MaxLength="42" FixedLength="false" Unicode="false" />
           <Property Name="Discounted" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="vw_display_system_log">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Account" />
+            <PropertyRef Name="DateIn" />
+            <PropertyRef Name="TimeIn" />
+            <PropertyRef Name="Activity" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TimeIn" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="Activity" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vw_display_sytem_accounts">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="UserPass" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserPass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RoleID" Type="Int32" />
         </EntityType>
         <EntityType Name="vw_display_total_approve_guest">
           <Key>
@@ -1273,6 +1421,20 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_insert_system_accounts" FunctionName="HMSModel.Store.sp_insert_system_accounts" />
+          <FunctionImportMapping FunctionImportName="sp_update_system_accounts" FunctionName="HMSModel.Store.sp_update_system_accounts" />
+          <FunctionImportMapping FunctionImportName="sp_delete_system_accounts" FunctionName="HMSModel.Store.sp_delete_system_accounts" />
+          <FunctionImportMapping FunctionImportName="sp_insert_system_log" FunctionName="HMSModel.Store.sp_insert_system_log" />
+          <EntitySetMapping Name="ACCOUNTS">
+            <EntityTypeMapping TypeName="HMSModel.ACCOUNTS">
+              <MappingFragment StoreEntitySet="ACCOUNTS">
+                <ScalarProperty Name="roleID" ColumnName="roleID" />
+                <ScalarProperty Name="userPassword" ColumnName="userPassword" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CLIENT">
             <EntityTypeMapping TypeName="HMSModel.CLIENT">
               <MappingFragment StoreEntitySet="CLIENT">
@@ -1352,6 +1514,17 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="USERLOGGED_HISTORY">
+            <EntityTypeMapping TypeName="HMSModel.USERLOGGED_HISTORY">
+              <MappingFragment StoreEntitySet="USERLOGGED_HISTORY">
+                <ScalarProperty Name="lastActivity" ColumnName="lastActivity" />
+                <ScalarProperty Name="timeLogin" ColumnName="timeLogin" />
+                <ScalarProperty Name="dateLogin" ColumnName="dateLogin" />
+                <ScalarProperty Name="typeofAccount" ColumnName="typeofAccount" />
+                <ScalarProperty Name="userlogID" ColumnName="userlogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vw_display_approve_reservation">
             <EntityTypeMapping TypeName="HMSModel.vw_display_approve_reservation">
               <MappingFragment StoreEntitySet="vw_display_approve_reservation">
@@ -1427,6 +1600,27 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Details" ColumnName="Details" />
                 <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_display_system_log">
+            <EntityTypeMapping TypeName="HMSModel.vw_display_system_log">
+              <MappingFragment StoreEntitySet="vw_display_system_log">
+                <ScalarProperty Name="Activity" ColumnName="Activity" />
+                <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_display_sytem_accounts">
+            <EntityTypeMapping TypeName="HMSModel.vw_display_sytem_accounts">
+              <MappingFragment StoreEntitySet="vw_display_sytem_accounts">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="UserPass" ColumnName="UserPass" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

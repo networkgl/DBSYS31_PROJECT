@@ -23,6 +23,7 @@ namespace HMS.Forms
         private bool acceptReservation = false;
         private bool deleteAllReservation = false;
         public static Frm_Reservation Instance { get => instance; set => instance = value; }
+        private string message = string.Empty;
 
         public Frm_Reservation()
         {
@@ -38,7 +39,6 @@ namespace HMS.Forms
         }
         public void LoadDataGrid()
         {
-            var message = string.Empty;
             if ((!Frm_ConfirmDelete.Reservation_ConfirmDelete && !acceptReservation && !deleteAllReservation))
             {
                 dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
@@ -250,10 +250,10 @@ namespace HMS.Forms
                 UncheckOtherCheckboxes(clickedCheckbox);
                 HandleCheckboxCheckedState(clickedCheckbox);
             }
-            //else
-            //{
-            //    LoadDataGrid();
-            //}
+            else
+            {
+                dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
+            }
         }
 
         private void chkBox_showpApprove_CheckedChanged(object sender, EventArgs e)
@@ -265,10 +265,10 @@ namespace HMS.Forms
                 UncheckOtherCheckboxes(clickedCheckbox);
                 HandleCheckboxCheckedState(clickedCheckbox);
             }
-            //else
-            //{
-            //    LoadDataGrid();
-            //}
+            else
+            {
+                dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
+            }
         }
 
         private void chkBox_showpAll_CheckedChanged(object sender, EventArgs e)
@@ -280,9 +280,10 @@ namespace HMS.Forms
                 UncheckOtherCheckboxes(clickedCheckbox);
                 HandleCheckboxCheckedState(clickedCheckbox);
             }
+            //NOT NECCESSARY
             //else
             //{
-            //    LoadDataGrid();
+            //    dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
             //}
         }
         private void chkBox_showHistory_CheckedChanged(object sender, EventArgs e)
@@ -294,10 +295,10 @@ namespace HMS.Forms
                 UncheckOtherCheckboxes(clickedCheckbox);
                 HandleCheckboxCheckedState(clickedCheckbox);
             }
-            //else
-            //{
-            //    LoadDataGrid();
-            //}
+            else
+            {
+                dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
+            }
         }
         private void UncheckOtherCheckboxes(Guna2CustomCheckBox clickedCheckbox)
         {
