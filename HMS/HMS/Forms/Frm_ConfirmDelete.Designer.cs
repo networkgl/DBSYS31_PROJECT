@@ -82,9 +82,9 @@
             this.lb_Note.ForeColor = System.Drawing.Color.White;
             this.lb_Note.Location = new System.Drawing.Point(10, 65);
             this.lb_Note.Name = "lb_Note";
-            this.lb_Note.Size = new System.Drawing.Size(266, 21);
+            this.lb_Note.Size = new System.Drawing.Size(269, 21);
             this.lb_Note.TabIndex = 22;
-            this.lb_Note.Text = "* Please enter ADMIN  password !";
+            this.lb_Note.Text = "* Please enter GLOBAL password !";
             // 
             // label2
             // 

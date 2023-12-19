@@ -211,8 +211,7 @@ namespace HMS.Forms
 
                     if (isConfirm)
                     {
-                        if (Frm_Login.UserType.Equals("Staff"))
-                        {
+     
                             Thread.Sleep(1000);
                             Frm_ConfirmDelete.Toggle_reservation_confirmDelete = true;
                             var del = new Frm_ConfirmDelete();
@@ -225,7 +224,7 @@ namespace HMS.Forms
                                 Frm_ConfirmDelete.Reservation_ConfirmDelete = false;
                                 Frm_Main.LastActivity = "Declining a booking reservation";
                             }
-                        }
+                        
 
                     }
                 }
