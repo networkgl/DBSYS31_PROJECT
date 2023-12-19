@@ -197,7 +197,7 @@ namespace HMS
                         {
                             // Minimally booked
                             e.Info.DateColor = Color.White;
-                            e.Info.BackColor1 = Color.Green; // You can choose a different color for minimally booked dates
+                            e.Info.BackColor1 = Color.YellowGreen; // You can choose a different color for minimally booked dates
                             e.OwnerDraw = true;
                         }
                         else

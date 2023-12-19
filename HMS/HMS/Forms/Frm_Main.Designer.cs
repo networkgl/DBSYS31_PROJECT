@@ -217,6 +217,7 @@
             this.button1.Size = new System.Drawing.Size(39, 37);
             this.button1.TabIndex = 22;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             // 
             // btn_Notificationss
             // 
@@ -234,6 +235,7 @@
             this.btn_Notificationss.Size = new System.Drawing.Size(65, 77);
             this.btn_Notificationss.TabIndex = 23;
             this.btn_Notificationss.UseVisualStyleBackColor = false;
+            this.btn_Notificationss.Visible = false;
             this.btn_Notificationss.Click += new System.EventHandler(this.btn_Notificationss_Click);
             // 
             // btn_Notifications

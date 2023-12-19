@@ -54,20 +54,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_Pecent = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -305,12 +302,9 @@
             this.guna2Panel5.BorderRadius = 20;
             this.guna2Panel5.Controls.Add(this.panel13);
             this.guna2Panel5.Controls.Add(this.panel12);
-            this.guna2Panel5.Controls.Add(this.panel8);
             this.guna2Panel5.Controls.Add(this.panel11);
             this.guna2Panel5.Controls.Add(this.panel10);
             this.guna2Panel5.Controls.Add(this.panel9);
-            this.guna2Panel5.Controls.Add(this.panel7);
-            this.guna2Panel5.Controls.Add(this.panel6);
             this.guna2Panel5.Controls.Add(this.panel5);
             this.guna2Panel5.Controls.Add(this.label11);
             this.guna2Panel5.Controls.Add(this.label5);
@@ -394,20 +388,6 @@
             this.lbl_Pecent.TabIndex = 0;
             this.lbl_Pecent.Text = "75.00%";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(13, 94);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(679, 60);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "\r\n\"Unwrap the joy of savings this Christmas with our festive sale, where discount" +
-    "s abound and \r\nholiday cheer is multiplied – \'tis the season to shop smart and d" +
-    "elight in the spirit of giving!\"";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
@@ -427,16 +407,6 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(118, 82);
             this.panel12.TabIndex = 18;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.BackgroundImage = global::HMS.Properties.Resources.icons8_christmas_100__1_;
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel8.Location = new System.Drawing.Point(380, 69);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(37, 41);
-            this.panel8.TabIndex = 18;
             // 
             // panel11
             // 
@@ -463,30 +433,10 @@
             this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.BackgroundImage = global::HMS.Properties.Resources.icons8_christmas_sale_100;
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel9.Location = new System.Drawing.Point(592, 16);
+            this.panel9.Location = new System.Drawing.Point(541, 16);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(136, 95);
             this.panel9.TabIndex = 14;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.BackgroundImage = global::HMS.Properties.Resources.icons8_christmas_100__2_;
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel7.Location = new System.Drawing.Point(409, 16);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(50, 47);
-            this.panel7.TabIndex = 15;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.BackgroundImage = global::HMS.Properties.Resources.icons8_christmas_100__1_;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel6.Location = new System.Drawing.Point(422, 69);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(37, 41);
-            this.panel6.TabIndex = 14;
             // 
             // panel5
             // 
@@ -535,6 +485,20 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(11, 20);
             this.panel13.TabIndex = 19;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(13, 94);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(679, 60);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "\r\n\"Unwrap the joy of savings this Christmas with our festive sale, where discount" +
+    "s abound and \r\nholiday cheer is multiplied – \'tis the season to shop smart and d" +
+    "elight in the spirit of giving!\"";
             // 
             // Frm_Dashboard
             // 
@@ -605,14 +569,11 @@
         private System.Windows.Forms.Label lbl_totalRoomAvailable;
         private System.Windows.Forms.Label lbl_Pecent;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label11;
     }
 }
