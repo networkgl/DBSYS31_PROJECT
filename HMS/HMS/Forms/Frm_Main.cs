@@ -67,12 +67,15 @@ namespace HMS
 
             if (Frm_Login.UserType.Equals("Admin"))
             {
+                btnManageRoomType.Visible = true;
                 btnManageSystem.Visible = true;
                 lbl_userAccount.Text = "Administrator";
             }
             else
             {
                 btnManageSystem.Visible = false;
+                btnManageRoomType.Visible = false;
+
                 lbl_userAccount.Text = "Staff";
                 lbl_userAccount.Location = new Point(90, 151);
             }

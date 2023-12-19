@@ -211,18 +211,22 @@ namespace HMS.Forms
 
                     if (isConfirm)
                     {
-                        Thread.Sleep(1000);
-                        Frm_ConfirmDelete.Toggle_reservation_confirmDelete = true;
-                        var del = new Frm_ConfirmDelete();
-                        del.lb_Note.Text = " Please enter your password !";
-                        del.ShowDialog();
-
-                        if (Frm_ConfirmDelete.Reservation_ConfirmDelete)
+                        if (Frm_Login.UserType.Equals("Staff"))
                         {
-                            LoadDataGrid();//load data grid to refresh.
-                            Frm_ConfirmDelete.Reservation_ConfirmDelete = false;
-                            Frm_Main.LastActivity = "Declining a booking reservation";
+                            Thread.Sleep(1000);
+                            Frm_ConfirmDelete.Toggle_reservation_confirmDelete = true;
+                            var del = new Frm_ConfirmDelete();
+                            del.lb_Note.Text = " Please enter GLOBAL password to delete this record";
+                            del.ShowDialog();
+
+                            if (Frm_ConfirmDelete.Reservation_ConfirmDelete)
+                            {
+                                LoadDataGrid();//load data grid to refresh.
+                                Frm_ConfirmDelete.Reservation_ConfirmDelete = false;
+                                Frm_Main.LastActivity = "Declining a booking reservation";
+                            }
                         }
+
                     }
                 }
             }

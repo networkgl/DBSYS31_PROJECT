@@ -51,24 +51,34 @@ namespace HMS.Forms
 
             if (Toggle_reservation_confirmDelete)
             {
-                Console.WriteLine("reservation");
-                var retVal = userRepo.DeniedReservation(Frm_Reservation.ID,ref response);
-
-                if (retVal == ErrorCode.Success)
+                //Console.WriteLine("reservation");
+                if (txtboxPassword.Text.Equals("12345"))
                 {
-                    MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Dark);
-                    this.Close();
+                    var retVal = userRepo.DeniedReservation(Frm_Reservation.ID, ref response);
 
-                    //Check inputted password.
-                    reservation_confirmDelete = true;
-                    //Frm_Reservation.Frm.LoadDataGrid();
-                    //reservation_confirmDelete = false;
+                    if (retVal == ErrorCode.Success)
+                    {
+                        MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Dark);
+                        this.Close();
+
+                        //Check inputted password.
+                        reservation_confirmDelete = true;
+                        //Frm_Reservation.Frm.LoadDataGrid();
+                        //reservation_confirmDelete = false;
+                    }
+                    else
+                    {
+                        //Display Message, pass the response string.
+                        MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                    }
                 }
                 else
                 {
-                    //Display Message, pass the response string.
+                    response = "Wrong Global Password!";
                     MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
                 }
+
+
             }
             else if (Toggle_rooomAvail_confirmDelete)
             {

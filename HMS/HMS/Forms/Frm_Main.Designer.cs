@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pnl_ToggleLogout = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_userAccount = new System.Windows.Forms.Label();
@@ -51,18 +49,20 @@
             this.btnRoom = new Guna.UI2.WinForms.Guna2Button();
             this.btnClient = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.pnl_ToggleLogout = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.btnManageSystem);
             this.panel2.Controls.Add(this.btnManageRoomType);
@@ -78,26 +78,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(219, 678);
             this.panel2.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panel4.Controls.Add(this.pnl_ToggleLogout);
-            this.panel4.Controls.Add(this.btnLogout);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 554);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(219, 124);
-            this.panel4.TabIndex = 3;
-            // 
-            // pnl_ToggleLogout
-            // 
-            this.pnl_ToggleLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
-            this.pnl_ToggleLogout.Location = new System.Drawing.Point(8, 240);
-            this.pnl_ToggleLogout.Name = "pnl_ToggleLogout";
-            this.pnl_ToggleLogout.Size = new System.Drawing.Size(5, 27);
-            this.pnl_ToggleLogout.TabIndex = 9;
-            this.pnl_ToggleLogout.Visible = false;
             // 
             // panel3
             // 
@@ -172,7 +152,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 492);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(219, 134);
+            this.panel6.Size = new System.Drawing.Size(219, 100);
             this.panel6.TabIndex = 0;
             // 
             // txtbox_SearchBar
@@ -450,6 +430,16 @@
             this.btnDashboard.MouseEnter += new System.EventHandler(this.btnDashboard_MouseEnter);
             this.btnDashboard.MouseLeave += new System.EventHandler(this.btnDashboard_MouseLeave);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(146, 101);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
@@ -467,7 +457,7 @@
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageOffset = new System.Drawing.Point(15, 0);
-            this.btnLogout.Location = new System.Drawing.Point(0, 78);
+            this.btnLogout.Location = new System.Drawing.Point(0, 46);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(219, 46);
             this.btnLogout.TabIndex = 8;
@@ -476,15 +466,25 @@
             this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
             this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
             // 
-            // pictureBox1
+            // pnl_ToggleLogout
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 101);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pnl_ToggleLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
+            this.pnl_ToggleLogout.Location = new System.Drawing.Point(8, 240);
+            this.pnl_ToggleLogout.Name = "pnl_ToggleLogout";
+            this.pnl_ToggleLogout.Size = new System.Drawing.Size(5, 27);
+            this.pnl_ToggleLogout.TabIndex = 9;
+            this.pnl_ToggleLogout.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel4.Controls.Add(this.pnl_ToggleLogout);
+            this.panel4.Controls.Add(this.btnLogout);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 586);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(219, 92);
+            this.panel4.TabIndex = 3;
             // 
             // Frm_Main
             // 
@@ -502,12 +502,12 @@
             this.Text = "Frm_Login";
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -517,13 +517,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbl_userAccount;
         private Guna.UI2.WinForms.Guna2Button btnClient;
         private Guna.UI2.WinForms.Guna2Button btnReservation;
         private Guna.UI2.WinForms.Guna2Button btnRoom;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
-        private Guna.UI2.WinForms.Guna2Button btnLogout;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lbl_NotifCounter;
         private System.Windows.Forms.Button btn_Notificationss;
@@ -532,10 +530,12 @@
         private System.Windows.Forms.Button btn_Minimize;
         private System.Windows.Forms.Button btnExit;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_SearchBar;
-        private System.Windows.Forms.Panel pnl_ToggleLogout;
         private Guna.UI2.WinForms.Guna2Button btnManageRoomType;
         public System.Windows.Forms.Panel pnl_main;
         private Guna.UI2.WinForms.Guna2Button btnManageSystem;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnl_ToggleLogout;
+        private Guna.UI2.WinForms.Guna2Button btnLogout;
     }
 }

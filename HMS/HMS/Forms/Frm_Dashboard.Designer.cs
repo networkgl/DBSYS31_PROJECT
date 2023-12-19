@@ -437,6 +437,7 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(136, 95);
             this.panel9.TabIndex = 14;
+            this.panel9.Visible = false;
             // 
             // panel5
             // 
