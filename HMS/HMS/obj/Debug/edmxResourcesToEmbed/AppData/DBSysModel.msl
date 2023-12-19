@@ -165,6 +165,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ROLE">
+      <EntityTypeMapping TypeName="HMSModel.ROLE">
+        <MappingFragment StoreEntitySet="ROLE">
+          <ScalarProperty Name="roleDescription" ColumnName="roleDescription" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ROOM">
       <EntityTypeMapping TypeName="HMSModel.ROOM">
         <MappingFragment StoreEntitySet="ROOM">
@@ -295,7 +304,7 @@
           <ScalarProperty Name="Activity" ColumnName="Activity" />
           <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
           <ScalarProperty Name="DateIn" ColumnName="DateIn" />
-          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -303,7 +312,7 @@
     <EntitySetMapping Name="vw_display_sytem_accounts">
       <EntityTypeMapping TypeName="HMSModel.vw_display_sytem_accounts">
         <MappingFragment StoreEntitySet="vw_display_sytem_accounts">
-          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
           <ScalarProperty Name="UserPass" ColumnName="UserPass" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="ID" ColumnName="ID" />

@@ -33,6 +33,7 @@ namespace HMS.AppData
         public DbSet<GUEST> GUEST { get; set; }
         public DbSet<PAYMENT> PAYMENT { get; set; }
         public DbSet<RESERVATION> RESERVATION { get; set; }
+        public DbSet<ROLE> ROLE { get; set; }
         public DbSet<ROOM> ROOM { get; set; }
         public DbSet<ROOM_DETAILS> ROOM_DETAILS { get; set; }
         public DbSet<sysdiagrams> sysdiagrams { get; set; }

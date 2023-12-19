@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pnl_ToggleLogout = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.systemLog = new System.Windows.Forms.Label();
+            this.lbl_userAccount = new System.Windows.Forms.Label();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_NotifCounter = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.txtbox_SearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Notificationss = new System.Windows.Forms.Button();
@@ -61,6 +63,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(225)))));
+            this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.btnManageSystem);
             this.panel2.Controls.Add(this.btnManageRoomType);
             this.panel2.Controls.Add(this.btnReservation);
@@ -82,9 +85,9 @@
             this.panel4.Controls.Add(this.pnl_ToggleLogout);
             this.panel4.Controls.Add(this.btnLogout);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 490);
+            this.panel4.Location = new System.Drawing.Point(0, 554);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(219, 188);
+            this.panel4.Size = new System.Drawing.Size(219, 124);
             this.panel4.TabIndex = 3;
             // 
             // pnl_ToggleLogout
@@ -108,7 +111,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panel1.Controls.Add(this.systemLog);
+            this.panel1.Controls.Add(this.lbl_userAccount);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -116,15 +119,15 @@
             this.panel1.Size = new System.Drawing.Size(219, 175);
             this.panel1.TabIndex = 3;
             // 
-            // systemLog
+            // lbl_userAccount
             // 
-            this.systemLog.AutoSize = true;
-            this.systemLog.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.systemLog.Location = new System.Drawing.Point(56, 150);
-            this.systemLog.Name = "systemLog";
-            this.systemLog.Size = new System.Drawing.Size(116, 21);
-            this.systemLog.TabIndex = 7;
-            this.systemLog.Text = "Administrator";
+            this.lbl_userAccount.AutoSize = true;
+            this.lbl_userAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_userAccount.Location = new System.Drawing.Point(56, 150);
+            this.lbl_userAccount.Name = "lbl_userAccount";
+            this.lbl_userAccount.Size = new System.Drawing.Size(116, 21);
+            this.lbl_userAccount.TabIndex = 7;
+            this.lbl_userAccount.Text = "Administrator";
             // 
             // pnl_main
             // 
@@ -163,6 +166,15 @@
             this.lbl_NotifCounter.Text = "0";
             this.lbl_NotifCounter.Visible = false;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 492);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(219, 134);
+            this.panel6.TabIndex = 0;
+            // 
             // txtbox_SearchBar
             // 
             this.txtbox_SearchBar.BorderRadius = 15;
@@ -175,7 +187,7 @@
             this.txtbox_SearchBar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbox_SearchBar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_SearchBar.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_SearchBar.IconRight = global::HMS.Properties.Resources.icons8_search_26;
+            this.txtbox_SearchBar.IconRight = ((System.Drawing.Image)(resources.GetObject("txtbox_SearchBar.IconRight")));
             this.txtbox_SearchBar.IconRightOffset = new System.Drawing.Point(10, 0);
             this.txtbox_SearchBar.Location = new System.Drawing.Point(19, 15);
             this.txtbox_SearchBar.Margin = new System.Windows.Forms.Padding(4);
@@ -192,7 +204,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.button1.BackgroundImage = global::HMS.Properties.Resources.icons8_send_50;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
@@ -209,7 +221,7 @@
             // btn_Notificationss
             // 
             this.btn_Notificationss.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btn_Notificationss.BackgroundImage = global::HMS.Properties.Resources.notif1;
+            this.btn_Notificationss.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Notificationss.BackgroundImage")));
             this.btn_Notificationss.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Notificationss.FlatAppearance.BorderSize = 0;
             this.btn_Notificationss.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
@@ -227,7 +239,7 @@
             // btn_Notifications
             // 
             this.btn_Notifications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btn_Notifications.BackgroundImage = global::HMS.Properties.Resources.icons8_notification_50__1_;
+            this.btn_Notifications.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Notifications.BackgroundImage")));
             this.btn_Notifications.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Notifications.FlatAppearance.BorderSize = 0;
             this.btn_Notifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -242,7 +254,7 @@
             // 
             // btn_Minimize
             // 
-            this.btn_Minimize.BackgroundImage = global::HMS.Properties.Resources.icons8_minimize_15;
+            this.btn_Minimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Minimize.BackgroundImage")));
             this.btn_Minimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_Minimize.FlatAppearance.BorderSize = 0;
             this.btn_Minimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
@@ -256,7 +268,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackgroundImage = global::HMS.Properties.Resources.icons8_close_15;
+            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
@@ -283,7 +295,7 @@
             this.btnManageSystem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageSystem.ForeColor = System.Drawing.Color.Black;
             this.btnManageSystem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnManageSystem.Image = global::HMS.Properties.Resources.icons8_room_18;
+            this.btnManageSystem.Image = ((System.Drawing.Image)(resources.GetObject("btnManageSystem.Image")));
             this.btnManageSystem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManageSystem.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnManageSystem.Location = new System.Drawing.Point(0, 446);
@@ -310,7 +322,7 @@
             this.btnManageRoomType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageRoomType.ForeColor = System.Drawing.Color.Black;
             this.btnManageRoomType.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnManageRoomType.Image = global::HMS.Properties.Resources.icons8_manage_20;
+            this.btnManageRoomType.Image = ((System.Drawing.Image)(resources.GetObject("btnManageRoomType.Image")));
             this.btnManageRoomType.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManageRoomType.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnManageRoomType.Location = new System.Drawing.Point(0, 400);
@@ -336,7 +348,7 @@
             this.btnReservation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReservation.ForeColor = System.Drawing.Color.Black;
             this.btnReservation.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnReservation.Image = global::HMS.Properties.Resources.icons8_reservation_18;
+            this.btnReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnReservation.Image")));
             this.btnReservation.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReservation.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnReservation.Location = new System.Drawing.Point(0, 354);
@@ -364,7 +376,7 @@
             this.btnRoom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoom.ForeColor = System.Drawing.Color.Black;
             this.btnRoom.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnRoom.Image = global::HMS.Properties.Resources.icons8_room_18;
+            this.btnRoom.Image = ((System.Drawing.Image)(resources.GetObject("btnRoom.Image")));
             this.btnRoom.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnRoom.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnRoom.Location = new System.Drawing.Point(0, 308);
@@ -392,7 +404,7 @@
             this.btnClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClient.ForeColor = System.Drawing.Color.Black;
             this.btnClient.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnClient.Image = global::HMS.Properties.Resources.icons8_client_18;
+            this.btnClient.Image = ((System.Drawing.Image)(resources.GetObject("btnClient.Image")));
             this.btnClient.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnClient.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnClient.Location = new System.Drawing.Point(0, 262);
@@ -421,7 +433,7 @@
             this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.Black;
             this.btnDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnDashboard.Image = global::HMS.Properties.Resources.icons8_dashboard_18;
+            this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboard.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnDashboard.Location = new System.Drawing.Point(0, 216);
@@ -450,10 +462,10 @@
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
             this.btnLogout.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnLogout.Image = global::HMS.Properties.Resources.icons8_logout_18;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.ImageOffset = new System.Drawing.Point(15, 0);
-            this.btnLogout.Location = new System.Drawing.Point(0, 142);
+            this.btnLogout.Location = new System.Drawing.Point(0, 78);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(219, 46);
             this.btnLogout.TabIndex = 8;
@@ -464,7 +476,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::HMS.Properties.Resources.icons8_admin_1001;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(40, 46);
             this.pictureBox1.Name = "pictureBox1";
@@ -504,7 +516,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label systemLog;
+        private System.Windows.Forms.Label lbl_userAccount;
         private Guna.UI2.WinForms.Guna2Button btnClient;
         private Guna.UI2.WinForms.Guna2Button btnReservation;
         private Guna.UI2.WinForms.Guna2Button btnRoom;
@@ -522,5 +534,6 @@
         private Guna.UI2.WinForms.Guna2Button btnManageRoomType;
         public System.Windows.Forms.Panel pnl_main;
         private Guna.UI2.WinForms.Guna2Button btnManageSystem;
+        private System.Windows.Forms.Panel panel6;
     }
 }

@@ -15,7 +15,7 @@ namespace HMS.AppData
     public partial class vw_display_system_log
     {
         public int ID { get; set; }
-        public string Account { get; set; }
+        public string Role { get; set; }
         public System.DateTime DateIn { get; set; }
         public System.TimeSpan TimeIn { get; set; }
         public string Activity { get; set; }

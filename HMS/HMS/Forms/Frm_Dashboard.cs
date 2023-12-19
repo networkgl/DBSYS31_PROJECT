@@ -17,7 +17,8 @@ namespace HMS.Forms
     {
         private static Frm_Dashboard dashboard;
         private UserRepository userRepo;
-
+        private int total;
+        private int occupied;
 
         public Frm_Dashboard()
         {
@@ -54,67 +55,68 @@ namespace HMS.Forms
             DisplayTotalRoom_Occupied();
             DisplayTotalRoom_Available();
             DisplayTotalRoom_Reserved();
+
+            PopulateProgressBar();
         }
         private void DisplayTotalGuest()
         {
             string message = string.Empty;
             var getTotalGuest = userRepo.GetRoomTotalGuest_Individually(ref message);
-            int total = 0;
+            int totalguest = 0;
             foreach(var guest in getTotalGuest)
             {
-                total += (int)guest.TotalGuest;
+                totalguest += (int)guest.TotalGuest;
             }
-            lbl_TotalGuest.Text = total.ToString();
+            lbl_TotalGuest.Text = totalguest.ToString();
         }
         private void DisplayTotalGuest_Adult()
         {
             string message = string.Empty;
             var getTotalGuest = userRepo.GetRoomTotalGuest_Individually(ref message);
-            int total = 0;
+            int totalAdult = 0;
             foreach (var guest in getTotalGuest)
             {
-                total += (int)guest.TotalAdult;
+                totalAdult += (int)guest.TotalAdult;
             }
-            lbl_totalAdult.Text = total.ToString();
+            lbl_totalAdult.Text = totalAdult.ToString();
         }
         private void DisplayTotalGuest_Children()
         {
             string message = string.Empty;
             var getTotalGuest = userRepo.GetRoomTotalGuest_Individually(ref message);
-            int total = 0;
+            int totalChildren = 0;
             foreach (var guest in getTotalGuest)
             {
-                total += (int)guest.TotalChildren;
+                totalChildren += (int)guest.TotalChildren;
             }
-            lbl_totalChildren.Text = total.ToString();
+            lbl_totalChildren.Text = totalChildren.ToString();
         }
         private void DisplayTotalGuest_SeniorCitizen()
         {
             string message = string.Empty;
             var getTotalGuest = userRepo.GetRoomTotalGuest_Individually(ref message);
-            int total = 0;
+            int totalSenior = 0;
             foreach (var guest in getTotalGuest)
             {
-                total += (int)guest.TotalSeniorCitizen;
+                totalSenior += (int)guest.TotalSeniorCitizen;
             }
-            lbl_totalSenior .Text = total.ToString();
+            lbl_totalSenior .Text = totalSenior.ToString();
         }
         private void DisplayTotalRoom_Occupied()
         {
             string message = string.Empty;
             var getTotalRoom = userRepo.GetRoomTotal_Occupied(ref message);
-            int total = 0;
+            
             foreach (var room in getTotalRoom)
             {
-                total += (int)room.RoomOccupied;
+                occupied += (int)room.RoomOccupied;
             }
-            lbl_totalRoomOccupied.Text = total.ToString();
+            lbl_totalRoomOccupied.Text = occupied.ToString();
         }
         private void DisplayTotalRoom_Available()
         {
             string message = string.Empty;
             var getTotalRoom = userRepo.GetRoomTotal_Occupied(ref message);
-            int total = 0;
             foreach (var room in getTotalRoom)
             {
                 total += (int)room.RoomOccupied;
@@ -138,12 +140,44 @@ namespace HMS.Forms
         {
             string message = string.Empty;
             var getTotalRoom = userRepo.GetRoomTotal_Reserve(ref message);
-            int total = 0;
+            int totalRoomReserved = 0;
             foreach (var room in getTotalRoom)
             {
-                total += (int)room.RoomReserved;
+                totalRoomReserved += (int)room.RoomReserved;
             }
-            lbl_totalRoomReserve.Text = total.ToString();
+            lbl_totalRoomReserve.Text = totalRoomReserved.ToString();
+        }
+
+        private void PopulateProgressBar()
+        {
+            if (total == 0)
+            {
+                MessageDialog.Show("Unable to view Dashboard\nNo Current Check In!", "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+            }
+            else
+            {
+
+                try
+                {
+                    HMSEntities db;
+                    using (db = new HMSEntities())
+                    {
+                        var totalRoom = ((int)RoomAvailable.MAX * db.ROOM_DETAILS.Count());//Get max roomtype available then use it to calculate and multiple max room doors in every room type in this case  = 9
+                        Console.WriteLine(totalRoom);
+                        Console.WriteLine(occupied);
+                        double percentage = ((double)occupied / totalRoom) * 100;
+                        pb_currentlyCheckIn.Value = (int)percentage;
+                        lbl_Pecent.Text = percentage.ToString("F2") + "%";
+
+                        Console.WriteLine(percentage);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageDialog.Show(e.Message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                }
+
+            }
         }
     }
 }

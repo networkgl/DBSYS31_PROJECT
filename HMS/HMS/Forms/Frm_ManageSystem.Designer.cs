@@ -129,7 +129,7 @@
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv_systemaccounts.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_systemaccounts.RowTemplate.Height = 25;
-            this.dgv_systemaccounts.Size = new System.Drawing.Size(460, 397);
+            this.dgv_systemaccounts.Size = new System.Drawing.Size(460, 271);
             this.dgv_systemaccounts.TabIndex = 159;
             this.dgv_systemaccounts.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_systemaccounts.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -296,9 +296,9 @@
             this.btnCreateAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCreateAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateAccount.ForeColor = System.Drawing.Color.White;
-            this.btnCreateAccount.Location = new System.Drawing.Point(36, 328);
+            this.btnCreateAccount.Location = new System.Drawing.Point(36, 314);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(520, 50);
+            this.btnCreateAccount.Size = new System.Drawing.Size(144, 50);
             this.btnCreateAccount.TabIndex = 166;
             this.btnCreateAccount.Text = "Create Account";
             this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
@@ -324,9 +324,9 @@
             this.btnDeleteSystemAccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
             this.btnDeleteSystemAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteSystemAccount.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteSystemAccount.Location = new System.Drawing.Point(36, 440);
+            this.btnDeleteSystemAccount.Location = new System.Drawing.Point(400, 314);
             this.btnDeleteSystemAccount.Name = "btnDeleteSystemAccount";
-            this.btnDeleteSystemAccount.Size = new System.Drawing.Size(520, 50);
+            this.btnDeleteSystemAccount.Size = new System.Drawing.Size(144, 50);
             this.btnDeleteSystemAccount.TabIndex = 168;
             this.btnDeleteSystemAccount.Text = "Delete Account";
             this.btnDeleteSystemAccount.Click += new System.EventHandler(this.btnClearDetails_Click);
@@ -352,9 +352,9 @@
             this.btnUpdateSystemAccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(176)))), ((int)(((byte)(76)))));
             this.btnUpdateSystemAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateSystemAccount.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateSystemAccount.Location = new System.Drawing.Point(36, 384);
+            this.btnUpdateSystemAccount.Location = new System.Drawing.Point(214, 314);
             this.btnUpdateSystemAccount.Name = "btnUpdateSystemAccount";
-            this.btnUpdateSystemAccount.Size = new System.Drawing.Size(520, 50);
+            this.btnUpdateSystemAccount.Size = new System.Drawing.Size(144, 50);
             this.btnUpdateSystemAccount.TabIndex = 170;
             this.btnUpdateSystemAccount.Text = "Update Account";
             this.btnUpdateSystemAccount.Click += new System.EventHandler(this.btnUpdateSystemAccount_Click);

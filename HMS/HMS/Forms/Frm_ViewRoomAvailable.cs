@@ -145,6 +145,8 @@ namespace HMS.Forms
         }
         private void dgv_roomdetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Frm_Main.LastActivity = "Clicking and Viewing room details datagrid";
+
             var msg = "Please select only row cells!";
 
             if (e.RowIndex == -1)
@@ -194,6 +196,7 @@ namespace HMS.Forms
                         roomDiscount = clickedRow.Cells["Promo"].Value.ToString();
                         //roomDiscountedPrice = Convert.ToDouble(clickedRow.Cells["Discounted"].Value);
 
+
                         Frm_ChangeRoomDetails crd = new Frm_ChangeRoomDetails(RoomID, roomType, roomDetails, roomPrice, roomDiscount, image);
                         crd.ShowDialog();
                     }
@@ -211,6 +214,8 @@ namespace HMS.Forms
                         frm = this; //assign instance and use this to refresh the datagrid when deleting, updating is happen.
                         Frm_ConfirmDelete cd = new Frm_ConfirmDelete();
                         cd.ShowDialog();
+                        Frm_Main.LastActivity = "Deleting a room records from the database";
+
                     }
                 }
             }

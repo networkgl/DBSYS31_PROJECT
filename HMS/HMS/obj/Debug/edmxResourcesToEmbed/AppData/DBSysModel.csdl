@@ -179,6 +179,7 @@
     <EntitySet Name="GUEST" EntityType="HMSModel.GUEST" />
     <EntitySet Name="PAYMENT" EntityType="HMSModel.PAYMENT" />
     <EntitySet Name="RESERVATION" EntityType="HMSModel.RESERVATION" />
+    <EntitySet Name="ROLE" EntityType="HMSModel.ROLE" />
     <EntitySet Name="ROOM" EntityType="HMSModel.ROOM" />
     <EntitySet Name="ROOM_DETAILS" EntityType="HMSModel.ROOM_DETAILS" />
     <EntitySet Name="sysdiagrams" EntityType="HMSModel.sysdiagrams" />
@@ -196,6 +197,10 @@
     <EntitySet Name="vw_get_total_reservation_by_date" EntityType="HMSModel.vw_get_total_reservation_by_date" />
     <EntitySet Name="vw_get_total_room_occupied" EntityType="HMSModel.vw_get_total_room_occupied" />
     <EntitySet Name="vw_get_total_room_reserve" EntityType="HMSModel.vw_get_total_room_reserve" />
+    <AssociationSet Name="FK_ACCOUNTS_ROLE" Association="HMSModel.FK_ACCOUNTS_ROLE">
+      <End Role="ROLE" EntitySet="ROLE" />
+      <End Role="ACCOUNTS" EntitySet="ACCOUNTS" />
+    </AssociationSet>
     <AssociationSet Name="FK_RESERVATION_CLIENT" Association="HMSModel.FK_RESERVATION_CLIENT">
       <End Role="CLIENT" EntitySet="CLIENT" />
       <End Role="RESERVATION" EntitySet="RESERVATION" />
@@ -289,6 +294,7 @@
     <Property Name="userName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="userPassword" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="roleID" Type="Int32" />
+    <NavigationProperty Name="ROLE" Relationship="HMSModel.FK_ACCOUNTS_ROLE" FromRole="ACCOUNTS" ToRole="ROLE" />
   </EntityType>
   <EntityType Name="CLIENT">
     <Key>
@@ -337,6 +343,15 @@
     <NavigationProperty Name="GUEST" Relationship="HMSModel.FK_RESERVATION_GUEST" FromRole="RESERVATION" ToRole="GUEST" />
     <NavigationProperty Name="PAYMENT" Relationship="HMSModel.FK_RESERVATION_PAYMENT" FromRole="RESERVATION" ToRole="PAYMENT" />
     <NavigationProperty Name="ROOM" Relationship="HMSModel.FK_ROOM_RESERVATION" FromRole="RESERVATION" ToRole="ROOM" />
+  </EntityType>
+  <EntityType Name="ROLE">
+    <Key>
+      <PropertyRef Name="roleID" />
+    </Key>
+    <Property Name="roleID" Type="Int32" Nullable="false" />
+    <Property Name="roleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="roleDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ACCOUNTS" Relationship="HMSModel.FK_ACCOUNTS_ROLE" FromRole="ROLE" ToRole="ACCOUNTS" />
   </EntityType>
   <EntityType Name="ROOM">
     <Key>
@@ -480,13 +495,13 @@
   <EntityType Name="vw_display_system_log">
     <Key>
       <PropertyRef Name="ID" />
-      <PropertyRef Name="Account" />
+      <PropertyRef Name="Role" />
       <PropertyRef Name="DateIn" />
       <PropertyRef Name="TimeIn" />
       <PropertyRef Name="Activity" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="TimeIn" Type="Time" Nullable="false" Precision="0" />
     <Property Name="Activity" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -497,10 +512,10 @@
       <PropertyRef Name="UserName" />
       <PropertyRef Name="UserPass" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="UserPass" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="RoleID" Type="Int32" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="vw_display_total_approve_guest">
     <Key>
@@ -575,6 +590,18 @@
     <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RoomReserved" Type="Int32" />
   </EntityType>
+  <Association Name="FK_ACCOUNTS_ROLE">
+    <End Type="HMSModel.ROLE" Role="ROLE" Multiplicity="0..1" />
+    <End Type="HMSModel.ACCOUNTS" Role="ACCOUNTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLE">
+        <PropertyRef Name="roleID" />
+      </Principal>
+      <Dependent Role="ACCOUNTS">
+        <PropertyRef Name="roleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RESERVATION_CLIENT">
     <End Type="HMSModel.CLIENT" Role="CLIENT" Multiplicity="1" />
     <End Type="HMSModel.RESERVATION" Role="RESERVATION" Multiplicity="*" />

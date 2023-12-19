@@ -18,5 +18,7 @@ namespace HMS.AppData
         public string userName { get; set; }
         public string userPassword { get; set; }
         public Nullable<int> roleID { get; set; }
+    
+        public virtual ROLE ROLE { get; set; }
     }
 }

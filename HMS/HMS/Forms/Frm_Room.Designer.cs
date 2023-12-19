@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Room));
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_RoomType = new System.Windows.Forms.Label();
             this.cbBox_RoomType = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -159,7 +160,7 @@
             // cbBox_RoomType
             // 
             this.cbBox_RoomType.BackColor = System.Drawing.Color.Transparent;
-            this.cbBox_RoomType.BorderRadius = 10;
+            this.cbBox_RoomType.BorderRadius = 5;
             this.cbBox_RoomType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbBox_RoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBox_RoomType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -175,7 +176,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::HMS.Properties.Resources.icons8_filter_64;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Location = new System.Drawing.Point(710, 15);
             this.panel1.Name = "panel1";
@@ -320,7 +321,7 @@
             // pnl_door1
             // 
             this.pnl_door1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door1.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
+            this.pnl_door1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door1.BackgroundImage")));
             this.pnl_door1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_door1.Location = new System.Drawing.Point(3, 3);
             this.pnl_door1.Name = "pnl_door1";
@@ -446,7 +447,7 @@
             // pnl_door8
             // 
             this.pnl_door8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door8.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
+            this.pnl_door8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door8.BackgroundImage")));
             this.pnl_door8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_door8.Location = new System.Drawing.Point(3, 3);
             this.pnl_door8.Name = "pnl_door8";
@@ -572,7 +573,7 @@
             // pnl_door3
             // 
             this.pnl_door3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door3.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
+            this.pnl_door3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door3.BackgroundImage")));
             this.pnl_door3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_door3.Location = new System.Drawing.Point(3, 3);
             this.pnl_door3.Name = "pnl_door3";
@@ -698,7 +699,7 @@
             // pnl_door9
             // 
             this.pnl_door9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door9.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
+            this.pnl_door9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door9.BackgroundImage")));
             this.pnl_door9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_door9.Location = new System.Drawing.Point(3, 3);
             this.pnl_door9.Name = "pnl_door9";
@@ -824,7 +825,7 @@
             // pnl_door2
             // 
             this.pnl_door2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door2.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
+            this.pnl_door2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door2.BackgroundImage")));
             this.pnl_door2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_door2.Location = new System.Drawing.Point(3, 3);
             this.pnl_door2.Name = "pnl_door2";
@@ -950,7 +951,7 @@
             // pnl_door7
             // 
             this.pnl_door7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door7.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
+            this.pnl_door7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door7.BackgroundImage")));
             this.pnl_door7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_door7.Location = new System.Drawing.Point(3, 3);
             this.pnl_door7.Name = "pnl_door7";
@@ -1076,7 +1077,7 @@
             // pnl_door4
             // 
             this.pnl_door4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door4.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
+            this.pnl_door4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door4.BackgroundImage")));
             this.pnl_door4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_door4.Location = new System.Drawing.Point(3, 3);
             this.pnl_door4.Name = "pnl_door4";
@@ -1202,7 +1203,7 @@
             // pnl_door5
             // 
             this.pnl_door5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door5.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
+            this.pnl_door5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door5.BackgroundImage")));
             this.pnl_door5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_door5.Location = new System.Drawing.Point(3, 3);
             this.pnl_door5.Name = "pnl_door5";
@@ -1328,7 +1329,7 @@
             // pnl_door6
             // 
             this.pnl_door6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door6.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
+            this.pnl_door6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door6.BackgroundImage")));
             this.pnl_door6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_door6.Location = new System.Drawing.Point(3, 3);
             this.pnl_door6.Name = "pnl_door6";

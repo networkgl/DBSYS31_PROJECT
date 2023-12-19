@@ -24,6 +24,7 @@ namespace HMS.Forms
         private UserRepository userRepo;
         public bool HasLogin { get; set; }
         public static string UserType { get; set; }
+        //public static string GetUserAccountType { get; set; }
         public Frm_Login()
         {
             InitializeComponent();

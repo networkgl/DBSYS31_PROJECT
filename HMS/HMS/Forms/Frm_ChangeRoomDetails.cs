@@ -41,6 +41,8 @@ namespace HMS.Forms
             this.roomDiscount = roomDiscount;
             //this.discountedPrice = discountedPrice;
             this.image = image;
+
+            Frm_Main.LastActivity = "Updating a records of rooms from the database";
         }
 
         private void Frm_ChangeRoomDetails_Load(object sender, EventArgs e)

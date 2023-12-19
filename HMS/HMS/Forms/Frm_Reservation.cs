@@ -34,8 +34,20 @@ namespace HMS.Forms
 
         private void Frm_Reservation_Load(object sender, EventArgs e)
         {
+            
+            if (Frm_Login.UserType.Equals("Admin"))
+            {
+                btnDeleteAllReservation.Visible = true;
+                pnl_Filter.Location = new Point(371, 12);
+            }
+            else
+            {
+                btnDeleteAllReservation.Visible = false;
+                pnl_Filter.Location = new Point(566, 12);
+            }
+
             LoadDataGrid();
-            chkBox_showpAll.Checked = true;
+            //chkBox_showpAll.Checked = true;
         }
         public void LoadDataGrid()
         {
@@ -102,6 +114,7 @@ namespace HMS.Forms
 
         private void dgv_roomreservation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             var msg = "Please select only row cells!";
 
             if (e.RowIndex == -1)
@@ -162,6 +175,7 @@ namespace HMS.Forms
                             acceptReservation = true;
                             LoadDataGrid();
                             MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+                            Frm_Main.LastActivity = "Accepted a booking reservation";
                         }
                         else
                         {
@@ -186,6 +200,7 @@ namespace HMS.Forms
                         {
                             LoadDataGrid();//load data grid to refresh.
                             Frm_ConfirmDelete.Reservation_ConfirmDelete = false;
+                            Frm_Main.LastActivity = "Declining a booking reservation that has been already approved";
                         }
                         return;
                     }
@@ -206,6 +221,7 @@ namespace HMS.Forms
                         {
                             LoadDataGrid();//load data grid to refresh.
                             Frm_ConfirmDelete.Reservation_ConfirmDelete = false;
+                            Frm_Main.LastActivity = "Declining a booking reservation";
                         }
                     }
                 }
@@ -232,6 +248,7 @@ namespace HMS.Forms
                     LoadDataGrid();
                     msg = "Successfully Delete All Reservations";
                     MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+                    Frm_Main.LastActivity = "Successfully deleting all reservations";
                 }
                 else
                 {
@@ -254,6 +271,7 @@ namespace HMS.Forms
             {
                 dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
             }
+            Frm_Main.LastActivity = "Filtering to the pending reservation";
         }
 
         private void chkBox_showpApprove_CheckedChanged(object sender, EventArgs e)
@@ -269,6 +287,7 @@ namespace HMS.Forms
             {
                 dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
             }
+            Frm_Main.LastActivity = "Filtering to the approve reservation";
         }
 
         private void chkBox_showpAll_CheckedChanged(object sender, EventArgs e)
@@ -281,10 +300,11 @@ namespace HMS.Forms
                 HandleCheckboxCheckedState(clickedCheckbox);
             }
             //NOT NECCESSARY
-            //else
-            //{
-            //    dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
-            //}
+            else
+            {
+                dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
+            }
+            Frm_Main.LastActivity = "Filtering to show all the reservation";
         }
         private void chkBox_showHistory_CheckedChanged(object sender, EventArgs e)
         {
@@ -299,10 +319,12 @@ namespace HMS.Forms
             {
                 dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
             }
+            Frm_Main.LastActivity = "Filtering to show history reservation";
+
         }
         private void UncheckOtherCheckboxes(Guna2CustomCheckBox clickedCheckbox)
         {
-            foreach (Control control in Controls)
+            foreach (Control control in pnl_Filter.Controls)
             {
                 if (control is Guna2CustomCheckBox checkbox && checkbox != clickedCheckbox)
                 {
@@ -334,6 +356,24 @@ namespace HMS.Forms
             }
         }
 
+        private void chkBox_showpAll_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void chkBox_showpApprove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkBox_showpPending_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkBox_showHistory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

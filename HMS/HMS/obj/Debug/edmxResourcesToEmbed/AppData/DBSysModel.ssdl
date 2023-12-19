@@ -50,13 +50,14 @@
     <Property Name="paymentID" Type="int" Nullable="false" />
     <Property Name="clientID" Type="int" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'HMS.dbo.ROLE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ROLE">
-          <Property Name="roleID" Type="int" />
-          <Property Name="roleName" Type="varchar" MaxLength="50" />
-          <Property Name="roleDescription" Type="varchar" MaxLength="50" />
-        </EntityType>-->
+  <EntityType Name="ROLE">
+    <Key>
+      <PropertyRef Name="roleID" />
+    </Key>
+    <Property Name="roleID" Type="int" Nullable="false" />
+    <Property Name="roleName" Type="varchar" MaxLength="50" />
+    <Property Name="roleDescription" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="ROOM">
     <Key>
       <PropertyRef Name="roomID" />
@@ -210,13 +211,13 @@ warning 6002: The table/view 'HMS.dbo.vw_display_system_log' does not have a pri
   <EntityType Name="vw_display_system_log">
     <Key>
       <PropertyRef Name="ID" />
-      <PropertyRef Name="Account" />
+      <PropertyRef Name="Role" />
       <PropertyRef Name="DateIn" />
       <PropertyRef Name="TimeIn" />
       <PropertyRef Name="Activity" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Account" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="DateIn" Type="date" Nullable="false" />
     <Property Name="TimeIn" Type="time" Precision="0" Nullable="false" />
     <Property Name="Activity" Type="varchar" MaxLength="100" Nullable="false" />
@@ -229,10 +230,10 @@ warning 6002: The table/view 'HMS.dbo.vw_display_sytem_accounts' does not have a
       <PropertyRef Name="UserName" />
       <PropertyRef Name="UserPass" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="UserPass" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="RoleID" Type="int" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'HMS.dbo.vw_display_total_approve_guest' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -319,6 +320,18 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_reserve' does not have a
     <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RoomReserved" Type="int" />
   </EntityType>
+  <Association Name="FK_ACCOUNTS_ROLE">
+    <End Role="ROLE" Type="Self.ROLE" Multiplicity="0..1" />
+    <End Role="ACCOUNTS" Type="Self.ACCOUNTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLE">
+        <PropertyRef Name="roleID" />
+      </Principal>
+      <Dependent Role="ACCOUNTS">
+        <PropertyRef Name="roleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RESERVATION_CLIENT">
     <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="1" />
     <End Role="RESERVATION" Type="Self.RESERVATION" Multiplicity="*" />
@@ -514,6 +527,7 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_reserve' does not have a
     <EntitySet Name="GUEST" EntityType="Self.GUEST" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PAYMENT" EntityType="Self.PAYMENT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RESERVATION" EntityType="Self.RESERVATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROLE" EntityType="Self.ROLE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ROOM" EntityType="Self.ROOM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ROOM_DETAILS" EntityType="Self.ROOM_DETAILS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -590,7 +604,7 @@ FROM [dbo].[vw_display_room_details] AS [vw_display_room_details]</DefiningQuery
     <EntitySet Name="vw_display_system_log" EntityType="Self.vw_display_system_log" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
 [vw_display_system_log].[ID] AS [ID], 
-[vw_display_system_log].[Account] AS [Account], 
+[vw_display_system_log].[Role] AS [Role], 
 [vw_display_system_log].[DateIn] AS [DateIn], 
 [vw_display_system_log].[TimeIn] AS [TimeIn], 
 [vw_display_system_log].[Activity] AS [Activity]
@@ -601,7 +615,7 @@ FROM [dbo].[vw_display_system_log] AS [vw_display_system_log]</DefiningQuery>
 [vw_display_sytem_accounts].[ID] AS [ID], 
 [vw_display_sytem_accounts].[UserName] AS [UserName], 
 [vw_display_sytem_accounts].[UserPass] AS [UserPass], 
-[vw_display_sytem_accounts].[RoleID] AS [RoleID]
+[vw_display_sytem_accounts].[Role] AS [Role]
 FROM [dbo].[vw_display_sytem_accounts] AS [vw_display_sytem_accounts]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="vw_display_total_approve_guest" EntityType="Self.vw_display_total_approve_guest" store:Type="Views" store:Schema="dbo">
@@ -661,6 +675,10 @@ FROM [dbo].[vw_get_total_room_occupied] AS [vw_get_total_room_occupied]</Definin
 [vw_get_total_room_reserve].[RoomReserved] AS [RoomReserved]
 FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQuery>
     </EntitySet>
+    <AssociationSet Name="FK_ACCOUNTS_ROLE" Association="Self.FK_ACCOUNTS_ROLE">
+      <End Role="ROLE" EntitySet="ROLE" />
+      <End Role="ACCOUNTS" EntitySet="ACCOUNTS" />
+    </AssociationSet>
     <AssociationSet Name="FK_RESERVATION_CLIENT" Association="Self.FK_RESERVATION_CLIENT">
       <End Role="CLIENT" EntitySet="CLIENT" />
       <End Role="RESERVATION" EntitySet="RESERVATION" />

@@ -120,6 +120,9 @@
     <Compile Include="AppData\RESERVATION.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\ROLE.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\ROOM.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
@@ -669,6 +672,17 @@
       <DependentUpon>DBSysModel.edmx</DependentUpon>
       <LastGenOutput>DBSysModel1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\gifts1.png" />
+    <None Include="Resources\tree.png" />
+    <None Include="Resources\gifts.png" />
+    <None Include="Resources\Screenshot 2023-12-19 125924.png" />
+    <None Include="Resources\christmas-sale-icon-santa-with-poster-vector-12762265.jpg" />
+    <None Include="Resources\icons8-christmas-sale-100.png" />
+    <None Include="Resources\icons8-christmas-50.png" />
+    <None Include="Resources\icons8-christmas-100 %283%29.png" />
+    <None Include="Resources\icons8-christmas-100 %282%29.png" />
+    <None Include="Resources\icons8-christmas-100 %281%29.png" />
+    <None Include="Resources\icons8-christmas-100.png" />
     <None Include="Resources\accept.png" />
     <None Include="Resources\sale.png" />
     <None Include="Resources\decline.png" />

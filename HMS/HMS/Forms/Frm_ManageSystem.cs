@@ -52,6 +52,8 @@ namespace HMS.Forms
                 txtboxUserName.Text = string.Empty;
                 txtboxPassword.Text = string.Empty;
                 cbBox_Role.SelectedIndex = 0;
+
+                Frm_Main.LastActivity = "Successfully created an account";
             }
             else
             {
@@ -72,6 +74,9 @@ namespace HMS.Forms
                 txtboxUserName.Text = string.Empty;
                 txtboxPassword.Text = string.Empty;
                 cbBox_Role.SelectedIndex = 0;
+
+                Frm_Main.LastActivity = "Successfully deleted an account";
+
             }
             else
             {
@@ -98,6 +103,9 @@ namespace HMS.Forms
                 btnDeleteSystemAccount.Enabled = false;
                 btnUpdateSystemAccount.Enabled = false;
                 //btnDeleteSystemAccount.Enabled = true;
+
+                Frm_Main.LastActivity = "Successfully updated system account informaton";
+
             }
             else
             {
@@ -114,24 +122,44 @@ namespace HMS.Forms
             Frm_Main.GetInstanceClass.pnl_main.Controls.Add(sl);
             sl.Show();
 
+
+            Frm_Main.LastActivity = "Viewing system logs";
         }
 
         private void dgv_systemaccounts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Frm_Main.LastActivity = "Viewing and selecting values from datagrid in system logs";
+
+
             DataGridViewRow clickedRow = dgv_systemaccounts.Rows[e.RowIndex];
             ID = Convert.ToInt32(clickedRow.Cells["ID"].Value); //Get ID first then pass to the stored procedure.
             userName = clickedRow.Cells["UserName"].Value.ToString(); //Get ID first then pass to the stored procedure.
             userPassword =clickedRow.Cells["UserPass"].Value.ToString(); //Get ID first then pass to the stored procedure.
-            roleID = Convert.ToInt32(clickedRow.Cells["RoleID"].Value); //Get ID first then pass to the stored procedure.
-
+            //roleID = Convert.ToInt32(clickedRow.Cells["Role"].Value); //Get ID first then pass to the stored procedure.
+            roleID = GetRoledByDescription(clickedRow.Cells["Role"].Value.ToString());
 
             txtboxUserName.Text = userName;
             txtboxPassword.Text = userPassword;
-            cbBox_Role.SelectedIndex = roleID - 1;
+            cbBox_Role.SelectedIndex = roleID ;
             btnDeleteSystemAccount.Enabled = true;
             btnUpdateSystemAccount.Enabled = true;
             btnCreateAccount.Enabled = false;
             //btnDeleteSystemAccount.Enabled = false;
+        }
+
+        private int GetRoledByDescription(string role)
+        {
+            var retVal = 0;
+            switch (role)
+            {
+                case "Admin":
+                    retVal = 0;
+                    break;
+                case "Staff":
+                    retVal = 1;
+                    break;
+            }
+            return retVal;
         }
     }
 }

@@ -44,10 +44,14 @@ namespace HMS.Forms
             dgv_systemlogs.DataSource = userRepo.LoadSystemLog(ref message);
 
             dgv_systemlogs.Columns["ID"].Width = 50;
-            dgv_systemlogs.Columns["Account"].Width = 150;
+            dgv_systemlogs.Columns["Role"].Width = 150;
             dgv_systemlogs.Columns["DateIn"].Width = 180;
             dgv_systemlogs.Columns["TimeIn"].Width = 180;
+        }
 
+        private void btnClearLogs_Click(object sender, EventArgs e)
+        {
+            Frm_Main.LastActivity = "Deleting values from system logs";
         }
     }
 }

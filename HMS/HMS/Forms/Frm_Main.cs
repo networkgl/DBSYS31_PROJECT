@@ -65,6 +65,18 @@ namespace HMS
         private void Frm_Main_Load(object sender, EventArgs e)
         {
 
+            if (Frm_Login.UserType.Equals("Admin"))
+            {
+                btnManageSystem.Visible = true;
+                lbl_userAccount.Text = "Administrator";
+            }
+            else
+            {
+                btnManageSystem.Visible = false;
+                lbl_userAccount.Text = "Staff";
+                lbl_userAccount.Location = new Point(90, 151);
+            }
+
             var Size_x = 39;
             var Size_y = 37;
             var Loc_x = 785;
@@ -138,7 +150,7 @@ namespace HMS
             rsrv.Dock = DockStyle.Fill;
             pnl_main.Controls.Add(rsrv);
             rsrv.Show();
-
+            Frm_Main.LastActivity = "Viewing Reservation";
         }
         private void btnManageRoomType_Click(object sender, EventArgs e)
         {
@@ -153,6 +165,9 @@ namespace HMS
             ar.Show();
 
             _instance = this;
+
+            LastActivity = "Viewing Manage Room";
+
         }
         private void btnManageSystem_Click(object sender, EventArgs e)
         {
@@ -165,6 +180,7 @@ namespace HMS
 
             _instance = this;
 
+            LastActivity = "Viewing Manage System";
 
         }
         private void btnLogout_Click(object sender, EventArgs e)
