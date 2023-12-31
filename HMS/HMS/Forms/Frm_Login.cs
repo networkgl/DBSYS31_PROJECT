@@ -24,7 +24,6 @@ namespace HMS.Forms
         private UserRepository userRepo;
         public bool HasLogin { get; set; }
         public static string UserType { get; set; }
-        //public static string GetUserAccountType { get; set; }
         public Frm_Login()
         {
             InitializeComponent();
@@ -39,12 +38,12 @@ namespace HMS.Forms
                 return handleParams;
             }
         }
-        //public static Frm_Login GetInstance()
-        //{
-        //    if(login == null)
-        //        login = new Frm_Login();
-        //    return login;
-        //}
+        public static Frm_Login GetInstance()
+        {
+            if (login == null)
+                login = new Frm_Login();
+            return login;
+        }
         private void Frm_Login_Load(object sender, EventArgs e)
         {
             firstRun = true;
@@ -103,8 +102,7 @@ namespace HMS.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
-            Frm_HomePage hp = new Frm_HomePage();
-            hp.Show();
+            //Frm_HomePage.GetInstance().Show();
         }
 
         private void btnShowPassword_Click(object sender, EventArgs e)
@@ -119,13 +117,7 @@ namespace HMS.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            HasLogin = true;
             toggleShow = 0;
-
-            //this.Hide();
-            //Frm_Main main = new Frm_Main();
-            //main.Show();
-
 
             ValidateUserLogin();
         }
@@ -145,7 +137,7 @@ namespace HMS.Forms
                 btnShowPassword.BackgroundImage = showPassImage;
                 btnShowPassword.BackgroundImageLayout = ImageLayout.Center;
             }
-            Console.WriteLine(toggleShow);
+            //Console.WriteLine(toggleShow);
         }
 
         public void ValidateUserLogin()
@@ -161,7 +153,7 @@ namespace HMS.Forms
                     UserLogged.GetInstance().UserAccount = userLogged;
                     Frm_Main main = new Frm_Main();
                     switch ((Role)userLogged.roleID)
-                    {
+                    {   
                         case Role.Admin:
                             UserType = "Admin";
                             MessageDialog.Show("Admin " + message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
@@ -179,10 +171,11 @@ namespace HMS.Forms
                             MessageDialog.Show(message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
                             break;
                     }
+                    HasLogin = true;
                 }
                 else
                 {
-                    message = "Invalid Password";
+                    message = "Incorrect Password";
                     MessageDialog.Show(message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
                 }
             }

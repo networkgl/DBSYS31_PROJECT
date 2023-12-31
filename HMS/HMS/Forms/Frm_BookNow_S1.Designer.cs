@@ -50,7 +50,6 @@
             this.metroProgressBar3 = new MetroFramework.Controls.MetroProgressBar();
             this.lblSystemTime = new System.Windows.Forms.Label();
             this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
-            this.btnBack = new System.Windows.Forms.Button();
             this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
             this.btnGuestDetails = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnChooseDate = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -61,6 +60,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
             this.errorProvider_S1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             this.pnl_p1.SuspendLayout();
@@ -134,10 +134,11 @@
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
             this.btnNext.Location = new System.Drawing.Point(673, 542);
             this.btnNext.Name = "btnNext";
@@ -150,26 +151,26 @@
             // nud_NumberOfGuest_SeniorCitizen
             // 
             this.nud_NumberOfGuest_SeniorCitizen.BackColor = System.Drawing.Color.Transparent;
-            this.nud_NumberOfGuest_SeniorCitizen.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nud_NumberOfGuest_SeniorCitizen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nud_NumberOfGuest_SeniorCitizen.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nud_NumberOfGuest_SeniorCitizen.Location = new System.Drawing.Point(2, 420);
             this.nud_NumberOfGuest_SeniorCitizen.Name = "nud_NumberOfGuest_SeniorCitizen";
             this.nud_NumberOfGuest_SeniorCitizen.Size = new System.Drawing.Size(786, 36);
             this.nud_NumberOfGuest_SeniorCitizen.TabIndex = 92;
-            this.nud_NumberOfGuest_SeniorCitizen.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.nud_NumberOfGuest_SeniorCitizen.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.nud_NumberOfGuest_SeniorCitizen.UpDownButtonForeColor = System.Drawing.Color.White;
             this.nud_NumberOfGuest_SeniorCitizen.ValueChanged += new System.EventHandler(this.nud_NumberOfGuest_SeniorCitizen_ValueChanged);
             // 
             // nud_NumberOfGuest_Adult
             // 
             this.nud_NumberOfGuest_Adult.BackColor = System.Drawing.Color.Transparent;
-            this.nud_NumberOfGuest_Adult.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nud_NumberOfGuest_Adult.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nud_NumberOfGuest_Adult.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nud_NumberOfGuest_Adult.Location = new System.Drawing.Point(0, 294);
             this.nud_NumberOfGuest_Adult.Name = "nud_NumberOfGuest_Adult";
             this.nud_NumberOfGuest_Adult.Size = new System.Drawing.Size(786, 36);
             this.nud_NumberOfGuest_Adult.TabIndex = 91;
-            this.nud_NumberOfGuest_Adult.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.nud_NumberOfGuest_Adult.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.nud_NumberOfGuest_Adult.UpDownButtonForeColor = System.Drawing.Color.White;
             this.nud_NumberOfGuest_Adult.ValueChanged += new System.EventHandler(this.nud_NumberOfGuest_Adult_ValueChanged);
             // 
@@ -186,13 +187,13 @@
             // nud_NumberOfGuest_Children
             // 
             this.nud_NumberOfGuest_Children.BackColor = System.Drawing.Color.Transparent;
-            this.nud_NumberOfGuest_Children.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nud_NumberOfGuest_Children.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nud_NumberOfGuest_Children.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nud_NumberOfGuest_Children.Location = new System.Drawing.Point(2, 357);
             this.nud_NumberOfGuest_Children.Name = "nud_NumberOfGuest_Children";
             this.nud_NumberOfGuest_Children.Size = new System.Drawing.Size(786, 36);
             this.nud_NumberOfGuest_Children.TabIndex = 87;
-            this.nud_NumberOfGuest_Children.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.nud_NumberOfGuest_Children.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.nud_NumberOfGuest_Children.UpDownButtonForeColor = System.Drawing.Color.White;
             this.nud_NumberOfGuest_Children.ValueChanged += new System.EventHandler(this.nud_NumberOfGuest_Children_ValueChanged);
             // 
@@ -201,10 +202,10 @@
             this.mc_GuideBooking.ActiveMonth.Month = 11;
             this.mc_GuideBooking.ActiveMonth.Year = 2023;
             this.mc_GuideBooking.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(198)))), ((int)(((byte)(214)))));
-            this.mc_GuideBooking.BorderStyle = System.Windows.Forms.ButtonBorderStyle.None;
             this.mc_GuideBooking.Culture = new System.Globalization.CultureInfo("en-PH");
+            this.mc_GuideBooking.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mc_GuideBooking.Footer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.mc_GuideBooking.Header.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.mc_GuideBooking.Header.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.mc_GuideBooking.Header.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mc_GuideBooking.Header.TextColor = System.Drawing.Color.White;
             this.mc_GuideBooking.ImageList = null;
@@ -222,10 +223,10 @@
             this.mc_GuideBooking.ShowFooter = false;
             this.mc_GuideBooking.Size = new System.Drawing.Size(634, 259);
             this.mc_GuideBooking.TabIndex = 85;
-            this.mc_GuideBooking.TodayColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.mc_GuideBooking.TodayColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.mc_GuideBooking.Weekdays.BorderColor = System.Drawing.Color.Gray;
             this.mc_GuideBooking.Weekdays.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mc_GuideBooking.Weekdays.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.mc_GuideBooking.Weekdays.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.mc_GuideBooking.Weeknumbers.Align = Pabo.Calendar.mcWeeknumberAlign.Center;
             this.mc_GuideBooking.Weeknumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mc_GuideBooking.Weeknumbers.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(200)))));
@@ -265,6 +266,7 @@
             // 
             this.DateTimePicker_CheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckOut.Checked = true;
+            this.DateTimePicker_CheckOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DateTimePicker_CheckOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimePicker_CheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -281,6 +283,7 @@
             // 
             this.DateTimePicker_CheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckIn.Checked = true;
+            this.DateTimePicker_CheckIn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DateTimePicker_CheckIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimePicker_CheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -321,12 +324,12 @@
             this.btnPaymentConfirmation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPaymentConfirmation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPaymentConfirmation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPaymentConfirmation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnPaymentConfirmation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnPaymentConfirmation.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPaymentConfirmation.ForeColor = System.Drawing.Color.White;
             this.btnPaymentConfirmation.Location = new System.Drawing.Point(803, 63);
             this.btnPaymentConfirmation.Name = "btnPaymentConfirmation";
-            this.btnPaymentConfirmation.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnPaymentConfirmation.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnPaymentConfirmation.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPaymentConfirmation.Size = new System.Drawing.Size(40, 40);
             this.btnPaymentConfirmation.TabIndex = 48;
@@ -343,7 +346,7 @@
             // 
             this.lblSystemTime.AutoSize = true;
             this.lblSystemTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.lblSystemTime.Location = new System.Drawing.Point(833, 6);
             this.lblSystemTime.Name = "lblSystemTime";
             this.lblSystemTime.Size = new System.Drawing.Size(204, 19);
@@ -356,22 +359,6 @@
             this.metroProgressBar2.Name = "metroProgressBar2";
             this.metroProgressBar2.Size = new System.Drawing.Size(161, 5);
             this.metroProgressBar2.TabIndex = 47;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(0, 6);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(42, 31);
-            this.btnBack.TabIndex = 73;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // metroProgressBar1
             // 
@@ -387,12 +374,12 @@
             this.btnGuestDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnGuestDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGuestDetails.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGuestDetails.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnGuestDetails.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnGuestDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuestDetails.ForeColor = System.Drawing.Color.White;
             this.btnGuestDetails.Location = new System.Drawing.Point(603, 63);
             this.btnGuestDetails.Name = "btnGuestDetails";
-            this.btnGuestDetails.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnGuestDetails.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnGuestDetails.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnGuestDetails.Size = new System.Drawing.Size(40, 40);
             this.btnGuestDetails.TabIndex = 45;
@@ -405,12 +392,12 @@
             this.btnChooseDate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChooseDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChooseDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChooseDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnChooseDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnChooseDate.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseDate.ForeColor = System.Drawing.Color.White;
             this.btnChooseDate.Location = new System.Drawing.Point(205, 61);
             this.btnChooseDate.Name = "btnChooseDate";
-            this.btnChooseDate.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnChooseDate.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnChooseDate.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnChooseDate.Size = new System.Drawing.Size(40, 40);
             this.btnChooseDate.TabIndex = 43;
@@ -423,12 +410,12 @@
             this.btnChooseRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChooseRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChooseRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChooseRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnChooseRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnChooseRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseRoom.ForeColor = System.Drawing.Color.White;
             this.btnChooseRoom.Location = new System.Drawing.Point(404, 63);
             this.btnChooseRoom.Name = "btnChooseRoom";
-            this.btnChooseRoom.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnChooseRoom.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnChooseRoom.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnChooseRoom.Size = new System.Drawing.Size(40, 40);
             this.btnChooseRoom.TabIndex = 44;
@@ -481,6 +468,23 @@
             // errorProvider_S1
             // 
             this.errorProvider_S1.ContainerControl = this;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(0, 6);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 73;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Frm_BookNow_S1
             // 

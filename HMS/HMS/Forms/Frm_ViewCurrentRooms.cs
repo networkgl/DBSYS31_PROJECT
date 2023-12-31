@@ -20,13 +20,11 @@ namespace HMS.Forms
     {
         private HMSEntities db;
         private AdminRepository adminRepo;
-        private static int currentIndex;
-        //private static bool noRooms;
-        public static int CurrentIndex { get => currentIndex; set => currentIndex = value; }
-        //public static bool NoRooms { get => noRooms; set => noRooms = value; }
-
-        //private int lastPrimaryKeyValue = 0;
         private UserRepository userRepo;
+
+        private static int currentIndex;
+        public static int CurrentIndex { get => currentIndex; set => currentIndex = value; }
+
 
 
         public Frm_ViewCurrentRooms()
@@ -37,23 +35,10 @@ namespace HMS.Forms
             CurrentIndex = adminRepo.LastPrimaryKeyValue;
             userRepo = new UserRepository();
         }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void Frm_ViewCurrentRooms_Load(object sender, EventArgs e)
         {
-
            InitialLoad();
         }
-        //private Image GetImageFromDatabase(byte[] img)
-        //{
-        //    MemoryStream stream = new MemoryStream(img);
-            
-        //    return Image.FromStream(stream);
-        //}
         public void InitialLoad()
         {
             btnRoomDisplay.Enabled = false;
@@ -208,13 +193,6 @@ namespace HMS.Forms
             Frm_Main.GetInstanceClass.pnl_main.Controls.Add(vcr);
             vcr.Show();
         }
-
-        private void lbl_OrigPrice_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         /*
         public byte[] GetPhotoByIndex(int selectedIndex)
         {

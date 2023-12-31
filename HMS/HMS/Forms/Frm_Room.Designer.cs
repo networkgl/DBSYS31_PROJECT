@@ -32,9 +32,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_RoomType = new System.Windows.Forms.Label();
             this.cbBox_RoomType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_RoomType = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnl_room1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_NumberOfDays_1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_NumberOfPeople_1 = new System.Windows.Forms.Label();
@@ -44,7 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_door1 = new System.Windows.Forms.Panel();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnl_room8 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_NumberOfDays_8 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.lbl_NumberOfPeople_8 = new System.Windows.Forms.Label();
@@ -54,7 +53,7 @@
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
             this.pnl_door8 = new System.Windows.Forms.Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnl_room3 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_NumberOfDays_3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl_NumberOfPeople_3 = new System.Windows.Forms.Label();
@@ -64,7 +63,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.pnl_door3 = new System.Windows.Forms.Panel();
-            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnl_room9 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_NumberOfDays_9 = new System.Windows.Forms.Label();
             this.label59 = new System.Windows.Forms.Label();
             this.lbl_NumberOfPeople_9 = new System.Windows.Forms.Label();
@@ -74,7 +73,7 @@
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.pnl_door9 = new System.Windows.Forms.Panel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnl_room2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_NumberOfDays_2 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.lbl_NumberOfPeople_2 = new System.Windows.Forms.Label();
@@ -84,7 +83,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.pnl_door2 = new System.Windows.Forms.Panel();
-            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnl_room7 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_NumberOfDays_7 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.lbl_NumberOfPeople_7 = new System.Windows.Forms.Label();
@@ -94,7 +93,7 @@
             this.label72 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
             this.pnl_door7 = new System.Windows.Forms.Panel();
-            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnl_room4 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_NumberOfDays_4 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.lbl_NumberOfPeople_4 = new System.Windows.Forms.Label();
@@ -104,7 +103,7 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.pnl_door4 = new System.Windows.Forms.Panel();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnl_room5 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_NumberOfDays_5 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.lbl_NumberOfPeople_5 = new System.Windows.Forms.Label();
@@ -114,7 +113,7 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.pnl_door5 = new System.Windows.Forms.Panel();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnl_room6 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_NumberOfDays_6 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.lbl_NumberOfPeople_6 = new System.Windows.Forms.Label();
@@ -124,16 +123,17 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.pnl_door6 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnl_RoomType.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            this.guna2Panel7.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            this.guna2Panel8.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
-            this.guna2Panel9.SuspendLayout();
-            this.guna2Panel6.SuspendLayout();
-            this.guna2Panel4.SuspendLayout();
-            this.guna2Panel5.SuspendLayout();
+            this.pnl_room1.SuspendLayout();
+            this.pnl_room8.SuspendLayout();
+            this.pnl_room3.SuspendLayout();
+            this.pnl_room9.SuspendLayout();
+            this.pnl_room2.SuspendLayout();
+            this.pnl_room7.SuspendLayout();
+            this.pnl_room4.SuspendLayout();
+            this.pnl_room5.SuspendLayout();
+            this.pnl_room6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -174,53 +174,46 @@
             this.cbBox_RoomType.TabIndex = 18;
             this.cbBox_RoomType.SelectedIndexChanged += new System.EventHandler(this.cbBox_RoomType_SelectedIndexChanged);
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(710, 15);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(34, 36);
-            this.panel1.TabIndex = 20;
-            // 
             // pnl_RoomType
             // 
             this.pnl_RoomType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.pnl_RoomType.BorderRadius = 10;
-            this.pnl_RoomType.Controls.Add(this.guna2Panel1);
-            this.pnl_RoomType.Controls.Add(this.guna2Panel7);
-            this.pnl_RoomType.Controls.Add(this.guna2Panel2);
-            this.pnl_RoomType.Controls.Add(this.guna2Panel8);
-            this.pnl_RoomType.Controls.Add(this.guna2Panel3);
-            this.pnl_RoomType.Controls.Add(this.guna2Panel9);
-            this.pnl_RoomType.Controls.Add(this.guna2Panel6);
-            this.pnl_RoomType.Controls.Add(this.guna2Panel4);
-            this.pnl_RoomType.Controls.Add(this.guna2Panel5);
+            this.pnl_RoomType.Controls.Add(this.pnl_room1);
+            this.pnl_RoomType.Controls.Add(this.pnl_room8);
+            this.pnl_RoomType.Controls.Add(this.pnl_room3);
+            this.pnl_RoomType.Controls.Add(this.pnl_room9);
+            this.pnl_RoomType.Controls.Add(this.pnl_room2);
+            this.pnl_RoomType.Controls.Add(this.pnl_room7);
+            this.pnl_RoomType.Controls.Add(this.pnl_room4);
+            this.pnl_RoomType.Controls.Add(this.pnl_room5);
+            this.pnl_RoomType.Controls.Add(this.pnl_room6);
             this.pnl_RoomType.FillColor = System.Drawing.Color.White;
             this.pnl_RoomType.Location = new System.Drawing.Point(12, 70);
             this.pnl_RoomType.Name = "pnl_RoomType";
             this.pnl_RoomType.Size = new System.Drawing.Size(1054, 503);
             this.pnl_RoomType.TabIndex = 163;
             // 
-            // guna2Panel1
+            // pnl_room1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.Controls.Add(this.lbl_NumberOfDays_1);
-            this.guna2Panel1.Controls.Add(this.label8);
-            this.guna2Panel1.Controls.Add(this.lbl_NumberOfPeople_1);
-            this.guna2Panel1.Controls.Add(this.lbl_roomNumber_1);
-            this.guna2Panel1.Controls.Add(this.label4);
-            this.guna2Panel1.Controls.Add(this.lbl_status1);
-            this.guna2Panel1.Controls.Add(this.label2);
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.pnl_door1);
-            this.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(20, 15);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(295, 138);
-            this.guna2Panel1.TabIndex = 41;
+            this.pnl_room1.BackColor = System.Drawing.Color.White;
+            this.pnl_room1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_room1.BorderRadius = 10;
+            this.pnl_room1.Controls.Add(this.lbl_NumberOfDays_1);
+            this.pnl_room1.Controls.Add(this.label8);
+            this.pnl_room1.Controls.Add(this.lbl_NumberOfPeople_1);
+            this.pnl_room1.Controls.Add(this.lbl_roomNumber_1);
+            this.pnl_room1.Controls.Add(this.label4);
+            this.pnl_room1.Controls.Add(this.lbl_status1);
+            this.pnl_room1.Controls.Add(this.label2);
+            this.pnl_room1.Controls.Add(this.label1);
+            this.pnl_room1.Controls.Add(this.pnl_door1);
+            this.pnl_room1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_room1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnl_room1.Location = new System.Drawing.Point(20, 15);
+            this.pnl_room1.Name = "pnl_room1";
+            this.pnl_room1.Size = new System.Drawing.Size(295, 138);
+            this.pnl_room1.TabIndex = 41;
+            this.pnl_room1.Click += new System.EventHandler(this.pnl_room1_Click);
             // 
             // lbl_NumberOfDays_1
             // 
@@ -328,25 +321,27 @@
             this.pnl_door1.Size = new System.Drawing.Size(96, 131);
             this.pnl_door1.TabIndex = 17;
             // 
-            // guna2Panel7
+            // pnl_room8
             // 
-            this.guna2Panel7.BackColor = System.Drawing.Color.White;
-            this.guna2Panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Panel7.BorderRadius = 10;
-            this.guna2Panel7.Controls.Add(this.lbl_NumberOfDays_8);
-            this.guna2Panel7.Controls.Add(this.label51);
-            this.guna2Panel7.Controls.Add(this.lbl_NumberOfPeople_8);
-            this.guna2Panel7.Controls.Add(this.lbl_roomNumber_8);
-            this.guna2Panel7.Controls.Add(this.label54);
-            this.guna2Panel7.Controls.Add(this.lbl_status8);
-            this.guna2Panel7.Controls.Add(this.label56);
-            this.guna2Panel7.Controls.Add(this.label57);
-            this.guna2Panel7.Controls.Add(this.pnl_door8);
-            this.guna2Panel7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.guna2Panel7.Location = new System.Drawing.Point(386, 351);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(295, 138);
-            this.guna2Panel7.TabIndex = 49;
+            this.pnl_room8.BackColor = System.Drawing.Color.White;
+            this.pnl_room8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_room8.BorderRadius = 10;
+            this.pnl_room8.Controls.Add(this.lbl_NumberOfDays_8);
+            this.pnl_room8.Controls.Add(this.label51);
+            this.pnl_room8.Controls.Add(this.lbl_NumberOfPeople_8);
+            this.pnl_room8.Controls.Add(this.lbl_roomNumber_8);
+            this.pnl_room8.Controls.Add(this.label54);
+            this.pnl_room8.Controls.Add(this.lbl_status8);
+            this.pnl_room8.Controls.Add(this.label56);
+            this.pnl_room8.Controls.Add(this.label57);
+            this.pnl_room8.Controls.Add(this.pnl_door8);
+            this.pnl_room8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_room8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnl_room8.Location = new System.Drawing.Point(386, 351);
+            this.pnl_room8.Name = "pnl_room8";
+            this.pnl_room8.Size = new System.Drawing.Size(295, 138);
+            this.pnl_room8.TabIndex = 49;
+            this.pnl_room8.Click += new System.EventHandler(this.pnl_room8_Click);
             // 
             // lbl_NumberOfDays_8
             // 
@@ -454,25 +449,27 @@
             this.pnl_door8.Size = new System.Drawing.Size(96, 131);
             this.pnl_door8.TabIndex = 17;
             // 
-            // guna2Panel2
+            // pnl_room3
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.White;
-            this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Panel2.BorderRadius = 10;
-            this.guna2Panel2.Controls.Add(this.lbl_NumberOfDays_3);
-            this.guna2Panel2.Controls.Add(this.label11);
-            this.guna2Panel2.Controls.Add(this.lbl_NumberOfPeople_3);
-            this.guna2Panel2.Controls.Add(this.lbl_roomNumber_3);
-            this.guna2Panel2.Controls.Add(this.label14);
-            this.guna2Panel2.Controls.Add(this.lbl_status3);
-            this.guna2Panel2.Controls.Add(this.label16);
-            this.guna2Panel2.Controls.Add(this.label17);
-            this.guna2Panel2.Controls.Add(this.pnl_door3);
-            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(738, 15);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(295, 138);
-            this.guna2Panel2.TabIndex = 42;
+            this.pnl_room3.BackColor = System.Drawing.Color.White;
+            this.pnl_room3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_room3.BorderRadius = 10;
+            this.pnl_room3.Controls.Add(this.lbl_NumberOfDays_3);
+            this.pnl_room3.Controls.Add(this.label11);
+            this.pnl_room3.Controls.Add(this.lbl_NumberOfPeople_3);
+            this.pnl_room3.Controls.Add(this.lbl_roomNumber_3);
+            this.pnl_room3.Controls.Add(this.label14);
+            this.pnl_room3.Controls.Add(this.lbl_status3);
+            this.pnl_room3.Controls.Add(this.label16);
+            this.pnl_room3.Controls.Add(this.label17);
+            this.pnl_room3.Controls.Add(this.pnl_door3);
+            this.pnl_room3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_room3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnl_room3.Location = new System.Drawing.Point(738, 15);
+            this.pnl_room3.Name = "pnl_room3";
+            this.pnl_room3.Size = new System.Drawing.Size(295, 138);
+            this.pnl_room3.TabIndex = 42;
+            this.pnl_room3.Click += new System.EventHandler(this.pnl_room3_Click);
             // 
             // lbl_NumberOfDays_3
             // 
@@ -573,32 +570,34 @@
             // pnl_door3
             // 
             this.pnl_door3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door3.BackgroundImage")));
+            this.pnl_door3.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
             this.pnl_door3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pnl_door3.Location = new System.Drawing.Point(3, 3);
             this.pnl_door3.Name = "pnl_door3";
             this.pnl_door3.Size = new System.Drawing.Size(96, 131);
             this.pnl_door3.TabIndex = 17;
             // 
-            // guna2Panel8
+            // pnl_room9
             // 
-            this.guna2Panel8.BackColor = System.Drawing.Color.White;
-            this.guna2Panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Panel8.BorderRadius = 10;
-            this.guna2Panel8.Controls.Add(this.lbl_NumberOfDays_9);
-            this.guna2Panel8.Controls.Add(this.label59);
-            this.guna2Panel8.Controls.Add(this.lbl_NumberOfPeople_9);
-            this.guna2Panel8.Controls.Add(this.lbl_roomNumber_9);
-            this.guna2Panel8.Controls.Add(this.label62);
-            this.guna2Panel8.Controls.Add(this.lbl_status9);
-            this.guna2Panel8.Controls.Add(this.label64);
-            this.guna2Panel8.Controls.Add(this.label65);
-            this.guna2Panel8.Controls.Add(this.pnl_door9);
-            this.guna2Panel8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.guna2Panel8.Location = new System.Drawing.Point(738, 351);
-            this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(295, 138);
-            this.guna2Panel8.TabIndex = 48;
+            this.pnl_room9.BackColor = System.Drawing.Color.White;
+            this.pnl_room9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_room9.BorderRadius = 10;
+            this.pnl_room9.Controls.Add(this.lbl_NumberOfDays_9);
+            this.pnl_room9.Controls.Add(this.label59);
+            this.pnl_room9.Controls.Add(this.lbl_NumberOfPeople_9);
+            this.pnl_room9.Controls.Add(this.lbl_roomNumber_9);
+            this.pnl_room9.Controls.Add(this.label62);
+            this.pnl_room9.Controls.Add(this.lbl_status9);
+            this.pnl_room9.Controls.Add(this.label64);
+            this.pnl_room9.Controls.Add(this.label65);
+            this.pnl_room9.Controls.Add(this.pnl_door9);
+            this.pnl_room9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_room9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnl_room9.Location = new System.Drawing.Point(738, 351);
+            this.pnl_room9.Name = "pnl_room9";
+            this.pnl_room9.Size = new System.Drawing.Size(295, 138);
+            this.pnl_room9.TabIndex = 48;
+            this.pnl_room9.Click += new System.EventHandler(this.pnl_room9_Click);
             // 
             // lbl_NumberOfDays_9
             // 
@@ -706,25 +705,27 @@
             this.pnl_door9.Size = new System.Drawing.Size(96, 131);
             this.pnl_door9.TabIndex = 17;
             // 
-            // guna2Panel3
+            // pnl_room2
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.White;
-            this.guna2Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Panel3.BorderRadius = 10;
-            this.guna2Panel3.Controls.Add(this.lbl_NumberOfDays_2);
-            this.guna2Panel3.Controls.Add(this.label19);
-            this.guna2Panel3.Controls.Add(this.lbl_NumberOfPeople_2);
-            this.guna2Panel3.Controls.Add(this.lbl_roomNumber_2);
-            this.guna2Panel3.Controls.Add(this.label22);
-            this.guna2Panel3.Controls.Add(this.lbl_status2);
-            this.guna2Panel3.Controls.Add(this.label24);
-            this.guna2Panel3.Controls.Add(this.label25);
-            this.guna2Panel3.Controls.Add(this.pnl_door2);
-            this.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.guna2Panel3.Location = new System.Drawing.Point(386, 15);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(295, 138);
-            this.guna2Panel3.TabIndex = 43;
+            this.pnl_room2.BackColor = System.Drawing.Color.White;
+            this.pnl_room2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_room2.BorderRadius = 10;
+            this.pnl_room2.Controls.Add(this.lbl_NumberOfDays_2);
+            this.pnl_room2.Controls.Add(this.label19);
+            this.pnl_room2.Controls.Add(this.lbl_NumberOfPeople_2);
+            this.pnl_room2.Controls.Add(this.lbl_roomNumber_2);
+            this.pnl_room2.Controls.Add(this.label22);
+            this.pnl_room2.Controls.Add(this.lbl_status2);
+            this.pnl_room2.Controls.Add(this.label24);
+            this.pnl_room2.Controls.Add(this.label25);
+            this.pnl_room2.Controls.Add(this.pnl_door2);
+            this.pnl_room2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_room2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnl_room2.Location = new System.Drawing.Point(386, 15);
+            this.pnl_room2.Name = "pnl_room2";
+            this.pnl_room2.Size = new System.Drawing.Size(295, 138);
+            this.pnl_room2.TabIndex = 43;
+            this.pnl_room2.Click += new System.EventHandler(this.pnl_room2_Click);
             // 
             // lbl_NumberOfDays_2
             // 
@@ -832,25 +833,27 @@
             this.pnl_door2.Size = new System.Drawing.Size(96, 131);
             this.pnl_door2.TabIndex = 17;
             // 
-            // guna2Panel9
+            // pnl_room7
             // 
-            this.guna2Panel9.BackColor = System.Drawing.Color.White;
-            this.guna2Panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Panel9.BorderRadius = 10;
-            this.guna2Panel9.Controls.Add(this.lbl_NumberOfDays_7);
-            this.guna2Panel9.Controls.Add(this.label67);
-            this.guna2Panel9.Controls.Add(this.lbl_NumberOfPeople_7);
-            this.guna2Panel9.Controls.Add(this.lbl_roomNumber_7);
-            this.guna2Panel9.Controls.Add(this.label70);
-            this.guna2Panel9.Controls.Add(this.lbl_status7);
-            this.guna2Panel9.Controls.Add(this.label72);
-            this.guna2Panel9.Controls.Add(this.label73);
-            this.guna2Panel9.Controls.Add(this.pnl_door7);
-            this.guna2Panel9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.guna2Panel9.Location = new System.Drawing.Point(20, 351);
-            this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(295, 138);
-            this.guna2Panel9.TabIndex = 47;
+            this.pnl_room7.BackColor = System.Drawing.Color.White;
+            this.pnl_room7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_room7.BorderRadius = 10;
+            this.pnl_room7.Controls.Add(this.lbl_NumberOfDays_7);
+            this.pnl_room7.Controls.Add(this.label67);
+            this.pnl_room7.Controls.Add(this.lbl_NumberOfPeople_7);
+            this.pnl_room7.Controls.Add(this.lbl_roomNumber_7);
+            this.pnl_room7.Controls.Add(this.label70);
+            this.pnl_room7.Controls.Add(this.lbl_status7);
+            this.pnl_room7.Controls.Add(this.label72);
+            this.pnl_room7.Controls.Add(this.label73);
+            this.pnl_room7.Controls.Add(this.pnl_door7);
+            this.pnl_room7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_room7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnl_room7.Location = new System.Drawing.Point(20, 351);
+            this.pnl_room7.Name = "pnl_room7";
+            this.pnl_room7.Size = new System.Drawing.Size(295, 138);
+            this.pnl_room7.TabIndex = 47;
+            this.pnl_room7.Click += new System.EventHandler(this.pnl_room7_Click);
             // 
             // lbl_NumberOfDays_7
             // 
@@ -958,25 +961,27 @@
             this.pnl_door7.Size = new System.Drawing.Size(96, 131);
             this.pnl_door7.TabIndex = 17;
             // 
-            // guna2Panel6
+            // pnl_room4
             // 
-            this.guna2Panel6.BackColor = System.Drawing.Color.White;
-            this.guna2Panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Panel6.BorderRadius = 10;
-            this.guna2Panel6.Controls.Add(this.lbl_NumberOfDays_4);
-            this.guna2Panel6.Controls.Add(this.label43);
-            this.guna2Panel6.Controls.Add(this.lbl_NumberOfPeople_4);
-            this.guna2Panel6.Controls.Add(this.lbl_roomNumber_4);
-            this.guna2Panel6.Controls.Add(this.label46);
-            this.guna2Panel6.Controls.Add(this.lbl_status4);
-            this.guna2Panel6.Controls.Add(this.label48);
-            this.guna2Panel6.Controls.Add(this.label49);
-            this.guna2Panel6.Controls.Add(this.pnl_door4);
-            this.guna2Panel6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.guna2Panel6.Location = new System.Drawing.Point(20, 185);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(295, 138);
-            this.guna2Panel6.TabIndex = 44;
+            this.pnl_room4.BackColor = System.Drawing.Color.White;
+            this.pnl_room4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_room4.BorderRadius = 10;
+            this.pnl_room4.Controls.Add(this.lbl_NumberOfDays_4);
+            this.pnl_room4.Controls.Add(this.label43);
+            this.pnl_room4.Controls.Add(this.lbl_NumberOfPeople_4);
+            this.pnl_room4.Controls.Add(this.lbl_roomNumber_4);
+            this.pnl_room4.Controls.Add(this.label46);
+            this.pnl_room4.Controls.Add(this.lbl_status4);
+            this.pnl_room4.Controls.Add(this.label48);
+            this.pnl_room4.Controls.Add(this.label49);
+            this.pnl_room4.Controls.Add(this.pnl_door4);
+            this.pnl_room4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_room4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnl_room4.Location = new System.Drawing.Point(20, 185);
+            this.pnl_room4.Name = "pnl_room4";
+            this.pnl_room4.Size = new System.Drawing.Size(295, 138);
+            this.pnl_room4.TabIndex = 44;
+            this.pnl_room4.Click += new System.EventHandler(this.pnl_room4_Click);
             // 
             // lbl_NumberOfDays_4
             // 
@@ -1084,25 +1089,27 @@
             this.pnl_door4.Size = new System.Drawing.Size(96, 131);
             this.pnl_door4.TabIndex = 17;
             // 
-            // guna2Panel4
+            // pnl_room5
             // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.White;
-            this.guna2Panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Panel4.BorderRadius = 10;
-            this.guna2Panel4.Controls.Add(this.lbl_NumberOfDays_5);
-            this.guna2Panel4.Controls.Add(this.label27);
-            this.guna2Panel4.Controls.Add(this.lbl_NumberOfPeople_5);
-            this.guna2Panel4.Controls.Add(this.lbl_roomNumber_5);
-            this.guna2Panel4.Controls.Add(this.label30);
-            this.guna2Panel4.Controls.Add(this.lbl_status5);
-            this.guna2Panel4.Controls.Add(this.label32);
-            this.guna2Panel4.Controls.Add(this.label33);
-            this.guna2Panel4.Controls.Add(this.pnl_door5);
-            this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(386, 185);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(295, 138);
-            this.guna2Panel4.TabIndex = 46;
+            this.pnl_room5.BackColor = System.Drawing.Color.White;
+            this.pnl_room5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_room5.BorderRadius = 10;
+            this.pnl_room5.Controls.Add(this.lbl_NumberOfDays_5);
+            this.pnl_room5.Controls.Add(this.label27);
+            this.pnl_room5.Controls.Add(this.lbl_NumberOfPeople_5);
+            this.pnl_room5.Controls.Add(this.lbl_roomNumber_5);
+            this.pnl_room5.Controls.Add(this.label30);
+            this.pnl_room5.Controls.Add(this.lbl_status5);
+            this.pnl_room5.Controls.Add(this.label32);
+            this.pnl_room5.Controls.Add(this.label33);
+            this.pnl_room5.Controls.Add(this.pnl_door5);
+            this.pnl_room5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_room5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnl_room5.Location = new System.Drawing.Point(386, 185);
+            this.pnl_room5.Name = "pnl_room5";
+            this.pnl_room5.Size = new System.Drawing.Size(295, 138);
+            this.pnl_room5.TabIndex = 46;
+            this.pnl_room5.Click += new System.EventHandler(this.pnl_room5_Click);
             // 
             // lbl_NumberOfDays_5
             // 
@@ -1210,25 +1217,27 @@
             this.pnl_door5.Size = new System.Drawing.Size(96, 131);
             this.pnl_door5.TabIndex = 17;
             // 
-            // guna2Panel5
+            // pnl_room6
             // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.White;
-            this.guna2Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.guna2Panel5.BorderRadius = 10;
-            this.guna2Panel5.Controls.Add(this.lbl_NumberOfDays_6);
-            this.guna2Panel5.Controls.Add(this.label35);
-            this.guna2Panel5.Controls.Add(this.lbl_NumberOfPeople_6);
-            this.guna2Panel5.Controls.Add(this.lbl_roomNumber_6);
-            this.guna2Panel5.Controls.Add(this.label38);
-            this.guna2Panel5.Controls.Add(this.lbl_status6);
-            this.guna2Panel5.Controls.Add(this.label40);
-            this.guna2Panel5.Controls.Add(this.label41);
-            this.guna2Panel5.Controls.Add(this.pnl_door6);
-            this.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.guna2Panel5.Location = new System.Drawing.Point(738, 185);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(295, 138);
-            this.guna2Panel5.TabIndex = 45;
+            this.pnl_room6.BackColor = System.Drawing.Color.White;
+            this.pnl_room6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_room6.BorderRadius = 10;
+            this.pnl_room6.Controls.Add(this.lbl_NumberOfDays_6);
+            this.pnl_room6.Controls.Add(this.label35);
+            this.pnl_room6.Controls.Add(this.lbl_NumberOfPeople_6);
+            this.pnl_room6.Controls.Add(this.lbl_roomNumber_6);
+            this.pnl_room6.Controls.Add(this.label38);
+            this.pnl_room6.Controls.Add(this.lbl_status6);
+            this.pnl_room6.Controls.Add(this.label40);
+            this.pnl_room6.Controls.Add(this.label41);
+            this.pnl_room6.Controls.Add(this.pnl_door6);
+            this.pnl_room6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnl_room6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnl_room6.Location = new System.Drawing.Point(738, 185);
+            this.pnl_room6.Name = "pnl_room6";
+            this.pnl_room6.Size = new System.Drawing.Size(295, 138);
+            this.pnl_room6.TabIndex = 45;
+            this.pnl_room6.Click += new System.EventHandler(this.pnl_room6_Click);
             // 
             // lbl_NumberOfDays_6
             // 
@@ -1336,6 +1345,15 @@
             this.pnl_door6.Size = new System.Drawing.Size(96, 131);
             this.pnl_door6.TabIndex = 17;
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(710, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(34, 36);
+            this.panel1.TabIndex = 20;
+            // 
             // Frm_Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1353,24 +1371,24 @@
             this.Text = "Frm_Room";
             this.Load += new System.EventHandler(this.Frm_Room_Load);
             this.pnl_RoomType.ResumeLayout(false);
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            this.guna2Panel7.ResumeLayout(false);
-            this.guna2Panel7.PerformLayout();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
-            this.guna2Panel8.ResumeLayout(false);
-            this.guna2Panel8.PerformLayout();
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
-            this.guna2Panel9.ResumeLayout(false);
-            this.guna2Panel9.PerformLayout();
-            this.guna2Panel6.ResumeLayout(false);
-            this.guna2Panel6.PerformLayout();
-            this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
-            this.guna2Panel5.ResumeLayout(false);
-            this.guna2Panel5.PerformLayout();
+            this.pnl_room1.ResumeLayout(false);
+            this.pnl_room1.PerformLayout();
+            this.pnl_room8.ResumeLayout(false);
+            this.pnl_room8.PerformLayout();
+            this.pnl_room3.ResumeLayout(false);
+            this.pnl_room3.PerformLayout();
+            this.pnl_room9.ResumeLayout(false);
+            this.pnl_room9.PerformLayout();
+            this.pnl_room2.ResumeLayout(false);
+            this.pnl_room2.PerformLayout();
+            this.pnl_room7.ResumeLayout(false);
+            this.pnl_room7.PerformLayout();
+            this.pnl_room4.ResumeLayout(false);
+            this.pnl_room4.PerformLayout();
+            this.pnl_room5.ResumeLayout(false);
+            this.pnl_room5.PerformLayout();
+            this.pnl_room6.ResumeLayout(false);
+            this.pnl_room6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1383,7 +1401,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbBox_RoomType;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Panel pnl_RoomType;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel pnl_room1;
         private System.Windows.Forms.Label lbl_NumberOfDays_1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_NumberOfPeople_1;
@@ -1393,7 +1411,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Panel pnl_door1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2Panel pnl_room8;
         private System.Windows.Forms.Label lbl_NumberOfDays_8;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label lbl_NumberOfPeople_8;
@@ -1403,7 +1421,7 @@
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label57;
         public System.Windows.Forms.Panel pnl_door8;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel pnl_room3;
         private System.Windows.Forms.Label lbl_NumberOfDays_3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbl_NumberOfPeople_3;
@@ -1413,7 +1431,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         public System.Windows.Forms.Panel pnl_door3;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2Panel pnl_room9;
         private System.Windows.Forms.Label lbl_NumberOfDays_9;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label lbl_NumberOfPeople_9;
@@ -1423,7 +1441,7 @@
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
         public System.Windows.Forms.Panel pnl_door9;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel pnl_room2;
         private System.Windows.Forms.Label lbl_NumberOfDays_2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label lbl_NumberOfPeople_2;
@@ -1433,7 +1451,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         public System.Windows.Forms.Panel pnl_door2;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private Guna.UI2.WinForms.Guna2Panel pnl_room7;
         private System.Windows.Forms.Label lbl_NumberOfDays_7;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label lbl_NumberOfPeople_7;
@@ -1443,7 +1461,7 @@
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label73;
         public System.Windows.Forms.Panel pnl_door7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Guna.UI2.WinForms.Guna2Panel pnl_room4;
         private System.Windows.Forms.Label lbl_NumberOfDays_4;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label lbl_NumberOfPeople_4;
@@ -1453,7 +1471,7 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
         public System.Windows.Forms.Panel pnl_door4;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2Panel pnl_room5;
         private System.Windows.Forms.Label lbl_NumberOfDays_5;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label lbl_NumberOfPeople_5;
@@ -1463,7 +1481,7 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         public System.Windows.Forms.Panel pnl_door5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Panel pnl_room6;
         private System.Windows.Forms.Label lbl_NumberOfDays_6;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label lbl_NumberOfPeople_6;

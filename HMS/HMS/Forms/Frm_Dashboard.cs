@@ -19,7 +19,6 @@ namespace HMS.Forms
         private UserRepository userRepo;
         private int total;
         private int occupied;
-
         public Frm_Dashboard()
         {
             InitializeComponent();
@@ -48,13 +47,18 @@ namespace HMS.Forms
 
         private void Frm_Dashboard_Load(object sender, EventArgs e)
         {
+
             DisplayTotalGuest();
             DisplayTotalGuest_Adult();
             DisplayTotalGuest_Children();
             DisplayTotalGuest_SeniorCitizen();
             DisplayTotalRoom_Occupied();
             DisplayTotalRoom_Available();
+
+            DisplayTotalRoom_Reserved_Pending();
+            DisplayTotalRoom_Reserved_Approved();
             DisplayTotalRoom_Reserved();
+
 
             PopulateProgressBar();
         }
@@ -136,33 +140,69 @@ namespace HMS.Forms
                 MessageDialog.Show(e.Message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
             }
         }
+
+        private void DisplayTotalRoom_Reserved_Pending()
+        {
+            string message = string.Empty;
+            var getTotalRoom_Pending = userRepo.GetRoomTotal_Reserve_Pending(ref message);
+            int totalRoomPending = 0;
+            foreach (var room in getTotalRoom_Pending)
+            {
+                totalRoomPending += (int)room.RoomReserved;
+            }
+
+            lblPending.Text = totalRoomPending.ToString();
+        }
+        private void DisplayTotalRoom_Reserved_Approved()
+        {
+            string message = string.Empty;
+            var getTotalRoom_Approved = userRepo.GetRoomTotal_Reserve_Approved(ref message);
+            int totalRoomApproved = 0;
+            foreach (var room in getTotalRoom_Approved)
+            {
+                totalRoomApproved += (int)room.RoomReserved;
+            }
+
+            lblApproved.Text = totalRoomApproved.ToString();
+        }
         private void DisplayTotalRoom_Reserved()
         {
             string message = string.Empty;
-            var getTotalRoom = userRepo.GetRoomTotal_Reserve(ref message);
-            int totalRoomReserved = 0;
-            foreach (var room in getTotalRoom)
+            var getTotalRoom_Pending = userRepo.GetRoomTotal_Reserve_Pending(ref message);
+            int totalRoomPending = 0;
+            foreach (var room in getTotalRoom_Pending)
             {
-                totalRoomReserved += (int)room.RoomReserved;
+                totalRoomPending += (int)room.RoomReserved;
             }
-            lbl_totalRoomReserve.Text = totalRoomReserved.ToString();
+
+            var getTotalRoom_Approved = userRepo.GetRoomTotal_Reserve_Approved(ref message);
+            int totalRoomApproved = 0;
+            foreach (var room in getTotalRoom_Approved)
+            {
+                totalRoomApproved += (int)room.RoomReserved;
+            }
+
+            lbl_totalRoomReserve.Text = (totalRoomPending + totalRoomApproved).ToString();
         }
 
         private void PopulateProgressBar()
         {
-            if (total == 0)
-            {
-                MessageDialog.Show("Unable to view Dashboard\nNo Current Check In!", "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
-            }
-            else
-            {
+            var totalRoom = 0;
 
+            //if (total == 0)
+            //{
+            //    MessageDialog.Show("Unable to view Dashboard\nNo Current Check In!", "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+            //    pb_currentlyCheckIn.Value = 0;
+            //    lbl_Pecent.Text = 0.ToString("F2") + "%";
+            //}
+            //else
+            //{
                 try
                 {
                     HMSEntities db;
                     using (db = new HMSEntities())
                     {
-                        var totalRoom = ((int)RoomAvailable.MAX * db.ROOM_DETAILS.Count());//Get max roomtype available then use it to calculate and multiple max room doors in every room type in this case  = 9
+                        totalRoom = ((int)RoomAvailable.MAX * db.ROOM_DETAILS.Count());//Get max roomtype available then use it to calculate and multiple max room doors in every room type in this case  = 9
                         Console.WriteLine(totalRoom);
                         Console.WriteLine(occupied);
                         double percentage = ((double)occupied / totalRoom) * 100;
@@ -176,8 +216,8 @@ namespace HMS.Forms
                 {
                     MessageDialog.Show(e.Message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
                 }
-
-            }
+            //}
+            lbl_outOf.Text = $"Out of {totalRoom} rooms";
         }
     }
 }

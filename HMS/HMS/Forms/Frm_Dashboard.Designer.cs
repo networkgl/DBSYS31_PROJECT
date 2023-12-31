@@ -31,12 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_totalRoomOccupied = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_totalRoomAvailable = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblApproved = new System.Windows.Forms.Label();
+            this.lblPending = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.lbl_totalRoomReserve = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_totalSenior = new System.Windows.Forms.Label();
@@ -46,25 +53,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_TotalGuest = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbl_outOf = new System.Windows.Forms.Label();
             this.pb_currentlyCheckIn = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.lbl_Pecent = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lbl_Pecent = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -97,6 +95,16 @@
             this.lbl_totalRoomOccupied.Size = new System.Drawing.Size(55, 62);
             this.lbl_totalRoomOccupied.TabIndex = 16;
             this.lbl_totalRoomOccupied.Text = "0";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Location = new System.Drawing.Point(172, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(42, 37);
+            this.panel1.TabIndex = 11;
             // 
             // label1
             // 
@@ -134,6 +142,16 @@
             this.lbl_totalRoomAvailable.TabIndex = 15;
             this.lbl_totalRoomAvailable.Text = "0";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.Location = new System.Drawing.Point(174, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(42, 37);
+            this.panel2.TabIndex = 12;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -149,6 +167,10 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BorderRadius = 10;
+            this.guna2Panel3.Controls.Add(this.lblApproved);
+            this.guna2Panel3.Controls.Add(this.lblPending);
+            this.guna2Panel3.Controls.Add(this.label16);
+            this.guna2Panel3.Controls.Add(this.label15);
             this.guna2Panel3.Controls.Add(this.lbl_totalRoomReserve);
             this.guna2Panel3.Controls.Add(this.panel3);
             this.guna2Panel3.Controls.Add(this.label3);
@@ -158,17 +180,75 @@
             this.guna2Panel3.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel3.TabIndex = 9;
             // 
+            // lblApproved
+            // 
+            this.lblApproved.AutoSize = true;
+            this.lblApproved.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.lblApproved.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApproved.ForeColor = System.Drawing.Color.White;
+            this.lblApproved.Location = new System.Drawing.Point(108, 86);
+            this.lblApproved.Name = "lblApproved";
+            this.lblApproved.Size = new System.Drawing.Size(17, 20);
+            this.lblApproved.TabIndex = 22;
+            this.lblApproved.Text = "0";
+            // 
+            // lblPending
+            // 
+            this.lblPending.AutoSize = true;
+            this.lblPending.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.lblPending.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPending.ForeColor = System.Drawing.Color.White;
+            this.lblPending.Location = new System.Drawing.Point(108, 63);
+            this.lblPending.Name = "lblPending";
+            this.lblPending.Size = new System.Drawing.Size(17, 20);
+            this.lblPending.TabIndex = 21;
+            this.lblPending.Text = "0";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(7, 86);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(97, 20);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Approved  :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(8, 63);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 20);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "Pending    :";
+            // 
             // lbl_totalRoomReserve
             // 
             this.lbl_totalRoomReserve.AutoSize = true;
             this.lbl_totalRoomReserve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
             this.lbl_totalRoomReserve.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 36F, System.Drawing.FontStyle.Bold);
             this.lbl_totalRoomReserve.ForeColor = System.Drawing.Color.White;
-            this.lbl_totalRoomReserve.Location = new System.Drawing.Point(78, 63);
+            this.lbl_totalRoomReserve.Location = new System.Drawing.Point(161, 63);
             this.lbl_totalRoomReserve.Name = "lbl_totalRoomReserve";
             this.lbl_totalRoomReserve.Size = new System.Drawing.Size(55, 62);
             this.lbl_totalRoomReserve.TabIndex = 14;
             this.lbl_totalRoomReserve.Text = "0";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel3.Location = new System.Drawing.Point(172, 16);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(42, 37);
+            this.panel3.TabIndex = 12;
             // 
             // label3
             // 
@@ -284,6 +364,16 @@
             this.lbl_TotalGuest.TabIndex = 13;
             this.lbl_TotalGuest.Text = "0";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel4.Location = new System.Drawing.Point(171, 16);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(42, 37);
+            this.panel4.TabIndex = 12;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -300,13 +390,6 @@
             // 
             this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.guna2Panel5.BorderRadius = 20;
-            this.guna2Panel5.Controls.Add(this.panel13);
-            this.guna2Panel5.Controls.Add(this.panel12);
-            this.guna2Panel5.Controls.Add(this.panel11);
-            this.guna2Panel5.Controls.Add(this.panel10);
-            this.guna2Panel5.Controls.Add(this.panel9);
-            this.guna2Panel5.Controls.Add(this.panel5);
-            this.guna2Panel5.Controls.Add(this.label11);
             this.guna2Panel5.Controls.Add(this.label5);
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
             this.guna2Panel5.Location = new System.Drawing.Point(19, 239);
@@ -330,6 +413,7 @@
             // 
             this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.guna2Panel6.BorderRadius = 20;
+            this.guna2Panel6.Controls.Add(this.lbl_outOf);
             this.guna2Panel6.Controls.Add(this.pb_currentlyCheckIn);
             this.guna2Panel6.Controls.Add(this.label6);
             this.guna2Panel6.FillColor = System.Drawing.Color.White;
@@ -338,6 +422,18 @@
             this.guna2Panel6.Size = new System.Drawing.Size(240, 356);
             this.guna2Panel6.TabIndex = 13;
             // 
+            // lbl_outOf
+            // 
+            this.lbl_outOf.AutoSize = true;
+            this.lbl_outOf.BackColor = System.Drawing.Color.White;
+            this.lbl_outOf.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_outOf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(92)))), ((int)(((byte)(104)))));
+            this.lbl_outOf.Location = new System.Drawing.Point(39, 293);
+            this.lbl_outOf.Name = "lbl_outOf";
+            this.lbl_outOf.Size = new System.Drawing.Size(155, 25);
+            this.lbl_outOf.TabIndex = 13;
+            this.lbl_outOf.Text = "out of 0 rooms";
+            // 
             // pb_currentlyCheckIn
             // 
             this.pb_currentlyCheckIn.BackColor = System.Drawing.Color.White;
@@ -345,7 +441,7 @@
             this.pb_currentlyCheckIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.pb_currentlyCheckIn.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.pb_currentlyCheckIn.ForeColor = System.Drawing.Color.White;
-            this.pb_currentlyCheckIn.Location = new System.Drawing.Point(34, 107);
+            this.pb_currentlyCheckIn.Location = new System.Drawing.Point(34, 83);
             this.pb_currentlyCheckIn.Minimum = 0;
             this.pb_currentlyCheckIn.Name = "pb_currentlyCheckIn";
             this.pb_currentlyCheckIn.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
@@ -354,6 +450,17 @@
             this.pb_currentlyCheckIn.TabIndex = 12;
             this.pb_currentlyCheckIn.Text = "guna2CircleProgressBar1";
             this.pb_currentlyCheckIn.Value = 75;
+            // 
+            // lbl_Pecent
+            // 
+            this.lbl_Pecent.AutoSize = true;
+            this.lbl_Pecent.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Pecent.ForeColor = System.Drawing.Color.Teal;
+            this.lbl_Pecent.Location = new System.Drawing.Point(42, 74);
+            this.lbl_Pecent.Name = "lbl_Pecent";
+            this.lbl_Pecent.Size = new System.Drawing.Size(110, 35);
+            this.lbl_Pecent.TabIndex = 0;
+            this.lbl_Pecent.Text = "00.00%";
             // 
             // label6
             // 
@@ -376,130 +483,6 @@
             this.label7.Size = new System.Drawing.Size(160, 33);
             this.label7.TabIndex = 14;
             this.label7.Text = "Dashboard";
-            // 
-            // lbl_Pecent
-            // 
-            this.lbl_Pecent.AutoSize = true;
-            this.lbl_Pecent.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Pecent.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Pecent.Location = new System.Drawing.Point(42, 72);
-            this.lbl_Pecent.Name = "lbl_Pecent";
-            this.lbl_Pecent.Size = new System.Drawing.Size(108, 35);
-            this.lbl_Pecent.TabIndex = 0;
-            this.lbl_Pecent.Text = "75.00%";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel4.Location = new System.Drawing.Point(171, 16);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(42, 37);
-            this.panel4.TabIndex = 12;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.White;
-            this.panel12.BackgroundImage = global::HMS.Properties.Resources.gifts1;
-            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel12.Location = new System.Drawing.Point(500, 274);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(118, 82);
-            this.panel12.TabIndex = 18;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.White;
-            this.panel11.BackgroundImage = global::HMS.Properties.Resources.gifts;
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel11.Location = new System.Drawing.Point(607, 274);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(121, 82);
-            this.panel11.TabIndex = 17;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.BackgroundImage = global::HMS.Properties.Resources.Screenshot_2023_12_19_125924;
-            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel10.Location = new System.Drawing.Point(21, 170);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(458, 183);
-            this.panel10.TabIndex = 15;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.BackgroundImage = global::HMS.Properties.Resources.icons8_christmas_sale_100;
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel9.Location = new System.Drawing.Point(541, 16);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(136, 95);
-            this.panel9.TabIndex = 14;
-            this.panel9.Visible = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.BackgroundImage = global::HMS.Properties.Resources.tree;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Location = new System.Drawing.Point(557, 157);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(115, 129);
-            this.panel5.TabIndex = 13;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel3.Location = new System.Drawing.Point(172, 16);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(42, 37);
-            this.panel3.TabIndex = 12;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(174, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(42, 37);
-            this.panel2.TabIndex = 12;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.Location = new System.Drawing.Point(172, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(42, 37);
-            this.panel1.TabIndex = 11;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.IndianRed;
-            this.panel13.Location = new System.Drawing.Point(610, 267);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(11, 20);
-            this.panel13.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(13, 94);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(679, 60);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "\r\n\"Unwrap the joy of savings this Christmas with our festive sale, where discount" +
-    "s abound and \r\nholiday cheer is multiplied – \'tis the season to shop smart and d" +
-    "elight in the spirit of giving!\"";
             // 
             // Frm_Dashboard
             // 
@@ -560,7 +543,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_totalSenior;
         private System.Windows.Forms.Label lbl_totalChildren;
         private System.Windows.Forms.Label lbl_totalAdult;
@@ -569,12 +551,11 @@
         private System.Windows.Forms.Label lbl_totalRoomOccupied;
         private System.Windows.Forms.Label lbl_totalRoomAvailable;
         private System.Windows.Forms.Label lbl_Pecent;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbl_outOf;
+        private System.Windows.Forms.Label lblApproved;
+        private System.Windows.Forms.Label lblPending;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,16 +14,11 @@ namespace HMS
 {
     public partial class Frm_HomePage : Form
     {
+        private static Frm_HomePage instance;
         public Frm_HomePage()
         {
             InitializeComponent();
         }
-        //public static Frm_HomePage GetInstance()
-        //{
-        //    if (hp == null)
-        //        hp = new Frm_HomePage();
-        //    return hp;
-        //}
         protected override CreateParams CreateParams
         {
             get
@@ -32,6 +28,14 @@ namespace HMS
                 return handleParams;
             }
         }
+        public static Frm_HomePage GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Frm_HomePage();
+            }
+            return instance;
+        }
         private void Frm_HomePage_Load(object sender, EventArgs e)
         {
 
@@ -40,21 +44,20 @@ namespace HMS
         private void btnBookNow_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //Frm_BookNow_S1.GetInstance().Show();
             Frm_BookNow_S1 s1 = new Frm_BookNow_S1();
             s1.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //Frm_Login.GetInstance().ShowDialog();
-            var login = new Frm_Login();
-            login.ShowDialog();
+            Frm_Login.GetInstance().ShowDialog();
 
-            if (login.HasLogin)
+            if (Frm_Login.GetInstance().HasLogin)
             {
+                //Thread.Sleep(5000);
                 this.Hide();
             }
+            //Frm_Login.GetInstance().ShowDialog();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

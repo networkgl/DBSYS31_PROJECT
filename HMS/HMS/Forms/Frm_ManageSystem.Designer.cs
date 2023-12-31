@@ -35,20 +35,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.pnl_Main1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dgv_systemaccounts = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnsSystemAccounts = new Guna.UI2.WinForms.Guna2Button();
-            this.btnsSystemLogs = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdateSystemAccount = new Guna.UI2.WinForms.Guna2Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnDeleteSystemAccount = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnCreateAccount = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbBox_Role = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtboxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtboxUserName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtboxPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbBox_Role = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnCreateAccount = new Guna.UI2.WinForms.Guna2Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnDeleteSystemAccount = new Guna.UI2.WinForms.Guna2Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnUpdateSystemAccount = new Guna.UI2.WinForms.Guna2Button();
+            this.dgv_systemaccounts = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btnsSystemAccounts = new Guna.UI2.WinForms.Guna2Button();
+            this.btnsSystemLogs = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_Main1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_systemaccounts)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,179 @@
             this.pnl_Main1.Name = "pnl_Main1";
             this.pnl_Main1.Size = new System.Drawing.Size(1054, 503);
             this.pnl_Main1.TabIndex = 161;
+            // 
+            // btnUpdateSystemAccount
+            // 
+            this.btnUpdateSystemAccount.BorderRadius = 5;
+            this.btnUpdateSystemAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateSystemAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdateSystemAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdateSystemAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdateSystemAccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(176)))), ((int)(((byte)(76)))));
+            this.btnUpdateSystemAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateSystemAccount.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateSystemAccount.Location = new System.Drawing.Point(223, 314);
+            this.btnUpdateSystemAccount.Name = "btnUpdateSystemAccount";
+            this.btnUpdateSystemAccount.Size = new System.Drawing.Size(144, 50);
+            this.btnUpdateSystemAccount.TabIndex = 170;
+            this.btnUpdateSystemAccount.Text = "Update Account";
+            this.btnUpdateSystemAccount.Click += new System.EventHandler(this.btnUpdateSystemAccount_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(699, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(235, 30);
+            this.label4.TabIndex = 169;
+            this.label4.Text = "LIST OF ACCOUNTS";
+            // 
+            // btnDeleteSystemAccount
+            // 
+            this.btnDeleteSystemAccount.BorderRadius = 5;
+            this.btnDeleteSystemAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteSystemAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeleteSystemAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeleteSystemAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeleteSystemAccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnDeleteSystemAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteSystemAccount.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteSystemAccount.Location = new System.Drawing.Point(412, 314);
+            this.btnDeleteSystemAccount.Name = "btnDeleteSystemAccount";
+            this.btnDeleteSystemAccount.Size = new System.Drawing.Size(144, 50);
+            this.btnDeleteSystemAccount.TabIndex = 168;
+            this.btnDeleteSystemAccount.Text = "Delete Account";
+            this.btnDeleteSystemAccount.Click += new System.EventHandler(this.btnClearDetails_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(145, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(264, 30);
+            this.label3.TabIndex = 167;
+            this.label3.Text = "GENERATE ACCOUNT";
+            // 
+            // btnCreateAccount
+            // 
+            this.btnCreateAccount.BorderRadius = 5;
+            this.btnCreateAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreateAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCreateAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCreateAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAccount.ForeColor = System.Drawing.Color.White;
+            this.btnCreateAccount.Location = new System.Drawing.Point(36, 314);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Size = new System.Drawing.Size(144, 50);
+            this.btnCreateAccount.TabIndex = 166;
+            this.btnCreateAccount.Text = "Create Account";
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(32, 227);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 21);
+            this.label2.TabIndex = 165;
+            this.label2.Text = "Role";
+            // 
+            // cbBox_Role
+            // 
+            this.cbBox_Role.BackColor = System.Drawing.Color.White;
+            this.cbBox_Role.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.cbBox_Role.BorderRadius = 5;
+            this.cbBox_Role.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbBox_Role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox_Role.FillColor = System.Drawing.SystemColors.Control;
+            this.cbBox_Role.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbBox_Role.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbBox_Role.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbBox_Role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cbBox_Role.ItemHeight = 30;
+            this.cbBox_Role.Items.AddRange(new object[] {
+            "Admin",
+            "Staff"});
+            this.cbBox_Role.Location = new System.Drawing.Point(36, 251);
+            this.cbBox_Role.MinimumSize = new System.Drawing.Size(520, 0);
+            this.cbBox_Role.Name = "cbBox_Role";
+            this.cbBox_Role.Size = new System.Drawing.Size(520, 36);
+            this.cbBox_Role.TabIndex = 164;
+            // 
+            // txtboxPassword
+            // 
+            this.txtboxPassword.BackColor = System.Drawing.Color.White;
+            this.txtboxPassword.BorderRadius = 5;
+            this.txtboxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtboxPassword.DefaultText = "";
+            this.txtboxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtboxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtboxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtboxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtboxPassword.FillColor = System.Drawing.SystemColors.Control;
+            this.txtboxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtboxPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtboxPassword.Location = new System.Drawing.Point(36, 170);
+            this.txtboxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxPassword.Name = "txtboxPassword";
+            this.txtboxPassword.PasswordChar = '\0';
+            this.txtboxPassword.PlaceholderText = "****************";
+            this.txtboxPassword.SelectedText = "";
+            this.txtboxPassword.Size = new System.Drawing.Size(520, 40);
+            this.txtboxPassword.TabIndex = 163;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 21);
+            this.label1.TabIndex = 162;
+            this.label1.Text = "Password";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(32, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 21);
+            this.label6.TabIndex = 161;
+            this.label6.Text = "Username";
+            // 
+            // txtboxUserName
+            // 
+            this.txtboxUserName.BackColor = System.Drawing.Color.White;
+            this.txtboxUserName.BorderRadius = 5;
+            this.txtboxUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtboxUserName.DefaultText = "";
+            this.txtboxUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtboxUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtboxUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtboxUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtboxUserName.FillColor = System.Drawing.SystemColors.Control;
+            this.txtboxUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtboxUserName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtboxUserName.Location = new System.Drawing.Point(36, 93);
+            this.txtboxUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxUserName.Name = "txtboxUserName";
+            this.txtboxUserName.PasswordChar = '\0';
+            this.txtboxUserName.PlaceholderText = "e.g gianlloyd123";
+            this.txtboxUserName.SelectedText = "";
+            this.txtboxUserName.Size = new System.Drawing.Size(520, 40);
+            this.txtboxUserName.TabIndex = 160;
             // 
             // dgv_systemaccounts
             // 
@@ -185,179 +358,6 @@
             this.btnsSystemLogs.TabIndex = 162;
             this.btnsSystemLogs.Text = "System Logs";
             this.btnsSystemLogs.Click += new System.EventHandler(this.btnsSystemLogs_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 21);
-            this.label1.TabIndex = 162;
-            this.label1.Text = "Password";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(32, 69);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 21);
-            this.label6.TabIndex = 161;
-            this.label6.Text = "Username";
-            // 
-            // txtboxUserName
-            // 
-            this.txtboxUserName.BackColor = System.Drawing.Color.White;
-            this.txtboxUserName.BorderRadius = 5;
-            this.txtboxUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtboxUserName.DefaultText = "";
-            this.txtboxUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtboxUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtboxUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtboxUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtboxUserName.FillColor = System.Drawing.SystemColors.Control;
-            this.txtboxUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtboxUserName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtboxUserName.Location = new System.Drawing.Point(36, 93);
-            this.txtboxUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtboxUserName.Name = "txtboxUserName";
-            this.txtboxUserName.PasswordChar = '\0';
-            this.txtboxUserName.PlaceholderText = "e.g gianlloyd123";
-            this.txtboxUserName.SelectedText = "";
-            this.txtboxUserName.Size = new System.Drawing.Size(520, 40);
-            this.txtboxUserName.TabIndex = 160;
-            // 
-            // txtboxPassword
-            // 
-            this.txtboxPassword.BackColor = System.Drawing.Color.White;
-            this.txtboxPassword.BorderRadius = 5;
-            this.txtboxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtboxPassword.DefaultText = "";
-            this.txtboxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtboxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtboxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtboxPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtboxPassword.FillColor = System.Drawing.SystemColors.Control;
-            this.txtboxPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtboxPassword.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtboxPassword.Location = new System.Drawing.Point(36, 170);
-            this.txtboxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtboxPassword.Name = "txtboxPassword";
-            this.txtboxPassword.PasswordChar = '\0';
-            this.txtboxPassword.PlaceholderText = "****************";
-            this.txtboxPassword.SelectedText = "";
-            this.txtboxPassword.Size = new System.Drawing.Size(520, 40);
-            this.txtboxPassword.TabIndex = 163;
-            // 
-            // cbBox_Role
-            // 
-            this.cbBox_Role.BackColor = System.Drawing.Color.White;
-            this.cbBox_Role.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.cbBox_Role.BorderRadius = 5;
-            this.cbBox_Role.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbBox_Role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbBox_Role.FillColor = System.Drawing.SystemColors.Control;
-            this.cbBox_Role.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbBox_Role.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbBox_Role.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.cbBox_Role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cbBox_Role.ItemHeight = 30;
-            this.cbBox_Role.Items.AddRange(new object[] {
-            "Admin",
-            "Staff"});
-            this.cbBox_Role.Location = new System.Drawing.Point(36, 251);
-            this.cbBox_Role.MinimumSize = new System.Drawing.Size(520, 0);
-            this.cbBox_Role.Name = "cbBox_Role";
-            this.cbBox_Role.Size = new System.Drawing.Size(520, 36);
-            this.cbBox_Role.TabIndex = 164;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 227);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 21);
-            this.label2.TabIndex = 165;
-            this.label2.Text = "Role";
-            // 
-            // btnCreateAccount
-            // 
-            this.btnCreateAccount.BorderRadius = 5;
-            this.btnCreateAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCreateAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCreateAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCreateAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCreateAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateAccount.ForeColor = System.Drawing.Color.White;
-            this.btnCreateAccount.Location = new System.Drawing.Point(36, 314);
-            this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(144, 50);
-            this.btnCreateAccount.TabIndex = 166;
-            this.btnCreateAccount.Text = "Create Account";
-            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(145, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(264, 30);
-            this.label3.TabIndex = 167;
-            this.label3.Text = "GENERATE ACCOUNT";
-            // 
-            // btnDeleteSystemAccount
-            // 
-            this.btnDeleteSystemAccount.BorderRadius = 5;
-            this.btnDeleteSystemAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeleteSystemAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeleteSystemAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDeleteSystemAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDeleteSystemAccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.btnDeleteSystemAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteSystemAccount.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteSystemAccount.Location = new System.Drawing.Point(400, 314);
-            this.btnDeleteSystemAccount.Name = "btnDeleteSystemAccount";
-            this.btnDeleteSystemAccount.Size = new System.Drawing.Size(144, 50);
-            this.btnDeleteSystemAccount.TabIndex = 168;
-            this.btnDeleteSystemAccount.Text = "Delete Account";
-            this.btnDeleteSystemAccount.Click += new System.EventHandler(this.btnClearDetails_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(699, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(235, 30);
-            this.label4.TabIndex = 169;
-            this.label4.Text = "LIST OF ACCOUNTS";
-            // 
-            // btnUpdateSystemAccount
-            // 
-            this.btnUpdateSystemAccount.BorderRadius = 5;
-            this.btnUpdateSystemAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdateSystemAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdateSystemAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdateSystemAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdateSystemAccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(176)))), ((int)(((byte)(76)))));
-            this.btnUpdateSystemAccount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateSystemAccount.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateSystemAccount.Location = new System.Drawing.Point(214, 314);
-            this.btnUpdateSystemAccount.Name = "btnUpdateSystemAccount";
-            this.btnUpdateSystemAccount.Size = new System.Drawing.Size(144, 50);
-            this.btnUpdateSystemAccount.TabIndex = 170;
-            this.btnUpdateSystemAccount.Text = "Update Account";
-            this.btnUpdateSystemAccount.Click += new System.EventHandler(this.btnUpdateSystemAccount_Click);
             // 
             // Frm_ManageSystem
             // 

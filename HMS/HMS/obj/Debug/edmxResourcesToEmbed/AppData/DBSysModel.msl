@@ -110,6 +110,23 @@
     <FunctionImportMapping FunctionImportName="sp_update_system_accounts" FunctionName="HMSModel.Store.sp_update_system_accounts" />
     <FunctionImportMapping FunctionImportName="sp_delete_system_accounts" FunctionName="HMSModel.Store.sp_delete_system_accounts" />
     <FunctionImportMapping FunctionImportName="sp_insert_system_log" FunctionName="HMSModel.Store.sp_insert_system_log" />
+    <FunctionImportMapping FunctionImportName="sp_display_room_client_details" FunctionName="HMSModel.Store.sp_display_room_client_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HMSModel.sp_display_room_client_details_Result">
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Adult" ColumnName="Adult" />
+          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="SeniorCitizen" ColumnName="SeniorCitizen" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="ACCOUNTS">
       <EntityTypeMapping TypeName="HMSModel.ACCOUNTS">
         <MappingFragment StoreEntitySet="ACCOUNTS">
@@ -365,6 +382,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="vw_get_room_reserve_approve_current_occurence">
+      <EntityTypeMapping TypeName="HMSModel.vw_get_room_reserve_approve_current_occurence">
+        <MappingFragment StoreEntitySet="vw_get_room_reserve_approve_current_occurence">
+          <ScalarProperty Name="RoomReserved" ColumnName="RoomReserved" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_get_room_reserve_pending_current_occurence">
+      <EntityTypeMapping TypeName="HMSModel.vw_get_room_reserve_pending_current_occurence">
+        <MappingFragment StoreEntitySet="vw_get_room_reserve_pending_current_occurence">
+          <ScalarProperty Name="RoomReserved" ColumnName="RoomReserved" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="vw_get_total_reservation_by_date">
       <EntityTypeMapping TypeName="HMSModel.vw_get_total_reservation_by_date">
         <MappingFragment StoreEntitySet="vw_get_total_reservation_by_date">
@@ -377,14 +410,6 @@
         <MappingFragment StoreEntitySet="vw_get_total_room_occupied">
           <ScalarProperty Name="RoomOccupied" ColumnName="RoomOccupied" />
           <ScalarProperty Name="roomID" ColumnName="roomID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="vw_get_total_room_reserve">
-      <EntityTypeMapping TypeName="HMSModel.vw_get_total_room_reserve">
-        <MappingFragment StoreEntitySet="vw_get_total_room_reserve">
-          <ScalarProperty Name="RoomReserved" ColumnName="RoomReserved" />
-          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

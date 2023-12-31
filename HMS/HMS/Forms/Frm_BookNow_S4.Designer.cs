@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
-            this.btnBack = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnBookAgain = new System.Windows.Forms.Button();
             this.lbl_ContactNumber = new System.Windows.Forms.Label();
@@ -38,7 +37,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lbl_NumberOfDays = new System.Windows.Forms.Label();
             this.lbl_DownloadNow = new System.Windows.Forms.Label();
-            this.btn_DownloadOffline = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.lbl_NoOfGuest = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -68,6 +66,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btn_DownloadOffline = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -76,22 +76,6 @@
             // CurrentDate
             // 
             this.CurrentDate.Tick += new System.EventHandler(this.CurrentDate_Tick);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(3, 3);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(42, 31);
-            this.btnBack.TabIndex = 73;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // guna2ShadowPanel1
             // 
@@ -127,6 +111,7 @@
             // btnBookAgain
             // 
             this.btnBookAgain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
+            this.btnBookAgain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBookAgain.FlatAppearance.BorderSize = 0;
             this.btnBookAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBookAgain.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,22 +175,6 @@
             this.lbl_DownloadNow.TabIndex = 125;
             this.lbl_DownloadNow.Text = "Download Now";
             this.lbl_DownloadNow.Visible = false;
-            // 
-            // btn_DownloadOffline
-            // 
-            this.btn_DownloadOffline.BackgroundImage = global::HMS.Properties.Resources.icons8_download_50;
-            this.btn_DownloadOffline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_DownloadOffline.FlatAppearance.BorderSize = 0;
-            this.btn_DownloadOffline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_DownloadOffline.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DownloadOffline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btn_DownloadOffline.Location = new System.Drawing.Point(766, 71);
-            this.btn_DownloadOffline.Name = "btn_DownloadOffline";
-            this.btn_DownloadOffline.Size = new System.Drawing.Size(108, 46);
-            this.btn_DownloadOffline.TabIndex = 124;
-            this.btn_DownloadOffline.UseVisualStyleBackColor = false;
-            this.btn_DownloadOffline.Visible = false;
-            this.btn_DownloadOffline.Click += new System.EventHandler(this.btn_DownloadOffline_Click);
             // 
             // label10
             // 
@@ -347,10 +316,11 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
+            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.FlatAppearance.BorderSize = 0;
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.Location = new System.Drawing.Point(818, 629);
             this.btnConfirm.Name = "btnConfirm";
@@ -364,7 +334,7 @@
             // 
             this.lblSystemTime.AutoSize = true;
             this.lblSystemTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.lblSystemTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.lblSystemTime.Location = new System.Drawing.Point(833, 9);
             this.lblSystemTime.Name = "lblSystemTime";
             this.lblSystemTime.Size = new System.Drawing.Size(204, 19);
@@ -412,7 +382,7 @@
             this.btnPaymentConfirmation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPaymentConfirmation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPaymentConfirmation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPaymentConfirmation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnPaymentConfirmation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnPaymentConfirmation.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPaymentConfirmation.ForeColor = System.Drawing.Color.White;
             this.btnPaymentConfirmation.Location = new System.Drawing.Point(809, 62);
@@ -454,7 +424,7 @@
             this.btnGuestDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnGuestDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnGuestDetails.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGuestDetails.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnGuestDetails.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnGuestDetails.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuestDetails.ForeColor = System.Drawing.Color.White;
             this.btnGuestDetails.Location = new System.Drawing.Point(609, 62);
@@ -472,7 +442,7 @@
             this.btnChooseDate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChooseDate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChooseDate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChooseDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnChooseDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnChooseDate.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseDate.ForeColor = System.Drawing.Color.White;
             this.btnChooseDate.Location = new System.Drawing.Point(211, 60);
@@ -490,7 +460,7 @@
             this.btnChooseRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChooseRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChooseRoom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChooseRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnChooseRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
             this.btnChooseRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseRoom.ForeColor = System.Drawing.Color.White;
             this.btnChooseRoom.Location = new System.Drawing.Point(410, 62);
@@ -540,6 +510,40 @@
             this.label5.Size = new System.Drawing.Size(113, 21);
             this.label5.TabIndex = 77;
             this.label5.Text = "Choose Date";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(3, 3);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 73;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btn_DownloadOffline
+            // 
+            this.btn_DownloadOffline.BackgroundImage = global::HMS.Properties.Resources.icons8_download_50;
+            this.btn_DownloadOffline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_DownloadOffline.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DownloadOffline.FlatAppearance.BorderSize = 0;
+            this.btn_DownloadOffline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DownloadOffline.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DownloadOffline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btn_DownloadOffline.Location = new System.Drawing.Point(766, 71);
+            this.btn_DownloadOffline.Name = "btn_DownloadOffline";
+            this.btn_DownloadOffline.Size = new System.Drawing.Size(108, 46);
+            this.btn_DownloadOffline.TabIndex = 124;
+            this.btn_DownloadOffline.UseVisualStyleBackColor = false;
+            this.btn_DownloadOffline.Visible = false;
+            this.btn_DownloadOffline.Click += new System.EventHandler(this.btn_DownloadOffline_Click);
             // 
             // Frm_BookNow_S4
             // 

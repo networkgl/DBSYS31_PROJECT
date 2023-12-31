@@ -174,6 +174,9 @@
       <Parameter Name="timeLogin" Mode="In" Type="Time" />
       <Parameter Name="lastActivity" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_display_room_client_details" ReturnType="Collection(HMSModel.sp_display_room_client_details_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
     <EntitySet Name="ACCOUNTS" EntityType="HMSModel.ACCOUNTS" />
     <EntitySet Name="CLIENT" EntityType="HMSModel.CLIENT" />
     <EntitySet Name="GUEST" EntityType="HMSModel.GUEST" />
@@ -194,9 +197,10 @@
     <EntitySet Name="vw_display_total_approve_guest" EntityType="HMSModel.vw_display_total_approve_guest" />
     <EntitySet Name="vw_get_current_booking_bydate" EntityType="HMSModel.vw_get_current_booking_bydate" />
     <EntitySet Name="vw_get_reservation_history" EntityType="HMSModel.vw_get_reservation_history" />
+    <EntitySet Name="vw_get_room_reserve_approve_current_occurence" EntityType="HMSModel.vw_get_room_reserve_approve_current_occurence" />
+    <EntitySet Name="vw_get_room_reserve_pending_current_occurence" EntityType="HMSModel.vw_get_room_reserve_pending_current_occurence" />
     <EntitySet Name="vw_get_total_reservation_by_date" EntityType="HMSModel.vw_get_total_reservation_by_date" />
     <EntitySet Name="vw_get_total_room_occupied" EntityType="HMSModel.vw_get_total_room_occupied" />
-    <EntitySet Name="vw_get_total_room_reserve" EntityType="HMSModel.vw_get_total_room_reserve" />
     <AssociationSet Name="FK_ACCOUNTS_ROLE" Association="HMSModel.FK_ACCOUNTS_ROLE">
       <End Role="ROLE" EntitySet="ROLE" />
       <End Role="ACCOUNTS" EntitySet="ACCOUNTS" />
@@ -285,6 +289,19 @@
     <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="2" />
     <Property Type="String" Name="Promo" Nullable="false" MaxLength="42" />
     <Property Type="Decimal" Name="Discounted" Nullable="false" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_display_room_client_details_Result">
+    <Property Type="String" Name="RoomType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="102" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Adult" Nullable="false" />
+    <Property Type="Int32" Name="Children" Nullable="false" />
+    <Property Type="Int32" Name="SeniorCitizen" Nullable="false" />
+    <Property Type="DateTime" Name="DateIn" Nullable="false" />
+    <Property Type="DateTime" Name="DateOut" Nullable="false" />
+    <Property Type="Int32" Name="NoOfDays" Nullable="true" />
   </ComplexType>
   <EntityType Name="ACCOUNTS">
     <Key>
@@ -570,6 +587,20 @@
     <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="vw_get_room_reserve_approve_current_occurence">
+    <Key>
+      <PropertyRef Name="reservationID" />
+    </Key>
+    <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoomReserved" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_get_room_reserve_pending_current_occurence">
+    <Key>
+      <PropertyRef Name="reservationID" />
+    </Key>
+    <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoomReserved" Type="Int32" />
+  </EntityType>
   <EntityType Name="vw_get_total_reservation_by_date">
     <Key>
       <PropertyRef Name="reservationDateIn" />
@@ -582,13 +613,6 @@
     </Key>
     <Property Name="roomID" Type="Int32" Nullable="false" />
     <Property Name="RoomOccupied" Type="Int32" />
-  </EntityType>
-  <EntityType Name="vw_get_total_room_reserve">
-    <Key>
-      <PropertyRef Name="reservationID" />
-    </Key>
-    <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RoomReserved" Type="Int32" />
   </EntityType>
   <Association Name="FK_ACCOUNTS_ROLE">
     <End Type="HMSModel.ROLE" Role="ROLE" Multiplicity="0..1" />

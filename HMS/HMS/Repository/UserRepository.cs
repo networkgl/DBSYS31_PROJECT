@@ -15,14 +15,6 @@ namespace HMS
 {
     class UserRepository
     {
-        //private int pk_roomNumber;
-        //private int totalGuest;
-        //private int noOfDays;
-
-        //public int Pk_roomNumber { get => pk_roomNumber; set => pk_roomNumber = value; }
-        //public int TotalGuest { get => totalGuest; set => totalGuest = value; }
-        //public int NoOfDays { get => noOfDays; set => noOfDays = value; }
-
         private string[,] clientDetails;
         private HMSEntities db;
         private const int ROOM_COUNTER = 1;//use this variable to pass in view and help calculate the total count of room in terms of roomType
@@ -357,16 +349,16 @@ namespace HMS
             }
             return retVal;
         }
-        public List<vw_get_total_room_reserve> GetRoomTotal_Reserve(ref string message)
+        public List<vw_get_room_reserve_pending_current_occurence> GetRoomTotal_Reserve_Pending(ref string message)
         {
-            var retVal = new List<vw_get_total_room_reserve>();
+            var retVal = new List<vw_get_room_reserve_pending_current_occurence>();
 
             try
             {
                 using (db = new HMSEntities())
                 {
 
-                    retVal = db.vw_get_total_room_reserve.ToList();
+                    retVal = db.vw_get_room_reserve_pending_current_occurence.ToList();
                 }
             }
             catch (Exception e)
@@ -375,15 +367,16 @@ namespace HMS
             }
             return retVal;
         }
-        public List<vw_get_total_reservation_by_date> GetTotalCurrentReservationByDate(ref string message)
+        public List<vw_get_room_reserve_approve_current_occurence> GetRoomTotal_Reserve_Approved(ref string message)
         {
-            var retVal = new List<vw_get_total_reservation_by_date>();
+            var retVal = new List<vw_get_room_reserve_approve_current_occurence>();
 
             try
             {
                 using (db = new HMSEntities())
                 {
-                    retVal = db.vw_get_total_reservation_by_date.ToList();
+
+                    retVal = db.vw_get_room_reserve_approve_current_occurence.ToList();
                 }
             }
             catch (Exception e)
@@ -572,7 +565,7 @@ namespace HMS
                 // SELECT TOP 1 * FROM USERACCOUNT WHERE userName == username
                 Console.WriteLine("Out: " + db.ACCOUNTS.Where(s => s.userName == username).FirstOrDefault());
                 return db.ACCOUNTS.Where(s => s.userName == username).FirstOrDefault();
-
+               
             }
         }
         public ErrorCode InsertSystemLogs(string typeOfAccount,DateTime date, TimeSpan time, string lastActivity, ref string message)
@@ -600,6 +593,23 @@ namespace HMS
                 using (db = new HMSEntities())
                 {
                     retVal = db.vw_display_system_log.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+            }
+            return retVal;
+        }
+
+        public List<sp_display_room_client_details_Result> GetRoomClientDetailsById(int ID, ref string message)
+        {
+            var retVal = new List<sp_display_room_client_details_Result>();
+            try 
+            {
+                using (db = new HMSEntities())
+                {
+                    retVal = db.sp_display_room_client_details(ID).ToList();
                 }
             }
             catch (Exception e)

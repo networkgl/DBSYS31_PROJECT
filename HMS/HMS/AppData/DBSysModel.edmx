@@ -300,6 +300,24 @@ warning 6002: The table/view 'HMS.dbo.vw_get_reservation_history' does not have 
           <Property Name="Status" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.vw_get_room_reserve_approve_current_occurence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_get_room_reserve_approve_current_occurence">
+          <Key>
+            <PropertyRef Name="reservationID" />
+          </Key>
+          <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoomReserved" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.vw_get_room_reserve_pending_current_occurence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_get_room_reserve_pending_current_occurence">
+          <Key>
+            <PropertyRef Name="reservationID" />
+          </Key>
+          <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoomReserved" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'HMS.dbo.vw_get_total_reservation_by_date' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vw_get_total_reservation_by_date">
           <Key>
@@ -315,15 +333,6 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_occupied' does not have 
           </Key>
           <Property Name="roomID" Type="int" Nullable="false" />
           <Property Name="RoomOccupied" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'HMS.dbo.vw_get_total_room_reserve' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vw_get_total_room_reserve">
-          <Key>
-            <PropertyRef Name="reservationID" />
-          </Key>
-          <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RoomReserved" Type="int" />
         </EntityType>
         <Association Name="FK_ACCOUNTS_ROLE">
           <End Role="ROLE" Type="Self.ROLE" Multiplicity="0..1" />
@@ -409,6 +418,9 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_reserve' does not have a
           <Parameter Name="userID" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_denied_reservation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_display_room_client_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -663,6 +675,18 @@ FROM [dbo].[vw_get_current_booking_bydate] AS [vw_get_current_booking_bydate]</D
 [vw_get_reservation_history].[Status] AS [Status]
 FROM [dbo].[vw_get_reservation_history] AS [vw_get_reservation_history]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vw_get_room_reserve_approve_current_occurence" EntityType="Self.vw_get_room_reserve_approve_current_occurence" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_get_room_reserve_approve_current_occurence].[reservationID] AS [reservationID], 
+[vw_get_room_reserve_approve_current_occurence].[RoomReserved] AS [RoomReserved]
+FROM [dbo].[vw_get_room_reserve_approve_current_occurence] AS [vw_get_room_reserve_approve_current_occurence]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_get_room_reserve_pending_current_occurence" EntityType="Self.vw_get_room_reserve_pending_current_occurence" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vw_get_room_reserve_pending_current_occurence].[reservationID] AS [reservationID], 
+[vw_get_room_reserve_pending_current_occurence].[RoomReserved] AS [RoomReserved]
+FROM [dbo].[vw_get_room_reserve_pending_current_occurence] AS [vw_get_room_reserve_pending_current_occurence]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vw_get_total_reservation_by_date" EntityType="Self.vw_get_total_reservation_by_date" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [vw_get_total_reservation_by_date].[reservationDateIn] AS [reservationDateIn]
@@ -673,12 +697,6 @@ FROM [dbo].[vw_get_total_reservation_by_date] AS [vw_get_total_reservation_by_da
 [vw_get_total_room_occupied].[roomID] AS [roomID], 
 [vw_get_total_room_occupied].[RoomOccupied] AS [RoomOccupied]
 FROM [dbo].[vw_get_total_room_occupied] AS [vw_get_total_room_occupied]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vw_get_total_room_reserve" EntityType="Self.vw_get_total_room_reserve" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-[vw_get_total_room_reserve].[reservationID] AS [reservationID], 
-[vw_get_total_room_reserve].[RoomReserved] AS [RoomReserved]
-FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_ACCOUNTS_ROLE" Association="Self.FK_ACCOUNTS_ROLE">
             <End Role="ROLE" EntitySet="ROLE" />
@@ -879,6 +897,9 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
             <Parameter Name="timeLogin" Mode="In" Type="Time" />
             <Parameter Name="lastActivity" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_display_room_client_details" ReturnType="Collection(HMSModel.sp_display_room_client_details_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
           <EntitySet Name="ACCOUNTS" EntityType="HMSModel.ACCOUNTS" />
           <EntitySet Name="CLIENT" EntityType="HMSModel.CLIENT" />
           <EntitySet Name="GUEST" EntityType="HMSModel.GUEST" />
@@ -899,9 +920,10 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
           <EntitySet Name="vw_display_total_approve_guest" EntityType="HMSModel.vw_display_total_approve_guest" />
           <EntitySet Name="vw_get_current_booking_bydate" EntityType="HMSModel.vw_get_current_booking_bydate" />
           <EntitySet Name="vw_get_reservation_history" EntityType="HMSModel.vw_get_reservation_history" />
+          <EntitySet Name="vw_get_room_reserve_approve_current_occurence" EntityType="HMSModel.vw_get_room_reserve_approve_current_occurence" />
+          <EntitySet Name="vw_get_room_reserve_pending_current_occurence" EntityType="HMSModel.vw_get_room_reserve_pending_current_occurence" />
           <EntitySet Name="vw_get_total_reservation_by_date" EntityType="HMSModel.vw_get_total_reservation_by_date" />
           <EntitySet Name="vw_get_total_room_occupied" EntityType="HMSModel.vw_get_total_room_occupied" />
-          <EntitySet Name="vw_get_total_room_reserve" EntityType="HMSModel.vw_get_total_room_reserve" />
           <AssociationSet Name="FK_ACCOUNTS_ROLE" Association="HMSModel.FK_ACCOUNTS_ROLE">
             <End Role="ROLE" EntitySet="ROLE" />
             <End Role="ACCOUNTS" EntitySet="ACCOUNTS" />
@@ -990,6 +1012,19 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
           <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="2" />
           <Property Type="String" Name="Promo" Nullable="false" MaxLength="42" />
           <Property Type="Decimal" Name="Discounted" Nullable="false" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="sp_display_room_client_details_Result">
+          <Property Type="String" Name="RoomType" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="FullName" Nullable="false" MaxLength="102" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Adult" Nullable="false" />
+          <Property Type="Int32" Name="Children" Nullable="false" />
+          <Property Type="Int32" Name="SeniorCitizen" Nullable="false" />
+          <Property Type="DateTime" Name="DateIn" Nullable="false" />
+          <Property Type="DateTime" Name="DateOut" Nullable="false" />
+          <Property Type="Int32" Name="NoOfDays" Nullable="true" />
         </ComplexType>
         <EntityType Name="ACCOUNTS">
           <Key>
@@ -1275,6 +1310,20 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
           <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="vw_get_room_reserve_approve_current_occurence">
+          <Key>
+            <PropertyRef Name="reservationID" />
+          </Key>
+          <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomReserved" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vw_get_room_reserve_pending_current_occurence">
+          <Key>
+            <PropertyRef Name="reservationID" />
+          </Key>
+          <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomReserved" Type="Int32" />
+        </EntityType>
         <EntityType Name="vw_get_total_reservation_by_date">
           <Key>
             <PropertyRef Name="reservationDateIn" />
@@ -1287,13 +1336,6 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
           </Key>
           <Property Name="roomID" Type="Int32" Nullable="false" />
           <Property Name="RoomOccupied" Type="Int32" />
-        </EntityType>
-        <EntityType Name="vw_get_total_room_reserve">
-          <Key>
-            <PropertyRef Name="reservationID" />
-          </Key>
-          <Property Name="reservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RoomReserved" Type="Int32" />
         </EntityType>
         <Association Name="FK_ACCOUNTS_ROLE">
           <End Type="HMSModel.ROLE" Role="ROLE" Multiplicity="0..1" />
@@ -1470,6 +1512,23 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
           <FunctionImportMapping FunctionImportName="sp_update_system_accounts" FunctionName="HMSModel.Store.sp_update_system_accounts" />
           <FunctionImportMapping FunctionImportName="sp_delete_system_accounts" FunctionName="HMSModel.Store.sp_delete_system_accounts" />
           <FunctionImportMapping FunctionImportName="sp_insert_system_log" FunctionName="HMSModel.Store.sp_insert_system_log" />
+          <FunctionImportMapping FunctionImportName="sp_display_room_client_details" FunctionName="HMSModel.Store.sp_display_room_client_details">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMSModel.sp_display_room_client_details_Result">
+                <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Adult" ColumnName="Adult" />
+                <ScalarProperty Name="Children" ColumnName="Children" />
+                <ScalarProperty Name="SeniorCitizen" ColumnName="SeniorCitizen" />
+                <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+                <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="ACCOUNTS">
             <EntityTypeMapping TypeName="HMSModel.ACCOUNTS">
               <MappingFragment StoreEntitySet="ACCOUNTS">
@@ -1725,6 +1784,22 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vw_get_room_reserve_approve_current_occurence">
+            <EntityTypeMapping TypeName="HMSModel.vw_get_room_reserve_approve_current_occurence">
+              <MappingFragment StoreEntitySet="vw_get_room_reserve_approve_current_occurence">
+                <ScalarProperty Name="RoomReserved" ColumnName="RoomReserved" />
+                <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_get_room_reserve_pending_current_occurence">
+            <EntityTypeMapping TypeName="HMSModel.vw_get_room_reserve_pending_current_occurence">
+              <MappingFragment StoreEntitySet="vw_get_room_reserve_pending_current_occurence">
+                <ScalarProperty Name="RoomReserved" ColumnName="RoomReserved" />
+                <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vw_get_total_reservation_by_date">
             <EntityTypeMapping TypeName="HMSModel.vw_get_total_reservation_by_date">
               <MappingFragment StoreEntitySet="vw_get_total_reservation_by_date">
@@ -1737,14 +1812,6 @@ FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQ
               <MappingFragment StoreEntitySet="vw_get_total_room_occupied">
                 <ScalarProperty Name="RoomOccupied" ColumnName="RoomOccupied" />
                 <ScalarProperty Name="roomID" ColumnName="roomID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vw_get_total_room_reserve">
-            <EntityTypeMapping TypeName="HMSModel.vw_get_total_room_reserve">
-              <MappingFragment StoreEntitySet="vw_get_total_room_reserve">
-                <ScalarProperty Name="RoomReserved" ColumnName="RoomReserved" />
-                <ScalarProperty Name="reservationID" ColumnName="reservationID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

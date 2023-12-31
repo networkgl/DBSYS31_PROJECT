@@ -359,6 +359,34 @@ namespace HMS
         }
 
 
+        private void btnManageRoomType_MouseEnter(object sender, EventArgs e)
+        {
+            btnManageRoomType.ForeColor = Color.White;
+            btnManageRoomType.Font = new Font("Century Gothic", fontSize, FontStyle.Bold);
+        }
+
+        private void btnManageRoomType_MouseLeave(object sender, EventArgs e)
+        {
+            btnManageRoomType.ForeColor = Color.Black;
+            btnManageRoomType.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
+        }
+
+        private void btnManageSystem_MouseEnter(object sender, EventArgs e)
+        {
+            btnManageSystem.ForeColor = Color.White;
+            btnManageSystem.Font = new Font("Century Gothic", fontSize, FontStyle.Bold);
+        }
+
+        private void btnManageSystem_MouseLeave(object sender, EventArgs e)
+        {
+            btnManageSystem.ForeColor = Color.Black;
+            btnManageSystem.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
+        }
+
+        private void btn_Minimize_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnLogout_MouseEnter(object sender, EventArgs e)
         {

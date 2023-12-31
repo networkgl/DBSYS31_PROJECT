@@ -29,7 +29,6 @@ C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.F
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_BookNow_S1.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_BookNow_S2.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_BookNow_S3.resources
-C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_Calendar.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_BookNow_S4.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Frm_HomePage.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_Login.resources
@@ -66,3 +65,5 @@ C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.F
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_BookingDetails.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_ManageSystem.resources
 C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_SystemLogs.resources
+C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Form1.resources
+C:\Users\Gian Lloyd\Desktop\FinalProject\DBSYS31_PROJECT\HMS\HMS\obj\Debug\HMS.Forms.Frm_RoomClientDetails.resources

@@ -48,9 +48,10 @@ namespace HMS.AppData
         public DbSet<vw_display_total_approve_guest> vw_display_total_approve_guest { get; set; }
         public DbSet<vw_get_current_booking_bydate> vw_get_current_booking_bydate { get; set; }
         public DbSet<vw_get_reservation_history> vw_get_reservation_history { get; set; }
+        public DbSet<vw_get_room_reserve_approve_current_occurence> vw_get_room_reserve_approve_current_occurence { get; set; }
+        public DbSet<vw_get_room_reserve_pending_current_occurence> vw_get_room_reserve_pending_current_occurence { get; set; }
         public DbSet<vw_get_total_reservation_by_date> vw_get_total_reservation_by_date { get; set; }
         public DbSet<vw_get_total_room_occupied> vw_get_total_room_occupied { get; set; }
-        public DbSet<vw_get_total_room_reserve> vw_get_total_room_reserve { get; set; }
     
         public virtual int InsertRoomDetails(string roomType, byte[] roomPhoto, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
         {
@@ -640,6 +641,15 @@ namespace HMS.AppData
                 new ObjectParameter("lastActivity", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_system_log", typeofaccountParameter, dateLoginParameter, timeLoginParameter, lastActivityParameter);
+        }
+    
+        public virtual ObjectResult<sp_display_room_client_details_Result> sp_display_room_client_details(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_display_room_client_details_Result>("sp_display_room_client_details", idParameter);
         }
     }
 }

@@ -295,6 +295,24 @@ warning 6002: The table/view 'HMS.dbo.vw_get_reservation_history' does not have 
     <Property Name="Status" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.vw_get_room_reserve_approve_current_occurence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_get_room_reserve_approve_current_occurence">
+    <Key>
+      <PropertyRef Name="reservationID" />
+    </Key>
+    <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomReserved" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.vw_get_room_reserve_pending_current_occurence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_get_room_reserve_pending_current_occurence">
+    <Key>
+      <PropertyRef Name="reservationID" />
+    </Key>
+    <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomReserved" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'HMS.dbo.vw_get_total_reservation_by_date' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="vw_get_total_reservation_by_date">
     <Key>
@@ -310,15 +328,6 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_occupied' does not have 
     </Key>
     <Property Name="roomID" Type="int" Nullable="false" />
     <Property Name="RoomOccupied" Type="int" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'HMS.dbo.vw_get_total_room_reserve' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="vw_get_total_room_reserve">
-    <Key>
-      <PropertyRef Name="reservationID" />
-    </Key>
-    <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RoomReserved" Type="int" />
   </EntityType>
   <Association Name="FK_ACCOUNTS_ROLE">
     <End Role="ROLE" Type="Self.ROLE" Multiplicity="0..1" />
@@ -404,6 +413,9 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_reserve' does not have a
     <Parameter Name="userID" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_denied_reservation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_display_room_client_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -658,6 +670,18 @@ FROM [dbo].[vw_get_current_booking_bydate] AS [vw_get_current_booking_bydate]</D
 [vw_get_reservation_history].[Status] AS [Status]
 FROM [dbo].[vw_get_reservation_history] AS [vw_get_reservation_history]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="vw_get_room_reserve_approve_current_occurence" EntityType="Self.vw_get_room_reserve_approve_current_occurence" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vw_get_room_reserve_approve_current_occurence].[reservationID] AS [reservationID], 
+[vw_get_room_reserve_approve_current_occurence].[RoomReserved] AS [RoomReserved]
+FROM [dbo].[vw_get_room_reserve_approve_current_occurence] AS [vw_get_room_reserve_approve_current_occurence]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_get_room_reserve_pending_current_occurence" EntityType="Self.vw_get_room_reserve_pending_current_occurence" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vw_get_room_reserve_pending_current_occurence].[reservationID] AS [reservationID], 
+[vw_get_room_reserve_pending_current_occurence].[RoomReserved] AS [RoomReserved]
+FROM [dbo].[vw_get_room_reserve_pending_current_occurence] AS [vw_get_room_reserve_pending_current_occurence]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="vw_get_total_reservation_by_date" EntityType="Self.vw_get_total_reservation_by_date" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
 [vw_get_total_reservation_by_date].[reservationDateIn] AS [reservationDateIn]
@@ -668,12 +692,6 @@ FROM [dbo].[vw_get_total_reservation_by_date] AS [vw_get_total_reservation_by_da
 [vw_get_total_room_occupied].[roomID] AS [roomID], 
 [vw_get_total_room_occupied].[RoomOccupied] AS [RoomOccupied]
 FROM [dbo].[vw_get_total_room_occupied] AS [vw_get_total_room_occupied]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="vw_get_total_room_reserve" EntityType="Self.vw_get_total_room_reserve" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[vw_get_total_room_reserve].[reservationID] AS [reservationID], 
-[vw_get_total_room_reserve].[RoomReserved] AS [RoomReserved]
-FROM [dbo].[vw_get_total_room_reserve] AS [vw_get_total_room_reserve]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_ACCOUNTS_ROLE" Association="Self.FK_ACCOUNTS_ROLE">
       <End Role="ROLE" EntitySet="ROLE" />

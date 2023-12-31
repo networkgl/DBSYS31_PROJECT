@@ -104,7 +104,7 @@
             this.btnLogin.Location = new System.Drawing.Point(50, 371);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(206, 38);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -275,7 +275,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_Login";
+            this.Text = "2";
             this.Load += new System.EventHandler(this.Frm_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

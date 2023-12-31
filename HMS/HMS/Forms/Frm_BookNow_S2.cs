@@ -175,7 +175,7 @@ namespace HMS
             {
                 lbl_roomLeft.Text = "Vacant Room: " + ((int)(RoomAvailable.MAX - currentTotalRoom)).ToString();
                 btnNext.Enabled = true;
-                btnNext.BackColor = Color.FromArgb(100, 88, 255);
+                btnNext.BackColor = Color.FromArgb(46, 134, 222);
                 lbl_roomLeft.ForeColor = Color.RoyalBlue;
             }
         }
@@ -262,7 +262,7 @@ namespace HMS
             {
                 lbl_roomLeft.Text = "Vacant Room: " + ((int)(RoomAvailable.MAX - currentTotalRoom)).ToString();
                 btnNext.Enabled = true;
-                btnNext.BackColor = Color.FromArgb(100, 88, 255);
+                btnNext.BackColor = Color.FromArgb(46, 134, 222);
                 lbl_roomLeft.ForeColor = Color.RoyalBlue;
             }
             //lbl_roomLeft.Text = "Room Vacant: " + ((int)(RoomAvailable.MAX - currentTotalRoom)).ToString();

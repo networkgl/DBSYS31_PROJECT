@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using HMS.AppData;
 using HMS.Properties;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,18 @@ namespace HMS.Forms
         private UserRepository userRepo;
         private AdminRepository adminRepo;
         private int currentIndex;
+
+        public static string FullName { get; set; }
+        public static string RoomType { get; set; }
+        public static string Email { get; set; }
+        public static string Phone { get; set; }
+        public static string Address { get; set; }
+        public static string Adult { get; set; }
+        public static string Children { get; set; }
+        public static string Senior { get; set; }
+        public static string DateIn { get; set; }
+        public static string DateOut { get; set; }
+        public static string NoOfDays { get; set; }
 
         public Frm_Room()
         {
@@ -74,8 +87,6 @@ namespace HMS.Forms
             InitialLoad();// Call this funtion to load upadted list for rooms available
 
             cbBox_RoomType.SelectedIndex = 0;//set first index to display something.
-
-
         }
         private void InitialLoad()
         {
@@ -119,6 +130,9 @@ namespace HMS.Forms
                     break;
                 case 2:
                     DisplayDoorPictre(2);
+                    break;
+                case 3:
+                    DisplayDoorPictre(3);
                     break;
             }
 
@@ -181,7 +195,6 @@ namespace HMS.Forms
                 lbl_RoomType.Text = $"Vacant Room : {remainingRoom}";
             }
             //lbl_RoomType.Text = $"Vacant Room : {remainingRoom}";
-
         }
         private void DisplayDoorPictre(int index)
         {
@@ -208,6 +221,13 @@ namespace HMS.Forms
                     {
                         door.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
                         door.BackgroundImage = Properties.Resources.icons8_door_100__3_;
+                    }
+                    break;
+                case 3:
+                    foreach (var door in doors)
+                    {
+                        door.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+                        door.BackgroundImage = Properties.Resources.icons8_door_100__4_;
                     }
                     break;              
             }
@@ -264,6 +284,104 @@ namespace HMS.Forms
             doorPicture[6] = pnl_door7;
             doorPicture[7] = pnl_door8;
             doorPicture[8] = pnl_door9;
+        }
+        private List<HMS.AppData.sp_display_room_client_details_Result> retVal;
+        private string message = string.Empty;
+        private void pnl_room1_Click(object sender, EventArgs e)
+        {
+            GetRoomClientDetails(lbl_roomNumber_1);
+        }
+
+        private void pnl_room2_Click(object sender, EventArgs e)
+        {
+            GetRoomClientDetails(lbl_roomNumber_2);
+        }
+        private void pnl_room3_Click(object sender, EventArgs e)
+        {
+            GetRoomClientDetails(lbl_roomNumber_3);
+        }
+
+        private void pnl_room4_Click(object sender, EventArgs e)
+        {
+            GetRoomClientDetails(lbl_roomNumber_4);
+        }
+
+        private void pnl_room5_Click(object sender, EventArgs e)
+        {
+            GetRoomClientDetails(lbl_roomNumber_5);
+        }
+
+        private void pnl_room6_Click(object sender, EventArgs e)
+        {
+            GetRoomClientDetails(lbl_roomNumber_6);
+        }
+
+        private void pnl_room7_Click(object sender, EventArgs e)
+        {
+            GetRoomClientDetails(lbl_roomNumber_7);
+        }
+
+        private void pnl_room8_Click(object sender, EventArgs e)
+        {
+            GetRoomClientDetails(lbl_roomNumber_8);
+        }
+
+        private void pnl_room9_Click(object sender, EventArgs e)
+        {
+            GetRoomClientDetails(lbl_roomNumber_9);
+        }
+
+        private void GetRoomClientDetails(Label roomNumber)
+        {
+            List<string> ListOfDetails = new List<string>();
+
+            if (!roomNumber.Text.Equals("N/A"))
+            {
+                retVal = userRepo.GetRoomClientDetailsById(int.Parse(roomNumber.Text), ref message);
+
+                foreach (var details in retVal)
+                {
+                    FullName = details.FullName;
+                    RoomType = details.RoomType;
+                    Email = details.Email;
+                    Phone = details.Phone;
+                    Address = details.Address;
+                    Adult = details.Adult.ToString();
+                    Children = details.Children.ToString();
+                    Senior = details.SeniorCitizen.ToString();
+                    DateIn = details.DateIn.ToString("ddd, MMM dd, yyyy");
+                    DateOut = details.DateOut.ToString("ddd, MMM dd, yyyy");
+                    NoOfDays = details.NoOfDays.ToString();
+
+                    ListOfDetails.Add(FullName);
+                    ListOfDetails.Add(RoomType);
+                    ListOfDetails.Add(Email);
+                    ListOfDetails.Add(Phone);
+                    ListOfDetails.Add(Address);
+                    ListOfDetails.Add(Adult);
+                    ListOfDetails.Add(Children);
+                    ListOfDetails.Add(Senior);
+                    ListOfDetails.Add(DateIn);
+                    ListOfDetails.Add(DateOut);
+                    ListOfDetails.Add(NoOfDays);
+                }
+
+                //Call the form to display
+                var rcd = new Frm_RoomClientDetails();
+                rcd.ShowDialog();
+            }
+            else 
+            {
+                MessageDialog.Show("No Currently Occupied", "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+                return; 
+            }
+
+
+            //For Debugging Purposes
+            foreach (var details in ListOfDetails)
+            {
+                Console.WriteLine(details);
+            }
         }
     }
 }

@@ -73,7 +73,7 @@
             // txtboxRoomDetails
             // 
             this.txtboxRoomDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
-            this.txtboxRoomDetails.BorderRadius = 10;
+            this.txtboxRoomDetails.BorderRadius = 5;
             this.txtboxRoomDetails.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtboxRoomDetails.DefaultText = "";
             this.txtboxRoomDetails.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -96,7 +96,7 @@
             // txtboxRoomDiscount
             // 
             this.txtboxRoomDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
-            this.txtboxRoomDiscount.BorderRadius = 10;
+            this.txtboxRoomDiscount.BorderRadius = 5;
             this.txtboxRoomDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtboxRoomDiscount.DefaultText = "";
             this.txtboxRoomDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -118,7 +118,7 @@
             // txtboxRoomPrice
             // 
             this.txtboxRoomPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
-            this.txtboxRoomPrice.BorderRadius = 10;
+            this.txtboxRoomPrice.BorderRadius = 5;
             this.txtboxRoomPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtboxRoomPrice.DefaultText = "";
             this.txtboxRoomPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -197,7 +197,7 @@
             // txtboxRoomType
             // 
             this.txtboxRoomType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
-            this.txtboxRoomType.BorderRadius = 10;
+            this.txtboxRoomType.BorderRadius = 5;
             this.txtboxRoomType.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtboxRoomType.DefaultText = "";
             this.txtboxRoomType.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -219,7 +219,7 @@
             // btnSaveDetails
             // 
             this.btnSaveDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
-            this.btnSaveDetails.BorderRadius = 15;
+            this.btnSaveDetails.BorderRadius = 5;
             this.btnSaveDetails.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSaveDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSaveDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -236,7 +236,7 @@
             // btnEditPhoto
             // 
             this.btnEditPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
-            this.btnEditPhoto.BorderRadius = 15;
+            this.btnEditPhoto.BorderRadius = 5;
             this.btnEditPhoto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEditPhoto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEditPhoto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

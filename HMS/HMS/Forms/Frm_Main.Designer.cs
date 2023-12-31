@@ -30,13 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnl_ToggleLogout = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_userAccount = new System.Windows.Forms.Label();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_NotifCounter = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.txtbox_SearchBar = new Guna.UI2.WinForms.Guna2TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_Notificationss = new System.Windows.Forms.Button();
@@ -49,15 +51,13 @@
             this.btnRoom = new Guna.UI2.WinForms.Guna2Button();
             this.btnClient = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
-            this.pnl_ToggleLogout = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -78,6 +78,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(219, 678);
             this.panel2.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 492);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(219, 100);
+            this.panel6.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.panel4.Controls.Add(this.pnl_ToggleLogout);
+            this.panel4.Controls.Add(this.btnLogout);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 586);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(219, 92);
+            this.panel4.TabIndex = 3;
+            // 
+            // pnl_ToggleLogout
+            // 
+            this.pnl_ToggleLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
+            this.pnl_ToggleLogout.Location = new System.Drawing.Point(8, 240);
+            this.pnl_ToggleLogout.Name = "pnl_ToggleLogout";
+            this.pnl_ToggleLogout.Size = new System.Drawing.Size(5, 27);
+            this.pnl_ToggleLogout.TabIndex = 9;
+            this.pnl_ToggleLogout.Visible = false;
             // 
             // panel3
             // 
@@ -145,15 +174,6 @@
             this.lbl_NotifCounter.TabIndex = 19;
             this.lbl_NotifCounter.Text = "0";
             this.lbl_NotifCounter.Visible = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 492);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(219, 100);
-            this.panel6.TabIndex = 0;
             // 
             // txtbox_SearchBar
             // 
@@ -238,6 +258,7 @@
             // 
             this.btn_Minimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Minimize.BackgroundImage")));
             this.btn_Minimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_Minimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Minimize.FlatAppearance.BorderSize = 0;
             this.btn_Minimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -247,11 +268,13 @@
             this.btn_Minimize.Size = new System.Drawing.Size(33, 32);
             this.btn_Minimize.TabIndex = 20;
             this.btn_Minimize.UseVisualStyleBackColor = true;
+            this.btn_Minimize.Click += new System.EventHandler(this.btn_Minimize_Click);
             // 
             // btnExit
             // 
             this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
             this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -268,6 +291,7 @@
             this.btnManageSystem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.btnManageSystem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnManageSystem.BorderRadius = 20;
+            this.btnManageSystem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageSystem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnManageSystem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnManageSystem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -289,12 +313,15 @@
             this.btnManageSystem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManageSystem.TextOffset = new System.Drawing.Point(-9, 0);
             this.btnManageSystem.Click += new System.EventHandler(this.btnManageSystem_Click);
+            this.btnManageSystem.MouseEnter += new System.EventHandler(this.btnManageSystem_MouseEnter);
+            this.btnManageSystem.MouseLeave += new System.EventHandler(this.btnManageSystem_MouseLeave);
             // 
             // btnManageRoomType
             // 
             this.btnManageRoomType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.btnManageRoomType.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnManageRoomType.BorderRadius = 20;
+            this.btnManageRoomType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageRoomType.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnManageRoomType.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnManageRoomType.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -315,12 +342,15 @@
             this.btnManageRoomType.Text = "Manage Rooms";
             this.btnManageRoomType.TextOffset = new System.Drawing.Point(-1, 0);
             this.btnManageRoomType.Click += new System.EventHandler(this.btnManageRoomType_Click);
+            this.btnManageRoomType.MouseEnter += new System.EventHandler(this.btnManageRoomType_MouseEnter);
+            this.btnManageRoomType.MouseLeave += new System.EventHandler(this.btnManageRoomType_MouseLeave);
             // 
             // btnReservation
             // 
             this.btnReservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.btnReservation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnReservation.BorderRadius = 20;
+            this.btnReservation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReservation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnReservation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnReservation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -349,6 +379,7 @@
             this.btnRoom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.btnRoom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRoom.BorderRadius = 20;
+            this.btnRoom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoom.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRoom.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRoom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -377,6 +408,7 @@
             this.btnClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.btnClient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClient.BorderRadius = 20;
+            this.btnClient.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClient.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClient.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnClient.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -406,6 +438,7 @@
             this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.btnDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnDashboard.BorderRadius = 20;
+            this.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -430,21 +463,12 @@
             this.btnDashboard.MouseEnter += new System.EventHandler(this.btnDashboard_MouseEnter);
             this.btnDashboard.MouseLeave += new System.EventHandler(this.btnDashboard_MouseLeave);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 101);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnLogout.BorderRadius = 20;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -466,25 +490,15 @@
             this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
             this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
             // 
-            // pnl_ToggleLogout
+            // pictureBox1
             // 
-            this.pnl_ToggleLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
-            this.pnl_ToggleLogout.Location = new System.Drawing.Point(8, 240);
-            this.pnl_ToggleLogout.Name = "pnl_ToggleLogout";
-            this.pnl_ToggleLogout.Size = new System.Drawing.Size(5, 27);
-            this.pnl_ToggleLogout.TabIndex = 9;
-            this.pnl_ToggleLogout.Visible = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panel4.Controls.Add(this.pnl_ToggleLogout);
-            this.panel4.Controls.Add(this.btnLogout);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 586);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(219, 92);
-            this.panel4.TabIndex = 3;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(146, 101);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // Frm_Main
             // 
@@ -502,12 +516,12 @@
             this.Text = "Frm_Login";
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -36,6 +36,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cbBox_roomType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_roomLeft = new System.Windows.Forms.Label();
             this.pnl_saleDetails = new System.Windows.Forms.Panel();
             this.underline = new System.Windows.Forms.Panel();
             this.lbl_OrigPrice = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.lbl_roomType = new System.Windows.Forms.Label();
             this.pnl_roompicture = new System.Windows.Forms.Panel();
             this.lbl_roomDetails1 = new System.Windows.Forms.Label();
-            this.lbl_roomLeft = new System.Windows.Forms.Label();
             this.pnl_saleLogo = new System.Windows.Forms.Panel();
             this.pnl_Main.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -141,7 +141,7 @@
             // 
             this.cbBox_roomType.BackColor = System.Drawing.Color.Transparent;
             this.cbBox_roomType.BorderColor = System.Drawing.Color.Silver;
-            this.cbBox_roomType.BorderRadius = 10;
+            this.cbBox_roomType.BorderRadius = 5;
             this.cbBox_roomType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbBox_roomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBox_roomType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -174,6 +174,17 @@
             this.panel1.Size = new System.Drawing.Size(985, 340);
             this.panel1.TabIndex = 93;
             // 
+            // lbl_roomLeft
+            // 
+            this.lbl_roomLeft.AutoSize = true;
+            this.lbl_roomLeft.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_roomLeft.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lbl_roomLeft.Location = new System.Drawing.Point(448, 301);
+            this.lbl_roomLeft.Name = "lbl_roomLeft";
+            this.lbl_roomLeft.Size = new System.Drawing.Size(156, 23);
+            this.lbl_roomLeft.TabIndex = 82;
+            this.lbl_roomLeft.Text = "Room Vacant :";
+            // 
             // pnl_saleDetails
             // 
             this.pnl_saleDetails.Controls.Add(this.underline);
@@ -203,7 +214,6 @@
             this.lbl_OrigPrice.Size = new System.Drawing.Size(83, 22);
             this.lbl_OrigPrice.TabIndex = 80;
             this.lbl_OrigPrice.Text = "₱20,000.00";
-            this.lbl_OrigPrice.Click += new System.EventHandler(this.lbl_OrigPrice_Click);
             // 
             // lbl_percentSale
             // 
@@ -289,17 +299,6 @@
             this.lbl_roomDetails1.Size = new System.Drawing.Size(117, 20);
             this.lbl_roomDetails1.TabIndex = 70;
             this.lbl_roomDetails1.Text = "ROOM DETAILS";
-            // 
-            // lbl_roomLeft
-            // 
-            this.lbl_roomLeft.AutoSize = true;
-            this.lbl_roomLeft.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomLeft.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lbl_roomLeft.Location = new System.Drawing.Point(448, 301);
-            this.lbl_roomLeft.Name = "lbl_roomLeft";
-            this.lbl_roomLeft.Size = new System.Drawing.Size(156, 23);
-            this.lbl_roomLeft.TabIndex = 82;
-            this.lbl_roomLeft.Text = "Room Vacant :";
             // 
             // pnl_saleLogo
             // 
