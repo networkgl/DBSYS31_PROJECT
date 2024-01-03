@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Interop;
 
 
 namespace HMS
@@ -25,7 +26,7 @@ namespace HMS
         private String selectedTime_CheckIn = "After 2:00 PM";
         private String selectedTime_CheckOut = "Before 12:00 PM";
         public DateTime checkIn = DateTime.Now;
-        public DateTime checkOut = DateTime.Now;
+        public DateTime checkOut = DateTime.Now.AddDays(1);
 
         private HMSEntities db;
 
@@ -74,7 +75,13 @@ namespace HMS
 
 
             mc_GuideBooking.ActiveMonth.Month = DateTime.Now.Month;//Set active month to current month
-            if(s2 == null)
+            mc_GuideBooking.ActiveMonth.Year = DateTime.Now.Year;
+            mc_GuideBooking.Refresh();
+
+            //mc_GuideBooking.Invalidate();
+
+
+            if (s2 == null)
             {
                 Console.WriteLine("S2 IS NULL");
             }
@@ -148,6 +155,8 @@ namespace HMS
 
             var message = string.Empty;
             var Dates = new List<AppData.vw_get_total_reservation_by_date>();
+
+
             if (s1 == null)
             {
                 Dates = GetTotalReservationByDate(ref message);
@@ -160,15 +169,13 @@ namespace HMS
             foreach (var date in Dates)
             {
                 dateArray.Add(date.reservationDateIn.Date); // Use Date property to get only the date part
-                Console.WriteLine(date.reservationDateIn);
+                Console.WriteLine(date.reservationDateIn.Date);
             }
-
-            var size = dateArray.Count;
 
             // Count occurrences of each date
             var dateCounts = dateArray.GroupBy(date => date).ToDictionary(group => group.Key, group => group.Count());
 
-            for (int i = 0; i < size; i++)
+            for (var i = 0; i < dateArray.Count; i++)
             {
                 // Check date and mark it with color to specify occupied or not available to select for booking.
                 if (e.Date.Date == dateArray[i])
@@ -178,32 +185,71 @@ namespace HMS
                     {
                         int count = dateCounts[e.Date.Date];
 
-                        // Set different colors based on the count threshold
-                        if (count <= 27 && count >= 21)
+                        var totalRooms = 0;
+                        var seventyFivePercent = 0.0;
+                        var fiftyPercent = 0.0;
+                        var twentyFivePercent = 0.0;
+
+                        try
                         {
-                            // Fully booked
+                            using (db = new HMSEntities())
+                            {
+                                totalRooms = ((int)RoomAvailable.MAX * db.ROOM_DETAILS.Count());
+                                seventyFivePercent = (totalRooms * 0.75);
+                                fiftyPercent = (totalRooms * 0.50);
+                                twentyFivePercent = (totalRooms * 0.25);
+
+                                //Console.WriteLine(seventyFivePercent);
+                                //Console.WriteLine(fiftyPercent);
+                                //Console.WriteLine(twentyFivePercent);
+
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            message = ex.Message;
+                        }
+
+                        //Assign labels value based on max rooms calculation
+                        lbl_twentyFive.Text = $"{twentyFivePercent} above";
+                        lbl_fifty.Text = $"{fiftyPercent} above";
+                        lbl_seventyFive.Text = $"{seventyFivePercent} above";
+
+                        if (count == totalRooms)
+                        {
+                            //Fully booked
+                            e.Info.DateColor = Color.Black;
+                            e.Info.BackColor1 = Color.FromArgb(178, 190, 195); // You can choose a different color for fully booked dates
+                            e.OwnerDraw = true;
+                        }
+                        // Set different colors based on the count threshold
+                        else if (count > seventyFivePercent)
+                        {
+                            // Almost fully booked
                             e.Info.DateColor = Color.White;
                             e.Info.BackColor1 = Color.Blue; // You can choose a different color for fully booked dates
                             e.OwnerDraw = true;
                         }
-                        else if (count <= 20 && count >= 11)
+                        else if (count > fiftyPercent)
                         {
-                            // Almost fully booked
+                            //Half of the total rooms
                             e.Info.DateColor = Color.White;
                             e.Info.BackColor1 = Color.OrangeRed; // You can choose a different color for almost fully booked dates
                             e.OwnerDraw = true;
                         }
-                        else if (count <= 10 && count >= 1)
+                        else if (count > twentyFivePercent)
                         {
                             // Minimally booked
-                            e.Info.DateColor = Color.White;
+                            e.Info.DateColor = Color.Black;
                             e.Info.BackColor1 = Color.YellowGreen; // You can choose a different color for minimally booked dates
                             e.OwnerDraw = true;
                         }
-                        else
+                        else if (count <= 1)
                         {
-                            //// Not booked
-                            //e.Info.ResetBackColor();
+                            // Minimally booked
+                            e.Info.DateColor =  Color.Black;
+                            e.Info.BackColor1 = Color.FromArgb(250, 201, 21); // You can choose a different color for minimally booked dates
+                            e.OwnerDraw = true;
                         }
                     }
                 }
@@ -263,6 +309,19 @@ namespace HMS
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            if ((noOfGuest_adult+noOfGuest_children+noOfGuest_senior) == 0)
+            {
+                MessageDialog.Show("Please select type of guest", "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                return;
+            }
+
+            if ((noOfGuest_adult + noOfGuest_children + noOfGuest_senior) == 1 && noOfGuest_children == 1)
+            {
+                MessageDialog.Show("Children itself is not possible to checkin\nPlease select guardian or adult.", "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+                return;
+            }
+
+
             var countedRows = new AdminRepository();
             if (countedRows.CheckRoomsAvailability() == 0)
             {
@@ -308,12 +367,27 @@ namespace HMS
         }
         private void DateTimePicker_CheckIn_ValueChanged(object sender, EventArgs e)
         {
-            checkIn = DateTimePicker_CheckIn.Value.Date;
+            if (DateTimePicker_CheckIn.Value < DateTime.Now)
+            {
+                DateTimePicker_CheckIn.Value = DateTime.Now;
+            }
+            else
+            {
+                checkIn = DateTimePicker_CheckIn.Value.Date;
+            }
         }
 
         private void DateTimePicker_CheckOut_ValueChanged(object sender, EventArgs e)
         {
-            checkOut = DateTimePicker_CheckOut.Value.Date;
+            if (DateTimePicker_CheckOut.Value <= checkIn)
+            {
+                MessageDialog.Show("Check-out date must be after the check-in date.", "Message", MessageDialogButtons.OK, MessageDialogIcon.Warning, MessageDialogStyle.Dark);
+                DateTimePicker_CheckOut.Value = DateTimePicker_CheckIn.Value.AddDays(1);
+            }
+            else
+            {
+                checkOut = DateTimePicker_CheckOut.Value.Date;
+            }
         }
         private void nud_NumberOfGuest_Adult_ValueChanged(object sender, EventArgs e)
         {

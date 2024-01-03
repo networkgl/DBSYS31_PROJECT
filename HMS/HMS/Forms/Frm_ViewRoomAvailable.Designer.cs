@@ -46,6 +46,7 @@
             // btnAddRooms
             // 
             this.btnAddRooms.BorderRadius = 5;
+            this.btnAddRooms.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddRooms.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAddRooms.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAddRooms.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -73,6 +74,7 @@
             // btnRoomDisplay
             // 
             this.btnRoomDisplay.BorderRadius = 5;
+            this.btnRoomDisplay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRoomDisplay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRoomDisplay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRoomDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -174,6 +176,7 @@
             // 
             this.btnViewRoomAvailable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnViewRoomAvailable.BorderRadius = 5;
+            this.btnViewRoomAvailable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnViewRoomAvailable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnViewRoomAvailable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnViewRoomAvailable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

@@ -50,6 +50,7 @@
             this.metroProgressBar3 = new MetroFramework.Controls.MetroProgressBar();
             this.lblSystemTime = new System.Windows.Forms.Label();
             this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
+            this.btnBack = new System.Windows.Forms.Button();
             this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
             this.btnGuestDetails = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnChooseDate = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -60,7 +61,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
             this.errorProvider_S1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnBack = new System.Windows.Forms.Button();
+            this.lbl_twentyFive = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lbl_fifty = new System.Windows.Forms.Label();
+            this.lbl_seventyFive = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.guna2ShadowPanel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             this.pnl_p1.SuspendLayout();
@@ -105,6 +117,18 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.lbl_twentyFive);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.lbl_fifty);
+            this.panel2.Controls.Add(this.lbl_seventyFive);
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnNext);
             this.panel2.Controls.Add(this.nud_NumberOfGuest_SeniorCitizen);
@@ -117,16 +141,17 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.DateTimePicker_CheckOut);
             this.panel2.Controls.Add(this.DateTimePicker_CheckIn);
-            this.panel2.Location = new System.Drawing.Point(131, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(791, 595);
+            this.panel2.Size = new System.Drawing.Size(1049, 593);
             this.panel2.TabIndex = 68;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(-2, 396);
+            this.label5.Location = new System.Drawing.Point(111, 393);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 21);
             this.label5.TabIndex = 93;
@@ -140,7 +165,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(673, 542);
+            this.btnNext.Location = new System.Drawing.Point(786, 539);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(114, 39);
             this.btnNext.TabIndex = 61;
@@ -153,7 +178,7 @@
             this.nud_NumberOfGuest_SeniorCitizen.BackColor = System.Drawing.Color.Transparent;
             this.nud_NumberOfGuest_SeniorCitizen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nud_NumberOfGuest_SeniorCitizen.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nud_NumberOfGuest_SeniorCitizen.Location = new System.Drawing.Point(2, 420);
+            this.nud_NumberOfGuest_SeniorCitizen.Location = new System.Drawing.Point(115, 417);
             this.nud_NumberOfGuest_SeniorCitizen.Name = "nud_NumberOfGuest_SeniorCitizen";
             this.nud_NumberOfGuest_SeniorCitizen.Size = new System.Drawing.Size(786, 36);
             this.nud_NumberOfGuest_SeniorCitizen.TabIndex = 92;
@@ -166,7 +191,7 @@
             this.nud_NumberOfGuest_Adult.BackColor = System.Drawing.Color.Transparent;
             this.nud_NumberOfGuest_Adult.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nud_NumberOfGuest_Adult.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nud_NumberOfGuest_Adult.Location = new System.Drawing.Point(0, 294);
+            this.nud_NumberOfGuest_Adult.Location = new System.Drawing.Point(113, 291);
             this.nud_NumberOfGuest_Adult.Name = "nud_NumberOfGuest_Adult";
             this.nud_NumberOfGuest_Adult.Size = new System.Drawing.Size(786, 36);
             this.nud_NumberOfGuest_Adult.TabIndex = 91;
@@ -178,7 +203,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(-4, 333);
+            this.label13.Location = new System.Drawing.Point(109, 330);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 21);
             this.label13.TabIndex = 88;
@@ -189,7 +214,7 @@
             this.nud_NumberOfGuest_Children.BackColor = System.Drawing.Color.Transparent;
             this.nud_NumberOfGuest_Children.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nud_NumberOfGuest_Children.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nud_NumberOfGuest_Children.Location = new System.Drawing.Point(2, 357);
+            this.nud_NumberOfGuest_Children.Location = new System.Drawing.Point(115, 354);
             this.nud_NumberOfGuest_Children.Name = "nud_NumberOfGuest_Children";
             this.nud_NumberOfGuest_Children.Size = new System.Drawing.Size(786, 36);
             this.nud_NumberOfGuest_Children.TabIndex = 87;
@@ -209,7 +234,7 @@
             this.mc_GuideBooking.Header.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mc_GuideBooking.Header.TextColor = System.Drawing.Color.White;
             this.mc_GuideBooking.ImageList = null;
-            this.mc_GuideBooking.Location = new System.Drawing.Point(78, 6);
+            this.mc_GuideBooking.Location = new System.Drawing.Point(190, 6);
             this.mc_GuideBooking.MaxDate = new System.DateTime(2033, 10, 27, 18, 23, 19, 468);
             this.mc_GuideBooking.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.mc_GuideBooking.Month.BackgroundImage = null;
@@ -236,7 +261,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(413, 462);
+            this.label8.Location = new System.Drawing.Point(526, 459);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 21);
             this.label8.TabIndex = 80;
@@ -246,7 +271,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(-2, 462);
+            this.label7.Location = new System.Drawing.Point(111, 459);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 21);
             this.label7.TabIndex = 79;
@@ -256,7 +281,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(-4, 270);
+            this.label6.Location = new System.Drawing.Point(109, 267);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 21);
             this.label6.TabIndex = 78;
@@ -270,7 +295,7 @@
             this.DateTimePicker_CheckOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimePicker_CheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimePicker_CheckOut.Location = new System.Drawing.Point(417, 486);
+            this.DateTimePicker_CheckOut.Location = new System.Drawing.Point(530, 483);
             this.DateTimePicker_CheckOut.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateTimePicker_CheckOut.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimePicker_CheckOut.Name = "DateTimePicker_CheckOut";
@@ -287,7 +312,7 @@
             this.DateTimePicker_CheckIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.DateTimePicker_CheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DateTimePicker_CheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DateTimePicker_CheckIn.Location = new System.Drawing.Point(4, 486);
+            this.DateTimePicker_CheckIn.Location = new System.Drawing.Point(117, 483);
             this.DateTimePicker_CheckIn.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DateTimePicker_CheckIn.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimePicker_CheckIn.Name = "DateTimePicker_CheckIn";
@@ -359,6 +384,23 @@
             this.metroProgressBar2.Name = "metroProgressBar2";
             this.metroProgressBar2.Size = new System.Drawing.Size(161, 5);
             this.metroProgressBar2.TabIndex = 47;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(0, 6);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(42, 31);
+            this.btnBack.TabIndex = 73;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // metroProgressBar1
             // 
@@ -469,22 +511,115 @@
             // 
             this.errorProvider_S1.ContainerControl = this;
             // 
-            // btnBack
+            // lbl_twentyFive
             // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BackgroundImage = global::HMS.Properties.Resources.icons8_back_26;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(0, 6);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(42, 31);
-            this.btnBack.TabIndex = 73;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.lbl_twentyFive.AutoSize = true;
+            this.lbl_twentyFive.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_twentyFive.Location = new System.Drawing.Point(893, 111);
+            this.lbl_twentyFive.Name = "lbl_twentyFive";
+            this.lbl_twentyFive.Size = new System.Drawing.Size(83, 17);
+            this.lbl_twentyFive.TabIndex = 110;
+            this.lbl_twentyFive.Text = "25 % above";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(893, 134);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 17);
+            this.label12.TabIndex = 111;
+            this.label12.Text = "below 10";
+            // 
+            // lbl_fifty
+            // 
+            this.lbl_fifty.AutoSize = true;
+            this.lbl_fifty.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fifty.Location = new System.Drawing.Point(893, 88);
+            this.lbl_fifty.Name = "lbl_fifty";
+            this.lbl_fifty.Size = new System.Drawing.Size(83, 17);
+            this.lbl_fifty.TabIndex = 109;
+            this.lbl_fifty.Text = "50 % above";
+            // 
+            // lbl_seventyFive
+            // 
+            this.lbl_seventyFive.AutoSize = true;
+            this.lbl_seventyFive.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_seventyFive.Location = new System.Drawing.Point(893, 65);
+            this.lbl_seventyFive.Name = "lbl_seventyFive";
+            this.lbl_seventyFive.Size = new System.Drawing.Size(83, 17);
+            this.lbl_seventyFive.TabIndex = 108;
+            this.lbl_seventyFive.Text = "75 % above";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(201)))), ((int)(((byte)(21)))));
+            this.panel6.Location = new System.Drawing.Point(867, 134);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(20, 17);
+            this.panel6.TabIndex = 107;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel5.Location = new System.Drawing.Point(867, 111);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(20, 17);
+            this.panel5.TabIndex = 106;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.OrangeRed;
+            this.panel4.Location = new System.Drawing.Point(867, 88);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(20, 17);
+            this.panel4.TabIndex = 105;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(846, 2);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 21);
+            this.label9.TabIndex = 104;
+            this.label9.Text = "Legend";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Blue;
+            this.panel1.Location = new System.Drawing.Point(867, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(20, 17);
+            this.panel1.TabIndex = 103;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(916, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 17);
+            this.label10.TabIndex = 112;
+            this.label10.Text = "(No of booking)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(893, 41);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 17);
+            this.label11.TabIndex = 114;
+            this.label11.Text = "Fully Booked";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
+            this.panel7.Location = new System.Drawing.Point(867, 41);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(20, 17);
+            this.panel7.TabIndex = 113;
             // 
             // Frm_BookNow_S1
             // 
@@ -546,5 +681,17 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown nud_NumberOfGuest_Adult;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2NumericUpDown nud_NumberOfGuest_SeniorCitizen;
+        private System.Windows.Forms.Label lbl_twentyFive;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbl_fifty;
+        private System.Windows.Forms.Label lbl_seventyFive;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel7;
     }
 }

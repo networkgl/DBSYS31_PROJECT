@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnl_Main1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pcBox_Room = new System.Windows.Forms.PictureBox();
             this.txtboxRoomDetails = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtboxRoomDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtboxRoomPrice = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,7 +43,6 @@
             this.btnEditPhoto = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.pcBox_Room = new System.Windows.Forms.PictureBox();
             this.pnl_Main1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcBox_Room)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,15 @@
             this.pnl_Main1.Name = "pnl_Main1";
             this.pnl_Main1.Size = new System.Drawing.Size(801, 400);
             this.pnl_Main1.TabIndex = 140;
+            // 
+            // pcBox_Room
+            // 
+            this.pcBox_Room.BackColor = System.Drawing.Color.White;
+            this.pcBox_Room.Location = new System.Drawing.Point(17, 19);
+            this.pcBox_Room.Name = "pcBox_Room";
+            this.pcBox_Room.Size = new System.Drawing.Size(345, 292);
+            this.pcBox_Room.TabIndex = 152;
+            this.pcBox_Room.TabStop = false;
             // 
             // txtboxRoomDetails
             // 
@@ -220,6 +229,7 @@
             // 
             this.btnSaveDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
             this.btnSaveDetails.BorderRadius = 5;
+            this.btnSaveDetails.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveDetails.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSaveDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSaveDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -237,6 +247,7 @@
             // 
             this.btnEditPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(230)))), ((int)(((byte)(233)))));
             this.btnEditPhoto.BorderRadius = 5;
+            this.btnEditPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditPhoto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEditPhoto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEditPhoto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -277,15 +288,6 @@
             this.btnExit.TabIndex = 141;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // pcBox_Room
-            // 
-            this.pcBox_Room.BackColor = System.Drawing.Color.White;
-            this.pcBox_Room.Location = new System.Drawing.Point(17, 19);
-            this.pcBox_Room.Name = "pcBox_Room";
-            this.pcBox_Room.Size = new System.Drawing.Size(345, 292);
-            this.pcBox_Room.TabIndex = 152;
-            this.pcBox_Room.TabStop = false;
             // 
             // Frm_ChangeRoomDetails
             // 

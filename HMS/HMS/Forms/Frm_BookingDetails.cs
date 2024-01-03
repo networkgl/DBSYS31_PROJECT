@@ -39,12 +39,12 @@ namespace HMS.Forms
         }
         private void Frm_Client_Load(object sender, EventArgs e)
         {
-            LoadDataGrid_Currently();
+            LoadDataGrid_All();
         }
         public void LoadDataGrid_Currently()
         {
             string message = string.Empty;
-            dgv_roomdetails.DataSource = userRepo.LoadClientsInformation_Currently(ref message);
+            dgv_roomdetails.DataSource = userRepo.GetCurrentReservation_CheckIn_ByDate(ref message);
 
             dgv_roomdetails.Columns["ID"].Width = 20;
             dgv_roomdetails.Columns["Adult"].Width = 30;
@@ -124,7 +124,15 @@ namespace HMS.Forms
 
             if (chkBox_showCurrentlyCheck_In.Checked)
             {
-                dgv_roomdetails.DataSource = userRepo.GetCurrentReservation_CheckIn_ByDate(ref msg);
+                LoadDataGrid_Currently();
+            }
+            else if (chkBox_showOngoingCheck_In.Checked)
+            {
+                LoadDataGrid_Ongoing();
+            }
+            else if (chkBox_showOverAll.Checked)
+            {
+                LoadDataGrid_All();
             }
         }
 
@@ -139,25 +147,10 @@ namespace HMS.Forms
             }
             else
             {
-                LoadDataGrid_Currently();
+                LoadDataGrid_All();
             }
 
             Frm_Main.LastActivity = "Filtering Current Check In";
-        }
-        private void chkBox_showOngoingCheck_In_CheckedChanged(object sender, EventArgs e)
-        {
-            Guna2CustomCheckBox clickedCheckbox = (Guna2CustomCheckBox)sender;
-
-            if (clickedCheckbox.Checked)
-            {
-                UncheckOtherCheckboxes(clickedCheckbox);
-                HandleCheckboxCheckedState(clickedCheckbox);
-            }
-            else
-            {
-                LoadDataGrid_Ongoing();
-            }
-
         }
 
         private void chkBox_showOverAll_CheckedChanged(object sender, EventArgs e)
@@ -174,6 +167,23 @@ namespace HMS.Forms
                 LoadDataGrid_All();
             }
         }
+        private void chkBox_showOngoingCheck_In_CheckedChanged(object sender, EventArgs e)
+        {
+            Guna2CustomCheckBox clickedCheckbox = (Guna2CustomCheckBox)sender;
+
+            if (clickedCheckbox.Checked)
+            {
+                UncheckOtherCheckboxes(clickedCheckbox);
+                HandleCheckboxCheckedState(clickedCheckbox);
+            }
+            else
+            {
+                LoadDataGrid_All();
+            }
+
+        }
+
+
 
     }
 }
