@@ -22,6 +22,7 @@ namespace HMS.Forms
         public static int ID; //use for deleting reservation, will be accessible to confirmDelete Frm
         private bool acceptReservation = false;
         private bool deleteAllReservation = false;
+        private bool toggleHistory = false;
         public static Frm_Reservation Instance { get => instance; set => instance = value; }
         private string message = string.Empty;
 
@@ -34,16 +35,16 @@ namespace HMS.Forms
 
         private void Frm_Reservation_Load(object sender, EventArgs e)
         {
-            
+            //536, 12
             if (Frm_Login.UserType.Equals("Admin"))
             {
                 btnDeleteAllReservation.Visible = true;
-                pnl_Filter.Location = new Point(371, 12);
+                pnl_Filter.Location = new Point(536, 12);
             }
             else
             {
                 btnDeleteAllReservation.Visible = false;
-                pnl_Filter.Location = new Point(566, 12);
+                pnl_Filter.Location = new Point(731, 15);
             }
 
             LoadDataGrid();
@@ -51,8 +52,10 @@ namespace HMS.Forms
         }
         public void LoadDataGrid()
         {
-            if ((!Frm_ConfirmDelete.Reservation_ConfirmDelete && !acceptReservation && !deleteAllReservation))
+            if (!Frm_ConfirmDelete.Reservation_ConfirmDelete && !acceptReservation && !deleteAllReservation)
             {
+
+
                 dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
 
                 dgv_roomreservation.Columns["ID"].Width = 30;
@@ -65,6 +68,8 @@ namespace HMS.Forms
                 dgv_roomreservation.Columns["DateOut"].Width = 60;
                 dgv_roomreservation.Columns["Total"].Width = 60;
                 dgv_roomreservation.Columns["Status"].Width = 80;
+
+                //dgv_roomreservation.Columns["Status"].Visible = true;
 
                 this.dgv_roomreservation.Columns["Total"].DefaultCellStyle.Format = "C";
 
@@ -85,6 +90,11 @@ namespace HMS.Forms
                 deniedReservation.ImageLayout = DataGridViewImageCellLayout.Normal; // Adjust as needed
                 dgv_roomreservation.Columns.Add(deniedReservation);
                 dgv_roomreservation.Columns["DeniedReservationColumn"].Width = 80;
+
+
+                // By default, set the visibility of Accept and Decline columns
+                //dgv_roomreservation.Columns["AcceptReservationColumn"].Visible = true;
+                //dgv_roomreservation.Columns["DeniedReservationColumn"].Visible = true;
             }
             else
             {
@@ -114,6 +124,11 @@ namespace HMS.Forms
 
         private void dgv_roomreservation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Blocking the exception because Status column is not visible if history checkbox is being toggle.
+            if (toggleHistory)
+            {
+                return;
+            }
 
             var msg = "Please select only row cells!";
 
@@ -230,10 +245,6 @@ namespace HMS.Forms
                 }
             }
         }
-        private void dgv_roomreservation_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
         private void btnDeleteAllReservation_Click(object sender, EventArgs e)
         {
             string message = string.Empty;
@@ -259,7 +270,6 @@ namespace HMS.Forms
                 }
             }
         }
-
 
         private void chkBox_showpPending_CheckedChanged(object sender, EventArgs e)
         {
@@ -323,7 +333,6 @@ namespace HMS.Forms
                 dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
             }
             Frm_Main.LastActivity = "Filtering to show history reservation";
-
         }
         private void UncheckOtherCheckboxes(Guna2CustomCheckBox clickedCheckbox)
         {
@@ -343,40 +352,150 @@ namespace HMS.Forms
 
             if (chkBox_showpPending.Checked)
             {
+                ClearDataGrid();
+
                 dgv_roomreservation.DataSource = userRepo.GetClientReservation_Pending(ref msg);
+
+                toggleHistory = false;
+
+                dgv_roomreservation.Columns["ID"].Width = 30;
+                dgv_roomreservation.Columns["Guest"].Width = 40;
+                dgv_roomreservation.Columns["Name"].Width = 90;
+                dgv_roomreservation.Columns["Phone"].Width = 40;
+                dgv_roomreservation.Columns["Address"].Width = 50;
+                dgv_roomreservation.Columns["RoomType"].Width = 90;
+                dgv_roomreservation.Columns["DateIn"].Width = 55;
+                dgv_roomreservation.Columns["DateOut"].Width = 60;
+                dgv_roomreservation.Columns["Total"].Width = 60;
+                dgv_roomreservation.Columns["Status"].Width = 80;
+
+
+                this.dgv_roomreservation.Columns["Total"].DefaultCellStyle.Format = "C";
+
+                DataGridViewImageColumn acceptReservation = new DataGridViewImageColumn();
+
+                // Add an image column
+                acceptReservation.HeaderText = "Accept";
+                acceptReservation.Name = "AcceptReservationColumn"; // Use a unique name for the column
+                acceptReservation.ImageLayout = DataGridViewImageCellLayout.Normal; // Adjust as needed
+                dgv_roomreservation.Columns.Add(acceptReservation);
+                dgv_roomreservation.Columns["AcceptReservationColumn"].Width = 80;
+
+                DataGridViewImageColumn deniedReservation = new DataGridViewImageColumn();
+
+                // Add an image column
+                deniedReservation.HeaderText = "Decline";
+                deniedReservation.Name = "DeniedReservationColumn"; // Use a unique name for the column
+                deniedReservation.ImageLayout = DataGridViewImageCellLayout.Normal; // Adjust as needed
+                dgv_roomreservation.Columns.Add(deniedReservation);
+                dgv_roomreservation.Columns["DeniedReservationColumn"].Width = 80;
             }
             else if (chkBox_showpApprove.Checked)
             {
+                ClearDataGrid();
+
                 dgv_roomreservation.DataSource = userRepo.GetClientReservation_Approve(ref msg);
+
+                toggleHistory = false;
+
+                dgv_roomreservation.Columns["ID"].Width = 25;
+                dgv_roomreservation.Columns["Guest"].Width = 40;
+                dgv_roomreservation.Columns["Name"].Width = 90;
+                dgv_roomreservation.Columns["Phone"].Width = 40;
+                dgv_roomreservation.Columns["Address"].Width = 50;
+                dgv_roomreservation.Columns["RoomType"].Width = 90;
+                dgv_roomreservation.Columns["DateIn"].Width = 55;
+                dgv_roomreservation.Columns["DateOut"].Width = 60;
+                dgv_roomreservation.Columns["Total"].Width = 60;
+                dgv_roomreservation.Columns["Status"].Width = 80;
+
+
+                //dgv_roomreservation.Columns["Status"].DisplayIndex = 9;
+
+                // By default, set the visibility of Accept and Decline columns
+                //dgv_roomreservation.Columns["AcceptReservationColumn"].Visible = false;
+                //dgv_roomreservation.Columns["DeniedReservationColumn"].Visible = false;
+
             }
             else if (chkBox_showpAll.Checked)
             {
+                ClearDataGrid();
+
                 dgv_roomreservation.DataSource = userRepo.LoadReservation(ref message);
+
+                toggleHistory = false;
+
+                dgv_roomreservation.Columns["ID"].Width = 25;
+                dgv_roomreservation.Columns["Guest"].Width = 40;
+                dgv_roomreservation.Columns["Name"].Width = 90;
+                dgv_roomreservation.Columns["Phone"].Width = 40;
+                dgv_roomreservation.Columns["Address"].Width = 50;
+                dgv_roomreservation.Columns["RoomType"].Width = 90;
+                dgv_roomreservation.Columns["DateIn"].Width = 55;
+                dgv_roomreservation.Columns["DateOut"].Width = 60;
+                dgv_roomreservation.Columns["Total"].Width = 60;
+                dgv_roomreservation.Columns["Status"].Width = 85;
+
+                this.dgv_roomreservation.Columns["Total"].DefaultCellStyle.Format = "C";
+
+                //DataGridViewImageColumn acceptReservation = new DataGridViewImageColumn();
+
+                //// Add an image column
+                //acceptReservation.HeaderText = "Accept";
+                //acceptReservation.Name = "AcceptReservationColumn"; // Use a unique name for the column
+                //acceptReservation.ImageLayout = DataGridViewImageCellLayout.Normal; // Adjust as needed
+                //dgv_roomreservation.Columns.Add(acceptReservation);
+                //dgv_roomreservation.Columns["AcceptReservationColumn"].Width = 80;
+
+                //DataGridViewImageColumn deniedReservation = new DataGridViewImageColumn();
+
+                //// Add an image column
+                //deniedReservation.HeaderText = "Decline";
+                //deniedReservation.Name = "DeniedReservationColumn"; // Use a unique name for the column
+                //deniedReservation.ImageLayout = DataGridViewImageCellLayout.Normal; // Adjust as needed
+                //dgv_roomreservation.Columns.Add(deniedReservation);
+                //dgv_roomreservation.Columns["DeniedReservationColumn"].Width = 80;
+
             }
             else if (chkBox_showHistory.Checked)
             {
+                ClearDataGrid();
+
                 dgv_roomreservation.DataSource = userRepo.GetReservationHistory(ref message);
+
+                toggleHistory = true;
+
+
+
+                dgv_roomreservation.Columns["ID"].Width = 25;
+                dgv_roomreservation.Columns["Guest"].Width = 40;
+                dgv_roomreservation.Columns["Name"].Width = 90;
+                dgv_roomreservation.Columns["Phone"].Width = 30;
+                dgv_roomreservation.Columns["Address"].Width = 60;
+                dgv_roomreservation.Columns["RoomType"].Width = 110;
+                dgv_roomreservation.Columns["DateIn"].Width = 55;
+                dgv_roomreservation.Columns["DateOut"].Width = 60;
+                dgv_roomreservation.Columns["Total"].Width = 100;
+
+                dgv_roomreservation.Columns["Total"].DefaultCellStyle.Format = "C";
+
+
+
+                // Hide the columns when showing history
+                //dgv_roomreservation.Columns["AcceptReservationColumn"].Visible = false;
+                //dgv_roomreservation.Columns["DeniedReservationColumn"].Visible = false;
+
             }
         }
 
-        private void chkBox_showpAll_Click(object sender, EventArgs e)
+        private void ClearDataGrid()
         {
-
-        }
-
-        private void chkBox_showpApprove_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkBox_showpPending_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkBox_showHistory_Click(object sender, EventArgs e)
-        {
-
+            if (dgv_roomreservation.DataSource != null)
+            {
+                dgv_roomreservation.DataSource = null;
+                dgv_roomreservation.Columns.Clear();
+                dgv_roomreservation.Refresh();
+            }
         }
     }
 }

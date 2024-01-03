@@ -147,6 +147,58 @@ warning 6002: The table/view 'HMS.dbo.vw_display_client_details' does not have a
     <Property Name="Payment" Type="decimal" Precision="18" Scale="2" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.vw_display_client_details_all' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_display_client_details_all">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Adult" />
+      <PropertyRef Name="Children" />
+      <PropertyRef Name="Senior" />
+      <PropertyRef Name="DateIn" />
+      <PropertyRef Name="DateOut" />
+      <PropertyRef Name="Payment" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Adult" Type="int" Nullable="false" />
+    <Property Name="Children" Type="int" Nullable="false" />
+    <Property Name="Senior" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="4" />
+    <Property Name="RoomType" Type="varchar" MaxLength="50" />
+    <Property Name="DateIn" Type="date" Nullable="false" />
+    <Property Name="DateOut" Type="date" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Days" Type="int" />
+    <Property Name="Payment" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HMS.dbo.vw_display_client_details_ongoing' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_display_client_details_ongoing">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Adult" />
+      <PropertyRef Name="Children" />
+      <PropertyRef Name="Senior" />
+      <PropertyRef Name="DateIn" />
+      <PropertyRef Name="DateOut" />
+      <PropertyRef Name="Payment" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Adult" Type="int" Nullable="false" />
+    <Property Name="Children" Type="int" Nullable="false" />
+    <Property Name="Senior" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="4" />
+    <Property Name="RoomType" Type="varchar" MaxLength="50" />
+    <Property Name="DateIn" Type="date" Nullable="false" />
+    <Property Name="DateOut" Type="date" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Days" Type="int" />
+    <Property Name="Payment" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'HMS.dbo.vw_display_pending_reservation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="vw_display_pending_reservation">
     <Key>
@@ -292,7 +344,6 @@ warning 6002: The table/view 'HMS.dbo.vw_get_reservation_history' does not have 
     <Property Name="Address" Type="nvarchar" MaxLength="50" />
     <Property Name="Phone" Type="nvarchar" MaxLength="50" />
     <Property Name="Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Status" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'HMS.dbo.vw_get_room_reserve_approve_current_occurence' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -575,6 +626,40 @@ FROM [dbo].[vw_display_approve_reservation] AS [vw_display_approve_reservation]<
 [vw_display_client_details].[Payment] AS [Payment]
 FROM [dbo].[vw_display_client_details] AS [vw_display_client_details]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="vw_display_client_details_all" EntityType="Self.vw_display_client_details_all" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vw_display_client_details_all].[ID] AS [ID], 
+[vw_display_client_details_all].[Adult] AS [Adult], 
+[vw_display_client_details_all].[Children] AS [Children], 
+[vw_display_client_details_all].[Senior] AS [Senior], 
+[vw_display_client_details_all].[Name] AS [Name], 
+[vw_display_client_details_all].[RoomType] AS [RoomType], 
+[vw_display_client_details_all].[DateIn] AS [DateIn], 
+[vw_display_client_details_all].[DateOut] AS [DateOut], 
+[vw_display_client_details_all].[Address] AS [Address], 
+[vw_display_client_details_all].[Email] AS [Email], 
+[vw_display_client_details_all].[Phone] AS [Phone], 
+[vw_display_client_details_all].[Days] AS [Days], 
+[vw_display_client_details_all].[Payment] AS [Payment]
+FROM [dbo].[vw_display_client_details_all] AS [vw_display_client_details_all]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_display_client_details_ongoing" EntityType="Self.vw_display_client_details_ongoing" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[vw_display_client_details_ongoing].[ID] AS [ID], 
+[vw_display_client_details_ongoing].[Adult] AS [Adult], 
+[vw_display_client_details_ongoing].[Children] AS [Children], 
+[vw_display_client_details_ongoing].[Senior] AS [Senior], 
+[vw_display_client_details_ongoing].[Name] AS [Name], 
+[vw_display_client_details_ongoing].[RoomType] AS [RoomType], 
+[vw_display_client_details_ongoing].[DateIn] AS [DateIn], 
+[vw_display_client_details_ongoing].[DateOut] AS [DateOut], 
+[vw_display_client_details_ongoing].[Address] AS [Address], 
+[vw_display_client_details_ongoing].[Email] AS [Email], 
+[vw_display_client_details_ongoing].[Phone] AS [Phone], 
+[vw_display_client_details_ongoing].[Days] AS [Days], 
+[vw_display_client_details_ongoing].[Payment] AS [Payment]
+FROM [dbo].[vw_display_client_details_ongoing] AS [vw_display_client_details_ongoing]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="vw_display_pending_reservation" EntityType="Self.vw_display_pending_reservation" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
 [vw_display_pending_reservation].[ID] AS [ID], 
@@ -666,8 +751,7 @@ FROM [dbo].[vw_get_current_booking_bydate] AS [vw_get_current_booking_bydate]</D
 [vw_get_reservation_history].[DateOut] AS [DateOut], 
 [vw_get_reservation_history].[Address] AS [Address], 
 [vw_get_reservation_history].[Phone] AS [Phone], 
-[vw_get_reservation_history].[Total] AS [Total], 
-[vw_get_reservation_history].[Status] AS [Status]
+[vw_get_reservation_history].[Total] AS [Total]
 FROM [dbo].[vw_get_reservation_history] AS [vw_get_reservation_history]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="vw_get_room_reserve_approve_current_occurence" EntityType="Self.vw_get_room_reserve_approve_current_occurence" store:Type="Views" store:Schema="dbo">

@@ -160,7 +160,7 @@ namespace HMS
             foreach (var date in Dates)
             {
                 dateArray.Add(date.reservationDateIn.Date); // Use Date property to get only the date part
-                //Console.WriteLine(date.reservationDateIn);
+                Console.WriteLine(date.reservationDateIn);
             }
 
             var size = dateArray.Count;

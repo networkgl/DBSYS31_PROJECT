@@ -124,6 +124,7 @@ namespace HMS
 
             LastActivity = "Viewing Booking Details";
 
+            txtbox_SearchBar.PlaceholderText = "Search Booking Details";
         }
 
         private void btnRoom_Click(object sender, EventArgs e)
@@ -153,7 +154,9 @@ namespace HMS
             rsrv.Dock = DockStyle.Fill;
             pnl_main.Controls.Add(rsrv);
             rsrv.Show();
-            Frm_Main.LastActivity = "Viewing Reservation";
+            LastActivity = "Viewing Reservation";
+
+            txtbox_SearchBar.PlaceholderText = "Search Reservation Info";
         }
         private void btnManageRoomType_Click(object sender, EventArgs e)
         {
@@ -170,6 +173,8 @@ namespace HMS
             _instance = this;
 
             LastActivity = "Viewing Manage Room";
+
+            txtbox_SearchBar.PlaceholderText = "Search Rooms";
 
         }
         private void btnManageSystem_Click(object sender, EventArgs e)
@@ -316,7 +321,7 @@ namespace HMS
                 }
                 else if(ActiveBookingDetails && searchName.Equals(string.Empty))
                 {
-                    Frm_BookingDetails.Instance.LoadDataGrid();
+                    Frm_BookingDetails.Instance.LoadDataGrid_All();
                 }
 
                 if (ActiveReservation)
@@ -351,20 +356,16 @@ namespace HMS
             btnReservation.ForeColor = Color.White;
             btnReservation.Font = new Font("Century Gothic", fontSize, FontStyle.Bold);
         }
-
         private void btnReservation_MouseLeave(object sender, EventArgs e)
         {
             btnReservation.ForeColor = Color.Black;
             btnReservation.Font = new Font("Century Gothic", fontSize, FontStyle.Regular);
         }
-
-
         private void btnManageRoomType_MouseEnter(object sender, EventArgs e)
         {
             btnManageRoomType.ForeColor = Color.White;
             btnManageRoomType.Font = new Font("Century Gothic", fontSize, FontStyle.Bold);
         }
-
         private void btnManageRoomType_MouseLeave(object sender, EventArgs e)
         {
             btnManageRoomType.ForeColor = Color.Black;
@@ -385,7 +386,8 @@ namespace HMS
 
         private void btn_Minimize_Click(object sender, EventArgs e)
         {
-
+            //Temporary disable kay makaguba sa UI.
+            //this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnLogout_MouseEnter(object sender, EventArgs e)

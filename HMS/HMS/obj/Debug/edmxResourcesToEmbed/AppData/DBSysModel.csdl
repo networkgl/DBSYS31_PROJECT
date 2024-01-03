@@ -189,6 +189,8 @@
     <EntitySet Name="USERLOGGED_HISTORY" EntityType="HMSModel.USERLOGGED_HISTORY" />
     <EntitySet Name="vw_display_approve_reservation" EntityType="HMSModel.vw_display_approve_reservation" />
     <EntitySet Name="vw_display_client_details" EntityType="HMSModel.vw_display_client_details" />
+    <EntitySet Name="vw_display_client_details_all" EntityType="HMSModel.vw_display_client_details_all" />
+    <EntitySet Name="vw_display_client_details_ongoing" EntityType="HMSModel.vw_display_client_details_ongoing" />
     <EntitySet Name="vw_display_pending_reservation" EntityType="HMSModel.vw_display_pending_reservation" />
     <EntitySet Name="vw_display_reservation_details" EntityType="HMSModel.vw_display_reservation_details" />
     <EntitySet Name="vw_display_room_details" EntityType="HMSModel.vw_display_room_details" />
@@ -455,6 +457,54 @@
     <Property Name="Days" Type="Int32" />
     <Property Name="Payment" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
   </EntityType>
+  <EntityType Name="vw_display_client_details_all">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Adult" />
+      <PropertyRef Name="Children" />
+      <PropertyRef Name="Senior" />
+      <PropertyRef Name="DateIn" />
+      <PropertyRef Name="DateOut" />
+      <PropertyRef Name="Payment" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Adult" Type="Int32" Nullable="false" />
+    <Property Name="Children" Type="Int32" Nullable="false" />
+    <Property Name="Senior" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="RoomType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateOut" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Days" Type="Int32" />
+    <Property Name="Payment" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="vw_display_client_details_ongoing">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Adult" />
+      <PropertyRef Name="Children" />
+      <PropertyRef Name="Senior" />
+      <PropertyRef Name="DateIn" />
+      <PropertyRef Name="DateOut" />
+      <PropertyRef Name="Payment" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Adult" Type="Int32" Nullable="false" />
+    <Property Name="Children" Type="Int32" Nullable="false" />
+    <Property Name="Senior" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="RoomType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DateOut" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Days" Type="Int32" />
+    <Property Name="Payment" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
   <EntityType Name="vw_display_pending_reservation">
     <Key>
       <PropertyRef Name="ID" />
@@ -585,7 +635,6 @@
     <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="vw_get_room_reserve_approve_current_occurence">
     <Key>

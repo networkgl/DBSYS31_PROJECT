@@ -154,7 +154,7 @@ namespace HMS
             return retVal;
         }
 
-        public List<vw_display_client_details> LoadClientsInformation(ref string message)
+        public List<vw_display_client_details> LoadClientsInformation_Currently(ref string message)
         {
             var retVal = new List<vw_display_client_details>();
             try
@@ -170,7 +170,38 @@ namespace HMS
             }
             return retVal;
         }
-
+        public List<vw_display_client_details_all> LoadClientsInformation_All(ref string message)
+        {
+            var retVal = new List<vw_display_client_details_all>();
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    retVal = db.vw_display_client_details_all.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                message = ex.Message;
+            }
+            return retVal;
+        }
+        public List<vw_display_client_details_ongoing> LoadClientsInformation_Ongoing(ref string message)
+        {
+            var retVal = new List<vw_display_client_details_ongoing>();
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    retVal = db.vw_display_client_details_ongoing.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                message = ex.Message;
+            }
+            return retVal;
+        }
         public ErrorCode DeniedReservation(int id, ref string message)
         {
             try

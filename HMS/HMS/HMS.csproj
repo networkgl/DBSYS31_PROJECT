@@ -168,6 +168,12 @@
     <Compile Include="AppData\vw_display_client_details.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\vw_display_client_details_all.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\vw_display_client_details_ongoing.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\vw_display_pending_reservation.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
@@ -349,6 +355,9 @@
     </Compile>
     <Compile Include="Repository\AdminRepository.cs" />
     <Compile Include="Utils\MarkUp.cs" />
+    <Compile Include="Utils\Optimize.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utils\Room.cs" />
     <Compile Include="Utils\WaitFormFunc.cs" />
     <Compile Include="Model\UserLogged.cs" />

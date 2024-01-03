@@ -131,7 +131,7 @@ namespace HMS
                 if (AdminRepository._RoomDiscount > 0)
                 {
                     //Meaning there is a possible disount percentage.
-                    lbl_percentSale.Text = AdminRepository._RoomDiscount.ToString() + "% OFF";
+                    lbl_percentSale.Text = $"{AdminRepository._RoomDiscount.ToString()} % OFF";
                     lbl_OrigPrice.Text = AdminRepository._RoomPrice.ToString("C2");
                     //Set to visible
                     pnl_saleDetails.Visible = true;

@@ -271,6 +271,44 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="vw_display_client_details_all">
+      <EntityTypeMapping TypeName="HMSModel.vw_display_client_details_all">
+        <MappingFragment StoreEntitySet="vw_display_client_details_all">
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Senior" ColumnName="Senior" />
+          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="Adult" ColumnName="Adult" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_display_client_details_ongoing">
+      <EntityTypeMapping TypeName="HMSModel.vw_display_client_details_ongoing">
+        <MappingFragment StoreEntitySet="vw_display_client_details_ongoing">
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Senior" ColumnName="Senior" />
+          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="Adult" ColumnName="Adult" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="vw_display_pending_reservation">
       <EntityTypeMapping TypeName="HMSModel.vw_display_pending_reservation">
         <MappingFragment StoreEntitySet="vw_display_pending_reservation">
@@ -369,7 +407,6 @@
     <EntitySetMapping Name="vw_get_reservation_history">
       <EntityTypeMapping TypeName="HMSModel.vw_get_reservation_history">
         <MappingFragment StoreEntitySet="vw_get_reservation_history">
-          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Address" ColumnName="Address" />

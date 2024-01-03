@@ -156,13 +156,13 @@ namespace HMS.Forms
                     {   
                         case Role.Admin:
                             UserType = "Admin";
-                            MessageDialog.Show("Admin " + message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+                            //MessageDialog.Show("Admin " + message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
                             this.Hide();
                             main.Show();
                             break;
                         case Role.Staff:
                             UserType = "Staff";
-                            MessageDialog.Show("Staff " + message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+                            //MessageDialog.Show("Staff " + message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
                             this.Hide();
                             main.Show();
                             break;

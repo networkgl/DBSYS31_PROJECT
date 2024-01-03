@@ -40,6 +40,8 @@ namespace HMS.AppData
         public DbSet<USERLOGGED_HISTORY> USERLOGGED_HISTORY { get; set; }
         public DbSet<vw_display_approve_reservation> vw_display_approve_reservation { get; set; }
         public DbSet<vw_display_client_details> vw_display_client_details { get; set; }
+        public DbSet<vw_display_client_details_all> vw_display_client_details_all { get; set; }
+        public DbSet<vw_display_client_details_ongoing> vw_display_client_details_ongoing { get; set; }
         public DbSet<vw_display_pending_reservation> vw_display_pending_reservation { get; set; }
         public DbSet<vw_display_reservation_details> vw_display_reservation_details { get; set; }
         public DbSet<vw_display_room_details> vw_display_room_details { get; set; }

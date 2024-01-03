@@ -21,7 +21,8 @@ namespace HMS.Forms
         private UserRepository userRepo;
         private AdminRepository adminRepo;
         private int currentIndex;
-
+        public Label[,] roomDetails = new Label[9, 3];
+        public Panel[] doorPicture = new Panel[9];
         public static string FullName { get; set; }
         public static string RoomType { get; set; }
         public static string Email { get; set; }
@@ -33,61 +34,215 @@ namespace HMS.Forms
         public static string DateIn { get; set; }
         public static string DateOut { get; set; }
         public static string NoOfDays { get; set; }
-
+        private Panel[] roomPictures;
+        private Guna2Panel[] doorPanels;
         public Frm_Room()
         {
             InitializeComponent();
+            this.DoubleBuffered = false;
+
             userRepo = new UserRepository();
             adminRepo = new AdminRepository();
             //form = new Frm_RoomDetails();
 
             PopulateRoomDetails_Array();
             PopulateDoorPicture_Array();
+
+            roomPictures = new Panel[]
+            {
+                pnl_door1,
+                pnl_door2,
+                pnl_door3,
+                pnl_door4,
+                pnl_door5,
+                pnl_door6,
+                pnl_door7,
+                pnl_door8,
+                pnl_door9,
+            };
+
+            doorPanels = new Guna2Panel[]
+            {
+                pnl_room1,
+                pnl_room2,
+                pnl_room3,
+                pnl_room4,
+                pnl_room5,
+                pnl_room6,
+                pnl_room7,
+                pnl_room8,
+                pnl_room9
+            };
+
+            // Wire up click events for each room panel
+            for (int i = 0; i < doorPanels.Length; i++)
+            {
+                WireUpEvents(doorPanels[i].Controls, doorPanels[i]);
+            }
         }
 
         private void cbBox_RoomType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //var form = new Form();
-            //var labelRoomType = String.Empty;
-
-            //switch (cbBox_RoomType.SelectedIndex)
-            //{
-            //    case 0:
-            //        form = new Frm_RType_Deluxe();
-            //        labelRoomType = "Deluxe";
-            //        break;
-            //    case 1:
-            //        form = new Frm_RType_PriemereDeluxe();
-            //        labelRoomType = "Priemere Deluxe";
-            //        break;
-            //    case 2:
-            //        form = new Frm_RType_FiliSuite();
-            //        labelRoomType = "Fili Suite";
-            //        break;
-            //}
-
-            //lbl_RoomType.Text = labelRoomType;
-            //pnl_RoomType.Controls.Clear();
-            //form.TopLevel = false;
-            //form.Dock = DockStyle.Fill;
-            //pnl_RoomType.Controls.Add(form);
-            //form.Show();
             ChangeIndex();
         }
 
         private void Frm_Room_Load(object sender, EventArgs e)
         {
-
-            //pnl_RoomType.Controls.Clear();
-            //form.TopLevel = false;
-            //form.Dock = DockStyle.Fill;
-            //pnl_RoomType.Controls.Add(form);
-            //form.Show();
-
             InitialLoad();// Call this funtion to load upadted list for rooms available
-
-            cbBox_RoomType.SelectedIndex = 0;//set first index to display something.
+            cbBox_RoomType.SelectedIndex = 0;//set first index to display something.           
         }
+        //private void WireUpClickEvents(Control.ControlCollection controls, Guna2Panel panel)
+        //{
+        //    // Attach the same event handler to the Click event for the parent panel
+        //    panel.Click += AnyControl_Click;
+        //    panel.Click += Panel_MouseEnter;
+        //    panel.Click += Panel_MouseLeave;
+
+        //    // Store a reference to the parent panel in the Tag property of the parent panel itself
+        //    panel.Tag = panel;
+
+        //    foreach (Control control in controls)
+        //    {
+        //        // Attach the same event handler to the Click event for controls inside the panel
+        //        control.Click += AnyControl_Click;
+        //        control.MouseEnter += Panel_MouseEnter;
+        //        control.MouseLeave += Panel_MouseLeave;
+
+        //        // Store a reference to the parent panel in the Tag property of each control
+        //        control.Tag = panel;
+
+        //        if (control.HasChildren)
+        //        {
+        //            WireUpClickEvents(control.Controls, panel); // Recursively wire up click events for nested controls
+        //        }
+        //    }
+        //}
+        private void WireUpEvents(Control.ControlCollection controls, Guna2Panel panel)
+        {
+            // Attach the same event handler to the Click, MouseEnter, and MouseLeave events for the parent panel
+            WireUpControlEvents(panel);
+
+            panel.Tag = panel;
+
+            foreach (Control control in controls)
+            {
+                // Attach the same event handler to the Click, MouseEnter, and MouseLeave events for controls inside the panel
+                WireUpControlEvents(control);
+
+                // Store a reference to the parent panel in the Tag property of each control
+                control.Tag = panel;
+
+                if (control.HasChildren)
+                {
+                    WireUpEvents(control.Controls, panel); // Recursively wire up events for nested controls
+                }
+            }
+        }
+
+        private void WireUpControlEvents(Control control)
+        {
+            // Attach the same event handler to the Click, MouseEnter, and MouseLeave events for the control
+            control.Click += AnyControl_Click;
+            control.MouseEnter += Panel_MouseEnter;
+            control.MouseLeave += Panel_MouseLeave;
+        }
+        private void Panel_MouseEnter(object sender, EventArgs e)
+        {
+            // Code to execute when any control is clicked
+            Control enteredControl = (Control)sender;
+            Guna2Panel parentPanel = (Guna2Panel)enteredControl.Tag;
+
+            //Manually check if what pnl is being entered.
+            switch (parentPanel.Name)
+            {
+                case "pnl_room1":
+                    GetBorderPanelColor(lbl_roomNumber_1, pnl_room1);
+                    break;
+                case "pnl_room2":
+                    GetBorderPanelColor(lbl_roomNumber_2, pnl_room2);
+                    break;
+                case "pnl_room3":
+                    GetBorderPanelColor(lbl_roomNumber_3, pnl_room3);
+                    break;
+                case "pnl_room4":
+                    GetBorderPanelColor(lbl_roomNumber_4, pnl_room4);
+                    break;
+                case "pnl_room5":
+                    GetBorderPanelColor(lbl_roomNumber_5, pnl_room5);
+                    break;
+                case "pnl_room6":
+                    GetBorderPanelColor(lbl_roomNumber_6, pnl_room6);
+                    break;
+                case "pnl_room7":
+                    GetBorderPanelColor(lbl_roomNumber_7, pnl_room7);
+                    break;
+                case "pnl_room8":
+                    GetBorderPanelColor(lbl_roomNumber_8, pnl_room8);
+                    break;
+                case "pnl_room9":
+                    GetBorderPanelColor(lbl_roomNumber_9, pnl_room9);
+                    break;
+            }
+        }
+        private void Panel_MouseLeave(object sender, EventArgs e)
+        {
+            // Code to execute when any control is clicked
+            Control leaveControl = (Control)sender;
+            Guna2Panel parentPanel = (Guna2Panel)leaveControl.Tag;
+
+            SetBorderPanelEmptyColor(parentPanel);    
+        }
+        private void AnyControl_Click(object sender, EventArgs e)
+        {
+            // Code to execute when any control is clicked
+            Control clickedControl = (Control)sender;
+            Panel parentPanel = (Panel)clickedControl.Tag;
+
+            //Manually check if what pnl is being clicked.
+            switch (parentPanel.Name)
+            {
+                case "pnl_room1":
+                    GetRoomClientDetails(lbl_roomNumber_1);
+                    break;
+                case "pnl_room2":
+                    GetRoomClientDetails(lbl_roomNumber_2);
+                    break;
+                case "pnl_room3":
+                    GetRoomClientDetails(lbl_roomNumber_3);
+                    break;
+                case "pnl_room4":
+                    GetRoomClientDetails(lbl_roomNumber_4);
+                    break;
+                case "pnl_room5":
+                    GetRoomClientDetails(lbl_roomNumber_5);
+                    break;
+                case "pnl_room6":
+                    GetRoomClientDetails(lbl_roomNumber_6);
+                    break;
+                case "pnl_room7":
+                    GetRoomClientDetails(lbl_roomNumber_7);
+                    break;
+                case "pnl_room8":
+                    GetRoomClientDetails(lbl_roomNumber_8);
+                    break;
+                case "pnl_room9":
+                    GetRoomClientDetails(lbl_roomNumber_9);
+                    break;
+            }
+        }
+        //Custom Function to determine border color base on room status
+        private void GetBorderPanelColor(Label label, Guna2Panel panel)
+        {
+            if (label.Text.Equals("N/A"))
+                panel.BorderColor = Color.Red;
+            else
+                panel.BorderColor = Color.Green;
+        }
+        private void SetBorderPanelEmptyColor(Guna2Panel panel)
+        {
+            panel.BorderColor = Color.Empty;
+        }
+
         private void InitialLoad()
         {
             String response = String.Empty;
@@ -118,23 +273,23 @@ namespace HMS.Forms
                     break;
                 }
             }
-
+            DisplayDoorPictre(currentIndex);
             //Assign door picture to specific room type
-            switch (currentIndex)
-            {
-                case 0:
-                    DisplayDoorPictre(0);
-                    break;
-                case 1:
-                    DisplayDoorPictre(1);
-                    break;
-                case 2:
-                    DisplayDoorPictre(2);
-                    break;
-                case 3:
-                    DisplayDoorPictre(3);
-                    break;
-            }
+            //switch (currentIndex)
+            //{
+            //    case 0:
+            //        DisplayDoorPictre(0);
+            //        break;
+            //    case 1:
+            //        DisplayDoorPictre(1);
+            //        break;
+            //    case 2:
+            //        DisplayDoorPictre(2);
+            //        break;
+            //    case 3:
+            //        DisplayDoorPictre(3);
+            //        break;
+            //}
 
 
             String response = String.Empty;
@@ -198,43 +353,22 @@ namespace HMS.Forms
         }
         private void DisplayDoorPictre(int index)
         {
-            var doors = doorPicture;
+            string response = string.Empty;
+            var retVal = adminRepo.GetRoomDetails(index, ref response);
 
-            switch (index)
+
+            if (retVal == ErrorCode.Success)
             {
-                case 0:
-                    foreach (var door in doors)
-                    {
-                        door.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-                        door.BackgroundImage = Properties.Resources.icons8_door_100;
-                    }
-                    break;
-                case 1:
-                    foreach (var door in doors)
-                    {
-                        door.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-                        door.BackgroundImage = Properties.Resources.icons8_door_100__2_;
-                    }
-                    break;
-                case 2:
-                    foreach (var door in doors)
-                    {
-                        door.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-                        door.BackgroundImage = Properties.Resources.icons8_door_100__3_;
-                    }
-                    break;
-                case 3:
-                    foreach (var door in doors)
-                    {
-                        door.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-                        door.BackgroundImage = Properties.Resources.icons8_door_100__4_;
-                    }
-                    break;              
+                foreach (var panel in roomPictures)
+                {
+                    panel.BackgroundImage = adminRepo.Image;
+                }
+            }
+            else
+            {
+                MessageDialog.Show(response, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
             }
         }
-
-        public Label[,] roomDetails = new Label[9, 3];
-        public Panel[] doorPicture = new Panel[9];
         private void PopulateRoomDetails_Array()
         {
             roomDetails[0, 0] = lbl_roomNumber_1;
@@ -287,49 +421,7 @@ namespace HMS.Forms
         }
         private List<HMS.AppData.sp_display_room_client_details_Result> retVal;
         private string message = string.Empty;
-        private void pnl_room1_Click(object sender, EventArgs e)
-        {
-            GetRoomClientDetails(lbl_roomNumber_1);
-        }
 
-        private void pnl_room2_Click(object sender, EventArgs e)
-        {
-            GetRoomClientDetails(lbl_roomNumber_2);
-        }
-        private void pnl_room3_Click(object sender, EventArgs e)
-        {
-            GetRoomClientDetails(lbl_roomNumber_3);
-        }
-
-        private void pnl_room4_Click(object sender, EventArgs e)
-        {
-            GetRoomClientDetails(lbl_roomNumber_4);
-        }
-
-        private void pnl_room5_Click(object sender, EventArgs e)
-        {
-            GetRoomClientDetails(lbl_roomNumber_5);
-        }
-
-        private void pnl_room6_Click(object sender, EventArgs e)
-        {
-            GetRoomClientDetails(lbl_roomNumber_6);
-        }
-
-        private void pnl_room7_Click(object sender, EventArgs e)
-        {
-            GetRoomClientDetails(lbl_roomNumber_7);
-        }
-
-        private void pnl_room8_Click(object sender, EventArgs e)
-        {
-            GetRoomClientDetails(lbl_roomNumber_8);
-        }
-
-        private void pnl_room9_Click(object sender, EventArgs e)
-        {
-            GetRoomClientDetails(lbl_roomNumber_9);
-        }
 
         private void GetRoomClientDetails(Label roomNumber)
         {

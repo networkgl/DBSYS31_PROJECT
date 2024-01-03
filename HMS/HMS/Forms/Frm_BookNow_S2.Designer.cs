@@ -343,39 +343,39 @@
             this.pnl_saleDetails.Controls.Add(this.underline);
             this.pnl_saleDetails.Controls.Add(this.lbl_OrigPrice);
             this.pnl_saleDetails.Controls.Add(this.lbl_percentSale);
-            this.pnl_saleDetails.Location = new System.Drawing.Point(857, 121);
+            this.pnl_saleDetails.Location = new System.Drawing.Point(841, 121);
             this.pnl_saleDetails.Name = "pnl_saleDetails";
-            this.pnl_saleDetails.Size = new System.Drawing.Size(131, 75);
+            this.pnl_saleDetails.Size = new System.Drawing.Size(150, 75);
             this.pnl_saleDetails.TabIndex = 80;
             this.pnl_saleDetails.Visible = false;
             // 
             // underline
             // 
             this.underline.BackColor = System.Drawing.SystemColors.GrayText;
-            this.underline.Location = new System.Drawing.Point(3, 54);
+            this.underline.Location = new System.Drawing.Point(1, 53);
             this.underline.Name = "underline";
-            this.underline.Size = new System.Drawing.Size(80, 1);
+            this.underline.Size = new System.Drawing.Size(100, 1);
             this.underline.TabIndex = 79;
             // 
             // lbl_OrigPrice
             // 
             this.lbl_OrigPrice.AutoSize = true;
-            this.lbl_OrigPrice.Font = new System.Drawing.Font("Noto Serif Cond", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_OrigPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lbl_OrigPrice.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.lbl_OrigPrice.Location = new System.Drawing.Point(2, 43);
+            this.lbl_OrigPrice.Location = new System.Drawing.Point(0, 43);
             this.lbl_OrigPrice.Name = "lbl_OrigPrice";
-            this.lbl_OrigPrice.Size = new System.Drawing.Size(83, 22);
+            this.lbl_OrigPrice.Size = new System.Drawing.Size(101, 20);
             this.lbl_OrigPrice.TabIndex = 80;
             this.lbl_OrigPrice.Text = "₱00,000.00";
             // 
             // lbl_percentSale
             // 
             this.lbl_percentSale.AutoSize = true;
-            this.lbl_percentSale.Font = new System.Drawing.Font("Noto Serif Cond", 18F, System.Drawing.FontStyle.Bold);
+            this.lbl_percentSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_percentSale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(41)))), ((int)(((byte)(40)))));
-            this.lbl_percentSale.Location = new System.Drawing.Point(-2, 9);
+            this.lbl_percentSale.Location = new System.Drawing.Point(-3, 9);
             this.lbl_percentSale.Name = "lbl_percentSale";
-            this.lbl_percentSale.Size = new System.Drawing.Size(136, 33);
+            this.lbl_percentSale.Size = new System.Drawing.Size(158, 29);
             this.lbl_percentSale.TabIndex = 79;
             this.lbl_percentSale.Text = "00.00% OFF";
             // 
@@ -383,7 +383,7 @@
             // 
             this.pnl_saleLogo.BackgroundImage = global::HMS.Properties.Resources.sale;
             this.pnl_saleLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnl_saleLogo.Location = new System.Drawing.Point(761, 151);
+            this.pnl_saleLogo.Location = new System.Drawing.Point(746, 154);
             this.pnl_saleLogo.Name = "pnl_saleLogo";
             this.pnl_saleLogo.Size = new System.Drawing.Size(94, 88);
             this.pnl_saleLogo.TabIndex = 79;
@@ -427,10 +427,10 @@
             // lbl_roomPrice
             // 
             this.lbl_roomPrice.AutoSize = true;
-            this.lbl_roomPrice.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomPrice.Location = new System.Drawing.Point(858, 199);
+            this.lbl_roomPrice.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_roomPrice.Location = new System.Drawing.Point(837, 195);
             this.lbl_roomPrice.Name = "lbl_roomPrice";
-            this.lbl_roomPrice.Size = new System.Drawing.Size(133, 28);
+            this.lbl_roomPrice.Size = new System.Drawing.Size(154, 32);
             this.lbl_roomPrice.TabIndex = 72;
             this.lbl_roomPrice.Text = "₱00,000.00";
             // 

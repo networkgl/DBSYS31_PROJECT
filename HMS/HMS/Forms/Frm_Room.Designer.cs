@@ -198,22 +198,22 @@
             this.pnl_room1.BackColor = System.Drawing.Color.White;
             this.pnl_room1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_room1.BorderRadius = 10;
+            this.pnl_room1.BorderThickness = 1;
             this.pnl_room1.Controls.Add(this.lbl_NumberOfDays_1);
             this.pnl_room1.Controls.Add(this.label8);
             this.pnl_room1.Controls.Add(this.lbl_NumberOfPeople_1);
             this.pnl_room1.Controls.Add(this.lbl_roomNumber_1);
-            this.pnl_room1.Controls.Add(this.label4);
             this.pnl_room1.Controls.Add(this.lbl_status1);
             this.pnl_room1.Controls.Add(this.label2);
             this.pnl_room1.Controls.Add(this.label1);
             this.pnl_room1.Controls.Add(this.pnl_door1);
+            this.pnl_room1.Controls.Add(this.label4);
             this.pnl_room1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnl_room1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.pnl_room1.Location = new System.Drawing.Point(20, 15);
             this.pnl_room1.Name = "pnl_room1";
             this.pnl_room1.Size = new System.Drawing.Size(295, 138);
             this.pnl_room1.TabIndex = 41;
-            this.pnl_room1.Click += new System.EventHandler(this.pnl_room1_Click);
             // 
             // lbl_NumberOfDays_1
             // 
@@ -221,7 +221,7 @@
             this.lbl_NumberOfDays_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfDays_1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfDays_1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfDays_1.Location = new System.Drawing.Point(208, 98);
+            this.lbl_NumberOfDays_1.Location = new System.Drawing.Point(225, 104);
             this.lbl_NumberOfDays_1.Name = "lbl_NumberOfDays_1";
             this.lbl_NumberOfDays_1.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfDays_1.TabIndex = 23;
@@ -233,7 +233,7 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label8.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(105, 98);
+            this.label8.Location = new System.Drawing.Point(128, 104);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 19);
             this.label8.TabIndex = 23;
@@ -245,7 +245,7 @@
             this.lbl_NumberOfPeople_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfPeople_1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfPeople_1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfPeople_1.Location = new System.Drawing.Point(214, 62);
+            this.lbl_NumberOfPeople_1.Location = new System.Drawing.Point(232, 73);
             this.lbl_NumberOfPeople_1.Name = "lbl_NumberOfPeople_1";
             this.lbl_NumberOfPeople_1.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfPeople_1.TabIndex = 22;
@@ -257,7 +257,7 @@
             this.lbl_roomNumber_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_roomNumber_1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_roomNumber_1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_roomNumber_1.Location = new System.Drawing.Point(177, 2);
+            this.lbl_roomNumber_1.Location = new System.Drawing.Point(200, 12);
             this.lbl_roomNumber_1.Name = "lbl_roomNumber_1";
             this.lbl_roomNumber_1.Size = new System.Drawing.Size(34, 19);
             this.lbl_roomNumber_1.TabIndex = 21;
@@ -269,7 +269,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label4.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(105, 6);
+            this.label4.Location = new System.Drawing.Point(128, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 19);
             this.label4.TabIndex = 20;
@@ -281,7 +281,7 @@
             this.lbl_status1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_status1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status1.ForeColor = System.Drawing.Color.Black;
-            this.lbl_status1.Location = new System.Drawing.Point(161, 33);
+            this.lbl_status1.Location = new System.Drawing.Point(185, 41);
             this.lbl_status1.Name = "lbl_status1";
             this.lbl_status1.Size = new System.Drawing.Size(34, 19);
             this.lbl_status1.TabIndex = 20;
@@ -293,7 +293,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(105, 33);
+            this.label2.Location = new System.Drawing.Point(128, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 19);
             this.label2.TabIndex = 19;
@@ -305,7 +305,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(105, 65);
+            this.label1.Location = new System.Drawing.Point(128, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 19);
             this.label1.TabIndex = 18;
@@ -314,11 +314,10 @@
             // pnl_door1
             // 
             this.pnl_door1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door1.BackgroundImage")));
-            this.pnl_door1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_door1.Location = new System.Drawing.Point(3, 3);
+            this.pnl_door1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_door1.Location = new System.Drawing.Point(18, 22);
             this.pnl_door1.Name = "pnl_door1";
-            this.pnl_door1.Size = new System.Drawing.Size(96, 131);
+            this.pnl_door1.Size = new System.Drawing.Size(96, 94);
             this.pnl_door1.TabIndex = 17;
             // 
             // pnl_room8
@@ -326,6 +325,7 @@
             this.pnl_room8.BackColor = System.Drawing.Color.White;
             this.pnl_room8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_room8.BorderRadius = 10;
+            this.pnl_room8.BorderThickness = 1;
             this.pnl_room8.Controls.Add(this.lbl_NumberOfDays_8);
             this.pnl_room8.Controls.Add(this.label51);
             this.pnl_room8.Controls.Add(this.lbl_NumberOfPeople_8);
@@ -341,7 +341,6 @@
             this.pnl_room8.Name = "pnl_room8";
             this.pnl_room8.Size = new System.Drawing.Size(295, 138);
             this.pnl_room8.TabIndex = 49;
-            this.pnl_room8.Click += new System.EventHandler(this.pnl_room8_Click);
             // 
             // lbl_NumberOfDays_8
             // 
@@ -349,7 +348,7 @@
             this.lbl_NumberOfDays_8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfDays_8.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfDays_8.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfDays_8.Location = new System.Drawing.Point(208, 98);
+            this.lbl_NumberOfDays_8.Location = new System.Drawing.Point(226, 106);
             this.lbl_NumberOfDays_8.Name = "lbl_NumberOfDays_8";
             this.lbl_NumberOfDays_8.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfDays_8.TabIndex = 23;
@@ -361,7 +360,7 @@
             this.label51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label51.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label51.ForeColor = System.Drawing.Color.Black;
-            this.label51.Location = new System.Drawing.Point(105, 98);
+            this.label51.Location = new System.Drawing.Point(129, 106);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(99, 19);
             this.label51.TabIndex = 23;
@@ -373,7 +372,7 @@
             this.lbl_NumberOfPeople_8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfPeople_8.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfPeople_8.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfPeople_8.Location = new System.Drawing.Point(214, 62);
+            this.lbl_NumberOfPeople_8.Location = new System.Drawing.Point(232, 73);
             this.lbl_NumberOfPeople_8.Name = "lbl_NumberOfPeople_8";
             this.lbl_NumberOfPeople_8.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfPeople_8.TabIndex = 22;
@@ -385,7 +384,7 @@
             this.lbl_roomNumber_8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_roomNumber_8.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_roomNumber_8.ForeColor = System.Drawing.Color.Black;
-            this.lbl_roomNumber_8.Location = new System.Drawing.Point(222, 2);
+            this.lbl_roomNumber_8.Location = new System.Drawing.Point(201, 14);
             this.lbl_roomNumber_8.Name = "lbl_roomNumber_8";
             this.lbl_roomNumber_8.Size = new System.Drawing.Size(34, 19);
             this.lbl_roomNumber_8.TabIndex = 21;
@@ -397,11 +396,11 @@
             this.label54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label54.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label54.ForeColor = System.Drawing.Color.Black;
-            this.label54.Location = new System.Drawing.Point(105, 6);
+            this.label54.Location = new System.Drawing.Point(129, 14);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(117, 19);
+            this.label54.Size = new System.Drawing.Size(74, 19);
             this.label54.TabIndex = 20;
-            this.label54.Text = "Room Number:";
+            this.label54.Text = "Room ID:";
             // 
             // lbl_status8
             // 
@@ -409,7 +408,7 @@
             this.lbl_status8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_status8.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status8.ForeColor = System.Drawing.Color.Black;
-            this.lbl_status8.Location = new System.Drawing.Point(161, 33);
+            this.lbl_status8.Location = new System.Drawing.Point(185, 41);
             this.lbl_status8.Name = "lbl_status8";
             this.lbl_status8.Size = new System.Drawing.Size(34, 19);
             this.lbl_status8.TabIndex = 20;
@@ -421,7 +420,7 @@
             this.label56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label56.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label56.ForeColor = System.Drawing.Color.Black;
-            this.label56.Location = new System.Drawing.Point(105, 33);
+            this.label56.Location = new System.Drawing.Point(129, 41);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(59, 19);
             this.label56.TabIndex = 19;
@@ -433,7 +432,7 @@
             this.label57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label57.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label57.ForeColor = System.Drawing.Color.Black;
-            this.label57.Location = new System.Drawing.Point(105, 65);
+            this.label57.Location = new System.Drawing.Point(129, 73);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(107, 19);
             this.label57.TabIndex = 18;
@@ -442,11 +441,10 @@
             // pnl_door8
             // 
             this.pnl_door8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door8.BackgroundImage")));
-            this.pnl_door8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_door8.Location = new System.Drawing.Point(3, 3);
+            this.pnl_door8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_door8.Location = new System.Drawing.Point(19, 22);
             this.pnl_door8.Name = "pnl_door8";
-            this.pnl_door8.Size = new System.Drawing.Size(96, 131);
+            this.pnl_door8.Size = new System.Drawing.Size(96, 94);
             this.pnl_door8.TabIndex = 17;
             // 
             // pnl_room3
@@ -454,6 +452,7 @@
             this.pnl_room3.BackColor = System.Drawing.Color.White;
             this.pnl_room3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_room3.BorderRadius = 10;
+            this.pnl_room3.BorderThickness = 1;
             this.pnl_room3.Controls.Add(this.lbl_NumberOfDays_3);
             this.pnl_room3.Controls.Add(this.label11);
             this.pnl_room3.Controls.Add(this.lbl_NumberOfPeople_3);
@@ -469,7 +468,6 @@
             this.pnl_room3.Name = "pnl_room3";
             this.pnl_room3.Size = new System.Drawing.Size(295, 138);
             this.pnl_room3.TabIndex = 42;
-            this.pnl_room3.Click += new System.EventHandler(this.pnl_room3_Click);
             // 
             // lbl_NumberOfDays_3
             // 
@@ -477,7 +475,7 @@
             this.lbl_NumberOfDays_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfDays_3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfDays_3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfDays_3.Location = new System.Drawing.Point(208, 98);
+            this.lbl_NumberOfDays_3.Location = new System.Drawing.Point(227, 106);
             this.lbl_NumberOfDays_3.Name = "lbl_NumberOfDays_3";
             this.lbl_NumberOfDays_3.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfDays_3.TabIndex = 23;
@@ -489,7 +487,7 @@
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label11.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(105, 98);
+            this.label11.Location = new System.Drawing.Point(129, 106);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 19);
             this.label11.TabIndex = 23;
@@ -501,7 +499,7 @@
             this.lbl_NumberOfPeople_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfPeople_3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfPeople_3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfPeople_3.Location = new System.Drawing.Point(214, 62);
+            this.lbl_NumberOfPeople_3.Location = new System.Drawing.Point(232, 73);
             this.lbl_NumberOfPeople_3.Name = "lbl_NumberOfPeople_3";
             this.lbl_NumberOfPeople_3.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfPeople_3.TabIndex = 22;
@@ -513,7 +511,7 @@
             this.lbl_roomNumber_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_roomNumber_3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_roomNumber_3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_roomNumber_3.Location = new System.Drawing.Point(177, 2);
+            this.lbl_roomNumber_3.Location = new System.Drawing.Point(201, 14);
             this.lbl_roomNumber_3.Name = "lbl_roomNumber_3";
             this.lbl_roomNumber_3.Size = new System.Drawing.Size(34, 19);
             this.lbl_roomNumber_3.TabIndex = 21;
@@ -525,7 +523,7 @@
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label14.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(105, 6);
+            this.label14.Location = new System.Drawing.Point(129, 14);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(74, 19);
             this.label14.TabIndex = 20;
@@ -537,7 +535,7 @@
             this.lbl_status3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_status3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status3.ForeColor = System.Drawing.Color.Black;
-            this.lbl_status3.Location = new System.Drawing.Point(161, 33);
+            this.lbl_status3.Location = new System.Drawing.Point(185, 41);
             this.lbl_status3.Name = "lbl_status3";
             this.lbl_status3.Size = new System.Drawing.Size(34, 19);
             this.lbl_status3.TabIndex = 20;
@@ -549,7 +547,7 @@
             this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label16.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(105, 33);
+            this.label16.Location = new System.Drawing.Point(129, 41);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(59, 19);
             this.label16.TabIndex = 19;
@@ -561,7 +559,7 @@
             this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label17.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(105, 65);
+            this.label17.Location = new System.Drawing.Point(129, 73);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(107, 19);
             this.label17.TabIndex = 18;
@@ -570,11 +568,10 @@
             // pnl_door3
             // 
             this.pnl_door3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door3.BackgroundImage = global::HMS.Properties.Resources.icons8_door_100;
-            this.pnl_door3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_door3.Location = new System.Drawing.Point(3, 3);
+            this.pnl_door3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_door3.Location = new System.Drawing.Point(19, 22);
             this.pnl_door3.Name = "pnl_door3";
-            this.pnl_door3.Size = new System.Drawing.Size(96, 131);
+            this.pnl_door3.Size = new System.Drawing.Size(96, 94);
             this.pnl_door3.TabIndex = 17;
             // 
             // pnl_room9
@@ -582,6 +579,7 @@
             this.pnl_room9.BackColor = System.Drawing.Color.White;
             this.pnl_room9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_room9.BorderRadius = 10;
+            this.pnl_room9.BorderThickness = 1;
             this.pnl_room9.Controls.Add(this.lbl_NumberOfDays_9);
             this.pnl_room9.Controls.Add(this.label59);
             this.pnl_room9.Controls.Add(this.lbl_NumberOfPeople_9);
@@ -597,7 +595,6 @@
             this.pnl_room9.Name = "pnl_room9";
             this.pnl_room9.Size = new System.Drawing.Size(295, 138);
             this.pnl_room9.TabIndex = 48;
-            this.pnl_room9.Click += new System.EventHandler(this.pnl_room9_Click);
             // 
             // lbl_NumberOfDays_9
             // 
@@ -605,7 +602,7 @@
             this.lbl_NumberOfDays_9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfDays_9.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfDays_9.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfDays_9.Location = new System.Drawing.Point(208, 98);
+            this.lbl_NumberOfDays_9.Location = new System.Drawing.Point(227, 106);
             this.lbl_NumberOfDays_9.Name = "lbl_NumberOfDays_9";
             this.lbl_NumberOfDays_9.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfDays_9.TabIndex = 23;
@@ -617,7 +614,7 @@
             this.label59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label59.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label59.ForeColor = System.Drawing.Color.Black;
-            this.label59.Location = new System.Drawing.Point(105, 98);
+            this.label59.Location = new System.Drawing.Point(129, 106);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(99, 19);
             this.label59.TabIndex = 23;
@@ -629,7 +626,7 @@
             this.lbl_NumberOfPeople_9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfPeople_9.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfPeople_9.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfPeople_9.Location = new System.Drawing.Point(214, 62);
+            this.lbl_NumberOfPeople_9.Location = new System.Drawing.Point(232, 73);
             this.lbl_NumberOfPeople_9.Name = "lbl_NumberOfPeople_9";
             this.lbl_NumberOfPeople_9.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfPeople_9.TabIndex = 22;
@@ -641,7 +638,7 @@
             this.lbl_roomNumber_9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_roomNumber_9.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_roomNumber_9.ForeColor = System.Drawing.Color.Black;
-            this.lbl_roomNumber_9.Location = new System.Drawing.Point(222, 2);
+            this.lbl_roomNumber_9.Location = new System.Drawing.Point(201, 14);
             this.lbl_roomNumber_9.Name = "lbl_roomNumber_9";
             this.lbl_roomNumber_9.Size = new System.Drawing.Size(34, 19);
             this.lbl_roomNumber_9.TabIndex = 21;
@@ -653,11 +650,11 @@
             this.label62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label62.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label62.ForeColor = System.Drawing.Color.Black;
-            this.label62.Location = new System.Drawing.Point(105, 6);
+            this.label62.Location = new System.Drawing.Point(129, 14);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(117, 19);
+            this.label62.Size = new System.Drawing.Size(74, 19);
             this.label62.TabIndex = 20;
-            this.label62.Text = "Room Number:";
+            this.label62.Text = "Room ID:";
             // 
             // lbl_status9
             // 
@@ -665,7 +662,7 @@
             this.lbl_status9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_status9.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status9.ForeColor = System.Drawing.Color.Black;
-            this.lbl_status9.Location = new System.Drawing.Point(161, 33);
+            this.lbl_status9.Location = new System.Drawing.Point(185, 41);
             this.lbl_status9.Name = "lbl_status9";
             this.lbl_status9.Size = new System.Drawing.Size(34, 19);
             this.lbl_status9.TabIndex = 20;
@@ -677,7 +674,7 @@
             this.label64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label64.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label64.ForeColor = System.Drawing.Color.Black;
-            this.label64.Location = new System.Drawing.Point(105, 33);
+            this.label64.Location = new System.Drawing.Point(129, 41);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(59, 19);
             this.label64.TabIndex = 19;
@@ -689,7 +686,7 @@
             this.label65.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label65.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label65.ForeColor = System.Drawing.Color.Black;
-            this.label65.Location = new System.Drawing.Point(105, 65);
+            this.label65.Location = new System.Drawing.Point(129, 73);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(107, 19);
             this.label65.TabIndex = 18;
@@ -698,11 +695,10 @@
             // pnl_door9
             // 
             this.pnl_door9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door9.BackgroundImage")));
-            this.pnl_door9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_door9.Location = new System.Drawing.Point(3, 3);
+            this.pnl_door9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_door9.Location = new System.Drawing.Point(19, 22);
             this.pnl_door9.Name = "pnl_door9";
-            this.pnl_door9.Size = new System.Drawing.Size(96, 131);
+            this.pnl_door9.Size = new System.Drawing.Size(96, 94);
             this.pnl_door9.TabIndex = 17;
             // 
             // pnl_room2
@@ -710,6 +706,7 @@
             this.pnl_room2.BackColor = System.Drawing.Color.White;
             this.pnl_room2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_room2.BorderRadius = 10;
+            this.pnl_room2.BorderThickness = 1;
             this.pnl_room2.Controls.Add(this.lbl_NumberOfDays_2);
             this.pnl_room2.Controls.Add(this.label19);
             this.pnl_room2.Controls.Add(this.lbl_NumberOfPeople_2);
@@ -725,7 +722,6 @@
             this.pnl_room2.Name = "pnl_room2";
             this.pnl_room2.Size = new System.Drawing.Size(295, 138);
             this.pnl_room2.TabIndex = 43;
-            this.pnl_room2.Click += new System.EventHandler(this.pnl_room2_Click);
             // 
             // lbl_NumberOfDays_2
             // 
@@ -733,7 +729,7 @@
             this.lbl_NumberOfDays_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfDays_2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfDays_2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfDays_2.Location = new System.Drawing.Point(208, 98);
+            this.lbl_NumberOfDays_2.Location = new System.Drawing.Point(226, 106);
             this.lbl_NumberOfDays_2.Name = "lbl_NumberOfDays_2";
             this.lbl_NumberOfDays_2.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfDays_2.TabIndex = 23;
@@ -745,7 +741,7 @@
             this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label19.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(105, 98);
+            this.label19.Location = new System.Drawing.Point(129, 106);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(99, 19);
             this.label19.TabIndex = 23;
@@ -757,7 +753,7 @@
             this.lbl_NumberOfPeople_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfPeople_2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfPeople_2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfPeople_2.Location = new System.Drawing.Point(214, 62);
+            this.lbl_NumberOfPeople_2.Location = new System.Drawing.Point(232, 73);
             this.lbl_NumberOfPeople_2.Name = "lbl_NumberOfPeople_2";
             this.lbl_NumberOfPeople_2.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfPeople_2.TabIndex = 22;
@@ -769,7 +765,7 @@
             this.lbl_roomNumber_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_roomNumber_2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_roomNumber_2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_roomNumber_2.Location = new System.Drawing.Point(177, 2);
+            this.lbl_roomNumber_2.Location = new System.Drawing.Point(201, 14);
             this.lbl_roomNumber_2.Name = "lbl_roomNumber_2";
             this.lbl_roomNumber_2.Size = new System.Drawing.Size(34, 19);
             this.lbl_roomNumber_2.TabIndex = 21;
@@ -781,7 +777,7 @@
             this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label22.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(105, 6);
+            this.label22.Location = new System.Drawing.Point(129, 14);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(74, 19);
             this.label22.TabIndex = 20;
@@ -793,7 +789,7 @@
             this.lbl_status2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_status2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status2.ForeColor = System.Drawing.Color.Black;
-            this.lbl_status2.Location = new System.Drawing.Point(161, 33);
+            this.lbl_status2.Location = new System.Drawing.Point(185, 41);
             this.lbl_status2.Name = "lbl_status2";
             this.lbl_status2.Size = new System.Drawing.Size(34, 19);
             this.lbl_status2.TabIndex = 20;
@@ -805,7 +801,7 @@
             this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label24.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(105, 33);
+            this.label24.Location = new System.Drawing.Point(129, 41);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(59, 19);
             this.label24.TabIndex = 19;
@@ -817,7 +813,7 @@
             this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label25.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(105, 65);
+            this.label25.Location = new System.Drawing.Point(129, 73);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(107, 19);
             this.label25.TabIndex = 18;
@@ -826,11 +822,10 @@
             // pnl_door2
             // 
             this.pnl_door2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door2.BackgroundImage")));
-            this.pnl_door2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_door2.Location = new System.Drawing.Point(3, 3);
+            this.pnl_door2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_door2.Location = new System.Drawing.Point(19, 22);
             this.pnl_door2.Name = "pnl_door2";
-            this.pnl_door2.Size = new System.Drawing.Size(96, 131);
+            this.pnl_door2.Size = new System.Drawing.Size(96, 94);
             this.pnl_door2.TabIndex = 17;
             // 
             // pnl_room7
@@ -838,6 +833,7 @@
             this.pnl_room7.BackColor = System.Drawing.Color.White;
             this.pnl_room7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_room7.BorderRadius = 10;
+            this.pnl_room7.BorderThickness = 1;
             this.pnl_room7.Controls.Add(this.lbl_NumberOfDays_7);
             this.pnl_room7.Controls.Add(this.label67);
             this.pnl_room7.Controls.Add(this.lbl_NumberOfPeople_7);
@@ -853,7 +849,6 @@
             this.pnl_room7.Name = "pnl_room7";
             this.pnl_room7.Size = new System.Drawing.Size(295, 138);
             this.pnl_room7.TabIndex = 47;
-            this.pnl_room7.Click += new System.EventHandler(this.pnl_room7_Click);
             // 
             // lbl_NumberOfDays_7
             // 
@@ -861,7 +856,7 @@
             this.lbl_NumberOfDays_7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfDays_7.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfDays_7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfDays_7.Location = new System.Drawing.Point(208, 98);
+            this.lbl_NumberOfDays_7.Location = new System.Drawing.Point(225, 106);
             this.lbl_NumberOfDays_7.Name = "lbl_NumberOfDays_7";
             this.lbl_NumberOfDays_7.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfDays_7.TabIndex = 23;
@@ -873,7 +868,7 @@
             this.label67.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label67.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label67.ForeColor = System.Drawing.Color.Black;
-            this.label67.Location = new System.Drawing.Point(105, 98);
+            this.label67.Location = new System.Drawing.Point(129, 106);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(99, 19);
             this.label67.TabIndex = 23;
@@ -885,7 +880,7 @@
             this.lbl_NumberOfPeople_7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfPeople_7.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfPeople_7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfPeople_7.Location = new System.Drawing.Point(214, 62);
+            this.lbl_NumberOfPeople_7.Location = new System.Drawing.Point(232, 73);
             this.lbl_NumberOfPeople_7.Name = "lbl_NumberOfPeople_7";
             this.lbl_NumberOfPeople_7.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfPeople_7.TabIndex = 22;
@@ -897,7 +892,7 @@
             this.lbl_roomNumber_7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_roomNumber_7.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_roomNumber_7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_roomNumber_7.Location = new System.Drawing.Point(222, 2);
+            this.lbl_roomNumber_7.Location = new System.Drawing.Point(201, 14);
             this.lbl_roomNumber_7.Name = "lbl_roomNumber_7";
             this.lbl_roomNumber_7.Size = new System.Drawing.Size(34, 19);
             this.lbl_roomNumber_7.TabIndex = 21;
@@ -909,11 +904,11 @@
             this.label70.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label70.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label70.ForeColor = System.Drawing.Color.Black;
-            this.label70.Location = new System.Drawing.Point(105, 6);
+            this.label70.Location = new System.Drawing.Point(129, 14);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(117, 19);
+            this.label70.Size = new System.Drawing.Size(74, 19);
             this.label70.TabIndex = 20;
-            this.label70.Text = "Room Number:";
+            this.label70.Text = "Room ID:";
             // 
             // lbl_status7
             // 
@@ -921,7 +916,7 @@
             this.lbl_status7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_status7.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status7.ForeColor = System.Drawing.Color.Black;
-            this.lbl_status7.Location = new System.Drawing.Point(161, 33);
+            this.lbl_status7.Location = new System.Drawing.Point(185, 41);
             this.lbl_status7.Name = "lbl_status7";
             this.lbl_status7.Size = new System.Drawing.Size(34, 19);
             this.lbl_status7.TabIndex = 20;
@@ -933,7 +928,7 @@
             this.label72.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label72.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label72.ForeColor = System.Drawing.Color.Black;
-            this.label72.Location = new System.Drawing.Point(105, 33);
+            this.label72.Location = new System.Drawing.Point(129, 41);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(59, 19);
             this.label72.TabIndex = 19;
@@ -945,7 +940,7 @@
             this.label73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label73.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label73.ForeColor = System.Drawing.Color.Black;
-            this.label73.Location = new System.Drawing.Point(105, 65);
+            this.label73.Location = new System.Drawing.Point(129, 73);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(107, 19);
             this.label73.TabIndex = 18;
@@ -954,11 +949,10 @@
             // pnl_door7
             // 
             this.pnl_door7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door7.BackgroundImage")));
-            this.pnl_door7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_door7.Location = new System.Drawing.Point(3, 3);
+            this.pnl_door7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_door7.Location = new System.Drawing.Point(18, 22);
             this.pnl_door7.Name = "pnl_door7";
-            this.pnl_door7.Size = new System.Drawing.Size(96, 131);
+            this.pnl_door7.Size = new System.Drawing.Size(96, 94);
             this.pnl_door7.TabIndex = 17;
             // 
             // pnl_room4
@@ -966,6 +960,7 @@
             this.pnl_room4.BackColor = System.Drawing.Color.White;
             this.pnl_room4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_room4.BorderRadius = 10;
+            this.pnl_room4.BorderThickness = 1;
             this.pnl_room4.Controls.Add(this.lbl_NumberOfDays_4);
             this.pnl_room4.Controls.Add(this.label43);
             this.pnl_room4.Controls.Add(this.lbl_NumberOfPeople_4);
@@ -981,7 +976,6 @@
             this.pnl_room4.Name = "pnl_room4";
             this.pnl_room4.Size = new System.Drawing.Size(295, 138);
             this.pnl_room4.TabIndex = 44;
-            this.pnl_room4.Click += new System.EventHandler(this.pnl_room4_Click);
             // 
             // lbl_NumberOfDays_4
             // 
@@ -989,7 +983,7 @@
             this.lbl_NumberOfDays_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfDays_4.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfDays_4.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfDays_4.Location = new System.Drawing.Point(208, 98);
+            this.lbl_NumberOfDays_4.Location = new System.Drawing.Point(225, 106);
             this.lbl_NumberOfDays_4.Name = "lbl_NumberOfDays_4";
             this.lbl_NumberOfDays_4.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfDays_4.TabIndex = 23;
@@ -1001,7 +995,7 @@
             this.label43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label43.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.Black;
-            this.label43.Location = new System.Drawing.Point(105, 98);
+            this.label43.Location = new System.Drawing.Point(129, 106);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(99, 19);
             this.label43.TabIndex = 23;
@@ -1013,7 +1007,7 @@
             this.lbl_NumberOfPeople_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfPeople_4.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfPeople_4.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfPeople_4.Location = new System.Drawing.Point(214, 62);
+            this.lbl_NumberOfPeople_4.Location = new System.Drawing.Point(232, 73);
             this.lbl_NumberOfPeople_4.Name = "lbl_NumberOfPeople_4";
             this.lbl_NumberOfPeople_4.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfPeople_4.TabIndex = 22;
@@ -1025,7 +1019,7 @@
             this.lbl_roomNumber_4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_roomNumber_4.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_roomNumber_4.ForeColor = System.Drawing.Color.Black;
-            this.lbl_roomNumber_4.Location = new System.Drawing.Point(222, 2);
+            this.lbl_roomNumber_4.Location = new System.Drawing.Point(201, 14);
             this.lbl_roomNumber_4.Name = "lbl_roomNumber_4";
             this.lbl_roomNumber_4.Size = new System.Drawing.Size(34, 19);
             this.lbl_roomNumber_4.TabIndex = 21;
@@ -1037,11 +1031,11 @@
             this.label46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label46.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.Black;
-            this.label46.Location = new System.Drawing.Point(105, 6);
+            this.label46.Location = new System.Drawing.Point(129, 14);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(117, 19);
+            this.label46.Size = new System.Drawing.Size(74, 19);
             this.label46.TabIndex = 20;
-            this.label46.Text = "Room Number:";
+            this.label46.Text = "Room ID:";
             // 
             // lbl_status4
             // 
@@ -1049,7 +1043,7 @@
             this.lbl_status4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_status4.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status4.ForeColor = System.Drawing.Color.Black;
-            this.lbl_status4.Location = new System.Drawing.Point(161, 33);
+            this.lbl_status4.Location = new System.Drawing.Point(185, 41);
             this.lbl_status4.Name = "lbl_status4";
             this.lbl_status4.Size = new System.Drawing.Size(34, 19);
             this.lbl_status4.TabIndex = 20;
@@ -1061,7 +1055,7 @@
             this.label48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label48.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label48.ForeColor = System.Drawing.Color.Black;
-            this.label48.Location = new System.Drawing.Point(105, 33);
+            this.label48.Location = new System.Drawing.Point(129, 41);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(59, 19);
             this.label48.TabIndex = 19;
@@ -1073,7 +1067,7 @@
             this.label49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label49.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label49.ForeColor = System.Drawing.Color.Black;
-            this.label49.Location = new System.Drawing.Point(105, 65);
+            this.label49.Location = new System.Drawing.Point(129, 73);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(107, 19);
             this.label49.TabIndex = 18;
@@ -1082,11 +1076,10 @@
             // pnl_door4
             // 
             this.pnl_door4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door4.BackgroundImage")));
-            this.pnl_door4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_door4.Location = new System.Drawing.Point(3, 3);
+            this.pnl_door4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_door4.Location = new System.Drawing.Point(18, 22);
             this.pnl_door4.Name = "pnl_door4";
-            this.pnl_door4.Size = new System.Drawing.Size(96, 131);
+            this.pnl_door4.Size = new System.Drawing.Size(96, 94);
             this.pnl_door4.TabIndex = 17;
             // 
             // pnl_room5
@@ -1094,6 +1087,7 @@
             this.pnl_room5.BackColor = System.Drawing.Color.White;
             this.pnl_room5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_room5.BorderRadius = 10;
+            this.pnl_room5.BorderThickness = 1;
             this.pnl_room5.Controls.Add(this.lbl_NumberOfDays_5);
             this.pnl_room5.Controls.Add(this.label27);
             this.pnl_room5.Controls.Add(this.lbl_NumberOfPeople_5);
@@ -1109,7 +1103,6 @@
             this.pnl_room5.Name = "pnl_room5";
             this.pnl_room5.Size = new System.Drawing.Size(295, 138);
             this.pnl_room5.TabIndex = 46;
-            this.pnl_room5.Click += new System.EventHandler(this.pnl_room5_Click);
             // 
             // lbl_NumberOfDays_5
             // 
@@ -1117,7 +1110,7 @@
             this.lbl_NumberOfDays_5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfDays_5.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfDays_5.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfDays_5.Location = new System.Drawing.Point(208, 98);
+            this.lbl_NumberOfDays_5.Location = new System.Drawing.Point(226, 106);
             this.lbl_NumberOfDays_5.Name = "lbl_NumberOfDays_5";
             this.lbl_NumberOfDays_5.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfDays_5.TabIndex = 23;
@@ -1129,7 +1122,7 @@
             this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label27.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(105, 98);
+            this.label27.Location = new System.Drawing.Point(129, 106);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(99, 19);
             this.label27.TabIndex = 23;
@@ -1141,7 +1134,7 @@
             this.lbl_NumberOfPeople_5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfPeople_5.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfPeople_5.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfPeople_5.Location = new System.Drawing.Point(214, 62);
+            this.lbl_NumberOfPeople_5.Location = new System.Drawing.Point(232, 73);
             this.lbl_NumberOfPeople_5.Name = "lbl_NumberOfPeople_5";
             this.lbl_NumberOfPeople_5.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfPeople_5.TabIndex = 22;
@@ -1153,7 +1146,7 @@
             this.lbl_roomNumber_5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_roomNumber_5.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_roomNumber_5.ForeColor = System.Drawing.Color.Black;
-            this.lbl_roomNumber_5.Location = new System.Drawing.Point(222, 2);
+            this.lbl_roomNumber_5.Location = new System.Drawing.Point(201, 14);
             this.lbl_roomNumber_5.Name = "lbl_roomNumber_5";
             this.lbl_roomNumber_5.Size = new System.Drawing.Size(34, 19);
             this.lbl_roomNumber_5.TabIndex = 21;
@@ -1165,11 +1158,11 @@
             this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label30.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(105, 6);
+            this.label30.Location = new System.Drawing.Point(129, 14);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(117, 19);
+            this.label30.Size = new System.Drawing.Size(74, 19);
             this.label30.TabIndex = 20;
-            this.label30.Text = "Room Number:";
+            this.label30.Text = "Room ID:";
             // 
             // lbl_status5
             // 
@@ -1177,7 +1170,7 @@
             this.lbl_status5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_status5.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status5.ForeColor = System.Drawing.Color.Black;
-            this.lbl_status5.Location = new System.Drawing.Point(161, 33);
+            this.lbl_status5.Location = new System.Drawing.Point(185, 41);
             this.lbl_status5.Name = "lbl_status5";
             this.lbl_status5.Size = new System.Drawing.Size(34, 19);
             this.lbl_status5.TabIndex = 20;
@@ -1189,7 +1182,7 @@
             this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label32.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(105, 33);
+            this.label32.Location = new System.Drawing.Point(129, 41);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(59, 19);
             this.label32.TabIndex = 19;
@@ -1201,7 +1194,7 @@
             this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label33.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.Black;
-            this.label33.Location = new System.Drawing.Point(105, 65);
+            this.label33.Location = new System.Drawing.Point(129, 73);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(107, 19);
             this.label33.TabIndex = 18;
@@ -1210,11 +1203,10 @@
             // pnl_door5
             // 
             this.pnl_door5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door5.BackgroundImage")));
-            this.pnl_door5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_door5.Location = new System.Drawing.Point(3, 3);
+            this.pnl_door5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_door5.Location = new System.Drawing.Point(19, 22);
             this.pnl_door5.Name = "pnl_door5";
-            this.pnl_door5.Size = new System.Drawing.Size(96, 131);
+            this.pnl_door5.Size = new System.Drawing.Size(96, 94);
             this.pnl_door5.TabIndex = 17;
             // 
             // pnl_room6
@@ -1222,6 +1214,7 @@
             this.pnl_room6.BackColor = System.Drawing.Color.White;
             this.pnl_room6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_room6.BorderRadius = 10;
+            this.pnl_room6.BorderThickness = 1;
             this.pnl_room6.Controls.Add(this.lbl_NumberOfDays_6);
             this.pnl_room6.Controls.Add(this.label35);
             this.pnl_room6.Controls.Add(this.lbl_NumberOfPeople_6);
@@ -1237,7 +1230,6 @@
             this.pnl_room6.Name = "pnl_room6";
             this.pnl_room6.Size = new System.Drawing.Size(295, 138);
             this.pnl_room6.TabIndex = 45;
-            this.pnl_room6.Click += new System.EventHandler(this.pnl_room6_Click);
             // 
             // lbl_NumberOfDays_6
             // 
@@ -1245,7 +1237,7 @@
             this.lbl_NumberOfDays_6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfDays_6.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfDays_6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfDays_6.Location = new System.Drawing.Point(208, 98);
+            this.lbl_NumberOfDays_6.Location = new System.Drawing.Point(227, 106);
             this.lbl_NumberOfDays_6.Name = "lbl_NumberOfDays_6";
             this.lbl_NumberOfDays_6.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfDays_6.TabIndex = 23;
@@ -1257,7 +1249,7 @@
             this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label35.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.Black;
-            this.label35.Location = new System.Drawing.Point(105, 98);
+            this.label35.Location = new System.Drawing.Point(129, 106);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(99, 19);
             this.label35.TabIndex = 23;
@@ -1269,7 +1261,7 @@
             this.lbl_NumberOfPeople_6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_NumberOfPeople_6.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NumberOfPeople_6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_NumberOfPeople_6.Location = new System.Drawing.Point(214, 62);
+            this.lbl_NumberOfPeople_6.Location = new System.Drawing.Point(232, 73);
             this.lbl_NumberOfPeople_6.Name = "lbl_NumberOfPeople_6";
             this.lbl_NumberOfPeople_6.Size = new System.Drawing.Size(34, 19);
             this.lbl_NumberOfPeople_6.TabIndex = 22;
@@ -1281,7 +1273,7 @@
             this.lbl_roomNumber_6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_roomNumber_6.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_roomNumber_6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_roomNumber_6.Location = new System.Drawing.Point(222, 2);
+            this.lbl_roomNumber_6.Location = new System.Drawing.Point(201, 14);
             this.lbl_roomNumber_6.Name = "lbl_roomNumber_6";
             this.lbl_roomNumber_6.Size = new System.Drawing.Size(34, 19);
             this.lbl_roomNumber_6.TabIndex = 21;
@@ -1293,11 +1285,11 @@
             this.label38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label38.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.Black;
-            this.label38.Location = new System.Drawing.Point(105, 6);
+            this.label38.Location = new System.Drawing.Point(129, 14);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(117, 19);
+            this.label38.Size = new System.Drawing.Size(74, 19);
             this.label38.TabIndex = 20;
-            this.label38.Text = "Room Number:";
+            this.label38.Text = "Room ID:";
             // 
             // lbl_status6
             // 
@@ -1305,7 +1297,7 @@
             this.lbl_status6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.lbl_status6.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_status6.ForeColor = System.Drawing.Color.Black;
-            this.lbl_status6.Location = new System.Drawing.Point(161, 33);
+            this.lbl_status6.Location = new System.Drawing.Point(185, 41);
             this.lbl_status6.Name = "lbl_status6";
             this.lbl_status6.Size = new System.Drawing.Size(34, 19);
             this.lbl_status6.TabIndex = 20;
@@ -1317,7 +1309,7 @@
             this.label40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label40.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.Color.Black;
-            this.label40.Location = new System.Drawing.Point(105, 33);
+            this.label40.Location = new System.Drawing.Point(129, 41);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(59, 19);
             this.label40.TabIndex = 19;
@@ -1329,7 +1321,7 @@
             this.label41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.label41.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.Black;
-            this.label41.Location = new System.Drawing.Point(105, 65);
+            this.label41.Location = new System.Drawing.Point(129, 73);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(107, 19);
             this.label41.TabIndex = 18;
@@ -1338,11 +1330,10 @@
             // pnl_door6
             // 
             this.pnl_door6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.pnl_door6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_door6.BackgroundImage")));
-            this.pnl_door6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnl_door6.Location = new System.Drawing.Point(3, 3);
+            this.pnl_door6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_door6.Location = new System.Drawing.Point(19, 22);
             this.pnl_door6.Name = "pnl_door6";
-            this.pnl_door6.Size = new System.Drawing.Size(96, 131);
+            this.pnl_door6.Size = new System.Drawing.Size(96, 94);
             this.pnl_door6.TabIndex = 17;
             // 
             // panel1

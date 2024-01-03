@@ -63,6 +63,7 @@
             this.lbl_Pecent = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -88,11 +89,11 @@
             // 
             this.lbl_totalRoomOccupied.AutoSize = true;
             this.lbl_totalRoomOccupied.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
-            this.lbl_totalRoomOccupied.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 36F, System.Drawing.FontStyle.Bold);
+            this.lbl_totalRoomOccupied.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold);
             this.lbl_totalRoomOccupied.ForeColor = System.Drawing.Color.White;
             this.lbl_totalRoomOccupied.Location = new System.Drawing.Point(77, 63);
             this.lbl_totalRoomOccupied.Name = "lbl_totalRoomOccupied";
-            this.lbl_totalRoomOccupied.Size = new System.Drawing.Size(55, 62);
+            this.lbl_totalRoomOccupied.Size = new System.Drawing.Size(52, 55);
             this.lbl_totalRoomOccupied.TabIndex = 16;
             this.lbl_totalRoomOccupied.Text = "0";
             // 
@@ -134,11 +135,11 @@
             // 
             this.lbl_totalRoomAvailable.AutoSize = true;
             this.lbl_totalRoomAvailable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.lbl_totalRoomAvailable.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 36F, System.Drawing.FontStyle.Bold);
+            this.lbl_totalRoomAvailable.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold);
             this.lbl_totalRoomAvailable.ForeColor = System.Drawing.Color.White;
             this.lbl_totalRoomAvailable.Location = new System.Drawing.Point(84, 60);
             this.lbl_totalRoomAvailable.Name = "lbl_totalRoomAvailable";
-            this.lbl_totalRoomAvailable.Size = new System.Drawing.Size(55, 62);
+            this.lbl_totalRoomAvailable.Size = new System.Drawing.Size(52, 55);
             this.lbl_totalRoomAvailable.TabIndex = 15;
             this.lbl_totalRoomAvailable.Text = "0";
             // 
@@ -167,6 +168,7 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BorderRadius = 10;
+            this.guna2Panel3.Controls.Add(this.label11);
             this.guna2Panel3.Controls.Add(this.lblApproved);
             this.guna2Panel3.Controls.Add(this.lblPending);
             this.guna2Panel3.Controls.Add(this.label16);
@@ -224,19 +226,19 @@
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(8, 63);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(89, 20);
+            this.label15.Size = new System.Drawing.Size(69, 20);
             this.label15.TabIndex = 19;
-            this.label15.Text = "Pending    :";
+            this.label15.Text = "Pending";
             // 
             // lbl_totalRoomReserve
             // 
             this.lbl_totalRoomReserve.AutoSize = true;
             this.lbl_totalRoomReserve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
-            this.lbl_totalRoomReserve.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 36F, System.Drawing.FontStyle.Bold);
+            this.lbl_totalRoomReserve.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold);
             this.lbl_totalRoomReserve.ForeColor = System.Drawing.Color.White;
             this.lbl_totalRoomReserve.Location = new System.Drawing.Point(161, 63);
             this.lbl_totalRoomReserve.Name = "lbl_totalRoomReserve";
-            this.lbl_totalRoomReserve.Size = new System.Drawing.Size(55, 62);
+            this.lbl_totalRoomReserve.Size = new System.Drawing.Size(52, 55);
             this.lbl_totalRoomReserve.TabIndex = 14;
             this.lbl_totalRoomReserve.Text = "0";
             // 
@@ -356,11 +358,11 @@
             // 
             this.lbl_TotalGuest.AutoSize = true;
             this.lbl_TotalGuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.lbl_TotalGuest.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TotalGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TotalGuest.ForeColor = System.Drawing.Color.White;
             this.lbl_TotalGuest.Location = new System.Drawing.Point(156, 63);
             this.lbl_TotalGuest.Name = "lbl_TotalGuest";
-            this.lbl_TotalGuest.Size = new System.Drawing.Size(55, 62);
+            this.lbl_TotalGuest.Size = new System.Drawing.Size(52, 55);
             this.lbl_TotalGuest.TabIndex = 13;
             this.lbl_TotalGuest.Text = "0";
             // 
@@ -454,11 +456,11 @@
             // lbl_Pecent
             // 
             this.lbl_Pecent.AutoSize = true;
-            this.lbl_Pecent.Font = new System.Drawing.Font("Frank Ruhl Hofshi", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Pecent.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Pecent.ForeColor = System.Drawing.Color.Teal;
             this.lbl_Pecent.Location = new System.Drawing.Point(42, 74);
             this.lbl_Pecent.Name = "lbl_Pecent";
-            this.lbl_Pecent.Size = new System.Drawing.Size(110, 35);
+            this.lbl_Pecent.Size = new System.Drawing.Size(112, 31);
             this.lbl_Pecent.TabIndex = 0;
             this.lbl_Pecent.Text = "00.00%";
             // 
@@ -483,6 +485,18 @@
             this.label7.Size = new System.Drawing.Size(160, 33);
             this.label7.TabIndex = 14;
             this.label7.Text = "Dashboard";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(91, 63);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(13, 20);
+            this.label11.TabIndex = 20;
+            this.label11.Text = ":";
             // 
             // Frm_Dashboard
             // 
@@ -557,5 +571,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label11;
     }
 }
