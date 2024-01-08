@@ -127,6 +127,25 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_get_roomType_by_name" FunctionName="HMSModel.Store.sp_get_roomType_by_name">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HMSModel.sp_get_roomType_by_name_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Adult" ColumnName="Adult" />
+          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="Senior" ColumnName="Senior" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="DateIn" ColumnName="DateIn" />
+          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="ACCOUNTS">
       <EntityTypeMapping TypeName="HMSModel.ACCOUNTS">
         <MappingFragment StoreEntitySet="ACCOUNTS">
@@ -438,7 +457,8 @@
     <EntitySetMapping Name="vw_get_total_reservation_by_date">
       <EntityTypeMapping TypeName="HMSModel.vw_get_total_reservation_by_date">
         <MappingFragment StoreEntitySet="vw_get_total_reservation_by_date">
-          <ScalarProperty Name="reservationDateIn" ColumnName="reservationDateIn" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="TotalReservationByDate" ColumnName="TotalReservationByDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

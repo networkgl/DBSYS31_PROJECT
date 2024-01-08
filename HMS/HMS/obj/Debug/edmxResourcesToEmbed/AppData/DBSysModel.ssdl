@@ -367,9 +367,10 @@ warning 6002: The table/view 'HMS.dbo.vw_get_room_reserve_pending_current_occure
 warning 6002: The table/view 'HMS.dbo.vw_get_total_reservation_by_date' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="vw_get_total_reservation_by_date">
     <Key>
-      <PropertyRef Name="reservationDateIn" />
+      <PropertyRef Name="Date" />
     </Key>
-    <Property Name="reservationDateIn" Type="date" Nullable="false" />
+    <Property Name="TotalReservationByDate" Type="int" />
+    <Property Name="Date" Type="date" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'HMS.dbo.vw_get_total_room_occupied' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -484,6 +485,10 @@ warning 6002: The table/view 'HMS.dbo.vw_get_total_room_occupied' does not have 
   </Function>
   <Function Name="sp_get_room_status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="roomtype" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_get_roomType_by_name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="roomtype" Type="varchar" Mode="In" />
+    <Parameter Name="typeOfFilter" Type="varchar" Mode="In" />
   </Function>
   <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -768,7 +773,8 @@ FROM [dbo].[vw_get_room_reserve_pending_current_occurence] AS [vw_get_room_reser
     </EntitySet>
     <EntitySet Name="vw_get_total_reservation_by_date" EntityType="Self.vw_get_total_reservation_by_date" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
-[vw_get_total_reservation_by_date].[reservationDateIn] AS [reservationDateIn]
+[vw_get_total_reservation_by_date].[TotalReservationByDate] AS [TotalReservationByDate], 
+[vw_get_total_reservation_by_date].[Date] AS [Date]
 FROM [dbo].[vw_get_total_reservation_by_date] AS [vw_get_total_reservation_by_date]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="vw_get_total_room_occupied" EntityType="Self.vw_get_total_room_occupied" store:Type="Views" store:Schema="dbo">

@@ -42,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.chkBox_showOverAll = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbBox_rooms = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_roomdetails)).BeginInit();
             this.pnl_Main1.SuspendLayout();
             this.SuspendLayout();
@@ -144,7 +145,7 @@
             this.chkBox_showCurrentlyCheck_In.CheckedState.BorderThickness = 0;
             this.chkBox_showCurrentlyCheck_In.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkBox_showCurrentlyCheck_In.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkBox_showCurrentlyCheck_In.Location = new System.Drawing.Point(1025, 37);
+            this.chkBox_showCurrentlyCheck_In.Location = new System.Drawing.Point(782, 44);
             this.chkBox_showCurrentlyCheck_In.Name = "chkBox_showCurrentlyCheck_In";
             this.chkBox_showCurrentlyCheck_In.Size = new System.Drawing.Size(20, 20);
             this.chkBox_showCurrentlyCheck_In.TabIndex = 170;
@@ -159,7 +160,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(897, 40);
+            this.label4.Location = new System.Drawing.Point(654, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 17);
             this.label4.TabIndex = 169;
@@ -172,7 +173,7 @@
             this.chkBox_showOngoingCheck_In.CheckedState.BorderThickness = 0;
             this.chkBox_showOngoingCheck_In.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkBox_showOngoingCheck_In.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkBox_showOngoingCheck_In.Location = new System.Drawing.Point(871, 37);
+            this.chkBox_showOngoingCheck_In.Location = new System.Drawing.Point(628, 44);
             this.chkBox_showOngoingCheck_In.Name = "chkBox_showOngoingCheck_In";
             this.chkBox_showOngoingCheck_In.Size = new System.Drawing.Size(20, 20);
             this.chkBox_showOngoingCheck_In.TabIndex = 172;
@@ -187,7 +188,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(743, 40);
+            this.label1.Location = new System.Drawing.Point(500, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 17);
             this.label1.TabIndex = 171;
@@ -200,7 +201,7 @@
             this.chkBox_showOverAll.CheckedState.BorderThickness = 0;
             this.chkBox_showOverAll.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkBox_showOverAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkBox_showOverAll.Location = new System.Drawing.Point(717, 37);
+            this.chkBox_showOverAll.Location = new System.Drawing.Point(474, 44);
             this.chkBox_showOverAll.Name = "chkBox_showOverAll";
             this.chkBox_showOverAll.Size = new System.Drawing.Size(20, 20);
             this.chkBox_showOverAll.TabIndex = 174;
@@ -215,11 +216,28 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(649, 40);
+            this.label2.Location = new System.Drawing.Point(406, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 17);
             this.label2.TabIndex = 173;
             this.label2.Text = "Show All";
+            // 
+            // cbBox_rooms
+            // 
+            this.cbBox_rooms.BackColor = System.Drawing.Color.Transparent;
+            this.cbBox_rooms.BorderRadius = 5;
+            this.cbBox_rooms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbBox_rooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBox_rooms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbBox_rooms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbBox_rooms.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.cbBox_rooms.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbBox_rooms.ItemHeight = 25;
+            this.cbBox_rooms.Location = new System.Drawing.Point(812, 33);
+            this.cbBox_rooms.Name = "cbBox_rooms";
+            this.cbBox_rooms.Size = new System.Drawing.Size(237, 31);
+            this.cbBox_rooms.TabIndex = 177;
+            this.cbBox_rooms.SelectedIndexChanged += new System.EventHandler(this.cbBox_rooms_SelectedIndexChanged);
             // 
             // Frm_BookingDetails
             // 
@@ -227,6 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1078, 619);
+            this.Controls.Add(this.cbBox_rooms);
             this.Controls.Add(this.chkBox_showOverAll);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.chkBox_showOngoingCheck_In);
@@ -257,5 +276,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2CustomCheckBox chkBox_showOverAll;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2ComboBox cbBox_rooms;
     }
 }

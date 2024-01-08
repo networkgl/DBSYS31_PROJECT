@@ -38,6 +38,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.lblApproved = new System.Windows.Forms.Label();
             this.lblPending = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -63,7 +64,7 @@
             this.lbl_Pecent = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -181,6 +182,18 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(240, 140);
             this.guna2Panel3.TabIndex = 9;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(91, 63);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(13, 20);
+            this.label11.TabIndex = 20;
+            this.label11.Text = ":";
             // 
             // lblApproved
             // 
@@ -360,7 +373,7 @@
             this.lbl_TotalGuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.lbl_TotalGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TotalGuest.ForeColor = System.Drawing.Color.White;
-            this.lbl_TotalGuest.Location = new System.Drawing.Point(156, 63);
+            this.lbl_TotalGuest.Location = new System.Drawing.Point(134, 63);
             this.lbl_TotalGuest.Name = "lbl_TotalGuest";
             this.lbl_TotalGuest.Size = new System.Drawing.Size(52, 55);
             this.lbl_TotalGuest.TabIndex = 13;
@@ -392,6 +405,7 @@
             // 
             this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.guna2Panel5.BorderRadius = 20;
+            this.guna2Panel5.Controls.Add(this.cartesianChart1);
             this.guna2Panel5.Controls.Add(this.label5);
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
             this.guna2Panel5.Location = new System.Drawing.Point(19, 239);
@@ -404,12 +418,12 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(17, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 21);
+            this.label5.Size = new System.Drawing.Size(105, 21);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Announcements";
+            this.label5.Text = "Sales Report";
             // 
             // guna2Panel6
             // 
@@ -446,6 +460,7 @@
             this.pb_currentlyCheckIn.Location = new System.Drawing.Point(34, 83);
             this.pb_currentlyCheckIn.Minimum = 0;
             this.pb_currentlyCheckIn.Name = "pb_currentlyCheckIn";
+            this.pb_currentlyCheckIn.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(52)))), ((int)(((byte)(212)))));
             this.pb_currentlyCheckIn.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.pb_currentlyCheckIn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.pb_currentlyCheckIn.Size = new System.Drawing.Size(179, 179);
@@ -458,7 +473,7 @@
             this.lbl_Pecent.AutoSize = true;
             this.lbl_Pecent.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Pecent.ForeColor = System.Drawing.Color.Teal;
-            this.lbl_Pecent.Location = new System.Drawing.Point(42, 74);
+            this.lbl_Pecent.Location = new System.Drawing.Point(41, 74);
             this.lbl_Pecent.Name = "lbl_Pecent";
             this.lbl_Pecent.Size = new System.Drawing.Size(112, 31);
             this.lbl_Pecent.TabIndex = 0;
@@ -469,7 +484,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(17, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 21);
@@ -486,17 +501,13 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Dashboard";
             // 
-            // label11
+            // cartesianChart1
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(91, 63);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 20);
-            this.label11.TabIndex = 20;
-            this.label11.Text = ":";
+            this.cartesianChart1.Location = new System.Drawing.Point(21, 44);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(707, 288);
+            this.cartesianChart1.TabIndex = 12;
+            this.cartesianChart1.Text = "cartesianChart1";
             // 
             // Frm_Dashboard
             // 
@@ -572,5 +583,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }

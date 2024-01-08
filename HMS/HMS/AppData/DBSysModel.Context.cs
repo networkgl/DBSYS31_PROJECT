@@ -653,5 +653,18 @@ namespace HMS.AppData
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_display_room_client_details_Result>("sp_display_room_client_details", idParameter);
         }
+    
+        public virtual ObjectResult<sp_get_roomType_by_name_Result> sp_get_roomType_by_name(string roomtype, string typeOfFilter)
+        {
+            var roomtypeParameter = roomtype != null ?
+                new ObjectParameter("roomtype", roomtype) :
+                new ObjectParameter("roomtype", typeof(string));
+    
+            var typeOfFilterParameter = typeOfFilter != null ?
+                new ObjectParameter("typeOfFilter", typeOfFilter) :
+                new ObjectParameter("typeOfFilter", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_roomType_by_name_Result>("sp_get_roomType_by_name", roomtypeParameter, typeOfFilterParameter);
+        }
     }
 }

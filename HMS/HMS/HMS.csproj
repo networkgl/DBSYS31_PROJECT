@@ -46,6 +46,15 @@
     <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -136,6 +145,9 @@
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\sp_get_client_room_details_Result.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\sp_get_roomType_by_name_Result.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\sp_get_room_details__by_index_Result.cs">
@@ -684,6 +696,9 @@
       <DependentUpon>DBSysModel.edmx</DependentUpon>
       <LastGenOutput>DBSysModel1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\personal-information.png" />
+    <None Include="Resources\icons8-person-1001.png" />
+    <None Include="Resources\icons8-person-100.png" />
     <None Include="Resources\icons8-door-100 %284%29.png" />
     <None Include="Resources\gifts1.png" />
     <None Include="Resources\tree.png" />

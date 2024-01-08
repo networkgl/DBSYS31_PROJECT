@@ -343,11 +343,13 @@ namespace HMS.Forms
 
             if (remainingRoom == (int)RoomAvailable.MIN)
             {
-                lbl_RoomType.Text = "FULL BOOK";
+                lbl_RoomType.Text = "FULL BOOKED";
+                lbl_RoomType.ForeColor = Color.Red;
             }
             else
             {
                 lbl_RoomType.Text = $"Vacant Room : {remainingRoom}";
+                lbl_RoomType.ForeColor = Color.RoyalBlue;
             }
             //lbl_RoomType.Text = $"Vacant Room : {remainingRoom}";
         }

@@ -38,7 +38,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_login = new System.Windows.Forms.Label();
             this.btnShowPassword = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -171,17 +171,17 @@
             this.label10.TabIndex = 30;
             this.label10.Text = "Connected >> SQL Server Database...";
             // 
-            // label3
+            // lbl_login
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(92)))), ((int)(((byte)(157)))));
-            this.label3.Location = new System.Drawing.Point(26, 197);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 21);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Login to your account";
+            this.lbl_login.AutoSize = true;
+            this.lbl_login.BackColor = System.Drawing.SystemColors.Control;
+            this.lbl_login.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(92)))), ((int)(((byte)(157)))));
+            this.lbl_login.Location = new System.Drawing.Point(26, 197);
+            this.lbl_login.Name = "lbl_login";
+            this.lbl_login.Size = new System.Drawing.Size(181, 21);
+            this.lbl_login.TabIndex = 31;
+            this.lbl_login.Text = "Login to your account";
             // 
             // btnShowPassword
             // 
@@ -258,7 +258,7 @@
             this.ClientSize = new System.Drawing.Size(313, 491);
             this.Controls.Add(this.btnShowPassword);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_login);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.linkLabel1);
@@ -296,7 +296,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_login;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnShowPassword;
     }

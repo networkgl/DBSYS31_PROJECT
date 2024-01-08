@@ -683,6 +683,26 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_person_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-person-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_person_1001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-person-1001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_reception_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-reception-30", resourceCulture);
@@ -866,6 +886,16 @@ namespace HMS.Properties {
         internal static System.Drawing.Bitmap notshow {
             get {
                 object obj = ResourceManager.GetObject("notshow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap personal_information {
+            get {
+                object obj = ResourceManager.GetObject("personal-information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

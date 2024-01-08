@@ -33,6 +33,18 @@
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.pnl_p1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_oneHundred = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_twentyFive = new System.Windows.Forms.Label();
+            this.lbl_below = new System.Windows.Forms.Label();
+            this.lbl_fifty = new System.Windows.Forms.Label();
+            this.lbl_seventyFive = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.nud_NumberOfGuest_SeniorCitizen = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -61,18 +73,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.CurrentDate = new System.Windows.Forms.Timer(this.components);
             this.errorProvider_S1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lbl_twentyFive = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lbl_fifty = new System.Windows.Forms.Label();
-            this.lbl_seventyFive = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.guna2ShadowPanel1.SuspendLayout();
             this.pnl_Main.SuspendLayout();
             this.pnl_p1.SuspendLayout();
@@ -117,11 +117,11 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.lbl_oneHundred);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.lbl_twentyFive);
-            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.lbl_below);
             this.panel2.Controls.Add(this.lbl_fifty);
             this.panel2.Controls.Add(this.lbl_seventyFive);
             this.panel2.Controls.Add(this.panel6);
@@ -146,6 +146,116 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1049, 593);
             this.panel2.TabIndex = 68;
+            // 
+            // lbl_oneHundred
+            // 
+            this.lbl_oneHundred.AutoSize = true;
+            this.lbl_oneHundred.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_oneHundred.Location = new System.Drawing.Point(893, 41);
+            this.lbl_oneHundred.Name = "lbl_oneHundred";
+            this.lbl_oneHundred.Size = new System.Drawing.Size(87, 17);
+            this.lbl_oneHundred.TabIndex = 114;
+            this.lbl_oneHundred.Text = "Fully Booked";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
+            this.panel7.Location = new System.Drawing.Point(867, 41);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(20, 17);
+            this.panel7.TabIndex = 113;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(916, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 17);
+            this.label10.TabIndex = 112;
+            this.label10.Text = "(No of booking)";
+            // 
+            // lbl_twentyFive
+            // 
+            this.lbl_twentyFive.AutoSize = true;
+            this.lbl_twentyFive.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_twentyFive.Location = new System.Drawing.Point(893, 111);
+            this.lbl_twentyFive.Name = "lbl_twentyFive";
+            this.lbl_twentyFive.Size = new System.Drawing.Size(83, 17);
+            this.lbl_twentyFive.TabIndex = 110;
+            this.lbl_twentyFive.Text = "25 % above";
+            // 
+            // lbl_below
+            // 
+            this.lbl_below.AutoSize = true;
+            this.lbl_below.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_below.Location = new System.Drawing.Point(893, 134);
+            this.lbl_below.Name = "lbl_below";
+            this.lbl_below.Size = new System.Drawing.Size(34, 17);
+            this.lbl_below.TabIndex = 111;
+            this.lbl_below.Text = "1 - 9";
+            // 
+            // lbl_fifty
+            // 
+            this.lbl_fifty.AutoSize = true;
+            this.lbl_fifty.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fifty.Location = new System.Drawing.Point(893, 88);
+            this.lbl_fifty.Name = "lbl_fifty";
+            this.lbl_fifty.Size = new System.Drawing.Size(83, 17);
+            this.lbl_fifty.TabIndex = 109;
+            this.lbl_fifty.Text = "50 % above";
+            // 
+            // lbl_seventyFive
+            // 
+            this.lbl_seventyFive.AutoSize = true;
+            this.lbl_seventyFive.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_seventyFive.Location = new System.Drawing.Point(893, 65);
+            this.lbl_seventyFive.Name = "lbl_seventyFive";
+            this.lbl_seventyFive.Size = new System.Drawing.Size(83, 17);
+            this.lbl_seventyFive.TabIndex = 108;
+            this.lbl_seventyFive.Text = "75 % above";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(201)))), ((int)(((byte)(21)))));
+            this.panel6.Location = new System.Drawing.Point(867, 134);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(20, 17);
+            this.panel6.TabIndex = 107;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel5.Location = new System.Drawing.Point(867, 111);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(20, 17);
+            this.panel5.TabIndex = 106;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(118)))), ((int)(((byte)(117)))));
+            this.panel4.Location = new System.Drawing.Point(867, 88);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(20, 17);
+            this.panel4.TabIndex = 105;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(846, 2);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 21);
+            this.label9.TabIndex = 104;
+            this.label9.Text = "Legend";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(185)))), ((int)(((byte)(255)))));
+            this.panel1.Location = new System.Drawing.Point(867, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(20, 17);
+            this.panel1.TabIndex = 103;
             // 
             // label5
             // 
@@ -183,7 +293,6 @@
             this.nud_NumberOfGuest_SeniorCitizen.Size = new System.Drawing.Size(786, 36);
             this.nud_NumberOfGuest_SeniorCitizen.TabIndex = 92;
             this.nud_NumberOfGuest_SeniorCitizen.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
-            this.nud_NumberOfGuest_SeniorCitizen.UpDownButtonForeColor = System.Drawing.Color.White;
             this.nud_NumberOfGuest_SeniorCitizen.ValueChanged += new System.EventHandler(this.nud_NumberOfGuest_SeniorCitizen_ValueChanged);
             // 
             // nud_NumberOfGuest_Adult
@@ -196,7 +305,6 @@
             this.nud_NumberOfGuest_Adult.Size = new System.Drawing.Size(786, 36);
             this.nud_NumberOfGuest_Adult.TabIndex = 91;
             this.nud_NumberOfGuest_Adult.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
-            this.nud_NumberOfGuest_Adult.UpDownButtonForeColor = System.Drawing.Color.White;
             this.nud_NumberOfGuest_Adult.ValueChanged += new System.EventHandler(this.nud_NumberOfGuest_Adult_ValueChanged);
             // 
             // label13
@@ -219,7 +327,6 @@
             this.nud_NumberOfGuest_Children.Size = new System.Drawing.Size(786, 36);
             this.nud_NumberOfGuest_Children.TabIndex = 87;
             this.nud_NumberOfGuest_Children.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(222)))));
-            this.nud_NumberOfGuest_Children.UpDownButtonForeColor = System.Drawing.Color.White;
             this.nud_NumberOfGuest_Children.ValueChanged += new System.EventHandler(this.nud_NumberOfGuest_Children_ValueChanged);
             // 
             // mc_GuideBooking
@@ -255,6 +362,7 @@
             this.mc_GuideBooking.Weeknumbers.Align = Pabo.Calendar.mcWeeknumberAlign.Center;
             this.mc_GuideBooking.Weeknumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mc_GuideBooking.Weeknumbers.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(179)))), ((int)(((byte)(200)))));
+            this.mc_GuideBooking.DayRender += new Pabo.Calendar.DayRenderEventHandler(this.mc_GuideBooking_DayRender);
             this.mc_GuideBooking.DayQueryInfo += new Pabo.Calendar.DayQueryInfoEventHandler(this.mc_GuideBooking_DayQueryInfo);
             // 
             // label8
@@ -511,116 +619,6 @@
             // 
             this.errorProvider_S1.ContainerControl = this;
             // 
-            // lbl_twentyFive
-            // 
-            this.lbl_twentyFive.AutoSize = true;
-            this.lbl_twentyFive.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_twentyFive.Location = new System.Drawing.Point(893, 111);
-            this.lbl_twentyFive.Name = "lbl_twentyFive";
-            this.lbl_twentyFive.Size = new System.Drawing.Size(83, 17);
-            this.lbl_twentyFive.TabIndex = 110;
-            this.lbl_twentyFive.Text = "25 % above";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(893, 134);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(67, 17);
-            this.label12.TabIndex = 111;
-            this.label12.Text = "below 10";
-            // 
-            // lbl_fifty
-            // 
-            this.lbl_fifty.AutoSize = true;
-            this.lbl_fifty.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fifty.Location = new System.Drawing.Point(893, 88);
-            this.lbl_fifty.Name = "lbl_fifty";
-            this.lbl_fifty.Size = new System.Drawing.Size(83, 17);
-            this.lbl_fifty.TabIndex = 109;
-            this.lbl_fifty.Text = "50 % above";
-            // 
-            // lbl_seventyFive
-            // 
-            this.lbl_seventyFive.AutoSize = true;
-            this.lbl_seventyFive.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_seventyFive.Location = new System.Drawing.Point(893, 65);
-            this.lbl_seventyFive.Name = "lbl_seventyFive";
-            this.lbl_seventyFive.Size = new System.Drawing.Size(83, 17);
-            this.lbl_seventyFive.TabIndex = 108;
-            this.lbl_seventyFive.Text = "75 % above";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(201)))), ((int)(((byte)(21)))));
-            this.panel6.Location = new System.Drawing.Point(867, 134);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(20, 17);
-            this.panel6.TabIndex = 107;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.YellowGreen;
-            this.panel5.Location = new System.Drawing.Point(867, 111);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(20, 17);
-            this.panel5.TabIndex = 106;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.OrangeRed;
-            this.panel4.Location = new System.Drawing.Point(867, 88);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(20, 17);
-            this.panel4.TabIndex = 105;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(846, 2);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 21);
-            this.label9.TabIndex = 104;
-            this.label9.Text = "Legend";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Blue;
-            this.panel1.Location = new System.Drawing.Point(867, 65);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(20, 17);
-            this.panel1.TabIndex = 103;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(916, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(111, 17);
-            this.label10.TabIndex = 112;
-            this.label10.Text = "(No of booking)";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(893, 41);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 17);
-            this.label11.TabIndex = 114;
-            this.label11.Text = "Fully Booked";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
-            this.panel7.Location = new System.Drawing.Point(867, 41);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(20, 17);
-            this.panel7.TabIndex = 113;
-            // 
             // Frm_BookNow_S1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -682,7 +680,7 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2NumericUpDown nud_NumberOfGuest_SeniorCitizen;
         private System.Windows.Forms.Label lbl_twentyFive;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbl_below;
         private System.Windows.Forms.Label lbl_fifty;
         private System.Windows.Forms.Label lbl_seventyFive;
         private System.Windows.Forms.Panel panel6;
@@ -691,7 +689,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbl_oneHundred;
         private System.Windows.Forms.Panel panel7;
     }
 }

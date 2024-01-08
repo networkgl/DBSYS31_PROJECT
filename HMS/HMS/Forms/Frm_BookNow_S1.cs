@@ -9,6 +9,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Interop;
+using System.Windows.Media;
 
 
 namespace HMS
@@ -28,12 +29,24 @@ namespace HMS
         public DateTime checkIn = DateTime.Now;
         public DateTime checkOut = DateTime.Now.AddDays(1);
 
+
         private HMSEntities db;
+        private UserRepository userRepo;
+        private List<vw_get_total_reservation_by_date> retVal = new List<vw_get_total_reservation_by_date>();
+
 
         public Frm_BookNow_S1()
         {
             InitializeComponent();
             //userRepo = new UserRepository();
+        }
+        private UserRepository GetInstanceUserRepo()
+        {
+            if (userRepo == null)
+            {
+                userRepo = new UserRepository();
+            }
+            return userRepo;
         }
         public Frm_BookNow_S1(Frm_BookNow_S1 s1, Frm_BookNow_S2 s2, Frm_BookNow_S3 s3)
         {
@@ -125,136 +138,393 @@ namespace HMS
 
                 DateTimePicker_CheckIn.Value = s1.CheckIn;
                 DateTimePicker_CheckOut.Value = s1.CheckOut;
+
+                //s1.InitializeDateItems();
             }
             //dateArray.Add(new DateTime(2023, 11, 10));
             //dateArray.Add(new DateTime(2023, 11, 15));
             //dateArray.Add(new DateTime(2023, 11, 20));
             //FormDisplay();
-        }
-        private List<vw_get_total_reservation_by_date> GetTotalReservationByDate(ref string message)
-        {
-            var retVal = new List<AppData.vw_get_total_reservation_by_date>();
 
+
+
+            totalRooms = 0;
+            seventyFivePercent = 0.0;
+            fiftyPercent = 0.0;
+            twentyFivePercent = 0.0;
+
+            var message = string.Empty;
             try
             {
                 using (db = new HMSEntities())
                 {
-                    retVal = db.vw_get_total_reservation_by_date.ToList();
+                    totalRooms = ((int)RoomAvailable.MAX * db.ROOM_DETAILS.Count());
+                    seventyFivePercent = (totalRooms * 0.75);
+                    fiftyPercent = (totalRooms * 0.50);
+                    twentyFivePercent = (totalRooms * 0.25);
+
+                    //Console.WriteLine(seventyFivePercent);
+                    //Console.WriteLine(fiftyPercent);
+                    //Console.WriteLine(twentyFivePercent);
+
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                message = e.Message;
+                message = ex.Message;
+                MessageDialog.Show(message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
             }
-            return retVal;
+
+
+            //Assign labels value based on max rooms calculation
+            lbl_oneHundred.Text = $"{totalRooms} - Fully Booked";
+            lbl_seventyFive.Text = $"{seventyFivePercent + 1} - {totalRooms-1}";
+            lbl_fifty.Text = $"{fiftyPercent + 1} - {seventyFivePercent}";
+            lbl_twentyFive.Text = $"{twentyFivePercent + 1} - {fiftyPercent}";
+            lbl_below.Text = $"1 - {twentyFivePercent}";
+
+            InitializeDateItems();
+        }
+
+        private void InitializeDateItems()
+        {
+            var message = string.Empty;
+            //var retVal = userRepo.GetTotalReservationByDate(ref message);
+
+            if (s1 == null)
+            {
+                RetVal = GetInstanceUserRepo().GetTotalReservationByDate();
+            }
+            else
+            {
+                RetVal = s1.GetInstanceUserRepo().GetTotalReservationByDate();
+            }
+
+            List<DateTime> dateArray = new List<DateTime>();
+            List<int> totalReservation = new List<int>();
+            foreach (var dates in RetVal)
+            {
+                totalReservation.Add((int)dates.TotalReservationByDate);
+
+                // Add each date to the existing list
+                dateArray.Add(new DateTime(dates.Date.Year, dates.Date.Month, dates.Date.Day));
+
+                Console.WriteLine(dates.TotalReservationByDate +"\n"+ dates.Date.Year, dates.Date.Month, dates.Date.Day);
+            }
+
+            // Size of the DateItem array should match the size of dateArray
+            var size = dateArray.Count;
+
+            // Create an array of DateItem instances
+               DateItem[] d = new DateItem[size];
+
+            for (int i = 0; i < size; i++)
+            {
+                Console.WriteLine($"Total Reservation: {totalReservation[i]}, Date: {dateArray[i].ToShortDateString()}");
+
+                // Set different colors based on the count threshold
+                if (totalReservation[i] == totalRooms)
+                {
+                    // Fully booked
+                    d[i] = new DateItem();
+                    d[i].Date = dateArray[i];
+                    d[i].DateColor = System.Drawing.Color.Black;
+                    d[i].BackColor1 = System.Drawing.Color.FromArgb(178, 190, 195);
+                }
+                else if (totalReservation[i] < totalRooms && totalReservation[i] >= seventyFivePercent + 1)
+                {
+                    // Almost fully booked
+                    d[i] = new DateItem();
+                    d[i].Date = dateArray[i];
+                    d[i].DateColor = System.Drawing.Color.Black;
+                    d[i].BackColor1 = System.Drawing.Color.FromArgb(116, 185, 255);
+                }
+                else if (totalReservation[i] <= seventyFivePercent && totalReservation[i] >= fiftyPercent + 1)
+                {
+                    // Half of the total rooms
+                    d[i] = new DateItem();
+                    d[i].Date = dateArray[i];
+                    d[i].DateColor = System.Drawing.Color.Black;
+                    d[i].BackColor1 = System.Drawing.Color.FromArgb(255, 118, 117);
+                }
+                else if (totalReservation[i] <= fiftyPercent && totalReservation[i] >= twentyFivePercent + 1)
+                {
+                    // Minimally booked
+                    d[i] = new DateItem();
+                    d[i].Date = dateArray[i];
+                    d[i].DateColor = System.Drawing.Color.Black;
+                    d[i].BackColor1 = System.Drawing.Color.YellowGreen;
+                }
+                else if (totalReservation[i] <= twentyFivePercent && totalReservation[i] >= 1)
+                {
+                    // Minimally booked
+                    d[i] = new DateItem();
+                    d[i].Date = dateArray[i];
+                    d[i].DateColor = System.Drawing.Color.Black;
+                    d[i].BackColor1 = System.Drawing.Color.FromArgb(250, 201, 21);
+                }
+            }
+            mc_GuideBooking.AddDateInfo(d);
+        }
+        private void mc_GuideBooking_DayRender(object sender, DayRenderEventArgs e)
+        {
 
         }
         private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
         {
-            List<DateTime> dateArray = new List<DateTime>();
-
+            //DateBookingDisplay(e);
+        }
+        private void DateBookingDisplay(Pabo.Calendar.DayQueryInfoEventArgs e)
+        {
             var message = string.Empty;
-            var Dates = new List<AppData.vw_get_total_reservation_by_date>();
-
-
             if (s1 == null)
             {
-                Dates = GetTotalReservationByDate(ref message);
+                RetVal = GetInstanceUserRepo().GetTotalReservationByDate();
             }
             else
             {
-                Dates = s1.GetTotalReservationByDate(ref message);
+                RetVal = s1.GetInstanceUserRepo().GetTotalReservationByDate();
             }
 
-            foreach (var date in Dates)
-            {
-                dateArray.Add(date.reservationDateIn.Date); // Use Date property to get only the date part
-                Console.WriteLine(date.reservationDateIn.Date);
-            }
+            // Find the reservation for the current date, if any
+            var currentDateReservation = RetVal.FirstOrDefault(d => d.Date.Date == e.Date.Date);
 
-            // Count occurrences of each date
-            var dateCounts = dateArray.GroupBy(date => date).ToDictionary(group => group.Key, group => group.Count());
 
-            for (var i = 0; i < dateArray.Count; i++)
+
+            if (currentDateReservation != null)
             {
-                // Check date and mark it with color to specify occupied or not available to select for booking.
-                if (e.Date.Date == dateArray[i])
+                var total = currentDateReservation.TotalReservationByDate;
+                Console.WriteLine($"Total Reservation: {total}, Date: {currentDateReservation.Date.ToShortDateString()}");
+
+
+                // Set different colors based on the count threshold
+                if (total == totalRooms)
                 {
-                    // Check the count of reservations for the current date
-                    if (dateCounts.ContainsKey(e.Date.Date))
-                    {
-                        int count = dateCounts[e.Date.Date];
-
-                        var totalRooms = 0;
-                        var seventyFivePercent = 0.0;
-                        var fiftyPercent = 0.0;
-                        var twentyFivePercent = 0.0;
-
-                        try
-                        {
-                            using (db = new HMSEntities())
-                            {
-                                totalRooms = ((int)RoomAvailable.MAX * db.ROOM_DETAILS.Count());
-                                seventyFivePercent = (totalRooms * 0.75);
-                                fiftyPercent = (totalRooms * 0.50);
-                                twentyFivePercent = (totalRooms * 0.25);
-
-                                //Console.WriteLine(seventyFivePercent);
-                                //Console.WriteLine(fiftyPercent);
-                                //Console.WriteLine(twentyFivePercent);
-
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            message = ex.Message;
-                        }
-
-                        //Assign labels value based on max rooms calculation
-                        lbl_twentyFive.Text = $"{twentyFivePercent} above";
-                        lbl_fifty.Text = $"{fiftyPercent} above";
-                        lbl_seventyFive.Text = $"{seventyFivePercent} above";
-
-                        if (count == totalRooms)
-                        {
-                            //Fully booked
-                            e.Info.DateColor = Color.Black;
-                            e.Info.BackColor1 = Color.FromArgb(178, 190, 195); // You can choose a different color for fully booked dates
-                            e.OwnerDraw = true;
-                        }
-                        // Set different colors based on the count threshold
-                        else if (count > seventyFivePercent)
-                        {
-                            // Almost fully booked
-                            e.Info.DateColor = Color.White;
-                            e.Info.BackColor1 = Color.Blue; // You can choose a different color for fully booked dates
-                            e.OwnerDraw = true;
-                        }
-                        else if (count > fiftyPercent)
-                        {
-                            //Half of the total rooms
-                            e.Info.DateColor = Color.White;
-                            e.Info.BackColor1 = Color.OrangeRed; // You can choose a different color for almost fully booked dates
-                            e.OwnerDraw = true;
-                        }
-                        else if (count > twentyFivePercent)
-                        {
-                            // Minimally booked
-                            e.Info.DateColor = Color.Black;
-                            e.Info.BackColor1 = Color.YellowGreen; // You can choose a different color for minimally booked dates
-                            e.OwnerDraw = true;
-                        }
-                        else if (count <= 1)
-                        {
-                            // Minimally booked
-                            e.Info.DateColor =  Color.Black;
-                            e.Info.BackColor1 = Color.FromArgb(250, 201, 21); // You can choose a different color for minimally booked dates
-                            e.OwnerDraw = true;
-                        }
-                    }
+                    // Fully booked
+                    e.Info.DateColor = System.Drawing.Color.Black;
+                    e.Info.BackColor1 = System.Drawing.Color.FromArgb(178, 190, 195);
+                    e.OwnerDraw = true;
+                }
+                else if (total < totalRooms && total >= seventyFivePercent)
+                {
+                    // Almost fully booked
+                    e.Info.DateColor = System.Drawing.Color.White;
+                    e.Info.BackColor1 = System.Drawing.Color.Blue;
+                    e.OwnerDraw = true;
+                }
+                else if (total <= seventyFivePercent && total >= fiftyPercent)
+                {
+                    // Half of the total rooms
+                    e.Info.DateColor = System.Drawing.Color.White;
+                    e.Info.BackColor1 = System.Drawing.Color.OrangeRed;
+                    e.OwnerDraw = true;
+                }
+                else if (total <= fiftyPercent && total >= twentyFivePercent)
+                {
+                    // Minimally booked
+                    e.Info.DateColor = System.Drawing.Color.Black;
+                    e.Info.BackColor1 = System.Drawing.Color.YellowGreen;
+                    e.OwnerDraw = true;
+                }
+                else if (total <= twentyFivePercent && total >= 1)
+                {
+                    // Minimally booked
+                    e.Info.DateColor = System.Drawing.Color.Black;
+                    e.Info.BackColor1 = System.Drawing.Color.FromArgb(250, 201, 21);
+                    e.OwnerDraw = true;
                 }
             }
+            else
+            {
+                // Handle the case when there is no reservation for the current date
+                // You may choose to set a default color or leave it unchanged
+            }
         }
+        //private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
+        //{            
+        //    //First group by date then count all
+        //    var message = string.Empty;
+        //    var retVal = userRepo.GetTotalReservationByDate(ref message);
+
+        //    if (retVal.Count > 0)
+        //    {
+        //        foreach (var dates in retVal)
+        //        {
+        //            var total = dates.TotalReservationByDate;
+        //            var date = dates.Date;
+
+        //            Console.WriteLine(total);
+        //            Console.WriteLine(date);
+        //            Console.WriteLine();
+
+
+        //            if (total == totalRooms)
+        //            {
+
+        //                //Fully booked
+        //                e.Info.DateColor = Color.Black;
+        //                e.Info.BackColor1 = Color.FromArgb(178, 190, 195); // You can choose a different color for fully booked dates
+        //                e.OwnerDraw = true;
+        //            }
+        //            // Set different colors based on the count threshold
+        //            else if (total > seventyFivePercent)
+        //            {
+        //                // Almost fully booked
+        //                e.Info.DateColor = Color.White;
+        //                e.Info.BackColor1 = Color.Blue; // You can choose a different color for fully booked dates
+        //                e.OwnerDraw = true;
+        //            }
+        //            else if (total > fiftyPercent)
+        //            {
+        //                //Half of the total rooms
+        //                e.Info.DateColor = Color.White;
+        //                e.Info.BackColor1 = Color.OrangeRed; // You can choose a different color for almost fully booked dates
+        //                e.OwnerDraw = true;
+        //            }
+        //            else if (total > twentyFivePercent)
+        //            {
+        //                // Minimally booked
+        //                e.Info.DateColor = Color.Black;
+        //                e.Info.BackColor1 = Color.YellowGreen; // You can choose a different color for minimally booked dates
+        //                e.OwnerDraw = true;
+        //            }
+        //            else if (total <= 1)
+        //            {
+        //                // Minimally booked
+        //                e.Info.DateColor = Color.Black;
+        //                e.Info.BackColor1 = Color.FromArgb(250, 201, 21); // You can choose a different color for minimally booked dates
+        //                e.OwnerDraw = true;
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageDialog.Show("No current booking reservation", "Message", MessageDialogButtons.OK, MessageDialogIcon.Information, MessageDialogStyle.Light);
+        //    }
+        //}
+
+        //private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
+        //{
+        //    int count1 = 0, count2 = 0, count3 = 0, count4 = 0;
+
+        //    List<DateTime> dateArray = new List<DateTime>();
+
+        //    var message = string.Empty;
+        //    var Dates = new List<AppData.vw_get_total_reservation_by_date>();
+
+
+        //    if (s1 == null)
+        //    {
+        //        Dates = GetTotalReservationByDate(ref message);
+        //    }
+        //    else
+        //    {
+        //        Dates = s1.GetTotalReservationByDate(ref message);
+        //    }
+
+        //    foreach (var date in Dates)
+        //    {
+        //        dateArray.Add(date.reservationDateIn.Date); // Use Date property to get only the date part
+        //        Console.WriteLine(date.reservationDateIn.Date);
+        //    }
+
+        //    // Count occurrences of each date
+        //    var dateCounts = dateArray.GroupBy(date => date).ToDictionary(group => group.Key, group => group.Count());
+
+        //    for (var i = 0; i < dateArray.Count; i++)
+        //    {
+        //        // Check date and mark it with color to specify occupied or not available to select for booking.
+        //        if (e.Date.Date == dateArray[i])
+        //        {
+        //            // Check the count of reservations for the current date
+        //            if (dateCounts.ContainsKey(e.Date.Date))
+        //            {
+        //                int count = dateCounts[e.Date.Date];
+
+        //                var totalRooms = 0;
+        //                var seventyFivePercent = 0.0;
+        //                var fiftyPercent = 0.0;
+        //                var twentyFivePercent = 0.0;
+
+        //                try
+        //                {
+        //                    using (db = new HMSEntities())
+        //                    {
+        //                        totalRooms = ((int)RoomAvailable.MAX * db.ROOM_DETAILS.Count());
+        //                        seventyFivePercent = (totalRooms * 0.75);
+        //                        fiftyPercent = (totalRooms * 0.50);
+        //                        twentyFivePercent = (totalRooms * 0.25);
+
+        //                        //Console.WriteLine(seventyFivePercent);
+        //                        //Console.WriteLine(fiftyPercent);
+        //                        //Console.WriteLine(twentyFivePercent);
+
+        //                    }
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    message = ex.Message;
+        //                }
+
+        //                //Assign labels value based on max rooms calculation
+        //                lbl_twentyFive.Text = $"{twentyFivePercent} above";
+        //                lbl_fifty.Text = $"{fiftyPercent} above";
+        //                lbl_seventyFive.Text = $"{seventyFivePercent} above";
+
+
+        //                if (count == totalRooms)
+        //                {
+        //                    //Fully booked
+        //                    e.Info.DateColor = Color.Black;
+        //                    e.Info.BackColor1 = Color.FromArgb(178, 190, 195); // You can choose a different color for fully booked dates
+        //                    e.OwnerDraw = true;
+        //                }
+        //                // Set different colors based on the count threshold
+        //                else if (count > seventyFivePercent)
+        //                {
+        //                    // Almost fully booked
+        //                    e.Info.DateColor = Color.White;
+        //                    e.Info.BackColor1 = Color.Blue; // You can choose a different color for fully booked dates
+        //                    e.OwnerDraw = true;
+
+        //                    count4++;
+        //                }
+        //                else if (count > fiftyPercent)
+        //                {
+        //                    //Half of the total rooms
+        //                    e.Info.DateColor = Color.White;
+        //                    e.Info.BackColor1 = Color.OrangeRed; // You can choose a different color for almost fully booked dates
+        //                    e.OwnerDraw = true;
+
+        //                    count3++;
+        //                }
+        //                else if (count > twentyFivePercent)
+        //                {
+        //                    // Minimally booked
+        //                    e.Info.DateColor = Color.Black;
+        //                    e.Info.BackColor1 = Color.YellowGreen; // You can choose a different color for minimally booked dates
+        //                    e.OwnerDraw = true;
+
+        //                    count2++;
+        //                }
+        //                else if (count <= 1)
+        //                {
+        //                    // Minimally booked
+        //                    e.Info.DateColor =  Color.Black;
+        //                    e.Info.BackColor1 = Color.FromArgb(250, 201, 21); // You can choose a different color for minimally booked dates
+        //                    e.OwnerDraw = true;
+
+        //                    count1++;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    Console.WriteLine(count1);
+        //    Console.WriteLine(count2);
+        //    Console.WriteLine(count3);
+        //    Console.WriteLine(count4);
+
+        //}
 
 
         //private void mc_GuideBooking_DayQueryInfo(object sender, Pabo.Calendar.DayQueryInfoEventArgs e)
@@ -286,6 +556,11 @@ namespace HMS
         //    }
         //}
         private static Frm_BookNow_S1 _instace;
+        private int totalRooms;
+        private double seventyFivePercent;
+        private double fiftyPercent;
+        private double twentyFivePercent;
+
         public static Frm_BookNow_S1 GetInstance
         {
             get { return _instace; }
@@ -304,7 +579,6 @@ namespace HMS
             //    pnl_main.Controls.Clear();
             //    s1.Show();
             //}
-
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -351,7 +625,6 @@ namespace HMS
             //s2.Dock = DockStyle.Fill;
             //pnl_Main.Controls.Add(s2);
             //s2.Show();
-            Console.WriteLine("Guest: "+(NoOfGuest_Adult+NoOfGuest_Children+NoOfGuest_Senior));
         }
 
         private void CurrentDate_Tick(object sender, EventArgs e)
@@ -434,5 +707,6 @@ namespace HMS
 
         public int NoOfGuest_Adult { get => noOfGuest_adult; set => noOfGuest_adult = value; }
         public int NoOfGuest_Senior { get => noOfGuest_senior; set => noOfGuest_senior = value; }
+        public List<vw_get_total_reservation_by_date> RetVal { get => retVal; set => retVal = value; }
     }
 }

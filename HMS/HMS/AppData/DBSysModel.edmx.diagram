@@ -6,9 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f2f31dfb012d455e9d7791328333a3f1" Name="Diagram1" ZoomLevel="97">
         <EntityTypeShape EntityType="HMSModel.ACCOUNTS" Width="1.5" PointX="5" PointY="5.875" />
-        <EntityTypeShape EntityType="HMSModel.CLIENT" Width="1.5" PointX="0.75" PointY="5.75" />
-        <EntityTypeShape EntityType="HMSModel.GUEST" Width="1.5" PointX="0.75" PointY="8.875" />
-        <EntityTypeShape EntityType="HMSModel.PAYMENT" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="HMSModel.CLIENT" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="HMSModel.GUEST" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HMSModel.PAYMENT" Width="1.5" PointX="0.75" PointY="5.25" />
         <EntityTypeShape EntityType="HMSModel.RESERVATION" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="HMSModel.ROLE" Width="1.5" PointX="2.75" PointY="6" />
         <EntityTypeShape EntityType="HMSModel.ROOM" Width="1.5" PointX="5.25" PointY="1.625" />
@@ -30,7 +30,7 @@
         <EntityTypeShape EntityType="HMSModel.vw_get_room_reserve_approve_current_occurence" Width="1.5" PointX="13.75" PointY="0.75" />
         <EntityTypeShape EntityType="HMSModel.vw_get_room_reserve_pending_current_occurence" Width="1.5" PointX="2.75" PointY="13.75" />
         <EntityTypeShape EntityType="HMSModel.vw_get_total_reservation_by_date" Width="1.5" PointX="13.75" PointY="3.75" />
-        <EntityTypeShape EntityType="HMSModel.vw_get_total_room_occupied" Width="1.5" PointX="13.75" PointY="5.75" />
+        <EntityTypeShape EntityType="HMSModel.vw_get_total_room_occupied" Width="1.5" PointX="13.75" PointY="6.75" />
         <AssociationConnector Association="HMSModel.FK_ACCOUNTS_ROLE" />
         <AssociationConnector Association="HMSModel.FK_RESERVATION_CLIENT" />
         <AssociationConnector Association="HMSModel.FK_RESERVATION_GUEST" />

@@ -36,7 +36,11 @@ namespace HMS.Forms
         {
             string message = string.Empty;
             cbBox_Role.SelectedIndex = 0;
+            
             dgv_systemaccounts.DataSource = userRepo.GetSystemAccounts(ref message);
+            dgv_systemaccounts.Columns["ID"].Width = 40;
+            dgv_systemaccounts.Columns["Role"].Width = 60;
+
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -128,6 +132,17 @@ namespace HMS.Forms
 
         private void dgv_systemaccounts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
+
+            var msg = "Please select only row cells!";
+
+            if (e.RowIndex == -1)
+            {
+                MessageDialog.Show(msg, "Message", MessageDialogButtons.OK, MessageDialogIcon.Warning, MessageDialogStyle.Dark);
+                return;
+            }
+
+
             Frm_Main.LastActivity = "Viewing and selecting values from datagrid in system logs";
 
 
@@ -145,6 +160,8 @@ namespace HMS.Forms
             btnUpdateSystemAccount.Enabled = true;
             btnCreateAccount.Enabled = false;
             //btnDeleteSystemAccount.Enabled = false;
+
+
         }
 
         private int GetRoledByDescription(string role)

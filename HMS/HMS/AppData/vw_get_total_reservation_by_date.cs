@@ -14,6 +14,7 @@ namespace HMS.AppData
     
     public partial class vw_get_total_reservation_by_date
     {
-        public System.DateTime reservationDateIn { get; set; }
+        public Nullable<int> TotalReservationByDate { get; set; }
+        public System.DateTime Date { get; set; }
     }
 }

@@ -165,7 +165,7 @@ namespace HMS
             RoomAvailable currentTotalRoom = RoomAvailable.MIN;//this is equivalent assigning zero to this variable
             var retVal = userRepo.GetRoomStatus(FinalRoomType, ref currentTotalRoom, ref message);
 
-            if (currentTotalRoom == RoomAvailable.MAX)
+            if (currentTotalRoom >= RoomAvailable.MAX)
             {
                 lbl_roomLeft.Text = "FULLY BOOKED";
                 btnNext.BackColor = Color.Gray;
@@ -251,7 +251,7 @@ namespace HMS
             var message = String.Empty;
             RoomAvailable currentTotalRoom = RoomAvailable.MIN;//this is equivalent assigning zero to this variable
             retVal = userRepo.GetRoomStatus(FinalRoomType, ref currentTotalRoom, ref message);
-            if (currentTotalRoom == RoomAvailable.MAX)
+            if (currentTotalRoom >= RoomAvailable.MAX)
             {
                 lbl_roomLeft.Text = "FULLY BOOKED";
                 lbl_roomLeft.ForeColor = Color.Red;

@@ -71,7 +71,17 @@ namespace HMS.Forms
             {
                 totalguest += (int)guest.TotalGuest;
             }
+
             lbl_TotalGuest.Text = totalguest.ToString();
+            if (totalguest >= 100)
+            {
+                lbl_TotalGuest.Location = new Point(134, 63);
+            }
+            else
+            {
+                //Default Location Point.
+                lbl_TotalGuest.Location = new Point(156, 63);
+            }
         }
         private void DisplayTotalGuest_Adult()
         {
@@ -189,34 +199,34 @@ namespace HMS.Forms
         {
             var totalRoom = 0;
 
-            //if (total == 0)
-            //{
-            //    MessageDialog.Show("Unable to view Dashboard\nNo Current Check In!", "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
-            //    pb_currentlyCheckIn.Value = 0;
-            //    lbl_Pecent.Text = 0.ToString("F2") + "%";
-            //}
-            //else
-            //{
-                try
+            try
+            {
+                HMSEntities db;
+                using (db = new HMSEntities())
                 {
-                    HMSEntities db;
-                    using (db = new HMSEntities())
-                    {
-                        totalRoom = ((int)RoomAvailable.MAX * db.ROOM_DETAILS.Count());//Get max roomtype available then use it to calculate and multiple max room doors in every room type in this case  = 9
-                        Console.WriteLine(totalRoom);
-                        Console.WriteLine(occupied);
-                        double percentage = ((double)occupied / totalRoom) * 100;
-                        pb_currentlyCheckIn.Value = (int)percentage;
-                        lbl_Pecent.Text = percentage.ToString("F2") + "%";
+                    totalRoom = ((int)RoomAvailable.MAX * db.ROOM_DETAILS.Count());//Get max roomtype available then use it to calculate and multiple max room doors in every room type in this case  = 9
+                    Console.WriteLine(totalRoom);
+                    Console.WriteLine(occupied);
+                    double percentage = ((double)occupied / totalRoom) * 100;
+                    pb_currentlyCheckIn.Value = (int)percentage;
+                    lbl_Pecent.Text = percentage.ToString("F2") + "%";
 
-                        Console.WriteLine(percentage);
+                    if (percentage == 100.00)
+                    {
+                        //41, 74
+                        lbl_Pecent.Location = new Point(25, 74);
                     }
+                    else 
+                    {
+                        lbl_Pecent.Location = new Point(41, 74);
+                    }
+                    Console.WriteLine(percentage);
                 }
-                catch (Exception e)
-                {
-                    MessageDialog.Show(e.Message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
-                }
-            //}
+            }
+            catch (Exception e)
+            {
+                MessageDialog.Show(e.Message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
+            }
             lbl_outOf.Text = $"Out of {totalRoom} rooms";
         }
     }

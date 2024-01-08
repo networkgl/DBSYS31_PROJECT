@@ -154,22 +154,22 @@ namespace HMS
             return retVal;
         }
 
-        public List<vw_display_client_details> LoadClientsInformation_Currently(ref string message)
-        {
-            var retVal = new List<vw_display_client_details>();
-            try
-            {
-                using (db = new HMSEntities())
-                {
-                    retVal = db.vw_display_client_details.ToList();
-                }
-            }
-            catch (Exception ex)
-            {
-                message = ex.Message;
-            }
-            return retVal;
-        }
+        //public List<vw_display_client_details> LoadClientsInformation_Currently(ref string message)
+        //{
+        //    var retVal = new List<vw_display_client_details>();
+        //    try
+        //    {
+        //        using (db = new HMSEntities())
+        //        {
+        //            retVal = db.vw_display_client_details.ToList();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        message = ex.Message;
+        //    }
+        //    return retVal;
+        //}
         public List<vw_display_client_details_all> LoadClientsInformation_All(ref string message)
         {
             var retVal = new List<vw_display_client_details_all>();
@@ -641,6 +641,53 @@ namespace HMS
                 using (db = new HMSEntities())
                 {
                     retVal = db.sp_display_room_client_details(ID).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                message = e.Message;
+            }
+            return retVal;
+        }
+        public List<vw_get_total_reservation_by_date> GetTotalReservationByDate()
+        {
+            //var retVal = new List<AppData.vw_get_total_reservation_by_date>();
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    return db.vw_get_total_reservation_by_date.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                return new List<vw_get_total_reservation_by_date>();
+            }
+        }
+        //public ErrorCode DisplayRoomTypeByCondition(string roomtype, string typeoffilter, ref string message)
+        //{
+        //    try
+        //    {
+        //        using (db = new HMSEntities())
+        //        {
+        //            db.sp_get_roomType_by_name(roomtype, typeoffilter);
+        //            return ErrorCode.Success;
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        message = e.Message;
+        //        return ErrorCode.Error;
+        //    }
+        //}
+        public List<sp_get_roomType_by_name_Result> DisplayRoomTypeByCondition(string roomtype, string typeoffilter, ref string message)
+        {
+            var retVal = new List<sp_get_roomType_by_name_Result>();
+            try
+            {
+                using (db = new HMSEntities())
+                {
+                    retVal = db.sp_get_roomType_by_name(roomtype, typeoffilter).ToList();
                 }
             }
             catch (Exception e)

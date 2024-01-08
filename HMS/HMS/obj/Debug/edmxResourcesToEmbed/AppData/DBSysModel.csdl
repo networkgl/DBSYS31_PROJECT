@@ -177,6 +177,10 @@
     <FunctionImport Name="sp_display_room_client_details" ReturnType="Collection(HMSModel.sp_display_room_client_details_Result)">
       <Parameter Name="id" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="sp_get_roomType_by_name" ReturnType="Collection(HMSModel.sp_get_roomType_by_name_Result)">
+      <Parameter Name="roomtype" Mode="In" Type="String" />
+      <Parameter Name="typeOfFilter" Mode="In" Type="String" />
+    </FunctionImport>
     <EntitySet Name="ACCOUNTS" EntityType="HMSModel.ACCOUNTS" />
     <EntitySet Name="CLIENT" EntityType="HMSModel.CLIENT" />
     <EntitySet Name="GUEST" EntityType="HMSModel.GUEST" />
@@ -304,6 +308,21 @@
     <Property Type="DateTime" Name="DateIn" Nullable="false" />
     <Property Type="DateTime" Name="DateOut" Nullable="false" />
     <Property Type="Int32" Name="NoOfDays" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_get_roomType_by_name_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="Adult" Nullable="false" />
+    <Property Type="Int32" Name="Children" Nullable="false" />
+    <Property Type="Int32" Name="Senior" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="RoomType" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateIn" Nullable="false" />
+    <Property Type="DateTime" Name="DateOut" Nullable="false" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Days" Nullable="true" />
+    <Property Type="Decimal" Name="Payment" Nullable="false" Precision="18" Scale="2" />
   </ComplexType>
   <EntityType Name="ACCOUNTS">
     <Key>
@@ -652,9 +671,10 @@
   </EntityType>
   <EntityType Name="vw_get_total_reservation_by_date">
     <Key>
-      <PropertyRef Name="reservationDateIn" />
+      <PropertyRef Name="Date" />
     </Key>
-    <Property Name="reservationDateIn" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TotalReservationByDate" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
   </EntityType>
   <EntityType Name="vw_get_total_room_occupied">
     <Key>

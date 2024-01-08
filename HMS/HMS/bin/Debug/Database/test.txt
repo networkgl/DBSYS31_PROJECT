@@ -1,0 +1,48 @@
+test query
+
+USE HMS
+
+
+--PAYMENT INFO
+DECLARE @pDate date = '2024-1-6';
+DECLARE @pTotal decimal(18,2) =  10000.99;
+EXEC sp_insert_payment_info @paymentDate =  @pDate, @paymentTotal = @pTotal;
+
+--CLIENT INFO
+DECLARE @cfName varchar(50) = 'GIAN LLOYD';
+DECLARE @clName varchar(50) =  'PINOTE';
+EXEC sp_insert_client_info_fnameOnly @fName = @cfName, @lName = @clName;  
+
+--GUEST INFO
+EXEC sp_insert_number_of_guest @guestAdult = 1, @guestChildren = 2, @guestSeniorCitizen = 3;
+
+--RESERVATION INFO
+DECLARE @DateIn date = '2024-1-6';
+DECLARE @DateOut date = '2024-1-10';
+DECLARE @Days int = 5;
+DECLARE @lastPK INT;
+SELECT @lastPK = MAX(PAYMENT.paymentID)
+FROM PAYMENT;
+
+INSERT INTO RESERVATION (reservationDateIn, reservationDateOut, reservationStatus, noOfDays, guestID, paymentID, clientID)
+VALUES
+(@DateIn, @DateOut, 'APPROVE', @Days, @lastPK, @lastPK, @lastPK)
+
+--EXEC sp_insert_reservation_info 
+--@dateIn = @DateIn,  
+--@dateOut = @DateOut, 
+--@noOfDays = @Days, 
+--@guestID = @lastPK, 
+--@paymentID = @lastPK, 
+--@clientID = @lastPK
+
+--ROOM INFO
+DECLARE @rtype varchar(50) = 'FILI SUITE SEA VIEW';
+EXEC sp_insert_room_info @roomType = @rtype, @reservationID = @lastPK, @roomCounter = 1;
+
+
+SELECT * FROM CLIENT
+--SELECT * FROM GUEST
+SELECT * FROM RESERVATION
+SELECT * FROM PAYMENT
+SELECT * FROM vw_display_client_details

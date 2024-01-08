@@ -142,6 +142,13 @@ namespace HMS.Forms
 
         public void ValidateUserLogin()
         {
+            if (txtboxPassword.Text.Equals("Password") && txtboxUsername.Text.Equals("Username"))
+            {
+                MessageDialog.Show("Invalid Credentials\nPlease input username and password", "Message", MessageDialogButtons.OK, MessageDialogIcon.Warning, MessageDialogStyle.Dark);
+                return;
+            }
+
+
             var userLogged = userRepo.GetUserByUsername(txtboxUsername.Text);
             var message = "Successfully Login";
 
