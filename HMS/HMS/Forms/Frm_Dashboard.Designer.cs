@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_totalRoomOccupied = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -64,7 +67,7 @@
             this.lbl_Pecent = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -72,6 +75,7 @@
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.pb_currentlyCheckIn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -405,7 +409,7 @@
             // 
             this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.guna2Panel5.BorderRadius = 20;
-            this.guna2Panel5.Controls.Add(this.cartesianChart1);
+            this.guna2Panel5.Controls.Add(this.chart1);
             this.guna2Panel5.Controls.Add(this.label5);
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
             this.guna2Panel5.Location = new System.Drawing.Point(19, 239);
@@ -501,13 +505,21 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Dashboard";
             // 
-            // cartesianChart1
+            // chart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(21, 44);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(707, 288);
-            this.cartesianChart1.TabIndex = 12;
-            this.cartesianChart1.Text = "cartesianChart1";
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(21, 51);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(707, 287);
+            this.chart1.TabIndex = 12;
+            this.chart1.Text = "chart1";
             // 
             // Frm_Dashboard
             // 
@@ -542,6 +554,7 @@
             this.guna2Panel6.PerformLayout();
             this.pb_currentlyCheckIn.ResumeLayout(false);
             this.pb_currentlyCheckIn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,6 +596,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

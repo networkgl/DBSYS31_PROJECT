@@ -35,6 +35,7 @@ namespace HMS.Forms
             lbl_ContactNumber.Text = Frm_Room.Phone;
             lbl_Address.Text = Frm_Room.Address;
             lbl_roomType.Text = Frm_Room.RoomType;
+            lbl_RoomNumber.Text = $"#0"+Frm_Room.RoomNumber.ToString();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Room));
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_RoomType = new System.Windows.Forms.Label();
@@ -38,11 +39,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_NumberOfPeople_1 = new System.Windows.Forms.Label();
             this.lbl_roomNumber_1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.lbl_status1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_door1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.pnl_room8 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_NumberOfDays_8 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -124,6 +125,7 @@
             this.label41 = new System.Windows.Forms.Label();
             this.pnl_door6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnl_RoomType.SuspendLayout();
             this.pnl_room1.SuspendLayout();
             this.pnl_room8.SuspendLayout();
@@ -263,18 +265,6 @@
             this.lbl_roomNumber_1.TabIndex = 21;
             this.lbl_roomNumber_1.Text = "N/A";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.label4.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(128, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 19);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Room ID:";
-            // 
             // lbl_status1
             // 
             this.lbl_status1.AutoSize = true;
@@ -319,6 +309,18 @@
             this.pnl_door1.Name = "pnl_door1";
             this.pnl_door1.Size = new System.Drawing.Size(96, 94);
             this.pnl_door1.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.label4.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(128, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 19);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Room ID:";
             // 
             // pnl_room8
             // 
@@ -1482,5 +1484,6 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         public System.Windows.Forms.Panel pnl_door6;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

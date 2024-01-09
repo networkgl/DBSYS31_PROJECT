@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.pnl_Main1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Address = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl_totalDays = new System.Windows.Forms.Label();
@@ -53,17 +54,17 @@
             this.lbl_CheckIn_Date = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.lbl_roomType = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_RoomNumber = new System.Windows.Forms.Label();
             this.pnl_Main1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
             // 
-            this.guna2BorderlessForm1.BorderRadius = 30;
+            this.guna2BorderlessForm1.BorderRadius = 15;
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
@@ -74,6 +75,7 @@
             this.pnl_Main1.BorderColor = System.Drawing.Color.Gray;
             this.pnl_Main1.BorderRadius = 5;
             this.pnl_Main1.BorderThickness = 1;
+            this.pnl_Main1.Controls.Add(this.lbl_RoomNumber);
             this.pnl_Main1.Controls.Add(this.lbl_roomType);
             this.pnl_Main1.Controls.Add(this.label4);
             this.pnl_Main1.Controls.Add(this.pictureBox1);
@@ -104,6 +106,18 @@
             this.pnl_Main1.Name = "pnl_Main1";
             this.pnl_Main1.Size = new System.Drawing.Size(801, 400);
             this.pnl_Main1.TabIndex = 152;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::HMS.Properties.Resources.personal_information;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(17, 77);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(227, 154);
+            this.pictureBox1.TabIndex = 164;
+            this.pictureBox1.TabStop = false;
             // 
             // lbl_Address
             // 
@@ -325,28 +339,6 @@
             this.label6.TabIndex = 140;
             this.label6.Text = "Check - In";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(273, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 19);
-            this.label4.TabIndex = 165;
-            this.label4.Text = "Room Type";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::HMS.Properties.Resources.personal_information;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(227, 154);
-            this.pictureBox1.TabIndex = 164;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnExit
             // 
             this.btnExit.BackgroundImage = global::HMS.Properties.Resources.icons8_close_15;
@@ -373,6 +365,27 @@
             this.lbl_roomType.Size = new System.Drawing.Size(153, 17);
             this.lbl_roomType.TabIndex = 166;
             this.lbl_roomType.Text = "PRIEMERE KING DELUXE";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(273, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 19);
+            this.label4.TabIndex = 165;
+            this.label4.Text = "Room Type";
+            // 
+            // lbl_RoomNumber
+            // 
+            this.lbl_RoomNumber.AutoSize = true;
+            this.lbl_RoomNumber.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RoomNumber.ForeColor = System.Drawing.Color.Green;
+            this.lbl_RoomNumber.Location = new System.Drawing.Point(704, 21);
+            this.lbl_RoomNumber.Name = "lbl_RoomNumber";
+            this.lbl_RoomNumber.Size = new System.Drawing.Size(72, 38);
+            this.lbl_RoomNumber.TabIndex = 167;
+            this.lbl_RoomNumber.Text = "#01";
             // 
             // Frm_RoomClientDetails
             // 
@@ -421,7 +434,8 @@
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.Label lbl_Address;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label lbl_roomType;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label lbl_RoomNumber;
     }
 }

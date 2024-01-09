@@ -34,6 +34,8 @@ namespace HMS.Forms
         public static string DateIn { get; set; }
         public static string DateOut { get; set; }
         public static string NoOfDays { get; set; }
+        public static int RoomNumber { get; set; }
+
         private Panel[] roomPictures;
         private Guna2Panel[] doorPanels;
         public Frm_Room()
@@ -156,30 +158,39 @@ namespace HMS.Forms
             switch (parentPanel.Name)
             {
                 case "pnl_room1":
+                    toolTip1.SetToolTip(this.pnl_room1, "Room Number 1");
                     GetBorderPanelColor(lbl_roomNumber_1, pnl_room1);
                     break;
                 case "pnl_room2":
+                    toolTip1.SetToolTip(this.pnl_room2, "Room Number 2");
                     GetBorderPanelColor(lbl_roomNumber_2, pnl_room2);
                     break;
                 case "pnl_room3":
+                    toolTip1.SetToolTip(this.pnl_room3, "Room Number 3");
                     GetBorderPanelColor(lbl_roomNumber_3, pnl_room3);
                     break;
                 case "pnl_room4":
+                    toolTip1.SetToolTip(this.pnl_room4, "Room Number 4");
                     GetBorderPanelColor(lbl_roomNumber_4, pnl_room4);
                     break;
                 case "pnl_room5":
+                    toolTip1.SetToolTip(this.pnl_room5, "Room Number 5");
                     GetBorderPanelColor(lbl_roomNumber_5, pnl_room5);
                     break;
                 case "pnl_room6":
+                    toolTip1.SetToolTip(this.pnl_room6, "Room Number 6");
                     GetBorderPanelColor(lbl_roomNumber_6, pnl_room6);
                     break;
                 case "pnl_room7":
+                    toolTip1.SetToolTip(this.pnl_room7, "Room Number 7");
                     GetBorderPanelColor(lbl_roomNumber_7, pnl_room7);
                     break;
                 case "pnl_room8":
+                    toolTip1.SetToolTip(this.pnl_room8, "Room Number 8");
                     GetBorderPanelColor(lbl_roomNumber_8, pnl_room8);
                     break;
                 case "pnl_room9":
+                    toolTip1.SetToolTip(this.pnl_room9, "Room Number 9");
                     GetBorderPanelColor(lbl_roomNumber_9, pnl_room9);
                     break;
             }
@@ -202,30 +213,39 @@ namespace HMS.Forms
             switch (parentPanel.Name)
             {
                 case "pnl_room1":
+                    RoomNumber = 1;
                     GetRoomClientDetails(lbl_roomNumber_1);
                     break;
                 case "pnl_room2":
+                    RoomNumber = 2;
                     GetRoomClientDetails(lbl_roomNumber_2);
                     break;
                 case "pnl_room3":
+                    RoomNumber = 3;
                     GetRoomClientDetails(lbl_roomNumber_3);
                     break;
                 case "pnl_room4":
+                    RoomNumber = 4;
                     GetRoomClientDetails(lbl_roomNumber_4);
                     break;
                 case "pnl_room5":
+                    RoomNumber = 5;
                     GetRoomClientDetails(lbl_roomNumber_5);
                     break;
                 case "pnl_room6":
+                    RoomNumber = 6;
                     GetRoomClientDetails(lbl_roomNumber_6);
                     break;
                 case "pnl_room7":
+                    RoomNumber = 7;
                     GetRoomClientDetails(lbl_roomNumber_7);
                     break;
                 case "pnl_room8":
+                    RoomNumber = 8;
                     GetRoomClientDetails(lbl_roomNumber_8);
                     break;
                 case "pnl_room9":
+                    RoomNumber = 9;
                     GetRoomClientDetails(lbl_roomNumber_9);
                     break;
             }
