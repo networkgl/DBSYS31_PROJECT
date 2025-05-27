@@ -15,6 +15,7 @@ namespace HMS.AppData
     {
         public int RoomID { get; set; }
         public Nullable<int> TotalGuest { get; set; }
+        public System.DateTime DateOut { get; set; }
         public Nullable<int> Days { get; set; }
     }
 }

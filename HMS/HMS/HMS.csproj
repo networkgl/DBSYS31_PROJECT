@@ -115,11 +115,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBSysModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="AppData\DBSysModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBSysModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="AppData\GUEST.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
@@ -138,9 +133,6 @@
     <Compile Include="AppData\ROOM_DETAILS.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\sp_display_reservation_details_Result.cs">
-      <DependentUpon>DBSysModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="AppData\sp_display_room_client_details_Result.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
@@ -153,6 +145,9 @@
     <Compile Include="AppData\sp_get_room_details__by_index_Result.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AppData\sp_get_sales_by_year_group_by_months_Result.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AppData\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
@@ -163,9 +158,6 @@
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\sp_search_reservation_details_Result.cs">
-      <DependentUpon>DBSysModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AppData\sp_search_room_details_Result.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\sysdiagrams.cs">
@@ -205,6 +197,9 @@
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\vw_get_current_booking_bydate.cs">
+      <DependentUpon>DBSysModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AppData\vw_get_monthly_sale_Result.cs">
       <DependentUpon>DBSysModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\vw_get_reservation_history.cs">
@@ -686,16 +681,6 @@
     <None Include="Resources\icons8-information-20.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppData\DBSysModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBSysModel.Context.cs</LastGenOutput>
-      <DependentUpon>DBSysModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="AppData\DBSysModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBSysModel.edmx</DependentUpon>
-      <LastGenOutput>DBSysModel1.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\personal-information.png" />
     <None Include="Resources\icons8-person-1001.png" />
     <None Include="Resources\icons8-person-100.png" />
@@ -722,6 +707,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppData\DBSysModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBSysModel.edmx</DependentUpon>
+      <LastGenOutput>DBSysModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AppData\DBSysModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBSysModel.edmx</DependentUpon>
+      <LastGenOutput>DBSysModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

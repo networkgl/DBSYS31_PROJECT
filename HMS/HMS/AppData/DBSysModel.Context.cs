@@ -55,31 +55,6 @@ namespace HMS.AppData
         public DbSet<vw_get_total_reservation_by_date> vw_get_total_reservation_by_date { get; set; }
         public DbSet<vw_get_total_room_occupied> vw_get_total_room_occupied { get; set; }
     
-        public virtual int InsertRoomDetails(string roomType, byte[] roomPhoto, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
-        {
-            var roomTypeParameter = roomType != null ?
-                new ObjectParameter("roomType", roomType) :
-                new ObjectParameter("roomType", typeof(string));
-    
-            var roomPhotoParameter = roomPhoto != null ?
-                new ObjectParameter("roomPhoto", roomPhoto) :
-                new ObjectParameter("roomPhoto", typeof(byte[]));
-    
-            var roomDetailsParameter = roomDetails != null ?
-                new ObjectParameter("roomDetails", roomDetails) :
-                new ObjectParameter("roomDetails", typeof(string));
-    
-            var roomPriceParameter = roomPrice.HasValue ?
-                new ObjectParameter("roomPrice", roomPrice) :
-                new ObjectParameter("roomPrice", typeof(double));
-    
-            var roomDiscountParameter = roomDiscount.HasValue ?
-                new ObjectParameter("roomDiscount", roomDiscount) :
-                new ObjectParameter("roomDiscount", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertRoomDetails", roomTypeParameter, roomPhotoParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
-        }
-    
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
             var diagramnameParameter = diagramname != null ?
@@ -99,6 +74,15 @@ namespace HMS.AppData
                 new ObjectParameter("definition", typeof(byte[]));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_approve_reservation(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_approve_reservation", idParameter);
         }
     
         public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
@@ -122,6 +106,52 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
         }
     
+        public virtual int sp_delete_all_reservation()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_delete_all_reservation");
+        }
+    
+        public virtual int sp_delete_logs()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_delete_logs");
+        }
+    
+        public virtual int sp_delete_room_details(Nullable<int> roomID)
+        {
+            var roomIDParameter = roomID.HasValue ?
+                new ObjectParameter("roomID", roomID) :
+                new ObjectParameter("roomID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_delete_room_details", roomIDParameter);
+        }
+    
+        public virtual int sp_delete_system_accounts(Nullable<int> userID)
+        {
+            var userIDParameter = userID.HasValue ?
+                new ObjectParameter("userID", userID) :
+                new ObjectParameter("userID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_delete_system_accounts", userIDParameter);
+        }
+    
+        public virtual int sp_denied_reservation(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_denied_reservation", idParameter);
+        }
+    
+        public virtual ObjectResult<sp_display_room_client_details_Result> sp_display_room_client_details(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_display_room_client_details_Result>("sp_display_room_client_details", idParameter);
+        }
+    
         public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
@@ -133,6 +163,60 @@ namespace HMS.AppData
                 new ObjectParameter("owner_id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_get_client_room_details_Result> sp_get_client_room_details(string roomType)
+        {
+            var roomTypeParameter = roomType != null ?
+                new ObjectParameter("roomType", roomType) :
+                new ObjectParameter("roomType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_client_room_details_Result>("sp_get_client_room_details", roomTypeParameter);
+        }
+    
+        public virtual ObjectResult<sp_get_room_details__by_index_Result> sp_get_room_details__by_index(Nullable<int> index)
+        {
+            var indexParameter = index.HasValue ?
+                new ObjectParameter("index", index) :
+                new ObjectParameter("index", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_room_details__by_index_Result>("sp_get_room_details__by_index", indexParameter);
+        }
+    
+        public virtual ObjectResult<byte[]> sp_get_room_photo_by_index(Nullable<int> index)
+        {
+            var indexParameter = index.HasValue ?
+                new ObjectParameter("index", index) :
+                new ObjectParameter("index", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("sp_get_room_photo_by_index", indexParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> sp_get_room_status(string roomtype)
+        {
+            var roomtypeParameter = roomtype != null ?
+                new ObjectParameter("roomtype", roomtype) :
+                new ObjectParameter("roomtype", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_get_room_status", roomtypeParameter);
+        }
+    
+        public virtual ObjectResult<sp_get_roomType_by_name_Result> sp_get_roomType_by_name(string roomtype, string typeOfFilter)
+        {
+            var roomtypeParameter = roomtype != null ?
+                new ObjectParameter("roomtype", roomtype) :
+                new ObjectParameter("roomtype", typeof(string));
+    
+            var typeOfFilterParameter = typeOfFilter != null ?
+                new ObjectParameter("typeOfFilter", typeOfFilter) :
+                new ObjectParameter("typeOfFilter", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_roomType_by_name_Result>("sp_get_roomType_by_name", roomtypeParameter, typeOfFilterParameter);
+        }
+    
+        public virtual ObjectResult<sp_get_sales_by_year_group_by_months_Result> sp_get_sales_by_year_group_by_months()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_sales_by_year_group_by_months_Result>("sp_get_sales_by_year_group_by_months");
         }
     
         public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
@@ -161,26 +245,101 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        public virtual int sp_insert_client_info(string fName, string lName, string clientEmail, string clientPhone, string clientAddress)
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
+            var fNameParameter = fName != null ?
+                new ObjectParameter("fName", fName) :
+                new ObjectParameter("fName", typeof(string));
     
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
+            var lNameParameter = lName != null ?
+                new ObjectParameter("lName", lName) :
+                new ObjectParameter("lName", typeof(string));
     
-            var new_diagramnameParameter = new_diagramname != null ?
-                new ObjectParameter("new_diagramname", new_diagramname) :
-                new ObjectParameter("new_diagramname", typeof(string));
+            var clientEmailParameter = clientEmail != null ?
+                new ObjectParameter("clientEmail", clientEmail) :
+                new ObjectParameter("clientEmail", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+            var clientPhoneParameter = clientPhone != null ?
+                new ObjectParameter("clientPhone", clientPhone) :
+                new ObjectParameter("clientPhone", typeof(string));
+    
+            var clientAddressParameter = clientAddress != null ?
+                new ObjectParameter("clientAddress", clientAddress) :
+                new ObjectParameter("clientAddress", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_client_info", fNameParameter, lNameParameter, clientEmailParameter, clientPhoneParameter, clientAddressParameter);
         }
     
-        public virtual int sp_upgraddiagrams()
+        public virtual int sp_insert_client_info_fnameOnly(string fName, string lName)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+            var fNameParameter = fName != null ?
+                new ObjectParameter("fName", fName) :
+                new ObjectParameter("fName", typeof(string));
+    
+            var lNameParameter = lName != null ?
+                new ObjectParameter("lName", lName) :
+                new ObjectParameter("lName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_client_info_fnameOnly", fNameParameter, lNameParameter);
+        }
+    
+        public virtual int sp_insert_number_of_guest(Nullable<int> guestAdult, Nullable<int> guestChildren, Nullable<int> guestSeniorCitizen)
+        {
+            var guestAdultParameter = guestAdult.HasValue ?
+                new ObjectParameter("guestAdult", guestAdult) :
+                new ObjectParameter("guestAdult", typeof(int));
+    
+            var guestChildrenParameter = guestChildren.HasValue ?
+                new ObjectParameter("guestChildren", guestChildren) :
+                new ObjectParameter("guestChildren", typeof(int));
+    
+            var guestSeniorCitizenParameter = guestSeniorCitizen.HasValue ?
+                new ObjectParameter("guestSeniorCitizen", guestSeniorCitizen) :
+                new ObjectParameter("guestSeniorCitizen", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_number_of_guest", guestAdultParameter, guestChildrenParameter, guestSeniorCitizenParameter);
+        }
+    
+        public virtual int sp_insert_payment_info(Nullable<System.DateTime> paymentDate, Nullable<decimal> paymentTotal)
+        {
+            var paymentDateParameter = paymentDate.HasValue ?
+                new ObjectParameter("paymentDate", paymentDate) :
+                new ObjectParameter("paymentDate", typeof(System.DateTime));
+    
+            var paymentTotalParameter = paymentTotal.HasValue ?
+                new ObjectParameter("paymentTotal", paymentTotal) :
+                new ObjectParameter("paymentTotal", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_payment_info", paymentDateParameter, paymentTotalParameter);
+        }
+    
+        public virtual int sp_insert_reservation_info(Nullable<System.DateTime> dateIn, Nullable<System.DateTime> dateOut, Nullable<int> noOfDays, Nullable<int> guestID, Nullable<int> paymentID, Nullable<int> clientID)
+        {
+            var dateInParameter = dateIn.HasValue ?
+                new ObjectParameter("dateIn", dateIn) :
+                new ObjectParameter("dateIn", typeof(System.DateTime));
+    
+            var dateOutParameter = dateOut.HasValue ?
+                new ObjectParameter("dateOut", dateOut) :
+                new ObjectParameter("dateOut", typeof(System.DateTime));
+    
+            var noOfDaysParameter = noOfDays.HasValue ?
+                new ObjectParameter("noOfDays", noOfDays) :
+                new ObjectParameter("noOfDays", typeof(int));
+    
+            var guestIDParameter = guestID.HasValue ?
+                new ObjectParameter("guestID", guestID) :
+                new ObjectParameter("guestID", typeof(int));
+    
+            var paymentIDParameter = paymentID.HasValue ?
+                new ObjectParameter("paymentID", paymentID) :
+                new ObjectParameter("paymentID", typeof(int));
+    
+            var clientIDParameter = clientID.HasValue ?
+                new ObjectParameter("clientID", clientID) :
+                new ObjectParameter("clientID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_reservation_info", dateInParameter, dateOutParameter, noOfDaysParameter, guestIDParameter, paymentIDParameter, clientIDParameter);
         }
     
         public virtual int sp_insert_room_details(Nullable<int> roomID, string roomType, byte[] roomPhoto, string roomDetails, Nullable<decimal> roomPrice, Nullable<decimal> roomDiscount, Nullable<decimal> discountedPrice)
@@ -216,88 +375,97 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_room_details", roomIDParameter, roomTypeParameter, roomPhotoParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter, discountedPriceParameter);
         }
     
-        public virtual ObjectResult<byte[]> sp_display_roomdetails_byindex(Nullable<int> index)
+        public virtual int sp_insert_room_info(string roomType, Nullable<int> reservationID, Nullable<int> roomCounter)
         {
-            var indexParameter = index.HasValue ?
-                new ObjectParameter("index", index) :
-                new ObjectParameter("index", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("sp_display_roomdetails_byindex", indexParameter);
-        }
-    
-        public virtual ObjectResult<byte[]> sp_display_roomPhoto_byIndex(Nullable<int> index)
-        {
-            var indexParameter = index.HasValue ?
-                new ObjectParameter("index", index) :
-                new ObjectParameter("index", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("sp_display_roomPhoto_byIndex", indexParameter);
-        }
-    
-        public virtual ObjectResult<byte[]> sp_getRoomPhoto_byIndex(Nullable<int> index)
-        {
-            var indexParameter = index.HasValue ?
-                new ObjectParameter("index", index) :
-                new ObjectParameter("index", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("sp_getRoomPhoto_byIndex", indexParameter);
-        }
-    
-        public virtual ObjectResult<sp_get_room_details__by_index_Result> sp_get_room_details__by_index(Nullable<int> index)
-        {
-            var indexParameter = index.HasValue ?
-                new ObjectParameter("index", index) :
-                new ObjectParameter("index", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_room_details__by_index_Result>("sp_get_room_details__by_index", indexParameter);
-        }
-    
-        public virtual ObjectResult<byte[]> sp_get_room_photo_by_index(Nullable<int> index)
-        {
-            var indexParameter = index.HasValue ?
-                new ObjectParameter("index", index) :
-                new ObjectParameter("index", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<byte[]>("sp_get_room_photo_by_index", indexParameter);
-        }
-    
-        public virtual int sp_delete_room_details(Nullable<int> roomID)
-        {
-            var roomIDParameter = roomID.HasValue ?
-                new ObjectParameter("roomID", roomID) :
-                new ObjectParameter("roomID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_delete_room_details", roomIDParameter);
-        }
-    
-        public virtual int sp_update_room_details(Nullable<int> roomID, byte[] roomPhoto, string roomType, string roomDetails, Nullable<double> roomPrice, Nullable<int> roomDiscount)
-        {
-            var roomIDParameter = roomID.HasValue ?
-                new ObjectParameter("roomID", roomID) :
-                new ObjectParameter("roomID", typeof(int));
-    
-            var roomPhotoParameter = roomPhoto != null ?
-                new ObjectParameter("roomPhoto", roomPhoto) :
-                new ObjectParameter("roomPhoto", typeof(byte[]));
-    
             var roomTypeParameter = roomType != null ?
                 new ObjectParameter("roomType", roomType) :
                 new ObjectParameter("roomType", typeof(string));
     
-            var roomDetailsParameter = roomDetails != null ?
-                new ObjectParameter("roomDetails", roomDetails) :
-                new ObjectParameter("roomDetails", typeof(string));
+            var reservationIDParameter = reservationID.HasValue ?
+                new ObjectParameter("reservationID", reservationID) :
+                new ObjectParameter("reservationID", typeof(int));
     
-            var roomPriceParameter = roomPrice.HasValue ?
-                new ObjectParameter("roomPrice", roomPrice) :
-                new ObjectParameter("roomPrice", typeof(double));
+            var roomCounterParameter = roomCounter.HasValue ?
+                new ObjectParameter("roomCounter", roomCounter) :
+                new ObjectParameter("roomCounter", typeof(int));
     
-            var roomDiscountParameter = roomDiscount.HasValue ?
-                new ObjectParameter("roomDiscount", roomDiscount) :
-                new ObjectParameter("roomDiscount", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_room_details", roomIDParameter, roomPhotoParameter, roomTypeParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_room_info", roomTypeParameter, reservationIDParameter, roomCounterParameter);
         }
+    
+        public virtual int sp_insert_system_accounts(string username, string password, Nullable<int> roleID)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            var roleIDParameter = roleID.HasValue ?
+                new ObjectParameter("roleID", roleID) :
+                new ObjectParameter("roleID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_system_accounts", usernameParameter, passwordParameter, roleIDParameter);
+        }
+    
+        public virtual int sp_insert_system_log(string typeofaccount, Nullable<System.DateTime> dateLogin, Nullable<System.TimeSpan> timeLogin, string lastActivity)
+        {
+            var typeofaccountParameter = typeofaccount != null ?
+                new ObjectParameter("typeofaccount", typeofaccount) :
+                new ObjectParameter("typeofaccount", typeof(string));
+    
+            var dateLoginParameter = dateLogin.HasValue ?
+                new ObjectParameter("dateLogin", dateLogin) :
+                new ObjectParameter("dateLogin", typeof(System.DateTime));
+    
+            var timeLoginParameter = timeLogin.HasValue ?
+                new ObjectParameter("timeLogin", timeLogin) :
+                new ObjectParameter("timeLogin", typeof(System.TimeSpan));
+    
+            var lastActivityParameter = lastActivity != null ?
+                new ObjectParameter("lastActivity", lastActivity) :
+                new ObjectParameter("lastActivity", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_system_log", typeofaccountParameter, dateLoginParameter, timeLoginParameter, lastActivityParameter);
+        }
+    
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual ObjectResult<sp_search_client_details_Result> sp_search_client_details(string searchTerm)
+        {
+            var searchTermParameter = searchTerm != null ?
+                new ObjectParameter("SearchTerm", searchTerm) :
+                new ObjectParameter("SearchTerm", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_search_client_details_Result>("sp_search_client_details", searchTermParameter);
+        }
+    
+        public virtual ObjectResult<sp_search_reservation_details_Result> sp_search_reservation_details(string searchTerm)
+        {
+            var searchTermParameter = searchTerm != null ?
+                new ObjectParameter("SearchTerm", searchTerm) :
+                new ObjectParameter("SearchTerm", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_search_reservation_details_Result>("sp_search_reservation_details", searchTermParameter);
+        }
+    
+
     
         public virtual int sp_update_room_details_nophoto(Nullable<int> roomID, string roomType, string roomDetails, Nullable<decimal> roomPrice, Nullable<decimal> roomDiscount, Nullable<decimal> discountedPrice)
         {
@@ -361,239 +529,6 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_room_details_withphoto", roomIDParameter, roomPhotoParameter, roomTypeParameter, roomDetailsParameter, roomPriceParameter, roomDiscountParameter, discountedPriceParameter);
         }
     
-        public virtual int sp_insert_client_history(string fname, string pnumber, string address, Nullable<System.DateTime> dateIn, Nullable<System.DateTime> dateOut, string rType)
-        {
-            var fnameParameter = fname != null ?
-                new ObjectParameter("fname", fname) :
-                new ObjectParameter("fname", typeof(string));
-    
-            var pnumberParameter = pnumber != null ?
-                new ObjectParameter("pnumber", pnumber) :
-                new ObjectParameter("pnumber", typeof(string));
-    
-            var addressParameter = address != null ?
-                new ObjectParameter("address", address) :
-                new ObjectParameter("address", typeof(string));
-    
-            var dateInParameter = dateIn.HasValue ?
-                new ObjectParameter("dateIn", dateIn) :
-                new ObjectParameter("dateIn", typeof(System.DateTime));
-    
-            var dateOutParameter = dateOut.HasValue ?
-                new ObjectParameter("dateOut", dateOut) :
-                new ObjectParameter("dateOut", typeof(System.DateTime));
-    
-            var rTypeParameter = rType != null ?
-                new ObjectParameter("rType", rType) :
-                new ObjectParameter("rType", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_client_history", fnameParameter, pnumberParameter, addressParameter, dateInParameter, dateOutParameter, rTypeParameter);
-        }
-    
-        public virtual int sp_insert_client_info(string fName, string lName, string clientEmail, string clientPhone, string clientAddress)
-        {
-            var fNameParameter = fName != null ?
-                new ObjectParameter("fName", fName) :
-                new ObjectParameter("fName", typeof(string));
-    
-            var lNameParameter = lName != null ?
-                new ObjectParameter("lName", lName) :
-                new ObjectParameter("lName", typeof(string));
-    
-            var clientEmailParameter = clientEmail != null ?
-                new ObjectParameter("clientEmail", clientEmail) :
-                new ObjectParameter("clientEmail", typeof(string));
-    
-            var clientPhoneParameter = clientPhone != null ?
-                new ObjectParameter("clientPhone", clientPhone) :
-                new ObjectParameter("clientPhone", typeof(string));
-    
-            var clientAddressParameter = clientAddress != null ?
-                new ObjectParameter("clientAddress", clientAddress) :
-                new ObjectParameter("clientAddress", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_client_info", fNameParameter, lNameParameter, clientEmailParameter, clientPhoneParameter, clientAddressParameter);
-        }
-    
-        public virtual int sp_insert_payment_info(Nullable<System.DateTime> paymentDate, Nullable<decimal> paymentTotal)
-        {
-            var paymentDateParameter = paymentDate.HasValue ?
-                new ObjectParameter("paymentDate", paymentDate) :
-                new ObjectParameter("paymentDate", typeof(System.DateTime));
-    
-            var paymentTotalParameter = paymentTotal.HasValue ?
-                new ObjectParameter("paymentTotal", paymentTotal) :
-                new ObjectParameter("paymentTotal", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_payment_info", paymentDateParameter, paymentTotalParameter);
-        }
-    
-        public virtual int sp_insert_reservation_info(Nullable<System.DateTime> dateIn, Nullable<System.DateTime> dateOut, Nullable<int> noOfDays, Nullable<int> guestID, Nullable<int> paymentID, Nullable<int> clientID)
-        {
-            var dateInParameter = dateIn.HasValue ?
-                new ObjectParameter("dateIn", dateIn) :
-                new ObjectParameter("dateIn", typeof(System.DateTime));
-    
-            var dateOutParameter = dateOut.HasValue ?
-                new ObjectParameter("dateOut", dateOut) :
-                new ObjectParameter("dateOut", typeof(System.DateTime));
-    
-            var noOfDaysParameter = noOfDays.HasValue ?
-                new ObjectParameter("noOfDays", noOfDays) :
-                new ObjectParameter("noOfDays", typeof(int));
-    
-            var guestIDParameter = guestID.HasValue ?
-                new ObjectParameter("guestID", guestID) :
-                new ObjectParameter("guestID", typeof(int));
-    
-            var paymentIDParameter = paymentID.HasValue ?
-                new ObjectParameter("paymentID", paymentID) :
-                new ObjectParameter("paymentID", typeof(int));
-    
-            var clientIDParameter = clientID.HasValue ?
-                new ObjectParameter("clientID", clientID) :
-                new ObjectParameter("clientID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_reservation_info", dateInParameter, dateOutParameter, noOfDaysParameter, guestIDParameter, paymentIDParameter, clientIDParameter);
-        }
-    
-        public virtual int sp_insert_room_info(string roomType, Nullable<int> reservationID, Nullable<int> roomCounter)
-        {
-            var roomTypeParameter = roomType != null ?
-                new ObjectParameter("roomType", roomType) :
-                new ObjectParameter("roomType", typeof(string));
-    
-            var reservationIDParameter = reservationID.HasValue ?
-                new ObjectParameter("reservationID", reservationID) :
-                new ObjectParameter("reservationID", typeof(int));
-    
-            var roomCounterParameter = roomCounter.HasValue ?
-                new ObjectParameter("roomCounter", roomCounter) :
-                new ObjectParameter("roomCounter", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_room_info", roomTypeParameter, reservationIDParameter, roomCounterParameter);
-        }
-    
-        public virtual int sp_denied_reservation(Nullable<int> id)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_denied_reservation", idParameter);
-        }
-    
-        public virtual int sp_insert_client_info_fnameOnly(string fName, string lName)
-        {
-            var fNameParameter = fName != null ?
-                new ObjectParameter("fName", fName) :
-                new ObjectParameter("fName", typeof(string));
-    
-            var lNameParameter = lName != null ?
-                new ObjectParameter("lName", lName) :
-                new ObjectParameter("lName", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_client_info_fnameOnly", fNameParameter, lNameParameter);
-        }
-    
-        public virtual int sp_approve_reservation(Nullable<int> id)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_approve_reservation", idParameter);
-        }
-    
-        public virtual ObjectResult<sp_display_reservation_details_Result> sp_display_reservation_details()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_display_reservation_details_Result>("sp_display_reservation_details");
-        }
-    
-        public virtual int sp_delete_all_reservation()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_delete_all_reservation");
-        }
-    
-        public virtual int sp_insert_number_of_guest(Nullable<int> guestAdult, Nullable<int> guestChildren, Nullable<int> guestSeniorCitizen)
-        {
-            var guestAdultParameter = guestAdult.HasValue ?
-                new ObjectParameter("guestAdult", guestAdult) :
-                new ObjectParameter("guestAdult", typeof(int));
-    
-            var guestChildrenParameter = guestChildren.HasValue ?
-                new ObjectParameter("guestChildren", guestChildren) :
-                new ObjectParameter("guestChildren", typeof(int));
-    
-            var guestSeniorCitizenParameter = guestSeniorCitizen.HasValue ?
-                new ObjectParameter("guestSeniorCitizen", guestSeniorCitizen) :
-                new ObjectParameter("guestSeniorCitizen", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_number_of_guest", guestAdultParameter, guestChildrenParameter, guestSeniorCitizenParameter);
-        }
-    
-        public virtual ObjectResult<sp_get_client_room_details_Result> sp_get_client_room_details(string roomType)
-        {
-            var roomTypeParameter = roomType != null ?
-                new ObjectParameter("roomType", roomType) :
-                new ObjectParameter("roomType", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_client_room_details_Result>("sp_get_client_room_details", roomTypeParameter);
-        }
-    
-        public virtual ObjectResult<Nullable<int>> sp_get_room_status(string roomtype)
-        {
-            var roomtypeParameter = roomtype != null ?
-                new ObjectParameter("roomtype", roomtype) :
-                new ObjectParameter("roomtype", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("sp_get_room_status", roomtypeParameter);
-        }
-    
-        public virtual ObjectResult<sp_search_client_details_Result> sp_search_client_details(string searchTerm)
-        {
-            var searchTermParameter = searchTerm != null ?
-                new ObjectParameter("SearchTerm", searchTerm) :
-                new ObjectParameter("SearchTerm", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_search_client_details_Result>("sp_search_client_details", searchTermParameter);
-        }
-    
-        public virtual ObjectResult<sp_search_reservation_details_Result> sp_search_reservation_details(string searchTerm)
-        {
-            var searchTermParameter = searchTerm != null ?
-                new ObjectParameter("SearchTerm", searchTerm) :
-                new ObjectParameter("SearchTerm", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_search_reservation_details_Result>("sp_search_reservation_details", searchTermParameter);
-        }
-    
-        public virtual ObjectResult<sp_search_room_details_Result> sp_search_room_details(string searchTerm)
-        {
-            var searchTermParameter = searchTerm != null ?
-                new ObjectParameter("SearchTerm", searchTerm) :
-                new ObjectParameter("SearchTerm", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_search_room_details_Result>("sp_search_room_details", searchTermParameter);
-        }
-    
-        public virtual int sp_insert_system_accounts(string username, string password, Nullable<int> roleID)
-        {
-            var usernameParameter = username != null ?
-                new ObjectParameter("username", username) :
-                new ObjectParameter("username", typeof(string));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("password", password) :
-                new ObjectParameter("password", typeof(string));
-    
-            var roleIDParameter = roleID.HasValue ?
-                new ObjectParameter("roleID", roleID) :
-                new ObjectParameter("roleID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_system_accounts", usernameParameter, passwordParameter, roleIDParameter);
-        }
-    
         public virtual int sp_update_system_accounts(Nullable<int> userID, string username, string newPassword, Nullable<int> newRoleID)
         {
             var userIDParameter = userID.HasValue ?
@@ -615,56 +550,14 @@ namespace HMS.AppData
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_update_system_accounts", userIDParameter, usernameParameter, newPasswordParameter, newRoleIDParameter);
         }
     
-        public virtual int sp_delete_system_accounts(Nullable<int> userID)
+        public virtual int sp_upgraddiagrams()
         {
-            var userIDParameter = userID.HasValue ?
-                new ObjectParameter("userID", userID) :
-                new ObjectParameter("userID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_delete_system_accounts", userIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual int sp_insert_system_log(string typeofaccount, Nullable<System.DateTime> dateLogin, Nullable<System.TimeSpan> timeLogin, string lastActivity)
+        public virtual ObjectResult<vw_get_monthly_sale_Result> vw_get_monthly_sale()
         {
-            var typeofaccountParameter = typeofaccount != null ?
-                new ObjectParameter("typeofaccount", typeofaccount) :
-                new ObjectParameter("typeofaccount", typeof(string));
-    
-            var dateLoginParameter = dateLogin.HasValue ?
-                new ObjectParameter("dateLogin", dateLogin) :
-                new ObjectParameter("dateLogin", typeof(System.DateTime));
-    
-            var timeLoginParameter = timeLogin.HasValue ?
-                new ObjectParameter("timeLogin", timeLogin) :
-                new ObjectParameter("timeLogin", typeof(System.TimeSpan));
-    
-            var lastActivityParameter = lastActivity != null ?
-                new ObjectParameter("lastActivity", lastActivity) :
-                new ObjectParameter("lastActivity", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_insert_system_log", typeofaccountParameter, dateLoginParameter, timeLoginParameter, lastActivityParameter);
-        }
-    
-        public virtual ObjectResult<sp_display_room_client_details_Result> sp_display_room_client_details(Nullable<int> id)
-        {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_display_room_client_details_Result>("sp_display_room_client_details", idParameter);
-        }
-    
-        public virtual ObjectResult<sp_get_roomType_by_name_Result> sp_get_roomType_by_name(string roomtype, string typeOfFilter)
-        {
-            var roomtypeParameter = roomtype != null ?
-                new ObjectParameter("roomtype", roomtype) :
-                new ObjectParameter("roomtype", typeof(string));
-    
-            var typeOfFilterParameter = typeOfFilter != null ?
-                new ObjectParameter("typeOfFilter", typeOfFilter) :
-                new ObjectParameter("typeOfFilter", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_get_roomType_by_name_Result>("sp_get_roomType_by_name", roomtypeParameter, typeOfFilterParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<vw_get_monthly_sale_Result>("vw_get_monthly_sale");
         }
     }
 }

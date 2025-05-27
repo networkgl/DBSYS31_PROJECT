@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Interop;
 
 namespace HMS.Forms
@@ -24,6 +25,7 @@ namespace HMS.Forms
             InitializeComponent();
             userRepo = new UserRepository();
             Frm_Main.LastActivity = "Viewing Dashboard";
+            LoadChart();
         }
         //public static Frm_Dashboard GetInstance()
         //{
@@ -228,6 +230,64 @@ namespace HMS.Forms
                 MessageDialog.Show(e.Message, "Message", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
             }
             lbl_outOf.Text = $"Out of {totalRoom} rooms";
+        }
+
+        private void LoadChart()
+        {
+            // Clear existing series
+            chart1.Series.Clear();
+
+            // Create a new series
+            Series series = new Series("Monthly Sales");
+            series.ChartType = SeriesChartType.Column; // or Line, Pie, etc.
+
+            //// Sample data: months and corresponding sales
+            //Dictionary<string, int> salesData = new Dictionary<string, int>()
+            //    {
+            //        { "January", 1200 },
+            //        { "February", 950 },
+            //        { "March", 1400 },
+            //        { "April", 1150 },
+            //        { "May", 1300 },
+            //        { "June", 1250 },
+            //        { "July", 1600 },
+            //        { "August", 1450 },
+            //        { "September", 1350 },
+            //        { "October", 1500 },
+            //        { "November", 1700 },
+            //        { "December", 1800 }
+            //    };
+
+            var salesData = SalesByMonth();
+
+            // Add data points to the series
+            foreach (var data in salesData)
+            {
+                series.Points.AddXY(data.Months, data.Total);
+            }
+
+            // Add the series to the chart
+            chart1.Series.Add(series);
+
+            // Set chart title (optional)
+            chart1.Titles.Add("Monthly Sales Report");
+        }
+
+
+        private List<sp_get_sales_by_year_group_by_months_Result> SalesByMonth()
+        {
+            try
+            {
+                using (var db = new HMSEntities())
+                {
+                    return db.sp_get_sales_by_year_group_by_months().ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error");
+                return null;
+            }
         }
     }
 }

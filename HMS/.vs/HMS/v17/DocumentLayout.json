@@ -1,0 +1,225 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\forms\\frm_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\forms\\frm_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\forms\\frm_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\forms\\frm_dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\appdata\\dbsysmodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\appdata\\dbsysmodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\forms\\frm_viewcurrentrooms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\forms\\frm_viewcurrentrooms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\appdata\\dbsysmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\appdata\\dbsysmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\forms\\frm_addrooms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\forms\\frm_addrooms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\model\\userlogged.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\model\\userlogged.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\appdata\\custom class\\room_details_custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\appdata\\custom class\\room_details_custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\forms\\frm_manageroomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\forms\\frm_manageroomtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|e:\\github\\dbsys31_project\\hms\\hms\\forms\\frm_booknow_s1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACF3ECB8-A176-4CBE-8EC3-CAA40FC3B483}|HMS\\HMS.csproj|solutionrelative:hms\\forms\\frm_booknow_s1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Frm_Dashboard.cs",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_Dashboard.cs",
+              "RelativeDocumentMoniker": "HMS\\Forms\\Frm_Dashboard.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_Dashboard.cs",
+              "RelativeToolTip": "HMS\\Forms\\Frm_Dashboard.cs",
+              "ViewState": "AQIAALcAAAAAAAAAAAApwMQAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T18:13:21.563Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Frm_Dashboard.cs [Design]",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_Dashboard.cs",
+              "RelativeDocumentMoniker": "HMS\\Forms\\Frm_Dashboard.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_Dashboard.cs [Design]",
+              "RelativeToolTip": "HMS\\Forms\\Frm_Dashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T18:13:19.03Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "HMS\\Repository\\UserRepository.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "HMS\\Repository\\UserRepository.cs",
+              "ViewState": "AQIAAAUCAAAAAAAAAAAvwA0CAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T19:05:17.349Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DBSysModel.Context.cs",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\AppData\\DBSysModel.Context.cs",
+              "RelativeDocumentMoniker": "HMS\\AppData\\DBSysModel.Context.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\AppData\\DBSysModel.Context.cs",
+              "RelativeToolTip": "HMS\\AppData\\DBSysModel.Context.cs",
+              "ViewState": "AQIAAMcBAAAAAAAAAAAQwNMBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T19:10:52.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AdminRepository.cs",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Repository\\AdminRepository.cs",
+              "RelativeDocumentMoniker": "HMS\\Repository\\AdminRepository.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Repository\\AdminRepository.cs",
+              "RelativeToolTip": "HMS\\Repository\\AdminRepository.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAhwAsAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T19:07:12.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ROOM_DETAILS_CUSTOM.cs",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\AppData\\Custom Class\\ROOM_DETAILS_CUSTOM.cs",
+              "RelativeDocumentMoniker": "HMS\\AppData\\Custom Class\\ROOM_DETAILS_CUSTOM.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\AppData\\Custom Class\\ROOM_DETAILS_CUSTOM.cs",
+              "RelativeToolTip": "HMS\\AppData\\Custom Class\\ROOM_DETAILS_CUSTOM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T19:06:16.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserLogged.cs",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Model\\UserLogged.cs",
+              "RelativeDocumentMoniker": "HMS\\Model\\UserLogged.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Model\\UserLogged.cs",
+              "RelativeToolTip": "HMS\\Model\\UserLogged.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAwwBAAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T18:57:41.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Frm_ViewCurrentRooms.cs",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_ViewCurrentRooms.cs",
+              "RelativeDocumentMoniker": "HMS\\Forms\\Frm_ViewCurrentRooms.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_ViewCurrentRooms.cs",
+              "RelativeToolTip": "HMS\\Forms\\Frm_ViewCurrentRooms.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAcwBQAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T18:57:40.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Frm_ManageRoomType.cs",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_ManageRoomType.cs",
+              "RelativeDocumentMoniker": "HMS\\Forms\\Frm_ManageRoomType.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_ManageRoomType.cs",
+              "RelativeToolTip": "HMS\\Forms\\Frm_ManageRoomType.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T18:57:31.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Frm_BookNow_S1.cs",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_BookNow_S1.cs",
+              "RelativeDocumentMoniker": "HMS\\Forms\\Frm_BookNow_S1.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_BookNow_S1.cs",
+              "RelativeToolTip": "HMS\\Forms\\Frm_BookNow_S1.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwCIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T18:57:29.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Frm_AddRooms.cs",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_AddRooms.cs",
+              "RelativeDocumentMoniker": "HMS\\Forms\\Frm_AddRooms.cs",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\Forms\\Frm_AddRooms.cs",
+              "RelativeToolTip": "HMS\\Forms\\Frm_AddRooms.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAkwBQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T18:57:24.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DBSysModel.edmx [Diagram1]",
+              "DocumentMoniker": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\AppData\\DBSysModel.edmx",
+              "RelativeDocumentMoniker": "HMS\\AppData\\DBSysModel.edmx",
+              "ToolTip": "E:\\GitHub\\DBSYS31_PROJECT\\HMS\\HMS\\AppData\\DBSysModel.edmx [Diagram1]",
+              "RelativeToolTip": "HMS\\AppData\\DBSysModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-05-26T18:56:56.637Z",
+              "EditorCaption": " [Diagram1]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

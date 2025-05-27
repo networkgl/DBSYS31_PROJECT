@@ -13,9 +13,10 @@ namespace HMS.AppData
     
     public partial class sp_get_room_details__by_index_Result
     {
-        public byte[] roomPhoto { get; set; }
-        public double roomPrice { get; set; }
+        public string roomType { get; set; }
         public string roomDetails { get; set; }
-        public Nullable<int> roomDiscount { get; set; }
+        public decimal roomPrice { get; set; }
+        public decimal roomDiscount { get; set; }
+        public decimal discountedPrice { get; set; }
     }
 }
