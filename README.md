@@ -1,23 +1,36 @@
-🏨 Hotel Reservation System
-Course Code: DBSYS31_PROJECT
-Platform: Windows Forms Application – C# .NET
-Submitted by: Gian Lloyd B. Pinote
-Section: BSIT-3B
+# Hotel Reservation System
 
-📌 Description
-This is a Hotel Reservation System developed using C# .NET (Windows Forms). It enables basic hotel booking functionalities and demonstrates core database integration.
+## Course Code
+**DBSYS31_PROJECT**
 
-⚠️ Important
+## Platform
+**Windows Forms Application – C# .NET**
+
+## Submitted by
+**Gian Lloyd B. Pinote**  
+**Section:** BSIT-3B
+
+---
+
+## 📌 Description
+
+This is a **Hotel Reservation System** developed using **C# .NET (Windows Forms)**. It enables basic hotel booking functionalities and demonstrates core database integration.
+
+---
+
+## ⚠️ Important
+
 Before running the application, please ensure the database is restored properly.
 
-📁 Backup Location:
-bin/Debug/Database/HMS.bak
+**📁 Backup Location:**  
+`bin/Debug/Database/HMS.bak`
 
-🔄 Make sure to back up your database first to avoid data loss.
+> 🔄 Make sure to back up your database first to avoid data loss.
 
-✅ Usage Instructions
-Restore the database from the .bak file using SQL Server.
+---
 
-Open the solution in Visual Studio.
+## ✅ Usage Instructions
 
-Build and run the project.
+1. Restore the database from the `.bak` file using SQL Server.
+2. Open the solution in Visual Studio.
+3. Build and run the project.
